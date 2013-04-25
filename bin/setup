@@ -1,0 +1,2 @@
+npm install -g handlebars
+gem install sass compass

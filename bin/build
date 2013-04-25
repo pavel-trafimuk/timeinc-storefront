@@ -1,0 +1,83 @@
+#!/usr/bin/env bash
+
+# NOTE: This build script starts with utility functions... you probably 
+#     want to scroll down to the "name the files to include" section 
+
+
+cd $(dirname $0)
+cd ..
+
+BUILDROOT=$(pwd)
+
+# JSFILES is an array of javascript files that are used in the site we're
+# currently building. when we generate the site, this array is used to 
+# concatenate/minify the javascript.
+js_file() {
+  for FILE in "$@"
+  do
+    JSFILES=("${JSFILES[@]}" $FILE)
+  done
+}
+js_lib() {
+  for LIB in "$@"
+  do
+    cp "lib/$LIB" "$DEVDIR/lib/$LIB"
+    js_file "lib/$LIB"
+  done
+}
+templates() {
+  for TMPL in $(ls $DEVDIR/$1)
+  do
+    handlebars "$TMPL" --output "$TMPL.js"
+    js_file "$TMPL.js"
+  done
+}
+building() {
+  BUILDING=$1
+  DEVDIR=$BUILDING-dev
+  DEPLOYDIR=$BUILDING-deploy
+  JSFILES=()
+  rm -r ./$BUILDING-dev
+  cp -a ./$BUILDING ./$BUILDING-dev
+  mkdir ./$BUILDING-dev/lib
+}
+compile() {
+  compass compile "$DEVDIR/styles"
+
+  # render the index.html.tmpl file
+  python - "$DEVDIR/index.html.tmpl" ${JSFILES[@]} <<END
+
+import sys
+tmpl_file = sys.argv[1]
+js_files = sys.argv[2:]
+
+script_tmpl = "<script src='{0}'></script>"
+js_files = "\n".join(script_tmpl.format(src) for src in js_files)
+
+tmpl = open(tmpl_file, 'r').read()
+
+tmpl = tmpl.replace("{{JS_FILES}}", js_files)
+
+with open(tmpl_file[:-5], "w") as f:
+  f.write(tmpl)
+
+END
+}
+
+################################################################################
+# name the files to include
+################################################################################
+
+building 'store'
+
+js_lib 'jquery.js'
+js_lib 'underscore.js'
+js_lib 'backbone.js'
+js_lib 'handlebars.runtime.js'
+
+templates 'templates/*.tmpl'
+
+js_file "src/main.js"
+
+compile
+
