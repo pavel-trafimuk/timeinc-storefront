@@ -1,6 +1,6 @@
 #!/bin/bash
 
 cd $(dirname $0)
+cd ..
 
-# use workflow.py
-python workflow.py -f ../store -x ./store.workflow.config -y ./store.workflow.cache.db -n watch
+python bin/whenchanged.py store bin/build
