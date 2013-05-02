@@ -79,6 +79,7 @@ END
 building 'store'
 
 js_lib 'jquery.js'
+js_lib 'moment.js'
 js_lib 'underscore.js'
 js_lib 'backbone.js'
 js_lib 'handlebars.runtime.js'
