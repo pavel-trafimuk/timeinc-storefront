@@ -86,6 +86,8 @@ js_lib 'handlebars.runtime.js'
 
 templates 'templates/*.tmpl'
 
+# js_lib 'tcm_devtools.js'
+
 # app specific
 js_file "settings/$TITLE.js"
 js_file 'settings/settings_loader.js'
