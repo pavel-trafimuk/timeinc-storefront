@@ -1,0 +1,21 @@
+
+.welcome-view {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    
+    .cover-img-only,
+    .cover-with-text {
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+    }
+    .cover-with-text {
+        display: none;
+    }
+
+    .buttons {
+        position: absolute;
+        bottom: 30px;
+    }
+}
+
