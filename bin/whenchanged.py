@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 """
+from: 
+    
 when-changed - run a command when a file is changed
 
 Usage: when-changed FILE COMMAND...

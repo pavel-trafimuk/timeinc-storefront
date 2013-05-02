@@ -3,4 +3,4 @@
 cd $(dirname $0)
 cd ..
 
-python bin/whenchanged.py store bin/build
+python bin/whenchanged.py store lib -c bin/build
