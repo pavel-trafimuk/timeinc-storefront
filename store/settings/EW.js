@@ -6,6 +6,7 @@ window.settings = {
     // General settings
     "omniture_account"           : "timagcookingnk",
     "brandName"                  : "ENTERTAINMENT WEEKLY",
+    "brandCode"                  : "EW",
     "schedule"                   : "weekly",
     "popupInterval"              : 5,
 
