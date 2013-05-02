@@ -14,21 +14,30 @@ cd ..
 
 BUILDROOT=$(pwd)
 
-# JSFILES is an array of javascript files that are used in the site we're
+# JSFILES are arrays of javascript files that are used in the site we're
 # currently building. when we generate the site, this array is used to 
 # concatenate/minify the javascript.
+dev_js_file() {
+  DEVJSFILES=("${DEVJSFILES[@]}" $1)
+}
+prod_js_file() {
+  PRODJSFILES=("${PRODJSFILES[@]}" $1)
+}
 js_file() {
-  for FILE in "$@"
-  do
-    JSFILES=("${JSFILES[@]}" $FILE)
-  done
+  dev_js_file $1
+  prod_js_file $1
 }
 js_lib() {
-  for LIB in "$@"
-  do
-    cp "lib/$LIB" "$DEVDIR/lib/$LIB"
-    js_file "lib/$LIB"
-  done
+  cp "lib/$1" "$DEVDIR/lib/$1"
+  js_file "lib/$1"
+}
+dev_lib() {
+  cp "lib/$1" "$DEVDIR/lib/$1"
+  div_js_file "lib/$1"
+}
+prod_lib() {
+  cp "lib/$1" "$DEVDIR/lib/$1"
+  prod_js_file "lib/$1"
 }
 templates() {
   cd $DEVDIR
@@ -43,33 +52,25 @@ building() {
   BUILDING=$1
   DEVDIR=$BUILDING-dev
   DEPLOYDIR=$BUILDING-deploy
-  JSFILES=()
-  rm -r ./$BUILDING-dev
-  cp -a ./$BUILDING ./$BUILDING-dev
-  mkdir ./$BUILDING-dev/lib
+  DEVJSFILES=()
+  PRODJSFILES=()
+  rm -r $DEVDIR
+  rm -r $DEPLOYDIR
+  cp -a $BUILDING $DEVDIR
+  mkdir $DEVDIR/lib
 }
 compile() {
   compass compile "$DEVDIR/styles/"
   mv "$DEVDIR/css/$TITLE.css" "$DEVDIR/css/main.css"
 
   # render the index.html.tmpl file
-  python - "$DEVDIR/index.html.tmpl" ${JSFILES[@]} <<END
-
-import sys
-tmpl_file = sys.argv[1]
-js_files = sys.argv[2:]
-
-script_tmpl = "<script src='{0}'></script>"
-js_files = "\n".join(script_tmpl.format(src) for src in js_files)
-
-tmpl = open(tmpl_file, 'r').read()
-
-tmpl = tmpl.replace("{{JS_FILES}}", js_files)
-
-with open(tmpl_file[:-5], "w") as f:
-  f.write(tmpl)
-
-END
+  python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.dev.html" ${DEVJSFILES[@]}
+  python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.prod.html" ${PRODJSFILES[@]}
+  
+  cp -a $DEVDIR $DEPLOYDIR
+  mv $DEPLOYDIR/index.prod.html $DEPLOYDIR/index.html
+  rm -r $DEPLOYDIR/styles
+  rm $DEPLOYDIR/index.dev.html
 }
 
 ################################################################################
@@ -78,15 +79,17 @@ END
 
 building 'store'
 
+prod_lib 'AdobeLibraryAPI.js'
 js_lib 'jquery.js'
 js_lib 'moment.js'
 js_lib 'underscore.js'
 js_lib 'backbone.js'
 js_lib 'handlebars.runtime.js'
 
+dev_lib 'tcm_devtools.js'
+
 templates 'templates/*.tmpl'
 
-# js_lib 'tcm_devtools.js'
 
 # app specific
 js_file "settings/$TITLE.js"
@@ -96,6 +99,7 @@ js_file 'settings/settings_loader.js'
 js_lib 's_code.js'
 js_lib 'tcm_omniture.js'
 
+js_file "src/views/welcome.js"
 js_file "src/main.js"
 
 compile
