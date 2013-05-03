@@ -18,7 +18,9 @@
       });
     },
     launch_repl: function() {
-      repl(this.options.api); 
+      var repl = new REPL({api: this.options.api});
+      repl.render().$el.appendTo(this.$el);
+      setTimeout(function() { repl.start() });
     }
   });
 

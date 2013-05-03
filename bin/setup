@@ -1,2 +1,2 @@
-npm install -g handlebars
+npm install -g handlebars uglify-js
 gem install sass compass

@@ -6,7 +6,7 @@
       view = new App.views.Welcome({api: this.options.api});
       view.render().$el.appendTo(this.$el);
       view.animate();
-    } 
+    }
   });
 
 })();
