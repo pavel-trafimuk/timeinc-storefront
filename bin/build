@@ -7,7 +7,11 @@
 
 # This will eventually be replaced with $1 so you can specify which title
 # to build at the command line
-TITLE="EW"
+if [ -z $1 ]; then
+  TITLE="EW"
+else
+  TITLE="$1"
+fi
 
 cd $(dirname $0)
 cd ..
@@ -50,8 +54,8 @@ templates() {
 }
 building() {
   BUILDING=$1
-  DEVDIR=$BUILDING-dev
-  DEPLOYDIR=$BUILDING-deploy
+  DEVDIR=$TITLE-$BUILDING-dev
+  DEPLOYDIR=$TITLE-$BUILDING-deploy
   DEVJSFILES=()
   PRODJSFILES=()
   rm -r $DEVDIR
