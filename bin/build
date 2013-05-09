@@ -7,7 +7,7 @@
 
 # This will eventually be replaced with $1 so you can specify which title
 # to build at the command line
-if [ -z $1 ]; then
+if [ -z "$1" ]; then
   TITLE="EW"
 else
   TITLE="$1"
