@@ -1,0 +1,29 @@
+<!-- empty -->
+<div class="cover">
+    <img src="{{cover_img}}">
+</div>
+<div class="details">
+    <header>
+        <div>
+            <span class="issue-date">April 1, 2013</span>
+            —
+            <span class="issue-price">$4.99</span>    
+        </div>
+        <h2>In this week’s issue</h2>
+    </header>
+    <div class="in-this-issue">
+        {{#each in_this_issue}}
+            <article>
+                <img src="" class="thumbnail"><span class="next-indicator">&gt;</span>
+                <h3>Cover Story</h3>
+                <p>Behind the Soulful New 'Man of Steel' Film</p>
+            </article>
+        {{/each}}
+    </div>
+    <div class="cta">
+        <button class="buy-issue-button">Buy Issue</button>
+        <button class="subscribe-button">Subscribe</button>
+        <div class="print-subscribers">Print Subscriber? <a href="">Get it FREE!</a></div>
+    </div>
+</div>
+<div class="clear"></div>

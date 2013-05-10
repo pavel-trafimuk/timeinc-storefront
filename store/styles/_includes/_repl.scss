@@ -3,11 +3,11 @@
     top: 0; right: 0; bottom: 100px; left: 0;
     padding: 20px;
     background: #ddd;
+    color: #222;
+    font-size: 16px;
 
     pre {
         position: absolute;
-        -webkit-overflow-scrolling: touch;
-        overflow: scroll;
         top: 0;
         right: 0;
         bottom: 0;

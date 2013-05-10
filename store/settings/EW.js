@@ -57,6 +57,5 @@ window.settings = {
     "adobeFeedUrl"		  		 : "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/adobe-feeds/com.timeinc.ew.ipad.inapp.xml",
     "adobeFeedUrl_dev"  		 : "http://ecom-dev01-app.usdlls2.savvis.net:10500/assets/appstorefronts-jq/adobe-feeds/com.timeinc.ew.ipad.inapp.xml",
     
-
 "ihatethelastcomma": true};
 })();

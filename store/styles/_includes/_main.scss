@@ -1,4 +1,7 @@
 @import "_includes/_welcome_view.scss";
+@import "_includes/_store_view.scss";
+@import "_includes/_store_hero_view.scss";
+@import "_includes/_store_issues_view.scss";
 @import "_includes/_repl.scss";
 
 html, body {
@@ -6,6 +9,13 @@ html, body {
     background: #222;
     height: 100%;
     width: 100%;
+    overflow: auto;
     -webkit-overflow-scrolling: touch;
+    font-family: sans-serif;
+    font-size: 16px;
 }
-
+.scrollable {
+    -webkit-overflow-scrolling: touch;
+    overflow: auto; 
+}
+.clear { clear: both; }

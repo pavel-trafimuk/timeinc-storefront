@@ -31,6 +31,13 @@ js_file() {
   dev_js_file $1
   prod_js_file $1
 }
+js_files() {
+  cd $DEVDIR
+  for JSFILE in $(ls $1); do
+    js_file $JSFILE
+  done
+  cd $BUILDROOT
+}
 js_lib() {
   cp "lib/$1" "$DEVDIR/lib/$1"
   js_file "lib/$1"
@@ -43,12 +50,14 @@ prod_lib() {
   cp "lib/$1" "$DEVDIR/lib/$1"
   prod_js_file "lib/$1"
 }
+template() {
+  handlebars "$1" --output "$1.js"
+  js_file "$1.js"
+}
 templates() {
   cd $DEVDIR
-  for TMPL in $(ls $1)
-  do
-    handlebars "$TMPL" --output "$TMPL.js"
-    js_file "$TMPL.js"
+  for TMPL in $(ls $1); do
+    template $TMPL 
   done
   cd $BUILDROOT
 }
@@ -98,6 +107,7 @@ building 'store'
 prod_lib 'AdobeLibraryAPI.js'
 dev_lib 'MockAPI.js'
 
+js_lib 'APIWrapper.js'
 js_lib 'async.js'
 js_lib 'jquery.js'
 js_lib 'moment.js'
@@ -121,8 +131,7 @@ js_lib 'tcm_omniture.js'
 # creates App object (which is just a namespace)
 js_file "src/app.js"
 
-js_file "src/views/main.js"
-js_file "src/views/welcome.js"
+js_files "src/views/*.js"
 
 # kicks off the app
 js_file "src/main.js"

@@ -1,0 +1,17 @@
+
+.store-view {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    .buttons {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(0,0,0,0.7);
+        padding: 10px;
+        z-index:999999999;
+    }
+
+}
+

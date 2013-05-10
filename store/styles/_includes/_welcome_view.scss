@@ -3,6 +3,7 @@
     height: 100%;
     width: 100%;
     position: relative;
+    color: #fff;
     
     .cover-img-only,
     .cover-with-text {
@@ -19,6 +20,26 @@
         bottom: 30px;
         left: 0; right: 0;
         text-align: center;
+    }
+    .already-have-account {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        padding: 10px 15px;
+        background: #000;
+        color: #fff;
+        font-size: 14px;
+        white-space: no-wrap;
+    }
+    .already-have-account:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -20px;
+        left: 15px;
+        border-style: solid;
+        border-width: 10px;
+        border-color: transparent transparent #000;
     }
 }
 

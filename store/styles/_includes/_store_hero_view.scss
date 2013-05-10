@@ -1,0 +1,120 @@
+@import "compass";
+
+$redText: #db2817;
+
+.store-hero-view {
+    background: #282d2e;
+    padding: 30px 20px;
+    position: relative;
+    
+    .cover {
+        float: left;
+        width: 50%;
+        -webkit-box-sizing: border-box;
+        padding-right: 20px;
+        img { 
+           width: 100%; 
+           border: 2px solid rgba(0,0,0,0.3);
+           -webkit-border-radius: 2px;
+           -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+    }
+    .details {
+        float: right;
+        width: 50%;
+        -webkit-box-sizing: border-box;
+        padding-left: 5px;
+        color: #fff;
+        
+        header {
+            text-transform: uppercase;
+        }
+    }
+   
+    .issue-date {
+        font-size: 16px;
+    }
+    .issue-price {
+        color: $redText;
+    }
+    h2 {
+        font-size: 28px;
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+
+
+    .in-this-issue {
+        border-top: 1px solid rgba(0,0,0,0.45);
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+        
+        article {
+            border-top: 1px solid rgba(255,255,255,0.07);
+            border-bottom: 1px solid rgba(0,0,0,0.45);
+            position: relative;
+            padding: 12px 60px 12px 100px;
+            height: 50px;
+        }
+        .thumbnail {
+            height: 50px; width: 80px;
+            position: absolute; 
+            left: 0;
+        }
+        .next-indicator {
+            line-height: 50px;
+            font-size: 28px;
+            color: rgba(255,255,255,0.3);
+            position: absolute;
+            right: 0;
+        }
+        h3 {
+            color: $redText;
+            text-transform: uppercase;
+        }
+        h3, p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+
+    .cta {
+        position: absolute;
+        width: 50%;
+        right: 0px;
+        bottom: 12px;
+        padding: 0 30px 20px 5px;
+        -webkit-box-sizing: border-box;
+    }
+    .cta button {
+        height: 45px;
+        color: #fff;
+        text-shadow: 0 -1px 0 rgba(0,0,0,0.7);
+        width: 48%;
+        -webkit-border-radius: 25px;
+        border: 1px solid rgba(0,0,0,0.65);
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        -webkit-box-shadow: 
+            0 0 3px rgba(0,0,0,0.2),
+            inset 0 2px 0 -1px rgba(255,255,255,.2),
+            inset 0 -2px 3px -1px rgba(0,0,0,.5);
+    }
+    .buy-issue-button {
+        @include background-image(linear-gradient(#999, #606060)); 
+    }
+    .subscribe-button {
+        float: right;
+        @include background-image(linear-gradient(#fc564e, #d7291b)); 
+    }
+    .print-subscribers {
+        font-size: 14px;
+        color: #999;
+        margin-top: 12px;
+        text-align: center;
+        a { color: #999; }
+    }
+
+}
+
