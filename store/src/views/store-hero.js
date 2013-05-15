@@ -4,7 +4,7 @@
     className: "store-hero-view",
     template: Handlebars.templates["store-hero.tmpl"],
     events: {
-
+      "click .buy-issue-button": "buy_issue"
     },
     initialize: function() {
       console.log("App.views.StoreHero initializing");
@@ -18,6 +18,10 @@
       };
       this.$el.html(this.template(cx));
       return this;
+    },
+    buy_issue: function() {
+      var folio = App.api.libraryService.get_touted_issue();
+      folio.purchase();
     },
     animate: function(cb) {
       var that = this,
