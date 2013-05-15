@@ -21,7 +21,7 @@
     },
     buy_issue: function() {
       var folio = App.api.libraryService.get_touted_issue();
-      folio.purchase();
+      folio.purchase_and_download();
     },
     animate: function(cb) {
       var that = this,

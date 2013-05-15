@@ -1,3 +1,5 @@
+@import "compass";
+@import "_includes/_buttons.scss";
 
 .welcome-view {
     height: 100%;
@@ -17,9 +19,18 @@
     .buttons {
         display: none;
         position: absolute;
-        bottom: 30px;
+        bottom: 0px;
         left: 0; right: 0;
         text-align: center;
+        padding: 15px 0;
+        border-top: 1px solid #000;
+        @include background-image(linear-gradient(#393939, #222));
+
+        button {
+            @include big-button-primary;
+            width: 20%;
+            margin: 0 2%;
+        }
     }
     .already-have-account {
         position: absolute;

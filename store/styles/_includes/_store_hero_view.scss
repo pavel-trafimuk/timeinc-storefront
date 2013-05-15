@@ -1,4 +1,5 @@
 @import "compass";
+@import "_includes/_buttons.scss";
 
 $redText: #db2817;
 
@@ -87,26 +88,14 @@ $redText: #db2817;
         -webkit-box-sizing: border-box;
     }
     .cta button {
-        height: 45px;
-        color: #fff;
-        text-shadow: 0 -1px 0 rgba(0,0,0,0.7);
         width: 48%;
-        -webkit-border-radius: 25px;
-        border: 1px solid rgba(0,0,0,0.65);
-        text-transform: uppercase;
-        font-size: 14px;
-        font-weight: bold;
-        -webkit-box-shadow: 
-            0 0 3px rgba(0,0,0,0.2),
-            inset 0 2px 0 -1px rgba(255,255,255,.2),
-            inset 0 -2px 3px -1px rgba(0,0,0,.5);
     }
     .buy-issue-button {
-        @include background-image(linear-gradient(#999, #606060)); 
+        @include big-button-secondary; 
     }
     .subscribe-button {
+        @include big-button-primary; 
         float: right;
-        @include background-image(linear-gradient(#fc564e, #d7291b)); 
     }
     .print-subscribers {
         font-size: 14px;

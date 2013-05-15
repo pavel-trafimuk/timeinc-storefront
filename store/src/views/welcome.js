@@ -16,17 +16,21 @@
       this.folio = App.api.libraryService.get_touted_issue();
     },
     render: function() {
+      console.log("App.views.Welcome.render()");
+      console.log('folio: ' + this.folio);
       var covers = this.folio.get_welcome_imgs();
-      var cx = {img_only_cover_url: covers[0], full_cover_url: covers[1]};
+      console.log("covers: ", covers);
+      var cx = {settings:settings, img_only_cover_url: covers[0], full_cover_url: covers[1]};
       this.$el.html(this.template(cx));
       return this;
     },
     animate: function(cb) {
+      console.log("App.views.Welcome.animate()");
       var that = this,
           cb = cb || $.noop;
       
-      that.$(".cover-with-text").fadeIn(function() {
-        that.$(".buttons").fadeIn(function() {
+      that.$(".cover-with-text").fadeIn("slow", function() {
+        that.$(".buttons").fadeIn("slow", function() {
           cb();
         });
       });
