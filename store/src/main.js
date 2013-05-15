@@ -8,6 +8,9 @@ $(document).on("touchmove", ".scrollable", function(evt) { evt.stopPropagation()
 
 $(function() {
   console.log("dom ready");
+
+  // make click events fire at touchstart (https://github.com/ftlabs/fastclick)
+  FastClick.attach(document.body);
   
   if  (DEBUG && typeof adobeDPS == "undefined") {
     App._raw_api = MockAPI;
