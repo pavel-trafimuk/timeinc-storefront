@@ -11,7 +11,11 @@
     },
     render: function() {
       var folio = App.api.libraryService.get_touted_issue();
-      var cx = { cover_img: folio.get_cover_img(), in_this_issue: [1,2,3,4] };
+      _.bindAll(folio);
+      var cx = { 
+        settings: settings, 
+        folio: folio,
+      };
       this.$el.html(this.template(cx));
       return this;
     },

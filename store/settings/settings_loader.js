@@ -5,6 +5,9 @@
         "omniture_account": null,
         "PRODUCTION_TCM_FEED": "invalid://fill.me.in/todo",
         "DEV_TCM_FEED": "http://ecom-dev01-app.usdlls2.savvis.net:10400/html/v25app/data/" + settings.brandCode + ".json",
+        
+        "dev_tcmfeed_image_root": "http://ecom-dev01-app.usdlls2.savvis.net:10400/html/v25app/data/images/",
+        "prod_tcmfeed_image_root": "...",
 
     ihatethelastcomma: true};
 

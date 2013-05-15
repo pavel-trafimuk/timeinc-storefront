@@ -1,22 +1,22 @@
 <!-- empty -->
 <div class="cover">
-    <img src="{{cover_img}}">
+    <img src="{{folio.get_cover_img}}">
 </div>
 <div class="details">
     <header>
         <div>
-            <span class="issue-date">April 1, 2013</span>
+            <span class="issue-date">{{folio.title}}</span>
             —
-            <span class="issue-price">$4.99</span>    
+            <span class="issue-price">{{folio.price}}</span>    
         </div>
         <h2>In this week’s issue</h2>
     </header>
     <div class="in-this-issue">
-        {{#each in_this_issue}}
-            <article>
-                <img src="" class="thumbnail"><span class="next-indicator">&gt;</span>
-                <h3>Cover Story</h3>
-                <p>Behind the Soulful New 'Man of Steel' Film</p>
+        {{#each folio.tcm.in_this_issue}}
+            <article data-destination="{{link}}">
+                <img src="{{../settings.tcmfeed_image_root}}{{image}}" class="thumbnail"><span class="next-indicator">&gt;</span>
+                <h3>{{title}}</h3>
+                <p>{{summary}}</p>
             </article>
         {{/each}}
     </div>
