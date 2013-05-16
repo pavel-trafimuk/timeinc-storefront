@@ -11,6 +11,7 @@
       console.log("App.views.Store initializing");
       this.hero_view = new App.views.StoreHero();
       this.issues_view = new App.views.StoreIssues();
+      this.$el.addClass("scrollable");
     },
     render: function() {
       var cx = {};
