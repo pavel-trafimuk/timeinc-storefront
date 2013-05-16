@@ -4,7 +4,7 @@
     className: "store-issues-view",
     template: Handlebars.templates["store-issues.tmpl"],
     events: {
-
+      "click .issue": "view_issue"
     },
     initialize: function() {
       console.log("App.views.StoreIssues initializing");
@@ -18,6 +18,14 @@
       var that = this,
           cb = cb || $.noop;
       cb(); 
+    },
+    view_issue: function(evt) {
+      console.log("App.views.StoreIssues.view_issue()");
+      var $this = $(evt.currentTarget),
+          product_id = $this.data("productId"),
+          folio = App.api.libraryService.get_by_productId(product_id);
+      console.log("product_id: ", product_id, "folio.productId: ", folio.productId);
+      folio.view_or_preview();
     }
   });
 

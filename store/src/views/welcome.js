@@ -51,30 +51,7 @@
           folio = this.folio,
           transaction;
 
-      if (folio.isViewable) folio.view();
-      else { 
-        transaction = this.folio.verifyContentPreviewSupported();
-        transaction.completedSignal.addOnce(show_preview);
-      }
-
-      function show_preview() { 
-        var transaction;
-        if (folio.isViewable) return folio.view();
-        if (folio.canDownloadContentPreview()) {
-          transaction = folio.downloadContentPreview();
-          transaction.progressSignal.add(function() {
-            var progress = transaction.progress.toFixed(1) + "%";
-            if (folio.isViewable) folio.view();
-          });
-          transaction.stateChangedSignal.add(function() {
-            if (folio.isViewable) folio.view();
-          });
-        }
-        else {
-          console.log("ERROR: folio has no content preview!! folio: " + folio.productId);
-          alert("Err: NO CONTENT PREVIEW");
-        }
-      }
+      folio.view_or_preview();
     },
     launch_repl: function() {
       var repl = new REPL();

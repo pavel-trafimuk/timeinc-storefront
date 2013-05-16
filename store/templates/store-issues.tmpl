@@ -2,7 +2,7 @@
 <div class="tap-to-preview"><span>Tap to Preview</span></div>
 <div class="issues">
     {{#each issues}}
-        <div class="issue">
+        <div class="issue" data-product-id="{{productId}}">
             <img src="{{get_cover_img}}">
             <div class="issue-title">{{title}}</div>
         </div>
