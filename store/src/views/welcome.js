@@ -28,12 +28,15 @@
       console.log("App.views.Welcome.animate()");
       var that = this,
           cb = cb || $.noop;
-      
-      that.$(".cover-with-text").fadeIn("slow", function() {
-        that.$(".buttons").fadeIn("slow", function() {
-          cb();
+      setTimeout(function() {
+        that.$(".cover-with-text").fadeIn(800, function() {
+          that.$(".buttons").fadeIn(800, function() {
+            that.$(".already-have-account").fadeIn(800, function() {
+              cb();
+            });
+          });
         });
-      });
+      }, 800);
     },
     load_cover_images: function(cb) {
 

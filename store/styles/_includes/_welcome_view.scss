@@ -12,12 +12,13 @@
         position: absolute;
         top: 0; right: 0; bottom: 0; left: 0;
     }
-    .cover-with-text {
+    .cover-with-text,
+    .already-have-account,
+    .buttons {
         display: none;
     }
 
     .buttons {
-        display: none;
         position: absolute;
         bottom: 0px;
         left: 0; right: 0;
