@@ -6,18 +6,24 @@
       "click .goto-store": "goto_store"
     },
     initialize: function() {
-      this.current_view = "Welcome";
+      var that = this;
+      this.welcome_view = new App.views.Welcome;
+      this.store_view = new App.views.Store;
+
+      this.view = this.welcome_view;
     },
     render: function() {
-      this.$el.html('');
-      var view = new App.views[this.current_view]();
-      view.render().$el.appendTo(this.$el);
-      view.animate();
+      var subview = this.view;
+      this.$el.empty();
+      
+      subview.render().$el.appendTo(this.el);
+      this.view.animate();
     },
     goto_store: function() {
-      this.current_view = "Store";
+      this.view = this.store_view;
       this.render();
     }
   });
 
 })();
+
