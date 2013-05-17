@@ -56,15 +56,9 @@ $issue-spacing: 3%;
       white-space: no-wrap;
       text-transform: uppercase;
       font-size: 14px;
-    }
-    &::after {
-      content: '';
-      display: block;
-      margin-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $tap-to-preview-color;
       margin-bottom: 10px;
-      width: 100%;
-      height: 1px;
-      background: $tap-to-preview-color;
     }
   }
 }
