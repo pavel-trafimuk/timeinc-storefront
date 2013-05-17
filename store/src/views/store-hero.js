@@ -4,7 +4,8 @@
     className: "store-hero-view",
     template: Handlebars.templates["store-hero.tmpl"],
     events: {
-      "click .buy-issue-button": "buy_issue"
+      "click .buy-issue-button": "buy_issue",
+      "click .cover": "goto_preview"
     },
     initialize: function() {
       console.log("App.views.StoreHero initializing");
@@ -19,14 +20,16 @@
       this.$el.html(this.template(cx));
       return this;
     },
-    buy_issue: function() {
-      var folio = App.api.libraryService.get_touted_issue();
-      folio.purchase_and_download();
-    },
     animate: function(cb) {
       var that = this,
           cb = cb || $.noop;
       cb(); 
+    },
+    buy_issue: function() {
+      App.api.libraryService.get_touted_issue().purchase_and_download();
+    },
+    goto_preview: function() {
+      App.api.libraryService.get_touted_issue().view_or_preview();
     }
   });
 
