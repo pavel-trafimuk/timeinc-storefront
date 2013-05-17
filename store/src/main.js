@@ -6,6 +6,9 @@ console.log("----------  STARTING APP  ----------");
 $(document).on("touchmove", function(evt) { evt.preventDefault() });
 $(document).on("touchmove", ".scrollable", function(evt) { evt.stopPropagation() });
 
+// once this file loads, we can assume we're not offline
+document.write("<style>.offline-mode-message{display:none;}</style>");
+
 $(function() {
   console.log("dom ready");
 
