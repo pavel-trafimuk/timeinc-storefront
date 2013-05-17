@@ -5,7 +5,8 @@
     template: Handlebars.templates["store-hero.tmpl"],
     events: {
       "click .buy-issue-button": "buy_issue",
-      "click .cover": "goto_preview"
+      "click .cover": "goto_preview",
+      "click .subscribe-button": "subscribe"
     },
     initialize: function() {
       console.log("App.views.StoreHero initializing");
@@ -30,6 +31,9 @@
     },
     goto_preview: function() {
       App.api.libraryService.get_touted_issue().view_or_preview();
+    },
+    subscribe: function() {
+      new App.dialogs.Subscribe();
     }
   });
 

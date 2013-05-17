@@ -2,7 +2,12 @@
 @import "_includes/_store_view.scss";
 @import "_includes/_store_hero_view.scss";
 @import "_includes/_store_issues_view.scss";
+
+@import "_includes/_dialogs.scss";
+@import "_includes/_subscribe_dialog.scss";
+
 @import "_includes/_repl.scss";
+
 
 html, body {
     margin: 0; padding: 0;

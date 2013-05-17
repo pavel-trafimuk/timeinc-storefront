@@ -133,6 +133,7 @@ js_lib 'tcm_omniture.js'
 js_file "src/app.js"
 
 js_files "src/views/*.js"
+js_files "src/dialogs/*.js"
 
 # kicks off the app
 js_file "src/main.js"

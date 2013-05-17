@@ -1,0 +1,8 @@
+<div id='subscribe-dialog' class='dialog'>
+    <p id='title'>Subscribe to {{ settings.brandName }}</p>
+    <p id='description'>{{settings.subscribeOfferTex}}</p>
+    {{#each subscriptions}}
+        <div class='subscribe-button' id='{{ productId }}'>{{ duration }} subscription for {{ price }}</div>
+    {{/each}}
+    <button id='cancel'>Cancel</button>
+</div>

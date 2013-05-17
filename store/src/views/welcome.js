@@ -4,7 +4,7 @@
     className: "welcome-view",
     template: Handlebars.templates["welcome.tmpl"],
     events: {
-
+      "click .subscribe": "subscribe"
     },
     initialize: function() {
       var that = this,
@@ -30,6 +30,9 @@
           });
         });
       }, 800);
+    },
+    subscribe: function() {
+      new App.dialogs.Subscribe();
     }
   });
 

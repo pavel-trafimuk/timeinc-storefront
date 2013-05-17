@@ -1,6 +1,7 @@
 (function() {
   window.App = {
     views: {},
+    dialogs: {},
     debug: {
       launch_repl: function() {
         var repl = new REPL();
