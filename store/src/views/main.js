@@ -2,26 +2,34 @@
   
   App.views.Main = Backbone.View.extend({
     el: "body",
+    template: Handlebars.templates["main.tmpl"],
     events: {
-      "click .goto-store": "goto_store"
+      "click .goto-store": "goto_store",
+      "click .launch-repl": "launch_repl",
+      "click .reload-page": "reload_page"
     },
     initialize: function() {
       var that = this;
       this.welcome_view = new App.views.Welcome;
       this.store_view = new App.views.Store;
 
-      this.view = this.welcome_view;
+      this.subview = this.welcome_view;
     },
     render: function() {
-      var subview = this.view;
-      this.$el.empty();
+      this.$el.html(this.template({DEBUG:DEBUG}));
       
-      subview.render().$el.appendTo(this.el);
-      this.view.animate();
+      this.subview.render().$el.appendTo(this.el);
+      this.subview.animate();
     },
     goto_store: function() {
-      this.view = this.store_view;
+      this.subview = this.store_view;
       this.render();
+    },
+    launch_repl: function() {
+      App.debug.launch_repl();
+    },
+    reload_page: function() {
+      App.debug.reload();
     }
   });
 

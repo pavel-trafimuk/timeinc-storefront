@@ -4,28 +4,21 @@
     className: "welcome-view",
     template: Handlebars.templates["welcome.tmpl"],
     events: {
-      "click .launch-repl": "launch_repl",
-      "click .open-preview": "open_preview",
-      "click .reload-page": "reload_page"
+
     },
     initialize: function() {
-      console.log("App.views.Welcome initializing");
       var that = this,
           transaction;
 
       this.folio = App.api.libraryService.get_touted_issue();
     },
     render: function() {
-      console.log("App.views.Welcome.render()");
-      console.log('folio: ' + this.folio);
       var covers = this.folio.get_welcome_imgs();
-      console.log("covers: ", covers);
       var cx = {settings:settings, img_only_cover_url: covers[0], full_cover_url: covers[1]};
       this.$el.html(this.template(cx));
       return this;
     },
     animate: function(cb) {
-      console.log("App.views.Welcome.animate()");
       var that = this,
           cb = cb || $.noop;
       setTimeout(function() {
@@ -37,26 +30,6 @@
           });
         });
       }, 800);
-    },
-    load_cover_images: function(cb) {
-
-    },
-    reload_page: function() {
-      window.location.reload(true);
-    },
-    open_preview: function() {
-      console.log("open_preview called");
-
-      var that = this,
-          folio = this.folio,
-          transaction;
-
-      folio.view_or_preview();
-    },
-    launch_repl: function() {
-      var repl = new REPL();
-      repl.render().$el.appendTo(this.$el);
-      setTimeout(function() { repl.start() }, 100);
     }
   });
 
