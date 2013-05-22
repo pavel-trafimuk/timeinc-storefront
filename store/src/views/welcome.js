@@ -22,17 +22,17 @@
     animate: function(cb) {
       var that = this,
           cb = cb || $.noop;
+      
+      that.$(".cover-with-text").transition({duration: 1500, delay: 500, opacity: 1.0});
+      that.$(".buttons").transition({duration: 1000, delay: 1800, opacity: 1.0});
+      that.$(".already-have-account").transition({duration: 1000, delay: 3600, opacity: 1.0});
+      
       setTimeout(function() {
-        that.$(".cover-with-text").fadeIn(800, function() {
-          that.$(".buttons").fadeIn(800, function() {
-            that.$(".curl-text, .curl-obj").addClass("animated");
-            that.$(".already-have-account").fadeIn(800, function() {
-              cb();
-            });
-          });
-        });
-      }, 800);
-    },
+        that.$(".curl-text, .curl-obj").addClass("animated");
+      }, 2600);
+      
+      setTimeout(cb, 3200);
+     },
     subscribe: function() {
       new App.dialogs.Subscribe();
     },
