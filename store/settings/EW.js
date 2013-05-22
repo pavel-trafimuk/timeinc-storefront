@@ -54,8 +54,8 @@ window.settings = {
     "signInForgotPasswordUrl"    : "https://subscription.timeinc.com/storefront/universalForgotPassword.ep?magcode=EW",
     "privacyPolicyUrl"           : "https://subscription.timeinc.com/storefront/privacy/ew/generic_privacy_new.html?dnp-source=H",
     "termsOfUseUrl"              : "https://subscription.timeinc.com/storefront/privacy/ew/privacy_terms_service.html",
-    "adobeFeedUrl"		  		 : "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/adobe-feeds/com.timeinc.ew.ipad.inapp.xml",
-    "adobeFeedUrl_dev"  		 : "http://ecom-dev01-app.usdlls2.savvis.net:10500/assets/appstorefronts-jq/adobe-feeds/com.timeinc.ew.ipad.inapp.xml",
+    "adobeFeedUrl"               : "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/adobe-feeds/com.timeinc.ew.ipad.inapp.xml",
+    "adobeFeedUrl_dev"           : "http://ecom-dev01-app.usdlls2.savvis.net:10500/assets/appstorefronts-jq/adobe-feeds/com.timeinc.ew.ipad.inapp.xml",
     
 "ihatethelastcomma": true};
 })();
