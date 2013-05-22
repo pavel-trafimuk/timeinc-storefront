@@ -4,7 +4,8 @@
     className: "welcome-view",
     template: Handlebars.templates["welcome.tmpl"],
     events: {
-      "click .subscribe": "subscribe"
+      "click .subscribe": "subscribe",
+      "click .page-curl": "open_preview",
     },
     initialize: function() {
       var that = this,
@@ -24,6 +25,7 @@
       setTimeout(function() {
         that.$(".cover-with-text").fadeIn(800, function() {
           that.$(".buttons").fadeIn(800, function() {
+            that.$(".curl-text, .curl-obj").addClass("animated");
             that.$(".already-have-account").fadeIn(800, function() {
               cb();
             });
@@ -33,6 +35,9 @@
     },
     subscribe: function() {
       new App.dialogs.Subscribe();
+    },
+    open_preview: function() {
+      this.folio.view_or_preview();
     }
   });
 
