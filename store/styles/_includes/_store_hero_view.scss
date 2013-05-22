@@ -10,6 +10,7 @@ $redText: #db2817;
     -webkit-transform: translate3d(0,0,0);
     
     .cover {
+        position: relative;
         float: left;
         width: 50%;
         -webkit-box-sizing: border-box;
@@ -18,6 +19,16 @@ $redText: #db2817;
            width: 100%; 
            border: 2px solid rgba(0,0,0,0.3);
            -webkit-border-radius: 2px;
+        }
+        .page-curl {
+            right: 18px;
+            bottom: 6px;
+        }
+        .curl-obj,
+        .curl-text {
+            -webkit-transition: none;
+            -webkit-mask-image: none;
+            -webkit-transform: translate3d(0,0,0)
         }
     }
     .details {
