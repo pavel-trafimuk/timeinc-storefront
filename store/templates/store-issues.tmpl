@@ -3,7 +3,9 @@
 <div class="issues">
     {{#each issues}}
         <div class="issue {{#if isFree}}free{{/if}}" data-product-id="{{productId}}">
-            <img src="{{get_cover_img}}">
+            <img src="{{get_cover_img}}" 
+                width="{{../settings.adbfeed_cover_dimensions.[0]}}" 
+                height="{{../settings.adbfeed_cover_dimensions.[1]}}">
             <div class="issue-title">{{title}}</div>
         </div>
     {{/each}}

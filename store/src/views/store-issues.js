@@ -10,7 +10,7 @@
       console.log("App.views.StoreIssues initializing");
     },
     render: function() {
-      var cx = { issues: App.api.libraryService.get_back_issues() };
+      var cx = { issues: App.api.libraryService.get_back_issues(), settings: settings };
       this.$el.html(this.template(cx));
       return this;
     },

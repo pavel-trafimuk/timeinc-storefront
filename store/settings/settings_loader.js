@@ -8,6 +8,7 @@
         
         "dev_tcmfeed_image_root": "http://ecom-dev01-app.usdlls2.savvis.net:10400/html/v25app/data/images/",
         "prod_tcmfeed_image_root": "...",
+        "adbfeed_cover_dimensions": [388, 507],
 
     ihatethelastcomma: true};
 
