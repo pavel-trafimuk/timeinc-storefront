@@ -10,9 +10,14 @@
     .cover {
         position: relative;
         float: left;
-        width: 50%;
         -webkit-box-sizing: border-box;
         padding-right: 20px;
+        @media screen and (max-width: 999px) {
+            width: 50%;
+        }
+        @media screen and (min-width: 1000px) {
+            width: 40%;
+        }
         img { 
            width: 100%; 
            border: 2px solid rgba(0,0,0,0.3);
@@ -31,11 +36,15 @@
     }
     .details {
         float: right;
-        width: 50%;
         -webkit-box-sizing: border-box;
         padding-left: 5px;
         color: #fff;
-        
+        @media screen and (max-width: 999px) {
+            width: 50%;
+        }
+        @media screen and (min-width: 1000px) {
+            width: 60%;
+        }
         header {
             text-transform: uppercase;
             font-family: $HEADLINE_FONT;
@@ -91,11 +100,16 @@
 
     .cta {
         position: absolute;
-        width: 50%;
         right: 0px;
         bottom: 12px;
         padding: 0 30px 20px 5px;
         -webkit-box-sizing: border-box;
+        @media screen and (max-width: 999px) {
+            width: 50%;
+        }
+        @media screen and (min-width: 1000px) {
+            width: 60%;
+        }
     }
     .cta button {
         width: 48%;
@@ -113,6 +127,20 @@
         margin-top: 12px;
         text-align: center;
         a { color: #999; }
+    }
+
+    // Hard-coding the cover-img sizes at certain screen sizes is an optimization
+    @media screen and (width: 768px) {
+        .cover-img {
+          width: 340px;
+          height: 443px;
+        }
+    }
+    @media screen and (width: 1024px) {
+        .cover-img {
+          width: 371px;
+          height: 483px;
+        }
     }
 
 }

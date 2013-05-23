@@ -42,24 +42,44 @@ $issue-spacing: 3%;
   }
   .issue {
     float: left;
-    width: 25%;
     padding-left: $issue-spacing;
     -webkit-box-sizing: border-box;
     text-align: center;
     margin-top: 12px;
-    .cover-img {
-      width: 100%;
-      height: auto;
-      margin-bottom: 10px;
+    @media screen and (max-width: 999px) {
+      width: 25%;
     }
-    .issue-title {
-      white-space: no-wrap;
-      text-transform: uppercase;
-      font-size: 14px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid $tap-to-preview-color;
-      margin-bottom: 10px;
+    @media screen and (min-width: 1000px) {
+      width: 20%;
     }
   }
+  .cover-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .issue-title {
+    white-space: no-wrap;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $tap-to-preview-color;
+    margin-bottom: 10px;
+  }
+
+  // Hard-coding the cover-img sizes at certain screen sizes is an optimization
+  @media screen and (width: 768px) {
+    .cover-img {
+      width: 161px;
+      height: 210px;
+    }
+  }
+  @media screen and (width: 1024px) {
+    .cover-img {
+      width: 170px;
+      height: 222px;
+    }
+  }
+
 }
 
