@@ -133,6 +133,9 @@ js_lib 'tcm_omniture.js'
 # creates App object (which is just a namespace)
 js_file "src/app.js"
 
+# preloads static assets (images, etc) 
+js_file 'src/preloader.js'
+
 js_files "src/views/*.js"
 js_files "src/dialogs/*.js"
 
