@@ -7,8 +7,22 @@
     position: relative;
     -webkit-transform: translate3d(0,0,0);
     
-    .cover {
+    .issue-cover {
         position: relative;
+        .page-curl {
+            right: 0;
+            bottom: 0;
+        }
+        .curl-obj,
+        .curl-text {
+            -webkit-transition: none;
+            -webkit-mask-image: none;
+            -webkit-transform: translate3d(0,0,0)
+        }
+        border: 2px solid rgba(0,0,0,0.3);
+        -webkit-border-radius: 2px;
+    }
+    .cover {
         float: left;
         -webkit-box-sizing: border-box;
         padding-right: 20px;
@@ -20,18 +34,6 @@
         }
         img { 
            width: 100%; 
-           border: 2px solid rgba(0,0,0,0.3);
-           -webkit-border-radius: 2px;
-        }
-        .page-curl {
-            right: 18px;
-            bottom: 5px;
-        }
-        .curl-obj,
-        .curl-text {
-            -webkit-transition: none;
-            -webkit-mask-image: none;
-            -webkit-transform: translate3d(0,0,0)
         }
     }
     .details {

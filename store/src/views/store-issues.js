@@ -23,11 +23,24 @@
     },
     view_issue: function(evt) {
       console.log("App.views.StoreIssues.view_issue()");
+      
       var $this = $(evt.currentTarget),
           product_id = $this.data("productId"),
-          folio = App.api.libraryService.get_by_productId(product_id);
-      console.log("product_id: ", product_id, "folio.productId: ", folio.productId);
-      folio.view_or_preview();
+          folio = App.api.libraryService.get_by_productId(product_id),
+          $cover = $(".issue-cover", $this);
+     
+      folio.view_or_preview({
+        init: function() {
+          $cover.addClass("progress").attr("data-label", "");
+        },
+        complete: function() {
+          $cover.attr("data-label", "Opening…");
+        },
+        download_progress: function(progress) {
+          $cover.attr("data-label", "Downloading…");
+          $(".progress-bar", $this).css("width", progress+"%");
+        }
+      });
     }
   });
 

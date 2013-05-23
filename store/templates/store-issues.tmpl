@@ -3,10 +3,13 @@
 <div class="issues">
     {{#each issues}}
         <div class="issue {{#if isFree}}free{{/if}}" data-product-id="{{productId}}">
-            <img class="cover-img" src="{{../settings.cover_spacer_img}}" 
-                data-real-src="{{get_cover_img}}"
-                width="{{../settings.adbfeed_cover_dimensions.[0]}}" 
-                height="{{../settings.adbfeed_cover_dimensions.[1]}}">
+            <div class="issue-cover">
+                <img class="cover-img" src="{{../settings.cover_spacer_img}}" 
+                    data-real-src="{{get_cover_img}}"
+                    width="{{../settings.adbfeed_cover_dimensions.[0]}}" 
+                    height="{{../settings.adbfeed_cover_dimensions.[1]}}">
+                <div class="progress-bar"></div>
+            </div>
             <div class="issue-title">{{title}}</div>
         </div>
     {{/each}}
