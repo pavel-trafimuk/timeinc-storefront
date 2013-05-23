@@ -16,7 +16,7 @@
 }
 @mixin big-button-primary {
     @include big-button;
-    @include background-image(linear-gradient(#fc564e, #d7291b));
+    @include background-image(linear-gradient(saturate(lighten($ACCENT_COLOR, 20%), 40%), saturate(darken($ACCENT_COLOR, 5%), 15%)));
 }
 @mixin big-button-secondary {
     @include big-button;

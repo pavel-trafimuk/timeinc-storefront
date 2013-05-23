@@ -1,8 +1,6 @@
 @import "compass";
 @import "_includes/_buttons.scss";
 
-$redText: #db2817;
-
 .store-hero-view {
     background: #282d2e;
     padding: 30px 20px;
@@ -40,6 +38,7 @@ $redText: #db2817;
         
         header {
             text-transform: uppercase;
+            font-family: $HEADLINE_FONT;
         }
     }
    
@@ -47,7 +46,7 @@ $redText: #db2817;
         font-size: 16px;
     }
     .issue-price {
-        color: $redText;
+        color: $ACCENT_COLOR;
     }
     h2 {
         font-size: 28px;
@@ -80,7 +79,7 @@ $redText: #db2817;
             right: 0;
         }
         h3 {
-            color: $redText;
+            color: $ACCENT_COLOR;
             text-transform: uppercase;
         }
         h3, p {

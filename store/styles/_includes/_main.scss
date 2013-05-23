@@ -16,8 +16,11 @@ html, body {
     width: 100%;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-    font-family: sans-serif;
+    font-family: $MAIN_FONT;
     font-size: 16px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: $HEADLINE_FONT;
 }
 .scrollable {
     -webkit-overflow-scrolling: touch;
