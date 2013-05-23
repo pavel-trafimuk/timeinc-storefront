@@ -24,7 +24,7 @@
           cb = cb || $.noop;
       
       that.$(".cover-with-text").transition({duration: 1500, delay: 500, opacity: 1.0});
-      that.$(".buttons").transition({duration: 1000, delay: 1800, opacity: 1.0});
+      that.$(".buttons").transition({duration: 600, delay: 1800, y: 0});
       that.$(".already-have-account").transition({duration: 1000, delay: 3600, opacity: 1.0});
       
       setTimeout(function() {
