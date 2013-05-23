@@ -47,13 +47,10 @@ $issue-spacing: 3%;
     -webkit-box-sizing: border-box;
     text-align: center;
     margin-top: 12px;
-    img {
+    .cover-img {
       width: 100%;
       height: auto;
       margin-bottom: 10px;
-    }
-    .cover-img {
-      display: none; 
     }
     .issue-title {
       white-space: no-wrap;

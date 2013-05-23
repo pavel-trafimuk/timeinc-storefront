@@ -19,6 +19,8 @@
         folio: folio,
       };
       this.$el.html(this.template(cx));
+      this.$(".cover img").imgPlaceholder();
+
       return this;
     },
     animate: function(cb) {
