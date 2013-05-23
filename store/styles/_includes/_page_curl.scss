@@ -27,7 +27,7 @@
     }
     .curl-obj {
         height: 90px; width: 90px;
-        background: transparent url("../images/curl.png");
+        background: transparent url("../images/"+$BRAND_CODE+"/curl.png");
         background-size: 90px 90px;
         -webkit-transform: translate3d(90px,90px,0);
         -webkit-transition: -webkit-transform 1s;
