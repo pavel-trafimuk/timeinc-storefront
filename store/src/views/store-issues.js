@@ -12,6 +12,16 @@
     render: function() {
       var cx = { issues: App.api.libraryService.get_back_issues(), settings: settings };
       this.$el.html(this.template(cx));
+      
+      this.$(".cover-img").each(function() {
+        var img = this; 
+        function showme() { $(img).show().siblings(".cover-spacer-img").hide(); }
+        if (img.complete) showme();
+        else {
+          $(img).on("load", showme);
+        }
+      });
+
       return this;
     },
     animate: function(cb) {

@@ -52,6 +52,9 @@ $issue-spacing: 3%;
       height: auto;
       margin-bottom: 10px;
     }
+    .cover-img {
+      display: none; 
+    }
     .issue-title {
       white-space: no-wrap;
       text-transform: uppercase;
