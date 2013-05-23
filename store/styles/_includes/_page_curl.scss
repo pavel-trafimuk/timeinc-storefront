@@ -1,0 +1,49 @@
+.page-curl {
+    height: 90px; width: 90px;
+    position: absolute;
+    bottom: 76px; right: 0;
+    overflow: hidden;
+    
+    .curl-text {
+        position: absolute; bottom: 0; right: 0;
+        height: 36px; width: 60px;
+        font-size: 12px;
+        text-align: right;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #fff;
+        -webkit-mask-image: url('../images/mask.png');
+        -webkit-mask-repeat: no-repeat;
+        padding: 38px 6px 0 0;
+        z-index: 2;
+        -webkit-transform: translate3d(0,0,0);
+        
+        -webkit-mask-position: -210px 0px;
+        &.animated {
+            -webkit-animation-name: curltext;
+            -webkit-animation-duration: 1s;
+            -webkit-mask-position: -280px 0px;
+        }
+    }
+    .curl-obj {
+        height: 90px; width: 90px;
+        background: transparent url("../images/curl.png");
+        background-size: 90px 90px;
+        -webkit-transform: translate3d(90px,90px,0);
+        -webkit-transition: -webkit-transform 1s;
+        &.animated {
+            -webkit-transform: translate3d(0,0,0); 
+        }
+    }
+}
+@-webkit-keyframes curltext {
+  0% {
+      -webkit-mask-position: -210px 0px;
+  }
+  30% {
+      -webkit-mask-position: -210px 0px;
+  }
+  100% {
+      -webkit-mask-position: -280px 0px;
+  }
+}
