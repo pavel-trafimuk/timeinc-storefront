@@ -22,6 +22,8 @@
     animate: function(cb) {
       var that = this,
           cb = cb || $.noop;
+      this.hero_view.animate();
+      this.issues_view.animate();
       cb(); 
     }
   });
