@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title></title>
+	
+	<meta name="ROBOTS" content="NOINDEX,NOFOLLOW,NOARCHIVE" />
+	<style type="text/css">
+		<!--
+			html, body {
+				padding: 0px;
+				margin: 0px;
+				width: 100%;
+				height: 100%;
+				font-size: 100%;
+				text-align: center;
+				font-family: Helvetica;
+			}
+			
+			#mask {
+				width: 100%;
+				height: 100%;
+				opacity: 0.4;
+				background: #000;
+			}
+			
+			#container {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				text-align: center;
+				width:600px;
+				height: 200px;
+				margin-left: -300px;  /*half width*/
+				margin-top: -100px;  /*half height*/
+				padding: 6px;
+				-webkit-border-radius: 0.3em;
+				border-radius: 0.3em;
+				-webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0.2em 0.6em;
+				background-image: none;
+				background-color: #040b0d;
+				overflow: hidden;
+			}
+			
+			.bold { font-weight: bolder; }
+			.normal { font-weight: normal; }
+			.small { font-size: 0.875em; }
+			.paragraph { width: 90%; }
+			.note { width: 80%; }
+			.buttons { width: 100%; font-size: 1.1em; }
+					
+			a {
+				text-decoration: underline;
+				color: #000000;
+			}
+
+				
+				.x-toolbar-dark {
+					background-image: none;
+					background-color: #236b87;
+					background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #339bc3), color-stop(3%, #297b9b), color-stop(100%, #1e5b72));
+					background-image: -webkit-linear-gradient(top, #339bc3, #297b9b 3%, #1e5b72);
+					background-image: linear-gradient(top, #339bc3, #297b9b 3%, #1e5b72);
+					border-color: black;
+				}
+				
+				.main-popup-toolbar {
+					height: auto;
+					color: black;
+					font-weight: 700;
+					text-align: center;
+					font-size: 1.2em;
+					padding: 10px;
+				}
+				
+				.brand-logo {
+					background-image: url('http://subscription-assets.timeinc.com/prod/assets/appstorefronts/SM/adobe/apple/ipad/v1/resources/images/brand-logo.png');
+					background-size: contain;
+					background-position: center;
+					background-repeat: no-repeat;
+				}
+				
+				.lucie-complete-header {
+					text-align: center;
+					font-weight: bold;
+					margin-top: 10px;
+					margin-bottom: 10px;
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+				
+				.lucie-complete-body {
+					text-align: center;
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+				
+				.lucie-complete-inner {
+					width: 100%;
+					height: 100%;
+					max-height: 135px;
+					background: #ffffff;
+					padding-top: 5px;
+				}
+				
+				
+
+				.lucie-complete-button {
+					display: -webkit-box;
+					-webkit-box-align: center;
+					-webkit-box-pack: center;
+				}
+				
+			
+				.sf-button-grey {
+					margin: 10px;
+					-webkit-border-radius: 5px;
+					border-radius: 5px;
+					border: 2px solid #4e5e65;
+					color: #fff;
+					text-align: center;
+					font-size: 1.1em;
+					background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4e5e65), color-stop(100%, #2d383f));
+					background-image: -webkit-linear-gradient(#4e5e65, #2d383f);
+					background-image: linear-gradient(#4e5e65, #2d383f);
+					text-shadow: 0px 1px 1px #0d1012;
+				}
+
+				.sf-button-pressed-grey {
+					border: 2px solid rgba(255, 255, 255, 0.3);
+					background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2d383f), color-stop(100%, #4e5e65));
+					background-image: -webkit-linear-gradient(#2d383f, #4e5e65);
+					background-image: linear-gradient(#2d383f, #4e5e65);
+				}
+
+		-->
+		</style>
+		
+		<script type="text/javascript">
+			function buttonPress(button) {
+				button.className = "sf-button-grey sf-button-pressed-grey";
+			}
+			
+			function buttonRelease(button) {
+				button.className = "sf-button-grey";
+			}
+		
+			function callContinue() {
+				if (window.adobedpscontextloaded) {
+					adobe.dps.store.dismissCustomDialog();
+				} else {
+					window.close();
+				}
+			}
+		</script>
+		
+		<script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/md5.min.js"></script>
+</head>
+
+<body>
+	<div id="mask"></div>
+	<div id="container">
+		<div class="x-toolbar x-toolbar-dark main-popup-toolbar">
+			<div class="brand-logo" style="height: 40px;"></div>
+		</div>
+		
+		<!--<div id="txt1" style="background: #FFF; height: auto;"></div>-->
+		
+    	<div class="lucie-complete-inner">
+    		<div class="lucie-complete-header">Thank You</div>
+    		<div class="lucie-complete-body">Please wait while we confirm your purchase... </div>
+    		<!--<div class="lucie-complete-continue-button sf-button sf-button-grey lucie-complete-button " data-stylekey="grey" onmouseover="javascript:buttonPress(this);" onmouseout="javascript:buttonRelease(this);" onclick="javascript:callContinue();">CONTINUE</div>-->
+   		</div>
+   	</div>
+   	
+   	<!-- SiteCatalyst -->
+    <div style="display:none;">
+        <script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/omniture/SM/s_code.js"></script>
+        <script type="text/javascript" >
+            function dateFormat(d) {
+                var curr_date = d.getDate(),
+                    curr_month = d.getMonth() + 1,
+                    curr_year = d.getFullYear(),
+                    curr_hour = d.getHours(),
+                    meridiem,
+                    halfHour,
+                    retDate;
+                    
+                    
+                    curr_month = (curr_month < 10) ? "0" + curr_month : curr_month;
+                    curr_date = (curr_date < 10) ? "0" + curr_date : curr_date;
+                    meridiem = (curr_hour > 12) ? "PM" : "AM"; // Must determine meridiem before modifying curr_hour
+                    curr_hour = (curr_hour < 10) ? "0" + curr_hour : curr_hour;
+                    curr_hour = (curr_hour > 12) ? curr_hour - 12 : curr_hour;
+                    halfHour = (d.getMinutes() >= 30) ? "30" : "00";
+                    
+                    
+                    retDate = curr_month + "/" + curr_date + "/" + curr_year + "-" + curr_hour + ":" + halfHour + meridiem;
+        
+                return retDate;
+            }
+
+            function onOmniture(cfg) {
+                try {
+                    console.log('onOmniture', cfg);
+                
+                    var today = new Date(),
+                        orientation = (window.orientation == 0 || window.orientation == 180) ? 'portrait' : 'landscape',
+                        dayOfWeek = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+                            
+                    s.events = cfg.events;
+                    s.pageName = cfg.pageName;
+                    s.prop8 = cfg.prop8;
+                    s.prop10 = cfg.prop10;
+                    s.eVar28 = cfg.eVar28;
+                    s.eVar33 = cfg.eVar33;
+                            
+                    s.server = window.location.host;
+                    s.timestamp = Math.round(today.getTime() / 1000);
+                    s.visitorID = s.eVar3 = localStorage.visitorId;
+                    s.prop3 = "D=User Agent";
+                    
+                    s.prop16 = s.eVar24 = "store";
+                    s.prop17 = location.protocol + "//" + location.host + location.pathname;
+                    s.prop18 = orientation;
+                    s.prop19 = 'online';
+                    s.prop26 = 'dsc';
+                    s.prop29 = '';
+                    s.prop35 = s.eVar35 = "pageview";
+                    s.prop36 = s.eVar36 = 'storefront';
+                    s.eVar30 = dayOfWeek[today.getDay()].toLowerCase();
+                    s.prop7 = s.eVar31 = dateFormat(today);
+                    s.eVar32 = (today.getDay() == 0 || today.getDay() == 6) ? "weekend" : "weekday";
+                     
+                    s.pageType = "";
+            
+                    var s_code = s.t();
+                    if(s_code){document.write(s_code);}
+                } catch (e) {
+                    console.log('ERROR in lucie-reg-js-omniture.js::onOmniture', e);
+                }
+            }
+            
+            function onOmnitureTL(cfg) {
+                try {
+                    console.log("omni tl2 ", cfg);
+                
+                    var today = new Date(),
+                        orientation = (window.orientation == 0 || window.orientation == 180) ? 'portrait' : 'landscape',
+                        keys = Object.keys(cfg),
+                        keysLength = keys.length,
+                        dayOfWeek = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+                            
+                    s.events = cfg.events;
+                    s.pageName = cfg.pageName;
+                    s.prop8 = cfg.prop8;
+                    s.prop10 = cfg.prop10;
+                    s.eVar28 = cfg.eVar28;
+                    s.eVar33 = cfg.eVar33;
+                            
+                    
+                    s.linkTrackVars = keys.join(',') + ',prop3,prop7,prop16,prop18,prop19,prop26,prop29,prop35,prop36,eVar3,eVar24,eVar26,eVar29,eVar30,eVar31,eVar32,eVar35,eVar36,eVar44,events';
+                    s.linkTrackEvents = cfg.events;
+                    s.server = window.location.host;
+                    s.timestamp = Math.round(today.getTime() / 1000);
+                    s.visitorID = s.eVar3 = localStorage.visitorId;
+                    s.prop3 = "D=User Agent";
+                        
+                    s.prop16 = s.eVar24 = "store";
+                    s.prop17 = location.protocol + "//" + location.host + location.pathname;
+                    s.prop18 = orientation;
+                    s.prop19 = 'online';
+                    s.prop26 = 'dsc';
+                    s.prop29 = '';
+                    s.prop35 = s.eVar35 = "pageview";
+                    s.prop36 = s.eVar36 = 'storefront';
+                    s.eVar30 = dayOfWeek[today.getDay()].toLowerCase();
+                    s.prop7 = s.eVar31 = dateFormat(today);
+                    s.eVar32 = (today.getDay() == 0 || today.getDay() == 6) ? "weekend" : "weekday";
+            
+                    s.pageType = "";
+                    
+                    s.tl(this, 'o', (s.events == 'event44') ? 'splash occurences' : 'user action');
+                } catch (e) {
+                    console.log('ERROR in lucie-reg-js-omniture.js::onOmnitureTL', e);
+                }
+            }
+                      
+            
+            // Track page view
+            var cfg = {
+                events   : "event1,event26",
+                pageName : "store|receipt",
+                prop8    : "receipt",
+                prop10   : "ipad dps",  // "kf" for kindle fire
+                eVar28   : "receipt"
+                //eVar33   : "receipt"
+            };
+        
+            // This function found in lucie-customer-creation-omniture.js
+            var getVisitorID = window.setInterval(function() {
+                if (localStorage.visitorId) {
+                    window.clearInterval(getVisitorID);
+                    onOmniture(cfg);
+                }
+            }, 0);
+        </script>
+   </div>
+   <!-- End SiteCatalyst -->
+	
+	<script type="text/javascript"> 
+		var lucieFormUrl = "https://subscription.timeinc.com/storefront/site/sm-lucie-customer-creation-itunes201211.html",
+			visitorId = localStorage.visitorId,
+			getProductId,
+			subsReceipt = "",
+			subsProductId = ""
+			apiLoaded = false,
+			apiLoad = window.setInterval(loadPage(),2000);
+			
+		window.onadobedpscontextloaded = loadPage;
+	
+		//document.getElementById("txt1").innerHTML += "Start initialize Adobe API...<br/>";
+		
+		function loadPage() {
+			if (window.adobedpscontextloaded) {
+				window.clearInterval(apiLoad);
+				//document.getElementById("txt1").innerHTML += "API Initialized!<br/>";
+
+				if (!visitorId) {
+                    adobe.dps.store.getDeviceId(function(id) {
+                       //document.write("ID: " + id + "<br/><br/>");
+                       localStorage.visitorId = md5(id).toUpperCase();
+                       //document.write("visitorId: " + localStorage.visitorId);
+                    });
+                }
+                
+                getProductId = window.setInterval(function() {
+					// call into the getSubscriptionData API
+					adobe.dps.store.getSubscriptionData(function(data) {
+						for (subscription in data) {											
+							if (data[subscription].active) {
+            					subsProductId = data[subscription].productId;
+            					//document.getElementById("txt1").innerHTML += "Product ID: " + subsProductId + "<br/>";
+            					
+            					// call into the getReceiptData API
+            					adobe.dps.store.getReceiptData(function(dictionary) {
+            						//document.getElementById("txt1").innerHTML = JSON.stringify(dictionary);
+            			
+            						// Get receipt set to product id in dictionary
+            						subsReceipt = dictionary[subsProductId];
+            						//document.getElementById("txt1").innerHTML += "Receipt: " + subsReceipt + "<br/>";
+            						
+            						if (subsReceipt) {
+            							window.clearInterval(getProductId);
+            							window.location = lucieFormUrl + '?receipt=' + subsReceipt + '&productId=' + subsProductId + '&visitorId=' + localStorage.visitorId;
+            						} else {
+            							window.clearInterval(getProductId);
+            							callContinue();
+            						}
+            					});
+        					}
+        				}
+        			});
+        		}, 500);  // .5 second interval check for active subscription and setting a productId in subsProductId
+        	}
+        }
+        
+        
+        
+	</script>
+   	
+   	<!--Colin's test links
+		<h1><a href="" onclick="adobe.dps.store.dismissWelcomeScreen();">adobe.dps.store.dismissWelcomeScreen();</a></h1>
+		<br />
+		<h1><a href="" onclick="adobe.dps.store.dismissCustomDialog();">adobe.dps.store.dismissCustomDialog();</a></h1>
+		<br />
+		<h1><a href="" onclick="window.close();">window.close()</a></h1>
+	-->
+</body>
+</html>
