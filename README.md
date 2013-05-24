@@ -27,7 +27,28 @@ DEPLOYING
 ================================================================================
 
 As of now, you just zip up the "index.html" file in the *-deploy folder and send
-that to IT. All assets are loaded over the network.
+that to IT. All assets are loaded over the network. (see next section)
+
+The network assets are on the savvis server in:
+
+    /nas01/apps/subs3/content/cmdev/assets/appstorefronts-jq/{BRAND_CODE}/adobe/apple/ipad/v25
+
+
+MAKING ZIP FILES FOR IT TO EMBED
+================================================================================
+
+Zip files should only contain the HTML file as of now. the file MUST be renamed
+to "index.html" if that is not the filename in the source dir.
+
+
+Store Tab:
+    {BRAND_CODE}-store-deploy/index.html
+    
+Info Tab:
+    info/embed_index.html
+    
+My Account Tab:
+    myaccount/embed_index.html
 
 
 TIPS ON DEVELOPING ON A DEVICE
@@ -49,12 +70,15 @@ device. Starting in the root directory of the App in iExplorer:
     viewer.app/LibraryConfig.plist
         serviceOptions > entitlement > bannerHeight
         
-There are a lot of URLs in Customization.strings… it's a good place to look if you want to
-change something that is set by IT.
+There are a lot of URLs in Customization.strings… it's a good place to look if 
+you want to change something that is set by IT.
 
-Note: Customization.strings is a binary plist. I have confirmed that textwrangler can edit
-the file, but haven't found any other apps that can.
+Note: Customization.strings is a binary plist. I have confirmed that 
+textwrangler can edit the file, but haven't found any other apps that can.
         
+        
+
+
 
     
 
