@@ -72,7 +72,8 @@ function go(URL){
 }
 
 </script>
-
+<script src="AdobeLibraryAPI.js"></script>
+<script src="jquery.js"></script>
 <script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/md5.min.js"></script>
 </head>
 
@@ -81,10 +82,10 @@ function go(URL){
 <div id="panel" style="display: none; width: 486px; height: 648px; background-color:white;margin:0 auto 0 auto;position: fixed;">
 
  <div id="logo"></div>
- <a href="https://subscription.essence.com/storefront/universalForgotPassword.ep?magcode=EW" target="_blank"><span class="singleLine">FORGOT PASSWORD</span></a>
+ <a href="https://subscription.timeinc.com/storefront/universalForgotPassword.ep?magcode=EW" target="_blank"><span class="singleLine">FORGOT PASSWORD</span></a>
  <a href="https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=EW&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT" target="_blank"><span class="line1">PRINT SUBSCRIBERS</span><br /><span class="line2">TAP HERE</span></a>
  <a id="lucieRegistrationBtn" href="" onclick="go(this.href);return false;"><span class="line1">COMPLETE ACCOUNT SETUP</span><br /><span class="line2">FOR IPAD SUBSCRIBERS</span></a>
- <a id="restoreIssues" href="http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/EW/adobe/apple/ipad/v2/myaccount/restoreissues.html" target="_blank"><span class="singleLine">RESTORE ISSUES</span></a>
+ <a id="restoreIssues" href="http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/EW/adobe/apple/ipad/v25/myaccount/restoreissues.html" target="_blank"><span class="singleLine">RESTORE ISSUES</span></a>
  <a href="https://secure.customersvc.com/servlet/Show?WESPAGE=ew/home.html&MSRSMAG=EW&app_launch_key=08212099" target="_blank"><span class="singleLine">CUSTOMER SERVICE</span></a>
 		
 </div>
@@ -233,65 +234,36 @@ function go(URL){
             visitorId = localStorage.visitorId,
             getProductId,
             subsReceipt = "",
-            subsProductId = ""
-            apiLoaded = false,
-            apiLoad = window.setInterval(loadPage(),1000);
+            subsProductId = "";
             
-        window.onadobedpscontextloaded = loadPage;
+        $(function() {
+            adobeDPS.initializationComplete.addOnce(function(){
+                loadPage();
+            });
+        });
 
         function loadPage() {
-            if (window.adobedpscontextloaded) {
-                window.clearInterval(apiLoad);
-                
-                if (!visitorId) {
-                    adobe.dps.store.getDeviceId(function(id) {
-                       //document.write("ID: " + id + "<br/><br/>");
-                       localStorage.visitorId = md5(id).toUpperCase();
-                       //document.write("visitorId: " + localStorage.visitorId);
-                    });
-                }
-                
-                getProductId = window.setInterval(function() {
-                    // call into the getSubscriptionData API
-                    adobe.dps.store.getSubscriptionData(function(data) {
-                        for (subscription in data) {                                            
-                            if (data[subscription].active) {
-                                //subsProductId == "com.timeinc.realsimple.pad.subs.3";
-                                subsProductId = data[subscription].productId;
-                            
-                                // call into the getReceiptData API
-                                adobe.dps.store.getReceiptData(function(dictionary) {
-                        
-                                    // Get receipt set to product id in dictionary
-                                    subsReceipt = dictionary[subsProductId];
-                                    if (subsReceipt) {
-                                        window.clearInterval(getProductId);
-                                        var btn = document.getElementById("lucieRegistrationBtn");
-                                        btn.href = lucieFormUrl + '?sender=myaccountpage&receipt=' + subsReceipt + '&productId=' + subsProductId + '&visitorId=' + localStorage.visitorId;
-                                        btn.style.display = "block";
-                                    } else {
-
-                                        window.clearInterval(getProductId);
-
-                                    }
-                                });
-                            }
-                        }
-                        
-                    });
-                }, 500);  // .5 second interval check for active subscription and setting a productId in subsProductId
+            if (!visitorId) {
+                localStorage.visitorId = adobeDPS.deviceService.deviceId;
             }
+            $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {
+                if (sub.isActive()) {
+                    var btn_url = lucieFormUrl + "?sender=myaccountpage";
+                    btn_url += '&receipt=' + sub.receipt;
+                    btn_url += '&productId=' + productId;
+                    btn_url += '&visitorId=' + localStorage.visitorId;
+
+                    $("#lucieRegistrationBtn")
+                        .attr("href", btn_url)
+                        .show();
+                }                
+            });
         }
-        
-        
-        
     </script>
 
-
-
 <script type="text/javascript" >
-setPos();
-window.onorientationchange = setPos;
+    setPos();
+    window.onorientationchange = setPos;
 </script>
 </body>
 </html>
