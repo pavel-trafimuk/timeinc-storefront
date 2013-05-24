@@ -103,7 +103,8 @@ compile() {
   
   MAG_CODE=$TITLE REMOTE_ASSET_PREFIX=$REMOTE_ASSET_PREFIX python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.prod.html" "main.min.js?v=$(md5 -q $BUILDROOT/$DEPLOYDIR/main.min.js)"
   cp $DEVDIR/index.prod.html $DEPLOYDIR/index.html
-  cp -r $DEVDIR/banners $DEPLOYDIR/banners
+  cp -r $DEVDIR/banners $DEPLOYDIR
+  cp $DEVDIR/lucie-library.html $DEPLOYDIR
 }
 
 ################################################################################
