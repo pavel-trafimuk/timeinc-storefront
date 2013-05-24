@@ -6,6 +6,7 @@
     events: {
       "click .subscribe": "subscribe",
       "click .page-curl": "open_preview",
+      "click .print-subscriber": "open_wes"
     },
     initialize: function() {
       var that = this,
@@ -38,6 +39,9 @@
     },
     open_preview: function() {
       this.folio.view_or_preview();
+    },
+    open_wes: function() {
+      location.href = settings.upgradeSubscriptionUrl;
     }
   });
 
