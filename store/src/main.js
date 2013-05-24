@@ -16,7 +16,7 @@ document.write("<style>.offline-mode-message{display:none;}</style>");
 $(document).on("touchmove", function(evt) { evt.preventDefault() });
 $(document).on("touchmove", ".scrollable", function(evt) { evt.stopPropagation() });
 
-
+App.preload();
 
 $(function() {
   console.log("dom ready");
