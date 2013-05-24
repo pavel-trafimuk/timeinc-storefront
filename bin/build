@@ -111,6 +111,7 @@ END
   cp $DEVDIR/index.prod.html $DEPLOYDIR/index.html
   cp -r $DEVDIR/banners $DEPLOYDIR
   cp $DEVDIR/lucie-library.html $DEPLOYDIR
+  cp -r myaccount $DEPLOYDIR
 }
 
 ################################################################################
