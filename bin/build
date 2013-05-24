@@ -63,6 +63,7 @@ templates() {
 }
 building() {
   BUILDING=$1
+  REMOTE_ASSET_PREFIX="http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/$TITLE/adobe/apple/ipad/v25/"
   DEVDIR=$TITLE-$BUILDING-dev
   DEPLOYDIR=$TITLE-$BUILDING-deploy
   DEVJSFILES=()
@@ -73,13 +74,19 @@ building() {
   mkdir $DEVDIR/lib
 }
 compile() {
+  echo "kickoff('$TITLE');" >> $DEVDIR/banner_bootstrap.js
+
   compass compile "$DEVDIR/styles/"
   mv "$DEVDIR/css/$TITLE.css" "$DEVDIR/css/main.css"
 
   # render the index.html.tmpl file
-  python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.mockapi.dev.html" ${DEVJSFILES[@]}
-  python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.dev.html" "lib/AdobeLibraryAPI.js" ${DEVJSFILES[@]}
-  
+  MAG_CODE=$TITLE python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.mockapi.dev.html" ${DEVJSFILES[@]}
+  MAG_CODE=$TITLE python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.dev.html" "lib/AdobeLibraryAPI.js" ${DEVJSFILES[@]}
+
+  for BANNER in $(find "$DEVDIR/banners/" -iname "*.html"); do
+    MAG_CODE=$TITLE REMOTE_ASSET_PREFIX=$REMOTE_ASSET_PREFIX python bin/render_index.py "$BANNER" "$BANNER" 
+  done
+
   mv $DEVDIR/index.dev.html $DEVDIR/index.html
 
   mkdir $DEPLOYDIR
@@ -94,8 +101,9 @@ compile() {
   cp $DEVDIR/css/main.css $DEPLOYDIR/css/main.css
   cp -r $DEVDIR/images $DEPLOYDIR/images
   
-  python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.prod.html" "main.min.js?v=$(md5 -q $BUILDROOT/$DEPLOYDIR/main.min.js)"
+  MAG_CODE=$TITLE REMOTE_ASSET_PREFIX=$REMOTE_ASSET_PREFIX python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.prod.html" "main.min.js?v=$(md5 -q $BUILDROOT/$DEPLOYDIR/main.min.js)"
   cp $DEVDIR/index.prod.html $DEPLOYDIR/index.html
+  cp -r $DEVDIR/banners $DEPLOYDIR/banners
 }
 
 ################################################################################

@@ -23,3 +23,8 @@ Each title has…
    show `images/EW/logo.png`, if the title is EW)
 
 
+DEPLOYING
+================================================================================
+
+As of now, you just zip up the "index.html" file in the *-deploy folder and send
+that to IT. All assets are loaded over the network.
