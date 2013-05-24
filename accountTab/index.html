@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> </title>
+<style>
+body{font-family:Arial, sans-serif;}
+a {
+ display:block;
+ height: 50px;
+ width: 299px;
+ color:white;
+background: -webkit-linear-gradient(top, #232425 53%,#020202 100%);
+/* background:#ff8300;*/
+ -webkit-border-radius:1.2em;
+ margin:2.5em auto;
+ text-decoration:none;
+ text-align:center;
+ padding:0em 0 0 0;
+ line-height:1em;
+ font-size:1em;
+ letter-spacing:2px;
+ font-weight:bold;
+ -webkit-box-shadow: 0px 4px 4px 0px #bbb;
+ box-shadow: 0px 4px 4px 0px #bbb;
+}
+
+
+.showingLucieRegBtn{
+
+  margin:1.7em auto;
+
+}
+
+
+.singleLine {vertical-align:-1.2em;}
+.line1 {vertical-align:-.7em;}
+.line2 {font-size:.9em;}
+
+#logo{
+ width: 486px;
+ height: 108px;
+ background: url(images/myAccountBttns.gif) top left no-repeat;
+}
+
+#lucieRegistrationBtn{
+ display:none;
+ cursor: hand; cursor: pointer;
+}
+
+#restoreIssues {
+ background: -webkit-linear-gradient(top, #f81600 53%,#e50c00 100%);
+/* background:#009caa;*/
+}
+
+
+</style>
+
+<script type="text/javascript">
+
+function setPos(){
+  var top = (window.innerHeight - 648)/2 + "px",left = (window.innerWidth - 486)/2 + "px",
+  panel = document.getElementById("panel");
+
+  panel.style.top = top;
+  panel.style.left = left;
+  panel.style.display = "block";
+}
+
+function go(URL){
+	window.location.href=URL;
+}
+
+</script>
+
+<script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/md5.min.js"></script>
+</head>
+
+<body bgcolor="#666666">
+
+<div id="panel" style="display: none; width: 486px; height: 648px; background-color:white;margin:0 auto 0 auto;position: fixed;">
+
+ <div id="logo"></div>
+ <a href="https://subscription.essence.com/storefront/universalForgotPassword.ep?magcode=EW" target="_blank"><span class="singleLine">FORGOT PASSWORD</span></a>
+ <a href="https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=EW&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT" target="_blank"><span class="line1">PRINT SUBSCRIBERS</span><br /><span class="line2">TAP HERE</span></a>
+ <a id="lucieRegistrationBtn" href="" onclick="go(this.href);return false;"><span class="line1">COMPLETE ACCOUNT SETUP</span><br /><span class="line2">FOR IPAD SUBSCRIBERS</span></a>
+ <a id="restoreIssues" href="http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/EW/adobe/apple/ipad/v2/myaccount/restoreissues.html" target="_blank"><span class="singleLine">RESTORE ISSUES</span></a>
+ <a href="https://secure.customersvc.com/servlet/Show?WESPAGE=ew/home.html&MSRSMAG=EW&app_launch_key=08212099" target="_blank"><span class="singleLine">CUSTOMER SERVICE</span></a>
+		
+</div>
+
+
+	<!-- SiteCatalyst -->
+    <div style="display:none;">
+        <!-- PROD s_code -->
+        <script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/omniture/EW/s_code.js"></script>
+        
+        <script type="text/javascript">
+            function dateFormat(d) {
+                var curr_date = d.getDate(),
+                    curr_month = d.getMonth() + 1,
+                    curr_year = d.getFullYear(),
+                    curr_hour = d.getHours(),
+                    meridiem,
+                    halfHour,
+                    retDate;
+                    
+                    
+                    curr_month = (curr_month < 10) ? "0" + curr_month : curr_month;
+                    curr_date = (curr_date < 10) ? "0" + curr_date : curr_date;
+                    meridiem = (curr_hour > 12) ? "PM" : "AM"; // Must determine meridiem before modifying curr_hour
+                    curr_hour = (curr_hour < 10) ? "0" + curr_hour : curr_hour;
+                    curr_hour = (curr_hour > 12) ? curr_hour - 12 : curr_hour;
+                    halfHour = (d.getMinutes() >= 30) ? "30" : "00";
+                    
+                    
+                    retDate = curr_month + "/" + curr_date + "/" + curr_year + "-" + curr_hour + ":" + halfHour + meridiem;
+        
+                return retDate;
+            }
+
+            function onOmniture(cfg) {
+                try {
+                    console.log('onOmniture', cfg);
+                    
+                
+                    var today = new Date(),
+                        orientation = (window.orientation == 0 || window.orientation == 180) ? 'portrait' : 'landscape',
+                        dayOfWeek = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+                            
+                    s.events = cfg.events;
+                    s.pageName = cfg.pageName;
+                    s.prop8 = cfg.prop8;
+                    s.prop10 = cfg.prop10;
+                    s.eVar28 = cfg.eVar28;
+                    s.eVar33 = cfg.eVar33;
+                            
+                    s.server = window.location.host;
+                    s.timestamp = Math.round(today.getTime() / 1000);
+                    s.visitorID = s.eVar3 = localStorage.visitorId;
+                    s.prop3 = "D=User Agent";
+                    
+                    s.prop16 = s.eVar24 = "store";
+                    s.prop17 = location.protocol + "//" + location.host + location.pathname;
+                    s.prop18 = orientation;
+                    s.prop19 = 'online';
+                    s.prop26 = 'dsc';
+                    s.prop29 = '';
+                    s.prop35 = s.eVar35 = "pageview";
+                    s.prop36 = s.eVar36 = 'storefront';
+                    s.eVar30 = dayOfWeek[today.getDay()].toLowerCase();
+                    s.prop7 = s.eVar31 = dateFormat(today);
+                    s.eVar32 = (today.getDay() == 0 || today.getDay() == 6) ? "weekend" : "weekday";
+                     
+                    s.pageType = "";
+            
+                    var s_code = s.t();
+                    if(s_code){document.write(s_code);}
+                } catch (e) {
+                    console.log('ERROR in lucie-reg-js-omniture.js::onOmniture', e);
+                }
+            }
+            
+            function onOmnitureTL(cfg) {
+                try {
+                    console.log("omni tl2 ", cfg);
+                
+                    var today = new Date(),
+                        orientation = (window.orientation == 0 || window.orientation == 180) ? 'portrait' : 'landscape',
+                        keys = Object.keys(cfg),
+                        keysLength = keys.length,
+                        dayOfWeek = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+                            
+                    s.events = cfg.events;
+                    s.pageName = cfg.pageName;
+                    s.prop8 = cfg.prop8;
+                    s.prop10 = cfg.prop10;
+                    s.eVar28 = cfg.eVar28;
+                    s.eVar33 = cfg.eVar33;
+                            
+                    
+                    s.linkTrackVars = keys.join(',') + ',prop3,prop7,prop16,prop18,prop19,prop26,prop29,prop35,prop36,eVar3,eVar24,eVar26,eVar29,eVar30,eVar31,eVar32,eVar35,eVar36,eVar44,events';
+                    s.linkTrackEvents = cfg.events;
+                    s.server = window.location.host;
+                    s.timestamp = Math.round(today.getTime() / 1000);
+                    s.visitorID = s.eVar3 = localStorage.visitorId;
+                    s.prop3 = "D=User Agent";
+                        
+                    s.prop16 = s.eVar24 = "store";
+                    s.prop17 = location.protocol + "//" + location.host + location.pathname;
+                    s.prop18 = orientation;
+                    s.prop19 = 'online';
+                    s.prop26 = 'dsc';
+                    s.prop29 = '';
+                    s.prop35 = s.eVar35 = "pageview";
+                    s.prop36 = s.eVar36 = 'storefront';
+                    s.eVar30 = dayOfWeek[today.getDay()].toLowerCase();
+                    s.prop7 = s.eVar31 = dateFormat(today);
+                    s.eVar32 = (today.getDay() == 0 || today.getDay() == 6) ? "weekend" : "weekday";
+            
+                    s.pageType = "";
+                    
+                    s.tl(this, 'o', (s.events == 'event44') ? 'splash occurences' : 'user action');
+                } catch (e) {
+                    console.log('ERROR in lucie-reg-js-omniture.js::onOmnitureTL', e);
+                }
+            }
+                      
+            // Track page view
+            var cfg = {
+                events   : "event1",
+                pageName : "store|my account",
+                prop8    : "my account",
+                prop10   : "ipad dps",  // "kf" for kindle fire
+                eVar28   : "my account"
+                //eVar33   : "receipt"
+            };
+        
+            // This function found in lucie-customer-creation-omniture.js
+            var getVisitorID = window.setInterval(function() {
+                if (localStorage.visitorId) {
+                    window.clearInterval(getVisitorID);
+                    onOmniture(cfg);
+                }
+            }, 500);
+        </script>
+   </div>
+   
+   
+   <script type="text/javascript">
+
+        var lucieFormUrl = "https://subscription.timeinc.com/storefront/site/ew-lucie-customer-creation-itunes201302.html",
+            visitorId = localStorage.visitorId,
+            getProductId,
+            subsReceipt = "",
+            subsProductId = ""
+            apiLoaded = false,
+            apiLoad = window.setInterval(loadPage(),1000);
+            
+        window.onadobedpscontextloaded = loadPage;
+
+        function loadPage() {
+            if (window.adobedpscontextloaded) {
+                window.clearInterval(apiLoad);
+                
+                if (!visitorId) {
+                    adobe.dps.store.getDeviceId(function(id) {
+                       //document.write("ID: " + id + "<br/><br/>");
+                       localStorage.visitorId = md5(id).toUpperCase();
+                       //document.write("visitorId: " + localStorage.visitorId);
+                    });
+                }
+                
+                getProductId = window.setInterval(function() {
+                    // call into the getSubscriptionData API
+                    adobe.dps.store.getSubscriptionData(function(data) {
+                        for (subscription in data) {                                            
+                            if (data[subscription].active) {
+                                //subsProductId == "com.timeinc.realsimple.pad.subs.3";
+                                subsProductId = data[subscription].productId;
+                            
+                                // call into the getReceiptData API
+                                adobe.dps.store.getReceiptData(function(dictionary) {
+                        
+                                    // Get receipt set to product id in dictionary
+                                    subsReceipt = dictionary[subsProductId];
+                                    if (subsReceipt) {
+                                        window.clearInterval(getProductId);
+                                        var btn = document.getElementById("lucieRegistrationBtn");
+                                        btn.href = lucieFormUrl + '?sender=myaccountpage&receipt=' + subsReceipt + '&productId=' + subsProductId + '&visitorId=' + localStorage.visitorId;
+                                        btn.style.display = "block";
+                                    } else {
+
+                                        window.clearInterval(getProductId);
+
+                                    }
+                                });
+                            }
+                        }
+                        
+                    });
+                }, 500);  // .5 second interval check for active subscription and setting a productId in subsProductId
+            }
+        }
+        
+        
+        
+    </script>
+
+
+
+<script type="text/javascript" >
+setPos();
+window.onorientationchange = setPos;
+</script>
+</body>
+</html>
