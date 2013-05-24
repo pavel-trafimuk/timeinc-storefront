@@ -1,13 +1,22 @@
+if (DEBUG) {
+  settings.asset_root = settings.dev_asset_root;  
+}
+else {
+  settings.asset_root = settings.prod_asset_root;  
+  window.console = {log: $.noop}
+}
 
 console.log("----------  STARTING APP  ----------");
+
+// once this file loads, we can assume we're not offline
+document.write("<style>.offline-mode-message{display:none;}</style>");
 
 // disable scrolling the body element (which shows the a white background outside 
 // the document and just generally feels, not-very-appy
 $(document).on("touchmove", function(evt) { evt.preventDefault() });
 $(document).on("touchmove", ".scrollable", function(evt) { evt.stopPropagation() });
 
-// once this file loads, we can assume we're not offline
-document.write("<style>.offline-mode-message{display:none;}</style>");
+
 
 $(function() {
   console.log("dom ready");
