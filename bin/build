@@ -93,7 +93,13 @@ compile() {
   
   # minify js
   cd $DEVDIR
-  cat ${PRODJSFILES[@]} | uglifyjs > $BUILDROOT/$DEPLOYDIR/main.min.js
+python - ${PRODJSFILES[@]} <<END | uglifyjs > $BUILDROOT/$DEPLOYDIR/main.min.js
+import sys
+for f in sys.argv[1:]:
+    sys.stdout.write(open(f).read());
+    sys.stdout.write("\n;\n")
+END
+
   cd $BUILDROOT
 
   # copy css and assets
