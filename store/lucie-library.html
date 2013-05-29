@@ -133,6 +133,8 @@
 
     -->
     </style>
+    <script src="lib/AdobeLibraryAPI.js"></script>
+    <script src="lib/jquery.js"></script> 
     
     <script type="text/javascript">
       function buttonPress(button) {
@@ -167,9 +169,8 @@
     <div class="lucie-complete-inner">
       <div class="lucie-complete-header">Thank You</div>
       <div class="lucie-complete-body">Please wait while we confirm your purchase... </div>
-      <!--<div class="lucie-complete-continue-button sf-button sf-button-grey lucie-complete-button " data-stylekey="grey" onmouseover="javascript:buttonPress(this);" onmouseout="javascript:buttonRelease(this);" onclick="javascript:callContinue();">CONTINUE</div>-->
-       </div>
-     </div>
+   </div>
+ </div>
      
      <!-- SiteCatalyst -->
   <div style="display:none;">
@@ -307,64 +308,35 @@
    <!-- End SiteCatalyst -->
   
   <script type="text/javascript"> 
-    var lucieFormUrl = "https://subscription.timeinc.com/storefront/site/sm-lucie-customer-creation-itunes201211.html",
-      visitorId = localStorage.visitorId,
-      getProductId,
-      subsReceipt = "",
-      subsProductId = ""
-      apiLoaded = false,
-      apiLoad = window.setInterval(loadPage(),2000);
-      
-    window.onadobedpscontextloaded = loadPage;
-  
-    //document.getElementById("txt1").innerHTML += "Start initialize Adobe API...<br/>";
-    
-    function loadPage() {
-      if (window.adobedpscontextloaded) {
-        window.clearInterval(apiLoad);
-        //document.getElementById("txt1").innerHTML += "API Initialized!<br/>";
-
-        if (!visitorId) {
-          adobe.dps.store.getDeviceId(function(id) {
-             //document.write("ID: " + id + "<br/><br/>");
-             localStorage.visitorId = md5(id).toUpperCase();
-             //document.write("visitorId: " + localStorage.visitorId);
-          });
-        }
-        
-        getProductId = window.setInterval(function() {
-          // call into the getSubscriptionData API
-          adobe.dps.store.getSubscriptionData(function(data) {
-            for (subscription in data) {                      
-              if (data[subscription].active) {
-                subsProductId = data[subscription].productId;
-                //document.getElementById("txt1").innerHTML += "Product ID: " + subsProductId + "<br/>";
-                
-                // call into the getReceiptData API
-                adobe.dps.store.getReceiptData(function(dictionary) {
-                  //document.getElementById("txt1").innerHTML = JSON.stringify(dictionary);
+        var lucieFormUrl = "https://subscription.timeinc.com/storefront/site/ew-lucie-customer-creation-itunes201302.html",
+            visitorId = localStorage.visitorId,
+            getProductId,
+            subsReceipt = "",
+            subsProductId = "";
             
-                  // Get receipt set to product id in dictionary
-                  subsReceipt = dictionary[subsProductId];
-                  //document.getElementById("txt1").innerHTML += "Receipt: " + subsReceipt + "<br/>";
-                  
-                  if (subsReceipt) {
-                    window.clearInterval(getProductId);
-                    window.location = lucieFormUrl + '?receipt=' + subsReceipt + '&productId=' + subsProductId + '&visitorId=' + localStorage.visitorId;
-                  } else {
-                    window.clearInterval(getProductId);
-                    callContinue();
-                  }
-                });
-              }
+        $(function() {
+            adobeDPS.initializationComplete.addOnce(function(){
+                loadPage();
+            });
+        });
+
+        function loadPage() {
+            if (!visitorId) {
+                localStorage.visitorId = adobeDPS.deviceService.deviceId;
             }
-          });
-        }, 500);  // .5 second interval check for active subscription and setting a productId in subsProductId
-      }
-    }
-    
-    
-    
+            $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {
+                if (sub.isActive()) {
+                    var btn_url = lucieFormUrl + "?sender=myaccountpage";
+                    btn_url += '&receipt=' + sub.receipt;
+                    btn_url += '&productId=' + productId;
+                    btn_url += '&visitorId=' + localStorage.visitorId;
+
+                    $("#lucieRegistrationBtn")
+                        .attr("href", btn_url)
+                        .show();
+                }                
+            });
+        }
   </script>
      
      <!--Colin's test links

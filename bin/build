@@ -106,11 +106,12 @@ END
   mkdir $DEPLOYDIR/css
   cp $DEVDIR/css/main.css $DEPLOYDIR/css/main.css
   cp -r $DEVDIR/images $DEPLOYDIR/images
+  cp -r lib $DEPLOYDIR/lib
   
   MAG_CODE=$TITLE REMOTE_ASSET_PREFIX=$REMOTE_ASSET_PREFIX python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.prod.html" "main.min.js?v=$(md5 -q $BUILDROOT/$DEPLOYDIR/main.min.js)"
   cp $DEVDIR/index.prod.html $DEPLOYDIR/index.html
   cp -r $DEVDIR/banners $DEPLOYDIR
-  cp $DEVDIR/lucie-library.html $DEPLOYDIR
+  MAG_CODE=$TITLE REMOTE_ASSET_PREFIX=$REMOTE_ASSET_PREFIX python bin/render_index.py "$DEVDIR/lucie-library.html" "$DEPLOYDIR/lucie-library.html"
   cp -r myaccount $DEPLOYDIR
 }
 
