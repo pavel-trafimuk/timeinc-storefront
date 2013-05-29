@@ -29,7 +29,19 @@
       cb(); 
     },
     buy_issue: function() {
-      App.api.libraryService.get_touted_issue().purchase_and_download();
+      var $progress = this.$(".issue-cover").addClass("progress");
+      App.api.libraryService.get_touted_issue().purchase_and_download({
+        init: function() {
+          $progress.attr("data-label", "Purchasing Issue…");
+        },
+        complete: function() {
+          $progress.attr("data-label", "Opening Issue…");
+        },
+        download_progress: function(progress) {
+          $progress.attr("data-label", "Downloading…");
+          $(".progress-bar", $progress).css("width", progress+"%");
+        }
+      });
     },
     goto_preview: function() {
       var $progress = this.$(".issue-cover").addClass("progress");
@@ -44,7 +56,6 @@
           $progress.attr("data-label", "Downloading…");
           $(".progress-bar", $progress).css("width", progress+"%");
         }
-
       });
     },
     subscribe: function() {
