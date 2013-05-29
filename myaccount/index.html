@@ -57,6 +57,9 @@ background: -webkit-linear-gradient(top, #232425 53%,#020202 100%);
 </style>
 
 <script type="text/javascript">
+document.addEventListener("touchmove", function(evt) {
+  evt.preventDefault();
+});
 
 function setPos(){
   var top = (window.innerHeight - 648)/2 + "px",left = (window.innerWidth - 486)/2 + "px",
