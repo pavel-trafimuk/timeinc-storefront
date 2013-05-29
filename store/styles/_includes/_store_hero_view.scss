@@ -86,11 +86,15 @@
             left: 0;
         }
         .next-indicator {
-            line-height: 50px;
-            font-size: 28px;
-            color: rgba(255,255,255,0.3);
+            line-height: 0px;
+            font-size: 1px;
             position: absolute;
-            right: 0;
+            top: 30px; right: 20px;
+            height: 12px; width: 12px;
+            border-style: solid;
+            border-width: 2px 2px 0 0;
+            border-color: rgba(255,255,255,0.3);
+            -webkit-transform: rotate(45deg);
         }
         h3 {
             @include constrain-to-one-line;
