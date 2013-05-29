@@ -74,8 +74,6 @@ building() {
   mkdir $DEVDIR/lib
 }
 compile() {
-  echo "kickoff('$TITLE');" >> $DEVDIR/banner_bootstrap.js
-
   compass compile "$DEVDIR/styles/"
   mv "$DEVDIR/css/$TITLE.css" "$DEVDIR/css/main.css"
 
