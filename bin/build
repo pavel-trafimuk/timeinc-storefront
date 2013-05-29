@@ -116,6 +116,7 @@ END
 
   cp -r $DEVDIR/banners $DEPLOYDIR
   
+  cp $DEVDIR/lucie-library.html $DEPLOYDIR
   render_in_place "$DEPLOYDIR/lucie-library.html"
 
   cp -r myaccount $DEPLOYDIR

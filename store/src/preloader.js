@@ -1,7 +1,15 @@
 
 App.preload = function(cb) {
-  new Image().src = settings.asset_root + "images/mask.gif";
-  new Image().src = settings.asset_root + "images/" + settings.brandCode + "/curl.png";
-  new Image().src = settings.asset_root + settings.cover_spacer_img;
+  function img(path) {
+    var i = new Image;
+    i.src = settings.asset_root + path;
+    App.preload.imgs.push(i);
+  }
+
+  img("images/mask.gif");
+  img("images/" + settings.brandCode + "/curl.png");
+  img(settings.cover_spacer_img);
+
   (cb||$.noop)();
 }
+App.preload.imgs = [];
