@@ -40,6 +40,8 @@
     open_preview: function() {
       var dialog = new App.dialogs.WelcomeDownloading(),
           $progress = dialog.$(".progress");
+
+      this.$(".page-curl").fadeOut();
       
       this.folio.view_or_preview({
         complete: function() {
