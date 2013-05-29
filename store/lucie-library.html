@@ -135,6 +135,8 @@
     </style>
     <script src="lib/AdobeLibraryAPI.js"></script>
     <script src="lib/jquery.js"></script> 
+    <script src="settings/{{MAG_CODE}}.js"></script>
+    <script src="settings/settings_loader.js"></script>
     
     <script type="text/javascript">
       function buttonPress(button) {
@@ -146,8 +148,8 @@
       }
     
       function callContinue() {
-        if (window.adobedpscontextloaded) {
-          adobe.dps.store.dismissCustomDialog();
+        if (typeof adobeDPS !== "undefined") {
+          adobeDPS.dialogService.dismissCustomDialog();
         } else {
           window.close();
         }
@@ -174,7 +176,7 @@
      
      <!-- SiteCatalyst -->
   <div style="display:none;">
-    <script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/omniture/SM/s_code.js"></script>
+  <script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/omniture/{{MAG_CODE}}/s_code.js"></script>
     <script type="text/javascript" >
       function dateFormat(d) {
         var curr_date = d.getDate(),
@@ -308,7 +310,7 @@
    <!-- End SiteCatalyst -->
   
   <script type="text/javascript"> 
-        var lucieFormUrl = "https://subscription.timeinc.com/storefront/site/ew-lucie-customer-creation-itunes201302.html",
+        var lucieFormUrl = settings.lucieRegistrationURL,
             visitorId = localStorage.visitorId,
             getProductId,
             subsReceipt = "",
@@ -338,13 +340,5 @@
             });
         }
   </script>
-     
-     <!--Colin's test links
-    <h1><a href="" onclick="adobe.dps.store.dismissWelcomeScreen();">adobe.dps.store.dismissWelcomeScreen();</a></h1>
-    <br />
-    <h1><a href="" onclick="adobe.dps.store.dismissCustomDialog();">adobe.dps.store.dismissCustomDialog();</a></h1>
-    <br />
-    <h1><a href="" onclick="window.close();">window.close()</a></h1>
-  -->
 </body>
 </html>

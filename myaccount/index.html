@@ -72,8 +72,10 @@ function go(URL){
 }
 
 </script>
-<script src="../lib/AdobeLibraryAPI.js"></script>
-<script src="../lib/jquery.js"></script>
+  <script src="../lib/AdobeLibraryAPI.js"></script>
+  <script src="../lib/jquery.js"></script>
+  <script src="../settings/{{MAG_CODE}}.js"></script>
+  <script src="../settings/settings_loader.js"></script>
 <script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/md5.min.js"></script>
 </head>
 
@@ -230,7 +232,7 @@ function go(URL){
    
    <script type="text/javascript">
 
-        var lucieFormUrl = "https://subscription.timeinc.com/storefront/site/ew-lucie-customer-creation-itunes201302.html",
+        var lucieFormUrl = settings.lucieRegistrationURL,
             visitorId = localStorage.visitorId,
             getProductId,
             subsReceipt = "",
