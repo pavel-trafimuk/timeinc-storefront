@@ -17,6 +17,7 @@
 .dialog {
     position: fixed;
     width: 240px;
+    margin-left: -120px;
     padding: 10px 10px 10px 10px;
     z-index: 10;
     background: rgba(10, 24, 59, .85);

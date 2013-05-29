@@ -31,10 +31,10 @@
      
       folio.view_or_preview({
         init: function() {
-          $cover.addClass("progress").attr("data-label", "");
+          $cover.addClass("progress").attr("data-label", "Opening Issue…");
         },
         complete: function() {
-          $cover.attr("data-label", "Opening…");
+          $cover.attr("data-label", "Opening Issue…");
         },
         download_progress: function(progress) {
           $cover.attr("data-label", "Downloading…");

@@ -32,7 +32,20 @@
       App.api.libraryService.get_touted_issue().purchase_and_download();
     },
     goto_preview: function() {
-      App.api.libraryService.get_touted_issue().view_or_preview();
+      var $progress = this.$(".issue-cover").addClass("progress");
+      App.api.libraryService.get_touted_issue().view_or_preview({
+        init: function() {
+          $progress.attr("data-label", "Opening Issue…");
+        },
+        complete: function() {
+          $progress.attr("data-label", "Opening Issue…");
+        },
+        download_progress: function(progress) {
+          $progress.attr("data-label", "Downloading…");
+          $(".progress-bar", $progress).css("width", progress+"%");
+        }
+
+      });
     },
     subscribe: function() {
       new App.dialogs.Subscribe();

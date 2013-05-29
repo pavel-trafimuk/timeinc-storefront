@@ -38,7 +38,18 @@
       new App.dialogs.Subscribe();
     },
     open_preview: function() {
-      this.folio.view_or_preview();
+      var dialog = new App.dialogs.WelcomeDownloading(),
+          $progress = dialog.$(".progress");
+      
+      this.folio.view_or_preview({
+        complete: function() {
+          $progress.attr("data-label", "Opening Issue…");
+        },
+        download_progress: function(progress) {
+          $progress.attr("data-label", "Downloading…");
+          $(".progress-bar", $progress).css("width", progress+"%");
+        }
+      });
     },
     open_wes: function() {
       location.href = settings.upgradeSubscriptionUrl;

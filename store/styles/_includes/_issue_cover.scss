@@ -3,32 +3,35 @@ $progress_bar_height: 5px;
 .issue-cover {
     position: relative;
     img { vertical-align: top; }
-    .progress-bar { display: none; }
 
-    &.progress::before {
-        text-align: left;
-        content: attr(data-label);
-        font-size: 14px;
-        display: block;
-        position: absolute;
-        bottom: 0; left: 0; right: 0;
-        color: #fff;
-        background: rgba(0,0,0,0.6);
-        padding: 4px 10px 6px;
-        z-index: 3;
-        font-weight: bold;
-        border-bottom: $progress_bar_height solid #000;
-    }
-    &.progress .progress-bar {
-        display: block;
-        position: absolute;
-        left: 0px; bottom: 0px;
-        height: $progress_bar_height;
-        width: 1%; 
-        border: 1px solid darken($PROGRESS_BAR_COLOR, 5%);
-        border-top: 1px solid lighten($PROGRESS_BAR_COLOR, 5%);
-        background: $PROGRESS_BAR_COLOR;
-        z-index: 4;
-        -webkit-box-sizing: border-box;
-    }
+}
+.progress-bar { display: none; }
+
+.progress {
+  &::before {
+    text-align: left;
+    content: attr(data-label);
+    font-size: 14px;
+    display: block;
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    color: #fff;
+    background: rgba(0,0,0,0.6);
+    padding: 4px 10px 6px;
+    z-index: 3;
+    font-weight: bold;
+    border-bottom: $progress_bar_height solid #000;
+  }
+  .progress-bar {
+    display: block;
+    position: absolute;
+    left: 0px; bottom: 0px;
+    height: $progress_bar_height;
+    width: 1%; 
+    border: 1px solid darken($PROGRESS_BAR_COLOR, 5%);
+    border-top: 1px solid lighten($PROGRESS_BAR_COLOR, 5%);
+    background: $PROGRESS_BAR_COLOR;
+    z-index: 4;
+    -webkit-box-sizing: border-box;
+  }
 }
