@@ -73,6 +73,9 @@ building() {
   cp -a $BUILDING $DEVDIR
   mkdir $DEVDIR/lib
 }
+render_in_place() {
+  MAG_CODE=$TITLE REMOTE_ASSET_PREFIX=$REMOTE_ASSET_PREFIX python bin/render_index.py "$1" "$1"
+}
 compile() {
   compass compile "$DEVDIR/styles/"
   mv "$DEVDIR/css/$TITLE.css" "$DEVDIR/css/main.css"
@@ -82,7 +85,7 @@ compile() {
   MAG_CODE=$TITLE python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.dev.html" "lib/AdobeLibraryAPI.js" ${DEVJSFILES[@]}
 
   for BANNER in $(find "$DEVDIR/banners/" -iname "*.html"); do
-    MAG_CODE=$TITLE REMOTE_ASSET_PREFIX=$REMOTE_ASSET_PREFIX python bin/render_index.py "$BANNER" "$BANNER" 
+    render_in_place "$BANNER"
   done
 
   mv $DEVDIR/index.dev.html $DEVDIR/index.html
@@ -113,10 +116,14 @@ END
 
   cp -r $DEVDIR/banners $DEPLOYDIR
   
-  MAG_CODE=$TITLE REMOTE_ASSET_PREFIX=$REMOTE_ASSET_PREFIX python bin/render_index.py "$DEVDIR/lucie-library.html" "$DEPLOYDIR/lucie-library.html"
+  render_in_place "$DEPLOYDIR/lucie-library.html"
 
   cp -r myaccount $DEPLOYDIR
-  MAG_CODE=$TITLE REMOTE_ASSET_PREFIX=$REMOTE_ASSET_PREFIX python bin/render_index.py "$DEPLOYDIR/myaccount/index.html" "$DEPLOYDIR/myaccount/index.html"
+  cp -r info $DEPLOYDIR
+  
+  render_in_place "$DEPLOYDIR/myaccount/embed_index.html"
+  render_in_place "$DEPLOYDIR/myaccount/index.html"
+  render_in_place "$DEPLOYDIR/info/embed_index.html"
 }
 
 ################################################################################
