@@ -8,9 +8,6 @@ else {
 
 console.log("----------  STARTING APP  ----------");
 
-// once this file loads, we can assume we're not offline
-document.write("<style>.offline-mode-message{display:none;}</style>");
-
 // disable scrolling the body element (which shows the a white background outside 
 // the document and just generally feels, not-very-appy
 $(document).on("touchmove", function(evt) { evt.preventDefault() });
