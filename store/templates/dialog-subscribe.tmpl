@@ -2,7 +2,12 @@
     <p id='title'>Subscribe to {{ settings.brandName }}</p>
     <p id='description'>{{settings.subscribeOfferTex}}</p>
     {{#each subscriptions}}
-        <div class='subscribe-button' id='{{ productId }}'>{{ duration }} subscription for {{ price }}</div>
+        <div class='subscribe-button' id='{{ productId }}'>
+            {{ duration }} subscription for {{ price }}
+            {{#if isActive}}
+                <div class='your-subscription'>Your Subscription<div class='arrow'>⤷</div></div>
+            {{/if}}
+        </div>
     {{/each}}
     <button id='cancel'>Cancel</button>
 </div>
