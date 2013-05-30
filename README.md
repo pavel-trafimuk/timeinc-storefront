@@ -42,13 +42,13 @@ to "index.html" if that is not the filename in the source dir.
 
 
 Store Tab:
-    {BRAND_CODE}-store-deploy/index.html
+    {BRAND_CODE}-store-deploy/embed_index.html
     
 Info Tab:
-    info/embed_index.html
+    {BRAND_CODE}-store-deploy/info/embed_index.html
     
 My Account Tab:
-    myaccount/embed_index.html
+    {BRAND_CODE}-store-deploy/myaccount/embed_index.html
 
 
 TIPS ON DEVELOPING ON A DEVICE
