@@ -22,7 +22,9 @@
         {{#each folio.tcm.in_this_issue}}
             <article data-destination="{{link}}">
                 <img src="{{../settings.tcmfeed_image_root}}{{image}}" class="thumbnail"><span class="next-indicator"></span>
-                <h3>{{title}}</h3>
+                <h3 class="{{#if locked_content}}locked{{/if}}">
+                    {{title}}
+                </h3>
                 <p>{{summary}}</p>
             </article>
         {{/each}}
