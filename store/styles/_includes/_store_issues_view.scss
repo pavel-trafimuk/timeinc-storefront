@@ -53,12 +53,24 @@ $issue-spacing: 3%;
     @media screen and (min-width: 1000px) {
       width: 20%;
     }
+    &.free .issue-cover::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -7px;
+      left: 4px;
+      height: 60px;
+      width: 70px;
+      background-image: url(../images/free.png);
+      background-size: contain;
+    }
   }
   .cover-img {
     width: 100%;
     height: auto;
   }
   .issue-cover {
+    position: relative;
     margin-bottom: 10px;
   }
   .issue-title {
