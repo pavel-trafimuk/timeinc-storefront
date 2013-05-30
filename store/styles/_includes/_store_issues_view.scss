@@ -42,6 +42,7 @@ $issue-spacing: 3%;
     margin-left: -1 * $issue-spacing; 
   }
   .issue {
+    position: relative;
     float: left;
     padding-left: $issue-spacing;
     -webkit-box-sizing: border-box;
@@ -53,16 +54,17 @@ $issue-spacing: 3%;
     @media screen and (min-width: 1000px) {
       width: 20%;
     }
-    &.free .issue-cover::before {
+    &.free::before {
       content: "";
       display: block;
       position: absolute;
       top: -7px;
-      left: 4px;
+      left: 22px;
       height: 60px;
       width: 70px;
       background-image: url(../images/free.png);
       background-size: contain;
+      z-index: 9;
     }
   }
   .cover-img {
