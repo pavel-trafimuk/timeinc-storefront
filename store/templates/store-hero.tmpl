@@ -28,7 +28,15 @@
         {{/each}}
     </div>
     <div class="cta">
-        <button class="buy-issue-button">Buy Issue</button>
+        <button class="buy-issue-button">
+            {{#if folio.isViewable}}
+                View Issue
+            {{else}}{{#if folio.isDownloadable}}
+                Download Issue
+            {{else}}
+                Buy Issue
+            {{/if}}{{/if}}
+        </button>
         <button class="subscribe-button">Subscribe</button>
         <div class="print-subscribers">Print Subscriber? <a href="https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=EW&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT">Get it FREE!</a></div>
     </div>
