@@ -17,7 +17,7 @@
         localStorage.app_view_count = 0;
       }
 
-      if (localStorage.app_view_count % setting.popupInterval === 0) {
+      if (localStorage.app_view_count % settings.popupInterval === 0) {
         this.subview = this.welcome_view;
       }
       else {
