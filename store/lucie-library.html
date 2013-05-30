@@ -323,21 +323,29 @@
         });
 
         function loadPage() {
+            var receipt_found = false;
             if (!visitorId) {
                 localStorage.visitorId = adobeDPS.deviceService.deviceId;
             }
             $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {
                 if (sub.isActive()) {
-                    var btn_url = lucieFormUrl + "?sender=myaccountpage";
-                    btn_url += '&receipt=' + sub.receipt;
-                    btn_url += '&productId=' + productId;
-                    btn_url += '&visitorId=' + localStorage.visitorId;
+                    var url = lucieFormUrl + "?sender=lucielibrary";
+                    url += '&receipt=' + sub.receipt;
+                    url += '&productId=' + productId;
+                    url += '&visitorId=' + localStorage.visitorId;
 
-                    $("#lucieRegistrationBtn")
-                        .attr("href", btn_url)
-                        .show();
+                    window.location.href = url;
+                    receipt_found = true;
+
+                    // break out of loop
+                    return false;
                 }                
             });
+            if (!receipt_found) {
+                setTimeout(function() { 
+                    adobeDps.dialogService.dismissCustomDialog() 
+                }, 3000);
+            }
         }
   </script>
 </body>
