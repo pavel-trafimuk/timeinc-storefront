@@ -6,7 +6,8 @@
     events: {
       "click .buy-issue-button": "buy_issue",
       "click .cover": "goto_preview",
-      "click .subscribe-button": "subscribe"
+      "click .subscribe-button": "subscribe",
+      "click .in-this-issue article": "goto_itii"
     },
     initialize: function() {
       console.log("App.views.StoreHero initializing");
@@ -58,6 +59,22 @@
     },
     subscribe: function() {
       new App.dialogs.Subscribe();
+    },
+    goto_itii: function(evt) {
+      var $this = $(evt.currentTarget),
+          duration = 500, 
+          text_display_duration = 9500;
+
+      //this.goto_preview();
+
+      $this
+        .attr("data-loading-text", "← Opening Article")
+        .transition({x: $this.outerWidth(), duration: duration})
+        .transition({x: 0, delay: text_display_duration, duration: duration});
+      
+      setTimeout(function() {
+        $this.attr("data-loading-text", "");
+      }, text_display_duration+duration*2);
     }
   });
 

@@ -70,15 +70,29 @@
     .in-this-issue {
         border-top: 1px solid rgba(0,0,0,0.45);
         border-bottom: 1px solid rgba(255,255,255,0.07);
+        overflow: hidden;
         
         article {
+            position: relative;
             border-top: 1px solid rgba(255,255,255,0.07);
             border-bottom: 1px solid rgba(0,0,0,0.45);
             position: relative;
             padding: 12px 60px 12px 100px;
             height: 50px;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        }
+        article::before {
+            content: attr(data-loading-text);
+            display: block;
+            position: absolute;
+            height: 100%; width: 100%;
+            top: 0; left: -100%;
+            text-align: left;
+            font-size: 16px;
+            -webkit-box-sizing: border-box;
+            padding-left: 20px;
+            line-height: 75px;
+            font-weight: bold;
+            color: #999;
         }
         .thumbnail {
             height: 50px; width: 80px;
@@ -105,6 +119,13 @@
             margin: 0;
             font-size: 14px;
             line-height: 16px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        p {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
     }
 
