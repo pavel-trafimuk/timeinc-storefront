@@ -65,7 +65,7 @@
       var that = this;
           $this = $(evt.currentTarget),
           duration = 500, 
-          text_display_duration = 9500;
+          text_display_duration = 2500;
 
       $this
         .attr("data-loading-text", "← Opening Article")
