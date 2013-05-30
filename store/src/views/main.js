@@ -13,7 +13,17 @@
       this.welcome_view = new App.views.Welcome;
       this.store_view = new App.views.Store;
 
-      this.subview = this.welcome_view;
+      if (typeof localStorage.app_view_count == "undefined") {
+        localStorage.app_view_count = 0;
+      }
+
+      if (localStorage.app_view_count % setting.popupInterval === 0) {
+        this.subview = this.welcome_view;
+      }
+      else {
+        this.subview = this.store_view;
+      }
+      localStorage.app_view_count += 1;
     },
     render: function() {
       this.$el.html(this.template({DEBUG:DEBUG}));
