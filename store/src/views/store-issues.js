@@ -29,10 +29,9 @@
           folio = App.api.libraryService.get_by_productId(product_id),
           $cover = $(".issue-cover", $this);
      
+      $cover.addClass("progress").attr("data-label", "Opening Issue…");
+      
       folio.view_or_preview({
-        init: function() {
-          $cover.addClass("progress").attr("data-label", "Opening Issue…");
-        },
         complete: function() {
           $cover.attr("data-label", "Opening Issue…");
         },

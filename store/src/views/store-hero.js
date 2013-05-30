@@ -11,6 +11,7 @@
     },
     initialize: function() {
       console.log("App.views.StoreHero initializing");
+      FastClick.attach(this.el);
     },
     render: function() {
       var folio = App.api.libraryService.get_touted_issue();
@@ -61,11 +62,10 @@
       new App.dialogs.Subscribe();
     },
     goto_itii: function(evt) {
-      var $this = $(evt.currentTarget),
+      var that = this;
+          $this = $(evt.currentTarget),
           duration = 500, 
           text_display_duration = 9500;
-
-      //this.goto_preview();
 
       $this
         .attr("data-loading-text", "← Opening Article")
@@ -75,6 +75,11 @@
       setTimeout(function() {
         $this.attr("data-loading-text", "");
       }, text_display_duration+duration*2);
+      
+      // open issue in a timeout so the UI can respond first
+      setTimeout(function() {
+        that.goto_preview();
+      }, 100);
     }
   });
 
