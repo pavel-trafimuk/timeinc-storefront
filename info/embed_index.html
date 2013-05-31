@@ -3,7 +3,6 @@
 <head>
   <meta charset=utf-8>
   <title></title>
-  <meta http-equiv="refresh" content="0;url=http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/{{MAG_CODE}}/pp.html">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
   <style>
@@ -18,12 +17,15 @@
     }
   </style>
   <script>
+    if (navigator.onLine) {
+      location.href = "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/{{MAG_CODE}}/pp.html?v=" + new Date().getTime();
+    }
     document.addEventListener("touchmove", function(evt) {
       evt.preventDefault();
     });
     setTimeout(function() {
       document.getElementById("offline-message").style.opacity = 1.0;
-    }, 300);
+    }, 1000);
   </script>
 </head>
 <body>
@@ -34,5 +36,7 @@
   </div>
 </body>
 </html> 
+
+
 
 
