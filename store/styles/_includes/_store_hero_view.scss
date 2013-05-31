@@ -62,7 +62,7 @@
     }
     h2 {
         font-size: 28px;
-        margin-top: 0;
+        margin-top: -3px;
         margin-bottom: 5px;
     }
 
@@ -133,7 +133,7 @@
         position: absolute;
         right: 0px; left: 0px;
         bottom: 12px;
-        padding: 0 30px 20px 5px;
+        padding: 0 30px 15px 5px;
         -webkit-box-sizing: border-box;
     }
     .cta button {
@@ -149,7 +149,7 @@
     .print-subscribers {
         font-size: 14px;
         color: #999;
-        margin-top: 12px;
+        margin-top: 10px;
         text-align: center;
         a { color: #999; }
     }
