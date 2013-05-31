@@ -70,6 +70,7 @@ $issue-spacing: 3%;
   .cover-img {
     width: 100%;
     height: auto;
+    -webkit-box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
   }
   .issue-cover {
     position: relative;
