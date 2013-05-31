@@ -71,23 +71,18 @@
     goto_itii: function(evt) {
       var that = this;
           $this = $(evt.currentTarget),
-          duration = 500, 
-          text_display_duration = 2500;
+          $msg = $this.find(".opening-issue-text");
 
-      $this
-        .attr("data-loading-text", "← Opening Article")
-        .transition({x: $this.outerWidth(), duration: duration})
-        .transition({x: 0, delay: text_display_duration, duration: duration});
-      
-      setTimeout(function() {
-        $this.attr("data-loading-text", "");
-      }, text_display_duration+duration*2);
+      $msg.addClass("show-loading");
+      setTimeout(function(){$msg.removeClass("show-loading")}, 3500);
       
       // open issue in a timeout so the UI can respond first
       setTimeout(function() {
-        that.goto_preview();
+        //that.goto_preview();
       }, 100);
     }
   });
 
 })();
+
+
