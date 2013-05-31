@@ -1,3 +1,5 @@
+console.log("----------  STARTING APP  ----------");
+
 if (DEBUG) {
   settings.asset_root = settings.dev_asset_root;  
 }
@@ -6,12 +8,12 @@ else {
   window.console = {log: $.noop}
 }
 
-console.log("----------  STARTING APP  ----------");
 
-// disable scrolling the body element (which shows the a white background outside 
-// the document and just generally feels, not-very-appy
-$(document).on("touchmove", function(evt) { evt.preventDefault() });
-$(document).on("touchmove", ".scrollable", function(evt) { evt.stopPropagation() });
+// disable scrolling the body element (which shows the a white background 
+// outside the document and just generally feels, not-very-appy
+$(document)
+  .on("touchmove", function(evt) { evt.preventDefault() })
+  .on("touchmove", ".scrollable", function(evt) { evt.stopPropagation() });
 
 App.preload();
 
