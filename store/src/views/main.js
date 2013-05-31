@@ -23,7 +23,7 @@
       else {
         this.subview = this.store_view;
       }
-      localStorage.app_view_count += 1;
+      localStorage.app_view_count = +localStorage.app_view_count + 1;
     },
     render: function() {
       this.$el.html(this.template({DEBUG:DEBUG}));
