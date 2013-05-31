@@ -31,9 +31,12 @@
       cb(); 
     },
     buy_issue: function() {
-      var $progress = this.$(".issue-cover").addClass("progress");
+      var $progress = this.$(".issue-cover").addClass("progress"),
+          $curl = this.$(".page-curl");
+
+      $curl.hide();
       $progress.attr("data-label", "Purchasing Issue…");
-      this.$(".page-curl").fadeOut();
+      
       App.api.libraryService.get_touted_issue().purchase_and_download({
         complete: function() {
           $progress.attr("data-label", "Opening Issue…");
@@ -41,6 +44,10 @@
         download_progress: function(progress) {
           $progress.attr("data-label", "Downloading…");
           $(".progress-bar", $progress).css("width", progress+"%");
+        },
+        cancelled: function() {
+          $progress.attr('data-label', '').removeClass("progress");
+          $curl.show();
         }
       });
     },

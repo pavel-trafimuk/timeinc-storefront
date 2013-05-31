@@ -35,9 +35,13 @@
                 View Issue
             {{else}}{{#if folio.isDownloadable}}
                 Download Issue
-            {{else}}
+            {{else}}{{#if folio.isFree}}
+                Download Issue
+            {{else}}{{#if folio.isPurchasable}}
                 Buy Issue
-            {{/if}}{{/if}}
+            {{else}}
+                Unavailable
+            {{/if}}{{/if}}{{/if}}{{/if}}
         </button>
         <button class="subscribe-button">Subscribe</button>
         <div class="print-subscribers">Print Subscriber? <a href="https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=EW&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT">Get it FREE!</a></div>
