@@ -85,6 +85,7 @@ $issue-spacing: 3%;
   }
 
   // Hard-coding the cover-img sizes at certain screen sizes is an optimization
+  // if you change the layout, these values will need to also be fixed
   @media screen and (width: 768px) {
     .cover-img {
       width: 161px;
