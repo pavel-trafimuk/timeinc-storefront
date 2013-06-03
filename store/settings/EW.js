@@ -9,6 +9,7 @@ window.settings = {
     "brandCode"                  : "EW",
     "schedule"                   : "weekly",
     "popupInterval"              : 5,
+    "adobeAppId"                 : "72c6d01e1eb34f07bf2d2c31643f0646",
 
 
     // ************************************************************  
