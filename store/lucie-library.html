@@ -133,7 +133,11 @@
 
     -->
     </style>
-    <script src="lib/AdobeLibraryAPI.js"></script>
+    <script>
+      if (!/dev\=true/.test(location.search)) {
+        document.write("<scr"+"ipt src='lib/AdobeLibraryAPI.js'></scr"+"ipt>");
+      }
+    </script>
     <script src="lib/jquery.js"></script> 
     <script src="settings/{{MAG_CODE}}.js"></script>
     <script src="settings/settings_loader.js"></script>
@@ -317,9 +321,12 @@
             subsProductId = "";
             
         $(function() {
-            adobeDPS.initializationComplete.addOnce(function(){
-                loadPage();
-            });
+            adobeDPS.initializationComplete.addOnce(loadPage);
+
+            // if the receipt isn't found within 30 seconds, give up
+            setTimeout(function() {
+                adobeDPS.dialogService.dismissCustomDialog();
+            }, 30000);
         });
 
         function loadPage() {
@@ -341,12 +348,9 @@
                     return false;
                 }                
             });
-            if (!receipt_found) {
-                setTimeout(function() { 
-                    adobeDps.dialogService.dismissCustomDialog() 
-                }, 3000);
-            }
+            if (!receipt_found) setTimeout(loadPage, 1000);
         }
   </script>
 </body>
 </html>
+
