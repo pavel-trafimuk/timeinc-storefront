@@ -7,7 +7,7 @@
 
     },
     initialize: function() {
-      console.log("App.views.Store initializing");
+      console.log("App.views.Store.initialize()");
       this.hero_view = new App.views.StoreHero();
       this.issues_view = new App.views.StoreIssues();
       this.$el.addClass("scrollable");
@@ -23,8 +23,8 @@
       var that = this,
           cb = cb || $.noop;
       async.parallel([
-          function(cb) { this.hero_view.animate(cb) },
-          function(cb) { this.issues_view.animate(cb) }
+          function(cb) { that.hero_view.animate(cb) },
+          function(cb) { that.issues_view.animate(cb) }
       ], cb);
     }
   });
