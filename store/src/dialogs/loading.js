@@ -20,7 +20,7 @@ App.dialogs.Loading = Backbone.View.extend({
   },
   open: function() {
     console.log("App.dialogs.Loading.open()");
-    this.$(".loading").addClass("pop");
+    this.$(".loading-overlay").addClass("pop");
   }
 });
 App.loading = function(is_loading) {
