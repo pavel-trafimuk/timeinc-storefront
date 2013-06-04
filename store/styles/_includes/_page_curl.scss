@@ -7,11 +7,13 @@
     .curl-text {
         position: absolute; bottom: 0; right: 0;
         height: 36px; width: 60px;
-        font-size: 12px;
+        font-size: 14px;
+        line-height: 14px;
         text-align: right;
         font-weight: bold;
         text-transform: uppercase;
-        color: #fff;
+        font-family: $HEADLINE_FONT;
+        color: #eee;
         -webkit-mask-image: url('../images/mask.gif');
         -webkit-mask-repeat: no-repeat;
         padding: 38px 6px 0 0;
