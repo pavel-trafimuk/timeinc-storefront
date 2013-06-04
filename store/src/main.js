@@ -19,6 +19,7 @@ App.preload();
 
 $(function() {
   console.log("dom ready");
+  App.loading(true);
 
   // make click events fire at touchstart (https://github.com/ftlabs/fastclick)
   FastClick.attach(document.body);
@@ -38,8 +39,12 @@ $(function() {
     APIWrapper(App._raw_api, function(wrapped_api) {
       App.api = wrapped_api;
       
-      // launch the app
-      new App.views.Main().render();
+      App.api.libraryService._update_if_empty().then(function() {
+        // launch the app
+        new App.views.Main().render(function() {
+          App.loading(false);
+        });
+      });
     });
   });
 

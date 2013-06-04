@@ -25,11 +25,11 @@
       }
       localStorage.app_view_count = +localStorage.app_view_count + 1;
     },
-    render: function() {
+    render: function(cb) {
       this.$el.html(this.template({DEBUG:DEBUG}));
       
       this.subview.render().$el.appendTo(this.el);
-      this.subview.animate();
+      this.subview.animate(cb||$.noop);
     },
     goto_store: function() {
       this.subview = this.store_view;

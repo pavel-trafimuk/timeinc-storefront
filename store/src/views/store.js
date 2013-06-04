@@ -22,9 +22,10 @@
     animate: function(cb) {
       var that = this,
           cb = cb || $.noop;
-      this.hero_view.animate();
-      this.issues_view.animate();
-      cb(); 
+      async.parallel([
+          function(cb) { this.hero_view.animate(cb) },
+          function(cb) { this.issues_view.animate(cb) }
+      ], cb);
     }
   });
 
