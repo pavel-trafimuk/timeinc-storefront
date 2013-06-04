@@ -71,14 +71,15 @@
     goto_itii: function(evt) {
       var that = this;
           $this = $(evt.currentTarget),
-          $msg = $this.find(".opening-issue-text");
+          $msg = $this.find(".opening-issue-text"),
+          dossier_id = $this.data("destination");
 
       $msg.addClass("show-loading");
       setTimeout(function(){$msg.removeClass("show-loading")}, 3500);
       
       // open issue in a timeout so the UI can respond first
       setTimeout(function() {
-        //that.goto_preview();
+        App.api.libraryService.get_touted_issue().goto_dossier(dossier_id);
       }, 100);
     }
   });
