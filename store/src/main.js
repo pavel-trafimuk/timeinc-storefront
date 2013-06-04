@@ -38,12 +38,9 @@ $(function() {
     
     APIWrapper(App._raw_api, function(wrapped_api) {
       App.api = wrapped_api;
-      
-      App.api.libraryService._update_if_empty().then(function() {
-        // launch the app
-        new App.views.Main().render(function() {
-          App.loading(false);
-        });
+      // launch the app
+      new App.views.Main().render(function() {
+        App.loading(false);
       });
     });
   });
