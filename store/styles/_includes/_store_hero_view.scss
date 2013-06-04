@@ -2,8 +2,9 @@
 @import "_includes/_buttons.scss";
 @import "_includes/_text_utils.scss";
 
+$HERO_BG_COLOR: #282d2e;
 .store-hero-view {
-    background: #282d2e;
+    background: $HERO_BG_COLOR;
     padding: 30px 20px;
     position: relative;
     -webkit-transform: translate3d(0,0,0);
@@ -85,7 +86,7 @@
                 display: block;
                 position: absolute;
                 height: 100%; width: 100%;
-                background: rgba(30,30,30,0.95);
+                background: $HERO_BG_COLOR;
                 top: 0; left: 0;
                 text-align: left;
                 font-size: 16px;
@@ -185,3 +186,4 @@
   85% { opacity: 1; left: 0;} 
   to { opacity: 0; left: -50%;}
 }
+
