@@ -18,7 +18,7 @@
         "storeUnavailableIssueBtn"   : "Unavailable",
         
         // Messaging
-        "heroHeading"                : "In This Week’s Issue",
+        "heroHeading"                : "In This " + (settings.schedule == "weekly" ? "Week" : "Month") + "’s Issue",
         
 
         // ************************************************************  
