@@ -27,21 +27,23 @@
       
       async.parallel([
         function(cb) { 
-          App.preload.img(covers[0], _.partial(cb, null)) 
+          App.preload.img(covers[0], function() {
+            that.$(".cover-img-only").show();
+            cb(null);
+          })
         },
-        function(cb) { 
-          App.preload.img(covers[1], _.partial(cb, null)) 
-        }
+        function(cb) { App.preload.img(covers[1], _.partial(cb, null)) }
       ], function() {
-          that.$(".cover-with-text").transition({duration: 1500, delay: 500, opacity: 1.0});
-          that.$(".buttons").transition({duration: 600, delay: 1800, y: 0});
-          that.$(".already-have-account").transition({duration: 1000, delay: 3600, opacity: 1.0});
+          var init_delay = covers[0] ? 1000 : 0;
+          that.$(".cover-with-text").transition({duration: 1500, delay: init_delay, opacity: 1.0});
+          that.$(".buttons").transition({duration: 600, delay: init_delay+1300, y: 0});
+          that.$(".already-have-account").transition({duration: 1000, delay: init_delay+3100, opacity: 1.0});
         
           setTimeout(function() {
             that.$(".curl-text, .curl-obj").addClass("animated");
-          }, 2600);
+          }, init_delay+2100);
         
-          setTimeout(cb, 3200);
+          setTimeout(cb, init_delay+2700);
       });
     },
     subscribe: function() {
