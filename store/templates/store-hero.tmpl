@@ -16,7 +16,7 @@
             —
             <span class="issue-price">{{folio.price}}</span>    
         </div>
-        <h2>In this week’s issue</h2>
+        <h2>{{settings.heroHeading}}</h2>
     </header>
     <div class="in-this-issue">
         {{#each folio.tcm.in_this_issue}}
@@ -33,18 +33,18 @@
     <div class="cta">
         <button class="buy-issue-button">
             {{#if folio.isViewable}}
-                View Issue
+                {{../settings.storeViewIssueBtn}}
             {{else}}{{#if folio.isDownloadable}}
-                Download Issue
+                {{../settings.storeDownloadIssueBtn}}
             {{else}}{{#if folio.isFree}}
-                Download Issue
+                {{../settings.storeDownloadIssueBtn}}
             {{else}}{{#if folio.isPurchasable}}
-                Buy Issue
+                {{../settings.storeBuyIssueBtn}}
             {{else}}
-                Unavailable
+                {{../settings.storeUnavailableIssueBtn}}
             {{/if}}{{/if}}{{/if}}{{/if}}
         </button>
-        <button class="subscribe-button">Subscribe</button>
+        <button class="subscribe-button">{{settings.storeSubscribeBtn}}</button>
         <div class="print-subscribers">Print Subscriber? <a href="https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=EW&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT">Get it FREE!</a></div>
     </div>
 </div>
