@@ -4,6 +4,8 @@
   <title>Subscription Banner</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi"/>
+  <script src="../../settings/{{MAG_CODE}}.js"></script>
+  <script src="../../settings/settings_loader.js"></script>
   <style>
     /* Banner CSS for iOS iPad devices with horz/vert orientations */
     html, body {
@@ -26,18 +28,15 @@
       background: transparent url('logo.png') no-repeat 50% 50%;
       -webkit-background-size: contain;
     }
- 
-    a {
-      position:absolute;
-      width: 100%;
-      height: 100%;
-    }
   </style>
 </head>
  
 <body>
-      <div id="banner">  
-          <a href="https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG={{MAG_CODE}}&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT"></a>
-      </div>
-  </body>
+  <div id="banner"></div>
+  <script>
+    document.getElementById("banner").addEventListener("click", function() {
+      location.href = settings.popupActivateButtonURL;
+    });
+  </script>
+</body>
 </html>
