@@ -78,7 +78,8 @@ render_in_place() {
 }
 compile() {
   compass compile "$DEVDIR/styles/"
-  mv "$DEVDIR/css/$TITLE.css" "$DEVDIR/css/main.css"
+  mv "$DEVDIR/css/$TITLE-store.css" "$DEVDIR/css/main.css"
+  mv "$DEVDIR/css/$TITLE-myaccount.css" "$DEVDIR/css/myaccount.css"
 
   # render the index.html.tmpl file
   MAG_CODE=$TITLE python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.mockapi.dev.html" ${DEVJSFILES[@]}
@@ -106,6 +107,7 @@ END
   # copy css and assets
   mkdir $DEPLOYDIR/css
   cp $DEVDIR/css/main.css $DEPLOYDIR/css/main.css
+  cp $DEVDIR/css/myaccount.css $DEPLOYDIR/css/myaccount.css
 
   mkdir $DEPLOYDIR/images
   cp $DEVDIR/images/*.* $DEPLOYDIR/images
