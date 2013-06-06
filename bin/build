@@ -106,21 +106,27 @@ END
   # copy css and assets
   mkdir $DEPLOYDIR/css
   cp $DEVDIR/css/main.css $DEPLOYDIR/css/main.css
-  cp -r $DEVDIR/images $DEPLOYDIR/images
+
+  mkdir $DEPLOYDIR/images
+  cp $DEVDIR/images/*.* $DEPLOYDIR/images
+  cp -r $DEVDIR/images/$TITLE $DEPLOYDIR/images/$TITLE
     
   MAG_CODE=$TITLE CSS_HASH=$(md5 -q $BUILDROOT/$DEPLOYDIR/css/main.css) python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.prod.html" "main.min.js?v=$(md5 -q $BUILDROOT/$DEPLOYDIR/main.min.js)"
   cp $DEVDIR/index.prod.html $DEPLOYDIR/index.html
 
   cp -r lib $DEPLOYDIR/lib
-  cp -r $DEVDIR/settings $DEPLOYDIR
+
+  mkdir $DEPLOYDIR/settings
+  cp -r $DEVDIR/settings/${TITLE}.js $DEPLOYDIR/settings
+  cp -r $DEVDIR/settings/settings_loader.js $DEPLOYDIR/settings
 
   cp -r $DEVDIR/banners/$TITLE $DEPLOYDIR/banners
   
   cp $DEVDIR/lucie-library.html $DEPLOYDIR
   cp $DEVDIR/embed_index.html $DEPLOYDIR
 
-  cp -r myaccount $DEPLOYDIR
-  cp -r info $DEPLOYDIR
+  cp -r $DEVDIR/myaccount $DEPLOYDIR
+  cp -r $DEVDIR/info $DEPLOYDIR
   
   render_in_place "$DEPLOYDIR/lucie-library.html"
   render_in_place "$DEPLOYDIR/embed_index.html"
