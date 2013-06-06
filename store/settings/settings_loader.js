@@ -42,5 +42,10 @@
 
     ihatethelastcomma: true};
 
-    window.settings = _.extend({}, default_settings, window.settings);
+    // taken loosely from underscore.js's extend() method because this file
+    // can't have any external dependencies
+    for (var prop in window.settings) {
+      default_settings[prop] = window.settings[prop];
+    }
+    window.settings = default_settings;
 })();
