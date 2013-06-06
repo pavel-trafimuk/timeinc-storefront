@@ -1,6 +1,8 @@
 (function() {
-    // the reason for this interface is so we can load settings
-    // via ajax like the existing apps
+    // THIS FILE CAN NOT HAVE ANY DEPENDENCIES OTHER THAN THE BRAND SETTINGS
+
+    // the reason for this interface is so we can set reasonable defaults
+    // when we introduce new settings to the app.
     var default_settings = {
         "omniture_account": null,
         
@@ -25,6 +27,7 @@
         // URLS
         // ************************************************************  
         "signInForgotPasswordUrl"    : "https://subscription.timeinc.com/storefront/universalForgotPassword.ep?magcode=" + settings.brandCode,
+        "customerServiceUrl"         : "https://secure.customersvc.com/servlet/Show?WESPAGE=home.html&MSRSMAG=" + settings.brandCode + "&app_launch_key=08212099",
 
         "DEV_TCM_FEED": "http://ecom-dev01-app.usdlls2.savvis.net:10400/html/v25app/data/" + settings.brandCode + ".json",
         "PRODUCTION_TCM_FEED": "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/v25data/" + settings.brandCode + ".json",
@@ -34,8 +37,8 @@
         "adbfeed_cover_dimensions": [388, 507],
         "cover_spacer_img": "images/" + settings.brandCode + "/cover_spacer.gif",
         
-        "dev_asset_root": "./", // "http://ecom-dev01-app.usdlls2.savvis.net:10400/appstorefronts-jq/"+settings.brandCode+"/adobe/apple/ipad/v25/",
-        "prod_asset_root": "./", // "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/"+settings.brandCode+"/adobe/apple/ipad/v25/",
+        "dev_asset_root": "./",
+        "prod_asset_root": "./",
 
     ihatethelastcomma: true};
 

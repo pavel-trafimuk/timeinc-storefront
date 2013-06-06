@@ -1,4 +1,6 @@
 (function() {
+// THIS FILE CAN NOT HAVE ANY DEPENDENCIES
+
 // One of the big benefits of using a js file instead of json for settings
 // is the ability to add comments
 window.settings = {
@@ -12,6 +14,9 @@ window.settings = {
 
     // found in the adobe URL at http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "7ea9178b138a416d899803c578036a49",
+
+    "supportPhoneNumber"         : "1-866-642-1266",
+    "supportEmail"               : "digital@realsimple.customersvc.com",
 
     // ************************************************************  
     // App specific URLS

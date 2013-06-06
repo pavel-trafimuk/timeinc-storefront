@@ -40,7 +40,7 @@ background: -webkit-linear-gradient(top, #232425 53%,#020202 100%);
 #logo{
  width: 486px;
  height: 108px;
- background: url(images/myAccountBttns.gif) top left no-repeat;
+ background: url(../images/{{MAG_CODE}}/myAccountBttns.gif) top left no-repeat;
 }
 
 #lucieRegistrationBtn{
@@ -87,11 +87,11 @@ function go(URL){
 <div id="panel" style="display: none; width: 486px; height: 648px; background-color:white;margin:0 auto 0 auto;position: fixed;">
 
  <div id="logo"></div>
- <a href="https://subscription.timeinc.com/storefront/universalForgotPassword.ep?magcode=EW" target="_blank"><span class="singleLine">FORGOT PASSWORD</span></a>
- <a href="https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=EW&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT" target="_blank"><span class="line1">PRINT SUBSCRIBERS</span><br /><span class="line2">TAP HERE</span></a>
- <a id="lucieRegistrationBtn" href="" onclick="go(this.href);return false;"><span class="line1">COMPLETE ACCOUNT SETUP</span><br /><span class="line2">FOR IPAD SUBSCRIBERS</span></a>
- <a id="restoreIssues" href="http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/EW/adobe/apple/ipad/v25/myaccount/restoreissues.html" target="_blank"><span class="singleLine">RESTORE ISSUES</span></a>
- <a href="https://secure.customersvc.com/servlet/Show?WESPAGE=ew/home.html&MSRSMAG=EW&app_launch_key=08212099" target="_blank"><span class="singleLine">CUSTOMER SERVICE</span></a>
+ <a onclick="go(settings.signInForgotPasswordUrl)" href="#" target="_blank"><span class="singleLine">FORGOT PASSWORD</span></a>
+ <a onclick="go(settings.popupActivateButtonUrl)" href="#" target="_blank"><span class="line1">PRINT SUBSCRIBERS</span><br /><span class="line2">TAP HERE</span></a>
+ <a id="lucieRegistrationBtn" href="#url-generated-by-js"><span class="line1">COMPLETE ACCOUNT SETUP</span><br /><span class="line2">FOR IPAD SUBSCRIBERS</span></a>
+ <a id="restoreIssues" href="restoreissues.html" target="_blank"><span class="singleLine">RESTORE ISSUES</span></a>
+ <a onclick="go(settings.customerServiceUrl)" href="#" target="_blank"><span class="singleLine">CUSTOMER SERVICE</span></a>
 		
 </div>
 
@@ -99,7 +99,7 @@ function go(URL){
 	<!-- SiteCatalyst -->
     <div style="display:none;">
         <!-- PROD s_code -->
-        <script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/omniture/EW/s_code.js"></script>
+        <script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/omniture/{{MAG_CODE}}/s_code.js"></script>
         
         <script type="text/javascript">
             function dateFormat(d) {

@@ -132,6 +132,7 @@ END
   render_in_place "$DEPLOYDIR/embed_index.html"
   render_in_place "$DEPLOYDIR/myaccount/embed_index.html"
   render_in_place "$DEPLOYDIR/myaccount/index.html"
+  render_in_place "$DEPLOYDIR/myaccount/restoreissues.html"
   render_in_place "$DEPLOYDIR/info/embed_index.html"
 }
 
