@@ -9,7 +9,9 @@ window.settings = {
     "brandCode"                  : "SM",
     "schedule"                   : "monthly",
     "popupInterval"              : 3,
-    "adobeAppId"                 : "",
+
+    // found in the adobe URL at http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
+    "adobeAppId"                 : "7ea9178b138a416d899803c578036a49",
 
     // ************************************************************  
     // App specific URLS
