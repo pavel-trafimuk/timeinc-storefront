@@ -21,19 +21,29 @@
       return this;
     },
     animate: function(cb) {
+      cb = cb || $.noop;
       var that = this,
-          cb = cb || $.noop;
+          covers = this.folio.get_welcome_imgs();
       
-      that.$(".cover-with-text").transition({duration: 1500, delay: 500, opacity: 1.0});
-      that.$(".buttons").transition({duration: 600, delay: 1800, y: 0});
-      that.$(".already-have-account").transition({duration: 1000, delay: 3600, opacity: 1.0});
-      
-      setTimeout(function() {
-        that.$(".curl-text, .curl-obj").addClass("animated");
-      }, 2600);
-      
-      setTimeout(cb, 3200);
-     },
+      async.parallel([
+        function(cb) { 
+          App.preload.img(covers[0], _.partial(cb, null)) 
+        },
+        function(cb) { 
+          App.preload.img(covers[1], _.partial(cb, null)) 
+        }
+      ], function() {
+          that.$(".cover-with-text").transition({duration: 1500, delay: 500, opacity: 1.0});
+          that.$(".buttons").transition({duration: 600, delay: 1800, y: 0});
+          that.$(".already-have-account").transition({duration: 1000, delay: 3600, opacity: 1.0});
+        
+          setTimeout(function() {
+            that.$(".curl-text, .curl-obj").addClass("animated");
+          }, 2600);
+        
+          setTimeout(cb, 3200);
+      });
+    },
     subscribe: function() {
       new App.dialogs.Subscribe();
     },

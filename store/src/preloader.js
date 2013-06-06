@@ -1,9 +1,7 @@
 
 App.preload = function(cb) {
   function img(path) {
-    var i = new Image;
-    i.src = settings.asset_root + path;
-    App.preload.imgs.push(i);
+    App.preload.img(settings.asset_root + path);
   }
 
   img("images/mask.gif");
@@ -12,4 +10,13 @@ App.preload = function(cb) {
 
   (cb||$.noop)();
 }
-App.preload.imgs = [];
+App.preload.img = function(img_url, cb) {
+  cb = cb || $.noop;
+  if (!img_url) return setTimeout(cb);
+
+  var i = new Image;
+  i.addEventListener("load", cb);
+  i.src = img_url;
+  if (i.complete) setTimeout(cb);
+};
+
