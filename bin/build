@@ -64,8 +64,8 @@ templates() {
 building() {
   BUILDING=$1
   REMOTE_ASSET_PREFIX="http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/$TITLE/adobe/apple/ipad/v25/"
-  DEVDIR=$TITLE-$BUILDING-dev
-  DEPLOYDIR=$TITLE-$BUILDING-deploy
+  DEVDIR="./-$TITLE-$BUILDING-dev"
+  DEPLOYDIR="./-$TITLE-$BUILDING-deploy"
   DEVJSFILES=()
   PRODJSFILES=()
   rm -r $DEVDIR
@@ -114,7 +114,7 @@ END
   cp -r lib $DEPLOYDIR/lib
   cp -r $DEVDIR/settings $DEPLOYDIR
 
-  cp -r $DEVDIR/banners $DEPLOYDIR
+  cp -r $DEVDIR/banners/$TITLE $DEPLOYDIR/banners
   
   cp $DEVDIR/lucie-library.html $DEPLOYDIR
   cp $DEVDIR/embed_index.html $DEPLOYDIR
@@ -158,12 +158,12 @@ templates 'templates/*.tmpl'
 js_file "settings/$TITLE.js"
 js_file 'settings/settings_loader.js'
 
-# requires settings to be loaded
-js_lib 's_code.js'
-js_lib 'tcm_omniture.js'
-
 # creates App object (which is just a namespace)
 js_file "src/app.js"
+
+# requires App object and for settings to be loaded
+js_lib 's_code.js'
+js_lib 'tcm_omniture.js'
 
 # preloads static assets (images, etc) 
 js_file 'src/preloader.js'

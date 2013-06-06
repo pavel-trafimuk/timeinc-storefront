@@ -19,9 +19,11 @@
 
       if (localStorage.app_view_count % settings.popupInterval === 0) {
         this.subview = this.welcome_view;
+        App.omniture.track_pageview("store|welcome");
       }
       else {
         this.subview = this.store_view;
+        App.omniture.track_pageview("store|home page");
       }
       localStorage.app_view_count = +localStorage.app_view_count + 1;
     },
@@ -34,6 +36,7 @@
     goto_store: function() {
       this.subview = this.store_view;
       this.render();
+      App.omniture.track_pageview("store|home page");
     },
     launch_repl: function() {
       App.debug.launch_repl();

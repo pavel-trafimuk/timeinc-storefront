@@ -3,7 +3,7 @@
 cd $(dirname $0)
 cd ..
 
-bin/build
+bin/build $@
 
 WATCHDIRS=$(find store lib -type d)
-python bin/whenchanged.py ${WATCHDIRS[@]} -c bin/build
+python bin/whenchanged.py ${WATCHDIRS[@]} -c bin/build $@
