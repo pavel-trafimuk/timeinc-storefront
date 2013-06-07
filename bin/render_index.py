@@ -24,6 +24,7 @@ tmpl = tmpl.replace("{{JS_FILES}}", js_files)
 tmpl = tmpl.replace("{{REMOTE_ASSET_PREFIX}}", prefix)
 tmpl = tmpl.replace("{{MAG_CODE}}", mag_code)
 tmpl = tmpl.replace("{{CSS_HASH}}", css_hash)
+tmpl = tmpl.replace("{{BUILD_TIME}}", str(int(time.time())))
 
 with open(out_file, "w") as f:
   f.write(tmpl)

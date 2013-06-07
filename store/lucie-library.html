@@ -12,8 +12,8 @@
       }
     </script>
     <script src="lib/jquery.js"></script> 
-    <script src="settings/{{MAG_CODE}}.js"></script>
-    <script src="settings/settings_loader.js"></script>
+    <script src="settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
+    <script src="settings/settings_loader.js?v={{BUILD_TIME}}"></script>
     
     <script type="text/javascript">
       function buttonPress(button) {
@@ -208,7 +208,8 @@
             }
             $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {
                 if (sub.isActive()) {
-                    var url = lucieFormUrl + "?sender=lucielibrary";
+                    var join_char = /\?/.test(lucieFormUrl) ? "&" : "?";
+                    var url = lucieFormUrl + join_char + "sender=lucielibrary";
                     url += '&receipt=' + sub.receipt;
                     url += '&productId=' + productId;
                     url += '&visitorId=' + localStorage.visitorId;
