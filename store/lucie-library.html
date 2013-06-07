@@ -5,7 +5,7 @@
   <title></title>
   
   <meta name="ROBOTS" content="NOINDEX,NOFOLLOW,NOARCHIVE" />
-  <link rel="stylesheet" href="./css/lucie-library.css" />
+  <link rel="stylesheet" href="css/lucie-library.css" />
     <script>
       if (!/dev\=true/.test(location.search)) {
         document.write("<scr"+"ipt src='lib/AdobeLibraryAPI.js'></scr"+"ipt>");
@@ -33,7 +33,7 @@
       }
     </script>
     
-    <script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/md5.min.js"></script>
+    <script type="text/javascript" src="//subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/md5.min.js"></script>
 </head>
 
 <body>
@@ -53,7 +53,7 @@
      
      <!-- SiteCatalyst -->
   <div style="display:none;">
-  <script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/omniture/{{MAG_CODE}}/s_code.js"></script>
+  <script type="text/javascript" src="//subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/omniture/{{MAG_CODE}}/s_code.js"></script>
     <script type="text/javascript" >
       function dateFormat(d) {
         var curr_date = d.getDate(),
@@ -188,7 +188,6 @@
   
   <script type="text/javascript"> 
         var lucieFormUrl = settings.lucieRegistrationURL,
-            visitorId = localStorage.visitorId,
             getProductId,
             subsReceipt = "",
             subsProductId = "";
@@ -204,7 +203,7 @@
 
         function loadPage() {
             var receipt_found = false;
-            if (!visitorId) {
+            if (!localStorage.visitorId) {
                 localStorage.visitorId = adobeDPS.deviceService.deviceId;
             }
             $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {

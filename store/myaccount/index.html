@@ -184,7 +184,7 @@ function go(URL){
    <script>
      $(function() {
          adobeDPS.initializationComplete.addOnce(function() {
-            if (!visitorId) {
+            if (!localStorage.visitorId) {
                 localStorage.visitorId = adobeDPS.deviceService.deviceId;
             }
             $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {
