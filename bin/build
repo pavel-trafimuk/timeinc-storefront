@@ -80,7 +80,8 @@ compile() {
   compass compile "$DEVDIR/styles/"
   mv "$DEVDIR/css/$TITLE-store.css" "$DEVDIR/css/main.css"
   mv "$DEVDIR/css/$TITLE-myaccount.css" "$DEVDIR/css/myaccount.css"
-
+  mv "$DEVDIR/css/$TITLE-lucie-library.css" "$DEVDIR/css/lucie-library.css"
+  
   # render the index.html.tmpl file
   MAG_CODE=$TITLE python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.mockapi.dev.html" ${DEVJSFILES[@]}
   MAG_CODE=$TITLE python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.dev.html" "lib/AdobeLibraryAPI.js" ${DEVJSFILES[@]}
@@ -108,6 +109,7 @@ END
   mkdir $DEPLOYDIR/css
   cp $DEVDIR/css/main.css $DEPLOYDIR/css/main.css
   cp $DEVDIR/css/myaccount.css $DEPLOYDIR/css/myaccount.css
+  cp $DEVDIR/css/lucie-library.css $DEPLOYDIR/css/lucie-library.css
 
   mkdir $DEPLOYDIR/images
   cp $DEVDIR/images/*.* $DEPLOYDIR/images

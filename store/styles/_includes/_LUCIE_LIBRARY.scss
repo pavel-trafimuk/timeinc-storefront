@@ -1,0 +1,124 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    font-size: 100%;
+    text-align: center;
+    font-family: Helvetica;
+  }
+  
+  #mask {
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background: #000;
+  }
+  
+  #container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    width:600px;
+    height: 200px;
+    margin-left: -300px;  /*half width*/
+    margin-top: -100px;  /*half height*/
+    padding: 6px;
+    -webkit-border-radius: 0.3em;
+    border-radius: 0.3em;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0.2em 0.6em;
+    background-image: none;
+    background-color: #040b0d;
+    overflow: hidden;
+  }
+  
+  .bold { font-weight: bolder; }
+  .normal { font-weight: normal; }
+  .small { font-size: 0.875em; }
+  .paragraph { width: 90%; }
+  .note { width: 80%; }
+  .buttons { width: 100%; font-size: 1.1em; }
+      
+  a {
+    text-decoration: underline;
+    color: #000000;
+  }
+
+    
+  .x-toolbar-dark {
+    background-image: none;
+    background-color: #236b87;
+    background-image: $LUCIE_TOOLBAR_BG;
+    border-color: black;
+  }
+  
+  .main-popup-toolbar {
+    height: auto;
+    color: black;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 10px;
+  }
+  
+  .brand-logo {
+    background-image: url('../images/'+$BRAND_CODE+'/lucie-brand-logo.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .lucie-complete-header {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .lucie-complete-body {
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .lucie-complete-inner {
+    width: 100%;
+    height: 100%;
+    max-height: 135px;
+    background: #ffffff;
+    padding-top: 5px;
+  }
+  
+  
+
+  .lucie-complete-button {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+  }
+  
+
+  .sf-button-grey {
+    margin: 10px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 2px solid #4e5e65;
+    color: #fff;
+    text-align: center;
+    font-size: 1.1em;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4e5e65), color-stop(100%, #2d383f));
+    background-image: -webkit-linear-gradient(#4e5e65, #2d383f);
+    background-image: linear-gradient(#4e5e65, #2d383f);
+    text-shadow: 0px 1px 1px #0d1012;
+  }
+
+  .sf-button-pressed-grey {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2d383f), color-stop(100%, #4e5e65));
+    background-image: -webkit-linear-gradient(#2d383f, #4e5e65);
+    background-image: linear-gradient(#2d383f, #4e5e65);
+  }
+
