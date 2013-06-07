@@ -181,6 +181,20 @@ function go(URL){
         </script>
    </div>
    
+   <script>
+     $(function() {
+         adobeDPS.initializationComplete.addOnce(function() {
+            if (!visitorId) {
+                localStorage.visitorId = adobeDPS.deviceService.deviceId;
+            }
+            $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {
+                if (sub.isActive()) {
+                    $("#lucieRegistrationBtn").show();
+                }
+            });
+         });
+     });
+   </script>
 <script type="text/javascript" >
     setPos();
     window.onorientationchange = setPos;
