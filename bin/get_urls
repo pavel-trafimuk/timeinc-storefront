@@ -19,10 +19,10 @@ print_urls() {
 echo
 echo "URLS for $TITLE:"
 echo
-echo "Prod urls:"
+echo "Dev urls:"
 print_urls "http://ecom-dev01-app.usdlls2.savvis.net:10400/appstorefronts-jq/${TITLE}/adobe/apple/ipad/v25/"
 echo
-echo "Dev urls:"
+echo "Prod urls:"
 print_urls "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/${TITLE}/adobe/apple/ipad/v25/" 
 echo
 
