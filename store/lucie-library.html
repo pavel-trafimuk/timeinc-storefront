@@ -190,13 +190,13 @@
             $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {
                 if (sub.isActive()) {
                     var join_char = /\?/.test(lucieFormUrl) ? "&" : "?";
-                    var url = lucieFormUrl + join_char + "sender=lucielibrary";
+                    var url = lucieFormUrl + join_char + "sender=lucielibrary&t="+(new Date().getTime());
                     url += '&receipt=' + sub.receipt;
                     url += '&productId=' + productId;
                     url += '&visitorId=' + localStorage.visitorId;
 
                     setTimeout(function() {
-                        window.location = url;
+                        window.location.href = url;
                     }, 250);
                     receipt_found = true;
 
