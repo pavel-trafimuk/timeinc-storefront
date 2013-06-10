@@ -14,25 +14,6 @@
     <script src="lib/jquery.js"></script> 
     <script src="settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
     <script src="settings/settings_loader.js?v={{BUILD_TIME}}"></script>
-    
-    <script type="text/javascript">
-      function buttonPress(button) {
-        button.className = "sf-button-grey sf-button-pressed-grey";
-      }
-      
-      function buttonRelease(button) {
-        button.className = "sf-button-grey";
-      }
-    
-      function callContinue() {
-        if (typeof adobeDPS !== "undefined") {
-          adobeDPS.dialogService.dismissCustomDialog();
-        } else {
-          window.close();
-        }
-      }
-    </script>
-    
     <script type="text/javascript" src="//subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/md5.min.js"></script>
 </head>
 
@@ -214,7 +195,9 @@
                     url += '&productId=' + productId;
                     url += '&visitorId=' + localStorage.visitorId;
 
-                    window.location.href = url;
+                    setTimeout(function() {
+                        window.location = url;
+                    }, 250);
                     receipt_found = true;
 
                     // break out of loop

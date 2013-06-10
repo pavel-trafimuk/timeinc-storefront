@@ -21,7 +21,7 @@ window.settings = {
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
-    "lucieRegistrationURL"       : "https://subscription.realsimple.com/storefront/site/sm-lucie-customer-creation-itunes201211.html?r26=true",
+    "lucieRegistrationURL"       : "https://subscription.realsimple.com/storefront/site/sm-lucie-customer-creation-itunes201306.html",
     "popupActivateButtonUrl"     : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=SM&MSDDMOFF=ABTF&MSDTRACK=KFSP&MSDVNDID=TBLT",
     "upgradeSubscriptionUrl"     : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=SM&MSDDMOFF=ABTF&MSDTRACK=KFSP&MSDVNDID=TBLT",
     "licenceAgreementUrl"        : "http://www.timeinc.net/subs/privacy/eula/sm/agreement.html",
