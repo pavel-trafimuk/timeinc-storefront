@@ -7,7 +7,8 @@
       "click .buy-issue-button": "buy_issue",
       "click .cover": "goto_preview",
       "click .subscribe-button": "subscribe",
-      "click .in-this-issue article": "goto_itii"
+      "click .in-this-issue article": "goto_itii",
+      "click .print-subscribers": "print_subs_getitfree"
     },
     initialize: function() {
       console.log("App.views.StoreHero initializing");
@@ -29,6 +30,10 @@
       var that = this,
           cb = cb || $.noop;
       cb(); 
+    },
+    print_subs_getitfree: function(evt) {
+      evt.preventDefault();
+      location.href = settings.WesPageURL;
     },
     buy_issue: function() {
       var $progress = this.$(".issue-cover").addClass("progress"),

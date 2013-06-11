@@ -40,6 +40,14 @@
         "dev_asset_root": "./",
         "prod_asset_root": "./",
 
+
+        // ************************************************************  
+        // BACKWARDS COMPATIBILITY (deprecated settings)
+        // ************************************************************  
+        "popupActivateButtonUrl": settings.WesPageURL,
+        "upgradeSubscriptionUrl": settings.WesPageURL,
+        
+
     ihatethelastcomma: true};
 
     // taken loosely from underscore.js's extend() method because this file

@@ -66,7 +66,7 @@
       });
     },
     open_wes: function() {
-      location.href = settings.upgradeSubscriptionUrl;
+      location.href = settings.welcomeScreenWesURL;
     }
   });
 

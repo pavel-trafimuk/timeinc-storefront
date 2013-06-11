@@ -22,11 +22,12 @@ window.settings = {
     // App specific URLS
     // ************************************************************  
     "lucieRegistrationURL"       : "https://subscription.realsimple.com/storefront/site/sm-lucie-customer-creation-itunes201306.html",
-    "popupActivateButtonUrl"     : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=SM&MSDDMOFF=ABTF&MSDTRACK=KFSP&MSDVNDID=TBLT",
-    "upgradeSubscriptionUrl"     : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=SM&MSDDMOFF=ABTF&MSDTRACK=KFSP&MSDVNDID=TBLT",
+    "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/sm/login.jsp&MSRSMAG=SM&CGI=T&MSDTRACK=IPSP&MSDDMOFF=ABTF&MSDVNDID=TBLT",
+    "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/sm/login.jsp&MSRSMAG=SM&CGI=T&MSDTRACK=IPAD&MSDDMOFF=ABTF&MSDVNDID=TBLT",
     "licenceAgreementUrl"        : "http://www.timeinc.net/subs/privacy/eula/sm/agreement.html",
     "privacyPolicyUrl"           : "https://subscription.timeinc.com/storefront/privacy/realsimple/generic_privacy_new.html?dnp-source=H",
     "termsOfUseUrl"              : "https://subscription.timeinc.com/storefront/privacy/realsimple/privacy_terms_service.html",
+
     "adobeFeedUrl"               : "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/adobe-feeds/com.timeinc.realsimple.ipad.inapp.xml",
     "adobeFeedUrl_dev"           : "http://ecom-dev01-app.usdlls2.savvis.net:10500/assets/appstorefronts-jq/adobe-feeds/com.timeinc.realsimple.ipad.inapp.xml",
     
