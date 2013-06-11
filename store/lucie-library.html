@@ -184,15 +184,20 @@
 
         function loadPage() {
             var receipt_found = false;
-            if (!localStorage.visitorId) {
-                localStorage.visitorId = adobeDPS.deviceService.deviceId;
-            }
+            localStorage.visitorId = adobeDPS.deviceService.deviceId;
+
             $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {
                 if (sub.isActive()) {
-                    var join_char = /\?/.test(lucieFormUrl) ? "&" : "?";
-                    var url = lucieFormUrl + join_char + "sender=lucielibrary&t="+(new Date().getTime());
-                    url += '&receipt=' + sub.receipt;
-                    url += '&productId=' + productId;
+                    var join_char = /\?/.test(lucieFormUrl) ? "&" : "?",
+                        url = lucieFormUrl + join_char + "sender=lucielibrary&t="+(new Date().getTime());
+
+                    // Looks like: ewoJInNpZ25hdHVyZSIgPSAiQWh5Y05VcEUxNEJPanZZks... (~3000 more chars)
+                    url += '&receipt=' + sub.receipt.token;
+
+                    // Looks like: com.timeinc.realsimple.ipad.subs.3
+                    url += '&productId=' + sub.productId;
+
+                    // (retrieved above) looks like: CECC9FEA-5466-4B02-B7D7-F6140A4FCE14
                     url += '&visitorId=' + localStorage.visitorId;
 
                     setTimeout(function() {
