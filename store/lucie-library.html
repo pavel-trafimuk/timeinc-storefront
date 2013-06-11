@@ -184,7 +184,7 @@
 
         function loadPage() {
             var receipt_found = false;
-            localStorage.visitorId = adobeDPS.deviceService.deviceId;
+            localStorage.visitorId = adobeDPS.deviceService.deviceId.replace(/\-/g, '');
 
             $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {
                 if (sub.isActive()) {
@@ -197,7 +197,7 @@
                     // Looks like: com.timeinc.realsimple.ipad.subs.3
                     url += '&productId=' + sub.productId;
 
-                    // (retrieved above) looks like: CECC9FEA-5466-4B02-B7D7-F6140A4FCE14
+                    // (retrieved above) looks like: CECC9FEA54664B02B7D7F6140A4FCE14
                     url += '&visitorId=' + localStorage.visitorId;
 
                     setTimeout(function() {
