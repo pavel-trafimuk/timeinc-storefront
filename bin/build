@@ -150,6 +150,7 @@ prod_lib 'AdobeLibraryAPI.js'
 dev_lib 'MockAPI.js'
 
 js_lib 'jquery.js'
+js_lib 'md5.js'
 js_lib 'APIWrapper.js'
 js_lib 'async.js'
 js_lib 'fastclick.js'

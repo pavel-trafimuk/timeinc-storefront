@@ -24,11 +24,11 @@ function go(URL){
 }
 
 </script>
-  <script src="../lib/AdobeLibraryAPI.js"></script>
-  <script src="../lib/jquery.js"></script>
-  <script src="../settings/{{MAG_CODE}}.js"></script>
-  <script src="../settings/settings_loader.js"></script>
-<script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/md5.min.js"></script>
+  <script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
+  <script type="text/javascript" src="../lib/jquery.js"></script>
+  <script type="text/javascript" src="../settings/{{MAG_CODE}}.js"></script>
+  <script type="text/javascript" src="../settings/settings_loader.js"></script>
+  <script type="text/javascript" src="../lib/md5.js"></script>
 </head>
 
 <body bgcolor="#666666">
@@ -184,9 +184,7 @@ function go(URL){
    <script>
      $(function() {
          adobeDPS.initializationComplete.addOnce(function() {
-            if (!localStorage.visitorId) {
-                localStorage.visitorId = adobeDPS.deviceService.deviceId;
-            }
+            localStorage.visitorId = md5(adobeDPS.deviceService.deviceId);
             $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {
                 if (sub.isActive()) {
                     $("#lucieRegistrationBtn").show();
