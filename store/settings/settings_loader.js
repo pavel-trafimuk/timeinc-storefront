@@ -5,6 +5,8 @@
     // when we introduce new settings to the app.
     var default_settings = {
         "omniture_account": null,
+        "omniture_server": null,
+        "omniture_ssl_server": null,
         
         // ************************************************************  
         // All UI Text should be in the settings:

@@ -7,6 +7,8 @@ window.settings = {
 
     // General settings
     "omniture_account"           : "timagrealsimplenkdev",
+    "omniture_server"            : "metrics.realsimple.com",
+    "omniture_ssl_server"        : "smetrics.realsimple.com",
     "brandName"                  : "REAL SIMPLE Magazine",
     "brandCode"                  : "SM",
     "schedule"                   : "monthly",
