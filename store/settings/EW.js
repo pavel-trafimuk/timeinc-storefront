@@ -9,9 +9,9 @@ window.settings = {
     "schedule"                   : "weekly",
     "popupInterval"              : 5,
 
-    "omniture_account"           : "timagrealsimplenkdev",
-    "omniture_server"            : "metrics.realsimple.com",
-    "omniture_ssl_server"        : "smetrics.realsimple.com",
+    "omniture_account"           : "timagewmagnk",
+    "omniture_server"            : "timeinc.122.2o7.net",
+    "omniture_ssl_server"        : "timeinc.122.2o7.net",
 
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "72c6d01e1eb34f07bf2d2c31643f0646",
