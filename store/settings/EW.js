@@ -9,7 +9,7 @@ window.settings = {
     "schedule"                   : "weekly",
     "popupInterval"              : 5,
 
-    "omniture_account"           : "timagewmagnk",
+    "omniture_account"           : "timagewmagnkdev", //"timagewmagnk",
     "omniture_server"            : "timeinc.122.2o7.net",
     "omniture_ssl_server"        : "timeinc.122.2o7.net",
 

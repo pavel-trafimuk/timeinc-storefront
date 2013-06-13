@@ -40,7 +40,7 @@ App.dialogs.Subscribe = Backbone.View.extend({
 
     TcmOmni.event(
       'sub_'+subscription.duration.toLowerCase()+'_taps',
-      subscription.duration + " for " + subsciption.price
+      subscription.duration + " for " + subscription.price
     );
     
     transaction.completedSignal.addOnce(function(transaction) {

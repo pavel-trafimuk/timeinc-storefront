@@ -100,7 +100,11 @@
     },
     open_wes: function() {
       TcmOmni.event("sp_activate_taps");
-      location.href = settings.welcomeScreenWesURL;
+
+      // Give omniture a chance to track
+      setTimeout(function() {
+        location.href = settings.welcomeScreenWesURL;
+      }, 250);
     }
   });
 

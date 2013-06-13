@@ -34,7 +34,11 @@
     print_subs_getitfree: function(evt) {
       TcmOmni.event("st_getitfree_taps");
       evt.preventDefault();
-      location.href = settings.WesPageURL;
+
+      // Give omniture a chance to track
+      setTimeout(function() {
+        location.href = settings.WesPageURL;
+      }, 250);
     },
     buy_issue: function(evt) {
       var $this = $(evt.currentTarget),
@@ -87,7 +91,7 @@
           $msg = $this.find(".opening-issue-text"),
           dossier_id = $this.data("destination");
 
-      TcmOmni.event("st_inthisissue_"+$("h3", $this).text().toLowerCase()+"_taps");
+      TcmOmni.event("st_inthisissue_"+$.trim($("h3", $this).text()).toLowerCase()+"_taps");
 
       $msg.addClass("show-loading");
       setTimeout(function(){$msg.removeClass("show-loading")}, 3500);
