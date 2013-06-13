@@ -19,11 +19,11 @@
 
       if (localStorage.app_view_count % settings.popupInterval === 0) {
         this.subview = this.welcome_view;
-        App.omniture.track_pageview("store|welcome");
+        TcmOmni.pageview("splashpage", "event1,event43,event44");
       }
       else {
         this.subview = this.store_view;
-        App.omniture.track_pageview("store|home page");
+        TcmOmni.pageview("main", "event1,event43");
       }
       localStorage.app_view_count = +localStorage.app_view_count + 1;
     },
@@ -36,7 +36,7 @@
     goto_store: function() {
       this.subview = this.store_view;
       this.render();
-      App.omniture.track_pageview("store|home page");
+      TcmOmni.pageview("main", "event1");
     },
     launch_repl: function() {
       App.debug.launch_repl();

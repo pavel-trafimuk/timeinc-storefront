@@ -3,8 +3,8 @@ App.dialogs.Subscribe = Backbone.View.extend({
   className: "modal-background",
   template: Handlebars.templates['dialog-subscribe.tmpl'],
   events: {
-    "click #cancel": "remove",
-    "click .subscribe-button": "subscribe_clickHandler"
+    "click #cancel": "onCancel",
+    "click .subscribe-button": "onSubscribe"
   },
   initialize: function(show_on_create) {
     console.log("App.dialogs.Subscribe.initialize()");
@@ -24,13 +24,24 @@ App.dialogs.Subscribe = Backbone.View.extend({
   open: function() {
     console.log("App.dialogs.Subscribe.open()");
     this.$("#subscribe-dialog").addClass("pop");
+
+    TcmOmni.pageview("subscribe", "event1", false);
   },
-  subscribe_clickHandler: function(e) {
+  onCancel: function() {
+    TcmOmni.event("sub_cancel");
+    this.remove();
+  },
+  onSubscribe: function(e) {
     e.preventDefault();
     
     var productId = $(e.currentTarget).attr("id");
     var subscription = App.api.receiptService.availableSubscriptions[productId];
     var transaction = subscription.purchase();
+
+    TcmOmni.event(
+      'sub_'+subscription.duration.toLowerCase()+'_taps',
+      subscription.duration + " for " + subsciption.price
+    );
     
     transaction.completedSignal.addOnce(function(transaction) {
       if (transaction.state == adobeDPS.transactionManager.transactionStates.FINISHED)

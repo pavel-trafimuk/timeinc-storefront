@@ -6,7 +6,8 @@
     events: {
       "click .subscribe": "subscribe",
       "click .page-curl": "open_preview",
-      "click .print-subscriber": "open_wes"
+      "click .print-subscriber": "open_wes",
+      "click .goto-store": "track_gotostore"
     },
     initialize: function() {
       var that = this,
@@ -17,7 +18,11 @@
     },
     render: function() {
       var covers = this._get_covers();
-      var cx = {settings:settings, img_only_cover_url: covers[0], full_cover_url: covers[1]};
+      var cx = {
+        settings: settings, 
+        img_only_cover_url: covers[0],
+        full_cover_url: covers[1]
+      };
       this.$el.html(this.template(cx));
       return this;
     },
@@ -69,11 +74,17 @@
       });
     },
     subscribe: function() {
+      TcmOmni.event("sp_subscribe_taps");
       new App.dialogs.Subscribe();
+    },
+    track_gotostore: function() {
+      TcmOmni.event("sp_browse_taps");
     },
     open_preview: function() {
       var dialog = new App.dialogs.WelcomeDownloading(),
           $progress = dialog.$(".progress");
+
+      TcmOmni.event("sp_see_inside_taps");
 
       this.$(".page-curl").fadeOut();
       
@@ -88,6 +99,7 @@
       });
     },
     open_wes: function() {
+      TcmOmni.event("sp_activate_taps");
       location.href = settings.welcomeScreenWesURL;
     }
   });

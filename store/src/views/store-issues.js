@@ -28,6 +28,8 @@
           product_id = $this.data("productId"),
           folio = App.api.libraryService.get_by_productId(product_id),
           $cover = $(".issue-cover", $this);
+
+      TcmOmni.event("st_preview_taps");
      
       $cover.addClass("progress").attr("data-label", "Opening Issue…");
       

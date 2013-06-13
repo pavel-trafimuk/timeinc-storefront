@@ -31,16 +31,21 @@
         {{/each}}
     </div>
     <div class="cta">
-        <button class="buy-issue-button">
+        <button class="buy-issue-button"
             {{#if folio.isViewable}}
+                data-action="view">
                 {{../settings.storeViewIssueBtn}}
             {{else}}{{#if folio.isDownloadable}}
+                data-action="download">
                 {{../settings.storeDownloadIssueBtn}}
             {{else}}{{#if folio.isFree}}
+                data-action="downloadfree">
                 {{../settings.storeDownloadIssueBtn}}
             {{else}}{{#if folio.isPurchasable}}
+                data-action="buy">
                 {{../settings.storeBuyIssueBtn}}
             {{else}}
+                data-action="unavailable">
                 {{../settings.storeUnavailableIssueBtn}}
             {{/if}}{{/if}}{{/if}}{{/if}}
         </button>

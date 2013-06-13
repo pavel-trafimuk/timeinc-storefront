@@ -32,12 +32,16 @@
       cb(); 
     },
     print_subs_getitfree: function(evt) {
+      TcmOmni.event("st_getitfree_taps");
       evt.preventDefault();
       location.href = settings.WesPageURL;
     },
-    buy_issue: function() {
-      var $progress = this.$(".issue-cover").addClass("progress"),
+    buy_issue: function(evt) {
+      var $this = $(evt.currentTarget),
+          $progress = this.$(".issue-cover").addClass("progress"),
           $curl = this.$(".page-curl");
+
+      TcmOmni.event("st_"+$this.data("action")+"_taps");
 
       $curl.hide();
       $progress.attr("data-label", "Purchasing Issue…");
@@ -59,6 +63,9 @@
     goto_preview: function() {
       var $progress = this.$(".issue-cover").addClass("progress");
       $progress.attr("data-label", "Opening Issue…");
+
+      TcmOmni.event("st_preview_featured_taps")
+
       this.$(".page-curl").fadeOut();
       App.api.libraryService.get_touted_issue().view_or_preview({
         complete: function() {
@@ -71,6 +78,7 @@
       });
     },
     subscribe: function() {
+      TcmOmni.event("st_subscribe_taps");
       new App.dialogs.Subscribe();
     },
     goto_itii: function(evt) {
@@ -78,6 +86,8 @@
           $this = $(evt.currentTarget),
           $msg = $this.find(".opening-issue-text"),
           dossier_id = $this.data("destination");
+
+      TcmOmni.event("st_inthisissue_"+$("h3", $this).text().toLowerCase()+"_taps");
 
       $msg.addClass("show-loading");
       setTimeout(function(){$msg.removeClass("show-loading")}, 3500);
