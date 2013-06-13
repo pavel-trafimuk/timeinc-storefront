@@ -6,13 +6,14 @@
 window.settings = {
 
     // General settings
-    "omniture_account"           : "timagrealsimplenkdev",
-    "omniture_server"            : "metrics.realsimple.com",
-    "omniture_ssl_server"        : "smetrics.realsimple.com",
     "brandName"                  : "REAL SIMPLE Magazine",
     "brandCode"                  : "SM",
     "schedule"                   : "monthly",
     "popupInterval"              : 3,
+
+    "omniture_account"           : "timagrealsimplenkdev",
+    "omniture_server"            : "metrics.realsimple.com",
+    "omniture_ssl_server"        : "smetrics.realsimple.com",
 
     // found in the adobe URL at http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "7ea9178b138a416d899803c578036a49",

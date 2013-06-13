@@ -4,11 +4,14 @@
 window.settings = {
 
     // General settings
-    "omniture_account"           : "timagrealsimplenkdev",
     "brandName"                  : "ENTERTAINMENT WEEKLY",
     "brandCode"                  : "EW",
     "schedule"                   : "weekly",
     "popupInterval"              : 5,
+
+    "omniture_account"           : "timagrealsimplenkdev",
+    "omniture_server"            : "metrics.realsimple.com",
+    "omniture_ssl_server"        : "smetrics.realsimple.com",
 
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "72c6d01e1eb34f07bf2d2c31643f0646",
