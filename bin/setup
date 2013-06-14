@@ -1,2 +1,4 @@
+#!/bin/bash
+
 npm install -g handlebars uglify-js
 gem install sass compass
