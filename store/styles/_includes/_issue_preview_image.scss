@@ -1,0 +1,65 @@
+
+$HEADING_SIZE: 160px;
+$SIDEBAR_SIZE: 256px;
+.issue-preview-image {
+    position: absolute;
+    top:0;right:0;bottom:0;left:0;
+    z-index: 99;
+    overflow: hidden;
+
+    .container {
+        position: relative;
+        height: 100%; width: 100%;
+        background: $HERO_BG_COLOR;
+    }
+    .controls {
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        color: #fff;
+    }
+    .close-btn {
+        position: absolute;
+        padding: 15px;
+        color: #fff;
+        font-weight: bold;
+        top: 0; right: 0;
+    }
+    .scrollable {
+        position: absolute;
+        background: darken($HERO_BG_COLOR, 5%);
+        top: 0; left: 0; right: 0; bottom: 0;
+    }
+    .cover-img {
+        padding: 15px;
+        -webkit-box-sizing: border-box;
+    }
+
+    @media only screen and (orientation: portrait) {
+        .scrollable {
+            top: $HEADING_SIZE;
+        }
+        .controls {
+            height: $HEADING_SIZE;
+            bottom: auto;
+        }
+        .cover-img {
+            float: left;
+            height: $HEADING_SIZE;
+        }
+    }
+    @media only screen and (orientation: landscape) {
+        .scrollable {
+            left: $SIDEBAR_SIZE;
+        }
+        .controls {
+            width: $SIDEBAR_SIZE;
+            right: auto;
+        }
+        .cover-img {
+            position: absolute;
+            bottom: 0; left: 0;
+            width: $SIDEBAR_SIZE;
+        }
+    }
+}
+
