@@ -61,6 +61,17 @@ templates() {
   done
   cd $BUILDROOT
 }
+partial() {
+  handlebars "$1" --partial --output "$1.js"
+  js_file "$1.js"
+}
+partials() {
+  cd $DEVDIR
+  for PARTIAL in $(ls $1); do
+    partial $PARTIAL 
+  done
+  cd $BUILDROOT
+}
 building() {
   BUILDING=$1
   REMOTE_ASSET_PREFIX="http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/$TITLE/adobe/apple/ipad/v25/"
@@ -163,6 +174,7 @@ js_lib 'handlebars.runtime.js'
 
 dev_lib 'tcm_devtools.js'
 
+partials 'templates/*.partial'
 templates 'templates/*.tmpl'
 
 
