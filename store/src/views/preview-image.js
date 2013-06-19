@@ -56,8 +56,9 @@
         cb();
       }, 550);
     },
-    buy_issue: function() {
-      var dialog = new App.dialogs.WelcomeDownloading(),
+    buy_issue: function(evt) {
+      var $this = $(evt.currentTarget),
+          dialog = new App.dialogs.WelcomeDownloading(),
           $progress = dialog.$(".progress");
 
       TcmOmni.event("pr_"+$this.data("action")+"_taps");
