@@ -3,3 +3,6 @@
 *-deploy/
 *.swp
 *~
+
+/store/styles/.sass-cache/
+/store/css/

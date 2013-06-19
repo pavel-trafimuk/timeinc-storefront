@@ -77,7 +77,7 @@ render_in_place() {
   MAG_CODE=$TITLE REMOTE_ASSET_PREFIX=$REMOTE_ASSET_PREFIX python bin/render_index.py "$1" "$1"
 }
 compile() {
-  compass compile "$DEVDIR/styles/"
+  (cd "$DEVDIR/styles" && compass compile $TITLE\-*.scss)
   mv "$DEVDIR/css/$TITLE-store.css" "$DEVDIR/css/main.css"
   mv "$DEVDIR/css/$TITLE-myaccount.css" "$DEVDIR/css/myaccount.css"
   mv "$DEVDIR/css/$TITLE-lucie-library.css" "$DEVDIR/css/lucie-library.css"
