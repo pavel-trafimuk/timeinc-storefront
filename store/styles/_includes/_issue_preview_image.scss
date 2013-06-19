@@ -40,6 +40,18 @@ $SIDEBAR_SIZE: 256px;
         width: 230px;
         margin: 13px;
     }
+    header {
+        margin: 15px;
+        text-transform: uppercase;
+        font-family: $HEADLINE_FONT;
+    }
+    p {
+        margin: 15px;
+        font-size: 14px
+    }
+    .issue-price {
+        color: $ACCENT_COLOR;
+    }
 
     @media only screen and (orientation: portrait) {
         .scrollable {
@@ -52,6 +64,9 @@ $SIDEBAR_SIZE: 256px;
         .cover-img {
             float: left;
             height: $HEADING_SIZE;
+        }
+        p {
+            margin-right: 275px;
         }
     }
     @media only screen and (orientation: landscape) {
@@ -66,6 +81,12 @@ $SIDEBAR_SIZE: 256px;
             position: absolute;
             bottom: 60px; left: 0;
             width: $SIDEBAR_SIZE;
+        }
+        .issue-date, .issue-price {
+            display: block;
+        }
+        .separator {
+            display: none;
         }
     }
 }
