@@ -33,6 +33,13 @@ $SIDEBAR_SIZE: 256px;
         padding: 15px;
         -webkit-box-sizing: border-box;
     }
+    .buy-issue-button {
+        @include big-button-primary;
+        position: absolute;
+        bottom: 0; right: 0;
+        width: 230px;
+        margin: 13px;
+    }
 
     @media only screen and (orientation: portrait) {
         .scrollable {
@@ -57,7 +64,7 @@ $SIDEBAR_SIZE: 256px;
         }
         .cover-img {
             position: absolute;
-            bottom: 0; left: 0;
+            bottom: 60px; left: 0;
             width: $SIDEBAR_SIZE;
         }
     }

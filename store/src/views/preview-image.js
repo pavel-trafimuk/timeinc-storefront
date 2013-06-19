@@ -3,6 +3,7 @@
     className: "issue-preview-image",
     template: Handlebars.templates["issue-preview-image.tmpl"],
     events: {
+      "click .buy-issue-button": "buy_issue",
       "click .close-btn": "close"
     },
     initialize: function(folio) {
@@ -54,6 +55,25 @@
         $img.show();
         cb();
       }, 550);
+    },
+    buy_issue: function() {
+      var dialog = new App.dialogs.WelcomeDownloading(),
+          $progress = dialog.$(".progress");
+
+      TcmOmni.event("pr_"+$this.data("action")+"_taps");
+
+      this.folio.purchase_and_download({
+        complete: function() {
+          $progress.attr("data-label", "Opening Issue…");
+        },
+        download_progress: function(progress) {
+          $progress.attr("data-label", "Downloading…");
+          $(".progress-bar", $progress).css("width", progress+"%");
+        },
+        cancelled: function() {
+          dialog.remove();
+        }
+      });
     },
     close: function() {
       var that = this,
