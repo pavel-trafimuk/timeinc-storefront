@@ -4,7 +4,8 @@
     template: Handlebars.templates["issue-preview-image.tmpl"],
     events: {
       "click .buy-issue-button": "buy_issue",
-      "click .close-btn": "close"
+      "click .close-btn": "close",
+      "swipedown .controls": "close"
     },
     initialize: function(folio) {
       var that = this;

@@ -5,7 +5,10 @@
     template: Handlebars.templates["store-hero.tmpl"],
     events: {
       "tap .buy-issue-button": "buy_issue",
+
       "tap .cover": "goto_preview",
+      "swipeleft .cover": "goto_preview",
+
       "tap .subscribe-button": "subscribe",
       "tap .in-this-issue article": "goto_itii",
       "tap .print-subscribers": "print_subs_getitfree"
