@@ -34,7 +34,7 @@
             img: { width: w, height: h, url: img_url }
           };
           that.$el.html(that.template(cx));
-          cb();
+          (cb || $.noop)();
       });
       return this;
     },
