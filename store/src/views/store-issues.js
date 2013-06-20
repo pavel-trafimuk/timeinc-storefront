@@ -4,7 +4,7 @@
     className: "store-issues-view",
     template: Handlebars.templates["store-issues.tmpl"],
     events: {
-      "click .issue": "view_issue_preview_img"
+      "click .issue": "view_issue"
     },
     initialize: function() {
       console.log("App.views.StoreIssues initializing");
@@ -21,27 +21,28 @@
           cb = cb || $.noop;
       cb(); 
     },
-    view_issue_preview_img: function(evt) {
-      console.log("App.views.StoreIssues.view_issue_preview_img()");
-
+    view_issue: function(evt) {
+      TcmOmni.event("st_preview_taps");
+      if (settings.backissue_preview == "image") {
+        return this.view_issue_preview_image(evt);
+      }
+      else if (settings.backissue_preview == "adobe") {
+        return this.view_issue_native_preview(evt);
+      }
+    },
+    view_issue_preview_image: function(evt) {
       var $this = $(evt.currentTarget),
           product_id = $this.data("productId"),
           folio = App.api.libraryService.get_by_productId(product_id);
 
-      TcmOmni.event("st_preview_taps");
-
       new App.views.IssuePreviewImage(folio);
     },
-    view_issue: function(evt) {
-      console.log("App.views.StoreIssues.view_issue()");
-      
+    view_issue_native_preview: function(evt) {
       var $this = $(evt.currentTarget),
           product_id = $this.data("productId"),
           folio = App.api.libraryService.get_by_productId(product_id),
           $cover = $(".issue-cover", $this);
 
-      TcmOmni.event("st_preview_taps");
-     
       $cover.addClass("progress").attr("data-label", "Opening Issue…");
       
       folio.view_or_preview({

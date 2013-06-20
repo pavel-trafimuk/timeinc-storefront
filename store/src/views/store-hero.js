@@ -64,11 +64,22 @@
         }
       });
     },
-    goto_preview: function() {
+    goto_preview: function(evt) {
+      TcmOmni.event("st_preview_featured_taps");
+      if (settings.hero_preview == "image") {
+        return this.goto_image_preview(evt);
+      }
+      else if (settings.hero_preview == "adobe") {
+        return this.goto_native_preview(evt);
+      }
+    },
+    goto_image_preview: function() {
+      var folio = App.api.libraryService.get_touted_issue();
+      new App.views.IssuePreviewImage(folio);
+    },
+    goto_native_preview: function() {
       var $progress = this.$(".issue-cover").addClass("progress");
       $progress.attr("data-label", "Opening Issue…");
-
-      TcmOmni.event("st_preview_featured_taps")
 
       this.$(".page-curl").fadeOut();
       App.api.libraryService.get_touted_issue().view_or_preview({
@@ -86,12 +97,20 @@
       new App.dialogs.Subscribe();
     },
     goto_itii: function(evt) {
+      var $this = $(evt.currentTarget);
+      TcmOmni.event("st_inthisissue_"+$.trim($("h3", $this).text()).toLowerCase()+"_taps");
+      if (settings.hero_itii_preview == "image") {
+        return this.goto_image_preview();
+      }
+      else if (settings.hero_itii_preview == "adobe") {
+        return this.goto_itii_native(evt);
+      }
+    },
+    goto_itii_native: function(evt) {
       var that = this;
           $this = $(evt.currentTarget),
           $msg = $this.find(".opening-issue-text"),
           dossier_id = $this.data("destination");
-
-      TcmOmni.event("st_inthisissue_"+$.trim($("h3", $this).text()).toLowerCase()+"_taps");
 
       $msg.addClass("show-loading");
       setTimeout(function(){$msg.removeClass("show-loading")}, 3500);

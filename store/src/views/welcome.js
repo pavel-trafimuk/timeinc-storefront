@@ -80,11 +80,18 @@
     track_gotostore: function() {
       TcmOmni.event("sp_browse_taps");
     },
-    open_preview: function() {
+    open_preview: function(evt) {
+      TcmOmni.event("sp_see_inside_taps");
+      if (settings.welcome_preview == "image") {
+        return this.open_preview_image(evt);
+      }
+      else if (settings.backissue_preview == "adobe") {
+        return this.open_native_preview(evt);
+      }
+    },
+    open_native_preview: function() {
       var dialog = new App.dialogs.WelcomeDownloading(),
           $progress = dialog.$(".progress");
-
-      TcmOmni.event("sp_see_inside_taps");
 
       this.$(".page-curl").fadeOut();
       
@@ -97,6 +104,9 @@
           $(".progress-bar", $progress).css("width", progress+"%");
         }
       });
+    },
+    open_preview_image: function() {
+      new App.views.IssuePreviewImage(this.folio);
     },
     open_wes: function() {
       TcmOmni.event("sp_activate_taps");

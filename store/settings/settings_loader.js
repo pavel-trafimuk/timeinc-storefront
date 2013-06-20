@@ -7,7 +7,19 @@
         "omniture_account": null,
         "omniture_server": null,
         "omniture_ssl_server": null,
-        
+
+        // ************************************************************  
+        // FEATURE FLAGS
+        // ************************************************************   
+
+        // "image" for TOC image overlay, "adobe" for native 
+        // issue preview, "none" to disable preview
+        "welcome_preview": "image",
+        "hero_preview": "image",
+        "hero_itii_preview": "image",
+        "backissue_preview": "image",
+
+
         // ************************************************************  
         // All UI Text should be in the settings:
         // ************************************************************  
