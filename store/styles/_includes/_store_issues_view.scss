@@ -62,7 +62,7 @@ $issue-spacing: 3%;
       left: 15%;
       height: 60px;
       width: 70px;
-      background-image: url(../images/free.png);
+      background-image: url("../images/" + $BRAND_CODE + "/free.png");
       background-size: contain;
       z-index: 9;
     }
