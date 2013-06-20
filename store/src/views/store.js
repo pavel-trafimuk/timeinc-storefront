@@ -14,7 +14,7 @@
     },
     render: function() {
       var cx = {};
-      this.$el.html(this.template(cx));
+      this.$el.html(this.template(cx)).hammer();
       this.hero_view.render().$el.appendTo(this.el);
       this.issues_view.render().$el.appendTo(this.el);
       return this;

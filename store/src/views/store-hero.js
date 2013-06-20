@@ -4,15 +4,14 @@
     className: "store-hero-view",
     template: Handlebars.templates["store-hero.tmpl"],
     events: {
-      "click .buy-issue-button": "buy_issue",
-      "click .cover": "goto_preview",
-      "click .subscribe-button": "subscribe",
-      "click .in-this-issue article": "goto_itii",
-      "click .print-subscribers": "print_subs_getitfree"
+      "tap .buy-issue-button": "buy_issue",
+      "tap .cover": "goto_preview",
+      "tap .subscribe-button": "subscribe",
+      "tap .in-this-issue article": "goto_itii",
+      "tap .print-subscribers": "print_subs_getitfree"
     },
     initialize: function() {
       console.log("App.views.StoreHero initializing");
-      FastClick.attach(this.el);
     },
     render: function() {
       var folio = App.api.libraryService.get_touted_issue();
@@ -21,7 +20,7 @@
         settings: settings, 
         folio: folio,
       };
-      this.$el.html(this.template(cx));
+      this.$el.html(this.template(cx)).hammer();
       this.$(".cover img").imgPlaceholder();
 
       return this;

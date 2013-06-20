@@ -4,9 +4,9 @@
     el: "body",
     template: Handlebars.templates["main.tmpl"],
     events: {
-      "click .goto-store": "goto_store",
-      "click .launch-repl": "launch_repl",
-      "click .reload-page": "reload_page"
+      "tap .goto-store": "goto_store",
+      "tap .launch-repl": "launch_repl",
+      "tap .reload-page": "reload_page"
     },
     initialize: function() {
       var that = this;
@@ -28,7 +28,7 @@
       localStorage.app_view_count = +localStorage.app_view_count + 1;
     },
     render: function(cb) {
-      this.$el.html(this.template({DEBUG:DEBUG}));
+      this.$el.html(this.template({DEBUG:DEBUG})).hammer();
       
       this.subview.render().$el.appendTo(this.el);
       this.subview.animate(cb||$.noop);

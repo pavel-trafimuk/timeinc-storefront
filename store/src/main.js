@@ -21,9 +21,6 @@ $(function() {
   console.log("dom ready");
   App.loading(true);
 
-  // make click events fire at touchstart (https://github.com/ftlabs/fastclick)
-  FastClick.attach(document.body);
-  
   if (DEBUG && typeof adobeDPS == "undefined") {
     App._raw_api = MockAPI;
     App._using_adobe_api = false;

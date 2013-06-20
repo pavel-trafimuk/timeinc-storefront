@@ -4,10 +4,10 @@
     className: "welcome-view",
     template: Handlebars.templates["welcome.tmpl"],
     events: {
-      "click .subscribe": "subscribe",
-      "click .page-curl": "open_preview",
-      "click .print-subscriber": "open_wes",
-      "click .goto-store": "track_gotostore"
+      "tap .subscribe": "subscribe",
+      "tap .page-curl": "open_preview",
+      "tap .print-subscriber": "open_wes",
+      "tap .goto-store": "track_gotostore"
     },
     initialize: function() {
       var that = this,
@@ -23,7 +23,7 @@
         img_only_cover_url: covers[0],
         full_cover_url: covers[1]
       };
-      this.$el.html(this.template(cx));
+      this.$el.html(this.template(cx)).hammer();
       return this;
     },
     _get_covers: function() {

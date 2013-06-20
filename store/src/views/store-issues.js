@@ -4,14 +4,14 @@
     className: "store-issues-view",
     template: Handlebars.templates["store-issues.tmpl"],
     events: {
-      "click .issue": "view_issue"
+      "tap .issue": "view_issue"
     },
     initialize: function() {
       console.log("App.views.StoreIssues initializing");
     },
     render: function() {
       var cx = { issues: App.api.libraryService.get_back_issues(), settings: settings };
-      this.$el.html(this.template(cx));
+      this.$el.html(this.template(cx)).hammer();
       this.$(".cover-img").imgPlaceholder();
       
       return this;
