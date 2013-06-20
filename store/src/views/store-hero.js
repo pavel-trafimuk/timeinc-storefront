@@ -50,7 +50,7 @@
       TcmOmni.event("st_"+$this.data("action")+"_taps");
 
       $curl.hide();
-      $progress.attr("data-label", "Purchasing Issue…");
+      $progress.attr("data-label", "Loading…");
       
       App.api.libraryService.get_touted_issue().purchase_and_download({
         complete: function() {
