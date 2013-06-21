@@ -7,6 +7,9 @@
         "omniture_account": null,
         "omniture_server": null,
         "omniture_ssl_server": null,
+        
+        // de facto non-limit
+        "max_back_issues": 9999,
 
         // ************************************************************  
         // FEATURE FLAGS

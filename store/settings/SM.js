@@ -10,6 +10,7 @@ window.settings = {
     "brandCode"                  : "SM",
     "schedule"                   : "monthly",
     "popupInterval"              : 3,
+    "max_back_issues"            : 12,
 
     "omniture_account"           : "timagrealsimplenkdev",
     "omniture_server"            : "metrics.realsimple.com",
