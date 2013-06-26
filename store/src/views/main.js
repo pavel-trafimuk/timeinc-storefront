@@ -19,11 +19,11 @@
 
       if (localStorage.app_view_count % settings.popupInterval === 0) {
         this.subview = this.welcome_view;
-        TcmOmni.pageview("splashpage", "event1,event43,event44");
+        App.omni.pageview("splashpage", "event1,event43,event44");
       }
       else {
         this.subview = this.store_view;
-        TcmOmni.pageview("main", "event1,event43");
+        App.omni.pageview("main", "event1,event43");
       }
       localStorage.app_view_count = +localStorage.app_view_count + 1;
     },
@@ -36,7 +36,7 @@
     goto_store: function() {
       this.subview = this.store_view;
       this.render();
-      TcmOmni.pageview("main", "event1");
+      App.omni.pageview("main", "event1");
     },
     launch_repl: function() {
       App.debug.launch_repl();

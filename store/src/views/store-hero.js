@@ -34,7 +34,7 @@
       cb(); 
     },
     print_subs_getitfree: function(evt) {
-      TcmOmni.event("st_getitfree_taps");
+      App.omni.event("st_getitfree_taps");
       evt.preventDefault();
 
       // Give omniture a chance to track
@@ -47,7 +47,7 @@
           $progress = this.$(".issue-cover").addClass("progress"),
           $curl = this.$(".page-curl");
 
-      TcmOmni.event("st_"+$this.data("action")+"_taps");
+      App.omni.event("st_"+$this.data("action")+"_taps");
 
       $curl.hide();
       $progress.attr("data-label", "Loading…");
@@ -67,7 +67,7 @@
       });
     },
     goto_preview: function(evt) {
-      TcmOmni.event("st_preview_featured_taps");
+      App.omni.event("st_preview_featured_taps");
       if (settings.hero_preview == "image") {
         return this.goto_image_preview(evt);
       }
@@ -95,12 +95,12 @@
       });
     },
     subscribe: function() {
-      TcmOmni.event("st_subscribe_taps");
+      App.omni.event("st_subscribe_taps");
       new App.dialogs.Subscribe();
     },
     goto_itii: function(evt) {
       var $this = $(evt.currentTarget);
-      TcmOmni.event("st_inthisissue_"+$.trim($("h3", $this).text()).toLowerCase()+"_taps");
+      App.omni.event("st_inthisissue_"+$.trim($("h3", $this).text()).toLowerCase()+"_taps");
       if (settings.hero_itii_preview == "image") {
         return this.goto_image_preview();
       }

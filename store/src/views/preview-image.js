@@ -16,7 +16,7 @@
         if ($(".issue-preview-image").length) return;
 
         that.$el.appendTo("body");
-        that.omni_pv = TcmOmni.pageview("previewimage|"+coverdate, "event1");
+        that.omni_pv = App.omni.pageview("previewimage|"+coverdate, "event1");
         that.animate();
       });
       $(window).on("resize.image-preview", _.bind(this.render, this));
@@ -64,7 +64,7 @@
           dialog = new App.dialogs.WelcomeDownloading(),
           $progress = dialog.$(".progress");
 
-      TcmOmni.event("pr_"+$this.data("action")+"_taps");
+      App.omni.event("pr_"+$this.data("action")+"_taps");
 
       this.folio.purchase_and_download({
         complete: function() {

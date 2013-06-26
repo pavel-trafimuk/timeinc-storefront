@@ -25,10 +25,10 @@ App.dialogs.Subscribe = Backbone.View.extend({
     console.log("App.dialogs.Subscribe.open()");
     this.$("#subscribe-dialog").addClass("pop");
 
-    this.omni_pv = TcmOmni.pageview("subscribe", "event1");
+    this.omni_pv = App.omni.pageview("subscribe", "event1");
   },
   onCancel: function() {
-    TcmOmni.event("sub_cancel");
+    App.omni.event("sub_cancel");
     this.remove();
   },
   onSubscribe: function(e) {
@@ -38,7 +38,7 @@ App.dialogs.Subscribe = Backbone.View.extend({
     var subscription = App.api.receiptService.availableSubscriptions[productId];
     var transaction = subscription.purchase();
 
-    TcmOmni.event(
+    App.omni.event(
       'sub_'+subscription.duration.toLowerCase()+'_taps',
       subscription.duration + " for " + subscription.price
     );

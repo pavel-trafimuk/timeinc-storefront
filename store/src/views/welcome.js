@@ -80,14 +80,14 @@
       });
     },
     subscribe: function() {
-      TcmOmni.event("sp_subscribe_taps");
+      App.omni.event("sp_subscribe_taps");
       new App.dialogs.Subscribe();
     },
     track_gotostore: function() {
-      TcmOmni.event("sp_browse_taps");
+      App.omni.event("sp_browse_taps");
     },
     open_preview: function(evt) {
-      TcmOmni.event("sp_see_inside_taps");
+      App.omni.event("sp_see_inside_taps");
       if (settings.welcome_preview == "image") {
         return this.open_preview_image(evt);
       }
@@ -115,7 +115,7 @@
       new App.views.IssuePreviewImage(this.folio);
     },
     open_wes: function() {
-      TcmOmni.event("sp_activate_taps");
+      App.omni.event("sp_activate_taps");
 
       // Give omniture a chance to track
       setTimeout(function() {

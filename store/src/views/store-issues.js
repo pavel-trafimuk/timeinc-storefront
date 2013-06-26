@@ -26,7 +26,7 @@
       cb(); 
     },
     view_issue: function(evt) {
-      TcmOmni.event("st_preview_taps");
+      App.omni.event("st_preview_taps");
       if (settings.backissue_preview == "image") {
         return this.view_issue_preview_image(evt);
       }
