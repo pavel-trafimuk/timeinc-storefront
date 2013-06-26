@@ -8,13 +8,15 @@
       "swipedown .controls": "close"
     },
     initialize: function(folio) {
-      var that = this;
+      var that = this,
+          coverdate = folio.get_coverdate().format("YYYY-MM-DD");
       this.folio = folio;
       this.render(function() {
         // don't allow multiple image previews at once
         if ($(".issue-preview-image").length) return;
 
         that.$el.appendTo("body");
+        that.omni_pv = TcmOmni.pageview("previewimage|"+coverdate, "event1");
         that.animate();
       });
       $(window).on("resize.image-preview", _.bind(this.render, this));
@@ -80,6 +82,8 @@
     close: function() {
       var that = this,
           animation_duration = 350;
+
+      TcmOmni.set_pagename(this.omni_pv.prev);
 
       this.$(".container").transition({y: $(window).height()}, animation_duration);
 

@@ -25,7 +25,7 @@ App.dialogs.Subscribe = Backbone.View.extend({
     console.log("App.dialogs.Subscribe.open()");
     this.$("#subscribe-dialog").addClass("pop");
 
-    TcmOmni.pageview("subscribe", "event1", false);
+    this.omni_pv = TcmOmni.pageview("subscribe", "event1");
   },
   onCancel: function() {
     TcmOmni.event("sub_cancel");
@@ -49,5 +49,9 @@ App.dialogs.Subscribe = Backbone.View.extend({
     });
     
     this.remove();
+  },
+  remove: function() {
+    TcmOmni.set_pagename(this.omni_pv.prev);
+    Backbone.View.prototype.remove.apply(this, arguments);
   }
 });
