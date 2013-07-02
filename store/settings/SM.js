@@ -18,6 +18,7 @@ window.settings = {
 
     // found in the adobe URL at http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "7ea9178b138a416d899803c578036a49",
+    "appId"                      : "com.timeinc.realsimple.ipad.inapp",
 
     "supportPhoneNumber"         : "1-866-642-1266",
     "supportEmail"               : "digital@realsimple.customersvc.com",

@@ -15,6 +15,7 @@ window.settings = {
 
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "72c6d01e1eb34f07bf2d2c31643f0646",
+    "appId"                      : "com.timeinc.ew.ipad.inapp",
 
     "supportPhoneNumber"         : "1-866-772-8791",
     "supportEmail"               : "digital@ew.customersvc.com",

@@ -182,6 +182,9 @@ templates 'templates/*.tmpl'
 js_file "settings/$TITLE.js"
 js_file 'settings/settings_loader.js'
 
+# depends on settings
+js_lib 'lucie_entitlements.js'
+
 # creates App object (which is just a namespace)
 js_file "src/app.js"
 
