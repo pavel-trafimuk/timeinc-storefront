@@ -3,7 +3,9 @@
 <div class="buttons">
     <button class="print-subscriber">{{settings.welcomePrintSubsBtn}}</button>
     <button class="goto-store">{{settings.welcomeBrowseBtn}}</button>
-    <button class="subscribe">{{settings.welcomeSubscribeBtn}}</button>
+    {{#unless is_subscriber}}
+        <button class="subscribe">{{../settings.welcomeSubscribeBtn}}</button>
+    {{/unless}}
 </div>
 
 <div class='already-have-account'>Already have an account?</div>

@@ -16,16 +16,23 @@
     initialize: function() {
       console.log("App.views.StoreHero initializing");
     },
-    render: function() {
-      var folio = App.api.libraryService.get_touted_issue();
-      _.bindAll(folio);
-      var cx = { 
-        settings: settings, 
-        folio: folio,
-      };
-      this.$el.html(this.template(cx)).hammer();
-      this.$(".cover img").imgPlaceholder();
+    render: function(cb) {
+      cb = cb || $.noop;
+      var that = this,
+          folio = App.api.libraryService.get_touted_issue();
 
+      _.bindAll(folio);
+
+      App.api.authenticationService.user_is_subscriber(function(is_subscriber) {
+        var cx = { 
+          settings: settings, 
+          folio: folio,
+          is_subscriber: is_subscriber
+        };
+        that.$el.html(that.template(cx)).hammer();
+        that.$(".cover img").imgPlaceholder();
+        cb();
+      });
       return this;
     },
     animate: function(cb) {

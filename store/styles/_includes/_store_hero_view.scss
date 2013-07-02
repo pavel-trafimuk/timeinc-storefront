@@ -141,6 +141,11 @@
         bottom: 12px;
         padding: 0 30px 15px 5px;
         -webkit-box-sizing: border-box;
+
+        &.subscriber {
+            .subscribe-button { display: none; }
+            .buy-issue-button { width: 100%; }
+        }
     }
     .cta button {
         width: 48%;

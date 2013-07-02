@@ -12,11 +12,21 @@
       this.issues_view = new App.views.StoreIssues();
       this.$el.addClass("scrollable");
     },
-    render: function() {
-      var cx = {};
+    render: function(cb) {
+      cb = cb || $.noop;
+      var that = this,
+          cx = {};
       this.$el.html(this.template(cx)).hammer();
-      this.hero_view.render().$el.appendTo(this.el);
-      this.issues_view.render().$el.appendTo(this.el);
+      async.parallel([
+        function(cb) {
+          cb = _.partial(cb, null);
+          that.hero_view.render(cb).$el.appendTo(that.el);
+        },
+        function(cb) {
+          cb = _.partial(cb, null);
+          that.issues_view.render(cb).$el.appendTo(that.el);
+        }
+      ], cb);
       return this;
     },
     animate: function(cb) {
