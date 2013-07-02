@@ -22,9 +22,14 @@
 
       api.initializationComplete.addOnce(function() {
         // APPLE SUBSCRIBERS
+        var is_sub = false;
         $.each(api.receiptService.availableSubscriptions, function(i, receipt) {
-          if (receipt.isActive()) location.href = nonsubs_banner;
+          if (receipt.isActive()) {
+            is_sub = true;
+            location.href = subs_banner;
+          }
         });
+        if (is_sub) return;
 
         // LUCIE SUBSCRIBERS
         if (api.authenticationService.isUserAuthenticated) {
