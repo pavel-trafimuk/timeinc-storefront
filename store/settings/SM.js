@@ -12,7 +12,7 @@ window.settings = {
     "popupInterval"              : 3,
     "max_back_issues"            : 12,
 
-    "omniture_account"           : "timagrealsimplenkdev",
+    "omniture_account"           : "timagrealsimplenk",
     "omniture_server"            : "metrics.realsimple.com",
     "omniture_ssl_server"        : "smetrics.realsimple.com",
 
