@@ -52,7 +52,7 @@
         "dev_tcmfeed_image_root": "http://ecom-dev01-app.usdlls2.savvis.net:10400/html/v25app/data/images/",
         "prod_tcmfeed_image_root": "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/v25data/images/",
         
-        "lucie_server_root": "https://dev-lucie.timeinc.com/webservices/adobews/",
+        "lucie_server_root": "https://lucie.timeinc.com/webservices/adobews/",
 
         "adbfeed_cover_dimensions": [388, 507],
         "cover_spacer_img": "images/" + settings.brandCode + "/cover_spacer.gif",
