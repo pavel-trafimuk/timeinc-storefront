@@ -83,7 +83,12 @@
             that.$(".curl-text, .curl-obj").addClass("animated");
           }, init_delay+2100);
         
-          setTimeout(cb, init_delay+2700);
+          setTimeout(function () {
+            if (settings.enable_first_load_popup && localStorage.app_view_count == 1) {
+              new App.dialogs.FirstLoadPopup;
+            }
+            cb();
+          }, init_delay+2700);
       });
     },
     subscribe: function() {

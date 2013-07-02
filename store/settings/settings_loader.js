@@ -22,6 +22,8 @@
         "hero_itii_preview": "image",
         "backissue_preview": "image",
 
+        "enable_first_load_popup": false,
+
 
         // ************************************************************  
         // All UI Text should be in the settings:

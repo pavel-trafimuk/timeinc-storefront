@@ -8,6 +8,7 @@ window.settings = {
     "brandCode"                  : "EW",
     "schedule"                   : "weekly",
     "popupInterval"              : 5,
+    "enable_first_load_popup"    : true,
 
     "omniture_account"           : "timagewmagnkdev", //"timagewmagnk",
     "omniture_server"            : "timeinc.122.2o7.net",
