@@ -48,18 +48,24 @@
   <script type="text/javascript" src="../../lib/lucie_entitlements.js"></script> 
 
   <script type="text/javascript">
-    $(function() {
+    (function() {
       var api = (typeof adobeDPS == "undefined") ? MockAPI : adobeDPS;
-      $("#banner a").click(function() {
-        $.each(api.receiptService.availableSubscriptions, function(i, subscription) {
-          if (subscription.duration.toLowerCase() == "1 year") {
-            subscription.purchase();
-            return false;
-          }
+      var buy_sub = function() { setTimeout(buy_sub, 500) };
+
+      $(function() {
+        $("#banner a").click(function() {
+          buy_sub();
+          return false;
         });
-        return false;
       });
-    });
+
+      api.initializationComplete.addOnce(function() {
+        buy_sub = function() {
+          api.receiptService.availableSubscriptions["com.timeinc.realsimple.ipad.subs.9"].purchase();
+        }
+      });
+
+    })();
   </script>
 
 </head>
