@@ -17,8 +17,9 @@
   <script type="text/javascript">
     (function() {
       var api = (typeof adobeDPS == "undefined") ? MockAPI : adobeDPS,
-          subs_banner = "subs-index.html",
-          nonsubs_banner = "nonsub-index.html";
+          now = +(new Date),
+          subs_banner = "subs-index.html?t=" + now,
+          nonsubs_banner = "nonsub-index.html?t=" + now;
 
       api.initializationComplete.addOnce(function() {
         // APPLE SUBSCRIBERS
