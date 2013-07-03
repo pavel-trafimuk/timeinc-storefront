@@ -88,7 +88,7 @@
               new App.dialogs.FirstLoadPopup;
             }
             cb();
-          }, init_delay+2700);
+          }, init_delay+3500);
       });
     },
     subscribe: function() {
