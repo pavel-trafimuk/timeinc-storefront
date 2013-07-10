@@ -11,10 +11,16 @@ window.settings = {
     "schedule"                   : "monthly",
     "popupInterval"              : 3,
     "max_back_issues"            : 12,
+    
+    "welcome_preview": "adobe",
+    "hero_preview": "adobe",
+    "hero_itii_preview": "adobe",
 
-    "omniture_account"           : "timagrealsimplenkdev",
+    "omniture_account"           : "timagrealsimplenk",
     "omniture_server"            : "metrics.realsimple.com",
     "omniture_ssl_server"        : "smetrics.realsimple.com",
+    
+    "subscribeOfferText"         : "Each issue of REAL SIMPLE is packed with smart, beautiful, and practical solutions to make life easier – every single day.  Plus fast and delicious recipes, easy organizing and decorating ideas, great fashion and beauty finds, money-saving tips, and more. Plus, get 1 month free with an annual subscription.",
 
     // found in the adobe URL at http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "7ea9178b138a416d899803c578036a49",

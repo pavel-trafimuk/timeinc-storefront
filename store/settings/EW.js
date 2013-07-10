@@ -8,6 +8,12 @@ window.settings = {
     "brandCode"                  : "EW",
     "schedule"                   : "weekly",
     "popupInterval"              : 5,
+    "enable_first_load_popup"    : true,
+    "subscribeOfferText"         : "Be the first to know about the best (and worst) in movies, TV, music, books, and more. PLUS: You can watch trailers, sample songs, as well as buy movie tickets, books, and music instantly—without ever leaving your couch.",
+    
+    "welcome_preview": "adobe",
+    "hero_preview": "adobe",
+    "hero_itii_preview": "adobe",
 
     "omniture_account"           : "timagewmagnkdev", //"timagewmagnk",
     "omniture_server"            : "timeinc.122.2o7.net",

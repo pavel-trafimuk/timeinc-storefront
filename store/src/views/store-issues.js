@@ -9,7 +9,8 @@
     initialize: function() {
       console.log("App.views.StoreIssues initializing");
     },
-    render: function() {
+    render: function(cb) {
+      cb = cb || $.noop;
       var back_issues = App.api.libraryService.get_back_issues(),
           cx = { 
             issues: _(back_issues).first(settings.max_back_issues),
@@ -17,7 +18,7 @@
           };
       this.$el.html(this.template(cx)).hammer();
       this.$(".cover-img").imgPlaceholder();
-      
+      cb();
       return this;
     },
     animate: function(cb) {

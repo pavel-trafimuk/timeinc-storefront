@@ -1,0 +1,40 @@
+@import "compass";
+@import "_includes/_buttons.scss";
+
+.first-load-popup {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    height: 220px;
+    width: 500px;
+    padding-top: 130px;
+    margin-left: -250px;
+    margin-top: -175px;
+    background: #f6f6f6 url('../images/'+$BRAND_CODE+'/tmp_popover_logo.gif') 50% 20px no-repeat;
+    background-size: 345px 113px;
+    color: #333;
+    -webkit-border-radius: 5px;
+    text-align: center;
+    border: 1px solid #fff;
+
+    .close {
+        position: absolute;
+        top: 0; right: 0;
+        font-size: 20px;
+        display: block;
+        height: 40px; width: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-weight: bold;
+        text-decoration: none;
+        color: #333;
+    }
+    .download-issue-btn {
+        @include big-button-light;
+        font-weight: bold;
+        margin: 0 0 16px;
+        padding: 0 15px;
+        height: 38px;
+        width: auto;
+    }
+}

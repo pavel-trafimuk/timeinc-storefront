@@ -28,10 +28,13 @@
       localStorage.app_view_count = +localStorage.app_view_count + 1;
     },
     render: function(cb) {
+      var that = this;
       this.$el.html(this.template({DEBUG:DEBUG})).hammer();
       
-      this.subview.render().$el.appendTo(this.el);
-      this.subview.animate(cb||$.noop);
+      this.subview.render(function() {
+        that.subview.$el.appendTo(that.el);
+        that.subview.animate(cb||$.noop);
+      });
     },
     goto_store: function() {
       this.subview = this.store_view;

@@ -76,9 +76,12 @@ you want to change something that is set by IT.
 Note: Customization.strings is a binary plist. I have confirmed that 
 textwrangler can edit the file, but haven't found any other apps that can.
         
-        
 
+CREATING NEW ASSETS FOR FUTURE BRANDS
+================================================================================
 
+You can get vector versions of the brands' logos at the following url:
 
+http://mytime.timeinc.com/TT/msm/content/TI_Logos.html
     
 

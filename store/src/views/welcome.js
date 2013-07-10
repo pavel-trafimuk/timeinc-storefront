@@ -22,14 +22,21 @@
       this.folio = App.api.libraryService.get_touted_issue();
       $(window).on("resize", _.bind(this.update_covers, this));
     },
-    render: function() {
-      var covers = this._get_covers();
-      var cx = {
-        settings: settings, 
-        img_only_cover_url: covers[0],
-        full_cover_url: covers[1]
-      };
-      this.$el.html(this.template(cx)).hammer();
+    render: function(cb) {
+      cb = cb || $.noop;
+      var that = this,
+          covers = this._get_covers();
+
+      App.api.authenticationService.user_is_subscriber(function(is_subscriber) {
+        var cx = {
+          settings: settings, 
+          img_only_cover_url: covers[0],
+          full_cover_url: covers[1],
+          is_subscriber: is_subscriber
+        };
+        that.$el.html(that.template(cx)).hammer();
+        cb();
+      });
       return this;
     },
     _get_covers: function() {
@@ -76,7 +83,12 @@
             that.$(".curl-text, .curl-obj").addClass("animated");
           }, init_delay+2100);
         
-          setTimeout(cb, init_delay+2700);
+          setTimeout(function () {
+            if (settings.enable_first_load_popup && localStorage.app_view_count == 1) {
+              new App.dialogs.FirstLoadPopup;
+            }
+            cb();
+          }, init_delay+3500);
       });
     },
     subscribe: function() {
@@ -91,7 +103,7 @@
       if (settings.welcome_preview == "image") {
         return this.open_preview_image(evt);
       }
-      else if (settings.backissue_preview == "adobe") {
+      else if (settings.welcome_preview == "adobe") {
         return this.open_native_preview(evt);
       }
     },
