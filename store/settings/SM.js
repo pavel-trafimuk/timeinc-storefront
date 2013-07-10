@@ -11,6 +11,10 @@ window.settings = {
     "schedule"                   : "monthly",
     "popupInterval"              : 3,
     "max_back_issues"            : 12,
+    
+    "welcome_preview": "adobe",
+    "hero_preview": "adobe",
+    "hero_itii_preview": "adobe",
 
     "omniture_account"           : "timagrealsimplenk",
     "omniture_server"            : "metrics.realsimple.com",
