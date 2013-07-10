@@ -103,7 +103,7 @@
       if (settings.welcome_preview == "image") {
         return this.open_preview_image(evt);
       }
-      else if (settings.backissue_preview == "adobe") {
+      else if (settings.welcome_preview == "adobe") {
         return this.open_native_preview(evt);
       }
     },
