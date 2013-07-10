@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <style>
+           
+           body{
+              background: #eaeaea;
+              margin: 0px;
+              padding: 0px;
+           }
+                                    
+           .wrapper{
+              width: 1024px;
+              margin: 0 auto; 
+              text-align: center;
+              width: 100%;
+           }
+           
+           .wrapper span{
+               display: none;
+               padding-top: 4em;
+               font: 16px/20px sans-serif;
+               color: grey;
+           }
+           
+           .banner{
+              background: transparent url('Template_EW_Retina.png') 50% 50%;
+              background-repeat: no-repeat;
+              width: 100%;
+              background-size: auto 100%;
+              position: relative;
+           }
+           
+           .btn-group{
+              margin: 0 auto;
+              padding-top: 10px;              
+              width: 95%;
+           }
+           
+           .btn{
+              background-size: auto 100%;   
+              background-repeat: no-repeat;           
+              margin-top: 1em;
+           }
+           
+           .btn.pull-left{
+               background-image: url(Template_EW_Retina_LeftButton.png);
+               
+           }
+           
+          .btn.pull-right{
+               background-image: url(Template_EW_Retina_RightButton.png);
+               background-position-x: 100%;
+           }
+           
+           
+           
+           .pull-left{
+              float: left !important;
+           }
+           
+           .pull-right{
+              float: right !important;
+           }
+           
+           /* iPhone 4 portrait */           
+           @media only screen and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+              .banner{
+                 height: 106px;
+                 background-size: auto 100%;
+              }
+              
+              .wrapper span.iphone-4-portrait{
+                  display: block;
+              }       
+              
+              .btn{
+                 width: 100px;
+                 height: 55px;
+                 margin-top: 2px;
+              }
+               
+           }
+           
+           /* iPhone 5 portrait */
+           @media only screen and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {              
+              .banner{
+                 height: 125px;
+                 background-size: auto 100%;
+              }
+              
+              .wrapper span.iphone-5-portrait{
+                  display: block;
+              }          
+              
+              .btn{
+                 width: 100px;
+                 height: 55px;
+                 margin-top: 2px;
+              }              
+                         
+           }           
+
+           
+           /* iPad Portrait */
+           @media only screen and (min-device-width:768px) and (max-device-width:1024px) and (orientation: portrait){           
+              .banner{                 
+                 height: 225px;                 
+              }
+              
+              .wrapper span.ipad-portrait{
+                  display: block;
+              }        
+              
+              
+               .btn{
+                 width: 200px;
+                 height: 100px;
+                 margin-top: 6px;
+              }      
+           }
+
+           
+           /* iPad Landscape */
+           @media only screen and (min-device-width:768px) and (max-device-width:1024px) and (orientation: landscape){           
+              .banner{                 
+                 height: 169px;                 
+              }              
+              .wrapper span.ipad-landscape{
+                  display: block;
+              }              
+              
+              .btn{
+                 width: 200px;
+                 height: 75px;
+                 margin-top: 6px;
+              }      
+              
+           }
+           
+           
+           /* all the rest */
+           @media (min-device-width: 1025px){
+              .wrapper{
+                 width: 1024px;                 
+              }
+              
+              .banner{
+                 height: 169px;
+              }
+              
+               .wrapper span.desktop{
+                  display: block;
+              }     
+              
+               .btn{
+                 width: 130px;
+                 height: 100px;
+              }
+              
+           }
+           
+           
+           
+        </style>    
+    </head>
+    <body>
+       
+       <div class="wrapper">
+         <div class="banner">
+            <div class="btn-group">
+               <div class="btn pull-left"></div>
+               <div class="btn pull-right"></div>
+            </div>
+         </div>
+       </div>
+       
+    </body>
+</html>
