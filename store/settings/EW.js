@@ -15,7 +15,7 @@ window.settings = {
     "hero_preview": "adobe",
     "hero_itii_preview": "adobe",
 
-    "omniture_account"           : "timagewmagnkdev", //"timagewmagnk",
+    "omniture_account"           : "timagewmagnk",
     "omniture_server"            : "timeinc.122.2o7.net",
     "omniture_ssl_server"        : "timeinc.122.2o7.net",
 
