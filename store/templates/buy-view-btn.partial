@@ -1,5 +1,8 @@
 <button class="{{class-name}}"
-    {{#if folio.isViewable}}
+    {{#if folio.isPurchasable}}
+        data-action="buy">
+        {{../settings.storeBuyIssueBtn}}
+    {{else}}{{#if folio.isViewable}}
         data-action="view">
         {{../settings.storeViewIssueBtn}}
     {{else}}{{#if folio.isDownloadable}}
@@ -8,9 +11,6 @@
     {{else}}{{#if folio.isFree}}
         data-action="downloadfree">
         {{../settings.storeDownloadIssueBtn}}
-    {{else}}{{#if folio.isPurchasable}}
-        data-action="buy">
-        {{../settings.storeBuyIssueBtn}}
     {{else}}
         data-action="unavailable">
         {{../settings.storeUnavailableIssueBtn}}
