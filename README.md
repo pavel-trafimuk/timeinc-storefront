@@ -19,9 +19,14 @@ Each title has…
    app.
 
  - an images folder (`images/<MAG_CODE>/`) which is adressable from the style
-   sheets as `../images`. (e.g., `background: url(../images/logo.png);` would
+   sheets as `../images`. (e.g., `background: url(../images/logo.png);`
+   also, `background: url("../images/"+$BRAND_CODE+"/logo.png");` would
    show `images/EW/logo.png`, if the title is EW)
 
+ - a banners folder (`banners/<MAG_CODE>/`) which compiles to just `banners/`.
+   Any banners that are dynamic will probably need to import javascript from 
+   the libs folder, which will usually be `../../lib/`
+ 
 
 DEPLOYING
 ================================================================================
