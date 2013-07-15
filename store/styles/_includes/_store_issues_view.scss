@@ -85,7 +85,8 @@ $issue-spacing: 3%;
     font-weight: bold;
     font-family: $HEADLINE_FONT;
   }
-  .free .issue-title {
+  .free .issue-title,
+  .special .issue-title {
     color: $ACCENT_COLOR;
   }
 
