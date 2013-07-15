@@ -184,6 +184,9 @@ function go(URL){
    <script>
      $(function() {
          adobeDPS.initializationComplete.addOnce(function() {
+            // don't show lucie registration button if the user is signed into lucie
+            if (adobeDPS.authenticationService.isUserAuthenticated) return;
+
             localStorage.visitorId = md5(adobeDPS.deviceService.deviceId);
             $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {
                 if (sub.isActive()) {
