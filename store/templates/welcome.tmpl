@@ -10,7 +10,10 @@
     {{/unless}}
 </div>
 
-<div class='already-have-account'>Already have an account?</div>
+{{#unless is_logged_in}}
+  <div class='already-have-account'>Already have an account?</div>
+{{/unless}}
+
 <div class="page-curl">
   <div class="curl-text">See Inside</div>
   <div class="curl-obj"></div>

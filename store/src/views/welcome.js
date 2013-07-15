@@ -32,7 +32,8 @@
           settings: settings, 
           img_only_cover_url: covers[0],
           full_cover_url: covers[1],
-          is_subscriber: is_subscriber
+          is_subscriber: is_subscriber,
+          is_logged_in: App.api.authenticationService.isUserAuthenticated
         };
         that.$el.html(that.template(cx)).hammer();
         cb();
