@@ -14,6 +14,7 @@ window.settings = {
     "welcome_preview": "adobe",
     "hero_preview": "adobe",
     "hero_itii_preview": "adobe",
+    "max_back_issues"            : 20,
 
     "omniture_account"           : "timagewmagnk",
     "omniture_server"            : "timeinc.122.2o7.net",
