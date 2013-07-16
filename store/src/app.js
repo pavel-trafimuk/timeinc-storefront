@@ -13,6 +13,8 @@
         window.location.reload(true);
       }
     },
+    log: function() { return TcmOmni.log.apply(TcmOmni, arguments) },
+    error: function() { return TcmOmni.error.apply(TcmOmni, arguments) },
     omni: {
       pageview: function() {
         return TcmOmni.pageview.apply(TcmOmni, arguments);
