@@ -90,3 +90,23 @@ You can get vector versions of the brands' logos at the following url:
 http://mytime.timeinc.com/TT/msm/content/TI_Logos.html
     
 
+ERROR LOGGING
+================================================================================
+
+Dev Apps may log errors using `console.log()` which will appear at:
+http://ecom-dev01-app.usdlls2.savvis.net:10400/cgi-bin/mobileLogs/logs.py
+
+This method only works when you are on the NYDev wifi. and using a dev build of
+the storefront. The "deploy" build assigns an empty function to `console.log`
+to ensure nothing breaks, but (as expected) it does nothing.
+
+*Logging in production*:
+
+Any logging or error logging in production should use the `App.log()` and 
+`App.error()` functions which log errors into omniture. Omniture is very slow
+to show data so debugging in the dev app with `console.log()` is strongly 
+preferred.
+
+You can log into omniture at https://my.omniture.com but you'll need someone
+from the Omniture team to set up an account for you.
+
