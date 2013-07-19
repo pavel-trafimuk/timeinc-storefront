@@ -30,7 +30,7 @@ window.settings = {
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
-    "lucieRegistrationURL"       : "https://subscription.ew.com/storefront/site/ew-lucie-customer-creation-itunes201302.html",
+    "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/ew-lucie-customer-creation-itunes201302.html",
     "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=EW&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
     "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=EW&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
     "licenceAgreementUrl"        : "http://www.timeinc.net/subs/privacy/eula/ew/agreement.html",
