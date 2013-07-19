@@ -20,7 +20,5 @@ mkzip() {
 POSTSUBS=$(sed -n 's/.*lucieRegistrationURL['\''"][ \t:]*['\''"]\(.*\)['\''"].*/\1/p' ./store/settings/${TITLE}.js)
 
 mkzip "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/${TITLE}/adobe/apple/ipad/v25/index.html" "store"
-mkzip "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/${TITLE}/adobe/apple/ipad/v25/banners/online_ipad/index.html" "banner-ipad"
-mkzip "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/${TITLE}/adobe/apple/ipad/v25/banners/online_iphone/index.html" "banner-iphone"
 mkzip "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/${TITLE}/adobe/apple/ipad/v25/myaccount/index.html" "myaccount"
 mkzip "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/${TITLE}/pp.html" "info"
