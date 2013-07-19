@@ -31,29 +31,49 @@ Each title has…
 DEPLOYING
 ================================================================================
 
-As of now, you just zip up the "index.html" file in the *-deploy folder and send
-that to IT. All assets are loaded over the network. (see next section)
-
-The network assets are on the savvis server in:
+The network assets (compiled into `-{BRAND_CODE}-store-deploy`) are on the 
+savvis server in:
 
     /nas01/apps/subs3/content/cmdev/assets/appstorefronts-jq/{BRAND_CODE}/adobe/apple/ipad/v25
+
+There are a couple helpful scripts in `bin/` that can make deployment relatively
+easy. This is a simple compile and upload of the EW assets:
+
+    bin/build EW
+    bin/upload EW
+
+you'll then need to ssh into the server and commit/tag the files you uploaded.
+
+You may want to add the following to your .bash_profile to ease this process:
+
+    cdv25() {
+      cd /nas01/apps/subs3/content/cmdev/assets/appstorefronts-jq/$1/adobe/apple/ipad/v25
+    }
+    alias gotov25=cdv25
+
+…which allows you to go into the assets folder using just `gotov25 EW` in the 
+shell
 
 
 MAKING ZIP FILES FOR IT TO EMBED
 ================================================================================
 
-Zip files should only contain the HTML file as of now. the file MUST be renamed
-to "index.html" if that is not the filename in the source dir.
+There is a tool in the `bin` folder for generating the necessary zip files for 
+IT. Just run the following to generate the zip files,
 
+    bin/mkzipfiles {BRAND_CODE}
+    
+…which will output the necessary files into `-{BRAND_CODE}-zipfiles`.
 
-Store Tab:
-    {BRAND_CODE}-store-deploy/embed_index.html
-    
-Info Tab:
-    {BRAND_CODE}-store-deploy/info/embed_index.html
-    
-My Account Tab:
-    {BRAND_CODE}-store-deploy/myaccount/embed_index.html
+IT will also need the following urls
+
+- Online Banner (iPad)
+- Online Banner (iPhone)
+- Post-subs URL
+
+…which you can get using `bin/get_urls {BRAND_CODE}`. 
+
+IMPORTANT: Make sure you give them the PROD urls.
 
 
 TIPS ON DEVELOPING ON A DEVICE
