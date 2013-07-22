@@ -9,4 +9,4 @@ fi
 cd $(dirname $0)
 cd ..
 
-scp -rp ./-${TITLE}-store-deploy/* ecom-dev03-app.usdlls2.savvis.net:/nas01/apps/subs3/content/cmdev/assets/appstorefronts-jq/${TITLE}/adobe/apple/ipad/v25/
+scp -r ./-${TITLE}-store-deploy/* ecom-dev03-app.usdlls2.savvis.net:/nas01/apps/subs3/content/cmdev/assets/appstorefronts-jq/${TITLE}/adobe/apple/ipad/v25/
