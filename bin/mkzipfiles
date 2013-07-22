@@ -24,6 +24,7 @@ mkzip "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/${TI
 mkzip "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/${TITLE}/adobe/apple/ipad/v25/myaccount/index.html" "myaccount"
 mkzip "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/${TITLE}/pp.html" "info"
 
-OFFLINEZIP=$(abspath "${OUTDIR}/v25-banner-offline.zip")
+# ZIP the offline banner
+OFFLINEZIP=$(abspath "${OUTDIR}/v25-${TITLE}-banner-offline.zip")
 cd store/banners/${TITLE}/offline
 zip "${OFFLINEZIP}"  ./*
