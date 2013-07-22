@@ -1,28 +1,29 @@
 #!/usr/bin/env bash
 
-if [ -z "$1" ]; then
+if [ -z "${1}" ]; then
   TITLE="EW"
 else
-  TITLE="$1"
+  TITLE="${1}"
 fi
 
-cd $(dirname $0)
+cd $(dirname ${0})
 cd ..
 
 OUTDIR="./-${TITLE}-zipfiles"
-rm -r "$OUTDIR" 
-mkdir "$OUTDIR"
+rm -r "${OUTDIR}" 
+mkdir "${OUTDIR}"
 
 mkzip() {
-  bin/mkzipfile.py "$1" "${OUTDIR}/v25-${TITLE}-${2}.zip"
+  bin/mkzipfile.py "${1}" "${OUTDIR}/v25-${TITLE}-${2}.zip"
 }
-
-POSTSUBS=$(sed -n 's/.*lucieRegistrationURL['\''"][ \t:]*['\''"]\(.*\)['\''"].*/\1/p' ./store/settings/${TITLE}.js)
+abspath() {
+  python -c "from os.path import abspath; import sys; print abspath(sys.argv[1])" "${1}"
+}
 
 mkzip "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/${TITLE}/adobe/apple/ipad/v25/index.html" "store"
 mkzip "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/${TITLE}/adobe/apple/ipad/v25/myaccount/index.html" "myaccount"
 mkzip "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/${TITLE}/pp.html" "info"
 
-OFFLINEZIP=$(python -c "from os.path import abspath; import sys; print abspath(sys.argv[1])" "${OUTDIR}/v25-banner-offline.zip")
+OFFLINEZIP=$(abspath "${OUTDIR}/v25-banner-offline.zip")
 cd store/banners/${TITLE}/offline
-zip "$OFFLINEZIP"  ./*
+zip "${OFFLINEZIP}"  ./*
