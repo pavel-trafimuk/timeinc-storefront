@@ -73,7 +73,7 @@ def main():
                 try:
                     t = os.stat(f).st_mtime
                     if t != mtimes[i]:
-                        mtimes[i] = t
+                        mtimes = [os.stat(f).st_mtime for f in files]
                         os.system(command)
 
                 except OSError as e:
