@@ -1,3 +1,11 @@
+/* Dependencies:
+ *  - tcm_devtools (jquery, backbone -> underscore, settings)
+ *  - backbone (underscore, jquery)
+ *  - underscore
+ *  - settings ({brand}.js -> settings_loader.js)
+ *  - tcm_omniture
+ *  - ema-*.js
+ */
 (function() {
   window.App = {
     views: {},
