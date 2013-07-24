@@ -8,6 +8,10 @@ else {
   window.console = {log: $.noop}
 }
 
+window.onerror = function(err, lineNo, fileName) {
+  if (DEBUG) console.log("window.onerror()", err, lineNo, fileName);
+  else App.error("window.onerror", err);
+}
 
 // disable scrolling the body element (which shows the a white background 
 // outside the document and just generally feels, not-very-appy
