@@ -6,9 +6,16 @@ window.settings = {
     // General settings
     "brandName"                  : "ESSENCE",
     "brandCode"                  : "EE",
-    "schedule"                   : "weekly",
-    "popupInterval"              : 5,
+    "schedule"                   : "monthly",
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
+    
+    "popup_paragraph1"           : "",
+    "popup_paragraph2"           : "",
+    "popup_restore_text"         : "<i>To restore your back issues follow instructions in the Library</i>",
+    "popup_subscribe_text"       : "Download the latest issue now",
+    "popup_close_text"           : "Close",
+    
     "subscribeOfferText"         : "Subscribe now to get ESSENCE on your iPad, featuring FASHION AND BEAUTY secrets so you look and feel your best, plus receive EMPOWERING ADVICE on relationships and money matters!",
     
     "welcome_preview": "image",
@@ -20,6 +27,9 @@ window.settings = {
     "omniture_server"            : "timeinc.122.2o7.net",
     "omniture_ssl_server"        : "timeinc.122.2o7.net",
 
+    "echo_bundle_id"             : "com_timeinc_essence_ipad_inapp",
+    "echo_token"                 : "709a361a0be5b96c7e16ac7bdefa1f8144b734f8",
+    
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "c41247b17b4a402dbb092046e65af56d",
     "appId"                      : "com.timeinc.essence.ipad.inapp",

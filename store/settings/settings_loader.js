@@ -8,6 +8,9 @@
         "omniture_server": null,
         "omniture_ssl_server": null,
         
+        "echo_stage" : "https://echostage.timeinc.com/devices",
+        "echo_prod"  : "https://echo.timeinc.com/devices",
+        
         // de facto non-limit
         "max_back_issues": 9999,
 

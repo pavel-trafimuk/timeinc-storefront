@@ -6,9 +6,16 @@ window.settings = {
     // General settings
     "brandName"                  : "INSTYLE",
     "brandCode"                  : "IN",
-    "schedule"                   : "weekly",
+    "schedule"                   : "monthly",
     "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
+    
+    "popup_paragraph1"           : "",
+    "popup_paragraph2"           : "",
+    "popup_restore_text"         : "<i>To restore your back issues follow instructions in the Library</i>",
+    "popup_subscribe_text"       : "Download the latest issue now",
+    "popup_close_text"           : "Close",
+    
     "subscribeOfferText"         : "Subscribe now to get INSTYLE Magazine on your iPad. Featuring the hottest fashion trends, beauty tips, celebrity style secrets, best beauty buys and so much more! Plus, get 1 month free with an annual subscription.",
     
     "welcome_preview": "adobe",
@@ -20,6 +27,9 @@ window.settings = {
     "omniture_server"            : "timeinc.122.2o7.net",
     "omniture_ssl_server"        : "timeinc.122.2o7.net",
 
+    "echo_bundle_id"             : "com_timeinc_instyle_ipad_inapp",
+    "echo_token"                 : "b26c06ef7be7257889b148061f4204ce6d709931",
+    
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "8d7346ec5a504f8d97dea533be3596e1",
     "appId"                      : "com.timeinc.instyle.ipad.inapp",

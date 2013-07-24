@@ -6,9 +6,16 @@ window.settings = {
     // General settings
     "brandName"                  : "PEOPLE STYLEWATCH",
     "brandCode"                  : "PW",
-    "schedule"                   : "weekly",
-    "popupInterval"              : 3,
+    "schedule"                   : "monthly",
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
+    
+    "popup_paragraph1"           : "",
+    "popup_paragraph2"           : "",
+    "popup_restore_text"         : "<i>To restore your back issues follow instructions in the Library</i>",
+    "popup_subscribe_text"       : "Download the latest issue now",
+    "popup_close_text"           : "Close",
+    
     "subscribeOfferText"         : "Subscribe now to get PEOPLE STYLEWATCH on your iPad. You'll find the hottest fashion and beauty trends, celeb looks for less, and amazing buys for every body and budget! Plus, get 1 month free with an annual subscription.",
     
     "welcome_preview": "image",
@@ -20,6 +27,9 @@ window.settings = {
     "omniture_server"            : "timeinc.122.2o7.net",
     "omniture_ssl_server"        : "timeinc.122.2o7.net",
 
+    "echo_bundle_id"             : "com_timeinc_stylewatch_ipad_inapp",
+    "echo_token"                 : "71a785f4241530188c229746d51336dc91a88543",
+    
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "e9c8f9b8eb394d9481e66bf0e217e696",
     "appId"                      : "com.timeinc.stylewatch.ipad.inapp",
