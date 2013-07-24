@@ -44,6 +44,8 @@ $(function() {
       App.api.receiptService.newReceiptsAvailableSignal.add(function(receipt) {
         var evt_type, product_id, price, sub, folio;
 
+        if (!settings.eMagsAppId) return;
+
         product_id = receipt.productId;
         if (receipt.isSubscription) {
           sub = App.api.receiptService.availableSubscriptions[product_id];
