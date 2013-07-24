@@ -107,8 +107,25 @@ CREATING NEW ASSETS FOR FUTURE BRANDS
 
 You can get vector versions of the brands' logos at the following url:
 
-http://mytime.timeinc.com/TT/msm/content/TI_Logos.html
-    
+    http://mytime.timeinc.com/TT/msm/content/TI_Logos.html
+
+
+DEEP LINKS / FEATURED ARTICLES / WELCOME PAGE IMAGES / V2.5 TOOL
+================================================================================
+
+Adobe's feed is not very flexible and any changes have to go through IT (and
+Adobe). As a result I found myself creating a tool for managing any other data
+that requires manual entry.
+
+Also, if you create a new app and the "TCM_FEED" returns a 404, the app will not
+successfully load. You'll need to create a new feed for by manually modifying
+the querystring, adding an empty issue, and saving (causing the server to create
+a new json file).
+
+All this fun stuff requires the "subtester" login, and happens at:
+
+    http://ecom-dev01-app.usdlls2.savvis.net:10400/cgi-bin/v25app/index.py
+
 
 ERROR LOGGING
 ================================================================================
