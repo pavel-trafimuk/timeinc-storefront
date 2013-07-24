@@ -10,6 +10,10 @@
         
         // de facto non-limit
         "max_back_issues": 9999,
+        
+        // eMags will not track without the App ID
+        "eMagsAppId": "",
+        
 
         // ************************************************************  
         // FEATURE FLAGS
