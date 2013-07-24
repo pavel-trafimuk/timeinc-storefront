@@ -1,7 +1,16 @@
+/* Dependencies:
+ *  - tcm_devtools (jquery, backbone -> underscore, settings)
+ *  - backbone (underscore, jquery)
+ *  - underscore
+ *  - settings ({brand}.js -> settings_loader.js)
+ *  - tcm_omniture
+ *  - ema-*.js
+ */
 (function() {
   window.App = {
     views: {},
     dialogs: {},
+
     debug: {
       launch_repl: function() {
         if (!DEBUG) return;
@@ -13,8 +22,12 @@
         window.location.reload(true);
       }
     },
+
+    // Logging/Error-logging into Omniture (for production logging)
     log: function() { return TcmOmni.log.apply(TcmOmni, arguments) },
     error: function() { return TcmOmni.error.apply(TcmOmni, arguments) },
+
+    // Omniture Helper functions
     omni: {
       pageview: function() {
         return TcmOmni.pageview.apply(TcmOmni, arguments);
@@ -31,6 +44,22 @@
           customVariable3: evt_name,
           customVariable4: page_name
         });
+      }
+    },
+
+    eMagsInit: function() {
+      if (!settings.eMagsAppId) return;
+      EMStart();
+    },
+    waitForEMags: function(cb) {
+      if (!settings.eMagsAppId) {
+        setTimeout(function() { cb(true) });
+      }
+      else {
+        EMSetEventQueueCallback(
+          function() { cb(true); },
+          function() { cb(false); }
+        );
       }
     }
   }

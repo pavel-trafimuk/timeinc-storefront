@@ -18,9 +18,9 @@ window.settings = {
     
     "subscribeOfferText"         : "Subscribe now to PEOPLE Magazine on your iPad. The Digital Edition gets you extras like bonus photos, exclusive videos, movie trailers, song samples, story updates from PEOPLE.com, click-to-buy features and so much more! Plus, get 1 month free with a semi-annual subscription.",
     
-    "welcome_preview": "adobe",
-    "hero_preview": "adobe",
-    "hero_itii_preview": "adobe",
+    "welcome_preview": "image",
+    "hero_preview": "image",
+    "hero_itii_preview": "image",
     "max_back_issues"            : 20,
 
     "omniture_account"           : "timagpeoplenk",

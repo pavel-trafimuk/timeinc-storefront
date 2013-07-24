@@ -23,6 +23,8 @@ window.settings = {
     "hero_itii_preview": "adobe",
     "max_back_issues"            : 20,
 
+    "eMagsAppId": "EW2332",
+
     "omniture_account"           : "timagewmagnk",
     "omniture_server"            : "timeinc.122.2o7.net",
     "omniture_ssl_server"        : "timeinc.122.2o7.net",
