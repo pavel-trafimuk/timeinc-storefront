@@ -39,8 +39,29 @@ $(function() {
       new App.views.Main().render(function() {
         App.loading(false);
       });
+
+      // eMags tracking for Subscriptions and SingleCopy sales. "FreeSample" not yet implemented
+      App.api.receiptService.newReceiptsAvailableSignal.add(function(receipt) {
+        var evt_type, product_id, price, sub, folio;
+
+        product_id = receipt.productId;
+        if (receipt.isSubscription) {
+          sub = App.api.receiptService.availableSubscriptions[product_id];
+          price = sub.price;
+          evt_type = (sub.duration.toLowerCase() == "1 month") ? "MonthlySubscription" : "AnnualSubscription";
+        }
+        else {
+          folio = App.api.libraryService.get_by_productId(product_id);
+          price = folio.price;
+          evt_type = "SingleCopySale";
+        }
+        
+        // remove dollar signs and other currecy symbols
+        price = price.replace(/[^\d\.]/gi, "");
+
+        EMPurchase(evt_type, product_id, price);
+      });
     });
   });
-
 });
 
