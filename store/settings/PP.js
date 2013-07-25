@@ -9,6 +9,13 @@ window.settings = {
     "schedule"                   : "monthly",
     "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
+    
+    "popup_paragraph1"           : "",
+    "popup_paragraph2"           : "",
+    "popup_restore_text"         : "<i>To restore your back issues follow instructions in the Library</i>",
+    "popup_subscribe_text"       : "Download the latest issue now",
+    "popup_close_text"           : "Close",
+    
     "subscribeOfferText"         : "&iexcl;Suscr&iacute;bete ahora para ver deslumbrantes fotos y v&iacute;deos exclusivos detr&aacute;s de c&aacute;mara. Adem&aacute;s, entrevistas francas con tus celebridades favoritas!",
     
     "welcome_preview": "adobe",
@@ -20,6 +27,9 @@ window.settings = {
     "omniture_server"            : "timeinc.122.2o7.net",
     "omniture_ssl_server"        : "timeinc.122.2o7.net",
 
+    "echo_bundle_id"             : "com_timeinc_peopleespanol_ipad_inapp",
+    "echo_token"                 : "d0bb021a4e5826a136c23f43f95d277d2b191586",
+    
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "13617fe46d974ecfa5639a33c4e28667",
     "appId"                      : "com.timeinc.peopleespanol.ipad.inapp",

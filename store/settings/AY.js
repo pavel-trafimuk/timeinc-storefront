@@ -6,9 +6,16 @@ window.settings = {
     // General settings
     "brandName"                  : "ALL YOU",
     "brandCode"                  : "AY",
-    "schedule"                   : "weekly",
+    "schedule"                   : "monthly",
     "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
+    
+    "popup_paragraph1"           : "",
+    "popup_paragraph2"           : "",
+    "popup_restore_text"         : "<i>To restore your back issues follow instructions in the Library</i>",
+    "popup_subscribe_text"       : "Download the latest issue now",
+    "popup_close_text"           : "Close",
+    
     "subscribeOfferText"         : "Subscribe to ALL YOU and get great tips and valuable advice on how to save everyday!",
     
     "welcome_preview": "adobe",
@@ -20,6 +27,9 @@ window.settings = {
     "omniture_server"            : "timeinc.122.2o7.net",
     "omniture_ssl_server"        : "timeinc.122.2o7.net",
 
+    "echo_bundle_id"             : "com_timeinc_allyou_ipad_inapp",
+    "echo_token"                 : "b75802eb3e4311f5e9b0913c96b45912226c60f3",
+    
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "f11f5bd1d4624fae9a20a16bfd218eb3",
     "appId"                      : "com.timeinc.allyou.ipad.inapp",
