@@ -15,8 +15,16 @@
     },
     initialize: function() {
       console.log("App.views.StoreHero initializing");
+      var that = this;
+
+      function render() {
+        setTimeout(function() { that.render() }, 50);
+      }
+      App.api.receiptService.newReceiptsAvailableSignal.add(render);
+      App.api.authenticationService.userAuthenticationChangedSignal.add(render);
     },
     render: function(cb) {
+      console.log("StoreHero.render() called");
       cb = cb || $.noop;
       var that = this,
           folio = App.api.libraryService.get_touted_issue();
