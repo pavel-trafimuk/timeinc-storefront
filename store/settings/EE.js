@@ -7,7 +7,7 @@ window.settings = {
     "brandName"                  : "ESSENCE",
     "brandCode"                  : "EE",
     "schedule"                   : "monthly",
-    "popupInterval"              : 0,
+    "popupInterval"              : 5,
     "enable_first_load_popup"    : false,
     
     "popup_paragraph1"           : "",
