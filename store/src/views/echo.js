@@ -6,8 +6,6 @@
     events: {},
     initialize: function() {
       console.log("App.views.Echo initializing");
-      
-      
     },
     render: function() {
       var that = this,
@@ -26,15 +24,16 @@
       };
       
       this.$el.html(this.template(cx)).appendTo("body");
+      //alert(this.template(cx).toString());
       
       var postEchoInterval = window.setInterval(function() {
           if ($("#echoForm") && $("#echoFrame")) {
               window.clearInterval(postEchoInterval);
               $("#echoForm").submit();
+              console.log("Echo: " + $("#echoFrame").contents().find("body").html());
           }
       }, 0);
-      
-      //alert(this.template(cx).toString());
     }
   });
+  
 })();
