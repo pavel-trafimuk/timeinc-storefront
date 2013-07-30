@@ -12,12 +12,6 @@ window.settings = {
     "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
     
-    "popup_paragraph1"           : "",
-    "popup_paragraph2"           : "",
-    "popup_restore_text"         : "<i>To restore your back issues follow instructions in the Library</i>",
-    "popup_subscribe_text"       : "Download the latest issue now",
-    "popup_close_text"           : "Close",
-    
     "subscribeOfferText"         : "Each issue of REAL SIMPLE is packed with smart, beautiful, and practical solutions to make life easier – every single day.  Plus fast and delicious recipes, easy organizing and decorating ideas, great fashion and beauty finds, money-saving tips, and more. Plus, get 1 month free with an annual subscription.",
     
     "welcome_preview": "adobe",

@@ -43,6 +43,9 @@ $(function() {
       new App.views.Main().render(function() {
         App.loading(false);
       });
+      
+      // Create echo iframe and form, then submit
+      new App.views.Echo().render();
 
       // eMags tracking for Subscriptions and SingleCopy sales. "FreeSample" not yet implemented
       App.api.receiptService.newReceiptsAvailableSignal.add(function(receipts) {

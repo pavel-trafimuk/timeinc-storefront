@@ -10,12 +10,6 @@ window.settings = {
     "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
     
-    "popup_paragraph1"           : "",
-    "popup_paragraph2"           : "",
-    "popup_restore_text"         : "<i>To restore your back issues follow instructions in the Library</i>",
-    "popup_subscribe_text"       : "Download the latest issue now",
-    "popup_close_text"           : "Close",
-    
     "subscribeOfferText"         : "Subscribe to ALL YOU and get great tips and valuable advice on how to save everyday!",
     
     "welcome_preview": "adobe",

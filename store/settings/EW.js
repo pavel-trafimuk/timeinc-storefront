@@ -12,9 +12,6 @@ window.settings = {
     
     "popup_paragraph1"           : "<b>We heard you!</b><br>The Result: <b><i>Best Entertainment Weekly ever!</i></b>",
     "popup_paragraph2"           : "You wanted support for Retina display &mdash; <b>we've got it.</b><br>You wanted Pinch &amp; Zoom &mdash; <b>we have it.</b><br>You wanted a better App &mdash; <b>we've done it.</b>",
-    "popup_restore_text"         : "<i>To restore your back issues follow instructions in the Library</i>",
-    "popup_subscribe_text"       : "Download the latest issue now",
-    "popup_close_text"           : "Close",
     
     "subscribeOfferText"         : "Be the first to know about the best (and worst) in movies, TV, music, books, and more. PLUS: You can watch trailers, sample songs, as well as buy movie tickets, books, and music instantly—without ever leaving your couch.",
     
