@@ -46,8 +46,15 @@
         "storeUnavailableIssueBtn"   : "Unavailable",
         
         // Messaging
-        "heroHeading"                : "In This " + (settings.schedule == "weekly" ? "Week" : "Month") + "’s Issue",
+        //"heroHeading"                : "In This " + (settings.schedule == "weekly" ? "Week" : "Month") + "’s Issue",
+        "heroHeading"                : "Tap to Preview",
         
+        // First load popup
+        "popup_paragraph1"           : "",
+        "popup_paragraph2"           : "",
+        "popup_restore_text"         : "<i>To restore your back issues follow instructions in the Library</i>",
+        "popup_subscribe_text"       : "Download the latest issue now",
+        "popup_close_text"           : "Close",
 
         // ************************************************************  
         // URLS

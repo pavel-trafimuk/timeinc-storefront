@@ -5,3 +5,20 @@ PW Style Watch
 AY All You
 HA Health
 EE Essence
+TK Time for kids
+PP People Espanol
+SI Sports Illustrated
+CK Cooking Light
+GF Golf
+SL Southern Living
+IN InStyle
+TH This Old House
+TD Time
+SK SI Kids
+FO Fortune
+CT Costal Living
+SU Sunset
+MO Money
+
+
+
