@@ -14,7 +14,7 @@
         "popup_subscribe_text"       : "Download the latest issue now",
         "popup_close_text"           : "Close",
     
-        "echoENV"    : "stage",
+        "echoENV"    : "stage", // set to 'prod' in brand settngs file when going live
         "echo_stage" : "https://echostage.timeinc.com/devices",
         "echo_prod"  : "https://echo.timeinc.com/devices",
         "echo_channel_id" : "1", // Channel Id for iOS is 1
