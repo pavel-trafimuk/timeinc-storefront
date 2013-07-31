@@ -7,7 +7,7 @@ window.settings = {
     "brandName"                  : "ESSENCE",
     "brandCode"                  : "EE",
     "schedule"                   : "monthly",
-    "popupInterval"              : 0,
+    "popupInterval"              : 5,
     "enable_first_load_popup"    : false,
     
     "subscribeOfferText"         : "Subscribe now to get ESSENCE on your iPad, featuring FASHION AND BEAUTY secrets so you look and feel your best, plus receive EMPOWERING ADVICE on relationships and money matters!",
