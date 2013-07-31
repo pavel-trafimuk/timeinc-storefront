@@ -18,6 +18,7 @@ print_urls() {
     echo "  license agreement:  $(bin/getsetting licenceAgreementUrl $TITLE)"
     echo "  terms of use:       $(bin/getsetting termsOfUseUrl $TITLE)"
     echo "  forgot password:    $(bin/getsetting signInForgotPasswordUrl $TITLE)"
+    echo "  existing subs:      $(bin/getsetting WesPageURL $TITLE)"
 }
 
 echo "URLS for $BRANDNAME:"
