@@ -11,9 +11,13 @@ cd ..
 
 BRANDNAME=$(bin/brandcode_to_brandname $TITLE)
 print_urls() {
-    echo "  ipad banner:     ${1}banners/online_ipad/index.html"
-    echo "  iphone banner:   ${1}banners/online_iphone/index.html"
-    echo "  post-subs:       ${1}lucie-library.html"
+    echo "  ipad banner:        ${1}banners/online_ipad/index.html"
+    echo "  iphone banner:      ${1}banners/online_iphone/index.html"
+    echo "  post-subs:          ${1}lucie-library.html"
+    echo "  privacy policy:     $(bin/getsetting privacyPolicyUrl $TITLE)"
+    echo "  license agreement:  $(bin/getsetting licenceAgreementUrl $TITLE)"
+    echo "  terms of use:       $(bin/getsetting termsOfUseUrl $TITLE)"
+    echo "  forgot password:    $(bin/getsetting signInForgotPasswordUrl $TITLE)"
 }
 
 echo "URLS for $BRANDNAME:"
