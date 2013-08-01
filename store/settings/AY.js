@@ -7,20 +7,12 @@ window.settings = {
     "brandName"                  : "ALL YOU",
     "brandCode"                  : "AY",
     "schedule"                   : "monthly",
-    "popupInterval"              : 0,
+    "popupInterval"              : 5,
     "enable_first_load_popup"    : false,
     
-    "popup_paragraph1"           : "",
-    "popup_paragraph2"           : "",
-    "popup_restore_text"         : "<i>To restore your back issues follow instructions in the Library</i>",
-    "popup_subscribe_text"       : "Download the latest issue now",
-    "popup_close_text"           : "Close",
-    
-    "subscribeOfferText"         : "Subscribe to ALL YOU and get great tips and valuable advice on how to save everyday!",
-    
-    "welcome_preview": "adobe",
-    "hero_preview": "adobe",
-    "hero_itii_preview": "adobe",
+    "welcome_preview": "image",
+    "hero_preview": "image",
+    "hero_itii_preview": "image",
     "max_back_issues"            : 20,
 
     "omniture_account"           : "timagallyounk",
