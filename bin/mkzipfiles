@@ -9,12 +9,13 @@ fi
 cd $(dirname ${0})
 cd ..
 
+BRANDNAME=$(bin/brandcode_to_brandname $TITLE)
 OUTDIR="./-${TITLE}-zipfiles"
 rm -r "${OUTDIR}" 
 mkdir "${OUTDIR}"
 
 mkzip() {
-  bin/mkzipfile.py "${1}" "${OUTDIR}/v25-${TITLE}-${2}.zip"
+  bin/mkzipfile.py "${1}" "${OUTDIR}/v25-${BRANDNAME}-${2}.zip"
 }
 abspath() {
   python -c "from os.path import abspath; import sys; print abspath(sys.argv[1])" "${1}"
@@ -25,6 +26,6 @@ mkzip "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/${TI
 mkzip "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/${TITLE}/pp.html" "info"
 
 # ZIP the offline banner
-OFFLINEZIP=$(abspath "${OUTDIR}/v25-${TITLE}-banner-offline.zip")
+OFFLINEZIP=$(abspath "${OUTDIR}/v25-${BRANDNAME}-banner-offline.zip")
 cd store/banners/${TITLE}/offline
 zip "${OFFLINEZIP}"  ./*

@@ -21,7 +21,7 @@ print_urls() {
     echo "Existing Subs: $(bin/getsetting WesPageURL $TITLE)"
 }
 
-echo "URLS for $BRANDNAME:"
+echo "$BRANDNAME:"
 print_urls "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/${TITLE}/adobe/apple/ipad/v25/" 
 echo
 
