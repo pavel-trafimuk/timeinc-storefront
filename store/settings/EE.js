@@ -10,12 +10,6 @@ window.settings = {
     "popupInterval"              : 5,
     "enable_first_load_popup"    : false,
     
-    "popup_paragraph1"           : "",
-    "popup_paragraph2"           : "",
-    "popup_restore_text"         : "<i>To restore your back issues follow instructions in the Library</i>",
-    "popup_subscribe_text"       : "Download the latest issue now",
-    "popup_close_text"           : "Close",
-    
     "subscribeOfferText"         : "Subscribe now to get ESSENCE on your iPad, featuring FASHION AND BEAUTY secrets so you look and feel your best, plus receive EMPOWERING ADVICE on relationships and money matters!",
     
     "welcome_preview": "image",

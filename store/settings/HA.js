@@ -10,12 +10,6 @@ window.settings = {
     "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
     
-    "popup_paragraph1"           : "",
-    "popup_paragraph2"           : "",
-    "popup_restore_text"         : "<i>To restore your back issues follow instructions in the Library</i>",
-    "popup_subscribe_text"       : "Download the latest issue now",
-    "popup_close_text"           : "Close",
-    
     "subscribeOfferText"         : "Subscribe now to get HEALTH on your iPad. Each issue is packed with smart and fun new ways to stay in great shape, look amazing and discover tasty (and healthy!) things to eat. Plus, get 1 month free with an annual subscription.",
     
     "welcome_preview": "image",
