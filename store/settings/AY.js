@@ -13,7 +13,7 @@ window.settings = {
     "welcome_preview": "image",
     "hero_preview": "image",
     "hero_itii_preview": "image",
-    "max_back_issues"            : 20,
+    "max_back_issues"            : 12,
 
     "omniture_account"           : "timagallyounk",
     "omniture_server"            : "timeinc.122.2o7.net",
