@@ -50,8 +50,9 @@
 
   <script type="text/javascript">
     (function() {
-      var api = (typeof adobeDPS == "undefined") ? MockAPI : adobeDPS;
-      var download_issue = function() { setTimeout(download_issue, 500) };
+      var api = (typeof adobeDPS == "undefined") ? MockAPI : adobeDPS,
+          folio = api.libraryService.get_by_productId(""),
+          download_issue = function() { setTimeout(download_issue, 500) };
 
       $(function() {
         $("#banner a").click(function() {
@@ -59,28 +60,22 @@
           return false;
         });
       });
-
-      api.initializationComplete.addOnce(function() {
-        download_issue = function() {
-          api.receiptService.availableSubscriptions["com.timeinc.realsimple.ipad.subs.9"].purchase();
-        }
-      });
       
-      /*folio.download_and_view({
-        complete: function() {
+      folio.download_and_view({
+        /*complete: function() {
           $progress.attr("data-label", "Opening Issue…");
         },
         download_progress: function(progress) {
           $progress.attr("data-label", "Downloading…");
           $(".progress-bar", $progress).css("width", progress+"%");
-        }
-      });*/
+        }*/
+      });
 
     })();
   </script>
 </head>
  
 <body>
-      <div id="banner"><a href="#"></a></div>
-  </body>
+      <div id="banner"><a href="dps.7ea9178b138a416d899803c578036a49://v1/folio/com.timeinc.realsimple.ipad.inapp.08092013/54853"></a></div>
+</body>
 </html>
