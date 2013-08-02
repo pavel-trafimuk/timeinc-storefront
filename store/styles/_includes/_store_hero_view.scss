@@ -68,14 +68,14 @@
 
 
     .in-this-issue {
-        border-top: 1px solid rgba(0,0,0,0.45);
-        border-bottom: 1px solid rgba(255,255,255,0.07);
+        border-top: 1px solid rgba(0,0,0,0.90);
+        border-bottom: 1px solid rgba(255,255,255,0.10);
         overflow: hidden;
         
         article {
             position: relative;
-            border-top: 1px solid rgba(255,255,255,0.07);
-            border-bottom: 1px solid rgba(0,0,0,0.45);
+            border-top: 1px solid rgba(255,255,255,0.10);
+            border-bottom: 1px solid rgba(0,0,0,0.90);
             position: relative;
             padding: 12px 60px 12px 100px;
             height: 50px;
@@ -115,7 +115,7 @@
             height: 12px; width: 12px;
             border-style: solid;
             border-width: 2px 2px 0 0;
-            border-color: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.5);
             -webkit-transform: rotate(45deg);
         }
         h3 {
