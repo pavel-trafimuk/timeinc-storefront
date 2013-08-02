@@ -47,7 +47,7 @@
         
         // Messaging
         //"heroHeading"                : "In This " + (settings.schedule == "weekly" ? "Week" : "Month") + "’s Issue",
-        "heroHeading"                : "Tap to Preview",
+        "heroHeading"                : "Preview Editor’s Picks",
         
         // First load popup
         "popup_paragraph1"           : "",
