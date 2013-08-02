@@ -138,17 +138,12 @@ END
   cp -r $DEVDIR/banners/$TITLE $DEPLOYDIR/banners
   
   cp $DEVDIR/lucie-library.html $DEPLOYDIR
-  cp $DEVDIR/embed_index.html $DEPLOYDIR
 
   cp -r $DEVDIR/myaccount $DEPLOYDIR
-  cp -r $DEVDIR/info $DEPLOYDIR
   
   render_in_place "$DEPLOYDIR/lucie-library.html"
-  render_in_place "$DEPLOYDIR/embed_index.html"
-  render_in_place "$DEPLOYDIR/myaccount/embed_index.html"
   render_in_place "$DEPLOYDIR/myaccount/index.html"
   render_in_place "$DEPLOYDIR/myaccount/restoreissues.html"
-  render_in_place "$DEPLOYDIR/info/embed_index.html"
 }
 
 ################################################################################
