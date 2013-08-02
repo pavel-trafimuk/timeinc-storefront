@@ -19,6 +19,12 @@ FO Fortune
 CT Costal Living
 SU Sunset
 MO Money
-
+TI Time Asia
+TS Time SoPac
+TA Time Europe
+TZ Time India
+FZ Fortune India
+FI Fortune Europe
+FA Fortune Asia Pacific
 
 
