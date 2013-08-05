@@ -37,9 +37,6 @@ window.settings = {
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/su-lucie-customer-creation-itunes201307.html",
     "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=SU&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
     "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=SU&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
-    "licenceAgreementUrl"        : "http://www.timeinc.net/subs/privacy/eula/su/agreement.html",
-    "privacyPolicyUrl"           : "https://subscription.timeinc.com/storefront/privacy/sunset/generic_privacy_new.html?dnp-source=H",
-    "termsOfUseUrl"              : "https://subscription.timeinc.com/storefront/privacy/sunset/privacy_terms_service.html",
 
     "adobeFeedUrl"               : "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/adobe-feeds/com.timeinc.sunset.ipad.inapp.xml",
     "adobeFeedUrl_dev"           : "http://ecom-dev01-app.usdlls2.savvis.net:10500/assets/appstorefronts-jq/adobe-feeds/com.timeinc.sunset.ipad.inapp.xml",

@@ -37,9 +37,6 @@ window.settings = {
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/ck-lucie-customer-creation-itunes201307.html",
     "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=CK&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
     "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=CK&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
-    "licenceAgreementUrl"        : "http://www.timeinc.net/subs/privacy/eula/ck/agreement.html",
-    "privacyPolicyUrl"           : "https://subscription.timeinc.com/storefront/privacy/cookinglight/generic_privacy_new.html?dnp-source=H",
-    "termsOfUseUrl"              : "https://subscription.timeinc.com/storefront/privacy/cookinglight/privacy_terms_service.html",
 
     "adobeFeedUrl"               : "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/adobe-feeds/com.timeinc.cookinglight.ipad.inapp.xml",
     "adobeFeedUrl_dev"           : "http://ecom-dev01-app.usdlls2.savvis.net:10500/assets/appstorefronts-jq/adobe-feeds/com.timeinc.cookinglight.ipad.inapp.xml",
