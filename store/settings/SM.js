@@ -37,11 +37,6 @@ window.settings = {
     // App specific URLS
     // ************************************************************  
     "lucieRegistrationURL"       : "https://subscription.realsimple.com/storefront/site/sm-lucie-customer-creation-itunes201306.html",
-    "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/sm/login.jsp&MSRSMAG=SM&CGI=T&MSDTRACK=IPSP&MSDDMOFF=ABTF&MSDVNDID=TBLT",
-    "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/sm/login.jsp&MSRSMAG=SM&CGI=T&MSDTRACK=IPAD&MSDDMOFF=ABTF&MSDVNDID=TBLT",
-
-    "adobeFeedUrl"               : "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/adobe-feeds/com.timeinc.realsimple.ipad.inapp.xml",
-    "adobeFeedUrl_dev"           : "http://ecom-dev01-app.usdlls2.savvis.net:10500/assets/appstorefronts-jq/adobe-feeds/com.timeinc.realsimple.ipad.inapp.xml",
     
 "ihatethelastcomma": true};
 })();

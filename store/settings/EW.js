@@ -43,11 +43,6 @@ window.settings = {
     // App specific URLS
     // ************************************************************  
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/ew-lucie-customer-creation-itunes201302.html",
-    "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=EW&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
-    "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=EW&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
-
-    "adobeFeedUrl"               : "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/adobe-feeds/com.timeinc.ew.ipad.inapp.xml",
-    "adobeFeedUrl_dev"           : "http://ecom-dev01-app.usdlls2.savvis.net:10500/assets/appstorefronts-jq/adobe-feeds/com.timeinc.ew.ipad.inapp.xml",
     
 "ihatethelastcomma": true};
 })();

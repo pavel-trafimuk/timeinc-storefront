@@ -62,10 +62,15 @@
 
         "privacyPolicyUrl"           : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/"+settings.brandCode+"/pp.html",
         "termsOfUseUrl"              : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/"+settings.brandCode+"/tos.html",
-        "licenceAgreementUrl"              : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/"+settings.brandCode+"/la.html",
-
+        "licenceAgreementUrl"        : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/"+settings.brandCode+"/la.html",
         "signInForgotPasswordUrl"    : "https://subscription.timeinc.com/storefront/universalForgotPassword.ep?magcode=" + settings.brandCode,
+
+        "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG="+settings.brandCode+"&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
+        "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG="+settings.brandCode+"&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
         "customerServiceUrl"         : "https://secure.customersvc.com/servlet/Show?WESPAGE=home.html&MSRSMAG=" + settings.brandCode + "&app_launch_key=08212099",
+
+        "adobeFeedUrl"               : "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/adobe-feeds/"+settings.appId+".xml",
+        "adobeFeedUrl_dev"           : "http://ecom-dev01-app.usdlls2.savvis.net:10500/assets/appstorefronts-jq/adobe-feeds/"+settings.appId+".xml", 
 
         "DEV_TCM_FEED": "http://ecom-dev01-app.usdlls2.savvis.net:10400/html/v25app/data/" + settings.brandCode + ".json",
         "PRODUCTION_TCM_FEED": "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/v25data/" + settings.brandCode + ".json",
@@ -81,15 +86,11 @@
         "dev_asset_root": "./",
         "prod_asset_root": "./",
 
-
-        // ************************************************************  
-        // BACKWARDS COMPATIBILITY (deprecated settings)
-        // ************************************************************  
-        "popupActivateButtonUrl": settings.WesPageURL,
-        "upgradeSubscriptionUrl": settings.WesPageURL,
-        
-
     ihatethelastcomma: true};
+    
+    // BACKWARDS COMPATIBILITY (deprecated settings)
+    default_settings.popupActivateButtonUrl = default_settings.WesPageURL;
+    default_settings.upgradeSubscriptionUrl = default_settings.WesPageURL;
 
     // taken loosely from underscore.js's extend() method because this file
     // can't have any external dependencies
