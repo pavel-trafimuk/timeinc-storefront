@@ -94,14 +94,18 @@
       var folio = App.api.libraryService.get_touted_issue();
       new App.views.IssuePreviewImage(folio);
     },
-    goto_native_preview: function() {
+    goto_native_preview: function(link) {
       var $progress = this.$(".issue-cover").addClass("progress");
       $progress.attr("data-label", "Opening Issue…");
 
       this.$(".page-curl").fadeOut();
-      App.api.libraryService.get_touted_issue().view_or_preview({
+      var folio = App.api.libraryService.get_touted_issue();
+      folio.view_or_preview({
         complete: function() {
           $progress.attr("data-label", "Opening Issue…");
+          if (link) {
+            folio.goto_dossier(link);
+          }
         },
         download_progress: function(progress) {
           $progress.attr("data-label", "Downloading…");
@@ -133,8 +137,12 @@
       setTimeout(function(){$msg.removeClass("show-loading")}, 3500);
       
       // open issue in a timeout so the UI can respond first
+      //setTimeout(function() {
+      //  App.api.libraryService.get_touted_issue().goto_dossier(dossier_id);
+      //}, 100);
+
       setTimeout(function() {
-        App.api.libraryService.get_touted_issue().goto_dossier(dossier_id);
+          that.goto_native_preview(dossier_id);
       }, 100);
     }
   });
