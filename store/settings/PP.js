@@ -7,7 +7,7 @@ window.settings = {
     "brandName"                  : "PEOPLE EN ESPA&Ntilde;OL",
     "brandCode"                  : "PP",
     "schedule"                   : "monthly",
-    "popupInterval"              : 0,
+    "popupInterval"              : 5,
     "enable_first_load_popup"    : false,
 
     "subscribeOfferText"         : "&iexcl;Suscr&iacute;bete ahora para ver deslumbrantes fotos y v&iacute;deos exclusivos detr&aacute;s de c&aacute;mara. Adem&aacute;s, entrevistas francas con tus celebridades favoritas!",

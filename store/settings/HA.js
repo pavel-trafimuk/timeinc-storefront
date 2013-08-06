@@ -7,7 +7,7 @@ window.settings = {
     "brandName"                  : "HEALTH Magazine",
     "brandCode"                  : "HA",
     "schedule"                   : "monthly",
-    "popupInterval"              : 0,
+    "popupInterval"              : 5,
     "enable_first_load_popup"    : false,
     
     "subscribeOfferText"         : "Subscribe now to get HEALTH on your iPad. Each issue is packed with smart and fun new ways to stay in great shape, look amazing and discover tasty (and healthy!) things to eat. Plus, get 1 month free with an annual subscription.",

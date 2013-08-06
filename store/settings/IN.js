@@ -7,7 +7,7 @@ window.settings = {
     "brandName"                  : "INSTYLE",
     "brandCode"                  : "IN",
     "schedule"                   : "monthly",
-    "popupInterval"              : 0,
+    "popupInterval"              : 5,
     "enable_first_load_popup"    : false,
   
     "subscribeOfferText"         : "Subscribe now to get INSTYLE Magazine on your iPad. Featuring the hottest fashion trends, beauty tips, celebrity style secrets, best beauty buys and so much more! Plus, get 1 month free with an annual subscription.",
