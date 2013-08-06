@@ -4,7 +4,7 @@
 window.settings = {
 
     // General settings
-    "brandName"                  : "PEOPLE Magazine",
+    "brandName"                  : "Time Europe",
     "brandCode"                  : "TA",
     "schedule"                   : "weekly",
     "popupInterval"              : 5,
@@ -28,12 +28,15 @@ window.settings = {
     "adobeAppId"                 : "3345449b73b344a29b76cd0bc7f32669",
     "appId"                      : "com.timeinc.ipad.emea",
 
-    "supportPhoneNumber"         : "1-866-769-0199",
-    "supportEmail"               : "peopledigital@customersvc.com",
+    "supportPhoneNumber"         : "",
+    "supportEmail"               : "",
 
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
+    "welcomeScreenWesURL"        : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=TA&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
+    "WesPageURL"                 : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=TA&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
+
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/ta-lucie-customer-creation-itunes201307.html",
     
 "ihatethelastcomma": true};

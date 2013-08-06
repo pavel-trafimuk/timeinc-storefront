@@ -4,7 +4,7 @@
 window.settings = {
 
     // General settings
-    "brandName"                  : "PEOPLE Magazine",
+    "brandName"                  : "Fortune Europe",
     "brandCode"                  : "FI",
     "schedule"                   : "weekly",
     "popupInterval"              : 5,
@@ -28,12 +28,14 @@ window.settings = {
     "adobeAppId"                 : "3a765c63100e491bb112b87a721a12e7",
     "appId"                      : "com.emea.fortune.ipad.inapp",
 
-    "supportPhoneNumber"         : "1-866-769-0199",
-    "supportEmail"               : "peopledigital@customersvc.com",
+    "supportPhoneNumber"         : "",
+    "supportEmail"               : "",
 
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
+    "welcomeScreenWesURL"        : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=FI&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
+    "WesPageURL"                 : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=FI&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/fi-lucie-customer-creation-itunes201307.html",
     
 "ihatethelastcomma": true};

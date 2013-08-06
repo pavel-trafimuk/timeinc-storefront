@@ -4,7 +4,7 @@
 window.settings = {
 
     // General settings
-    "brandName"                  : "PEOPLE Magazine",
+    "brandName"                  : "Fortune Asia Pacific",
     "brandCode"                  : "FA",
     "schedule"                   : "weekly",
     "popupInterval"              : 5,
@@ -28,12 +28,14 @@ window.settings = {
     "adobeAppId"                 : "67d797a4e7074c26962b2af1141f4067",
     "appId"                      : "com.tahk.fortune.ipad.inapp",
 
-    "supportPhoneNumber"         : "1-866-769-0199",
-    "supportEmail"               : "peopledigital@customersvc.com",
+    "supportPhoneNumber"         : "",
+    "supportEmail"               : "",
 
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
+    "welcomeScreenWesURL"        : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=FA&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
+    "WesPageURL"                 : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=FA&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/fa-lucie-customer-creation-itunes201307.html",
     
 "ihatethelastcomma": true};

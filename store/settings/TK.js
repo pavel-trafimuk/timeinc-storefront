@@ -34,6 +34,10 @@ window.settings = {
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
+    // No WES urls in TK
+    "welcomeScreenWesURL"        : null,
+    "WesPageURL"                 : null,
+
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/tk-lucie-customer-creation-itunes201307.html",
     
 "ihatethelastcomma": true};

@@ -4,7 +4,7 @@
 window.settings = {
 
     // General settings
-    "brandName"                  : "PEOPLE Magazine",
+    "brandName"                  : "Time Asia",
     "brandCode"                  : "TI",
     "schedule"                   : "weekly",
     "popupInterval"              : 5,
@@ -28,12 +28,15 @@ window.settings = {
     "adobeAppId"                 : "17b97fca894149aa9824a17a26347cc3",
     "appId"                      : "com.timeinc.ipad.tahk",
 
-    "supportPhoneNumber"         : "1-866-769-0199",
-    "supportEmail"               : "peopledigital@customersvc.com",
+    "supportPhoneNumber"         : "",
+    "supportEmail"               : "",
 
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
+    "welcomeScreenWesURL"        : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=TI&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
+    "WesPageURL"                 : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=TI&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
+
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/ti-lucie-customer-creation-itunes201307.html",
     
 "ihatethelastcomma": true};
