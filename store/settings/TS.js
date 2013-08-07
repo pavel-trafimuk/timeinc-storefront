@@ -21,8 +21,8 @@ window.settings = {
     "omniture_server"            : "",
     "omniture_ssl_server"        : "",
 
-    "echo_bundle_id"             : "",
-    "echo_token"                 : "",
+    "echo_bundle_id"             : "com_timeinc_ipad_tspl",
+    "echo_token"                 : "f1d6524969d4effeee3e6d055ce66caa60946e3c",
     
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "f04aca261b5b4167bc6623e5e2330361",
