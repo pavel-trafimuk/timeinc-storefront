@@ -37,7 +37,9 @@
            {{> buy-view-btn.partial }} 
         </button>
         <button class="subscribe-button">{{settings.storeSubscribeBtn}}</button>
-        <div class="print-subscribers">Existing Subscriber? <a href="#">CREATE A DIGITAL ACCOUNT</a></div>
+        {{#if settings.WesPageURL}}
+        	<div class="print-subscribers">Existing Subscriber? <a href="#">CREATE A DIGITAL ACCOUNT</a></div>
+    	{{/if}}
     </div>
 </div>
 <div class="clear"></div>

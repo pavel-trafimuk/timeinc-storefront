@@ -1,9 +1,11 @@
 <img class='cover-img-only' src="{{img_only_cover_url}}" style="display: none;" width="100%">
 <img class='cover-with-text' src="{{full_cover_url}}" width="100%">
 <div class="buttons">
-    {{#unless is_subscriber}}
-        <button class="print-subscriber">{{../settings.welcomePrintSubsBtn}}</button>
-    {{/unless}}
+    {{#if settings.welcomeScreenWesURL}}
+	    {{#unless is_subscriber}}
+	        <button class="print-subscriber">{{../settings.welcomePrintSubsBtn}}</button>
+	    {{/unless}}
+    {{/if}}
     <button class="goto-store">{{settings.welcomeBrowseBtn}}</button>
     {{#unless is_subscriber}}
         <button class="subscribe">{{../settings.welcomeSubscribeBtn}}</button>
