@@ -9,7 +9,8 @@
       "tap .reload-page": "reload_page"
     },
     initialize: function() {
-      var that = this;
+      var that = this,
+          folio = App.api.libraryService.get_touted_issue();
       this.welcome_view = new App.views.Welcome;
       this.store_view = new App.views.Store;
 
@@ -17,9 +18,17 @@
         localStorage.app_view_count = 0;
       }
 
-      if (localStorage.app_view_count % settings.popupInterval === 0) {
-        this.subview = this.welcome_view;
-        App.omni.pageview("splashpage", "event1,event43,event44");
+      // Show welcome screen using frequency set in settings
+      //if (localStorage.app_view_count % settings.popupInterval === 0) {
+      //  this.subview = this.welcome_view;
+      //  App.omni.pageview("splashpage", "event1,event43,event44");
+      //}
+      
+      // Show welcome screen once per issue (use local storage)
+      if (!localStorage.welcome_issue_displayed_last || localStorage.welcome_issue_displayed_last != folio.productId) {
+          localStorage.welcome_issue_displayed_last = folio.productId;
+          this.subview = this.welcome_view;
+          App.omni.pageview("splashpage", "event1,event43,event44");
       }
       else {
         this.subview = this.store_view;
