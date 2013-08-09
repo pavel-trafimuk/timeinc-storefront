@@ -17,9 +17,9 @@ window.settings = {
     "hero_itii_preview": "image",
     "max_back_issues"            : 20,
 
-    "omniture_account"           : "",
-    "omniture_server"            : "",
-    "omniture_ssl_server"        : "",
+    "omniture_account"           : "timagtimesopac",
+    "omniture_server"            : "metrics.time.com",
+    "omniture_ssl_server"        : "smetrics.time.com",
 
     "echo_bundle_id"             : "com_timeinc_ipad_tspl",
     "echo_token"                 : "f1d6524969d4effeee3e6d055ce66caa60946e3c",

@@ -17,9 +17,9 @@ window.settings = {
     "hero_itii_preview": "image",
     "max_back_issues"            : 20,
 
-    "omniture_account"           : "",
-    "omniture_server"            : "",
-    "omniture_ssl_server"        : "",
+    "omniture_account"           : "timagfortuneeuropeall",
+    "omniture_server"            : "metrics.cnn.com",
+    "omniture_ssl_server"        : "smetrics.cnn.com",
 
     "echo_bundle_id"             : "com_emea_fortune_ipad_inapp",
     "echo_token"                 : "66ec6e93cfcc571ea54f376e51d674188c656b1d",
