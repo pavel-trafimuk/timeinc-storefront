@@ -38,6 +38,8 @@ window.settings = {
     "welcomeScreenWesURL"        : null,
     "WesPageURL"                 : null,
 
+    "privacyPolicyUrl": "http://www.timeinc.net/subs/privacy/eula/tk/tk-familyed-index.html",
+    
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/tk-lucie-customer-creation-itunes201307.html",
     
 "ihatethelastcomma": true};
