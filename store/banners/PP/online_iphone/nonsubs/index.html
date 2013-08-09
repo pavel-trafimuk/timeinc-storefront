@@ -4,6 +4,8 @@
   <title>Subscription Banner</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi"/>
+  <script src="../../../settings/{{MAG_CODE}}.js" type="text/javascript"></script>
+  <script src="../../../settings/settings_loader.js" type="text/javascript"></script>
   <style>
     /* Banner CSS for iOS iPad devices with horz/vert orientations */
     html, body {
@@ -15,34 +17,16 @@
       -webkit-touch-callout: none;
     }
  
+    /* styles for both orientations */
     #banner {
       position: absolute;
       margin: 0;
       padding: 0;
       top: 0; bottom: 0;
       left: 0; right: 0;
-      border: none;
-      background-color: transparent;
-      background-image: url('portrait.png');
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
+      border: none;      
+      background: transparent url('logo.png') no-repeat 50% 50%;
       -webkit-background-size: contain;
-    }
-   
-    /* iPad Landscape */
-    @media only screen and (max-width: 1024px) {
-        #banner {
-            background-image: url('landscape.png') !important;
-            height: 185px !important;
-        }
-    }
-    
-    /* iPad Portrait */
-    @media only screen and (max-width: 768px) {
-        #banner {
-            background-image: url('portrait.png') !important;
-            height: 237px !important;
-        }
     }
  
     a {
@@ -58,7 +42,9 @@
 </head>
  
 <body>
-  <div id="banner"></div>
+  <div id="banner"><a id="banner-link"></a></div>
+  <script>
+    document.getElementById("banner-link").href = settings.popupActivateButtonUrl;
+  </script>
 </body>
 </html>
-
