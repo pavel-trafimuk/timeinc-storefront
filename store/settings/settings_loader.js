@@ -30,6 +30,9 @@
         "backissue_preview": "image",
 
         "enable_first_load_popup": false,
+        
+        // display welcome screen only once per new issue
+        "welcome_once_per_issue": false,
 
 
         // ************************************************************  

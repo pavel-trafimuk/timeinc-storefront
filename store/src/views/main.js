@@ -17,24 +17,32 @@
       if (typeof localStorage.app_view_count == "undefined") {
         localStorage.app_view_count = 0;
       }
-
-      // Show welcome screen using frequency set in settings
-      //if (localStorage.app_view_count % settings.popupInterval === 0) {
-      //  this.subview = this.welcome_view;
-      //  App.omni.pageview("splashpage", "event1,event43,event44");
-      //}
       
-      // Show welcome screen once per issue (use local storage)
-      if (!localStorage.welcome_issue_displayed_last || localStorage.welcome_issue_displayed_last != folio.productId) {
+      if (settings.welcome_once_per_issue) {
+        // Show welcome screen once per issue (use local storage)
+        if (typeof localStorage.welcome_issue_displayed_last == "undefined" && localStorage.welcome_issue_displayed_last != folio.productId) {
           localStorage.welcome_issue_displayed_last = folio.productId;
           this.subview = this.welcome_view;
           App.omni.pageview("splashpage", "event1,event43,event44");
+        }
+        else {
+          this.subview = this.store_view;
+          App.omni.pageview("main", "event1,event43");
+        }
       }
       else {
-        this.subview = this.store_view;
-        App.omni.pageview("main", "event1,event43");
+        // Show welcome screen using frequency set in settings
+        if (localStorage.app_view_count % settings.popupInterval === 0) {
+          this.subview = this.welcome_view;
+          App.omni.pageview("splashpage", "event1,event43,event44");
+        }
+        else {
+          this.subview = this.store_view;
+          App.omni.pageview("main", "event1,event43");
+        }
       }
       localStorage.app_view_count = +localStorage.app_view_count + 1;
+      
     },
     render: function(cb) {
       var that = this;
