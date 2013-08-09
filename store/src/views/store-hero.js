@@ -91,10 +91,16 @@
     goto_preview: function(evt) {
       App.omni.event("st_preview_featured_taps");
       if (settings.hero_preview == "image") {
-        return this.goto_image_preview(evt);
+        return this.goto_image_preview();
       }
       else if (settings.hero_preview == "adobe") {
-        return this.goto_native_preview(evt);
+        var folio = App.api.libraryService.get_touted_issue();
+        if (folio.tcm && folio.tcm.link) {
+          return this.goto_native_preview(folio.tcm.link);
+        }
+        else {
+          this.goto_native_preview();
+        }
       }
     },
     goto_image_preview: function() {
@@ -111,7 +117,8 @@
         complete: function() {
           $progress.attr("data-label", "Opening Issue…");
           if (link) {
-            folio.goto_dossier(link);
+            setTimeout(function() { folio.goto_dossier(link) }, 150);
+            return false;
           }
         },
         download_progress: function(progress) {
@@ -143,14 +150,7 @@
       $msg.addClass("show-loading");
       setTimeout(function(){$msg.removeClass("show-loading")}, 3500);
       
-      // open issue in a timeout so the UI can respond first
-      //setTimeout(function() {
-      //  App.api.libraryService.get_touted_issue().goto_dossier(dossier_id);
-      //}, 100);
-
-      setTimeout(function() {
-          that.goto_native_preview(dossier_id);
-      }, 100);
+      that.goto_native_preview(dossier_id);
     }
   });
 

@@ -110,13 +110,18 @@
     },
     open_native_preview: function() {
       var dialog = new App.dialogs.WelcomeDownloading(),
-          $progress = dialog.$(".progress");
+          $progress = dialog.$(".progress"),
+          folio = this.folio;
 
       this.$(".page-curl").fadeOut();
       
-      this.folio.view_or_preview({
+      folio.view_or_preview({
         complete: function() {
           $progress.attr("data-label", "Opening Issue…");
+          if (folio.tcm && folio.tcm.link) {
+            setTimeout(function(){ folio.goto_dossier(folio.tcm.link) }, 50)
+            return false;
+          }
         },
         download_progress: function(progress) {
           $progress.attr("data-label", "Downloading…");
