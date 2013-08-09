@@ -12,10 +12,10 @@ window.settings = {
     
     "subscribeOfferText"         : "Subscribe now to get ESSENCE on your iPad, featuring FASHION AND BEAUTY secrets so you look and feel your best, plus receive EMPOWERING ADVICE on relationships and money matters!",
     
-    "welcome_preview": "image",
-    "hero_preview": "image",
-    "hero_itii_preview": "image",
-    "max_back_issues"            : 20,
+    "welcome_preview": "adobe",
+    "hero_preview": "adobe",
+    "hero_itii_preview": "adobe",
+    "max_back_issues"            : 12,
 
     "omniture_account"           : "timagessencenk",
     "omniture_server"            : "timeinc.122.2o7.net",
