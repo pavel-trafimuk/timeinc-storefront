@@ -42,6 +42,7 @@
         "welcomePrintSubsBtn"        : "Print Subscriber",
         "welcomeBrowseBtn"           : "Browse Issues",
         "welcomeSubscribeBtn"        : "Subscribe",
+
         "storeSubscribeBtn"          : "Subscribe",
         "storeBuyIssueBtn"           : "Buy Issue",
         "storeViewIssueBtn"          : "View Issue",
@@ -59,10 +60,10 @@
         "popup_subscribe_text"       : "Download the latest issue now",
         "popup_close_text"           : "Close",
 
+
         // ************************************************************  
         // URLS
         // ************************************************************
-
         "privacyPolicyUrl"           : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/"+settings.brandCode+"/pp.html",
         "termsOfUseUrl"              : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/"+settings.brandCode+"/tos.html",
         "licenceAgreementUrl"        : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/"+settings.brandCode+"/la.html",
