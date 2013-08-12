@@ -13,7 +13,7 @@ window.settings = {
     "welcome_preview": "adobe",
     "hero_preview": "adobe",
     "hero_itii_preview": "adobe",
-    "max_back_issues"            : 20,
+    "max_back_issues"            : 12,
 
     "omniture_account"           : "timagpespnk",
     "omniture_server"            : "timeinc.122.2o7.net",
