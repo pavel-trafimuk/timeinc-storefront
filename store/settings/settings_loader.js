@@ -94,7 +94,8 @@
         "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG="+settings.brandCode+"&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
         "customerServiceUrl"         : "https://secure.customersvc.com/servlet/Show?WESPAGE=home.html&MSRSMAG=" + settings.brandCode + "&app_launch_key=08212099",
 
-        "myacctRestoreIssuesURL":    : "restoreissues.html",
+        "myacctRestoreIssuesURL"     : "restoreissues.html",
+
 
         // urls cached on our server. canonical versions listed at:  
         // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
@@ -117,6 +118,7 @@
 
     ihatethelastcomma: true};
     
+
     // BACKWARDS COMPATIBILITY (deprecated settings)
     default_settings.popupActivateButtonUrl = default_settings.WesPageURL;
     default_settings.upgradeSubscriptionUrl = default_settings.WesPageURL;

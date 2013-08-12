@@ -74,7 +74,7 @@ window.settings = {
     // App specific URLS
     // ************************************************************  
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/pp-lucie-customer-creation-itunes201307.html",
-    "myacctRestoreIssuesURL":    : "restoreissues.es.html",
+    "myacctRestoreIssuesURL"     : "restoreissues.es.html",
     
 "ihatethelastcomma": true};
 })();
