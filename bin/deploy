@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# NOTE: REQUIRES CVSROOT TO BE IN BASH ENVIRONMENT
+# probably looks like:
+#   CVSROOT=:pserver:username:password@ecom-build01.usdlls2.savvis.net:/subs3
+
 if [ -z "$1" ]; then
   echo "YOU MUST SPECIFY A BRAND"
   exit 1
