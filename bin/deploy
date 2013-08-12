@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  echo "YOU MUST SPECIFY A BRAND"
+  exit 1
+else
+  TITLE="$1"
+fi
+
+cd $(dirname $0)
+cd ..
+
+bin/build $TITLE
+
+rm -rf /tmp/v25/$TITLE
+mkdir -p /tmp/v25/$TITLE
+
+pushd /tmp/v25
+cvs -q checkout -d $TITLE assets/appstorefronts-jq/${TITLE}/adobe/apple/ipad/v25
+
+popd
+cp -R ./-${TITLE}-store-deploy/ /tmp/v25/${TITLE}
+
+pushd /tmp/v25/${TITLE}
+
+# CLEAN OUT VIM SWAP FILES
+find . -iname "*.swp" | xargs rm
+
+# COMMIT ANY FILES THAT ARE CHANGED
+cvs -qn update | while read F; do
+
+  # First char is the status, then a space, then the filename
+  STATUS="${F:0:1}"
+  FILE="${F:2}"
+
+  if [[ "$STATUS" == "?" ]]; then
+    cvs add "$FILE"
+  fi
+  
+  cvs commit -m "deploy" "$FILE"
+
+  cvs tag -F cmdev "$FILE"
+  cvs tag -F qa    "$FILE"
+  cvs tag -F prod  "$FILE"
+
+done
