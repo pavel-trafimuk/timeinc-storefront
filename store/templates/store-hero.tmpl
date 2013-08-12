@@ -4,7 +4,7 @@
         <img src="{{settings.cover_spacer_img}}" data-real-src="{{folio.get_cover_img}}">
         <div class="progress-bar"></div>
         <div class="page-curl">
-            <div class="curl-text">See Inside</div>
+            <div class="curl-text">{{settings.seeInsideCTA}}</div>
             <div class="curl-obj"></div> 
         </div>
     </div>
@@ -28,7 +28,7 @@
                     {{title}}
                 </h3>
                 <p>{{summary}}</p>
-                <span class="opening-issue-text">Opening Article…</span>
+                <span class="opening-issue-text">{{../settings.heroOpeningItii}}</span>
             </article>
         {{/each}}
     </div>
@@ -38,7 +38,7 @@
         </button>
         <button class="subscribe-button">{{settings.storeSubscribeBtn}}</button>
         {{#if settings.WesPageURL}}
-        	<div class="print-subscribers">Existing Subscriber? <a href="#">CREATE A DIGITAL ACCOUNT</a></div>
+        	<div class="print-subscribers">{{settings.heroExistingQuestion}} <a href="#">{{settings.heroExistingLink}}</a></div>
     	{{/if}}
     </div>
 </div>

@@ -1,5 +1,5 @@
 <div id='subscribe-dialog' class='dialog'>
-    <p id='title'>Subscribe to {{ settings.brandName }}</p>
+    <p id='title'>{{settings.subscribeTo}} {{ settings.brandName }}</p>
     <p id='description'>{{settings.subscribeOfferText}}</p>
     {{#each subscriptions}}
         <div class='subscribe-button' id='{{ productId }}'>
@@ -9,5 +9,5 @@
             {{/if}}
         </div>
     {{/each}}
-    <button id='cancel'>Cancel</button>
+    <button id='cancel'>{{settings.subscribeCancel}}</button>
 </div>

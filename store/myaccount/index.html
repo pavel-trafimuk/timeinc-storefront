@@ -36,11 +36,22 @@ function go(URL){
 <div id="panel" style="display: none; width: 486px; height: 648px; background-color:white;margin:0 auto 0 auto;position: fixed;">
 
  <div id="logo"></div>
- <a onclick="go(settings.signInForgotPasswordUrl)" href="#" target="_blank"><span class="singleLine">FORGOT PASSWORD</span></a>
- <a onclick="go(settings.popupActivateButtonUrl)" href="#" class="print-subs" style="display: none;" target="_blank"><span class="line1">PRINT SUBSCRIBERS</span><br /><span class="line2">TAP HERE</span></a>
- <a onclick="adobeDPS.dialogService.displayCustomDialog()" id="lucieRegistrationBtn" href="#"><span class="line1">COMPLETE ACCOUNT SETUP</span><br /><span class="line2">FOR IPAD SUBSCRIBERS</span></a>
- <a id="restoreIssues" href="restoreissues.html" target="_blank"><span class="singleLine">RESTORE ISSUES</span></a>
- <a onclick="go(settings.customerServiceUrl)" href="#" target="_blank"><span class="singleLine">CUSTOMER SERVICE</span></a>
+
+ <a onclick="go(settings.signInForgotPasswordUrl)" href="#" target="_blank"><script>
+   document.write(settings.myacctForgotPassword);
+ </script></a>
+ <a onclick="go(settings.popupActivateButtonUrl)" href="#" class="print-subs" style="display: none;" target="_blank"><script>
+   document.write(settings.myacctPrintSubs);
+ </script></a>
+ <a onclick="adobeDPS.dialogService.displayCustomDialog()" id="lucieRegistrationBtn" href="#"><script>
+   document.write(settings.myacctAcctSetup);
+ </script></a>
+ <a onclick="go(settings.myacctRestoreIssuesURL)" href="#" id="restoreIssues" target="_blank"><script>
+   document.write(settings.myacctRestoreIssues);
+ </script></a>
+ <a onclick="go(settings.customerServiceUrl)" href="#" target="_blank"><script>
+   document.write(settings.myacctCustService);
+ </script></a>
 		
 </div>
 
@@ -203,3 +214,4 @@ function go(URL){
 </script>
 </body>
 </html>
+

@@ -48,14 +48,14 @@
           folio = App.api.libraryService.get_by_productId(product_id),
           $cover = $(".issue-cover", $this);
 
-      $cover.addClass("progress").attr("data-label", "Opening Issue…");
+      $cover.addClass("progress").attr("data-label", settings.progressStarting);
       
       folio.view_or_preview({
         complete: function() {
-          $cover.attr("data-label", "Opening Issue…");
+          $cover.attr("data-label", settings.progressOpening);
         },
         download_progress: function(progress) {
-          $cover.attr("data-label", "Downloading…");
+          $cover.attr("data-label", settings.progressDownloading);
           $(".progress-bar", $this).css("width", progress+"%");
         }
       });

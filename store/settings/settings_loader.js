@@ -42,16 +42,30 @@
         "welcomePrintSubsBtn"        : "Print Subscriber",
         "welcomeBrowseBtn"           : "Browse Issues",
         "welcomeSubscribeBtn"        : "Subscribe",
+        "welcomeAlreadyHaveAcct"     : "Already have an account?",
 
         "storeSubscribeBtn"          : "Subscribe",
         "storeBuyIssueBtn"           : "Buy Issue",
         "storeViewIssueBtn"          : "View Issue",
         "storeDownloadIssueBtn"      : "Download",
         "storeUnavailableIssueBtn"   : "Unavailable",
-        
+
+        "storeIssuesTapToView"       : "Tap to View",
+        "seeInsideCTA"               : "See Inside",
+
+        "subscribeTo"                : "Subscribe to",
+        "subscribeCancel"            : "Cancel",
+
+        "progressStarting"           : "Loading…",
+        "progressDownloading"        : "Downloading…",
+        "progressOpening"            : "Opening…",
+
         // Messaging
         //"heroHeading"                : "In This " + (settings.schedule == "weekly" ? "Week" : "Month") + "’s Issue",
         "heroHeading"                : "Preview Editor’s Picks",
+        "heroExistingQuestion"       : "Existing Subscriber?",
+        "heroExistingLink"           : "Create a Digial Account",
+        "heroOpeningItii"            : "Opening Article…",
         
         // First load popup
         "popup_paragraph1"           : "",
@@ -59,6 +73,13 @@
         "popup_restore_text"         : "<i>To restore your back issues follow instructions in the Library</i>",
         "popup_subscribe_text"       : "Download the latest issue now",
         "popup_close_text"           : "Close",
+
+        // my account
+        "myacctForgotPassword"       : '<span class="singleLine">FORGOT PASSWORD</span>',
+        "myacctPrintSubs"            : '<span class="line1">PRINT SUBSCRIBERS</span><br /><span class="line2">TAP HERE</span>',
+        "myacctAcctSetup"            : '<span class="line1">COMPLETE ACCOUNT SETUP</span><br /><span class="line2">FOR IPAD SUBSCRIBERS</span>',
+        "myacctRestoreIssues"        : '<span class="singleLine">RESTORE ISSUES</span>',
+        "myacctCustService"          : '<span class="singleLine">CUSTOMER SERVICE</span>',
 
 
         // ************************************************************  
@@ -72,6 +93,8 @@
         "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG="+settings.brandCode+"&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
         "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG="+settings.brandCode+"&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
         "customerServiceUrl"         : "https://secure.customersvc.com/servlet/Show?WESPAGE=home.html&MSRSMAG=" + settings.brandCode + "&app_launch_key=08212099",
+
+        "myacctRestoreIssuesURL":    : "restoreissues.html",
 
         // urls cached on our server. canonical versions listed at:  
         // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls

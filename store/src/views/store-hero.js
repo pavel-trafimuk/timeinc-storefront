@@ -72,14 +72,14 @@
       App.omni.event("st_"+$this.data("action")+"_taps");
 
       $curl.hide();
-      $progress.attr("data-label", "Loading…");
+      $progress.attr("data-label", settings.progressStarting);
       
       App.api.libraryService.get_touted_issue().purchase_and_download({
         complete: function() {
-          $progress.attr("data-label", "Opening Issue…");
+          $progress.attr("data-label", settings.progressOpening);
         },
         download_progress: function(progress) {
-          $progress.attr("data-label", "Downloading…");
+          $progress.attr("data-label", settings.progressDownloading);
           $(".progress-bar", $progress).css("width", progress+"%");
         },
         cancelled: function() {
@@ -109,20 +109,20 @@
     },
     goto_native_preview: function(link) {
       var $progress = this.$(".issue-cover").addClass("progress");
-      $progress.attr("data-label", "Opening Issue…");
+      $progress.attr("data-label", settings.progressStarting);
 
       this.$(".page-curl").fadeOut();
       var folio = App.api.libraryService.get_touted_issue();
       folio.view_or_preview({
         complete: function() {
-          $progress.attr("data-label", "Opening Issue…");
+          $progress.attr("data-label", settings.progressOpening);
           if (link) {
             setTimeout(function() { folio.goto_dossier(link) }, 150);
             return false;
           }
         },
         download_progress: function(progress) {
-          $progress.attr("data-label", "Downloading…");
+          $progress.attr("data-label", settings.progressDownloading);
           $(".progress-bar", $progress).css("width", progress+"%");
         }
       });
