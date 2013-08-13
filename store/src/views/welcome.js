@@ -63,6 +63,12 @@
           covers = this._get_covers(),
           imgs = this.folio.get_welcome_imgs();
 
+      function preloader(img) {
+        return function(cb) {
+          App.preload.img(img, _.once(_.partial(cb, null)))
+        }
+      }
+
       async.parallel([
         function(cb) { 
           App.preload.img(covers[0], function() {
@@ -70,10 +76,10 @@
             cb(null);
           })
         },
-        function(cb) { App.preload.img(imgs.portrait[0], _.partial(cb, null)) },
-        function(cb) { App.preload.img(imgs.portrait[1], _.partial(cb, null)) },
-        function(cb) { App.preload.img(imgs.landscape[0], _.partial(cb, null)) },
-        function(cb) { App.preload.img(imgs.landscape[1], _.partial(cb, null)) }
+        preloader(imgs.portrait[0]),
+        preloader(imgs.portrait[1]),
+        preloader(imgs.landscape[0]),
+        preloader(imgs.landscape[1])
       ], function() {
           var init_delay = covers[0] ? 600 : 0;
           that.$(".cover-with-text").transition({duration: 1800, delay: init_delay, opacity: 1.0});
