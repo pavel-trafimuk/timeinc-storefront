@@ -36,6 +36,12 @@
       var that = this,
           folio = App.api.libraryService.get_touted_issue();
 
+      // Buying/downloading an issue will trigger a re-render via
+      // updatedSignal, but re-rendering will break the UI feedback. Since the 
+      // user is leaving the store, we'll just cancel the re-render in those
+      // cases
+      if (this.disable_rendering) return;
+
       _.bindAll(folio);
 
       App.api.authenticationService.user_is_subscriber(function(is_subscriber) {
@@ -68,6 +74,8 @@
       var $this = $(evt.currentTarget),
           $progress = this.$(".issue-cover").addClass("progress"),
           $curl = this.$(".page-curl");
+
+      this.disable_rendering = true;
 
       App.omni.event("st_"+$this.data("action")+"_taps");
 
@@ -111,6 +119,8 @@
       var $progress = this.$(".issue-cover").addClass("progress");
       $progress.attr("data-label", settings.progressStarting);
 
+      this.disable_rendering = true;
+
       this.$(".page-curl").fadeOut();
       var folio = App.api.libraryService.get_touted_issue();
       folio.view_or_preview({
@@ -148,7 +158,7 @@
           dossier_id = $this.data("destination");
 
       $msg.addClass("show-loading");
-      setTimeout(function(){$msg.removeClass("show-loading")}, 3500);
+      setTimeout(function(){$msg.removeClass("show-loading")}, 5000);
       
       that.goto_native_preview(dossier_id);
     }
