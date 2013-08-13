@@ -28,8 +28,8 @@ window.settings = {
     "adobeAppId"                 : "3a765c63100e491bb112b87a721a12e7",
     "appId"                      : "com.emea.fortune.ipad.inapp",
 
-    "supportPhoneNumber"         : "",
-    "supportEmail"               : "",
+    "supportPhoneNumber"         : "+31 20 487 4232",
+    "supportEmail"               : "fortune_europe@customersvc.com",
 
     // ************************************************************  
     // App specific URLS

@@ -28,8 +28,8 @@ window.settings = {
     "adobeAppId"                 : "23d2cbbd0c6c46c7aadcda14c29222dc",
     "appId"                      : "com.timeinc.tspl.india.ipad.inapp",
 
-    "supportPhoneNumber"         : "",
-    "supportEmail"               : "",
+    "supportPhoneNumber"         : "+852 3128 5688",
+    "supportEmail"               : "http://www.time.com/asiamail",
 
     // ************************************************************  
     // App specific URLS

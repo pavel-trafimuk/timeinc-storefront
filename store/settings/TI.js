@@ -28,8 +28,8 @@ window.settings = {
     "adobeAppId"                 : "17b97fca894149aa9824a17a26347cc3",
     "appId"                      : "com.timeinc.ipad.tahk",
 
-    "supportPhoneNumber"         : "",
-    "supportEmail"               : "",
+    "supportPhoneNumber"         : "+852 3128 5688",
+    "supportEmail"               : "http://www.time.com/asiamail",
 
     // ************************************************************  
     // App specific URLS

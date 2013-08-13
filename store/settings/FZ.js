@@ -28,8 +28,8 @@ window.settings = {
     "adobeAppId"                 : "5e020d776f0d4ccda413ffa1ad685e89",
     "appId"                      : "com.international.fortune.ipad.inapp",
 
-    "supportPhoneNumber"         : "",
-    "supportEmail"               : "",
+    "supportPhoneNumber"         : "+852 3128 5688",
+    "supportEmail"               : "http://www.fortune.com/asiamail",
 
     // ************************************************************  
     // App specific URLS
