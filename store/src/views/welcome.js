@@ -125,7 +125,7 @@
         complete: function() {
           $progress.attr("data-label", "Opening Issue…");
           if (folio.tcm && folio.tcm.link) {
-            setTimeout(function(){ folio.goto_dossier(folio.tcm.link) }, 50)
+            setTimeout(function(){ folio.goto_dossier(folio.tcm.link) }, 350)
             return false;
           }
         },
