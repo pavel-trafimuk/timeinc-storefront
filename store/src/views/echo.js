@@ -29,7 +29,7 @@
       var postEchoInterval = window.setInterval(function() {
           if ($("#echoForm") && $("#echoFrame")) {
               window.clearInterval(postEchoInterval);
-              $("#echoForm").submit();
+              setTimeout(function() { $("#echoForm").submit() }, 1000);
               console.log("Echo: " + $("#echoFrame").contents().find("body").html());
           }
       }, 0);
