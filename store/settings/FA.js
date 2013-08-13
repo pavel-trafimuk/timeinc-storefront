@@ -28,8 +28,8 @@ window.settings = {
     "adobeAppId"                 : "67d797a4e7074c26962b2af1141f4067",
     "appId"                      : "com.tahk.fortune.ipad.inapp",
 
-    "supportPhoneNumber"         : "",
-    "supportEmail"               : "",
+    "supportPhoneNumber"         : "+852 3128 5688",
+    "supportEmail"               : "http://www.fortune.com/asiamail",
 
     // ************************************************************  
     // App specific URLS

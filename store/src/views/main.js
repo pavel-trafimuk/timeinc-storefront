@@ -20,7 +20,7 @@
       
       if (settings.welcome_once_per_issue) {
         // Show welcome screen once per issue (use local storage)
-        if (typeof localStorage.welcome_issue_displayed_last == "undefined" && localStorage.welcome_issue_displayed_last != folio.productId) {
+        if (typeof localStorage.welcome_issue_displayed_last == "undefined" || localStorage.welcome_issue_displayed_last != folio.productId) {
           localStorage.welcome_issue_displayed_last = folio.productId;
           this.subview = this.welcome_view;
           App.omni.pageview("splashpage", "event1,event43,event44");

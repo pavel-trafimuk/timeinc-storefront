@@ -28,8 +28,8 @@ window.settings = {
     "adobeAppId"                 : "f04aca261b5b4167bc6623e5e2330361",
     "appId"                      : "com.timeinc.ipad.tspl",
 
-    "supportPhoneNumber"         : "",
-    "supportEmail"               : "",
+    "supportPhoneNumber"         : "+852 3128 5688",
+    "supportEmail"               : "http://www.time.com/pacificmail",
 
     // ************************************************************  
     // App specific URLS

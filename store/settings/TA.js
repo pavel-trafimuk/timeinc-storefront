@@ -28,8 +28,8 @@ window.settings = {
     "adobeAppId"                 : "3345449b73b344a29b76cd0bc7f32669",
     "appId"                      : "com.timeinc.ipad.emea",
 
-    "supportPhoneNumber"         : "",
-    "supportEmail"               : "",
+    "supportPhoneNumber"         : "+31 20 487 4232",
+    "supportEmail"               : "time_europe@customersvc.com",
 
     // ************************************************************  
     // App specific URLS
