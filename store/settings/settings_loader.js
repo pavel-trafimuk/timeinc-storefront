@@ -38,7 +38,6 @@
         // ************************************************************  
         // All UI Text should be in the settings:
         // ************************************************************  
-        // Buttons:
         "welcomePrintSubsBtn"        : "Print Subscriber",
         "welcomeBrowseBtn"           : "Browse Issues",
         "welcomeSubscribeBtn"        : "Subscribe",
@@ -49,13 +48,14 @@
         "storeViewIssueBtn"          : "View Issue",
         "storeDownloadIssueBtn"      : "Download",
         "storeUnavailableIssueBtn"   : "Unavailable",
-
         "storeIssuesTapToView"       : "Tap to View",
-        "seeInsideCTA"               : "See Inside",
 
+        // subscribe dialog
         "subscribeTo"                : "Subscribe to",
         "subscribeCancel"            : "Cancel",
 
+        // app-wide interaction text
+        "seeInsideCTA"               : "See Inside",
         "progressStarting"           : "Loading…",
         "progressDownloading"        : "Downloading…",
         "progressOpening"            : "Opening…",
