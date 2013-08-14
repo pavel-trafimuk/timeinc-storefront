@@ -44,7 +44,6 @@ cvs -qn update | while read F; do
   cvs commit -m "deploy" "$FILE"
 
   cvs tag -F cmdev "$FILE"
-  cvs tag -F qa    "$FILE"
   cvs tag -F prod  "$FILE"
 
 done
