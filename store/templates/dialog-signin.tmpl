@@ -1,0 +1,26 @@
+<div id='signin-dialog' class='dialog'>
+  <header>Sign In</header>
+  <div class="close-dialog">&times;</div>
+
+  <form class="contents">
+    <p>Please sign in to your digital edition account</p>
+    <input type="email" class="auth-email" placeholder="e-mail address">    
+    <input type="password" class="auth-pass" placeholder="password">
+    
+    <a href="{{settings.signInForgotPasswordUrl}}">Forgot Password?</a>
+    
+    <button class="sign-in-btn">Sign In</button>
+
+    <div class="error-msg"></div> 
+    
+    <p class="print-subs">
+      Print Subscribers: <a href="{{settings.WesPageURL}}">Create a digital account?</a>
+    </p>
+  </form>
+
+  <footer>
+    <a href="{{settings.privacyPolicyUrl}}">Privacy</a>
+    | <a href="{{settings.licenceAgreementUrl}}">License</a>
+    | <a href="{{settings.termsOfUseUrl}}">Terms</a>
+  </footer>
+</div>
