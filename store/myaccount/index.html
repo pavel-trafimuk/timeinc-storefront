@@ -37,24 +37,28 @@ function go(URL){
 
  <div id="logo"></div>
 
- <a onclick="go(settings.signInForgotPasswordUrl)" href="#" target="_blank"><script>
-   document.write(settings.myacctForgotPassword);
- </script></a>
- <a onclick="go(settings.popupActivateButtonUrl)" href="#" class="print-subs" style="display: none;" target="_blank"><script>
-   document.write(settings.myacctPrintSubs);
- </script></a>
- <a onclick="adobeDPS.dialogService.displayCustomDialog()" id="lucieRegistrationBtn" href="#"><script>
-   document.write(settings.myacctAcctSetup);
- </script></a>
- <a onclick="go(settings.myacctRestoreIssuesURL)" href="#" id="restoreIssues" target="_blank"><script>
-   document.write(settings.myacctRestoreIssues);
- </script></a>
- <a onclick="go(settings.customerServiceUrl)" href="#" target="_blank"><script>
-   document.write(settings.myacctCustService);
- </script></a>
-		
-</div>
-
+    <script>
+	 	if (settings.signInForgotPasswordUrl && "{{MAG_CODE}}" != "TK") {
+	 		document.write('<a onclick="go(settings.signInForgotPasswordUrl)" href="#" target="_blank">' + settings.myacctForgotPassword + '</a>');
+	 	}
+	 	
+	 	if (settings.popupActivateButtonUrl && "{{MAG_CODE}}" != "TK") {
+	        document.write('<a onclick="go(settings.popupActivateButtonUrl)" href="#" class="print-subs" style="display: none;" target="_blank">' + settings.myacctPrintSubs + '</a>');
+	    }
+	    
+	    if (settings.popupActivateButtonUrl && "{{MAG_CODE}}" != "TK") {
+	    	document.write('<a onclick="adobeDPS.dialogService.displayCustomDialog()" id="lucieRegistrationBtn" href="#">' + settings.myacctAcctSetup + '</a>');
+	    }
+	    
+	    if (settings.myacctRestoreIssuesURL) {
+	    	document.write('<a onclick="go(settings.myacctRestoreIssuesURL)" href="#" id="restoreIssues" target="_blank">' + settings.myacctRestoreIssues + '</a>');
+	    }
+	    
+	    if (settings.customerServiceUrl) {
+	    	document.write('<a onclick="go(settings.customerServiceUrl)" href="#" target="_blank">' + settings.myacctCustService + '</a>');
+	    }
+    </script>
+   </div>
 
 	<!-- SiteCatalyst -->
     <div style="display:none;">
