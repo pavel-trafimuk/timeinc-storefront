@@ -10,9 +10,9 @@ window.settings = {
     "popupInterval"              : 5,
     "enable_first_load_popup"    : false,
 
-    "welcome_preview": "adobe",
-    "hero_preview": "adobe",
-    "hero_itii_preview": "adobe",
+    "welcome_preview": "image",
+    "hero_preview": "image",
+    "hero_itii_preview": "image",
     "max_back_issues"            : 12,
 
     "omniture_account"           : "timagpespnk",
