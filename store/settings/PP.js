@@ -10,9 +10,7 @@ window.settings = {
     "popupInterval"              : 5,
     "enable_first_load_popup"    : false,
 
-    "welcome_preview": "image",
-    "hero_preview": "image",
-    "hero_itii_preview": "image",
+    "heroHeading"                : "En Esta Edición",
     "max_back_issues"            : 12,
 
     "omniture_account"           : "timagpespnk",
@@ -34,7 +32,7 @@ window.settings = {
     // All UI Text should be in the settings:
     // ************************************************************  
     // Buttons:
-    "welcomePrintSubsBtn"        : "Suscriptor de la edición de papel",
+    "welcomePrintSubsBtn"        : "Suscriptores de impresión",
     "welcomeBrowseBtn"           : "Hojea las ediciones",
     "welcomeSubscribeBtn"        : "Suscríbete",
     "welcomeAlreadyHaveAcct"     : "¿Ya tienes una cuenta?",

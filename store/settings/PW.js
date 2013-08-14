@@ -12,9 +12,7 @@ window.settings = {
     
     "subscribeOfferText"         : "Subscribe now to get PEOPLE STYLEWATCH on your iPad. You'll find the hottest fashion and beauty trends, celeb looks for less, and amazing buys for every body and budget! Plus, get 1 month free with an annual subscription.",
     
-    "welcome_preview": "adobe",
-    "hero_preview": "adobe",
-    "hero_itii_preview": "adobe",
+    "heroHeading"                : "Inside This Issue",
     "max_back_issues"            : 12,
 
     "omniture_account"           : "timagstylewatchnk",

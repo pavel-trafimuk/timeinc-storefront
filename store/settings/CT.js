@@ -12,9 +12,7 @@ window.settings = {
     
     "subscribeOfferText"         : "Subscribe now to COASTAL LIVING on your iPad and capture the joy of life by the sea. Discover inspiring coastal home decorating ideas, dream destinations, fresh recipes and more. Plus, get 1 month free with an annual subscription.",
     
-    "welcome_preview": "image",
-    "hero_preview": "image",
-    "hero_itii_preview": "image",
+    "heroHeading"                : "Inside This Issue",
     "max_back_issues"            : 20,
 
     "omniture_account"           : "timagcoastalnk",

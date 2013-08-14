@@ -12,10 +12,8 @@ window.settings = {
     
     "subscribeOfferText"         : "Subscribe now to get HEALTH on your iPad. Each issue is packed with smart and fun new ways to stay in great shape, look amazing and discover tasty (and healthy!) things to eat. Plus, get 1 month free with an annual subscription.",
     
-    "welcome_preview": "image",
-    "hero_preview": "image",
-    "hero_itii_preview": "image",
-    "max_back_issues"            : 20,
+    "heroHeading"                : "Inside This Issue",
+    "max_back_issues"            : 12,
 
     "omniture_account"           : "timaghealthnk",
     "omniture_server"            : "metrics.health.com",

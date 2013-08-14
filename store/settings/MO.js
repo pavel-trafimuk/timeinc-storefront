@@ -12,9 +12,7 @@ window.settings = {
     
     "subscribeOfferText"         : "Subscribe to MONEY Magazine, the nation's largest personal finance magazine. Take charge of your finances, get trusted advice to successfully earn, plan, invest and spend. The digital edition also includes bonus video, extra photos and audio excerpts. Plus, get 1 month free with an annual subscription.",
     
-    "welcome_preview": "image",
-    "hero_preview": "image",
-    "hero_itii_preview": "image",
+    "heroHeading"                : "Inside This Issue",
     "max_back_issues"            : 20,
 
     "omniture_account"           : "timagmoneynk",

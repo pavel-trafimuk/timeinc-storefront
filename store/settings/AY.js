@@ -10,9 +10,7 @@ window.settings = {
     "popupInterval"              : 5,
     "enable_first_load_popup"    : false,
     
-    "welcome_preview": "image",
-    "hero_preview": "image",
-    "hero_itii_preview": "image",
+    "heroHeading"                : "Inside This Issue",
     "max_back_issues"            : 12,
 
     "omniture_account"           : "timagallyounk",

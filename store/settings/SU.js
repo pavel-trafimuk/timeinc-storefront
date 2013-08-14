@@ -12,9 +12,7 @@ window.settings = {
     
     "subscribeOfferText"         : "Discover new weekend destinations, inspiring homes and gardens and seasonal recipes. Plus bonus garden and travel covering all 5 regional editions.",
     
-    "welcome_preview": "image",
-    "hero_preview": "image",
-    "hero_itii_preview": "image",
+    "heroHeading"                : "Inside This Issue",
     "max_back_issues"            : 20,
 
     "omniture_account"           : "timagsunsetnk",

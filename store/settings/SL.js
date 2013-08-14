@@ -12,9 +12,7 @@ window.settings = {
     
     "subscribeOfferText"         : "Subscribe to SOUTHERN LIVING and get great home decorating ideas, recipes, travel tips and more -all with Southern charm.",
     
-    "welcome_preview": "image",
-    "hero_preview": "image",
-    "hero_itii_preview": "image",
+    "heroHeading"                : "Inside This Issue",
     "max_back_issues"            : 20,
 
     "omniture_account"           : "timagsouthernnk",
