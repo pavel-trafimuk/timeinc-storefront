@@ -51,7 +51,7 @@
         if (!is_subscriber) {
           sub_opts = App.api.receiptService.get_short_subnames()
             .map(function(s) { return "<span class='sub-price'>" + s + "</span>" })
-            .join(" or ");
+            .join(settings.storeSubscribeNowPriceOr);
         }
         var cx = { 
           settings: settings, 

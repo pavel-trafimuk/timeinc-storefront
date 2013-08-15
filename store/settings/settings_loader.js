@@ -49,6 +49,8 @@
         "storeDownloadIssueBtn"      : "Download",
         "storeUnavailableIssueBtn"   : "Unavailable",
         "storeIssuesTapToView"       : "Tap to View",
+        "storeSubscribeNow"          : "Subscribe now for",
+        "storeSubscribeNowPriceOr"   : " or ",
 
         // subscribe dialog
         "subscribeTo"                : "Subscribe to",

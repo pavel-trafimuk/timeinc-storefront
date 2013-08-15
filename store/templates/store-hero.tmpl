@@ -40,7 +40,8 @@
         <p class="issue-price">{{folio.price}}</p>
         {{#if ../sub_opts}}
           <p class="subscribe-cta">
-            Subscribe now for {{{../sub_opts}}}
+            {{../settings.storeSubscribeNow}}
+            {{{../sub_opts}}}
           </p>
         {{/if}}
       </div>
