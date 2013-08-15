@@ -34,6 +34,7 @@
       console.log("StoreHero.render() called");
       cb = cb || $.noop;
       var that = this,
+          price = "",
           folio = App.api.libraryService.get_touted_issue();
 
       // Buying/downloading an issue will trigger a re-render via
@@ -44,11 +45,19 @@
 
       _.bindAll(folio);
 
+      
       App.api.authenticationService.user_is_subscriber(function(is_subscriber) {
+        var sub_opts = "";
+        if (!is_subscriber) {
+          sub_opts = App.api.receiptService.get_short_subnames()
+            .map(function(s) { return "<span class='sub-price'>" + s + "</span>" })
+            .join(" or ");
+        }
         var cx = { 
           settings: settings, 
           folio: folio,
-          is_subscriber: is_subscriber
+          is_subscriber: is_subscriber,
+          sub_opts: sub_opts
         };
         that.$el.html(that.template(cx)).hammer();
         that.$(".cover img").imgPlaceholder();

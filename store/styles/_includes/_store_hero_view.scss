@@ -165,6 +165,25 @@
         text-align: center;
         a { color: #999; }
     }
+    
+    .no-deeplinks {
+      p {
+        padding-right: 30px;
+        line-height: 1.35em;
+      }
+      .issue-price {
+        font-weight: bold;
+      }
+      .subscribe-cta {
+        position: absolute;
+        bottom: 100px; left: 0; right: 0;
+        font-weight: bold;
+        text-align: center;
+      }
+      .sub-price {
+        color: $ACCENT_COLOR;
+      }
+    }
 
     // Hard-coding the cover-img sizes at certain screen sizes is an optimization
     @media screen and (width: 768px) {
