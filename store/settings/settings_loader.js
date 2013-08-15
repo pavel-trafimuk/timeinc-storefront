@@ -64,7 +64,7 @@
         //"heroHeading"                : "In This " + (settings.schedule == "weekly" ? "Week" : "Month") + "’s Issue",
         "heroHeading"                : "Preview Editor’s Picks",
         "heroExistingQuestion"       : "Existing Subscriber?",
-        "heroExistingLink"           : "Create a Digial Account",
+        "heroExistingLink"           : "Create a Digital Account",
         "heroOpeningItii"            : "Opening Article…",
         
         // First load popup
