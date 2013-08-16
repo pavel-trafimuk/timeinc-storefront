@@ -144,6 +144,7 @@ END
   render_in_place "$DEPLOYDIR/lucie-library.html"
   render_in_place "$DEPLOYDIR/myaccount/index.html"
   render_in_place "$DEPLOYDIR/myaccount/restoreissues.html"
+  render_in_place "$DEPLOYDIR/myaccount/restoreissues.es.html"
 }
 
 ################################################################################
