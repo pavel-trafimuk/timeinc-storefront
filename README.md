@@ -37,12 +37,12 @@ savvis server in:
     /nas01/apps/subs3/content/cmdev/assets/appstorefronts-jq/{BRAND_CODE}/adobe/apple/ipad/v25
 
 There are a couple helpful scripts in `bin/` that can make deployment relatively
-easy. This is a simple compile and upload of the EW assets:
+easy. This is a simple compile and commit of the EW assets:
 
-    bin/build EW
-    bin/upload EW
+    bin/deploy EW
 
-you'll then need to ssh into the server and commit/tag the files you uploaded.
+Which will run `bin/build EW` then checkout the appropriate folder from CVS,
+copy in the newly built files, commit and tag them.
 
 You may want to add the following to your .bash_profile to ease this process:
 
