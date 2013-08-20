@@ -70,6 +70,23 @@ window.settings = {
     "myacctRestoreIssues"        : '<span class="singleLine">Recuperar números</span>',
     "myacctCustService"          : '<span class="singleLine">Servicios al cliente</span>',
 
+    // Sign-in Dialog
+    "authSigninHeader"           : "Iniciar sesión",
+    "authSigninButton"           : "Iniciar sesión",
+    "authInstructions"           : "Entra en tu cuenta de la edición para tableta",
+    "authPlacehodlerEmail"       : "correo electrónico",
+    "authPlacehodlerPass"        : "contraseña",
+    "authForgotPassword"         : "¿Ha olvidado la contraseña?",
+    "authPrintSubsPrompt"        : "¿Ya eres suscriptor?",
+    "authPrintSubsLinkText"      : "Crea una cuenta digital",
+    "authPrivacyLinkText"        : "Privacidad",
+    "authLicenseLinkText"        : "Acuerdo de licencia",
+    "authTermsLinkText"          : "Téminos de uso",
+    
+    "authErrorNoEmail"           : "Introduzca su nombre de usuario",
+    "authErrorNoPass"            : "Introduzca una contraseña válida",
+    "authErrorAuthFailed"        : "Error de autenticación",
+
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
