@@ -1,2 +1,17 @@
 @import "_variables/_PE.scss";
 @import "_includes/_STORE.scss";
+
+.first-load-popup {
+  @include first-load-popup(522px, 362px, "../images/PE/first-load-popup.jpg");
+  .restore-btn, .sign-in-btn {
+    height: 50px; 
+    width: 210px;
+    bottom: 18px;
+  }
+  .restore-btn {
+    left: 35px; 
+  }
+  .sign-in-btn {
+    right: 35px;
+  }
+}
