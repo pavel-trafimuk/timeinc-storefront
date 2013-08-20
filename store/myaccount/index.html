@@ -50,12 +50,24 @@ function go(URL){
 	    	document.write('<a onclick="adobeDPS.dialogService.displayCustomDialog()" id="lucieRegistrationBtn" href="#">' + settings.myacctAcctSetup + '</a>');
 	    }
 	    
-	    if (settings.myacctRestoreIssuesURL) {
+	    if (settings.myacctRestoreIssuesURL && "{{MAG_CODE}}" != "TK") {
 	    	document.write('<a onclick="go(settings.myacctRestoreIssuesURL)" href="#" id="restoreIssues" target="_blank">' + settings.myacctRestoreIssues + '</a>');
 	    }
 	    
-	    if (settings.customerServiceUrl) {
+	    if (settings.customerServiceUrl && "{{MAG_CODE}}" != "TK") {
 	    	document.write('<a onclick="go(settings.customerServiceUrl)" href="#" target="_blank">' + settings.myacctCustService + '</a>');
+	    }
+	    
+	    if ("{{MAG_CODE}}" == "TK") {
+	    	var html = ''.concat(
+                '<div style="margin: 40px;">',
+                  '<div style="text-align: center; margin-bottom: 15px;"><b>Missing issues?</b></div>',
+                  'Restore your iTunes subscription by tapping the RESTORE ISSUES button below. This will remind the app that you are a subscriber. Follow the prompts until your subscription or previously purchased issues are restored.',
+                  '<br/>',
+                  '<a onclick="restoreIssues()" href="#" id="restoreIssues" target="_blank">' + settings.myacctRestoreIssues + '</a>',
+                '</div>'
+            );
+            document.write(html);
 	    }
     </script>
    </div>
@@ -66,6 +78,10 @@ function go(URL){
         <script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/omniture/{{MAG_CODE}}/s_code.js"></script>
         
         <script type="text/javascript">
+            function restoreIssues() {
+            	adobeDPS.receiptService.restorePurchases();
+            }
+            
             function dateFormat(d) {
                 var curr_date = d.getDate(),
                     curr_month = d.getMonth() + 1,
