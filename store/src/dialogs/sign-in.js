@@ -46,21 +46,21 @@ App.dialogs.SignIn = Backbone.View.extend({
 
     $err.hide();
     if (! $user.val().length) {
-      return $err.show().text("Please enter your username");
+      return $err.show().text(settings.authErrorNoEmail);
     }
     if (! $pass.val().length) {
-      return $err.show().text("Please enter a valid password");
+      return $err.show().text(settings.authErrorNoPass);
     }
 
     try {
       var t = App.api.authenticationService.login($user.val(), $pass.val());
     }
     catch (err) {
-      $err.show().text("Authentication failed");
+      $err.show().text(settings.authErrorAuthFailed);
     }
 
     t.completedSignal.addOnce(function() {
-      if (t.state < 0) $err.show().text("Authentication failed.");
+      if (t.state < 0) $err.show().text(settings.authErrorAuthFailed);
       else that.remove();
     });
 

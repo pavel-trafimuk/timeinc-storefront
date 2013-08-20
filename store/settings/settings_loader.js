@@ -83,6 +83,23 @@
         "myacctRestoreIssues"        : '<span class="singleLine">RESTORE ISSUES</span>',
         "myacctCustService"          : '<span class="singleLine">CUSTOMER SERVICE</span>',
 
+        // Sign-in Dialog
+        "authSigninHeader"           : "Sign In",
+        "authSigninButton"           : "Sign In",
+        "authInstructions"           : "Please sign in to your digital edition account",
+        "authPlacehodlerEmail"       : "e-mail address",
+        "authPlacehodlerPass"        : "password",
+        "authForgotPassword"         : "Forgot Password?",
+        "authPrintSubsPrompt"        : "Print Subscribers:",
+        "authPrintSubsLinkText"      : "Create a Digital Account",
+        "authPrivacyLinkText"        : "Privacy",
+        "authLicenseLinkText"        : "License",
+        "authTermsLinkText"          : "Terms",
+        
+        "authErrorNoEmail"           : "Please enter your username",
+        "authErrorNoPass"            : "Please enter a valid password",
+        "authErrorAuthFailed"        : "Authentication Failed",
+
 
         // ************************************************************  
         // URLS
