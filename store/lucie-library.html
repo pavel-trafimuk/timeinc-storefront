@@ -27,8 +27,16 @@
     <!--<div id="txt1" style="background: #FFF; height: auto;"></div>-->
     
     <div class="lucie-complete-inner">
-      <div class="lucie-complete-header">Thank You</div>
-      <div class="lucie-complete-body">Please wait while we confirm your purchase... </div>
+      <div class="lucie-complete-header">
+      	<script type="text/javascript">
+      	 if ("{{MAG_CODE}}" == "PP") { document.write("Gracias") } else { document.write("Thank You")}
+      	</script>
+  	  </div>
+      <div class="lucie-complete-body">
+      	<script type="text/javascript">
+         if ("{{MAG_CODE}}" == "PP") { document.write("Confirmaci&oacute;n de su compra, espere por favor...") } else { document.write("Please wait while we confirm your purchase...")}
+        </script>
+      </div>
    </div>
  </div>
      
