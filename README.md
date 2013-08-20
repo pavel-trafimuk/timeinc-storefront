@@ -19,7 +19,7 @@ Each title has…
    app.
 
  - an images folder (`images/<MAG_CODE>/`) which is adressable from the style
-   sheets as `../images`. (e.g., `background: url(../images/logo.png);`
+   sheets as `../images`. (e.g., `background: url(../images/background-tile.png);`
    also, `background: url("../images/"+$BRAND_CODE+"/logo.png");` would
    show `images/EW/logo.png`, if the title is EW)
 
@@ -131,7 +131,8 @@ ERROR LOGGING
 ================================================================================
 
 Dev Apps may log errors using `console.log()` which will appear at:
-http://ecom-dev01-app.usdlls2.savvis.net:10400/cgi-bin/mobileLogs/logs.py
+
+    http://ecom-dev01-app.usdlls2.savvis.net:10400/cgi-bin/mobileLogs/logs.py
 
 This method only works when you are on the NYDev wifi. and using a dev build of
 the storefront. The "deploy" build assigns an empty function to `console.log`
