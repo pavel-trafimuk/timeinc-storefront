@@ -84,7 +84,9 @@
           var init_delay = covers[0] ? 600 : 0;
           that.$(".cover-with-text").transition({duration: 1800, delay: init_delay, opacity: 1.0});
           that.$(".buttons").transition({duration: 600, delay: init_delay+1800, y: 0});
-          that.$(".already-have-account").transition({duration: 1000, delay: init_delay+3100, opacity: 1.0});
+          if (settings.brandCode != "TK") {
+            that.$(".already-have-account").transition({duration: 1000, delay: init_delay+3100, opacity: 1.0});
+          }
         
           setTimeout(function() {
             that.$(".curl-text, .curl-obj").addClass("animated");
