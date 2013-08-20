@@ -34,16 +34,16 @@ window.settings = {
     // Buttons:
     "welcomePrintSubsBtn"        : "Suscriptor edición impresa",
     "welcomeBrowseBtn"           : "Hojea las ediciones",
-    "welcomeSubscribeBtn"        : "Subscríbete",
+    "welcomeSubscribeBtn"        : "Suscríbete",
     "welcomeAlreadyHaveAcct"     : "¿Ya tienes una cuenta?",
 
-    "storeSubscribeBtn"          : "Subscríbete",
+    "storeSubscribeBtn"          : "Suscríbete",
     "storeBuyIssueBtn"           : "Comprar",
     "storeViewIssueBtn"          : "Ver el número",
     "storeDownloadIssueBtn"      : "Descarga",
     "storeUnavailableIssueBtn"   : "No está disponible",
     "storeIssuesTapToView"       : "Toca para ver",
-    "storeSubscribeNow"          : "Subscríbete ahora para",
+    "storeSubscribeNow"          : "Suscríbete ahora para",
     "storeSubscribeNowPriceOr"   : " o ",
 
     "progressStarting"           : "Cargando…",
@@ -56,9 +56,9 @@ window.settings = {
     "heroExistingLink"           : "CREA UNA CUENTA DIGITAL",
     "heroOpeningItii"            : "Abriendo el artículo…",
 
-    "seeInsideCTA"               : "Ver Dentro",
+    "seeInsideCTA"               : "Mira Adentro",
 
-    "subscribeTo"                : "Suscribete a",
+    "subscribeTo"                : "Suscríbete a",
     "subscribeOfferText"         : "¡Suscríbete ahora para ver deslumbrantes fotos y vídeos exclusivos detrás de cámara. Además, entrevistas francas con tus celebridades favoritas!",
     "subscribeYourSubscription"  : "Your Subscription",
     "subscribeCancel"            : "Cancela",
