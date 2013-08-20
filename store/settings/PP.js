@@ -32,41 +32,43 @@ window.settings = {
     // All UI Text should be in the settings:
     // ************************************************************  
     // Buttons:
-    "welcomePrintSubsBtn"        : "Suscriptores de impresión",
+    "welcomePrintSubsBtn"        : "Suscriptor edición impresa",
     "welcomeBrowseBtn"           : "Hojea las ediciones",
-    "welcomeSubscribeBtn"        : "Suscríbete",
+    "welcomeSubscribeBtn"        : "Subscríbete",
     "welcomeAlreadyHaveAcct"     : "¿Ya tienes una cuenta?",
 
-    "storeSubscribeBtn"          : "Suscríbete",
-    "storeBuyIssueBtn"           : "Compra la edición",
-    "storeViewIssueBtn"          : "Mira la edición",
+    "storeSubscribeBtn"          : "Subscríbete",
+    "storeBuyIssueBtn"           : "Comprar",
+    "storeViewIssueBtn"          : "Ver el número",
     "storeDownloadIssueBtn"      : "Descarga",
-    "storeUnavailableIssueBtn"   : "No disponible",
-
+    "storeUnavailableIssueBtn"   : "No está disponible",
     "storeIssuesTapToView"       : "Toca para ver",
+    "storeSubscribeNow"          : "Subscríbete ahora para",
+    "storeSubscribeNowPriceOr"   : " o ",
 
     "progressStarting"           : "Cargando…",
     "progressDownloading"        : "Descargando…",
     "progressOpening"            : "Abriendo…",
 
     // Messaging:
-    "heroHeading"                : "Selecciones del Editor",
+    "heroHeading"                : "Selecciones del editor",
     "heroExistingQuestion"       : "¿Ya eres suscriptor?",
     "heroExistingLink"           : "CREA UNA CUENTA DIGITAL",
-    "heroOpeningItii"            : "Abriendo artículo…",
+    "heroOpeningItii"            : "Abriendo el artículo…",
 
     "seeInsideCTA"               : "Ver Dentro",
 
-    "subscribeTo"                : "Suscríbete a",
+    "subscribeTo"                : "Suscribete a",
     "subscribeOfferText"         : "¡Suscríbete ahora para ver deslumbrantes fotos y vídeos exclusivos detrás de cámara. Además, entrevistas francas con tus celebridades favoritas!",
+    "subscribeYourSubscription"  : "Your Subscription",
     "subscribeCancel"            : "Cancela",
 
     // my account
-    "myacctForgotPassword"       : '<span class="singleLine">OLVIDÉ LA CONTRASEÑA</span>',
-    "myacctPrintSubs"            : '<span class="line1">SUSCRIPTORES A LA EDICIÓN IMPRESA</span><br /><span class="line2">TOCA AQUÍ</span>',
-    "myacctAcctSetup"            : '<span class="line1">INSTALACIÓN COMPLETA DE LA CUENTA</span><br /><span class="line2">PARA SUSCRIPTORES DE iPAD</span>',
-    "myacctRestoreIssues"        : '<span class="singleLine">RECUERPA EDICIONES</span>',
-    "myacctCustService"          : '<span class="singleLine">SERVICIO AL CLIENTE</span>',
+    "myacctForgotPassword"       : '<span class="singleLine">Olvidé la contraseña</span>',
+    "myacctPrintSubs"            : '<span class="line1">Suscriptor edición</span><br/><span class="line2">impresa, tocar aquí</span>',
+    "myacctAcctSetup"            : '<span class="line1">Configuración de cuenta</span><br/><span class="line2">para suscriptores al iPad</span>',
+    "myacctRestoreIssues"        : '<span class="singleLine">Recuperar números</span>',
+    "myacctCustService"          : '<span class="singleLine">Servicios al cliente</span>',
 
     // ************************************************************  
     // App specific URLS

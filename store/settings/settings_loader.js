@@ -54,6 +54,7 @@
 
         // subscribe dialog
         "subscribeTo"                : "Subscribe to",
+        "subscribeYourSubscription"  : "Your Subscription",
         "subscribeCancel"            : "Cancel",
 
         // app-wide interaction text
