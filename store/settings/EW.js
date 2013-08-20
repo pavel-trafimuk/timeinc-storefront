@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "EW",
     "schedule"                   : "weekly",
     "popupInterval"              : 5,
-    "enable_first_load_popup"    : true,
+    "enable_first_load_popup"    : false,
     "welcome_once_per_issue"     : true, // setting this to true will ignore value set in popupInterval
     
     "popup_paragraph1"           : "<b>We heard you!</b><br>The Result: <b><i>Best Entertainment Weekly ever!</i></b>",
