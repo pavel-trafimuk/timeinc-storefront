@@ -112,6 +112,7 @@
 
         "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG="+settings.brandCode+"&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
         "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG="+settings.brandCode+"&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
+        "WesPageURLiphone"           : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG="+settings.brandCode+"&MSDDMOFF=ABTF&MSDTRACK=IPHB&MSDVNDID=TBLT",
         "customerServiceUrl"         : "https://secure.customersvc.com/servlet/Show?WESPAGE=home.html&MSRSMAG=" + settings.brandCode + "&app_launch_key=08212099",
 
         "myacctRestoreIssuesURL"     : "restoreissues.html",
@@ -141,6 +142,7 @@
 
     // BACKWARDS COMPATIBILITY (deprecated settings)
     default_settings.popupActivateButtonUrl = default_settings.WesPageURL;
+    default_settings.popupActivateButtonUrlIphone = default_settings.WesPageURLiphone;
     default_settings.upgradeSubscriptionUrl = default_settings.WesPageURL;
 
     // taken loosely from underscore.js's extend() method because this file
