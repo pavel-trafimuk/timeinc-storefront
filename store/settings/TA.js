@@ -19,7 +19,7 @@ window.settings = {
 
     "omniture_account"           : "timagtimeeurope",
     "omniture_server"            : "metrics.time.com",
-    "omniture_ssl_server"        : "smetrics.time.com,
+    "omniture_ssl_server"        : "smetrics.time.com",
 
     "echo_bundle_id"             : "com_timeinc_ipad_emea",
     "echo_token"                 : "d5708eae3be6d5fd2358937054eb4d79df818873",
