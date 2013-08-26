@@ -4,6 +4,8 @@
   <title>Offlinebanner</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi"/>
+  <script src="../../../settings/{{MAG_CODE}}.js" type="text/javascript"></script>
+  <script src="../../../settings/settings_loader.js" type="text/javascript"></script>
   <style>
     /* Banner CSS for iOS iPad devices with horz/vert orientations */
     html, body {
@@ -21,8 +23,8 @@
       position: absolute;
       margin: 0;
       padding: 0;
-      top: 10%; bottom: 10%;
-      left: 10%; right: 10%;
+      top: 0; bottom: 0;
+      left: 0; right: 0;
       border: none;      
       background: transparent url('logo.png') no-repeat 50% 50%;
       -webkit-background-size: contain;
@@ -40,6 +42,9 @@
 </head>
  
 <body>
-      <div id="banner"></div>
-  </body>
+  <div id="banner"><a id="banner-link"></a></div>
+  <script>
+    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
+  </script>
+</body>
 </html>
