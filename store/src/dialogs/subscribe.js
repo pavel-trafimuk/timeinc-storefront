@@ -45,7 +45,7 @@ App.dialogs.Subscribe = Backbone.View.extend({
     
     transaction.completedSignal.addOnce(function(transaction) {
       if (transaction.state == adobeDPS.transactionManager.transactionStates.FINISHED)
-        App.trigger("subscriptionPurchased", subscription);
+        Backbone.trigger("subscriptionPurchased", subscription);
     });
     
     this.remove();

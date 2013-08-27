@@ -63,5 +63,4 @@
       }
     }
   }
-  _.extend(App, Backbone.Events);
 })();
