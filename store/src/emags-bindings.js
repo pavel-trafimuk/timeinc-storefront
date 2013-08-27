@@ -28,7 +28,14 @@ Backbone.on("ApiReady", function() {
       price = price.replace(/[^\d\.]/gi, "");
 
       console.log("tracking eMags Purchase", evt_type, product_id, price);
-      EMPurchase(evt_type, product_id, price);
+      EMPurchase(evt_type, product_id, price, 
+          undefined, // currency
+          undefined, // count
+          undefined, // category
+          undefined, // extras
+          $.noop, // success cb
+          $.noop  // failure cb 
+      );
     }
   });
 
@@ -37,17 +44,15 @@ Backbone.on("ApiReady", function() {
 
 Backbone.on("AppReady", function() {
   EMGetCurrentCampaignID(
-    // Campaign ID Found
-    function(campaign_id) {
-    
+    function(campaign_id) { // Campaign ID Found
+      console.log("campaignid: " + campaign_id);
     },
-    // No Campaign ID found
-    function() {
-    
+    function() { // No Campaign ID found
+      console.log("campaignid: [NONE]");
+      // do nothing
     },
-    // Error
-    function() {
-    
+    function(err) { // Error
+      App.error("EMagsError", "GetCurrentCampaignID had error: " + err);
     }
   );
 });
