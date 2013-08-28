@@ -10,6 +10,8 @@ window.settings = {
     "popupInterval"              : 5,
     "enable_first_load_popup"    : false,
     
+    "subscribeOfferText"         : "Subscribe to ALL YOU and get great tips and valuable advice on how to save everyday!",
+    
     "welcome_preview": "adobe",
     "hero_preview": "adobe",
     "hero_itii_preview": "adobe",
