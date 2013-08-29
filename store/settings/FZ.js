@@ -9,6 +9,7 @@ window.settings = {
     "schedule"                   : "weekly",
     "popupInterval"              : 5,
     "enable_first_load_popup"    : false,
+    "international"              : true,
  
     "subscribeOfferText"         : "",
     
@@ -35,9 +36,11 @@ window.settings = {
     // App specific URLS
     // ************************************************************  
     "signInForgotPasswordUrl"    : "https://subscription.timeinc.com/storefront/universalForgotPassword.ep?magcode=FA",
-    "welcomeScreenWesURL"        : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=FA&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
-    "WesPageURL"                 : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=FA&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
-    "customerServiceUrl"         : "https://secure.customersvc.com/servlet/Show?WESPAGE=home.html&MSRSMAG=FA",
+    "customerServiceUrl"    : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/pages/home.jsp&MSRSMAG=FA",
+    
+    "welcomeScreenWesURL"   : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=FA&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
+    "WesPageURL"            : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=FA&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
+    "WesPageURLiphone"      : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=FA&MSDDMOFF=ABTF&MSDTRACK=IPHB&MSDVNDID=TBLT",
 
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/fz-lucie-customer-creation-itunes201307.html",
     
