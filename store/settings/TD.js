@@ -24,6 +24,9 @@ window.settings = {
     "echo_bundle_id"             : "com_timeinc_time_ipad_inapp",
     "echo_token"                 : "ca8fe991389568afdb5fe164efeef8822729d18d",
     
+    // my account
+    "myacctAcctSetup"            : '<span class="line1">ACCOUNT SETUP FOR FREE ACCESS</span><br /><span class="line2">TO ARCHIVES ON TIME.COM</span>',
+        
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "47f9ab9c8b924d78867a8eabeb15446e",
     "appId"                      : "com.timeinc.time.ipad.inapp",

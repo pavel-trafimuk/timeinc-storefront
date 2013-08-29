@@ -110,11 +110,18 @@
         "licenceAgreementUrl"        : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/"+settings.brandCode+"/la.html",
         "signInForgotPasswordUrl"    : "https://subscription.timeinc.com/storefront/universalForgotPassword.ep?magcode=" + settings.brandCode,
 
+        // Domestic URLs
         "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG="+settings.brandCode+"&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
         "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG="+settings.brandCode+"&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
         "WesPageURLiphone"           : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG="+settings.brandCode+"&MSDDMOFF=ABTF&MSDTRACK=IPHB&MSDVNDID=TBLT",
         "customerServiceUrl"         : "https://secure.customersvc.com/servlet/Show?WESPAGE=home.html&MSRSMAG=" + settings.brandCode + "&app_launch_key=08212099",
-
+        
+        // International URLs
+        "welcomeScreenWesURL_INTL"   : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG="+settings.brandCode +"&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
+        "WesPageURL_INTL"            : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG="+settings.brandCode +"&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
+        "WesPageURLiphone_INTL"      : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG="+settings.brandCode +"&MSDDMOFF=ABTF&MSDTRACK=IPHB&MSDVNDID=TBLT",
+        "customerServiceUrl_INTL"    : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/pages/home.jsp&MSRSMAG=" + settings.brandCode,
+        
         "myacctRestoreIssuesURL"     : "restoreissues.html",
 
 
@@ -141,9 +148,18 @@
     
 
     // BACKWARDS COMPATIBILITY (deprecated settings)
-    default_settings.popupActivateButtonUrl = default_settings.WesPageURL;
-    default_settings.popupActivateButtonUrlIphone = default_settings.WesPageURLiphone;
-    default_settings.upgradeSubscriptionUrl = default_settings.WesPageURL;
+    if (settings.international) {
+        default_settings.welcomeScreenWesURL = (settings.welcomeScreenWesURL) ? settings.welcomeScreenWesURL : default_settings.welcomeScreenWesURL_INTL;
+        default_settings.popupActivateButtonUrl = (settings.WesPageURL) ? settings.WesPageURL : default_settings.WesPageURL_INTL;
+        default_settings.popupActivateButtonUrlIphone = (settings.WesPageURLiphone) ? settings.WesPageURLiphone : default_settings.WesPageURLiphone_INTL;
+        default_settings.upgradeSubscriptionUrl = (settings.wesPageURL) ? settings.WesPageURL : default_settings.WesPageURL_INTL;
+        default_settings.customerServiceUrl = (settings.customerServiceUrl) ? settings.customerServiceUrl : default_settings.customerServiceUrl_INTL;
+        default_settings.signInForgotPasswordUrl = (settings.signInForgotPasswordUrl) ? settings.signInForgotPasswordUrl : default_settings.signInForgotPasswordUrl;
+    } else {
+        default_settings.popupActivateButtonUrl = default_settings.WesPageURL;
+        default_settings.popupActivateButtonUrlIphone = default_settings.WesPageURLiphone;
+        default_settings.upgradeSubscriptionUrl = default_settings.WesPageURL;
+    }
 
     // taken loosely from underscore.js's extend() method because this file
     // can't have any external dependencies

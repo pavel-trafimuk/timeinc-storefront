@@ -26,8 +26,8 @@ function go(URL){
 </script>
   <script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
   <script type="text/javascript" src="../lib/jquery.js"></script>
-  <script type="text/javascript" src="../settings/{{MAG_CODE}}.js?v2"></script>
-  <script type="text/javascript" src="../settings/settings_loader.js?v2"></script>
+  <script type="text/javascript" src="../settings/{{MAG_CODE}}.js"></script>
+  <script type="text/javascript" src="../settings/settings_loader.js"></script>
   <script type="text/javascript" src="../lib/md5.js"></script>
 </head>
 
@@ -46,7 +46,7 @@ function go(URL){
 	        document.write('<a onclick="go(settings.popupActivateButtonUrl)" href="#" class="print-subs" style="display: none;" target="_blank">' + settings.myacctPrintSubs + '</a>');
 	    }
 	    
-	    if (settings.popupActivateButtonUrl && "{{MAG_CODE}}" != "TK") {
+	    if ("{{MAG_CODE}}" != "TK") {
 	    	document.write('<a onclick="adobeDPS.dialogService.displayCustomDialog()" id="lucieRegistrationBtn" href="#">' + settings.myacctAcctSetup + '</a>');
 	    }
 	    

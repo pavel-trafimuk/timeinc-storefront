@@ -9,6 +9,7 @@ window.settings = {
     "schedule"                   : "weekly",
     "popupInterval"              : 5,
     "enable_first_load_popup"    : false,
+    "international"              : true,
  
     "subscribeOfferText"         : "",
     
@@ -34,10 +35,8 @@ window.settings = {
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
-    "welcomeScreenWesURL"        : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=TA&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
-    "WesPageURL"                 : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=TA&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
 
-    "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/ta-lucie-customer-creation-itunes201307.html",
+    "lucieRegistrationURL"          : "https://subscription.timeinc.com/storefront/site/ta-lucie-customer-creation-itunes201307.html",
     
 "ihatethelastcomma": true};
 })();
