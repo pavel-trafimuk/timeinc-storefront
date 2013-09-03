@@ -150,6 +150,8 @@
     // BACKWARDS COMPATIBILITY (deprecated settings)
     if (settings.international) {
         default_settings.welcomeScreenWesURL = (settings.welcomeScreenWesURL) ? settings.welcomeScreenWesURL : default_settings.welcomeScreenWesURL_INTL;
+        default_settings.WesPageURL = (settings.WesPageURL) ? settings.WesPageURL : default_settings.WesPageURL_INTL;
+        default_settings.WesPageURLiphone = (settings.WesPageURLiphone) ? settings.WesPageURLiphone : default_settings.WesPageURLiphone_INTL;
         default_settings.popupActivateButtonUrl = (settings.WesPageURL) ? settings.WesPageURL : default_settings.WesPageURL_INTL;
         default_settings.popupActivateButtonUrlIphone = (settings.WesPageURLiphone) ? settings.WesPageURLiphone : default_settings.WesPageURLiphone_INTL;
         default_settings.upgradeSubscriptionUrl = (settings.wesPageURL) ? settings.WesPageURL : default_settings.WesPageURL_INTL;
