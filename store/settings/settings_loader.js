@@ -158,6 +158,9 @@
         default_settings.customerServiceUrl = (settings.customerServiceUrl) ? settings.customerServiceUrl : default_settings.customerServiceUrl_INTL;
         default_settings.signInForgotPasswordUrl = (settings.signInForgotPasswordUrl) ? settings.signInForgotPasswordUrl : default_settings.signInForgotPasswordUrl;
     } else {
+        default_settings.welcomeScreenWesURL = (settings.welcomeScreenWesURL) ? settings.welcomeScreenWesURL : default_settings.welcomeScreenWesURL;
+        default_settings.WesPageURL = (settings.WesPageURL) ? settings.WesPageURL : default_settings.WesPageURL;
+        default_settings.WesPageURLiphone = (settings.WesPageURLiphone) ? settings.WesPageURLiphone : default_settings.WesPageURLiphone;
         default_settings.popupActivateButtonUrl = default_settings.WesPageURL;
         default_settings.popupActivateButtonUrlIphone = default_settings.WesPageURLiphone;
         default_settings.upgradeSubscriptionUrl = default_settings.WesPageURL;

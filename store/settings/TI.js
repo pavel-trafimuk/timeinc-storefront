@@ -36,6 +36,7 @@ window.settings = {
     // App specific URLS
     // ************************************************************  
 
+    "customerServiceUrl"         : "", // hides button on my account page
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/ti-lucie-customer-creation-itunes201307.html",
     
 "ihatethelastcomma": true};

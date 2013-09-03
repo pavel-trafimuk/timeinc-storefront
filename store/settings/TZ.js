@@ -35,12 +35,16 @@ window.settings = {
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
-    "signInForgotPasswordUrl"    : "https://subscription.timeinc.com/storefront/universalForgotPassword.ep?magcode=TI",
-    "customerServiceUrl"    : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/pages/home.jsp&MSRSMAG=TI",
+    "privacyPolicyUrl"           : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/TI/pp.html",
+    "termsOfUseUrl"              : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/TI/tos.html",
+    "licenceAgreementUrl"        : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/TI/la.html",
     
-    "welcomeScreenWesURL"   : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=TI&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
-    "WesPageURL"            : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=TI&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
-    "WesPageURLiphone"      : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=TI&MSDDMOFF=ABTF&MSDTRACK=IPHB&MSDVNDID=TBLT",
+    "signInForgotPasswordUrl"    : "https://subscription.timeinc.com/storefront/universalForgotPassword.ep?magcode=TI",
+    "customerServiceUrl"         : "", // hides button on my account page
+    
+    "welcomeScreenWesURL"        : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=TI&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
+    "WesPageURL"                 : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=TI&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
+    "WesPageURLiphone"           : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=TI&MSDDMOFF=ABTF&MSDTRACK=IPHB&MSDVNDID=TBLT",
 
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/tz-lucie-customer-creation-itunes201307.html",
     
