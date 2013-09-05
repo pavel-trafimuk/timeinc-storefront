@@ -1,3 +1,18 @@
 @import "_variables/_TK.scss";
 @import "_includes/_STORE.scss";
 
+.first-load-popup {
+  @include first-load-popup(522px, 362px, "../images/TK/first-load-popup.jpg");
+  .restore-btn, .sign-in-btn {
+    height: 38px; 
+    width: 268px;
+    bottom: 26px;
+  }
+  .restore-btn {
+    left: 125px; 
+  }
+  .sign-in-btn {
+    display: none;
+  }
+}
+
