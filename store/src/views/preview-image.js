@@ -75,11 +75,11 @@
           $(".progress-bar", $progress).css("width", progress+"%");
         },
         error: function(error_code) {
-          if (error_code != 0) {
-              new App.dialogs.ErrorMsg(error_code, true);
+          if (error_code < 0) {
+            settings.error_code = error_code;
+            new App.dialogs.ErrorMsg();
           }
-          $progress.attr('data-label', '').removeClass("progress");
-          $curl.show();
+          dialog.remove();
         },
         cancelled: function() {
           dialog.remove();
