@@ -74,6 +74,13 @@
           $progress.attr("data-label", "Downloading…");
           $(".progress-bar", $progress).css("width", progress+"%");
         },
+        error: function(error_code) {
+          if (error_code != 0) {
+              new App.dialogs.ErrorMsg(error_code, true);
+          }
+          $progress.attr('data-label', '').removeClass("progress");
+          $curl.show();
+        },
         cancelled: function() {
           dialog.remove();
         }
