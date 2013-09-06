@@ -11,6 +11,10 @@ window.settings = {
     "enable_first_load_popup"    : false,
 
     "heroHeading"                : "En Esta Edición",
+    
+    "welcome_preview": "adobe",
+    "hero_preview": "adobe",
+    "hero_itii_preview": "adobe",
     "max_back_issues"            : 12,
 
     "omniture_account"           : "timagpespnk",

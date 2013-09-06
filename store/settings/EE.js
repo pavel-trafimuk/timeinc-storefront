@@ -10,9 +10,9 @@ window.settings = {
     "popupInterval"              : 5,
     "enable_first_load_popup"    : false,
     
-    "welcome_preview": "adobe",
-    "hero_preview": "adobe",
-    "hero_itii_preview": "adobe",
+    "welcome_preview": "image",
+    "hero_preview": "image",
+    "hero_itii_preview": "image",
     
     "subscribeOfferText"         : "Subscribe now to get ESSENCE on your iPad, featuring FASHION AND BEAUTY secrets so you look and feel your best, plus receive EMPOWERING ADVICE on relationships and money matters!",
 
