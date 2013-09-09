@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "SI",
     "schedule"                   : "weekly",
     "popupInterval"              : 5,
-    "enable_first_load_popup"    : false,
+    "enable_first_load_popup"    : true,
     
     "subscribeOfferText"         : "Subscribe now to get SPORTS ILLUSTRATED on your Kindle Fire, featuring award-winning journalism and photography, plus bonus video and slideshows, and the latest news and scores.",
     
