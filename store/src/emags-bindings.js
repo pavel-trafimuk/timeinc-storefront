@@ -43,9 +43,16 @@ Backbone.on("ApiReady", function() {
 
 
 Backbone.on("AppReady", function() {
+  //var tracked_campaigns = JSON.parse(localStorage.trackedEmagsCampaignIds || "[]");
   EMGetCurrentCampaignID(
     function(campaign_id) { // Campaign ID Found
-      console.log("campaignid: " + campaign_id);
+      // if (tracked_campaigns.indexOf(campaign_id) >= 0) return;
+      // tracked_campaigns.push(campaign_id);
+      // localStorage.trackedEmagsCampaignIds = JSON.stringify(tracked_campaigns);
+
+      App.api.analyticsService.trackCustomEvent("customEvent4", {
+        customVariable5: campaign_id
+      });
     },
     function() { // No Campaign ID found
       console.log("campaignid: [NONE]");
