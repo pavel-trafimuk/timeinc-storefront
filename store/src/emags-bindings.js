@@ -50,7 +50,7 @@ Backbone.on("AppReady", function() {
       // tracked_campaigns.push(campaign_id);
       // localStorage.trackedEmagsCampaignIds = JSON.stringify(tracked_campaigns);
 
-      App.api.analyticsService.trackCustomEvent("customEvent4", {
+      App.api.analyticsService.trackCustomEvent("customEvent5", {
         customVariable5: campaign_id
       });
     },
