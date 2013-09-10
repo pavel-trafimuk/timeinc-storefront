@@ -1,3 +1,18 @@
 @import "_variables/_SI.scss";
 @import "_includes/_STORE.scss";
 
+.first-load-popup {
+  @include first-load-popup(522px, 362px, "../images/SI/first-load-popup.png");
+  .restore-btn, .sign-in-btn {
+    height: 40px; 
+    width: 200px;
+    bottom: 14px;
+  }
+  .restore-btn {
+    left: 32px; 
+  }
+  .sign-in-btn {
+    right: 34px;
+  }
+}
+

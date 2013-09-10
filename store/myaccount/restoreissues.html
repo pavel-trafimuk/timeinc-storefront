@@ -86,7 +86,19 @@ a:visited {
 <p></p><hr /><p></p>
 
 <p>
-</p><div class="questions">How do I restore my existing digital-only subscription or previously purchased issues?</div>
+</p>
+<div class="questions">
+	<script>
+	   var myarr = ["TA", "TI", "TS", "TZ", "FA", "FI", "FZ"];
+	   var international = (myarr.indexOf("{{MAG_CODE}}") > -1);
+	   
+	   if (international) {
+	       document.write("How do I restore previously purchased issues?");
+	   } else {
+	       document.write("How do I restore my existing digital-only subscription or previously purchased issues?");
+	   }
+    </script>
+</div>
 <div class="answersEm">You will need to restore your purchases using your Apple ID.</div>
 
 <div class="ansNumbers">1</div><div class="answers">In the Library, tap the settings icon&nbsp;<img width="21" height="13" src="../images/accountPage_clip_image002.gif" />&nbsp;at the top right of the screen.</div>

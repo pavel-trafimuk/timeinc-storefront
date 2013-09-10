@@ -36,7 +36,8 @@ window.settings = {
     // App specific URLS
     // ************************************************************  
 
-    "lucieRegistrationURL"          : "https://subscription.timeinc.com/storefront/site/ta-lucie-customer-creation-itunes201307.html",
+    "customerServiceUrl"         : "", // hides button on my account page
+    "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/ta-lucie-customer-creation-itunes201307.html",
     
 "ihatethelastcomma": true};
 })();
