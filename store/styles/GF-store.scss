@@ -2,7 +2,7 @@
 @import "_includes/_STORE.scss";
 
 .first-load-popup {
-  @include first-load-popup(522px, 362px, "../images/SI/first-load-popup.png");
+  @include first-load-popup(522px, 362px, "../images/GF/first-load-popup.png");
   .restore-btn, .sign-in-btn {
     height: 39px; 
     width: 198px;
