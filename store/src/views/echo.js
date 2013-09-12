@@ -22,7 +22,7 @@
           window.clearInterval(apiLoad);
           d_authenticated = adobeDPS.authenticationService.isUserAuthenticated,
           d_push_token = App.api.deviceService.pushNotificationToken.toString(),          
-          d_omni_visitor_id = md5(App.api.deviceService.deviceId);
+          d_omni_visitor_id = App.api.deviceService.deviceId;
           
           if (settings.echoENV == "prod") {
             that.echo_url = settings.echo_prod;
