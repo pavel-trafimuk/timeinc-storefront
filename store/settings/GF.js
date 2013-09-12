@@ -12,9 +12,9 @@ window.settings = {
     
     "subscribeOfferText"         : "Subscribe now to get GOLF Magazine on your iPad, the #1 source for instruction, equipment, and travel.",
     
-    "welcome_preview": "image",
-    "hero_preview": "image",
-    "hero_itii_preview": "image",
+    "welcome_preview": "adobe",
+    "hero_preview": "adobe",
+    "hero_itii_preview": "adobe",
     "max_back_issues"            : 20,
 
     "omniture_account"           : "timaggolfnk",
