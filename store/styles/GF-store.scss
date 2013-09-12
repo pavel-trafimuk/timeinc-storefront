@@ -1,3 +1,18 @@
 @import "_variables/_GF.scss";
 @import "_includes/_STORE.scss";
 
+.first-load-popup {
+  @include first-load-popup(522px, 362px, "../images/GF/first-load-popup.png");
+  .restore-btn, .sign-in-btn {
+    height: 39px; 
+    width: 198px;
+    bottom: 16px;
+  }
+  .restore-btn {
+    left: 31px; 
+  }
+  .sign-in-btn {
+    right: 34px;
+  }
+}
+

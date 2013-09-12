@@ -1,45 +1,56 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Offlinebanner</title>
+  <title>banner</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi"/>
-  <style>
-    /* Banner CSS for iOS iPad devices with horz/vert orientations */
-    html, body {
-	height: 100%;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	-webkit-user-select: none;
-	-webkit-touch-callout: none;
-	background-color: #52a725;
-    }
- 
-    /* styles for both orientations */
-    #banner {
-      position: absolute;
-      margin: 0;
-      padding: 0;
-      top: 10%; bottom: 10%;
-      left: 10%; right: 10%;
-      border: none;      
-      background: transparent url('logo.png') no-repeat 50% 50%;
-      -webkit-background-size: contain;
-    }
- 
-    a {
-      position:absolute;
-      width: 100%;
-      height: 100%;
-    }
-  body {
-	background-color: #52a725;
-}
-  </style>
+  
+  <script type="text/javascript" src="../../lib/jquery.js"></script>
+
+  <script type="text/javascript" src="../../lib/AdobeLibraryAPI.js"></script>
+  <!-- script type="text/javascript" src="../../lib/MockAPI.js"></script -->
+
+  <script type="text/javascript" src="../../settings/{{MAG_CODE}}.js"></script> 
+  <script type="text/javascript" src="../../settings/settings_loader.js"></script> 
+
+  <script type="text/javascript" src="../../lib/lucie_entitlements.js"></script> 
+
+  <script type="text/javascript">
+    (function() {
+      var api = (typeof adobeDPS == "undefined") ? MockAPI : adobeDPS,
+          now = +(new Date),
+          subs_banner = "subs/index.html?t=" + now,
+          nonsubs_banner = "nonsubs/index.html?t=" + now;
+
+      api.initializationComplete.addOnce(function() {
+        // APPLE SUBSCRIBERS
+        var is_sub = false;
+        $.each(api.receiptService.availableSubscriptions, function(i, receipt) {
+          if (receipt.isActive()) is_sub = true;
+        });
+        if (is_sub) {
+          location.href = subs_banner;
+          return;
+        }
+
+        // LUCIE SUBSCRIBERS
+        if (api.authenticationService.isUserAuthenticated) {
+          lucieApi._default_api_args.authToken = api.authenticationService.token;
+          lucieApi.entitlements(function(data) {
+            if ($("subscriberIsActive", data).text() == "Y") {
+              location.href = subs_banner;
+            }
+            else {
+              location.href = nonsubs_banner;
+            }
+          });
+        }
+        else {
+          location.href = nonsubs_banner;
+        }
+      });
+    })();
+  </script>
+
 </head>
- 
-<body>
-      <div id="banner"></div>
-  </body>
-</html>
+<body><div></div></body></html>
+

@@ -12,7 +12,9 @@ window.settings = {
     
     "subscribeOfferText"         : "Each issue is packed with seasonal, delicious and nutritious recipes, quick and easy ways to plan everyday menus and helpful tips on how to live a healthier lifestyle.",
     
-    "heroHeading"                : "Inside This Issue",
+    "welcome_preview": "adobe",
+    "hero_preview": "adobe",
+    "hero_itii_preview": "adobe",
     "max_back_issues"            : 20,
 
     "omniture_account"           : "timagcookingnk",

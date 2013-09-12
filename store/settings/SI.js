@@ -10,11 +10,11 @@ window.settings = {
     "popupInterval"              : 5,
     "enable_first_load_popup"    : true,
     
-    "subscribeOfferText"         : "Subscribe now to get SPORTS ILLUSTRATED on your Kindle Fire, featuring award-winning journalism and photography, plus bonus video and slideshows, and the latest news and scores.",
+    "subscribeOfferText"         : "Subscribe now to get SPORTS ILLUSTRATED on your iPad, featuring award-winning journalism and photography, plus bonus video and slideshows, and the latest news and scores.",
     
-    "welcome_preview": "image",
-    "hero_preview": "image",
-    "hero_itii_preview": "image",
+    "welcome_preview": "adobe",
+    "hero_preview": "adobe",
+    "hero_itii_preview": "adobe",
     "max_back_issues"            : 20,
 
     "omniture_account"           : "timagsimagnk",
