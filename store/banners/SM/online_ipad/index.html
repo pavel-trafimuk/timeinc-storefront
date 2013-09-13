@@ -18,7 +18,8 @@
     (function() {
       var api = (typeof adobeDPS == "undefined") ? MockAPI : adobeDPS,
           now = +(new Date),
-          subs_banner = "subs/index.html?t=" + now,
+          itunes_subs_banner = "subs/itunes/index.html?t=" + now,
+          lucie_subs_banner = "subs/lucie/index.html?t=" + now,
           nonsubs_banner = "nonsubs/index.html?t=" + now;
 
       api.initializationComplete.addOnce(function() {
