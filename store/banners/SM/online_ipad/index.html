@@ -29,7 +29,7 @@
           if (receipt.isActive()) is_sub = true;
         });
         if (is_sub) {
-          location.href = subs_banner;
+          location.href = itunes_subs_banner;
           return;
         }
 
@@ -38,7 +38,7 @@
           lucieApi._default_api_args.authToken = api.authenticationService.token;
           lucieApi.entitlements(function(data) {
             if ($("subscriberIsActive", data).text() == "Y") {
-              location.href = subs_banner;
+              location.href = lucie_subs_banner;
             }
             else {
               location.href = nonsubs_banner;
