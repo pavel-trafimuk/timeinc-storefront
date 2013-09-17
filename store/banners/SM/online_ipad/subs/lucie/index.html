@@ -38,44 +38,9 @@
 }
   </style>
   
-  <script type="text/javascript" src="../../../lib/jquery.js"></script>
-
-  <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js"></script>
-  <!-- script type="text/javascript" src="../../lib/MockAPI.js"></script -->
-
-  <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js"></script> 
-  <script type="text/javascript" src="../../../settings/settings_loader.js"></script> 
-
-  <script type="text/javascript" src="../../../lib/lucie_entitlements.js"></script> 
-
-  <script type="text/javascript">
-    (function() {
-      var api = (typeof adobeDPS == "undefined") ? MockAPI : adobeDPS,
-          folio = api.libraryService.get_by_productId(""),
-          download_issue = function() { setTimeout(download_issue, 500) };
-
-      $(function() {
-        $("#banner a").click(function() {
-          download_issue();
-          return false;
-        });
-      });
-      
-      folio.download_and_view({
-        /*complete: function() {
-          $progress.attr("data-label", "Opening Issue…");
-        },
-        download_progress: function(progress) {
-          $progress.attr("data-label", "Downloading…");
-          $(".progress-bar", $progress).css("width", progress+"%");
-        }*/
-      });
-
-    })();
-  </script>
 </head>
  
 <body>
-      <div id="banner"><a href="dps.7ea9178b138a416d899803c578036a49://v1/folio/com.timeinc.realsimple.ipad.inapp.09172013/56036"></a></div>
+      <div id="banner"><a href="dps.7ea9178b138a416d899803c578036a49://v1/folio/com.timeinc.realsimple.ipad.inapp.08302013/56036"></a></div>
 </body>
 </html>
