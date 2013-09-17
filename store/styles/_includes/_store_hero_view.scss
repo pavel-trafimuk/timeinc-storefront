@@ -7,9 +7,13 @@
     padding: 30px 20px;
     position: relative;
     -webkit-transform: translate3d(0,0,0);
+    border-bottom: 1px solid rgba(0,0,0,0.10);
     
     .issue-cover {
         position: relative;
+        border: 2px solid rgba(0,0,0,0.2);
+        -webkit-border-radius: 2px;
+
         .page-curl {
             right: 0;
             bottom: 0;
@@ -20,8 +24,6 @@
             -webkit-mask-image: none;
             -webkit-transform: translate3d(0,0,0)
         }
-        border: 2px solid rgba(0,0,0,0.3);
-        -webkit-border-radius: 2px;
     }
     .cover {
         -webkit-box-sizing: border-box;
@@ -41,7 +43,7 @@
         top: 30px; right: 0; bottom: 0; 
         -webkit-box-sizing: border-box;
         padding-left: 5px;
-        color: #fff;
+        color: #333;
         @media screen and (max-width: 999px) {
             width: 50%;
         }
@@ -68,14 +70,14 @@
 
 
     .in-this-issue {
-        border-top: 1px solid rgba(0,0,0,0.90);
-        border-bottom: 1px solid rgba(255,255,255,0.10);
+        border-top: 1px solid rgba(0, 0, 0, 0.15);
+        border-bottom: 1px solid rgba(255, 255, 255, 1.0);
         overflow: hidden;
         
         article {
             position: relative;
-            border-top: 1px solid rgba(255,255,255,0.10);
-            border-bottom: 1px solid rgba(0,0,0,0.90);
+            border-top: 1px solid rgba(255, 255, 255, 1.0);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
             position: relative;
             padding: 12px 60px 12px 100px;
             height: 50px;
@@ -115,7 +117,7 @@
             height: 12px; width: 12px;
             border-style: solid;
             border-width: 2px 2px 0 0;
-            border-color: rgba(255,255,255,0.5);
+            border-color: rgba(0,0,0,0.2);
             -webkit-transform: rotate(45deg);
         }
         h3 {
@@ -150,6 +152,7 @@
     }
     .cta button {
         width: 48%;
+        border-color: rgba(0,0,0,0.2);
     }
     .buy-issue-button {
         @include big-button-secondary; 
