@@ -37,13 +37,15 @@
         <p class="issue-description">
           {{folio.folioDescription}}
         </p>
-        <p class="issue-price">{{folio.price}}</p>
-        {{#if ../sub_opts}}
-          <p class="subscribe-cta">
-            {{../settings.storeSubscribeNow}}
-            {{{../sub_opts}}}
-          </p>
-        {{/if}}
+        <!--
+          <p class="issue-price">{{folio.price}}</p>
+          {{#if ../sub_opts}}
+            <p class="subscribe-cta">
+              {{../settings.storeSubscribeNow}}
+              {{{../sub_opts}}}
+            </p>
+          {{/if}}
+        --> 
       </div>
     {{/unless}}
     <div class="cta {{#if is_subscriber}}subscriber{{/if}}">
