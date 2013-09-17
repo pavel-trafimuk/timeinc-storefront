@@ -50,7 +50,15 @@
       
       this.subview.render(function() {
         that.subview.$el.appendTo(that.el);
-        that.subview.animate(cb||$.noop);
+        that.subview.animate(function() {
+          if (!App.dialogs.FirstLoadPopup.shown 
+                && settings.enable_first_load_popup 
+                && localStorage.app_view_count == 1) {
+            new App.dialogs.FirstLoadPopup;
+          }
+          App.dialogs.FirstLoadPopup.shown = true;
+          (cb||$.noop)();
+        });
       });
     },
     goto_store: function() {
