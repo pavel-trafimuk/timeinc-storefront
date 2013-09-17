@@ -7,7 +7,7 @@ window.settings = {
     "brandName"                  : "Southern Living",
     "brandCode"                  : "SL",
     "schedule"                   : "weekly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
     
     "subscribeOfferText"         : "Subscribe to SOUTHERN LIVING and get great home decorating ideas, recipes, travel tips and more -all with Southern charm.",

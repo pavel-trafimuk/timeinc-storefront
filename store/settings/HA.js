@@ -7,14 +7,12 @@ window.settings = {
     "brandName"                  : "HEALTH Magazine",
     "brandCode"                  : "HA",
     "schedule"                   : "monthly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
-    
+
     "subscribeOfferText"         : "Subscribe now to get HEALTH on your iPad. Each issue is packed with smart and fun new ways to stay in great shape, look amazing and discover tasty (and healthy!) things to eat. Plus, get 1 month free with an annual subscription.",
     
-    "welcome_preview": "adobe",
-    "hero_preview": "adobe",
-    "hero_itii_preview": "adobe",
+    "heroHeading"                : "Inside This Issue",
     "max_back_issues"            : 12,
 
     "omniture_account"           : "timaghealthnk",
