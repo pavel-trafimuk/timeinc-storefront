@@ -33,6 +33,7 @@
         
         // display welcome screen only once per new issue
         "welcome_once_per_issue": false,
+        "back_issues_buy_btns": false,
 
 
         // ************************************************************  

@@ -15,3 +15,79 @@
     right: 35px;
   }
 }
+
+.store-hero-view {
+  .cover {
+    width: 33.3%;
+    padding-right: 20px;
+    margin-bottom: 0;
+    .page-curl { display: none; }
+  }
+  .details {
+    left: 33%; right: 33%;
+    width: auto;
+    padding: 0 0 0 10px;
+  }
+  .cta {
+    width: 220px;
+    top: 0;
+    left: 100%; right: auto;
+    padding: 0;
+    button {
+      position: absolute;
+      left: 20px;
+      height: 135px;
+      width: 220px;
+      margin: 0; padding: 0;
+      border: 1px solid #ccc;
+      border-radius: 0px;
+      margin-bottom: 20px;
+      background-size: cover;
+      text-indent: -9999px;
+      -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.1);
+    }
+    .buy-issue-button {
+      top: 155px;
+      background: transparent url("../images/PE/hero_btn_buy.jpg") 50% 50% no-repeat;
+    }
+    .subscribe-button {
+      top: 0;
+      background: transparent url("../images/PE/hero_btn_subscribe.jpg") 50% 50% no-repeat;
+    }
+    .print-subscribers { display: none; }
+  }
+}
+.store-issues-view {
+  padding-top: 60px;
+  .tap-to-preview {
+    position: absolute;
+    top: -1px; left: 0px; right: 0px;
+    border-top: 1px solid #158ba9;
+    border-bottom: 1px solid #24a1cd;
+    background: -webkit-linear-gradient(#48c1f0, #2cafe3);
+    box-shadow: 0 1px 0 #ffffff;
+    padding: 4px 0 3px;
+    &::before { content: none; }
+    span {
+      border: none;
+      background: none;
+    }
+    button {
+      height: 30px;
+      padding: 0px 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-shadow: 0 1px #fff;
+      background: -webkit-linear-gradient(#fff, #eee 49%, #ddd 50%, #ccc);
+      border: none;
+      box-shadow: 
+        inset 0 0 1px 1px rgba(255,255,255,0.75),
+        0 0 1px 1px rgba(0,0,0,0.15);
+      border-radius: 2px;
+      .active {
+        color: #e9148a;
+
+      }
+    }
+  }
+}

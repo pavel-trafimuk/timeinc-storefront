@@ -10,8 +10,11 @@ window.settings = {
     "popupInterval"              : 5,
     "enable_first_load_popup"    : true,
  
+    "heroHeading"                : "In This Issue",
     "subscribeOfferText"         : "Subscribe now to PEOPLE Magazine on your iPad. The Digital Edition gets you extras like bonus photos, exclusive videos, movie trailers, song samples, story updates from PEOPLE.com, click-to-buy features and so much more! Plus, get 1 month free with a semi-annual subscription.",
     
+    "storeIssuesTapToView"       : "<button class=weekly data-filter='!special'>Weekly Issues</button> <button class=special data-filter='special'>Special Issues</button>",
+
     "welcome_preview": "image",
     "hero_preview": "image",
     "hero_itii_preview": "image",
