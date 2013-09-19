@@ -15,8 +15,8 @@
     right: 35px;
   }
 }
-
 .store-hero-view {
+  background: #fcfcfc;
   .cover {
     width: 33.3%;
     padding-right: 20px;
@@ -27,6 +27,9 @@
     left: 33%; right: 33%;
     width: auto;
     padding: 0 0 0 10px;
+    header {
+      text-transform: capitalize;
+    }
   }
   .cta {
     width: 220px;
@@ -58,6 +61,7 @@
   }
 }
 .store-issues-view {
+  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.1);
   padding-top: 60px;
   .tap-to-preview {
     position: absolute;
@@ -65,7 +69,9 @@
     border-top: 1px solid #158ba9;
     border-bottom: 1px solid #24a1cd;
     background: -webkit-linear-gradient(#48c1f0, #2cafe3);
-    box-shadow: 0 1px 0 #ffffff;
+    box-shadow: 
+      0 1px 0 rgba(255,255,255,0.75), 
+      0 8px 8px rgba(0,0,0,0.1);
     padding: 4px 0 3px;
     &::before { content: none; }
     span {
@@ -76,6 +82,7 @@
       height: 30px;
       padding: 0px 10px;
       font-weight: bold;
+      font-size: 12px;
       text-transform: uppercase;
       text-shadow: 0 1px #fff;
       background: -webkit-linear-gradient(#fff, #eee 49%, #ddd 50%, #ccc);
@@ -84,9 +91,8 @@
         inset 0 0 1px 1px rgba(255,255,255,0.75),
         0 0 1px 1px rgba(0,0,0,0.15);
       border-radius: 2px;
-      .active {
+      &.active {
         color: #e9148a;
-
       }
     }
   }

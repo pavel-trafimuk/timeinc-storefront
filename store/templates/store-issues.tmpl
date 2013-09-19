@@ -2,6 +2,10 @@
 <div class="issues">
     {{#each issues}}
         <div class="issue {{#if isFree}}free{{/if}} {{#if is_special_issue}}special{{/if}}" data-product-id="{{productId}}">
+            {{#if ../settings.storeIssuesBuyBtns}}
+              <div class="issue-title">{{folioNumber}}</div>
+            {{/if}}
+
             <div class="issue-cover">
                 <img class="cover-img" src="{{../settings.asset_root}}{{../settings.cover_spacer_img}}" 
                     data-real-src="{{get_cover_img}}"
@@ -9,7 +13,16 @@
                     height="{{../settings.adbfeed_cover_dimensions.[1]}}">
                 <div class="progress-bar"></div>
             </div>
-            <div class="issue-title">{{folioNumber}}</div>
+
+            {{#if ../settings.storeIssuesBuyBtns}}
+              <button class="buy-issue-button"
+                {{> buy-view-btn.partial .. }} 
+              </button>
+            {{else}}
+              <div class="issue-title">{{folioNumber}}</div>
+            {{/if}}
+
+          <hr>
         </div>
     {{/each}}
 </div>

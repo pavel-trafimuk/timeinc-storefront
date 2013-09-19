@@ -49,8 +49,8 @@
       </div>
     {{/unless}}
     <div class="cta {{#if is_subscriber}}subscriber{{/if}}">
-        <button class="buy-issue-button"
-           {{> buy-view-btn.partial }} 
+        <button class="buy-issue-button {{class-name}}"
+           {{> buy-view-btn.partial folio }} 
         </button>
         <button class="subscribe-button">{{settings.storeSubscribeBtn}}</button>
         {{#if settings.WesPageURL}}

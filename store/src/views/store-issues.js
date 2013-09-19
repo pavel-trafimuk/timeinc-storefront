@@ -4,22 +4,44 @@
     className: "store-issues-view",
     template: Handlebars.templates["store-issues.tmpl"],
     events: {
-      "tap .issue": "view_issue"
+      "tap .issue": "view_issue",
+      "tap .bi-filter": "filter_back_issues"
     },
     initialize: function() {
       console.log("App.views.StoreIssues initializing");
+      this.filter_type = settings.storeIssuesStartingFilter;
     },
     render: function(cb) {
       cb = cb || $.noop;
-      var back_issues = App.api.libraryService.get_back_issues(),
-          cx = { 
-            issues: _(back_issues).first(settings.max_back_issues),
+      var cx = { 
+            issues: this.get_issues(),
             settings: settings 
           };
       this.$el.html(this.template(cx)).hammer();
       this.$(".cover-img").imgPlaceholder();
       cb();
       return this;
+    },
+    get_issues: function() {
+      var that = this;
+          back_issues = App.api.libraryService.get_back_issues();
+
+      back_issues = _.filter(back_issues, function(issue) {
+        if (!that.filter_type) return true;
+        
+        var negate = false,
+            filter_type = that.filter_type,
+            has_filter;
+
+        if (filter_type[0] == "!") {
+          negate = true;
+          filter_type = filter_type.substr(1);
+        }
+
+        has_filter = _(issue.get_filters()).contains(filter_type);
+        return negate ? !has_filter : has_filter;
+      });
+      return _.first(back_issues, settings.max_back_issues);
     },
     animate: function(cb) {
       var that = this,
@@ -59,6 +81,15 @@
           $(".progress-bar", $this).css("width", progress+"%");
         }
       });
+    },
+    filter_back_issues: function(evt) {
+      var $this = $(evt.currentTarget);
+
+      this.$(".bi-filter").removeClass("active");
+      $this.addClass("active");
+
+      this.filter_type = $this.data("filter");
+      this.render();
     }
   });
 

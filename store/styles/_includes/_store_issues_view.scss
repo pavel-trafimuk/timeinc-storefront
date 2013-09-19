@@ -80,11 +80,16 @@ $issue-spacing: 3%;
     @include constrain-to-one-line;
     text-transform: uppercase;
     font-size: 14px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid $tap-to-preview-color;
-    margin-bottom: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 5px;
     font-weight: bold;
     font-family: $HEADLINE_FONT;
+  }
+  hr {
+    border: none;
+    border-bottom: 1px solid $tap-to-preview-color;
+    margin: 10px 0;
+    padding: 0;
   }
   .free .issue-title,
   .special .issue-title {

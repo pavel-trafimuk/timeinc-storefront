@@ -20,6 +20,9 @@ $(document)
   .on("touchmove", ".scrollable", function(evt) { evt.stopPropagation() });
 
 App.preload();
+Handlebars.registerHelper('setting', function(options) {
+  return options.fn(settings);
+});
 
 $(function() {
   console.log("dom ready");

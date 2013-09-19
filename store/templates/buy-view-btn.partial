@@ -1,19 +1,17 @@
-<button class="{{class-name}}"
-    {{#if folio.isPurchasable}}
-        data-action="buy">
-        {{../settings.storeBuyIssueBtn}}
-    {{else}}{{#if folio.isViewable}}
-        data-action="view">
-        {{../settings.storeViewIssueBtn}}
-    {{else}}{{#if folio.isDownloadable}}
-        data-action="download">
-        {{../settings.storeDownloadIssueBtn}}
-    {{else}}{{#if folio.isFree}}
-        data-action="downloadfree">
-        {{../settings.storeDownloadIssueBtn}}
-    {{else}}
-        data-action="unavailable">
-        {{../settings.storeUnavailableIssueBtn}}
-    {{/if}}{{/if}}{{/if}}{{/if}}
-</button>
-       
+
+{{#if isPurchasable}}
+    data-action="buy">
+    {{#setting}}{{storeBuyIssueBtn}}{{/setting}}
+{{else}}{{#if isViewable}}
+    data-action="view">
+    {{#setting}}{{storeViewIssueBtn}}{{/setting}}
+{{else}}{{#if isDownloadable}}
+    data-action="download">
+    {{#setting}}{{storeDownloadIssueBtn}}{{/setting}}
+{{else}}{{#if isFree}}
+    data-action="downloadfree">
+    {{#setting}}{{storeDownloadIssueBtn}}{{/setting}}
+{{else}}
+    data-action="unavailable">
+    {{#setting}}{{storeUnavailableIssueBtn}}{{/setting}}
+{{/if}}{{/if}}{{/if}}{{/if}}
