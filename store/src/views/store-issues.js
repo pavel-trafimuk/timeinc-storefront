@@ -5,7 +5,8 @@
     template: Handlebars.templates["store-issues.tmpl"],
     events: {
       "tap .issue": "view_issue",
-      "tap .bi-filter": "filter_back_issues"
+      "tap .bi-filter": "filter_back_issues",
+      "tap .buy-issue-button": "buy_issue"
     },
     initialize: function() {
       console.log("App.views.StoreIssues initializing");
@@ -19,6 +20,10 @@
           };
       this.$el.html(this.template(cx)).hammer();
       this.$(".cover-img").imgPlaceholder();
+
+      this.$(".bi-filter").removeClass("active");
+      this.$('[data-filter="' + this.filter_type + '"]').addClass("active");
+
       cb();
       return this;
     },
@@ -85,11 +90,43 @@
     filter_back_issues: function(evt) {
       var $this = $(evt.currentTarget);
 
-      this.$(".bi-filter").removeClass("active");
       $this.addClass("active");
 
       this.filter_type = $this.data("filter");
       this.render();
+    },
+    buy_issue: function(evt) {
+      var $btn = $(evt.currentTarget),
+          $this = $btn.closest(".issue"),
+          product_id = $this.data("productId"),
+          folio = App.api.libraryService.get_by_productId(product_id),
+          $cover = $(".issue-cover", $this);
+
+      $btn.fadeTo(600, 0.5);
+      $cover.addClass("progress").attr("data-label", settings.progressStarting);
+      
+      folio.purchase_and_download({
+        complete: function() {
+          $cover.attr("data-label", settings.progressOpening);
+        },
+        download_progress: function(progress) {
+          $cover.attr("data-label", settings.progressDownloading);
+          $(".progress-bar", $this).css("width", progress+"%");
+        },
+        error: function(error_code) {
+          if (error_code < 0) {
+            settings.error_code = error_code;
+            new App.dialogs.ErrorMsg();
+          }
+          $cover.removeClass("progress").attr("data-label", "");
+          $btn.fadeTo(100, 1.0);
+        },
+        cancelled: function() {
+          $cover.removeClass("progress").removeAttr("data-label");
+          $btn.fadeTo(100, 1.0);
+        }
+      });
+      return false;
     }
   });
 

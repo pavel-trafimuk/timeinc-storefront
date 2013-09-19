@@ -37,6 +37,12 @@
         <p class="issue-description">
           {{folio.folioDescription}}
         </p>
+        <div class="post-description">
+          {{#setting}}
+            {{{heroPostDescriptionHTML}}}
+          {{/setting}}
+        </div>
+
         <!--
           <p class="issue-price">{{folio.price}}</p>
           {{#if ../sub_opts}}

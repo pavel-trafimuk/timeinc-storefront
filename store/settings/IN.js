@@ -9,11 +9,12 @@ window.settings = {
     "schedule"                   : "monthly",
     "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
-  
+    "max_back_issues"            : 12,
+
     "subscribeOfferText"         : "Subscribe now to get INSTYLE Magazine on your iPad. Featuring the hottest fashion trends, beauty tips, celebrity style secrets, best beauty buys and so much more! Plus, get 1 month free with an annual subscription.",
     
     "heroHeading"                : "Inside This Issue",
-    "max_back_issues"            : 12,
+    "heroPostDescriptionHTML"    : "<p><b>Sample articles from this issue in the<br>Free Preview below.</b></p>",
 
     "omniture_account"           : "timaginstylenk",
     "omniture_server"            : "timeinc.122.2o7.net",

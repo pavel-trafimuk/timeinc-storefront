@@ -55,12 +55,12 @@ $issue-spacing: 3%;
     @media screen and (min-width: 1000px) {
       width: 20%;
     }
-    &.free::before {
+    &.free .issue-cover::before {
       content: "";
       display: block;
       position: absolute;
       top: -7px;
-      left: 15%;
+      left: 10px;
       height: 60px;
       width: 70px;
       background-image: url("../images/" + $BRAND_CODE + "/free.png");
@@ -88,7 +88,7 @@ $issue-spacing: 3%;
   hr {
     border: none;
     border-bottom: 1px solid $tap-to-preview-color;
-    margin: 10px 0;
+    margin: 20px 0;
     padding: 0;
   }
   .free .issue-title,

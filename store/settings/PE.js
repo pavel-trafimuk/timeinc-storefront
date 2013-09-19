@@ -10,9 +10,7 @@ window.settings = {
     "popupInterval"              : 0,
     "enable_first_load_popup"    : true,
  
-    "heroHeading"                : "In This Issue",
-    "subscribeOfferText"         : "Subscribe now to PEOPLE Magazine on your iPad. The Digital Edition gets you extras like bonus photos, exclusive videos, movie trailers, song samples, story updates from PEOPLE.com, click-to-buy features and so much more! Plus, get 1 month free with a semi-annual subscription.",
-    
+        
     "storeIssuesStartingFilter"  : "!special",
     "storeIssuesTapToView"       : "<button class='bi-filter active' data-filter='!special'>Weekly Issues</button> <button class='bi-filter' data-filter='special'>Special Issues</button>",
 
@@ -22,6 +20,11 @@ window.settings = {
     "hero_preview": "image",
     "hero_itii_preview": "image",
     "max_back_issues"            : 20,
+
+    "storeBuyIssueBtn"           : "Buy Now",
+    "heroHeading"                : "In This Issue",
+    "subscribeOfferText"         : "Subscribe now to PEOPLE Magazine on your iPad. The Digital Edition gets you extras like bonus photos, exclusive videos, movie trailers, song samples, story updates from PEOPLE.com, click-to-buy features and so much more! Plus, get 1 month free with a semi-annual subscription.",
+
 
     "omniture_account"           : "timagpeoplenk",
     "omniture_server"            : "metrics.people.com",
