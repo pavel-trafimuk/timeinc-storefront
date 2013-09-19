@@ -54,6 +54,11 @@
             text-transform: uppercase;
             font-family: $HEADLINE_FONT;
         }
+        .post-description {
+          .accent-color {
+            color: $ACCENT_COLOR;
+          }
+        }
     }
    
     .issue-date {
