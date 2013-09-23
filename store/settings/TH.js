@@ -17,6 +17,8 @@ window.settings = {
     "hero_itii_preview": "image",
     "max_back_issues"            : 20,
 
+    "heroHeading"                : "Inside This Issue",
+
     "omniture_account"           : "timagtohnk",
     "omniture_server"            : "timeinc.122.2o7.net",
     "omniture_ssl_server"        : "timeinc.122.2o7.net",
