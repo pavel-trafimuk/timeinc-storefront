@@ -33,6 +33,8 @@
     }
     .issue-date {
       text-transform: uppercase;
+      font-size: 14px;
+      font-weight: bold;
     }
   }
   .post-description {
@@ -66,14 +68,35 @@
       background-size: cover;
       text-indent: -9999px;
       -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.1);
+      background-color: transparent;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
     }
     .buy-issue-button {
       top: 155px;
-      background: transparent url("../images/PE/hero_btn_buy.jpg") 50% 50% no-repeat;
+      &[data-action="buy"] {
+        background-image: url("../images/PE/hero_btn_buy.jpg?v=" + currTime());
+      }
+      &[data-action="view"] {
+        background-image: url("../images/PE/hero_btn_view.png?v=" + currTime());
+      }
+      &[data-action="download"] {
+        background-image: url("../images/PE/hero_btn_download.png?v=" + currTime());
+      }
+      &[data-action="downloadfree"] {
+        background-image: url("../images/PE/hero_btn_downloadfree.png?v=" + currTime());
+      }
+      &[data-action="unavailable"] {
+        background-image: url("../images/PE/hero_btn_unavailable.png?v=" + currTime());
+      }
     }
     .subscribe-button {
       top: 0;
-      background: transparent url("../images/PE/hero_btn_subscribe.jpg") 50% 50% no-repeat;
+      background-image: url("../images/PE/hero_btn_subscribe.jpg?v=" + currTime());
+    }
+    &.subscriber .subscribe-button {
+      display: block;
+      background-image: url("../images/PE/hero_btn_subscribed.png?v=" + currTime());
     }
     .print-subscribers { display: none; }
   }
