@@ -17,6 +17,7 @@
 }
 .store-hero-view {
   background: #fcfcfc;
+  min-height: 330px;
   .cover {
     width: 33.3%;
     padding-right: 20px;
@@ -29,6 +30,22 @@
     padding: 0 0 0 10px;
     header {
       text-transform: capitalize;
+    }
+    .issue-date {
+      text-transform: uppercase;
+    }
+  }
+  .post-description {
+    z-index: 2;
+    position: absolute;
+    width: 200px;
+    top: 305px;
+    right: -240px;
+    font-weight: bold;
+    font-size: 14px;
+    a {
+      color: #fe009e;
+      text-decoration: none;
     }
   }
   .cta {
