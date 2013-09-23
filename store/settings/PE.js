@@ -14,6 +14,8 @@ window.settings = {
     "storeIssuesStartingFilter"  : "!special",
     "storeIssuesTapToView"       : "<button class='bi-filter active' data-filter='!special'>Weekly Issues</button> <button class='bi-filter' data-filter='special'>Special Issues</button>",
 
+
+    "store_show_banners": true,
     "storeIssuesBuyBtns": true,
 
     "welcome_preview": "image",
