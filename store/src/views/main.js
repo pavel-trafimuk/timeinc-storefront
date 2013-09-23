@@ -6,7 +6,8 @@
     events: {
       "tap .goto-store": "goto_store",
       "tap .launch-repl": "launch_repl",
-      "tap .reload-page": "reload_page"
+      "tap .reload-page": "reload_page",
+      "tap .store-banner": "banner_tap",
     },
     initialize: function() {
       var that = this,
@@ -47,7 +48,7 @@
     render: function(cb) {
       var that = this;
       this.$el.html(this.template({DEBUG:DEBUG})).hammer();
-      
+
       this.subview.render(function() {
         that.subview.$el.appendTo(that.el);
         that.subview.animate(function() {
@@ -60,6 +61,11 @@
           (cb||$.noop)();
         });
       });
+    },
+    banner_tap: function() {
+      App.omni.event("st_banner_taps");
+      new App.dialogs.Subscribe();
+      return false;
     },
     goto_store: function() {
       this.subview = this.store_view;

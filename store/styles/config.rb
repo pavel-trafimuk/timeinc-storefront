@@ -25,3 +25,9 @@ relative_assets = true
 # preferred_syntax = :sass
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
+
+module Sass::Script::Functions
+    def currTime()
+        Sass::Script::String.new("%i" % Time.now.to_i)
+    end
+end

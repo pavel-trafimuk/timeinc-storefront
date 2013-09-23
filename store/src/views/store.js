@@ -10,7 +10,11 @@
       console.log("App.views.Store.initialize()");
       this.hero_view = new App.views.StoreHero();
       this.issues_view = new App.views.StoreIssues();
+
       this.$el.addClass("scrollable");
+      if (settings.store_show_banners) {
+        this.$el.addClass("make-banner-space");
+      }
     },
     render: function(cb) {
       cb = cb || $.noop;

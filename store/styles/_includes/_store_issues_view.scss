@@ -49,12 +49,7 @@ $issue-spacing: 3%;
     -webkit-box-sizing: border-box;
     text-align: center;
     margin-top: 12px;
-    @media screen and (max-width: 999px) {
-      width: 25%;
-    }
-    @media screen and (min-width: 1000px) {
-      width: 20%;
-    }
+    
     &.free .issue-cover::before {
       content: "";
       display: block;
@@ -67,7 +62,18 @@ $issue-spacing: 3%;
       background-size: contain;
       z-index: 9;
     }
+
+    @media screen and (max-width: 999px) {
+      width: 25%;
+    }
+    @media screen and (min-width: 1000px) {
+      width: 20%;
+      .make-banner-space & {
+        width: 25%;
+      }
+    }
   }
+
   .cover-img {
     width: 100%;
     height: auto;
@@ -95,21 +101,5 @@ $issue-spacing: 3%;
   .special .issue-title {
     color: $ACCENT_COLOR;
   }
-
-  // Hard-coding the cover-img sizes at certain screen sizes is an optimization
-  // if you change the layout, these values will need to also be fixed
-  @media screen and (width: 768px) {
-    .cover-img {
-      width: 161px;
-      height: 210px;
-    }
-  }
-  @media screen and (width: 1024px) {
-    .cover-img {
-      width: 170px;
-      height: 222px;
-    }
-  }
-
 }
 

@@ -1,0 +1,51 @@
+
+.store-banner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background-color: transparent;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 10;
+}
+
+// Portrait
+.store-banner.banner-portrait {
+  height: 73px;
+  width: 100%;
+  background-image: url("../images/" + $BRAND_CODE + "/stbanner_portrait.jpg?v=" + currTime());
+  @media screen and (-webkit-min-device-pixel-ratio: 2) { 
+    background-image: url("../images/" + $BRAND_CODE + "/stbanner_portrait@2x.jpg?v=" + currTime());
+  }
+}
+@media screen and (max-width: 999px) {
+  .store-banner.banner-landscape {
+    display: none;
+  }
+  .make-banner-space .store-hero-view {
+    margin-top: 73px;
+  }
+}
+
+// Landscape
+.store-banner.banner-landscape {
+  position: fixed;
+  height: 100%;
+  width: 150px;
+  background-image: url("../images/" + $BRAND_CODE + "/stbanner_landscape.jpg?v=" + currTime());
+  @media screen and (-webkit-min-device-pixel-ratio: 2) { 
+    background-image: url("../images/" + $BRAND_CODE + "/stbanner_landscape@2x.jpg?v=" + currTime());
+  }
+}
+@media screen and (min-width: 1000px) {
+  .store-banner.banner-portrait {
+    display: none;
+  }
+  .make-banner-space {
+    .store-hero-view, .store-issues-view {
+      margin-right: 150px;
+    }
+  }
+}

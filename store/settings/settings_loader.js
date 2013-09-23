@@ -36,6 +36,7 @@
         
         // Show Buy/Download buttons below back issues
         "storeIssuesBuyBtns": false,
+        "store_show_banners": false,
 
 
         // ************************************************************  
