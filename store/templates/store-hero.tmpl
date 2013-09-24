@@ -32,7 +32,7 @@
             </article>
         {{/each}}
     </div>
-    {{#unless folio.tcm.in_this_issue.length }}
+    {{#unless folio.tcm.in_this_issue }}
       <div class="no-deeplinks">
         <p class="issue-description">
           {{folio.folioDescription}}
@@ -41,6 +41,9 @@
           {{#setting}}
             {{{heroPostDescriptionHTML}}}
           {{/setting}}
+          {{#if folio.tcm.post_description_HTML}}
+            {{{folio.tcm.post_description_HTML}}}
+          {{/if}}
         </div>
 
         <!--
