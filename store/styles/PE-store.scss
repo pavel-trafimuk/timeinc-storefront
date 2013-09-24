@@ -97,6 +97,7 @@
     &.subscriber .subscribe-button {
       display: block;
       background-image: url("../images/PE/hero_btn_subscribed.png?v=" + currTime());
+      z-index: -1;
     }
     .print-subscribers { display: none; }
   }
