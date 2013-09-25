@@ -7,7 +7,7 @@ window.settings = {
     "brandName"                  : "ENTERTAINMENT WEEKLY",
     "brandCode"                  : "EW",
     "schedule"                   : "weekly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
     "welcome_once_per_issue"     : true, // setting this to true will ignore value set in popupInterval
     
@@ -17,6 +17,7 @@ window.settings = {
     "popup_subscribe_text"       : "Download the latest issue now",
     "popup_close_text"           : "Close",
     
+    "heroHeading"                : "Inside This Issue",
     "subscribeOfferText"         : "Be the first to know about the best (and worst) in movies, TV, music, books, and more. PLUS: You can watch trailers, sample songs, as well as buy movie tickets, books, and music instantly—without ever leaving your couch.",
     
     "welcome_preview": "adobe",
