@@ -50,6 +50,7 @@ $issue-spacing: 3%;
     text-align: center;
     margin-top: 12px;
     
+    
     &.free .issue-cover::before {
       content: "";
       display: block;
@@ -73,8 +74,18 @@ $issue-spacing: 3%;
       }
     }
   }
-
+  .cover-img-container {
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-img-container::before {
+    content: "";
+    display: block;
+    padding-top: $COVER_HEIGHT_WIDTH_RATIO * 100%;
+  }
   .cover-img {
+    position: absolute;
+    top: 0; left: 0;
     width: 100%;
     height: auto;
   }
