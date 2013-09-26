@@ -49,6 +49,9 @@ $(function() {
         App.loading(false);
         Backbone.trigger("AppReady");
       });
+      
+      // Create echo iframe and form, then submit
+      new App.views.Echo().render();
 
     });
   });

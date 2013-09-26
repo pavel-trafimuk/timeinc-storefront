@@ -8,8 +8,16 @@
         "omniture_server": null,
         "omniture_ssl_server": null,
         
+        "popup_paragraph1"           : "",
+        "popup_paragraph2"           : "",
+        "popup_restore_text"         : "<i>To restore your back issues follow instructions in the Library</i>",
+        "popup_subscribe_text"       : "Download the latest issue now",
+        "popup_close_text"           : "Close",
+    
+        "echoENV"    : "stage", // set to 'prod' in brand settngs file when going live
         "echo_stage" : "https://echostage.timeinc.com/devices",
         "echo_prod"  : "https://echo.timeinc.com/devices",
+        "echo_channel_id" : "1", // Channel Id for iOS is 1
         
         // de facto non-limit
         "max_back_issues": 9999,

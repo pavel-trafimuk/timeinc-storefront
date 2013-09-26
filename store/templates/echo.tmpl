@@ -1,0 +1,10 @@
+<form action='{{data.echo_url}}' target='echoFrame' method='post' id='echoForm'>
+	<input type='hidden' id='device_token' name='device[token]' value='{{data.d_push_token}}' />
+	<input type='hidden' id='device_email' name='device[email]' value='{{data.d_email}}' />
+	<input type='hidden' id='device_bundle' name='device[bundle]' value='{{settings.echo_bundle_id}}' />
+	<input type='hidden' id='device_device_authenticity_token' name='device[device_authenticity_token]' value='{{settings.echo_token}}' />
+	<input type='hidden' id='device_omniture_id' name='device[omniture_id]' value='{{data.d_omni_visitor_id}}' />
+	<input type='hidden' id='device_apps_channel_id' name='device[apps_channel_id]' value='{{settings.echo_channel_id}}' />
+	<input type='submit' tabindex='-1'/>
+</form>
+<iframe src='{{data.echo_url}}' tabindex='-1' id='echoFrame' name='echoFrame' width='0' height='0' frameborder='0'></iframe>
