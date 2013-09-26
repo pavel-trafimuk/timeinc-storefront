@@ -8,8 +8,7 @@
 
       "tap .issue-cover": "goto_preview",
 
-      //"drag .issue-cover": "cover_drag",
-      //"drag .issue-cover": function() { alert("drag"); },
+      "drag .issue-cover": "cover_drag",
       "swipeleft .issue-cover": "cover_swipeleft",
       "swiperight .issue-cover": "cover_swiperight",
       "release .issue-cover": "cover_release",
@@ -77,9 +76,6 @@
         that.$el.html(that.template(cx));
         setTimeout(function() {
           that.setup_sidescroller();
-          that.$(".issue-cover").on("touchmove", function(evt) {
-            that.drag_cover(evt);
-          });
         });
         cb();
       });
