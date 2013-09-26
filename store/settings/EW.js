@@ -9,7 +9,6 @@ window.settings = {
     "schedule"                   : "weekly",
     "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
-    "welcome_once_per_issue"     : true, // setting this to true will ignore value set in popupInterval
     
     "popup_paragraph1"           : "<b>We heard you!</b><br>The Result: <b><i>Best Entertainment Weekly ever!</i></b>",
     "popup_paragraph2"           : "You wanted support for Retina display &mdash; <b>we've got it.</b><br>You wanted Pinch &amp; Zoom &mdash; <b>we have it.</b><br>You wanted a better App &mdash; <b>we've done it.</b>",
