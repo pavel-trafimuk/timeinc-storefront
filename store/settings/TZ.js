@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "TZ",
     "schedule"                   : "weekly",
     "popupInterval"              : 5,
-    "enable_first_load_popup"    : false,
+    "enable_first_load_popup"    : true,
     "international"              : true,
  
     "subscribeOfferText"         : "",
