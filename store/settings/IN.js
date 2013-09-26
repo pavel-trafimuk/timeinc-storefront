@@ -15,6 +15,7 @@ window.settings = {
     
     "heroHeading"                : "Inside This Issue",
     "heroPostDescriptionHTML"    : "",
+    "hero_preview": "none",
 
     "omniture_account"           : "timaginstylenk",
     "omniture_server"            : "timeinc.122.2o7.net",
