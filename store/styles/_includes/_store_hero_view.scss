@@ -34,8 +34,46 @@
         @media screen and (min-width: 1000px) {
             width: 40%;
         }
-        img { 
-           width: 100%; 
+        .issue-cover {
+          overflow: hidden;
+          background: url("../images/"+$BRAND_CODE+"/cover_spacer.gif") 50% 50% no-repeat;
+          background-size: auto 105%;
+          position: relative;
+          &::after {
+            content: "";
+            display: block;
+            margin-top: $COVER_HEIGHT_WIDTH_RATIO * 100%;
+          }
+        }
+        .cover-image-container {
+          position: absolute; 
+          top: 0; left: 0;
+          -webkit-transform: translate3d(0%,0,0) scale3d(1,1,1);
+          -webkit-backface-visibility: hidden;
+          -webkit-transform-style: preserve-3d;
+          &.animate {
+            -webkit-transition: all .3s;
+          }
+        }
+        .cover-img { 
+          float: left;
+          background-size: cover;
+          background-position: 50%;
+          background-repeat: no-repeat;
+        }
+        .cover-scroll-position {
+          padding: 10px 0;
+          text-align: center;
+          .pos-dot {
+            display: inline-block;
+            height: 8px; width: 8px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            background: #333;
+            &.active {
+              background: #fff;
+            }
+          }
         }
     }
     .details {

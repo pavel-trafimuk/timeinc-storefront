@@ -20,7 +20,7 @@
       cb = cb || $.noop;
       var that = this,
           cx = {};
-      this.$el.html(this.template(cx)).hammer();
+      this.$el.html(this.template(cx));
       async.parallel([
         function(cb) {
           cb = _.partial(cb, null);

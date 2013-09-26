@@ -1,13 +1,26 @@
 <!-- empty -->
 <div class="cover">
     <div class="issue-cover">
-        <img src="{{settings.cover_spacer_img}}" data-real-src="{{folio.get_cover_img}}">
+        <div class="cover-image-container">
+          <div class="active cover-img" style="background-image: url('{{folio.get_cover_img}}');"></div>
+          {{#each hero_scroll_covers}}
+            <div class="cover-img" style="background-image: url('{{this}}');"></div>
+          {{/each}}
+        </div>
         <div class="progress-bar"></div>
         <div class="page-curl">
             <div class="curl-text">{{settings.seeInsideCTA}}</div>
             <div class="curl-obj"></div> 
         </div>
     </div>
+    {{#if hero_scroll_covers}}
+      <div class="cover-scroll-position">
+        <span class="pos-dot active"></span>
+        {{#each hero_scroll_covers}}
+          <span class="pos-dot"></span>
+        {{/each}}
+      </div>
+    {{/if}}
 </div>
 <div class="details">
     <header>
@@ -68,3 +81,4 @@
     </div>
 </div>
 <div class="clear"></div>
+

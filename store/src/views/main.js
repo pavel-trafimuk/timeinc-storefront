@@ -15,6 +15,7 @@
       this.welcome_view = new App.views.Welcome;
       this.store_view = new App.views.Store;
 
+      this.$el.hammer();
       if (typeof localStorage.app_view_count == "undefined") {
         localStorage.app_view_count = 0;
       }
@@ -47,7 +48,7 @@
     },
     render: function(cb) {
       var that = this;
-      this.$el.html(this.template({DEBUG:DEBUG})).hammer();
+      this.$el.html(this.template({DEBUG:DEBUG}));
 
       this.subview.render(function() {
         that.subview.$el.appendTo(that.el);

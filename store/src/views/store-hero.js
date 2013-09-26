@@ -6,8 +6,14 @@
     events: {
       "tap .buy-issue-button": "buy_issue",
 
-      "tap .cover": "goto_preview",
-      "swipeleft .cover": "goto_preview",
+      "tap .issue-cover": "goto_preview",
+
+      //"drag .issue-cover": "cover_drag",
+      //"drag .issue-cover": function() { alert("drag"); },
+      "swipeleft .issue-cover": "cover_swipeleft",
+      "swiperight .issue-cover": "cover_swiperight",
+      "release .issue-cover": "cover_release",
+      "release": "release_outside_cover",
 
       "tap .subscribe-button": "subscribe",
       "tap .in-this-issue article": "goto_itii",
@@ -17,6 +23,9 @@
       console.log("App.views.StoreHero initializing");
       var that = this,
           render;
+
+      Hammer.gestures.Drag.defaults.drag_block_horizontal = true;
+      Hammer.gestures.Drag.defaults.drag_lock_to_axis = true;
       
       render = function() {
         setTimeout(function() {
@@ -25,10 +34,15 @@
       }
       render = _.debounce(render, 200);
 
+      $(window).on("resize orientationchange", function() {
+        that.setup_sidescroller();
+      });
       App.api.receiptService.newReceiptsAvailableSignal.add(render);
       App.api.authenticationService.userAuthenticationChangedSignal.add(render);
       App.api.libraryService.updatedSignal.add(render);
       App.api.libraryService.get_touted_issue().updatedSignal.add(render);
+
+      this.$el.hammer();
     },
     render: function(cb) {
       console.log("StoreHero.render() called");
@@ -57,14 +71,99 @@
           settings: settings, 
           folio: folio,
           is_subscriber: is_subscriber,
-          sub_opts: sub_opts
+          sub_opts: sub_opts,
+          hero_scroll_covers: _(App.api.libraryService.get_back_issues().slice(0,6)).map(function(issue) { return issue.get_cover_img() })
         };
-        that.$el.html(that.template(cx)).hammer();
-        that.$(".cover img").imgPlaceholder();
+        that.$el.html(that.template(cx));
+        setTimeout(function() {
+          that.setup_sidescroller();
+          that.$(".issue-cover").on("touchmove", function(evt) {
+            that.drag_cover(evt);
+          });
+        });
         cb();
       });
       return this;
     },
+    setup_sidescroller: function() {
+      var $issue_cover = this.$(".issue-cover"),
+          $container = this.$(".cover-image-container"),
+          $covers = this.$(".cover-img"),
+          h = $issue_cover.height(),
+          w = $issue_cover.width();
+
+      // cache these for later to improve scroll performance
+      this.$cover_container = $container;
+      this.$scroll_pos = this.$(".cover-scroll-position .pos-dot");
+      this.cover_count = $covers.length;
+      this.cover_width = w;
+      this.current_cover = this.current_cover || 0;
+
+      $covers.css({height: h, width: w});
+      $container.css({height: h, width: w * this.cover_count});
+      this._setVisibleCover(this.current_cover, false);
+    },
+    _setCoverContainerOffset: function(distance, animate) {
+      var $container = this.$cover_container;
+    
+      $container.removeClass("animate");
+      if (animate) $container.addClass("animate");
+
+      $container.css("transform", "translate3d("+ distance +"px,0,0) scale3d(1,1,1)");
+    },
+    _setVisibleCover: function(cover_index, animate) {
+      if (animate === undefined) animate = true;
+
+      cover_index = Math.max(0, Math.min(this.cover_count-1, cover_index));
+      this.current_cover = cover_index;
+      this._setCoverContainerOffset(-cover_index*this.cover_width, animate);
+
+      this.$scroll_pos.removeClass("active");
+      $(this.$scroll_pos[cover_index]).addClass("active");
+    },
+    _currentCover: function() {
+      return this.current_cover;
+    },
+    cover_drag: function(evt) {
+      evt.gesture.preventDefault();
+
+      var pane_offset = -this.current_cover * this.cover_width;
+          drag_offset = evt.gesture.deltaX;
+
+      if ((evt.gesture.direction == Hammer.DIRECTION_RIGHT && this.current_cover == 0) ||
+          (evt.gesture.direction == Hammer.DIRECTION_LEFT  && this.current_cover == this.cover_count-1)) {
+        drag_offset *= .4;
+      }
+
+      this._setCoverContainerOffset(pane_offset + drag_offset);
+    },
+    cover_swipeleft: function(evt) {
+      evt.gesture.stopDetect();
+      this._setVisibleCover(this._currentCover() + 1);
+    },
+    cover_swiperight: function(evt) {
+      evt.gesture.stopDetect();
+      this._setVisibleCover(this._currentCover() - 1);
+    },
+    cover_release: function(evt) {
+      evt.stopPropagation();
+      evt.gesture.preventDefault();
+      if (Math.abs(evt.gesture.deltaX) > this.cover_width/2) {
+        if (evt.gesture.direction == Hammer.DIRECTION_RIGHT) {
+          this._setVisibleCover(this._currentCover() - 1);
+        }
+        else {
+          this._setVisibleCover(this._currentCover() + 1);
+        }
+      }
+      else {
+        this._setVisibleCover(this._currentCover());
+      }
+    },
+    release_outside_cover: function() {
+      this._setVisibleCover(this._currentCover());
+    },
+    
     animate: function(cb) {
       var that = this,
           cb = cb || $.noop;
