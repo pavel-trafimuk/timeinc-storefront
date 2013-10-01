@@ -1,2 +1,8 @@
 @import "_variables/_PW.scss";
 @import "_includes/_STORE.scss";
+
+.store-hero-view {
+  .page-curl {
+    display: none;
+  }
+}

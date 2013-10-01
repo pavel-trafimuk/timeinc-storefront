@@ -7,12 +7,8 @@ window.settings = {
     "brandName"                  : "PEOPLE STYLEWATCH",
     "brandCode"                  : "PW",
     "schedule"                   : "monthly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
-    
-    "welcome_preview": "adobe",
-    "hero_preview": "adobe",
-    "hero_itii_preview": "adobe",
     
     "subscribeOfferText"         : "Subscribe now to get PEOPLE STYLEWATCH on your iPad. You'll find the hottest fashion and beauty trends, celeb looks for less, and amazing buys for every body and budget! Plus, get 1 month free with an annual subscription.",
     
