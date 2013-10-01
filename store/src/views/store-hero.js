@@ -66,12 +66,19 @@
             .map(function(s) { return "<span class='sub-price'>" + s + "</span>" })
             .join(settings.storeSubscribeNowPriceOr);
         }
+        var scroll_covers;
+        try {
+          scroll_covers = folio.tcm.additional_covers || [];
+        }
+        catch (err) {
+          scroll_covers = [];
+        }
         var cx = { 
           settings: settings, 
           folio: folio,
           is_subscriber: is_subscriber,
           sub_opts: sub_opts,
-          hero_scroll_covers: _(App.api.libraryService.get_back_issues().slice(0,6)).map(function(issue) { return issue.get_cover_img() })
+          hero_scroll_covers: scroll_covers 
         };
         that.$el.html(that.template(cx));
         setTimeout(function() {
