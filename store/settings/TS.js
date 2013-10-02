@@ -7,7 +7,7 @@ window.settings = {
     "brandName"                  : "Time SOPAC",
     "brandCode"                  : "TS",
     "schedule"                   : "weekly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : true,
     "international"              : true,
  

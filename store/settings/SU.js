@@ -7,7 +7,7 @@ window.settings = {
     "brandName"                  : "Sunset",
     "brandCode"                  : "SU",
     "schedule"                   : "weekly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
     
     "subscribeOfferText"         : "Discover new weekend destinations, inspiring homes and gardens and seasonal recipes. Plus bonus garden and travel covering all 5 regional editions.",

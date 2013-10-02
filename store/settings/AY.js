@@ -7,7 +7,7 @@ window.settings = {
     "brandName"                  : "ALL YOU",
     "brandCode"                  : "AY",
     "schedule"                   : "monthly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
     
     "subscribeOfferText"         : "Subscribe to ALL YOU and get great tips and valuable advice on how to save everyday!",

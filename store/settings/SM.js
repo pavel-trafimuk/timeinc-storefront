@@ -9,7 +9,7 @@ window.settings = {
     "brandName"                  : "REAL SIMPLE Magazine",
     "brandCode"                  : "SM",
     "schedule"                   : "monthly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
     "welcome_once_per_issue"     : true, // setting this to true will ignore value set in popupInterval
 

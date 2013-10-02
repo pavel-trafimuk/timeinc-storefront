@@ -7,7 +7,7 @@ window.settings = {
     "brandName"                  : "PEOPLE EN ESPAÑOL",
     "brandCode"                  : "PP",
     "schedule"                   : "monthly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
 
     "heroHeading"                : "En Esta Edición",

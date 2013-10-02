@@ -7,7 +7,7 @@ window.settings = {
     "brandName"                  : "Time Asia",
     "brandCode"                  : "TI",
     "schedule"                   : "weekly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : true,
     "international"              : true,
  
