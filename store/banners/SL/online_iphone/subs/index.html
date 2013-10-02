@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Offlinebanner</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi"/>
+  <style>
+    /* Banner CSS for iOS iPad devices with horz/vert orientations */
+    html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	background-color: #232454;
+    }
+ 
+    /* styles for both orientations */
+    #banner {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      top: 10%; bottom: 10%;
+      left: 10%; right: 10%;
+      border: none;      
+      background: transparent url('logo.png') no-repeat 50% 50%;
+      -webkit-background-size: contain;
+    }
+ 
+    a {
+      position:absolute;
+      width: 100%;
+      height: 100%;
+    }
+  body {
+	background-color: #232454;
+}
+  </style>
+</head>
+ 
+<body>
+      <div id="banner"></div>
+  </body>
+</html>
