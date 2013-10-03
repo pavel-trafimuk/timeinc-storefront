@@ -1,59 +1,45 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Subscription Banner</title>
+  <title>Offlinebanner</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi"/>
   <style>
     /* Banner CSS for iOS iPad devices with horz/vert orientations */
     html, body {
-      height: 100%; width: 100%;
-      margin: 0;
-      padding: 0;
-      background-color: #ee4d9b;
-      -webkit-user-select: none;
-      -webkit-touch-callout: none;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	background-color: #003469;
     }
  
+    /* styles for both orientations */
     #banner {
       position: absolute;
       margin: 0;
       padding: 0;
-      top: 0; bottom: 0;
-      left: 0; right: 0;
-      border: none;
-      background-color: transparent;
-      background-image: url('portrait.png');
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
+      top: 10%; bottom: 10%;
+      left: 10%; right: 10%;
+      border: none;      
+      background: transparent url('logo.png') no-repeat 50% 50%;
       -webkit-background-size: contain;
     }
-   
-    /* iPad Landscape */
-    @media only screen and (max-width: 1024px) {
-        #banner {
-            background-image: url('landscape.png') !important;
-            height: 177px !important;
-        }
+ 
+    a {
+      position:absolute;
+      width: 100%;
+      height: 100%;
     }
-    
-    /* iPad Portrait */
-    @media only screen and (max-width: 768px) {
-        #banner {
-            background-image: url('portrait.png') !important;
-            height: 237px !important;
-        }
-    }
-    
-    body {
-        background-color: #003469;
-    }
+  body {
+	background-color: #003469;
+}
   </style>
-
 </head>
  
 <body>
-  <div id="banner" class="subscribe"></div>
-</body>
+      <div id="banner"></div>
+  </body>
 </html>
-
