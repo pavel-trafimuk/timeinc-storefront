@@ -8,6 +8,7 @@
 
       "tap .issue-cover": "goto_preview",
 
+      "touchstart .issue-cover": function(ev) { ev.preventDefault() },
       "drag .issue-cover": "cover_drag",
       "swipeleft .issue-cover": "cover_swipeleft",
       "swiperight .issue-cover": "cover_swiperight",
@@ -66,19 +67,12 @@
             .map(function(s) { return "<span class='sub-price'>" + s + "</span>" })
             .join(settings.storeSubscribeNowPriceOr);
         }
-        var scroll_covers;
-        try {
-          scroll_covers = folio.tcm.additional_covers || [];
-        }
-        catch (err) {
-          scroll_covers = [];
-        }
         var cx = { 
           settings: settings, 
           folio: folio,
           is_subscriber: is_subscriber,
           sub_opts: sub_opts,
-          hero_scroll_covers: scroll_covers 
+          hero_scroll_covers: folio.get_additional_covers() 
         };
         that.$el.html(that.template(cx));
         setTimeout(function() {
