@@ -9,10 +9,10 @@ window.settings = {
     "brandName"                  : "REAL SIMPLE Magazine",
     "brandCode"                  : "SM",
     "schedule"                   : "monthly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
-    "welcome_once_per_issue"     : true, // setting this to true will ignore value set in popupInterval
 
+    "heroHeading"                : "Inside This Issue",
     "subscribeOfferText"         : "Each issue of REAL SIMPLE is packed with smart, beautiful, and practical solutions to make life easier – every single day.  Plus fast and delicious recipes, easy organizing and decorating ideas, great fashion and beauty finds, money-saving tips, and more. Plus, get 1 month free with an annual subscription.",
     
     "welcome_preview": "image",

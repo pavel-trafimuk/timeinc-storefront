@@ -28,7 +28,7 @@ window.settings = {
     
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "efd543da605b4f86a4b70809ba8f74f9",
-    "appId"                      : "com.timeinc.toh.ipad.inapp",
+    "appId"                      : "com.timeinc.thisoldhouse.ipad.inapp",
 
     "supportPhoneNumber"         : "1-800-950-5954",
     "supportEmail"               : "digital@thisoldhouse.customersvc.com",

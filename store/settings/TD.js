@@ -7,9 +7,10 @@ window.settings = {
     "brandName"                  : "Time",
     "brandCode"                  : "TD",
     "schedule"                   : "weekly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : true,
     
+    "heroHeading"                : "In This Issue",
     "subscribeOfferText"         : "The digital edition includes all of the stories from the print edition plus extra photos and videos and additional international content. Your subscription also includes commemorative issues from the TIME archive. Plus, get 1 month free with an annual subscription.",
     
     "welcome_preview": "image",
