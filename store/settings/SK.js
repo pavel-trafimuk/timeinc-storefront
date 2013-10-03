@@ -7,10 +7,12 @@ window.settings = {
     "brandName"                  : "SI Kids",
     "brandCode"                  : "SK",
     "schedule"                   : "weekly",
-    "popupInterval"              : 5,
-    "enable_first_load_popup"    : false,
+    "popupInterval"              : 0,
+    "enable_first_load_popup"    : true,
     
     "subscribeOfferText"         : "Subscribe to the #1 Sports Magazine for Kids! Each issue is packed with great action photos, easy-to-read stories about star athletes, and instructional tips from the pros. The tablet edition comes with bonus content including extra photos, interactive sports cards, and exciting games!",
+    
+    "heroHeading"                : "Inside This Issue",
     
     "welcome_preview": "image",
     "hero_preview": "image",
@@ -26,7 +28,7 @@ window.settings = {
     
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "04e3eac68a2e4c00b900dade0237fea1",
-    "appId"                      : "com.timeinc.sik.ipad.inapp",
+    "appId"                      : "com.timeinc.sikids.ipad.inapp",
 
     "supportPhoneNumber"         : "1-866-772-8757",
     "supportEmail"               : "SKdigital@customersvc.com",

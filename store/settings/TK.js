@@ -7,14 +7,14 @@ window.settings = {
     "brandName"                  : "TIME FOR KIDS",
     "brandCode"                  : "TK",
     "schedule"                   : "weekly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : true,
     
     "subscribeOfferText"         : "Subscribe to TIME FOR KIDS FAMILY EDITION",
     
-    "welcome_preview": "adobe",
-    "hero_preview": "adobe",
-    "hero_itii_preview": "adobe",
+    "welcome_preview": "image",
+    "hero_preview": "image",
+    "hero_itii_preview": "image",
     "max_back_issues"            : 20,
 
     "omniture_account"           : "timagtimekidsall",

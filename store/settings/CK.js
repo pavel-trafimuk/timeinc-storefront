@@ -7,7 +7,7 @@ window.settings = {
     "brandName"                  : "Cooking Light",
     "brandCode"                  : "CK",
     "schedule"                   : "weekly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
     
     "subscribeOfferText"         : "Each issue is packed with seasonal, delicious and nutritious recipes, quick and easy ways to plan everyday menus and helpful tips on how to live a healthier lifestyle.",

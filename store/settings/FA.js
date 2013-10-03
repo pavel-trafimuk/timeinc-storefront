@@ -7,10 +7,11 @@ window.settings = {
     "brandName"                  : "Fortune Asia Pacific",
     "brandCode"                  : "FA",
     "schedule"                   : "weekly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
     "international"              : true,
  
+    "heroHeading"                : "In This Issue",
     "subscribeOfferText"         : "",
     
     "welcome_preview": "image",

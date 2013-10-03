@@ -7,9 +7,10 @@ window.settings = {
     "brandName"                  : "Fortune",
     "brandCode"                  : "FO",
     "schedule"                   : "weekly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
     
+    "heroHeading"                : "In This Issue",
     "subscribeOfferText"         : "Receive expert analysis of companies, deals, and people making the news, as well as insights on business trends and investment strategies to fuel your personal success. The digital edition also includes bonus video and photo content as well as interactive graphics. Your subscription includes 1 FREE month of FORTUNE Magazine.",
     
     "welcome_preview": "image",

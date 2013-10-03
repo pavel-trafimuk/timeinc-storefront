@@ -7,7 +7,7 @@ window.settings = {
     "brandName"                  : "Golf",
     "brandCode"                  : "GF",
     "schedule"                   : "weekly",
-    "popupInterval"              : 5,
+    "popupInterval"              : 0,
     "enable_first_load_popup"    : true,
     
     "subscribeOfferText"         : "Subscribe now to get GOLF Magazine on your iPad, the #1 source for instruction, equipment, and travel.",
