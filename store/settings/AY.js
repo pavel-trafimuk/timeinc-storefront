@@ -10,11 +10,9 @@ window.settings = {
     "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
     
+    "heroHeading"                : "Inside This Issue",
     "subscribeOfferText"         : "Subscribe to ALL YOU and get great tips and valuable advice on how to save everyday!",
     
-    "welcome_preview": "adobe",
-    "hero_preview": "adobe",
-    "hero_itii_preview": "adobe",
     "max_back_issues"            : 12,
 
     "omniture_account"           : "timagallyounk",
