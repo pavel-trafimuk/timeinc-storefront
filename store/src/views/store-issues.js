@@ -18,7 +18,7 @@
             issues: this.get_issues(),
             settings: settings 
           };
-      this.$el.html(this.template(cx)).hammer();
+      this.$el.html(this.template(cx));
       this.$(".cover-img").imgPlaceholder();
 
       this.$(".bi-filter").removeClass("active");
@@ -31,21 +31,20 @@
       var that = this;
           back_issues = App.api.libraryService.get_back_issues();
 
-      back_issues = _.filter(back_issues, function(issue) {
-        if (!that.filter_type) return true;
-        
+      if (that.filter_type) {
         var negate = false,
-            filter_type = that.filter_type,
-            has_filter;
+            filter_type = that.filter_type;
 
         if (filter_type[0] == "!") {
           negate = true;
           filter_type = filter_type.substr(1);
         }
 
-        has_filter = _(issue.get_filters()).contains(filter_type);
-        return negate ? !has_filter : has_filter;
-      });
+        back_issues = _.filter(back_issues, function(issue) {
+          var has_filter = _(issue.get_filters()).contains(filter_type);
+          return negate ? !has_filter : has_filter;
+        });
+      }
       return _.first(back_issues, settings.max_back_issues);
     },
     animate: function(cb) {
@@ -88,12 +87,13 @@
       });
     },
     filter_back_issues: function(evt) {
-      var $this = $(evt.currentTarget);
+      var that = this,
+          $this = $(evt.currentTarget);
 
       $this.addClass("active");
-
       this.filter_type = $this.data("filter");
-      this.render();
+
+      setTimeout(function() { that.render() }, 50);
     },
     buy_issue: function(evt) {
       var $btn = $(evt.currentTarget),
