@@ -22,7 +22,7 @@
     width: 33.3%;
     padding-right: 20px;
     margin-bottom: 0;
-    .page-curl { display: none; }
+    .page-curl { display: none !important; }
   }
   .details {
     left: 33%; right: 260px;
