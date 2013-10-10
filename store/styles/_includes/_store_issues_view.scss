@@ -1,6 +1,5 @@
 @import "_includes/_text_utils.scss";
 
-
 $tap-to-preview-color: #ddd;
 $issue-spacing: 3%;
 
@@ -42,38 +41,6 @@ $issue-spacing: 3%;
     width: 100% + $issue-spacing;
     margin-left: -1 * $issue-spacing; 
   }
-  .issue {
-    position: relative;
-    float: left;
-    padding-left: $issue-spacing;
-    -webkit-box-sizing: border-box;
-    text-align: center;
-    margin-top: 12px;
-    
-    
-    &.free .issue-cover::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: -7px;
-      left: 10px;
-      height: 60px;
-      width: 70px;
-      background-image: url("../images/" + $BRAND_CODE + "/free.png");
-      background-size: contain;
-      z-index: 9;
-    }
-
-    @media screen and (max-width: 999px) {
-      width: 25%;
-    }
-    @media screen and (min-width: 1000px) {
-      width: 20%;
-      .make-banner-space & {
-        width: 25%;
-      }
-    }
-  }
   .cover-img-container {
     position: relative;
     overflow: hidden;
@@ -114,3 +81,32 @@ $issue-spacing: 3%;
   }
 }
 
+.issue {
+  position: relative;
+  float: left;
+  padding-left: $issue-spacing;
+  -webkit-box-sizing: border-box;
+  text-align: center;
+  margin-top: 12px;
+  @media screen and (max-width: 999px) {
+    width: 25%;
+  }
+  @media screen and (min-width: 1000px) {
+    width: 20%;
+    .make-banner-space & {
+      width: 25%;
+    }
+  }
+}
+.free .issue-cover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -7px;
+  left: 10px;
+  height: 60px;
+  width: 70px;
+  background-image: url("../images/" + $BRAND_CODE + "/free.png");
+  background-size: contain;
+  z-index: 9;
+}

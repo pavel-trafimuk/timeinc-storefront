@@ -42,9 +42,10 @@
     position: absolute;
     width: 200px;
     top: 305px;
-    right: -240px;
+    right: -230px;
     font-weight: bold;
     font-size: 14px;
+    text-align: center;
     a {
       color: #fe009e;
       text-decoration: none;
@@ -67,10 +68,10 @@
       margin-bottom: 20px;
       background-size: cover;
       text-indent: -9999px;
-      -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.1);
       background-color: transparent;
       background-position: 50% 50%;
       background-repeat: no-repeat;
+      box-shadow: none;
     }
     .buy-issue-button {
       top: 155px;
@@ -103,7 +104,6 @@
   }
 }
 .store-issues-view {
-  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.1);
   padding-top: 60px;
   .tap-to-preview {
     position: absolute;
@@ -111,16 +111,13 @@
     border-top: 1px solid #158ba9;
     border-bottom: 1px solid #24a1cd;
     background: -webkit-linear-gradient(#48c1f0, #2cafe3);
-    box-shadow: 
-      0 1px 0 rgba(255,255,255,0.75), 
-      0 8px 8px rgba(0,0,0,0.1);
     padding: 4px 0 3px;
     &::before { content: none; }
     span {
       border: none;
       background: none;
     }
-    button {
+    .bi-filter {
       font-family: "TrebuchetMS";
       font-weight: bold;
       height: 30px;
@@ -128,11 +125,8 @@
       font-size: 12px;
       text-transform: uppercase;
       text-shadow: 0 1px rgba(255,255,255,0.5);
-      background: -webkit-linear-gradient(#fff, #eee 49%, #ddd 50%, #ccc);
+      background: -webkit-linear-gradient(#fff, #ccc);
       border: none;
-      box-shadow: 
-        inset 0 0 1px 1px rgba(255,255,255,0.75),
-        0 0 1px 1px rgba(0,0,0,0.15);
       border-radius: 2px;
       &.active {
         color: #e9148a;
@@ -148,15 +142,13 @@
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold;
-    background: -webkit-linear-gradient(#333, #555 47%, #000 53%, #333);
+    background: -webkit-linear-gradient(#777, #000);
     color: #fff;
     border-radius: 6px;
     border: none;
-    box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.75);
     &[data-action=download], &[data-action=downloadfree] {
-      background: -webkit-linear-gradient(#fff689, #fcef84 47%, #feca34 53%, #f5e968);
+      background: -webkit-linear-gradient(#fff689, #feca34);
       color: #000;
-      box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.08);
     }
   }
 }

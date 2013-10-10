@@ -21,7 +21,7 @@ window.settings = {
     "welcome_preview": "image",
     "hero_preview": "image",
     "hero_itii_preview": "image",
-    "max_back_issues"            : 12,
+    "max_back_issues"            : 8,
 
     "storeBuyIssueBtn"           : "Buy Now",
     "heroHeading"                : "In This Issue",

@@ -7,7 +7,6 @@
   background-color: transparent;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-size: contain;
   z-index: 10;
 }
 
@@ -16,6 +15,7 @@
   height: 73px;
   width: 100%;
   background-image: url("../images/" + $BRAND_CODE + "/stbanner_portrait.jpg?v=" + currTime());
+  background-size: 768px 73px;
   @media screen and (-webkit-min-device-pixel-ratio: 2) { 
     background-image: url("../images/" + $BRAND_CODE + "/stbanner_portrait@2x.jpg?v=" + currTime());
   }
@@ -35,6 +35,7 @@
   height: 100%;
   width: 150px;
   background-image: url("../images/" + $BRAND_CODE + "/stbanner_landscape.jpg?v=" + currTime());
+  background-size: 150px 661px;
   @media screen and (-webkit-min-device-pixel-ratio: 2) { 
     background-image: url("../images/" + $BRAND_CODE + "/stbanner_landscape@2x.jpg?v=" + currTime());
   }
