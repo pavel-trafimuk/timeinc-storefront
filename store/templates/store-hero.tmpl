@@ -22,7 +22,7 @@
       </div>
     {{/if}}
 </div>
-<div class="details">
+<div class="details {{#if is_authenticated}}user-is-authenticated{{/if}}">
     <header>
         <div>
             <span class="issue-date">{{folio.folioNumber}}</span>
