@@ -6,16 +6,14 @@ window.settings = {
     // General settings
     "brandName"                  : "Cooking Light",
     "brandCode"                  : "CK",
-    "schedule"                   : "weekly",
+    "schedule"                   : "monthly",
     "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
     
+    "heroHeading"                : "Inside This Issue",
     "subscribeOfferText"         : "Each issue is packed with seasonal, delicious and nutritious recipes, quick and easy ways to plan everyday menus and helpful tips on how to live a healthier lifestyle.",
     
-    "welcome_preview": "adobe",
-    "hero_preview": "adobe",
-    "hero_itii_preview": "adobe",
-    "max_back_issues"            : 20,
+    "max_back_issues"            : 12,
 
     "omniture_account"           : "timagcookingnk",
     "omniture_server"            : "timeinc.122.2o7.net",
