@@ -71,7 +71,7 @@
           settings: settings, 
           folio: folio,
           is_subscriber: is_subscriber,
-          is_authenticated: App.api.authenticationService.isUserAuthenticated,
+          is_authenticated: is_subscriber || App.api.authenticationService.isUserAuthenticated,
           sub_opts: sub_opts,
           hero_scroll_covers: folio.get_additional_covers() 
         };
