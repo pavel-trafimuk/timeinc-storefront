@@ -10,7 +10,7 @@
       height: 100%; width: 100%;
       margin: 0;
       padding: 0;
-      background: #000000;
+      background-color: #ffffff;
       -webkit-user-select: none;
       -webkit-touch-callout: none;
     }
@@ -32,9 +32,9 @@
     /* iPad Landscape */
     @media only screen and (max-width: 1024px) {
         #banner {
-        	background-image: url('landscape.png') !important;
-        	height: 185px !important;
-    	}
+            background-image: url('landscape.png') !important;
+            height: 177px !important;
+        }
     }
     
     /* iPad Portrait */
@@ -52,12 +52,44 @@
     }
     
     body {
-        background: #000000;
+        background-color: #ffffff;
     }
   </style>
+  
+  <script type="text/javascript" src="../../../lib/jquery.js"></script>
+
+  <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js"></script>
+  <!-- script type="text/javascript" src="../../../lib/MockAPI.js"></script -->
+
+  <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js"></script> 
+  <script type="text/javascript" src="../../../settings/settings_loader.js"></script> 
+
+  <script type="text/javascript" src="../../../lib/lucie_entitlements.js"></script> 
+
+  <script type="text/javascript">
+    (function() {
+      var api = (typeof adobeDPS == "undefined") ? MockAPI : adobeDPS;
+      var buy_sub = function() { setTimeout(buy_sub, 500) };
+
+      $(function() {
+        $(".subscribe a").click(function() {
+          buy_sub();
+          return false;
+        });
+      });
+
+      api.initializationComplete.addOnce(function() {
+        buy_sub = function() {
+          api.receiptService.availableSubscriptions["com.timeinc.money.ipad.subs.9"].purchase();
+        }
+      });
+
+    })();
+  </script>
 </head>
  
 <body>
-  <div id="banner" class="subscribe"></div>
+  <div id="banner" class="subscribe"><a src="#"></a></div>
 </body>
 </html>
+
