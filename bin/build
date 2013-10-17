@@ -100,6 +100,10 @@ compile() {
   for BANNER in $(find "$DEVDIR/banners/" -iname "*.html"); do
     render_in_place "$BANNER"
   done
+  
+  for DINSERT in $(find "$DEVDIR/inserts/" -iname "*.html"); do
+    render_in_place "$DINSERT"
+  done
 
   mv $DEVDIR/index.dev.html $DEVDIR/index.html
 
@@ -136,6 +140,8 @@ END
   cp -r $DEVDIR/settings/settings_loader.js $DEPLOYDIR/settings
 
   cp -r $DEVDIR/banners/$TITLE $DEPLOYDIR/banners
+  
+  cp -r $DEVDIR/inserts/$TITLE $DEPLOYDIR/inserts
   
   cp $DEVDIR/lucie-library.html $DEPLOYDIR
 
