@@ -19,7 +19,17 @@
         that.omni_pv = App.omni.pageview("previewimage|"+coverdate, "event1");
         that.animate();
       });
-      $(window).on("resize.image-preview", _.bind(this.render, this));
+
+      var render = _.bind(this.render, this);
+      render = _.partial(_.delay, render, 50);
+      render = _.debounce(render, 200);
+
+      App.api.receiptService.newReceiptsAvailableSignal.add(render);
+      App.api.authenticationService.userAuthenticationChangedSignal.add(render);
+      App.api.libraryService.updatedSignal.add(render);
+
+      $(window).on("resize.image-preview", render);
+
     },
     render: function(cb) {
       cb = cb || $.noop;
