@@ -4,7 +4,7 @@
 window.settings = {
 
     // General settings
-    "brandName"                  : "Time",
+    "brandName"                  : "Time Magazine",
     "brandCode"                  : "TD",
     "schedule"                   : "weekly",
     "popupInterval"              : 0,

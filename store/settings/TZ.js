@@ -4,7 +4,7 @@
 window.settings = {
 
     // General settings
-    "brandName"                  : "Time India",
+    "brandName"                  : "Time Magazine", // Time India
     "brandCode"                  : "TZ",
     "schedule"                   : "weekly",
     "popupInterval"              : 0,
@@ -12,7 +12,7 @@ window.settings = {
     "international"              : true,
  
     "heroHeading"                : "In This Issue",
-    "subscribeOfferText"         : "",
+    "subscribeOfferText"         : "The digital edition includes all of the stories from the print edition plus extra photos and videos and additional international content. Your subscription also includes commemorative issues from the TIME archive. Plus, get 1 month free with an annual subscription.",
     
     "welcome_preview": "image",
     "hero_preview": "image",
@@ -36,6 +36,7 @@ window.settings = {
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
+    "faqUrl"                     : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/SUBS/templates/velocity/site/ti-digitaledition-faq/lp.html",
     "privacyPolicyUrl"           : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/TI/pp.html",
     "termsOfUseUrl"              : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/TI/tos.html",
     "licenceAgreementUrl"        : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/TI/la.html",

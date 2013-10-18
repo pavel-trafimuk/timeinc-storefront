@@ -69,6 +69,10 @@ function go(URL){
             );
             document.write(html);
 	    }
+	    
+	    if (settings.faqUrl) {
+            document.write('<a onclick="go(settings.faqUrl)" href="#" target="_blank">' + settings.myacctFAQ + '</a>');
+        }
     </script>
    </div>
 

@@ -4,7 +4,7 @@
 window.settings = {
 
     // General settings
-    "brandName"                  : "Time SOPAC",
+    "brandName"                  : "Time Magazine", // Time SOPAC
     "brandCode"                  : "TS",
     "schedule"                   : "weekly",
     "popupInterval"              : 0,
@@ -12,7 +12,7 @@ window.settings = {
     "international"              : true,
  
     "heroHeading"                : "In This Issue",
-    "subscribeOfferText"         : "",
+    "subscribeOfferText"         : "The digital edition includes all of the stories from the print edition plus extra photos and videos and additional international content. Your subscription also includes commemorative issues from the TIME archive. Plus, get 1 month free with an annual subscription.",
     
     "welcome_preview": "image",
     "hero_preview": "image",
@@ -38,6 +38,7 @@ window.settings = {
     // ************************************************************  
 
     "customerServiceUrl"         : "", // hides button on my account page
+    "faqUrl"                     : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/SUBS/templates/velocity/site/ts-digitaledition-faq/lp.html",
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/ts-lucie-customer-creation-itunes201307.html",
     
 "ihatethelastcomma": true};
