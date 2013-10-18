@@ -11,20 +11,33 @@
     initialize: function() {
       console.log("App.views.StoreIssues initializing");
       this.filter_type = settings.storeIssuesStartingFilter;
+
+      this._debounce_render = _.throttle(_.bind(this.render, this), 500);
+
+      App.api.receiptService.newReceiptsAvailableSignal.add(this._debounce_render);
+      App.api.authenticationService.userAuthenticationChangedSignal.add(this._debounce_render);
+      App.api.authenticationService.updatedSignal.add(this._debounce_render);
+      App.api.libraryService.updatedSignal.add(this._debounce_render);
     },
     render: function(cb) {
+      var that = this;
       cb = cb || $.noop;
-      var cx = { 
-            issues: this.get_issues(),
-            settings: settings 
-          };
-      this.$el.html(this.template(cx));
-      this.$(".cover-img").imgPlaceholder();
 
-      this.$(".bi-filter").removeClass("active");
-      this.$('[data-filter="' + this.filter_type + '"]').addClass("active");
+        var cx = { 
+              issues: that.get_issues(),
+              settings: settings 
+            };
+        that.$el.html(that.template(cx));
+        that.$(".cover-img").imgPlaceholder();
 
-      cb();
+        that.$(".bi-filter").removeClass("active");
+        that.$('[data-filter="' + that.filter_type + '"]').addClass("active");
+
+        _.each(cx.issues, function(issue) {
+          if (issue.updatedSignal.has(that._debounce_render)) return; 
+          issue.updatedSignal.add(that._debounce_render);
+        });
+        cb();
       return this;
     },
     get_issues: function() {

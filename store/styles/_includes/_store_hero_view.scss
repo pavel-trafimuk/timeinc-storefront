@@ -6,7 +6,9 @@
     background: $HERO_BG_COLOR;
     padding: 30px 20px;
     position: relative;
-    -webkit-transform: translate3d(0,0,0);
+    -webkit-transform: translateZ(0);
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
     border-bottom: 1px solid rgba(0,0,0,0.10);
     
     .issue-cover {
@@ -77,6 +79,10 @@
         }
     }
     .details {
+        -webkit-transform: translateZ(0);
+        -webkit-perspective: 1000;
+        -webkit-backface-visibility: hidden;
+
         position: absolute;
         top: 30px; right: 0; bottom: 0; 
         -webkit-box-sizing: border-box;
@@ -194,6 +200,9 @@
         }
     }
     .cta button {
+        -webkit-transform: translateZ(0);
+        -webkit-perspective: 1000;
+        -webkit-backface-visibility: hidden;
         width: 48%;
         border-color: rgba(0,0,0,0.2);
     }

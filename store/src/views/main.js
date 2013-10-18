@@ -12,6 +12,11 @@
     initialize: function() {
       var that = this,
           folio = App.api.libraryService.get_touted_issue();
+
+      App.api.authenticationService.updatedSignal.add(function() {
+        App.api.libraryService.updateLibrary();
+      });
+
       this.welcome_view = new App.views.Welcome;
       this.store_view = new App.views.Store;
 

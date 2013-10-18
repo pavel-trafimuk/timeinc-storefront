@@ -24,10 +24,6 @@
       render = _.partial(_.delay, render, 50);
       render = _.debounce(render, 200);
 
-      App.api.receiptService.newReceiptsAvailableSignal.add(render);
-      App.api.authenticationService.userAuthenticationChangedSignal.add(render);
-      App.api.libraryService.updatedSignal.add(render);
-
       $(window).on("resize.image-preview", render);
 
     },
