@@ -95,6 +95,7 @@
         "myacctAcctSetup"            : '<span class="line1">COMPLETE ACCOUNT SETUP</span><br /><span class="line2">FOR IPAD SUBSCRIBERS</span>',
         "myacctRestoreIssues"        : '<span class="singleLine">RESTORE ISSUES</span>',
         "myacctCustService"          : '<span class="singleLine">CUSTOMER SERVICE</span>',
+        "myacctFAQ"                  : '<span class="line1">FREQUENTLY ASKED</span><br /><span class="line2">QUESTIONS</span>',
 
         // Sign-in Dialog
         "authSigninHeader"           : "Sign In",
