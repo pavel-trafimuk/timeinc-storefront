@@ -20,7 +20,7 @@
       function loadEcho() {
         window.setInterval(function() {
           window.clearInterval(apiLoad);
-          d_authenticated = adobeDPS.authenticationService.isUserAuthenticated,
+          d_authenticated = App.api.authenticationService.isUserAuthenticated,
           d_push_token = App.api.deviceService.pushNotificationToken.toString(),          
           d_omni_visitor_id = App.api.deviceService.omnitureVisitorId.toString().replace(/-/g,"");
           
