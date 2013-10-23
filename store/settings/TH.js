@@ -13,7 +13,7 @@ window.settings = {
     "subscribeOfferText"         : "Subscribe to THIS OLD HOUSE and get tips and advice from the experts on how to enhance & beautify your home in big and small ways!",
     
     "welcome_preview": "image",
-    "hero_preview": "image",
+    "hero_preview": "adobe",
     "hero_itii_preview": "image",
     "max_back_issues"            : 12,
 
