@@ -70,12 +70,12 @@
            }
            
            .btn.pull-left{
-               background-image: url('Template_TA_Retina_LeftButton.png');
+               background-image: url('Retina_LeftButton.png');
                
            }
            
           .btn.pull-right{
-               background-image: url('Template_TA_Retina_RightButton.png');
+               background-image: url('Retina_RightButton.png');
                background-position-x: 100%;
            }
            
@@ -93,11 +93,19 @@
            /* iPad Portrait */
            @media only screen and (min-width:768px){           
               .subscribe {
-              	background-image: url('Template_TA_Subscribe_portrait.jpg') !important;
+              	background-image: url('Subscribe_portrait.jpg') !important;
               }
               
               .retina {
-                background-image: url('Template_TA_Retina_portrait.jpg') !important;
+                background-image: url('Retina_portrait.jpg') !important;
+              }
+              
+              .bigissues {
+                background-image: url('BigIssues_portrait.png') !important;
+              }
+              
+              .poy {
+                background-image: url('POY_portrait.png') !important;
               }
               
               .banner{                 
@@ -120,11 +128,19 @@
            /* iPad Landscape */
            @media only screen and (min-width:1024px){           
               .subscribe {
-                background-image: url('Template_TA_Subscribe_landscape.jpg') !important;
+                background-image: url('Subscribe_landscape.jpg') !important;
               }
               
               .retina {
-                background-image: url('Template_TA_Retina_landscape.jpg') !important;
+                background-image: url('Retina_landscape.jpg') !important;
+              }
+              
+              .bigissues {
+                background-image: url('BigIssues_landscape.png') !important;
+              }
+              
+              .poy {
+                background-image: url('POY_landscape.png') !important;
               }
               
               .banner{                 
@@ -171,7 +187,7 @@
 
             api.initializationComplete.addOnce(function() {
               buy_sub = function() {
-                api.receiptService.availableSubscriptions["com.timeinc.ipad.tahk.subs.9"].purchase();
+                api.receiptService.availableSubscriptions["com.timeinc.ipad.tahk.subs.9.1"].purchase();
               }
             });
 
@@ -183,15 +199,12 @@
        <div class="wrapper">
          <div class="banner carousel">
             <div class="slides">
+              <div class="slide poy"></div>
+              <div class="slide bigissues"></div>
+              <div class="slide retina"></div>
               <div class="slide hasButtons subscribe"> <!-- Subscribe slide -->
                 <a href="#"></a>
               </div>
-               <div class="slide retina"> <!-- Retina slide -->
-                  <!--<div class="btn-group">
-                     <div class="btn pull-left"></div>
-                     <div class="btn pull-right"></div>
-                  </div>-->
-               </div>
             </div>
          </div>
        </div>
