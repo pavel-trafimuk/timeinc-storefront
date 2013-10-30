@@ -53,11 +53,87 @@ SlideshowGallery.prototype.slidePrev = function() {
       'translate3d(' + this.currentTranslation + 'px, 0 ,0)';
 };
 
+SlideshowGallery.prototype.slideEvery = function(ms) {
+  var that = this;
+  this.slide_every_delay = this.slide_every_delay || ms;
+  this.slide_interval = window.setInterval(function(){
+    that.slideNext();   
+  }, this.slide_every_delay);
+};
+
+SlideshowGallery.prototype.cancelAutoSlide = function() {
+  window.clearInterval(this.slide_interval);
+}
+
+SlideshowGallery.prototype.enableTouch = function() {
+  var gallery = this,
+      slides = this.slides,
+      startX = 0,
+      deltaX = 0,
+      startTouchID = null;
+  
+  slides.addEventListener("touchstart", function(ev) { 
+    if (ev.changedTouches.length != 1) return;
+
+    console.log("asdf");
+    gallery.cancelAutoSlide()
+    startTouchID = ev.changedTouches[0].identifier;
+
+    startX = ev.changedTouches[0].pageX;
+
+    console.log(startTouchID);
+    console.log(startX);
+    slides.style.webkitTransition = "0s all";
+  });
+
+  slides.addEventListener("touchmove", function(ev) {
+    ev.preventDefault();
+
+    var touch = null;
+    for (var i=ev.changedTouches.length; i--;) {
+      if (ev.changedTouches[i].identifier == startTouchID) {
+        touch = ev.changedTouches[i];
+      }
+    }
+    if (touch === null) return;
+
+    deltaX = touch.pageX - startX;
+
+    slides.style.webkitTransform =
+      'translate3d(' + (gallery.currentTranslation + deltaX) + 'px, 0 ,0)';
+  });
+
+  slides.addEventListener("touchend", function(ev) { 
+    var done = false;
+    for (var i=ev.changedTouches.length; i--;) {
+      if (ev.changedTouches[i].identifier == startTouchID) done = true;
+    }
+
+    if (!done) return;
+    
+    startTouchID = null;
+    gallery.currentTranslation += deltaX;
+    gallery.slideToNearest(function() {
+      slides.style.webkitTransition = "1s all";
+      gallery.slideEvery();
+    });
+  });
+}
+
+SlideshowGallery.prototype.slideToNearest = function(cb) {
+  this.slides.style.webkitTransition = "0.25s all";
+  
+  var nearest_slide = Math.round(-1 * this.currentTranslation / this.sliderWidth);
+  nearest_slide = Math.max(Math.min(nearest_slide, this.slidesObject.length-1), 0);
+
+  this.currentTranslation = -1 * nearest_slide * this.sliderWidth;
+  this.slides.style.webkitTransform =
+      'translate3d(' + this.currentTranslation + 'px, 0 ,0)';
+  setTimeout(cb, 300);
+}
+
 //initiate the gallery
 var gallery = new SlideshowGallery();
-
-//set the interval
-var timer = window.setInterval(function(){
-   gallery.slideNext();   
-},5000);
+gallery.enableTouch();
+gallery.slideEvery(5000);
 
