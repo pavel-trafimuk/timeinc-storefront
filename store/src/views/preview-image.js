@@ -20,7 +20,7 @@
         that.animate();
       });
 
-      var render = _.bind(this.render, this);
+      var render = _.bind(this.render, this, $.noop);
       render = _.partial(_.delay, render, 50);
       render = _.debounce(render, 200);
 
