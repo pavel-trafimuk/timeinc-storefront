@@ -23,7 +23,16 @@ App.preload();
 Handlebars.registerHelper('setting', function(options) {
   return options.fn(settings);
 });
-
+Handlebars.registerHelper('ifequal', function(options) {
+  var key, keys = Object.keys(options.hash);
+  for (var i=keys.length; i--;) {
+    key = keys[i];
+    if (this[key] != options.hash[key]) {
+      return options.inverse(this);
+    }
+  }
+  return options.fn(this);
+});
 $(function() {
   console.log("dom ready");
   App.loading(true);
