@@ -12,7 +12,7 @@
       console.log("App.views.StoreIssues initializing");
       this.filter_type = settings.storeIssuesStartingFilter;
 
-      this._debounce_render = _.throttle(_.bind(this.render, this), 500);
+      this._debounce_render = _.throttle(_.bind(this.render, this, $.noop), 500);
 
       App.api.receiptService.newReceiptsAvailableSignal.add(this._debounce_render);
       App.api.authenticationService.userAuthenticationChangedSignal.add(this._debounce_render);
