@@ -55,41 +55,22 @@
         background-color: #ee4d9b;
     }
   </style>
-  
-  <script type="text/javascript" src="../../../lib/jquery.js"></script>
-
-  <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js"></script>
-  <!-- script type="text/javascript" src="../../../lib/MockAPI.js"></script -->
-
-  <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js"></script> 
-  <script type="text/javascript" src="../../../settings/settings_loader.js"></script> 
-
-  <script type="text/javascript" src="../../../lib/lucie_entitlements.js"></script> 
-
-  <script type="text/javascript">
-    (function() {
-      var api = (typeof adobeDPS == "undefined") ? MockAPI : adobeDPS;
-      var buy_sub = function() { setTimeout(buy_sub, 500) };
-
-      $(function() {
-        $(".subscribe a").click(function() {
-          buy_sub();
-          return false;
-        });
-      });
-
-      api.initializationComplete.addOnce(function() {
-        buy_sub = function() {
-          api.receiptService.availableSubscriptions["com.timeinc.allyou.ipad.subs.9"].purchase();
-        }
-      });
-
-    })();
-  </script>
-</head>
  
+  <script type="text/javascript" src="../../../lib/jquery.js"></script>
+  <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
+  <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
+  <script type="text/javascript" src="../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
+</head>
 <body>
-  <div id="banner" class="subscribe"><a src="#"></a></div>
+  <div id="banner" class="subscribe"><a href="#"></a></div>
+  <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript">
+    $(document).on("click", ".subscribe a", function() {
+      libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
+      libBanner.buy_sub("com.timeinc.allyou.ipad.subs.9");
+      return false;
+    });
+  </script>
 </body>
 </html>
 
