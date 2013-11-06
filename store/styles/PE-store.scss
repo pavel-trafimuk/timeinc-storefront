@@ -76,7 +76,7 @@
     .buy-issue-button {
       top: 155px;
       &[data-action="buy"] {
-        background-image: url("../images/PE/hero_btn_buy.jpg?v=" + currTime());
+        background-image: url("../images/PE/hero_btn_buy.png?v=" + currTime());
       }
       &[data-action="view"] {
         background-image: url("../images/PE/hero_btn_view.png?v=" + currTime());
