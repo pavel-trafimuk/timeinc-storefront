@@ -51,8 +51,9 @@
           width: 100%;
           background-size: contain;
       }
-      .subscribe a, .hungergames a {
-        display: block; position: absolute;
+      .slide a {
+        display: block;
+        position: absolute;
         top: 0; right: 0; bottom: 0; left: 0;
       }
 
@@ -149,13 +150,27 @@
           }      
           
        }
-       
+       .slide.loading::before {
+         content: 'Loading…';
+         display: block;
+         color: #fff;
+         line-height: 170px;
+         font-size: 20px;
+         font-weight: bold;
+         font-family: helvetica, sans-serif;
+         background: rgba(0,0,0,0.7);
+         text-align: center;
+         position: absolute;
+         top: 0; right: 0; bottom: 0; left: 0;
+       }
 
        /* HACK: */
        .retina { background-color: #000; } 
+
        
        
-    </style>    
+    </style>
+
     <script type="text/javascript" src="../../../lib/jquery.js"></script>
     <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
 
@@ -172,7 +187,7 @@
           <div class="slide hungergames">
             <a href="#"></a>
           </div>
-          <div class="slide hasButtons subscribe"> <!-- Subscribe slide -->
+          <div class="slide subscribe"> <!-- Subscribe slide -->
             <a href="#"></a>
           </div>
            <div class="slide retina"> <!-- Retina slide -->
@@ -191,16 +206,23 @@
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
 
-      $(document).on("click", ".subscribe a", function() {
+      $(".subscribe a").click(function(evt) {
+        evt.preventDefault();
+
+        gallery.cancelAutoSlide();
+
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
         libBanner.buy_sub("com.timeinc.people.ipad.subs.6");
-        return false;
       });
       
-      $(document).on("click", ".hungergames a", function() {
+      $(".hungergames a").click(function(evt) {
+        evt.preventDefault();
+
+        $(this).parent().addClass("loading");
+        gallery.cancelAutoSlide();
+
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
         libBanner.buy_issue("com.timeinc.people.ipad.inapp.11012013","286100");
-        return false;
       });
     })();
   </script>
