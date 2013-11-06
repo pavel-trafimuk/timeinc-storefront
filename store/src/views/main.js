@@ -70,7 +70,23 @@
     },
     banner_tap: function() {
       App.omni.event("st_banner_taps");
-      new App.dialogs.Subscribe();
+      if (settings.store_banners_type == "subscribe") {
+        new App.dialogs.Subscribe();
+      } else {
+        var folio = App.api.libraryService.get_by_productId(settings.store_banner_productId);
+        
+        folio.purchase_and_download({
+          complete: function() {
+            folio.goto_dossier(settings.store_banner_dossierId);
+          },
+          error: function(error_code) {
+            if (error_code < 0) {
+              settings.error_code = error_code;
+              new App.dialogs.ErrorMsg();
+            }
+          }
+        });
+      }
       return false;
     },
     goto_store: function() {
