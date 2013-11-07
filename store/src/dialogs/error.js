@@ -25,6 +25,7 @@ App.dialogs.ErrorMsg = Backbone.View.extend({
         break;
       default:
         message1 = "Error";
+        message2 = settings.error_code;
         break;
     }
     
