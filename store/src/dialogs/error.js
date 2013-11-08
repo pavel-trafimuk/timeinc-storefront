@@ -5,11 +5,11 @@ App.dialogs.ErrorMsg = Backbone.View.extend({
   events: {
     "click #cancel": "onOK"
   },
-  initialize: function(error_code, show_on_create) {
+  initialize: function(opts) {
     console.log("App.dialogs.ErrorMsg.initialize()");
-    this.error_code = error_code;
+    this.error_code = opts.error_code;
 
-    if (show_on_create !== false) {
+    if (opts.show_on_create !== false) {
       this.render().$el.appendTo("body");
       this.open();
     }

@@ -128,7 +128,7 @@
         },
         error: function(error_code) {
           if (error_code < 0) {
-            new App.dialogs.ErrorMsg(error_code);
+            new App.dialogs.ErrorMsg({error_code: error_code});
           }
           $cover.removeClass("progress").attr("data-label", "");
           $btn.fadeTo(100, 1.0);

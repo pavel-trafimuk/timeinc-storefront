@@ -195,7 +195,7 @@
         },
         error: function(error_code) {
           if (error_code < 0) {
-            new App.dialogs.ErrorMsg(error_code);
+            new App.dialogs.ErrorMsg({error_code: error_code});
           }
           $progress.attr('data-label', '').removeClass("progress");
           $curl.show();
