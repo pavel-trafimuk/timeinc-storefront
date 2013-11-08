@@ -5,8 +5,9 @@ App.dialogs.ErrorMsg = Backbone.View.extend({
   events: {
     "click #cancel": "onOK"
   },
-  initialize: function(show_on_create) {
+  initialize: function(error_code, show_on_create) {
     console.log("App.dialogs.ErrorMsg.initialize()");
+    this.error_code = error_code;
 
     if (show_on_create !== false) {
       this.render().$el.appendTo("body");
@@ -18,14 +19,18 @@ App.dialogs.ErrorMsg = Backbone.View.extend({
     
     var message1, message2;
     
-    switch (settings.error_code) {
+    switch (this.error_code) {
       case "-500":
         message1 = "There is not enough space to download this item.";
         message2 = "Please free up space and try again.";
         break;
+      case "-510":
+        message1 = "Error"
+        message2 = "There was an error downloading the folio that was not network related.";
+        break;
       default:
         message1 = "Error";
-        message2 = settings.error_code;
+        message2 = this.error_code;
         break;
     }
     
