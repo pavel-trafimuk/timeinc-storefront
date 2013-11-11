@@ -5,10 +5,17 @@
 #   CVSROOT=:pserver:username:password@ecom-build01.usdlls2.savvis.net:/subs3
 
 if [ -z "$1" ]; then
-  echo "YOU MUST SPECIFY A BRAND"
+  echo "YOU MUST SPECIFY AN ENVIRONMENT TO DEPLOY TO [cmdev, qa, prod]"
   exit 1
 else
-  TITLE="$1"
+  DEPLOYTO="$1"
+fi
+
+if [ -z "$2" ]; then
+  echo "YOU MUST SPECIFY A TITLE TO DEPLOY (2-letter brand code)"
+  exit 1
+else
+  TITLE="$2"
 fi
 
 cd $(dirname $0)
@@ -43,7 +50,6 @@ cvs -qn update | while read F; do
   
   cvs commit -m "deploy" "$FILE"
 
-  cvs tag -F cmdev "$FILE"
-  cvs tag -F prod  "$FILE"
+  cvs tag -F $DEPLOYTO "$FILE"
 
 done
