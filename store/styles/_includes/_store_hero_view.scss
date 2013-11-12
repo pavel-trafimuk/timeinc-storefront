@@ -206,11 +206,14 @@
         width: 48%;
         border-color: rgba(0,0,0,0.2);
     }
+    .preview-button {
+        @include big-button-primary; 
+    }
     .buy-issue-button {
         @include big-button-secondary; 
     }
     .subscribe-button {
-        @include big-button-primary; 
+        @include big-button-secondary; 
         float: right;
     }
     .print-subscribers {

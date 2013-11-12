@@ -54,9 +54,12 @@
           {{#setting}}
             {{{heroPostDescriptionHTML}}}
           {{/setting}}
-          {{#if folio.tcm.post_description_HTML}}
-            {{{folio.tcm.post_description_HTML}}}
-          {{/if}}
+          {{#unless folio.tcm.preview_button_product_id }}
+              {{#if folio.tcm.post_description_HTML}}
+                {{{folio.tcm.post_description_HTML}}}
+              {{/if}}
+          {{/unless}}
+          
         </div>
 
         <!--
@@ -71,6 +74,11 @@
       </div>
     {{/unless}}
     <div class="cta {{#if is_subscriber}}subscriber{{/if}}">
+        {{#if folio.tcm.preview_button_product_id}}
+            <button class="preview-button" productId="{{folio.tcm.preview_button_product_id}}" dossierId="{{folio.tcm.preview_button_dossier_id}}">
+               {{settings.storePreviewBtn}}
+            </button>
+        {{/if}}
         <button class="buy-issue-button {{class-name}}"
            {{> buy-view-btn.partial folio }} 
         </button>
