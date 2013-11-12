@@ -8,10 +8,12 @@
           {{/each}}
         </div>
         <div class="progress-bar"></div>
-        <div class="page-curl">
+        {{#if settings.showCoverPageCurl}}
+          <div class="page-curl">
             <div class="curl-text">{{settings.seeInsideCTA}}</div>
             <div class="curl-obj"></div> 
-        </div>
+          </div>
+        {{/if}}
     </div>
     {{#if hero_scroll_covers}}
       <div class="cover-scroll-position">

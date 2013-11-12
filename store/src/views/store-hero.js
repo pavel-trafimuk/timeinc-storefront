@@ -220,6 +220,11 @@
       }
     },
     goto_preview: function(evt) {
+      if (!settings.showCoverPageCurl) {
+        //Do not allow "see inside" with page curl hidden
+        return;
+      }
+      
       App.omni.event("st_preview_featured_taps");
       if (settings.hero_preview == "image") {
         return this.goto_image_preview();
