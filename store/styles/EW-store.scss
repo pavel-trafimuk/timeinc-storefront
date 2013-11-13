@@ -1,3 +1,50 @@
 
 @import "_variables/_EW.scss";
 @import "_includes/_STORE.scss";
+
+.store-hero-view {
+  .cover {
+    @media screen and (max-width: 999px) {
+      width: 58%;
+    }
+  }
+  
+  .details {
+    @media screen and (max-width: 999px) {
+      width: 42%;
+    }
+  }
+  
+  .cta button {
+    float: none !important;
+    display: block;
+    width: 80% !important;
+    -webkit-border-radius: 5px;
+  }
+  
+  .preview-button {
+    @include big-button-primary;
+    margin: 0px auto 50px auto;
+  }
+  
+  .buy-issue-button {
+    @include big-button-secondary;
+    margin: 0px auto 10px auto;
+  }
+  
+  .subscribe-button {
+    @include big-button-secondary;
+    margin: 0px auto 45px auto;
+  }
+  
+  .cta.subscriber {
+    .preview-button {
+      display: none !important;
+    }
+    
+    .buy-issue-button {
+      margin: 0px auto 205px auto !important;
+    }
+  }
+  
+}

@@ -195,8 +195,10 @@
 
         &.subscriber {
             .subscribe-button { display: none; }
-            .buy-issue-button { width: 100%; }
             .print-subscribers { display: none; }
+        }
+        &.entitled {
+            .preview-button { display: none; }
         }
     }
     .cta button {
@@ -206,11 +208,14 @@
         width: 48%;
         border-color: rgba(0,0,0,0.2);
     }
+    .preview-button {
+        @include big-button-secondary; 
+    }
     .buy-issue-button {
         @include big-button-secondary; 
     }
     .subscribe-button {
-        @include big-button-primary; 
+        @include big-button-primary;
         float: right;
     }
     .print-subscribers {

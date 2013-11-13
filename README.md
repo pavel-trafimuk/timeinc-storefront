@@ -39,10 +39,14 @@ savvis server in:
 There are a couple helpful scripts in `bin/` that can make deployment relatively
 easy. This is a simple compile and commit of the EW assets:
 
-    bin/deploy EW
+    bin/deploy cmdev EW
 
 Which will run `bin/build EW` then checkout the appropriate folder from CVS,
 copy in the newly built files, commit and tag them.
+
+**NOTE**: deploying to qa or prod will switch to the qa or prod branch automatically
+to ensure the correct code is deployed. cmdev will allow you to deploy whichever branch 
+you're currently on.
 
 You may want to add the following to your .bash_profile to ease this process:
 

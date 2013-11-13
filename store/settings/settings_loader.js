@@ -55,6 +55,7 @@
         "welcomeSubscribeBtn"        : "Subscribe",
         "welcomeAlreadyHaveAcct"     : "Already have an account?",
 
+        "storePreviewBtn"            : "Sample This Issue",
         "storeSubscribeBtn"          : "Subscribe",
         "storeBuyIssueBtn"           : "Buy Issue",
         "storeViewIssueBtn"          : "View Issue",

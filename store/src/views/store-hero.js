@@ -15,6 +15,7 @@
       "release .issue-cover": "cover_release",
       "release": "release_outside_cover",
 
+      "tap .preview-button": "goto_preview_issue",
       "tap .subscribe-button": "subscribe",
       "tap .in-this-issue article": "goto_itii",
       "tap .print-subscribers": "print_subs_getitfree"
@@ -206,6 +207,18 @@
         }
       });
     },
+    goto_preview_issue: function(evt) {
+      App.omni.event("st_preview_featured_taps");
+      var that = this,
+          $this = $(evt.currentTarget),
+          product_id = $this.attr("productId"),
+          dossier_id = $this.attr("dossierId"),
+          folio = App.api.libraryService.get_by_productId(product_id);
+          
+      if (folio) {
+        this.goto_native_preview(dossier_id, folio);
+      }
+    },
     goto_preview: function(evt) {
       App.omni.event("st_preview_featured_taps");
       if (settings.hero_preview == "image") {
@@ -225,14 +238,16 @@
       var folio = App.api.libraryService.get_touted_issue();
       new App.views.IssuePreviewImage(folio);
     },
-    goto_native_preview: function(link) {
+    goto_native_preview: function(link, folio) {
       var $progress = this.$(".issue-cover").addClass("progress");
       $progress.attr("data-label", settings.progressStarting);
 
       this.disable_rendering = true;
 
       this.$(".page-curl").fadeOut();
-      var folio = App.api.libraryService.get_touted_issue();
+      if (!folio) {
+        folio = App.api.libraryService.get_touted_issue();
+      }
       folio.view_or_preview({
         complete: function() {
           $progress.attr("data-label", settings.progressOpening);
@@ -247,7 +262,7 @@
         }
       });
     },
-    subscribe: function() {
+    subscribe: function(evt) {
       App.omni.event("st_subscribe_taps");
       new App.dialogs.Subscribe();
     },
