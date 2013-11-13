@@ -29,10 +29,7 @@
         // ************************************************************  
         // FEATURE FLAGS
         // ************************************************************   
-        
-        //Controls display of page curl on cover and tap to 'see inside'
-        "showCoverPageCurl": true,
-        
+
         // "image" for TOC image overlay, "adobe" for native 
         // issue preview, "none" to disable preview
         "welcome_preview": "image",
