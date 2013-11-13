@@ -73,7 +73,7 @@
         --> 
       </div>
     {{/unless}}
-    <div class="cta {{#if is_subscriber}}subscriber{{/if}}">
+    <div class="cta {{#if is_subscriber}}subscriber{{/if}} {{#if folio.isPurchasable}}purchasable{{else}}entitled{{/if}}">
         {{#if folio.tcm.preview_button_product_id}}
             <button class="preview-button" productId="{{folio.tcm.preview_button_product_id}}" dossierId="{{folio.tcm.preview_button_dossier_id}}">
                {{settings.storePreviewBtn}}

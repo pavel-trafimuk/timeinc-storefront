@@ -195,8 +195,10 @@
 
         &.subscriber {
             .subscribe-button { display: none; }
-            .buy-issue-button { width: 100%; }
             .print-subscribers { display: none; }
+        }
+        &.entitled {
+            .preview-button { display: none; }
         }
     }
     .cta button {
