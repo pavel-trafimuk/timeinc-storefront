@@ -64,12 +64,12 @@ cvs -qn update | while read F; do
   fi
   
   cvs commit -m "deploy" "$FILE"
-
-  cvs tag -F $DEPLOYTO "$FILE"
-
 done
 
+cvs tag -F -R $DEPLOYTO ./
+
 popd
+
 if [[ $CURRENT_BRANCH != $(git rev-parse --abbrev-ref HEAD) ]]; then
   git checkout $CURRENT_BRANCH
 fi
