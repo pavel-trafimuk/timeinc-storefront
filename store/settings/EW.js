@@ -19,8 +19,10 @@ window.settings = {
     "heroHeading"                : "Inside This Issue",
     "subscribeOfferText"         : "Be the first to know about the best (and worst) in movies, TV, music, books, and more. PLUS: You can watch trailers, sample songs, as well as buy movie tickets, books, and music instantly—without ever leaving your couch.",
     
+    "enableHeroCoverTap"         : false,
+    
     "welcome_preview": "adobe",
-    "hero_preview": "adobe",
+    "hero_preview": "none",
     "hero_itii_preview": "adobe",
     "max_back_issues"            : 20,
 

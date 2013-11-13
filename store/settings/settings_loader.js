@@ -29,7 +29,10 @@
         // ************************************************************  
         // FEATURE FLAGS
         // ************************************************************   
-
+        
+        //Controls tap to 'see inside'
+        "enableHeroCoverTap": true,
+        
         // "image" for TOC image overlay, "adobe" for native 
         // issue preview, "none" to disable preview
         "welcome_preview": "image",
