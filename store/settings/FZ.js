@@ -42,6 +42,7 @@ window.settings = {
     
     "signInForgotPasswordUrl"    : "https://subscription.timeinc.com/storefront/universalForgotPassword.ep?magcode=FA",
     "customerServiceUrl"         : "", // hides button on my account page
+    "faqUrl"                     : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/SUBS/templates/velocity/site/fa-digitaledition-faq/lp.html",
     
     "welcomeScreenWesURL"        : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=FA&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
     "WesPageURL"                 : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG=FA&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
