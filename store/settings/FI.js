@@ -38,7 +38,7 @@ window.settings = {
     // ************************************************************  
     
     "customerServiceUrl"         : "", // hides button on my account page
-    "faqUrl"                     : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/SUBS/templates/velocity/site/fa-digitaledition-faq/lp.html",
+    "faqUrl"                     : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/SUBS/templates/velocity/site/fi-digitaledition-faq/lp.html",
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/fi-lucie-customer-creation-itunes201307.html",
     
 "ihatethelastcomma": true};
