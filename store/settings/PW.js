@@ -14,6 +14,9 @@ window.settings = {
     
     "heroHeading"                : "Inside This Issue",
     "max_back_issues"            : 12,
+    
+    "hero_preview": "none",
+    "enableHeroCoverTap"         : false,
 
     "omniture_account"           : "timagstylewatchnk",
     "omniture_server"            : "timeinc.122.2o7.net",
