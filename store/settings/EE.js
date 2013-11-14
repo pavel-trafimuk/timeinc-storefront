@@ -13,6 +13,9 @@ window.settings = {
     "heroHeading"                : "Inside This Issue",
     "subscribeOfferText"         : "Subscribe now to get ESSENCE on your iPad, featuring FASHION AND BEAUTY secrets so you look and feel your best, plus receive EMPOWERING ADVICE on relationships and money matters!",
 
+    "hero_preview": "none",
+    "enableHeroCoverTap"         : false,
+    
     "max_back_issues"            : 12,
 
     "omniture_account"           : "timagessencenk",
