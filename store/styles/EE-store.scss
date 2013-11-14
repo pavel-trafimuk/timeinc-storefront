@@ -17,7 +17,7 @@
   .cta button {
     float: none !important;
     display: block;
-    width: 80%;
+    width: 80% !important;
     -webkit-border-radius: 5px;
   }
   
@@ -35,4 +35,15 @@
     @include big-button-secondary;
     margin: 0px auto 45px auto;
   }
+  
+  .cta.subscriber {
+    .preview-button {
+      display: none !important;
+    }
+    
+    .buy-issue-button {
+      margin: 0px auto 105px auto !important;
+    }
+  }
+  
 }

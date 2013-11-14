@@ -13,6 +13,9 @@ window.settings = {
     "heroHeading"                : "Inside This Issue",
     "subscribeOfferText"         : "Subscribe to ALL YOU and get great tips and valuable advice on how to save everyday!",
     
+    "hero_preview": "none",
+    "enableHeroCoverTap"         : false,
+    
     "max_back_issues"            : 12,
 
     "omniture_account"           : "timagallyounk",
