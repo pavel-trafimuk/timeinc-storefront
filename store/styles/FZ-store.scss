@@ -1,3 +1,17 @@
 @import "_variables/_FZ.scss";
 @import "_includes/_STORE.scss";
 
+.first-load-popup {
+  @include first-load-popup(522px, 362px, "../images/FZ/first-load-popup.jpg");
+  .restore-btn, .sign-in-btn {
+    height: 37px; 
+    width: 197px;
+    bottom: 20px;
+  }
+  .restore-btn {
+    left: 32px; 
+  }
+  .sign-in-btn {
+    right: 34px;
+  }
+}

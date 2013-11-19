@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "FZ",
     "schedule"                   : "weekly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : false,
+    "enable_first_load_popup"    : true,
     "international"              : true,
  
     "heroHeading"                : "In This Issue",
