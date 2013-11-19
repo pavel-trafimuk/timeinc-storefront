@@ -13,6 +13,9 @@ window.settings = {
     "heroHeading"                : "Inside This Issue",
     "subscribeOfferText"         : "Subscribe now to get SPORTS ILLUSTRATED on your iPad, featuring award-winning journalism and photography, plus bonus video and slideshows, and the latest news and scores.",
     
+    "hero_preview": "none",
+    "enableHeroCoverTap"         : false,
+    
     "max_back_issues"            : 20,
 
     "omniture_account"           : "timagsimagnk",
