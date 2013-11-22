@@ -26,7 +26,29 @@ Each title has…
  - a banners folder (`banners/<MAG_CODE>/`) which compiles to just `banners/`.
    Any banners that are dynamic will probably need to import javascript from 
    the libs folder, which will usually be `../../lib/`
+
  
+INCOMPLETE LIST OF TECHNOLOGIES
+================================================================================
+
+This is by no means a complete list, but should serve to get you started.
+
+Core Technologies (if anything here is foreign, you should probably check it
+out before getting started):
+
+ - jQuery (http://jquery.com)
+ - Backbone/Underscore (http://backbonejs.org | http://underscorejs.org)
+ - Sass (http://sass-lang.com)
+ - Handlebars (http://handlebarsjs.com)
+ 
+Other stuff that's used, but you may not need to know right away:
+
+ - Adobe DPS (http://www.adobe.com/devnet-docs/digitalpublishingsuite/LibraryAndStoreSDK-2.26/docs/index.html)
+ - Compass (http://compass-style.org)
+ - async.js (https://github.com/caolan/async)
+ - moment.js (http://momentjs.com)
+ - transit (http://ricostacruz.com/jquery.transit/)
+
 
 DEPLOYING
 ================================================================================
