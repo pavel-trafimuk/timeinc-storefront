@@ -13,7 +13,7 @@
           coverdate = folio.get_coverdate().format("YYYY-MM-DD");
 
       // Default value for the image is the TOC
-      if (get_img_fn === undefined) {
+      if (!get_img_fn) {
         get_img_fn = "http://content.dreader.timeinc.net/issues/preview/"+folio.productId+"/image_vertical.png";
       }
 
