@@ -1,3 +1,4 @@
+/* globals App, Backbone, Handlebars, Hammer, $, _, console, settings */
 (function() {
   
   App.views.StoreHero = Backbone.View.extend({
@@ -28,7 +29,7 @@
       Hammer.gestures.Drag.defaults.drag_block_horizontal = true;
       Hammer.gestures.Drag.defaults.drag_lock_to_axis = true;
       
-      var render = _.bind(this.render, this, $.noop);
+      render = _.bind(this.render, this, $.noop);
       render = _.partial(_.delay, render, 50);
       render = _.debounce(render, 200);
 
@@ -46,7 +47,6 @@
       console.log("StoreHero.render() called");
       cb = cb || $.noop;
       var that = this,
-          price = "",
           folio = App.api.libraryService.get_touted_issue();
 
       // Buying/downloading an issue will trigger a re-render via
@@ -65,13 +65,13 @@
             .map(function(s) { return "<span class='sub-price'>" + s + "</span>" })
             .join(settings.storeSubscribeNowPriceOr);
         }
-        var cx = { 
-          settings: settings, 
+        var cx = {
+          settings: settings,
           folio: folio,
           is_subscriber: is_subscriber,
           is_authenticated: is_subscriber || App.api.authenticationService.isUserAuthenticated,
           sub_opts: sub_opts,
-          hero_scroll_covers: folio.get_additional_covers() 
+          hero_scroll_covers: folio.get_additional_covers()
         };
         that.$el.html(that.template(cx));
         setTimeout(function() {
@@ -90,6 +90,7 @@
 
       // cache these for later to improve scroll performance
       this.$cover_container = $container;
+      this.$covers = $covers;
       this.$scroll_pos = this.$(".cover-scroll-position .pos-dot");
       this.cover_count = $covers.length;
       this.cover_width = w;
@@ -114,8 +115,11 @@
       this.current_cover = cover_index;
       this._setCoverContainerOffset(-cover_index*this.cover_width, animate);
 
+      this.$covers.removeClass("active");
+      $( this.$covers[cover_index] ).addClass("active");
+
       this.$scroll_pos.removeClass("active");
-      $(this.$scroll_pos[cover_index]).addClass("active");
+      $( this.$scroll_pos[cover_index] ).addClass("active");
     },
     _currentCover: function() {
       return this.current_cover;
@@ -123,12 +127,12 @@
     cover_drag: function(evt) {
       evt.gesture.preventDefault();
 
-      var pane_offset = -this.current_cover * this.cover_width;
+      var pane_offset = -this.current_cover * this.cover_width,
           drag_offset = evt.gesture.deltaX;
 
-      if ((evt.gesture.direction == Hammer.DIRECTION_RIGHT && this.current_cover == 0) ||
+      if ((evt.gesture.direction == Hammer.DIRECTION_RIGHT && this.current_cover === 0) ||
           (evt.gesture.direction == Hammer.DIRECTION_LEFT  && this.current_cover == this.cover_count-1)) {
-        drag_offset *= .4;
+        drag_offset *= 0.4;
       }
 
       this._setCoverContainerOffset(pane_offset + drag_offset);
@@ -161,9 +165,8 @@
     },
     
     animate: function(cb) {
-      var that = this,
-          cb = cb || $.noop;
-      cb(); 
+      cb = cb || $.noop;
+      cb();
     },
     print_subs_getitfree: function(evt) {
       App.omni.event("st_getitfree_taps");
@@ -209,8 +212,7 @@
     },
     goto_preview_issue: function(evt) {
       App.omni.event("st_preview_featured_taps");
-      var that = this,
-          $this = $(evt.currentTarget),
+      var $this = $(evt.currentTarget),
           product_id = $this.attr("productId"),
           dossier_id = $this.attr("dossierId"),
           folio = App.api.libraryService.get_by_productId(product_id);
@@ -219,7 +221,7 @@
         this.goto_native_preview(dossier_id, folio);
       }
     },
-    goto_preview: function(evt) {
+    goto_preview: function() {
       App.omni.event("st_preview_featured_taps");
       if (settings.hero_preview == "image") {
         return this.goto_image_preview();
@@ -235,8 +237,11 @@
       }
     },
     goto_image_preview: function() {
-      var folio = App.api.libraryService.get_touted_issue();
-      new App.views.IssuePreviewImage(folio);
+      var folio = App.api.libraryService.get_touted_issue(),
+          scroll_cover_index = this.$(".cover-img.active").data("scrollCoverIndex"),
+          large_img_url = folio.get_additional_covers_large()[scroll_cover_index];
+
+      new App.views.IssuePreviewImage(folio, large_img_url);
     },
     goto_native_preview: function(link, folio) {
       var $progress = this.$(".issue-cover").addClass("progress");
@@ -262,7 +267,7 @@
         }
       });
     },
-    subscribe: function(evt) {
+    subscribe: function() {
       App.omni.event("st_subscribe_taps");
       new App.dialogs.Subscribe();
     },
@@ -277,7 +282,7 @@
       }
     },
     goto_itii_native: function(evt) {
-      var that = this;
+      var that = this,
           $this = $(evt.currentTarget),
           $msg = $this.find(".opening-issue-text"),
           dossier_id = $this.data("destination");
