@@ -16,9 +16,10 @@ window.settings = {
     "subscribeOfferText"         : "Each issue of REAL SIMPLE is packed with smart, beautiful, and practical solutions to make life easier – every single day.  Plus fast and delicious recipes, easy organizing and decorating ideas, great fashion and beauty finds, money-saving tips, and more. Plus, get 1 month free with an annual subscription.",
     
     "welcome_preview": "image",
-    "hero_preview": "image",
     "hero_itii_preview": "image",
     "max_back_issues"            : 12,
+    "hero_preview": "none",
+    "enableHeroCoverTap"         : false,
 
     "omniture_account"           : "timagrealsimplenk",
     "omniture_server"            : "metrics.realsimple.com",
