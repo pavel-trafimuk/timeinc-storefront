@@ -29,7 +29,8 @@
 
     // Omniture Helper functions
     omni: {
-      pageview: function() {
+      pageview: function(page_name) {
+        this.dps_event("store|pageview|"+page_name, page_name);
         return TcmOmni.pageview.apply(TcmOmni, arguments);
       },
       event: function(evt_name) {
