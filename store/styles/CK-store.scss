@@ -3,6 +3,9 @@
 
 .store-hero-view {
   .cover {
+    .cover-img { 
+      background-size: 100% 100%; /* fixs hero cover from getting cut off */
+    }
     @media screen and (max-width: 999px) {
       width: 58%;
     }
