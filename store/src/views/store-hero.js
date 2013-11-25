@@ -19,7 +19,9 @@
       "tap .preview-button": "goto_preview_issue",
       "tap .subscribe-button": "subscribe",
       "tap .in-this-issue article": "goto_itii",
-      "tap .print-subscribers": "print_subs_getitfree"
+      "tap .print-subscribers": "print_subs_getitfree",
+      "tap .prev-cover": "prev_cover",
+      "tap .next-cover": "next_cover"
     },
     initialize: function() {
       console.log("App.views.StoreHero initializing");
@@ -139,11 +141,17 @@
     },
     cover_swipeleft: function(evt) {
       evt.gesture.stopDetect();
-      this._setVisibleCover(this._currentCover() + 1);
+      this.next_cover();
     },
     cover_swiperight: function(evt) {
       evt.gesture.stopDetect();
+      this.prev_cover();
+    },
+    prev_cover: function() {
       this._setVisibleCover(this._currentCover() - 1);
+    },
+    next_cover: function() {
+      this._setVisibleCover(this._currentCover() + 1);
     },
     cover_release: function(evt) {
       evt.stopPropagation();
