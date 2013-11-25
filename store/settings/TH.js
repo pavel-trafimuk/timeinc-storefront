@@ -18,6 +18,8 @@ window.settings = {
     "max_back_issues"            : 12,
 
     "heroHeading"                : "Inside This Issue",
+    "hero_preview": "none",
+    "enableHeroCoverTap"         : false,
 
     "omniture_account"           : "timagtohnk",
     "omniture_server"            : "timeinc.122.2o7.net",

@@ -18,6 +18,8 @@ window.settings = {
     "hero_preview": "image",
     "hero_itii_preview": "image",
     "max_back_issues"            : 20,
+    "hero_preview": "none",
+    "enableHeroCoverTap"         : false,
 
     "omniture_account"           : "timagsikidsnk",
     "omniture_server"            : "timeinc.122.2o7.net",
