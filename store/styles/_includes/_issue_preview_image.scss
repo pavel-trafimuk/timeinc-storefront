@@ -10,18 +10,16 @@ $SIDEBAR_SIZE: 256px;
     .container {
         position: relative;
         height: 100%; width: 100%;
-        background: #333;
+        background: $HERO_BG_COLOR;
     }
     .controls {
         position: absolute;
         top: 0; right: 0; bottom: 0; left: 0;
-        color: #fff;
     }
     .close-btn {
         position: absolute;
-        padding: 7px 13px;
-        font-size: 20px;
-        color: #fff;
+        padding: 10px 15px;
+        font-size: 22px;
         font-weight: bold;
         top: 0; right: 0;
         text-shadow: 0 -1px 0 black;
@@ -30,6 +28,7 @@ $SIDEBAR_SIZE: 256px;
         position: absolute;
         background: darken($HERO_BG_COLOR, 5%);
         top: 0; left: 0; right: 0; bottom: 0;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
     .cover-img {
         padding: 15px;
