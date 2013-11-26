@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "SK",
     "schedule"                   : "weekly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : true,
+    "enable_first_load_popup"    : false,
     
     "subscribeOfferText"         : "Subscribe to the #1 Sports Magazine for Kids! Each issue is packed with great action photos, easy-to-read stories about star athletes, and instructional tips from the pros. The tablet edition comes with bonus content including extra photos, interactive sports cards, and exciting games!",
     
@@ -18,6 +18,8 @@ window.settings = {
     "hero_preview": "image",
     "hero_itii_preview": "image",
     "max_back_issues"            : 20,
+    "hero_preview": "none",
+    "enableHeroCoverTap"         : false,
 
     "omniture_account"           : "timagsikidsnk",
     "omniture_server"            : "timeinc.122.2o7.net",

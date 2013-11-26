@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "SI",
     "schedule"                   : "weekly",
     "popupInterval"              : 0, // no welcome screen
-    "enable_first_load_popup"    : true,
+    "enable_first_load_popup"    : false,
     
     "heroHeading"                : "Inside This Issue",
     "subscribeOfferText"         : "Subscribe now to get SPORTS ILLUSTRATED on your iPad, featuring award-winning journalism and photography, plus bonus video and slideshows, and the latest news and scores.",

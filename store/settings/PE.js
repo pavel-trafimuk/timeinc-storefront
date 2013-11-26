@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "PE",
     "schedule"                   : "weekly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : true,
+    "enable_first_load_popup"    : false,
  
         
     "storeIssuesStartingFilter"  : "!special",
