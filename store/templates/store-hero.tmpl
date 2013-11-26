@@ -17,10 +17,12 @@
     </div>
     {{#if hero_scroll_covers}}
       <div class="cover-scroll-position">
+        <a href="javascript:void(0)" class="prev-cover"><span>&laquo;</span></a>
         <span class="pos-dot active"></span>
         {{#each hero_scroll_covers}}
           <span class="pos-dot"></span>
         {{/each}}
+        <a href="javascript:void(0)" class="next-cover"><span>&raquo;</span></a>
       </div>
     {{/if}}
 </div>
