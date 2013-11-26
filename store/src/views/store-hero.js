@@ -224,8 +224,9 @@
           product_id = $this.attr("productId"),
           dossier_id = $this.attr("dossierId"),
           folio = App.api.libraryService.get_by_productId(product_id);
-          
+       
       if (folio) {
+        folio.is_sample = true;
         this.goto_native_preview(dossier_id, folio);
       }
     },
@@ -252,17 +253,27 @@
       new App.views.IssuePreviewImage(folio, large_img_url);
     },
     goto_native_preview: function(link, folio) {
-      var $progress = this.$(".issue-cover").addClass("progress");
+      var $progress = this.$(".issue-cover").addClass("progress"),
+          $sampleBtn = this.$(".preview-button");
+      
       $progress.attr("data-label", settings.progressStarting);
-
       this.disable_rendering = true;
 
       this.$(".page-curl").fadeOut();
       if (!folio) {
         folio = App.api.libraryService.get_touted_issue();
       }
+      
+      if (folio.is_sample){
+        $sampleBtn.html(settings.progressStarting);
+      }
+      
       folio.view_or_preview({
         complete: function() {
+          if (folio.is_sample){
+            $sampleBtn.html(settings.progressOpening);
+          }
+          
           $progress.attr("data-label", settings.progressOpening);
           if (link) {
             setTimeout(function() { folio.goto_dossier(link) }, 150);
@@ -270,6 +281,10 @@
           }
         },
         download_progress: function(progress) {
+          if (folio.is_sample){
+            $sampleBtn.html(settings.progressDownloading);
+          }
+          
           $progress.attr("data-label", settings.progressDownloading);
           $(".progress-bar", $progress).css("width", progress+"%");
         }

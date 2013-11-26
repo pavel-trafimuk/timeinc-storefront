@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "TH",
     "schedule"                   : "monthly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : true,
+    "enable_first_load_popup"    : false,
     
     "subscribeOfferText"         : "Subscribe to THIS OLD HOUSE and get tips and advice from the experts on how to enhance & beautify your home in big and small ways!",
     
@@ -18,6 +18,8 @@ window.settings = {
     "max_back_issues"            : 12,
 
     "heroHeading"                : "Inside This Issue",
+    "hero_preview": "none",
+    "enableHeroCoverTap"         : false,
 
     "omniture_account"           : "timagtohnk",
     "omniture_server"            : "timeinc.122.2o7.net",

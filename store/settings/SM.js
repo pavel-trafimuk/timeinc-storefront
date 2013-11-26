@@ -16,9 +16,10 @@ window.settings = {
     "subscribeOfferText"         : "Each issue of REAL SIMPLE is packed with smart, beautiful, and practical solutions to make life easier – every single day.  Plus fast and delicious recipes, easy organizing and decorating ideas, great fashion and beauty finds, money-saving tips, and more. Plus, get 1 month free with an annual subscription.",
     
     "welcome_preview": "image",
-    "hero_preview": "image",
     "hero_itii_preview": "image",
     "max_back_issues"            : 12,
+    "hero_preview": "none",
+    "enableHeroCoverTap"         : false,
 
     "omniture_account"           : "timagrealsimplenk",
     "omniture_server"            : "metrics.realsimple.com",
@@ -38,6 +39,9 @@ window.settings = {
     // App specific URLS
     // ************************************************************  
     "lucieRegistrationURL"       : "https://subscription.realsimple.com/storefront/site/sm-lucie-customer-creation-itunes201306.html",
+    "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/sm/login.jsp&MSRSMAG=SM&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
+    "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/sm/login.jsp&MSRSMAG=SM&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
+    "WesPageURLiphone"           : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/sm/login.jsp&MSRSMAG=SM&MSDDMOFF=ABTF&MSDTRACK=IPHB&MSDVNDID=TBLT",
     
 "ihatethelastcomma": true};
 })();
