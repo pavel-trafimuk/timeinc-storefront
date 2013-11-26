@@ -85,6 +85,10 @@
             background-image: url('Whowillitbe_portrait.jpg') !important;
           }
           
+          .retina {
+            background-image: url('Retina_portrait.jpg') !important;
+          }
+          
           .banner{                 
              height: 237px;              
           }
@@ -106,6 +110,10 @@
        @media only screen and (min-width:1024px){           
           .whowillitbe {
             background-image: url('Whowillitbe_landscape.jpg') !important;
+          }
+          
+          .retina {
+            background-image: url('Retina_landscape.jpg') !important;
           }
           
           .banner{                 
@@ -156,6 +164,9 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
+          <!-- Retina Instructions slide -->
+          <div class="slide retina"></div>
+          
           <!-- Who will it be? slide -->
           <div class="slide whowillitbe"></div>
         </div>
