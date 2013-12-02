@@ -11,13 +11,13 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #eaeaea;
+          background: #f14b9c;
           margin: 0px;
           padding: 0px;
        }
                                 
        .wrapper{
-          width: 1024px;
+          width: 640px;
           margin: 0 auto; 
           text-align: center;
           width: 100%;
@@ -46,7 +46,7 @@
           position: relative;
           
           background-color: transparent;
-          background-position: 50% 50%;
+          background-position: top center;
           background-repeat: no-repeat;
           width: 100%;
           background-size: contain;
@@ -68,7 +68,7 @@
           background-size: auto 100%;   
           background-repeat: no-repeat;           
           margin-top: 1em;
-       }      
+       }
        
        .pull-left{
           float: left !important;
@@ -77,67 +77,27 @@
        .pull-right{
           float: right !important;
        }
-        
-       
-       /* iPad Portrait */
-       @media only screen and (min-width:768px){           
-          .retina {
-            background-image: url('Retina_portrait.png') !important;
-          }
-          
-          .subscribe {
-          	background-image: url('Subscribe_portrait.jpg') !important;
-          }
-          
-          .whowillitbe {
-            background-image: url('Whowillitbe_portrait.jpg') !important;
-          }
-          
-          .banner{                 
-             height: 237px;              
-          }
-          
-          .wrapper span.ipad-portrait{
-              display: block;
-          }        
-          
-          
-           .btn{
-             width: 200px;
-             height: 100px;
-             margin-top: 6px;
-          }      
-       }
-
-       
-       /* iPad Landscape */
-       @media only screen and (min-width:1024px){           
-          .retina {
-            background-image: url('Retina_landscape.png') !important;
-          }
-              
-          .subscribe {
-            background-image: url('Subscribe_landscape.jpg') !important;
-          }
-          
-          .whowillitbe {
-            background-image: url('Whowillitbe_landscape.jpg') !important;
-          }
-          
-          .banner{                 
-             height: 177px;                 
-          }              
-          .wrapper span.ipad-landscape{
-              display: block;
-          }              
-          
-          .btn{
-             width: 200px;
-             height: 75px;
-             margin-top: 6px;
-          }      
-          
-       }
+         
+      .logo {
+        background-image: url('logo.png') !important;
+      }
+      
+      .subscribe {
+        background-image: url('Subscribe.png') !important;
+      }
+      
+      .preview {
+        background-image: url('FreeSample.png') !important;
+      }
+      
+      .banner{                 
+         height: 237px;              
+      }
+      
+      .wrapper span.ipad-portrait{
+          display: block;
+      }        
+      
        .slide.loading::before {
          content: 'Loading…';
          display: block;
@@ -172,33 +132,42 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
+          <!-- Free preview slide -->
+          <!--
+          	<div class="slide preview"></div>
+          -->
+          
           <!-- Subscribe slide -->
           <div class="slide subscribe">
             <a href="#"></a>
           </div>
           
-          <!-- Retina Instructions slide -->
-          <div class="slide retina"></div>
-          
-          <!-- Who will it be? slide -->
-          <div class="slide whowillitbe"></div>
+          <!-- Print Subsriber slide -->
+          <!--
+          <div class="slide logo">
+            <a href="#" id="banner-link"></a>
+          </div>
+          -->
         </div>
      </div>
    </div>
    
   <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
+    
+    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
+    
     (function() {
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
-
+      
       $(".subscribe a").click(function(evt) {
         evt.preventDefault();
 
         gallery.cancelAutoSlide();
 
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
-        libBanner.buy_sub("com.international.fortune.ipad.inapp.subs.9");
+        libBanner.buy_sub("com.timeinc.people.ipad.subs.6");
       });
     })();
   </script>

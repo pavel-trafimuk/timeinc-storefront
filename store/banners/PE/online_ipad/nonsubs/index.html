@@ -86,8 +86,8 @@
           	background-image: url('Subscribe_portrait.png') !important;
           }
           
-          .hungergames {
-            background-image: url('HG_portrait.png') !important;
+          .holiday {
+            background-image: url('Holiday_portrait.jpg') !important;
           }
           
           .banner{                 
@@ -113,8 +113,8 @@
             background-image: url('Subscribe_landscape.png') !important;
           }
           
-          .hungergames {
-            background-image: url('HG_landscape.png') !important;
+          .holiday {
+            background-image: url('Holiday_landscape.jpg') !important;
           }
           
           .banner{                 
@@ -165,7 +165,7 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <div class="slide hungergames">
+          <div class="slide holiday">
             <a href="#"></a>
           </div>
           <div class="slide subscribe"> <!-- Subscribe slide -->
@@ -190,14 +190,14 @@
         libBanner.buy_sub("com.timeinc.people.ipad.subs.6");
       });
       
-      $(".hungergames a").click(function(evt) {
+      $(".holiday a").click(function(evt) {
         evt.preventDefault();
 
         $(this).parent().addClass("loading");
         gallery.cancelAutoSlide();
 
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
-        libBanner.buy_issue("com.timeinc.people.ipad.inapp.11012013","286100");
+        libBanner.buy_issue("com.timeinc.people.ipad.inapp.12012013","289468");
       });
     })();
   </script>
