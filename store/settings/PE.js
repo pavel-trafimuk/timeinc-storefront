@@ -17,8 +17,8 @@ window.settings = {
 
     "store_show_banners": true,
     "store_banners_type": "buynow", // buynow OR deeplink OR subscribe
-    "store_banner_productId": "com.timeinc.people.ipad.inapp.11012013",
-    "store_banner_dossierId": "286100",
+    "store_banner_productId": "com.timeinc.people.ipad.inapp.12012013",
+    "store_banner_dossierId": "289468",
     
     "storeIssuesBuyBtns": true,
 

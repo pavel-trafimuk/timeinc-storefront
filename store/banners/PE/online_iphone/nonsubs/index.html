@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #d2f3ff;
+          background: #f14b9c;
           margin: 0px;
           padding: 0px;
        }
@@ -82,6 +82,10 @@
         background-image: url('logo.png') !important;
       }
       
+      .subscribe {
+        background-image: url('Subscribe.png') !important;
+      }
+      
       .preview {
         background-image: url('FreeSample.png') !important;
       }
@@ -109,7 +113,7 @@
        }
 
        /* HACK: */
-       .logo { background-color: #e51a2e; } 
+       .retina { background-color: #000; } 
 
        
        
@@ -129,10 +133,21 @@
      <div class="banner carousel">
         <div class="slides">
           <!-- Free preview slide -->
-          <div class="slide preview"></div>
+          <!--
+          	<div class="slide preview"></div>
+          -->
           
-          <!-- Logo slide -->
-          <div class="slide logo"></div>
+          <!-- Subscribe slide -->
+          <div class="slide subscribe">
+            <a href="#"></a>
+          </div>
+          
+          <!-- Print Subsriber slide -->
+          <!--
+          <div class="slide logo">
+            <a href="#" id="banner-link"></a>
+          </div>
+          -->
         </div>
      </div>
    </div>
@@ -145,6 +160,15 @@
     (function() {
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
+      
+      $(".subscribe a").click(function(evt) {
+        evt.preventDefault();
+
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
+        libBanner.buy_sub("com.timeinc.people.ipad.subs.6");
+      });
     })();
   </script>
 
