@@ -90,6 +90,10 @@
             background-image: url('Holiday_portrait.jpg') !important;
           }
           
+          .hungergames {
+            background-image: url('HG_portrait.png') !important;
+          }
+          
           .banner{                 
              height: 237px;              
           }
@@ -113,8 +117,12 @@
             background-image: url('Subscribe_landscape.png') !important;
           }
           
-          .hungergames {
+          .holiday {
             background-image: url('Holiday_landscape.jpg') !important;
+          }
+          
+          .hungergames {
+            background-image: url('HG_landscape.png') !important;
           }
           
           .banner{                 
@@ -168,6 +176,9 @@
           <div class="slide holiday">
             <a href="#"></a>
           </div>
+          <div class="slide hungergames">
+            <a href="#"></a>
+          </div>
         </div>
      </div>
    </div>
@@ -186,6 +197,16 @@
 
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
         libBanner.buy_issue("com.timeinc.people.ipad.inapp.12012013","289468");
+      });
+      
+      $(".hungergames a").click(function(evt) {
+        evt.preventDefault();
+
+        $(this).parent().addClass("loading");
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
+        libBanner.buy_issue("com.timeinc.people.ipad.inapp.11012013","286100");
       });
     })();
   </script>
