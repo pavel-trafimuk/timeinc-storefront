@@ -52,6 +52,7 @@
     eMagsInit: function() {
       if (!settings.eMagsAppId) return;
       EMStart();
+      Backbone.trigger("eMagsReady");
     },
     waitForEMags: function(cb) {
       if (!settings.eMagsAppId) {
