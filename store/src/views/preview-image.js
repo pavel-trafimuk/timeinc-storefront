@@ -1,3 +1,4 @@
+/* global $, App, _, Backbone, Handlebars, settings, TcmOmni */
 (function() {
   App.views.IssuePreviewImage = Backbone.View.extend({
     className: "issue-preview-image",
@@ -7,9 +8,25 @@
       "click .close-btn": "close",
       "swipedown .controls": "close"
     },
-    initialize: function(folio) {
+    initialize: function(folio, get_img_fn) {
       var that = this,
           coverdate = folio.get_coverdate().format("YYYY-MM-DD");
+
+      // Default value for the image is the TOC
+      if (!get_img_fn) {
+        get_img_fn = "http://content.dreader.timeinc.net/issues/preview/"+folio.productId+"/image_vertical.png";
+      }
+
+      // if get_img_fn is a string, wrap it in a getter fn
+      if (!_.isFunction(get_img_fn)) {
+        get_img_fn = (function(img_url) {
+          return function(width, height, is_portrait, cb) {
+            cb(img_url);
+          }
+        })(get_img_fn);
+      }
+      this.get_img = get_img_fn;
+
       this.folio = folio;
       this.render(function() {
         // don't allow multiple image previews at once
@@ -37,7 +54,7 @@
 
       this.get_img(w, h, is_portrait, function(img_url) {
           var cx = {
-            settings: settings, 
+            settings: settings,
             folio: _.bindAll(that.folio),
             portrait: is_portrait,
             img: { width: w, height: h, url: img_url }
@@ -47,13 +64,10 @@
       });
       return this;
     },
-    get_img: function(w, h, p, cb) {
-      cb("http://content.dreader.timeinc.net/issues/preview/"+this.folio.productId+"/image_vertical.png")
-    },
     animate: function(cb) {
       cb = cb || $.noop;
       var h = $(window).height(),
-          $img = this.$(".scrollable img"); 
+          $img = this.$(".scrollable img");
 
       $img.hide();
       this.$(".container")

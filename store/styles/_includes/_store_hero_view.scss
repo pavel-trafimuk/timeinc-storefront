@@ -77,6 +77,10 @@
             }
           }
         }
+        .next-cover,
+        .prev-cover {
+          display: none;
+        }
     }
     .details {
         -webkit-transform: translateZ(0);
