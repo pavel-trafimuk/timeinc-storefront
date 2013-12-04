@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #eaeaea;
+          background: #ffffff;
           margin: 0px;
           padding: 0px;
        }
@@ -68,7 +68,7 @@
           background-size: auto 100%;   
           background-repeat: no-repeat;           
           margin-top: 1em;
-       }
+       }       
        
        
        .pull-left{
@@ -82,16 +82,12 @@
        
        /* iPad Portrait */
        @media only screen and (min-width:768px){           
-          .subscribe {
-          	background-image: url('Subscribe_portrait.png') !important;
+          .plus {
+            background-image: url('GFPlus_portrait.png') !important;
           }
           
-          .holiday {
-            background-image: url('Holiday_portrait.jpg') !important;
-          }
-          
-          .hungergames {
-            background-image: url('HG_portrait.png') !important;
+          .golf {
+          	background-image: url('GF_portrait.png') !important;
           }
           
           .banner{                 
@@ -113,16 +109,12 @@
        
        /* iPad Landscape */
        @media only screen and (min-width:1024px){           
-          .subscribe {
-            background-image: url('Subscribe_landscape.png') !important;
+          .plus {
+            background-image: url('GFPlus_landscape.png') !important;
           }
           
-          .holiday {
-            background-image: url('Holiday_landscape.jpg') !important;
-          }
-          
-          .hungergames {
-            background-image: url('HG_landscape.png') !important;
+          .golf {
+            background-image: url('GF_landscape.png') !important;
           }
           
           .banner{                 
@@ -154,7 +146,8 @@
        }
 
        /* HACK: */
-       .retina { background-color: #000; } 
+       .plus { background-color: #ed1e31; }
+       .golf { background-color: #52a725; }
 
        
        
@@ -173,11 +166,12 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <div class="slide holiday">
-            <a href="#"></a>
-          </div>
-          <div class="slide hungergames">
-            <a href="#"></a>
+          <!-- Golf Plus slide -->
+          <!-- <div class="slide plus"></div> -->
+          
+          <!-- Golf Mag slide -->
+          <div class="slide golf">
+            <a href="https://itunes.apple.com/us/app/golf-magazine/id473058036"></a>
           </div>
         </div>
      </div>
@@ -188,26 +182,6 @@
     (function() {
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
-      
-      $(".holiday a").click(function(evt) {
-        evt.preventDefault();
-
-        $(this).parent().addClass("loading");
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
-        libBanner.buy_issue("com.timeinc.people.ipad.inapp.12012013","289468");
-      });
-      
-      $(".hungergames a").click(function(evt) {
-        evt.preventDefault();
-
-        $(this).parent().addClass("loading");
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
-        libBanner.buy_issue("com.timeinc.people.ipad.inapp.11012013","286100");
-      });
     })();
   </script>
 

@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #eaeaea;
+          background: #ed1e31;
           margin: 0px;
           padding: 0px;
        }
@@ -82,16 +82,8 @@
        
        /* iPad Portrait */
        @media only screen and (min-width:768px){           
-          .subscribe {
-          	background-image: url('Subscribe_portrait.png') !important;
-          }
-          
-          .holiday {
-            background-image: url('Holiday_portrait.jpg') !important;
-          }
-          
-          .hungergames {
-            background-image: url('HG_portrait.png') !important;
+          .offline {
+          	background-image: url('GFPlus_portrait.png') !important;
           }
           
           .banner{                 
@@ -113,16 +105,8 @@
        
        /* iPad Landscape */
        @media only screen and (min-width:1024px){           
-          .subscribe {
-            background-image: url('Subscribe_landscape.png') !important;
-          }
-          
-          .holiday {
-            background-image: url('Holiday_landscape.jpg') !important;
-          }
-          
-          .hungergames {
-            background-image: url('HG_landscape.png') !important;
+          .offline {
+            background-image: url('GFPlus_landscape.png') !important;
           }
           
           .banner{                 
@@ -159,57 +143,17 @@
        
        
     </style>
-
-    <script type="text/javascript" src="../../../lib/jquery.js"></script>
-    <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
-
-    <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
-    <script type="text/javascript" src="../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
-
-    <script type="text/javascript" src="../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script> 
 </head>
 <body>
    
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <div class="slide holiday">
-            <a href="#"></a>
-          </div>
-          <div class="slide hungergames">
-            <a href="#"></a>
-          </div>
+          <!-- Offline slide -->
+          <div class="slide offline"></div>
         </div>
      </div>
    </div>
-   
-  <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript">
-    (function() {
-      var gallery = new libBanner.SlideshowGallery();
-      gallery.enableTouch().slideEvery(5000);
-      
-      $(".holiday a").click(function(evt) {
-        evt.preventDefault();
-
-        $(this).parent().addClass("loading");
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
-        libBanner.buy_issue("com.timeinc.people.ipad.inapp.12012013","289468");
-      });
-      
-      $(".hungergames a").click(function(evt) {
-        evt.preventDefault();
-
-        $(this).parent().addClass("loading");
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
-        libBanner.buy_issue("com.timeinc.people.ipad.inapp.11012013","286100");
-      });
-    })();
-  </script>
 
 </body>
 </html>

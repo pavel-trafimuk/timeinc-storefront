@@ -11,13 +11,13 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #eaeaea;
+          background: #ffffff;
           margin: 0px;
           padding: 0px;
        }
                                 
        .wrapper{
-          width: 1024px;
+          width: 640px;
           margin: 0 auto; 
           text-align: center;
           width: 100%;
@@ -46,7 +46,7 @@
           position: relative;
           
           background-color: transparent;
-          background-position: 50% 50%;
+          background-position: top center;
           background-repeat: no-repeat;
           width: 100%;
           background-size: contain;
@@ -70,7 +70,6 @@
           margin-top: 1em;
        }
        
-       
        .pull-left{
           float: left !important;
        }
@@ -78,67 +77,23 @@
        .pull-right{
           float: right !important;
        }
-        
-       
-       /* iPad Portrait */
-       @media only screen and (min-width:768px){           
-          .subscribe {
-          	background-image: url('Subscribe_portrait.png') !important;
-          }
-          
-          .holiday {
-            background-image: url('Holiday_portrait.jpg') !important;
-          }
-          
-          .hungergames {
-            background-image: url('HG_portrait.png') !important;
-          }
-          
-          .banner{                 
-             height: 237px;              
-          }
-          
-          .wrapper span.ipad-portrait{
-              display: block;
-          }        
-          
-          
-           .btn{
-             width: 200px;
-             height: 100px;
-             margin-top: 6px;
-          }      
-       }
-
-       
-       /* iPad Landscape */
-       @media only screen and (min-width:1024px){           
-          .subscribe {
-            background-image: url('Subscribe_landscape.png') !important;
-          }
-          
-          .holiday {
-            background-image: url('Holiday_landscape.jpg') !important;
-          }
-          
-          .hungergames {
-            background-image: url('HG_landscape.png') !important;
-          }
-          
-          .banner{                 
-             height: 177px;                 
-          }              
-          .wrapper span.ipad-landscape{
-              display: block;
-          }              
-          
-          .btn{
-             width: 200px;
-             height: 75px;
-             margin-top: 6px;
-          }      
-          
-       }
+         
+      .plus {
+        background-image: url('GFPlus_iphone.png') !important;
+      }
+      
+      .si {
+        background-image: url('SI_iphone.png') !important;
+      }
+      
+      .banner{                 
+         height: 237px;              
+      }
+      
+      .wrapper span.ipad-portrait{
+          display: block;
+      }        
+      
        .slide.loading::before {
          content: 'Loading…';
          display: block;
@@ -154,7 +109,8 @@
        }
 
        /* HACK: */
-       .retina { background-color: #000; } 
+       .plus { background-color: #ed1e31; } 
+       .si { background-color: #003469; } 
 
        
        
@@ -173,11 +129,12 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <div class="slide holiday">
-            <a href="#"></a>
-          </div>
-          <div class="slide hungergames">
-            <a href="#"></a>
+          <!-- Golf Plus slide -->
+          <!-- <div class="slide plus"></div> -->
+          
+          <!-- SI Mag slide -->
+          <div class="slide si">
+            <a href="https://itunes.apple.com/us/app/sports-illustrated-magazine/id377306642"></a>
           </div>
         </div>
      </div>
@@ -188,26 +145,6 @@
     (function() {
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
-      
-      $(".holiday a").click(function(evt) {
-        evt.preventDefault();
-
-        $(this).parent().addClass("loading");
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
-        libBanner.buy_issue("com.timeinc.people.ipad.inapp.12012013","289468");
-      });
-      
-      $(".hungergames a").click(function(evt) {
-        evt.preventDefault();
-
-        $(this).parent().addClass("loading");
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
-        libBanner.buy_issue("com.timeinc.people.ipad.inapp.11012013","286100");
-      });
     })();
   </script>
 
