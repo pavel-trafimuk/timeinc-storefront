@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #262626;
+          background: #ffffff;
           margin: 0px;
           padding: 0px;
        }
@@ -80,6 +80,9 @@
          
       .logo {
         background-image: url('logo.png') !important;
+        background-size: 90%;
+        background-position: center center;
+        background-color: #009caa;
       }
       
       .subscribe {
@@ -112,9 +115,6 @@
          top: 0; right: 0; bottom: 0; left: 0;
        }
 
-       /* HACK: */
-       .retina { background-color: #000; } 
-
        
        
     </style>
@@ -136,14 +136,16 @@
           <!--<div class="slide preview"></div>-->
           
           <!-- Subscribe slide -->
-          <!--<div class="slide subscribe">
+          <div class="slide subscribe">
             <a href="#"></a>
-          </div>-->
+          </div>
           
           <!-- Print Subsriber slide -->
+          <!--
           <div class="slide logo">
             <a href="#" id="banner-link"></a>
           </div>
+          -->
         </div>
      </div>
    </div>
@@ -163,7 +165,7 @@
         gallery.cancelAutoSlide();
 
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
-        libBanner.buy_sub("com.timeinc.si.ipad.subs.9");
+        libBanner.buy_sub("com.timeinc.realsimple.ipad.subs.9");
       });
     })();
   </script>
