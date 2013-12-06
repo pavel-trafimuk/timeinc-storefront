@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #d2f3ff;
+          background: #ffffff;
           margin: 0px;
           padding: 0px;
        }
@@ -80,6 +80,13 @@
          
       .logo {
         background-image: url('logo.png') !important;
+        background-size: 90%;
+        background-position: center center;
+        background-color: #009caa;
+      }
+      
+      .subscribe {
+        background-image: url('Subscribe.png') !important;
       }
       
       .preview {
@@ -108,9 +115,6 @@
          top: 0; right: 0; bottom: 0; left: 0;
        }
 
-       /* HACK: */
-       .logo { background-color: #e51a2e; } 
-
        
        
     </style>
@@ -129,22 +133,40 @@
      <div class="banner carousel">
         <div class="slides">
           <!-- Free preview slide -->
-          <div class="slide preview"></div>
+          <!--<div class="slide preview"></div>-->
           
-          <!-- Logo slide -->
-          <div class="slide logo"></div>
+          <!-- Subscribe slide -->
+          <div class="slide subscribe">
+            <a href="#"></a>
+          </div>
+          
+          <!-- Print Subsriber slide -->
+          <!--
+          <div class="slide logo">
+            <a href="#" id="banner-link"></a>
+          </div>
+          -->
         </div>
      </div>
    </div>
    
-  <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
     
-    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
+    //document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
     
     (function() {
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
+      
+      $(".subscribe a").click(function(evt) {
+        evt.preventDefault();
+
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
+        libBanner.buy_sub("com.timeinc.realsimple.ipad.subs.9");
+      });
     })();
   </script>
 

@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #d2f3ff;
+          background: #ffffff;
           margin: 0px;
           padding: 0px;
        }
@@ -78,12 +78,12 @@
           float: right !important;
        }
          
-      .logo {
-        background-image: url('logo.png') !important;
+      .plus {
+        background-image: url('GFPlus_iphone.png') !important;
       }
       
-      .preview {
-        background-image: url('FreeSample.png') !important;
+      .si {
+        background-image: url('SI_iphone.png') !important;
       }
       
       .banner{                 
@@ -109,7 +109,8 @@
        }
 
        /* HACK: */
-       .logo { background-color: #e51a2e; } 
+       .plus { background-color: #ed1e31; } 
+       .si { background-color: #003469; } 
 
        
        
@@ -128,20 +129,19 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <!-- Free preview slide -->
-          <div class="slide preview"></div>
+          <!-- Golf Plus slide -->
+          <!-- <div class="slide plus"></div> -->
           
-          <!-- Logo slide -->
-          <div class="slide logo"></div>
+          <!-- SI Mag slide -->
+          <div class="slide si">
+            <a href="https://itunes.apple.com/us/app/sports-illustrated-magazine/id377306642"></a>
+          </div>
         </div>
      </div>
    </div>
    
   <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
-    
-    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
-    
     (function() {
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);

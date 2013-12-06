@@ -11,13 +11,13 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #d2f3ff;
+          background: #ffffff;
           margin: 0px;
           padding: 0px;
        }
                                 
        .wrapper{
-          width: 640px;
+          width: 1024px;
           margin: 0 auto; 
           text-align: center;
           width: 100%;
@@ -46,7 +46,7 @@
           position: relative;
           
           background-color: transparent;
-          background-position: top center;
+          background-position: 50% 50%;
           background-repeat: no-repeat;
           width: 100%;
           background-size: contain;
@@ -68,7 +68,8 @@
           background-size: auto 100%;   
           background-repeat: no-repeat;           
           margin-top: 1em;
-       }
+       }       
+       
        
        .pull-left{
           float: left !important;
@@ -77,23 +78,59 @@
        .pull-right{
           float: right !important;
        }
-         
-      .logo {
-        background-image: url('logo.png') !important;
-      }
-      
-      .preview {
-        background-image: url('FreeSample.png') !important;
-      }
-      
-      .banner{                 
-         height: 237px;              
-      }
-      
-      .wrapper span.ipad-portrait{
-          display: block;
-      }        
-      
+        
+       
+       /* iPad Portrait */
+       @media only screen and (min-width:768px){           
+          .plus {
+            background-image: url('GFPlus_portrait.png') !important;
+          }
+          
+          .golf {
+          	background-image: url('GF_portrait.png') !important;
+          }
+          
+          .banner{                 
+             height: 237px;              
+          }
+          
+          .wrapper span.ipad-portrait{
+              display: block;
+          }        
+          
+          
+           .btn{
+             width: 200px;
+             height: 100px;
+             margin-top: 6px;
+          }      
+       }
+
+       
+       /* iPad Landscape */
+       @media only screen and (min-width:1024px){           
+          .plus {
+            background-image: url('GFPlus_landscape.png') !important;
+          }
+          
+          .golf {
+            background-image: url('GF_landscape.png') !important;
+          }
+          
+          .banner{                 
+             height: 177px;                 
+          }              
+          .wrapper span.ipad-landscape{
+              display: block;
+          }              
+          
+          .btn{
+             width: 200px;
+             height: 75px;
+             margin-top: 6px;
+          }      
+          
+       }
        .slide.loading::before {
          content: 'Loading…';
          display: block;
@@ -109,7 +146,8 @@
        }
 
        /* HACK: */
-       .logo { background-color: #e51a2e; } 
+       .plus { background-color: #ed1e31; }
+       .golf { background-color: #52a725; }
 
        
        
@@ -128,20 +166,19 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <!-- Free preview slide -->
-          <div class="slide preview"></div>
+          <!-- Golf Plus slide -->
+          <!-- <div class="slide plus"></div> -->
           
-          <!-- Logo slide -->
-          <div class="slide logo"></div>
+          <!-- Golf Mag slide -->
+          <div class="slide golf">
+            <a href="https://itunes.apple.com/us/app/golf-magazine/id473058036"></a>
+          </div>
         </div>
      </div>
    </div>
    
   <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
-    
-    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
-    
     (function() {
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);

@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #d2f3ff;
+          background: #ffffff;
           margin: 0px;
           padding: 0px;
        }
@@ -80,6 +80,9 @@
          
       .logo {
         background-image: url('logo.png') !important;
+        background-size: 90%;
+        background-position: center center;
+        background-color: #009caa;
       }
       
       .preview {
@@ -108,9 +111,6 @@
          top: 0; right: 0; bottom: 0; left: 0;
        }
 
-       /* HACK: */
-       .logo { background-color: #e51a2e; } 
-
        
        
     </style>
@@ -129,7 +129,7 @@
      <div class="banner carousel">
         <div class="slides">
           <!-- Free preview slide -->
-          <div class="slide preview"></div>
+          <!--<div class="slide preview"></div>-->
           
           <!-- Logo slide -->
           <div class="slide logo"></div>
@@ -137,11 +137,8 @@
      </div>
    </div>
    
-  <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
-    
-    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
-    
     (function() {
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
