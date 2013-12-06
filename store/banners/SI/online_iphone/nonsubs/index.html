@@ -80,6 +80,7 @@
          
       .logo {
         background-image: url('logo.png') !important;
+        background-color: #e51a2e;
       }
       
       .subscribe {
@@ -110,10 +111,7 @@
          text-align: center;
          position: absolute;
          top: 0; right: 0; bottom: 0; left: 0;
-       }
-
-       /* HACK: */
-       .retina { background-color: #000; } 
+       } 
 
        
        
@@ -133,12 +131,12 @@
      <div class="banner carousel">
         <div class="slides">
           <!-- Free preview slide -->
-          <!--<div class="slide preview"></div>-->
+          <div class="slide preview"></div>
           
           <!-- Subscribe slide -->
-          <!--<div class="slide subscribe">
+          <div class="slide subscribe">
             <a href="#"></a>
-          </div>-->
+          </div>
           
           <!-- Print Subsriber slide -->
           <div class="slide logo">
@@ -148,7 +146,7 @@
      </div>
    </div>
    
-  <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
     
     document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
