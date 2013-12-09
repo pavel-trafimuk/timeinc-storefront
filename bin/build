@@ -147,8 +147,11 @@ END
 
   cp -r $DEVDIR/myaccount $DEPLOYDIR
   
+  cp -r $DEVDIR/autologin $DEPLOYDIR
+  
   render_in_place "$DEPLOYDIR/lucie-library.html"
   render_in_place "$DEPLOYDIR/myaccount/index.html"
+  render_in_place "$DEPLOYDIR/autologin/index.html"
   render_in_place "$DEPLOYDIR/myaccount/restoreissues.html"
   render_in_place "$DEPLOYDIR/myaccount/restoreissues.es.html"
 }
