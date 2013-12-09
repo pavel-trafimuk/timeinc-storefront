@@ -1,4 +1,4 @@
-
+/* global Backbone, async, $, App, console, settings, EMPurchase, EMGetCurrentCampaignID */
 Backbone.on("ApiReady", function() {
 
   // tracking for Subscriptions and SingleCopy sales. "FreeSample" not yet implemented
@@ -28,7 +28,7 @@ Backbone.on("ApiReady", function() {
       price = price.replace(/[^\d\.]/gi, "");
 
       console.log("tracking eMags Purchase", evt_type, product_id, price);
-      EMPurchase(evt_type, product_id, price, 
+      EMPurchase(evt_type, product_id, price,
           undefined, // currency
           undefined, // count
           undefined, // category
@@ -41,25 +41,32 @@ Backbone.on("ApiReady", function() {
 
 });
 
-
-Backbone.on("AppReady", function() {
-  //var tracked_campaigns = JSON.parse(localStorage.trackedEmagsCampaignIds || "[]");
-  EMGetCurrentCampaignID(
-    function(campaign_id) { // Campaign ID Found
-      // if (tracked_campaigns.indexOf(campaign_id) >= 0) return;
-      // tracked_campaigns.push(campaign_id);
-      // localStorage.trackedEmagsCampaignIds = JSON.stringify(tracked_campaigns);
-
-      App.api.analyticsService.trackCustomEvent("customEvent5", {
-        customVariable5: campaign_id
-      });
+async.parallel([
+    function(cb) {
+      Backbone.on("AppReady", function() { cb(null) });
     },
-    function() { // No Campaign ID found
-      console.log("campaignid: [NONE]");
-      // do nothing
-    },
-    function(err) { // Error
-      App.error("EMagsError", "GetCurrentCampaignID had error: " + err);
+    function(cb) {
+      Backbone.on("eMagsReady", function() { cb(null) });
     }
-  );
+  ],
+  function() {
+    //var tracked_campaigns = JSON.parse(localStorage.trackedEmagsCampaignIds || "[]");
+    EMGetCurrentCampaignID(
+      function(campaign_id) { // Campaign ID Found
+        // if (tracked_campaigns.indexOf(campaign_id) >= 0) return;
+        // tracked_campaigns.push(campaign_id);
+        // localStorage.trackedEmagsCampaignIds = JSON.stringify(tracked_campaigns);
+
+        App.api.analyticsService.trackCustomEvent("customEvent5", {
+          customVariable5: campaign_id
+        });
+      },
+      function() { // No Campaign ID found
+        console.log("campaignid: [NONE]");
+        // do nothing
+      },
+      function(err) { // Error
+        App.error("EMagsError", "GetCurrentCampaignID had error: " + err);
+      }
+    );
 });
