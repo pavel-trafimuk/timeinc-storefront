@@ -1,3 +1,4 @@
+/* global DEBUG, REPL, Backbone, App, settings, TcmOmni, EMStart, EMSetEventQueueCallback, EMForceFlush */
 /* Dependencies:
  *  - tcm_devtools (jquery, backbone -> underscore, settings)
  *  - backbone (underscore, jquery)
@@ -16,7 +17,7 @@
         if (!DEBUG) return;
         var repl = new REPL();
         repl.render().$el.appendTo("body");
-        setTimeout(function() { repl.start() }, 200); 
+        setTimeout(function() { repl.start() }, 200);
       },
       reload: function() {
         window.location.reload(true);
@@ -51,6 +52,7 @@
     eMagsInit: function() {
       if (!settings.eMagsAppId) return;
       EMStart();
+      Backbone.trigger("eMagsReady");
     },
     waitForEMags: function(cb) {
       if (!settings.eMagsAppId) {

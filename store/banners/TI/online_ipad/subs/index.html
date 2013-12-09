@@ -3,174 +3,207 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <style>
-           body{
-              background: #eaeaea;
-              margin: 0px;
-              padding: 0px;
-           }
-                                    
-           .wrapper{
-              width: 1024px;
-              margin: 0 auto; 
-              text-align: center;
-              width: 100%;
-           }
-           
-           .wrapper span{
-               display: none;
-               padding-top: 4em;
-               font: 16px/20px sans-serif;
-               color: grey;
-           }
-           
-           .carousel{
-              overflow: hidden;
-           }
-           
-           
-           .slides{
-              height: 100%;              
-              -webkit-transition: all 1s;
-           }
-           
-           .slide{
-              height: 100%;
-              float: left;
-              position: relative;
-              
-              background-color: transparent;
-              background-position: 50% 50%;
-              background-repeat: repeat-x;
-              width: 100%;
-              background-size: auto 100%;
-          }
-          .subscribe a {
-            display: block; position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-          }
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <style>
+       body{
+          background: #eaeaea;
+          margin: 0px;
+          padding: 0px;
+       }
+                                
+       .wrapper{
+          width: 1024px;
+          margin: 0 auto; 
+          text-align: center;
+          width: 100%;
+       }
+       
+       .wrapper span{
+           display: none;
+           padding-top: 4em;
+           font: 16px/20px sans-serif;
+           color: grey;
+       }
+       
+       .carousel{
+          overflow: hidden;
+       }
+       
+       
+       .slides{
+          height: 100%;              
+          -webkit-transition: all 1s;
+       }
+       
+       .slide{
+          height: 100%;
+          float: left;
+          position: relative;
+          
+          background-color: transparent;
+          background-position: 50% 50%;
+          background-repeat: no-repeat;
+          width: 100%;
+          background-size: contain;
+      }
+      .slide a {
+        display: block;
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+      }
 
-           
-           .btn-group{
-              margin: 0 auto;
-              padding-top: 10px;              
-              width: 95%;
-           }
-           
+       
+       .btn-group{
+          margin: 0 auto;
+          padding-top: 10px;              
+          width: 95%;
+       }
+       
+       .btn{
+          background-size: auto 100%;   
+          background-repeat: no-repeat;           
+          margin-top: 1em;
+       }       
+       
+       
+       .pull-left{
+          float: left !important;
+       }
+       
+       .pull-right{
+          float: right !important;
+       }
+        
+       
+       /* iPad Portrait */
+       @media only screen and (min-width:768px){           
+          .bigissues {
+            background-image: url('BigIssues_portrait.png?v={{BUILD_TIME}}') !important;
+          }
+          
+          .poy {
+            background-image: url('POY_portrait.png?v={{BUILD_TIME}}') !important;
+          }
+          
+          .mandela {
+            background-image: url('NM_portrait.jpg?v={{BUILD_TIME}}') !important;
+          }
+          
+          .banner{                 
+             height: 237px;              
+          }
+          
+          .wrapper span.ipad-portrait{
+              display: block;
+          }        
+          
+          
            .btn{
-              background-size: auto 100%;   
-              background-repeat: no-repeat;           
-              margin-top: 1em;
-           }
-           
-           .btn.pull-left{
-               background-image: url('Retina_LeftButton.png');
-               
-           }
-           
-          .btn.pull-right{
-               background-image: url('Retina_RightButton.png');
-               background-position-x: 100%;
-           }
-           
-           
-           
-           .pull-left{
-              float: left !important;
-           }
-           
-           .pull-right{
-              float: right !important;
-           }
-            
-           
-           /* iPad Portrait */
-           @media only screen and (min-width:768px){           
-              .retina {
-                background-image: url('Retina_portrait.png') !important;
-              }
-              
-              .bigissues {
-                background-image: url('BigIssues_portrait.png') !important;
-              }
-              
-              .poy {
-                background-image: url('POY_portrait.png') !important;
-              }
-              
-              .banner{                 
-                 height: 237px;              
-              }
-              
-              .wrapper span.ipad-portrait{
-                  display: block;
-              }        
-              
-              
-               .btn{
-                 width: 200px;
-                 height: 100px;
-                 margin-top: 6px;
-              }      
-           }
+             width: 200px;
+             height: 100px;
+             margin-top: 6px;
+          }      
+       }
 
-           
-           /* iPad Landscape */
-           @media only screen and (min-width:1024px){           
-              .retina {
-                background-image: url('Retina_landscape.jpg') !important;
-              }
-              
-              .bigissues {
-                background-image: url('BigIssues_landscape.png') !important;
-              }
-              
-              .poy {
-                background-image: url('POY_landscape.png') !important;
-              }
-              
-              .banner{                 
-                 height: 177px;                 
-              }              
-              .wrapper span.ipad-landscape{
-                  display: block;
-              }              
-              
-              .btn{
-                 width: 200px;
-                 height: 75px;
-                 margin-top: 6px;
-              }      
-              
-           }
-           
+       
+       /* iPad Landscape */
+       @media only screen and (min-width:1024px){           
+          .bigissues {
+            background-image: url('BigIssues_landscape.png?v={{BUILD_TIME}}') !important;
+          }
+          
+          .poy {
+            background-image: url('POY_landscape.png?v={{BUILD_TIME}}') !important;
+          }
+          
+          .mandela {
+            background-image: url('NM_landscape.jpg?v={{BUILD_TIME}}') !important;
+          }
+          
+          .banner{                 
+             height: 177px;                 
+          }              
+          .wrapper span.ipad-landscape{
+              display: block;
+          }              
+          
+          .btn{
+             width: 200px;
+             height: 75px;
+             margin-top: 6px;
+          }      
+          
+       }
+       .slide.loading::before {
+         content: 'Loading…';
+         display: block;
+         color: #fff;
+         line-height: 170px;
+         font-size: 20px;
+         font-weight: bold;
+         font-family: helvetica, sans-serif;
+         background: rgba(0,0,0,0.7);
+         text-align: center;
+         position: absolute;
+         top: 0; right: 0; bottom: 0; left: 0;
+       }
 
-           
-           
-           
-        </style>    
-    </head>
-    <body>
-       
-       <div class="wrapper">
-         <div class="banner carousel">
-            <div class="slides">
-              <div class="slide poy"></div>
-              <div class="slide bigissues"></div>
-              <div class="slide retina"></div>
-            </div>
-         </div>
-       </div>
-       
-       
-       
-      <script src="script.js"></script>
+       /* HACK: */
+       .retina { background-color: #000; } 
 
-    </body>
+       
+       
+    </style>
+
+    <script type="text/javascript" src="../../../lib/jquery.js"></script>
+    <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
+
+    <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
+    <script type="text/javascript" src="../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
+
+    <script type="text/javascript" src="../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script> 
+</head>
+<body>
+   
+   <div class="wrapper">
+     <div class="banner carousel">
+        <div class="slides">
+          <!-- POY slide -->
+          <div class="slide poy"></div>
+          
+          <!-- Nelson Mandela slide -->
+          <div class="slide mandela">
+          	<a href="#"></a>
+          </div>
+          
+          <!-- Big Issues slide -->
+          <!-- <div class="slide bigissues"></div>-->
+        </div>
+     </div>
+   </div>
+   
+  <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript">
+    (function() {
+      var gallery = new libBanner.SlideshowGallery();
+      gallery.enableTouch().slideEvery(5000);
+      
+      $(".mandela a").click(function(evt) {
+        evt.preventDefault();
+
+        $(this).parent().addClass("loading");
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
+        libBanner.buy_issue("com.timeinc.ipad.tahk.12062013","237435");
+      });
+    })();
+  </script>
+
+</body>
 </html>
