@@ -27,7 +27,7 @@ window.settings = {
     "max_back_issues"            : 20,
 
     "eMagsAppId": "EW2332",
-    "preview_issue_product_id": "com.timeinc.ew.ipad.inapp.11142013.FREE",
+    "preview_issue_product_id": "com.timeinc.ew.ipad.inapp.FREESAMPLE",
 
     "omniture_account"           : "timagewmagnk",
     "omniture_server"            : "timeinc.122.2o7.net",
