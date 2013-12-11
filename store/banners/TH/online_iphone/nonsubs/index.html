@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #eaeaea;
+          background: #003469;
           margin: 0px;
           padding: 0px;
        }
@@ -78,20 +78,9 @@
        .pull-right{
           float: right !important;
        }
-        
-       
-       /* iPad Portrait */
-       @media only screen and (min-width:768px){           
-          .bigissues {
-            background-image: url('BigIssues_portrait.png?v={{BUILD_TIME}}') !important;
-          }
-          
-          .poy {
-            background-image: url('POY_portrait.png?v={{BUILD_TIME}}') !important;
-          }
-          
-          .mandela {
-            background-image: url('NM_portrait.jpg?v={{BUILD_TIME}}') !important;
+         
+          .print {
+          	background-image: url('PrintSubscriber.png') !important;
           }
           
           .banner{                 
@@ -107,38 +96,8 @@
              width: 200px;
              height: 100px;
              margin-top: 6px;
-          }      
-       }
-
-       
-       /* iPad Landscape */
-       @media only screen and (min-width:1024px){           
-          .bigissues {
-            background-image: url('BigIssues_landscape.png?v={{BUILD_TIME}}') !important;
           }
           
-          .poy {
-            background-image: url('POY_landscape.png?v={{BUILD_TIME}}') !important;
-          }
-          
-          .mandela {
-            background-image: url('NM_landscape.jpg?v={{BUILD_TIME}}') !important;
-          }
-          
-          .banner{                 
-             height: 177px;                 
-          }              
-          .wrapper span.ipad-landscape{
-              display: block;
-          }              
-          
-          .btn{
-             width: 200px;
-             height: 75px;
-             margin-top: 6px;
-          }      
-          
-       }
        .slide.loading::before {
          content: 'Loading…';
          display: block;
@@ -173,37 +132,25 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <!-- POY slide -->
-          <div class="slide poy"></div>
           
-          <!-- Nelson Mandela slide -->
-          <div class="slide mandela">
-          	<a href="#"></a>
+          <!-- Print Subscriber slide -->
+          <div class="slide print">
+          	<a href="#" id="banner-link"></a>
           </div>
           
-          <!-- Big Issues slide -->
-          <!-- <div class="slide bigissues"></div>-->
         </div>
      </div>
    </div>
    
-  <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
+    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
+    
     (function() {
-      libBanner.track_pageview("Library|Banner|Subscriber");
+      libBanner.track_pageview("Library|Banner|Nonsubscriber");
       
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
-      
-      $(".mandela a").click(function(evt) {
-        evt.preventDefault();
-
-        $(this).parent().addClass("loading");
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_buynow");
-        libBanner.buy_issue("com.timeinc.ipad.tahk.12062013","237435");
-      });
     })();
   </script>
 

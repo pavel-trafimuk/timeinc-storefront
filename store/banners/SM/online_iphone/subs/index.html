@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #ffffff;
+          background: #009caa;
           margin: 0px;
           padding: 0px;
        }
@@ -81,12 +81,7 @@
       .logo {
         background-image: url('logo.png') !important;
         background-size: 90%;
-        background-position: center center;
-        background-color: #009caa;
-      }
-      
-      .preview {
-        background-image: url('FreeSample.png') !important;
+        margin-top: 20px;
       }
       
       .banner{                 
@@ -111,6 +106,9 @@
          top: 0; right: 0; bottom: 0; left: 0;
        }
 
+       /* HACK: */
+       .retina { background-color: #000; } 
+
        
        
     </style>
@@ -127,10 +125,7 @@
    
    <div class="wrapper">
      <div class="banner carousel">
-        <div class="slides">
-          <!-- Free preview slide -->
-          <!--<div class="slide preview"></div>-->
-          
+        <div class="slides">          
           <!-- Logo slide -->
           <div class="slide logo"></div>
         </div>
@@ -138,8 +133,10 @@
    </div>
    
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript">
+  <script type="text/javascript">    
     (function() {
+      libBanner.track_pageview("Library|Banner|Subscriber");
+      
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
     })();
