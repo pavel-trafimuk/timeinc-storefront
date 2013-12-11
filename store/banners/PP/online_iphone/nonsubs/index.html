@@ -4,8 +4,7 @@
   <title>Subscription Banner</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi"/>
-  <script src="../../../settings/{{MAG_CODE}}.js" type="text/javascript"></script>
-  <script src="../../../settings/settings_loader.js" type="text/javascript"></script>
+
   <style>
     /* Banner CSS for iOS iPad devices with horz/vert orientations */
     html, body {
@@ -39,12 +38,26 @@
         background-color: #e51a2e;
     }
   </style>
+
+  <script type="text/javascript" src="../../../lib/jquery.js"></script>
+  <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
+  <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
+  <script type="text/javascript" src="../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
+  <script type="text/javascript" src="../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script>
+
 </head>
  
 <body>
   <div id="banner"><a id="banner-link"></a></div>
-  <script>
-    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
+  <script type="text/javascript">
+    (function() {
+      libBanner.track_page_view("Library|Banner|Nonsubscriber");
+      $("#banner-link")
+        .attr("href", settings.popupActivateButtonUrlIphone)
+        .click(function() {
+          libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_register");
+        });
+    })();
   </script>
 </body>
 </html>
