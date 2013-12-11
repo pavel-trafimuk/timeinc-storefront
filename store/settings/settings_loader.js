@@ -24,6 +24,11 @@
         
         // eMags will not track without the App ID
         "eMagsAppId": "",
+
+        // Sample/Preview Issue ID - will override the default behavior
+        // of putting the latest issue in the hero (which would be the
+        // sample issue without this setting).
+        "preview_issue_product_id": "",
         
 
         // ************************************************************  
