@@ -17,7 +17,7 @@
        }
                                 
        .wrapper{
-          width: 1024px;
+          width: 640px;
           margin: 0 auto; 
           text-align: center;
           width: 100%;
@@ -46,7 +46,7 @@
           position: relative;
           
           background-color: transparent;
-          background-position: 50% 50%;
+          background-position: top center;
           background-repeat: no-repeat;
           width: 100%;
           background-size: contain;
@@ -68,8 +68,7 @@
           background-size: auto 100%;   
           background-repeat: no-repeat;           
           margin-top: 1em;
-       }       
-       
+       }
        
        .pull-left{
           float: left !important;
@@ -78,51 +77,26 @@
        .pull-right{
           float: right !important;
        }
-        
-       
-       /* iPad Portrait */
-       @media only screen and (min-width:768px){           
-          .subscribe {
-            background-image: url('Subscribe.png') !important;
-          }
-          
-          .banner{                 
-             height: 237px;              
-          }
-          
-          .wrapper span.ipad-portrait{
-              display: block;
-          }        
-          
-          
-           .btn{
-             width: 200px;
-             height: 100px;
-             margin-top: 6px;
-          }      
-       }
-
-       
-       /* iPad Landscape */
-       @media only screen and (min-width:1024px){           
-          .subscribe {
-            background-image: url('Subscribe.png') !important;
-          }
-          
-          .banner{                 
-             height: 177px;                 
-          }              
-          .wrapper span.ipad-landscape{
-              display: block;
-          }              
-          
-          .btn{
-             width: 200px;
-             height: 75px;
-             margin-top: 6px;
-          }      
-          
-       }
+         
+      .logo {
+        background-image: url('logo.png') !important;
+        background-size: 90%;
+        background-position: center center;
+        background-color: #009caa;
+      }
+      
+      .preview {
+        background-image: url('FreeSample.png') !important;
+      }
+      
+      .banner{                 
+         height: 237px;              
+      }
+      
+      .wrapper span.ipad-portrait{
+          display: block;
+      }        
+      
        .slide.loading::before {
          content: 'Loading…';
          display: block;
@@ -136,9 +110,6 @@
          position: absolute;
          top: 0; right: 0; bottom: 0; left: 0;
        }
-
-       /* HACK: */
-       .retina { background-color: #000; } 
 
        
        
@@ -157,32 +128,22 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
+          <!-- Free preview slide -->
+          <!--<div class="slide preview"></div>-->
           
-          <!-- Subscribe slide -->
-          <div class="slide subscribe">
-          	<a href="#"></a>
-          </div>
-          
+          <!-- Logo slide -->
+          <div class="slide logo"></div>
         </div>
      </div>
    </div>
    
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript">    
+  <script type="text/javascript">
     (function() {
-      libBanner.track_pageview("Library|Banner|Nonsubscriber");
+      libBanner.track_pageview("Library|Banner|Subscriber");
       
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
-      
-      $(".subscribe a").click(function(evt) {
-        evt.preventDefault();
-
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
-        libBanner.buy_sub("com.timeinc.realsimple.ipad.subs.9");
-      });
     })();
   </script>
 
