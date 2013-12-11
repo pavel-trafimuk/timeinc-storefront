@@ -149,35 +149,13 @@
            
         </style>    
         <script type="text/javascript" src="../../../lib/jquery.js"></script>
-
         <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js"></script>
-        <!-- script type="text/javascript" src="../../../lib/MockAPI.js"></script -->
 
         <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js"></script> 
         <script type="text/javascript" src="../../../settings/settings_loader.js"></script> 
 
         <script type="text/javascript" src="../../../lib/lucie_entitlements.js"></script> 
 
-        <script type="text/javascript">
-          (function() {
-            var api = (typeof adobeDPS == "undefined") ? MockAPI : adobeDPS;
-            var buy_sub = function() { setTimeout(buy_sub, 500) };
-
-            $(function() {
-              $(".subscribe a").click(function() {
-                buy_sub();
-                return false;
-              });
-            });
-
-            api.initializationComplete.addOnce(function() {
-              buy_sub = function() {
-                api.receiptService.availableSubscriptions["com.timeinc.money.ipad.subs.9"].purchase();
-              }
-            });
-
-          })();
-        </script>
     </head>
     <body>
        
@@ -197,9 +175,24 @@
          </div>
        </div>
        
-       
-       
-      <script src="script.js"></script>
+    <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+    <script type="text/javascript">
+      (function() {
+        var gallery = new libBanner.SlideshowGallery();
+        gallery.enableTouch().slideEvery(5000);
 
-    </body>
+        libBanner.track_page_view("Library|Banner|Nonsubscriber");
+
+        $(function() {
+          $(".subscribe a").click(function() {
+            gallery.cancelAutoSlide();
+            libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
+            libBanner.buy_sub("com.timeinc.money.ipad.subs.9");
+            return false;
+          });
+        });
+      })();
+      
+    </script>
+  </body>
 </html>
