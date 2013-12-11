@@ -78,12 +78,9 @@
        .pull-right{
           float: right !important;
        }
-        
-       
-       /* iPad Portrait */
-       @media only screen and (min-width:768px){           
-          .logo {
-          	background-image: url('logo.png') !important;
+         
+          .print {
+          	background-image: url('PrintSubscriber.png') !important;
           }
           
           .banner{                 
@@ -99,30 +96,8 @@
              width: 200px;
              height: 100px;
              margin-top: 6px;
-          }      
-       }
-
-       
-       /* iPad Landscape */
-       @media only screen and (min-width:1024px){           
-          .logo {
-            background-image: url('logo.png') !important;
           }
           
-          .banner{                 
-             height: 177px;                 
-          }              
-          .wrapper span.ipad-landscape{
-              display: block;
-          }              
-          
-          .btn{
-             width: 200px;
-             height: 75px;
-             margin-top: 6px;
-          }      
-          
-       }
        .slide.loading::before {
          content: 'Loading…';
          display: block;
@@ -158,8 +133,10 @@
      <div class="banner carousel">
         <div class="slides">
           
-          <!-- Logo slide -->
-          <div class="slide logo"></div>
+          <!-- Print Subscriber slide -->
+          <div class="slide print">
+          	<a href="#" id="banner-link"></a>
+          </div>
           
         </div>
      </div>
@@ -167,8 +144,10 @@
    
   <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
+    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
+    
     (function() {
-      libBanner.track_pageview("Library|Banner|Subscriber");
+      libBanner.track_pageview("Library|Banner|Nonsubscriber");
       
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
