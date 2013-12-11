@@ -55,10 +55,19 @@
         background-color: #ee4d9b;
     }
   </style>
-</head>
  
+  <script type="text/javascript" src="../../../lib/jquery.js"></script>
+  <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
+  <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
+  <script type="text/javascript" src="../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
+</head>
 <body>
   <div id="banner"></div>
+  
+  <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript">
+    libBanner.track_pageview("Library|Banner|Subscriber");
+  </script>
 </body>
 </html>
 
