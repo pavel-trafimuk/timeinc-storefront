@@ -153,7 +153,7 @@
     document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
     
     (function() {
-      libBanner.track_pageview("Library|Banner|Nonsubscriber");
+      libBanner.track_page_view("Library|Banner|Nonsubscriber");
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
       
@@ -165,16 +165,6 @@
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
         libBanner.buy_sub("com.timeinc.essence.ipad.subs.9");
       });
-      
-      // Tap to open free sample (if they want it)
-      /*$(".preview a").click(function(evt) {
-        evt.preventDefault();
-
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_freesample");
-        libBanner.buy_issue("com.timeinc.allyou.ipad.inapp.10312013","11101");
-      });*/
     })();
   </script>
 
