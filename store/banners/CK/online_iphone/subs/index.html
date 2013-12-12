@@ -140,9 +140,8 @@
   <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
     
-    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
-    
     (function() {
+      libBanner.track_page_view("Library|Banner|Subscriber");
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
     })();
