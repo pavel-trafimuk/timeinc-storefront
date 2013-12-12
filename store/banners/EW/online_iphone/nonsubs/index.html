@@ -78,18 +78,16 @@
           float: right !important;
        }
          
-      .logo {
-        background-image: url('logo.png') !important;
-        background-size: 90%;
-        margin-top: 20px;
+      .print {
+        background-image: url('PrintSubscriber.png?v={{BUILD_TIME}}') !important;
       }
       
       .subscribe {
-        background-image: url('Subscribe.png') !important;
+        background-image: url('Subscribe.png?v={{BUILD_TIME}}') !important;
       }
       
       .preview {
-        background-image: url('FreeSample.png') !important;
+        background-image: url('FreeSample.png?v={{BUILD_TIME}}') !important;
       }
       
       .banner{                 
@@ -135,13 +133,13 @@
      <div class="banner carousel">
         <div class="slides">
           <!-- Free preview slide -->
-          <!--<div class="slide preview"></div>-->
+          <div class="slide preview"></div>
           
           <div class="slide subscribe">
           	<!-- Subscribe slide -->
             <a href="#"></a>
           </div>
-          <div class="slide logo">
+          <div class="slide print">
           	<!-- Print Subsriber slide -->
             <a href="#" id="banner-link"></a>
           </div>
