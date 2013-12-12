@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #ed1c24;
+          background: #eaeaea;
           margin: 0px;
           padding: 0px;
        }
@@ -86,8 +86,8 @@
         background-image: url('Subscribe.png') !important;
       }
       
-      .preview {
-        background-image: url('FreeSample.png') !important;
+      .dontmiss {
+        background-image: url('DontMiss.png') !important;
       }
       
       .banner{                 
@@ -133,9 +133,9 @@
      <div class="banner carousel">
         <div class="slides">
           <!-- Free preview slide -->
-          <!--
-          	<div class="slide preview"></div>
-          -->
+          <div class="slide dontmiss">
+          	<a href="#"></a>
+          </div>
           
           <!-- Subscribe slide -->
           <div class="slide subscribe">
@@ -160,6 +160,15 @@
       
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
+      
+      $(".dontmiss a").click(function(evt) {
+        evt.preventDefault();
+
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
+        libBanner.buy_sub("com.timeinc.time.ipad.subs.9");
+      });
       
       $(".subscribe a").click(function(evt) {
         evt.preventDefault();
