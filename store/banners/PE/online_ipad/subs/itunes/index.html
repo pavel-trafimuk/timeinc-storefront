@@ -204,6 +204,9 @@
   <script type="text/javascript" src="../../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
     (function() {     
+      libBanner.track_page_view("Library|Banner|Subscriber");
+      libBanner.track_page_view("Library|Banner|Subscriber|iTunes");
+      
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
       
