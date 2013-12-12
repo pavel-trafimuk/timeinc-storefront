@@ -43,8 +43,22 @@
  
 <body>
   <div id="banner"><a id="banner-link"></a></div>
+  <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script>
     document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
+      
+    (function() {
+      libBanner.track_pageview("Library|Banner|Nonsubscriber");
+     
+      $(".subscribe a").click(function(evt) {
+        evt.preventDefault();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
+        libBanner.buy_sub("com.emea.fortune.ipad.inapp.subs.9");
+      });
+      
+    
+    })();
   </script>
 </body>
 </html>
