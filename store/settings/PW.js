@@ -17,6 +17,7 @@ window.settings = {
     
     "hero_preview": "none",
     "enableHeroCoverTap"         : false,
+    "preview_issue_product_id"   : "com.timeinc.stylewatch.ipad.inapp.FREESAMPLE",
 
     "omniture_account"           : "timagstylewatchnk",
     "omniture_server"            : "timeinc.122.2o7.net",
