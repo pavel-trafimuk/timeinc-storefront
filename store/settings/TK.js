@@ -17,6 +17,7 @@ window.settings = {
     "max_back_issues"            : 20,
     "hero_preview": "none",
     "enableHeroCoverTap"         : false,
+    "preview_issue_product_id"   : "com.timeinc.tfk.ipad.inapp.FREESAMPLE",
 
     "omniture_account"           : "timagtimekidsall",
     "omniture_server"            : "metrics.time.com",

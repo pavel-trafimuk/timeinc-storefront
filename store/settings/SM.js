@@ -20,6 +20,7 @@ window.settings = {
     "max_back_issues"            : 12,
     "hero_preview": "none",
     "enableHeroCoverTap"         : false,
+    "preview_issue_product_id"   : "com.timeinc.realsimple.ipad.inapp.FREESAMPLE",
 
     "omniture_account"           : "timagrealsimplenk",
     "omniture_server"            : "metrics.realsimple.com",

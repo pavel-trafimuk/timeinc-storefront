@@ -15,6 +15,7 @@ window.settings = {
     
     "hero_preview": "none",
     "enableHeroCoverTap"         : false,
+    "preview_issue_product_id"   : "com.timeinc.cookinglight.ipad.inapp.FREESAMPLE",
     
     "max_back_issues"            : 12,
 
