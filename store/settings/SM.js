@@ -22,6 +22,9 @@ window.settings = {
     "enableHeroCoverTap"         : false,
     "preview_issue_product_id"   : "com.timeinc.realsimple.ipad.inapp.FREESAMPLE",
 
+    "ipad_entbanner_subs"        : "subs/itunes/index.html?t=",
+    "ipad_entbanner_lucie_subs"  : "subs/lucie/index.html?t=",
+
     "omniture_account"           : "timagrealsimplenk",
     "omniture_server"            : "metrics.realsimple.com",
     "omniture_ssl_server"        : "smetrics.realsimple.com",

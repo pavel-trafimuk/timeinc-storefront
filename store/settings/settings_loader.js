@@ -125,6 +125,20 @@
 
 
         // ************************************************************  
+        // ENTITLEMENT BANNERS
+        // ************************************************************
+        "ipad_entbanner_subs"        : "subs/index.html?t=",
+        "ipad_entbanner_lucie_subs"  : "subs/index.html?t=",
+        "ipad_entbanner_alacarte"    : "nonsubs/index.html?t=",
+        "ipad_entbanner_nonsubs"     : "nonsubs/index.html?t=",
+
+        "iphone_entbanner_subs"      : "subs/index.html?t=",
+        "iphone_entbanner_lucie_subs": "subs/index.html?t=",
+        "iphone_entbanner_alacarte"  : "nonsubs/index.html?t=",
+        "iphone_entbanner_nonsubs"   : "nonsubs/index.html?t=",
+
+
+        // ************************************************************  
         // URLS
         // ************************************************************
         "privacyPolicyUrl"           : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/"+settings.brandCode+"/pp.html",
