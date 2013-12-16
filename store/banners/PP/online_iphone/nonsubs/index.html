@@ -48,15 +48,16 @@
 </head>
  
 <body>
-  <div id="banner"><a id="banner-link"></a></div>
+  <div id="banner">
+  	<a href="#" id="banner-link"></a>
+  </div>
+  
+  <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
+    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
+    
     (function() {
-      libBanner.track_page_view("Library|Banner|Nonsubscriber");
-      $("#banner-link")
-        .attr("href", settings.popupActivateButtonUrlIphone)
-        .click(function() {
-          libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_register");
-        });
+     libBanner.track_page_view("Library|Banner|Nonsubscriber");
     })();
   </script>
 </body>
