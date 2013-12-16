@@ -13,13 +13,13 @@ window.settings = {
     "subscribeOfferText"         : "Subscribe to THIS OLD HOUSE and get tips and advice from the experts on how to enhance & beautify your home in big and small ways!",
     
     "welcome_preview": "image",
-    "hero_preview": "adobe",
     "hero_itii_preview": "image",
     "max_back_issues"            : 12,
 
     "heroHeading"                : "Inside This Issue",
     "hero_preview": "none",
     "enableHeroCoverTap"         : false,
+    "preview_issue_product_id"   : "com.timeinc.thisoldhouse.ipad.inapp.FREESAMPLE",
 
     "omniture_account"           : "timagtohnk",
     "omniture_server"            : "timeinc.122.2o7.net",

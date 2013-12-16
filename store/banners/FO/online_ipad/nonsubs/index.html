@@ -89,10 +89,6 @@
             background-image: url('Retina_portrait.jpg') !important;
           }
           
-          .whowillitbe {
-            background-image: url('Whowillitbe_portrait.jpg') !important;
-          }
-          
           .banner{                 
              height: 237px;              
           }
@@ -118,10 +114,6 @@
           
           .retina {
             background-image: url('Retina_landscape.jpg') !important;
-          }
-          
-          .whowillitbe {
-            background-image: url('Whowillitbe_landscape.jpg') !important;
           }
           
           .banner{                 
@@ -179,16 +171,16 @@
           
           <!-- Retina Instructions slide -->
           <div class="slide retina"></div>
-          
-          <!-- Who will it be? slide -->
-          <div class="slide whowillitbe"></div>
+
         </div>
      </div>
    </div>
    
   <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
+    
     (function() {
+      libBanner.track_page_view("Library|Banner|Nonsubscriber");
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
 
