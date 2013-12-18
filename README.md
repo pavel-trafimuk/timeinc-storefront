@@ -125,7 +125,8 @@ textwrangler can edit the file, but haven't found any other apps that can.
 DEVELOPING WITH A PROXY
 ================================================================================
 
-
+See Tim's excellent guide to using a charles proxy: 
+http://ecom-dev01-app.usdlls2.savvis.net:10400/html/documentation/appstorefronts/proxy.html
         
 
 CREATING NEW ASSETS FOR FUTURE BRANDS
@@ -182,6 +183,12 @@ Automation saves time and codifies a process so you don't have to remember it.
 Pretty much everything that's been automated lives in the `bin/` folder - each
 of those files are documented below, roughly in order of importance:
 
+### bin/setup
+
+This documents the dependencies for building the store. If you have gem, and
+npm installed and configured properly, you can run this to install the 
+dependencies.
+
 ### bin/build {BRAND_CODE}
     
 Generates 2 folders in the project root where {BRAND_CODE} is replaced with
@@ -235,3 +242,7 @@ brand code, adding the brand code to the end.
 As an aside, this is why the brand code is always the last argument to all the 
 utility scripts.
 
+### bin/cleanup
+
+Deletes all the generated files from the working directory (anything
+like `-XX-store-dev`)
