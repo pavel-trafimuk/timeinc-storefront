@@ -77,18 +77,18 @@
        .pull-right{
           float: right !important;
        }
-         
-      .logo {
-        background-image: url('logo.png') !important;
-        background-color: #e51a2e;
-      }
       
       .subscribe {
-        background-image: url('Subscribe.png') !important;
+        background-image: url('Subscribe.png?v={{BUILD_TIME}}') !important;
       }
       
       .preview {
-        background-image: url('FreeSample.png') !important;
+        background-image: url('FreeSample.png?v={{BUILD_TIME}}') !important;
+      }
+      
+      .print {
+        background-image: url('PrintSubscriber.png?v={{BUILD_TIME}}') !important;
+        background-color: #e51a2e;
       }
       
       .banner{                 
@@ -139,7 +139,7 @@
           </div>
           
           <!-- Print Subsriber slide -->
-          <div class="slide logo">
+          <div class="slide print">
             <a href="#" id="banner-link"></a>
           </div>
         </div>
@@ -152,6 +152,8 @@
     document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
     
     (function() {
+      libBanner.track_page_view("Library|Banner|Nonsubscriber");
+      
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
       

@@ -183,6 +183,9 @@
   <script type="text/javascript" src="../../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
     (function() {
+      libBanner.track_page_view("Library|Banner|Subscriber");
+      libBanner.track_page_view("Library|Banner|Subscriber|Lucie");
+      
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
       
@@ -192,7 +195,7 @@
         $(this).parent().addClass("loading");
         gallery.cancelAutoSlide();
 
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buyissue");
         libBanner.buy_issue("com.timeinc.people.ipad.inapp.12012013","289468");
       });
       
@@ -202,7 +205,7 @@
         $(this).parent().addClass("loading");
         gallery.cancelAutoSlide();
 
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buyissue");
         libBanner.buy_issue("com.timeinc.people.ipad.inapp.11012013","286100");
       });
     })();

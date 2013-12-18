@@ -24,6 +24,11 @@
         
         // eMags will not track without the App ID
         "eMagsAppId": "",
+
+        // Sample/Preview Issue ID - will override the default behavior
+        // of putting the latest issue in the hero (which would be the
+        // sample issue without this setting).
+        "preview_issue_product_id": "",
         
 
         // ************************************************************  
@@ -117,6 +122,20 @@
         "authErrorNoEmail"           : "Please enter your username",
         "authErrorNoPass"            : "Please enter a valid password",
         "authErrorAuthFailed"        : "Authentication Failed",
+
+
+        // ************************************************************  
+        // ENTITLEMENT BANNERS
+        // ************************************************************
+        "ipad_entbanner_subs"        : "subs/index.html?t=",
+        "ipad_entbanner_lucie_subs"  : "subs/index.html?t=",
+        "ipad_entbanner_alacarte"    : "nonsubs/index.html?t=",
+        "ipad_entbanner_nonsubs"     : "nonsubs/index.html?t=",
+
+        "iphone_entbanner_subs"      : "subs/index.html?t=",
+        "iphone_entbanner_lucie_subs": "subs/index.html?t=",
+        "iphone_entbanner_alacarte"  : "nonsubs/index.html?t=",
+        "iphone_entbanner_nonsubs"   : "nonsubs/index.html?t=",
 
 
         // ************************************************************  

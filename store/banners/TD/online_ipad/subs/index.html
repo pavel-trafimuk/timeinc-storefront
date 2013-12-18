@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #eaeaea;
+          background: #ffffff;
           margin: 0px;
           padding: 0px;
        }
@@ -86,10 +86,6 @@
             background-image: url('BigIssues_portrait.png?v={{BUILD_TIME}}') !important;
           }
           
-          .poy {
-            background-image: url('POY_portrait.png?v={{BUILD_TIME}}') !important;
-          }
-          
           .mandela {
             background-image: url('NM_portrait.jpg?v={{BUILD_TIME}}') !important;
           }
@@ -115,10 +111,6 @@
        @media only screen and (min-width:1024px){           
           .bigissues {
             background-image: url('BigIssues_landscape.png?v={{BUILD_TIME}}') !important;
-          }
-          
-          .poy {
-            background-image: url('POY_landscape.png?v={{BUILD_TIME}}') !important;
           }
           
           .mandela {
@@ -173,8 +165,6 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <!-- POY slide -->
-          <div class="slide poy"></div>
           
           <!-- Nelson Mandela slide -->
           <div class="slide mandela">
@@ -190,6 +180,8 @@
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
     (function() {
+      libBanner.track_page_view("Library|Banner|Subscriber");
+      
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
       
@@ -199,7 +191,7 @@
         $(this).parent().addClass("loading");
         gallery.cancelAutoSlide();
 
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
+        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_buynow");
         libBanner.buy_issue("com.timeinc.time.ipad.inapp.12062013","237435");
       });
     })();

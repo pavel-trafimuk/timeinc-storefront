@@ -90,6 +90,10 @@
         background-image: url('FreeSample.png') !important;
       }
       
+      .print {
+      	background-image: url('PrintSubscriber.png') !important;
+      }
+      
       .banner{                 
          height: 237px;              
       }
@@ -142,6 +146,11 @@
             <a href="#"></a>
           </div>
           
+          <!-- Print Subscriber slide -->
+          <div class="slide print">
+            <a href="#" id="banner-link"></a>
+          </div>
+          
           <!-- Logo slide -->
           <!--
           <div class="slide logo"></div>
@@ -152,7 +161,11 @@
    
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">    
+    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
+    
     (function() {
+      libBanner.track_page_view("Library|Banner|Nonsubscriber");
+      
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
       

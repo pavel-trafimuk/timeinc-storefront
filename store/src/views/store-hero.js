@@ -219,7 +219,7 @@
       });
     },
     goto_preview_issue: function(evt) {
-      App.omni.event("st_preview_featured_taps");
+      App.omni.event("st_hero_sample_issue_taps");
       var $this = $(evt.currentTarget),
           product_id = $this.attr("productId"),
           dossier_id = $this.attr("dossierId"),

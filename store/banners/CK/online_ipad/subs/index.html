@@ -179,28 +179,11 @@
    
   <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
+    
     (function() {
+      libBanner.track_page_view("Library|Banner|Subscriber");
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
-
-      /*$(".subscribe a").click(function(evt) {
-        evt.preventDefault();
-
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
-        libBanner.buy_sub("com.timeinc.cookinglight.ipad.subs.9");
-      });
-      
-      $(".hungergames a").click(function(evt) {
-        evt.preventDefault();
-
-        $(this).parent().addClass("loading");
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
-        libBanner.buy_issue("com.timeinc.people.ipad.inapp.11012013","286100");
-      });*/
     })();
   </script>
 

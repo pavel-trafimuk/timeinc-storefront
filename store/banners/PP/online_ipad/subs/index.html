@@ -55,10 +55,23 @@
         background-color: #e51a2e;
     }
   </style>
+
+  <script type="text/javascript" src="../../../lib/jquery.js"></script>
+  <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js"></script>
+  <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js"></script> 
+  <script type="text/javascript" src="../../../settings/settings_loader.js"></script> 
+  <script type="text/javascript" src="../../../lib/lucie_entitlements.js"></script> 
+
 </head>
  
 <body>
   <div id="banner"></div>
+
+  <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript">
+    libBanner.track_page_view("Library|Banner|Subscriber");
+  </script>
+
 </body>
 </html>
 
