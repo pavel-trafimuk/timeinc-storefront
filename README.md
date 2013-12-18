@@ -8,7 +8,7 @@ The `bin/build` file constructs the `index.html` file using `index.html.tmpl`.
 If you need to add/remove/reorder the javascript, or templates that are used,
 the build script is what you should change.
 
-Each title has…
+Each title has...
 
  - a settings file (`settings/<MAG_CODE>.js`) which is where all
    link URLs, UI text, and other settings should be.
@@ -77,7 +77,7 @@ You may want to add the following to your .bash_profile to ease this process:
     }
     alias gotov25=cdv25
 
-…which allows you to go into the assets folder using just `gotov25 EW` in the 
+...which allows you to go into the assets folder using just `gotov25 EW` in the 
 shell
 
 
@@ -89,7 +89,7 @@ IT. Just run the following to generate the zip files,
 
     bin/mkzipfiles {BRAND_CODE}
     
-…which will output the necessary files into `-{BRAND_CODE}-zipfiles`.
+...which will output the necessary files into `-{BRAND_CODE}-zipfiles`.
 
 IT will also need the following urls
 
@@ -97,7 +97,7 @@ IT will also need the following urls
 - Online Banner (iPhone)
 - Post-subs URL
 
-…which you can get using `bin/get_urls {BRAND_CODE}`. 
+...which you can get using `bin/get_urls {BRAND_CODE}`. 
 
 IMPORTANT: Make sure you give them the PROD urls.
 
@@ -121,7 +121,7 @@ device. Starting in the root directory of the App in iExplorer:
     viewer.app/LibraryConfig.plist
         serviceOptions > entitlement > bannerHeight
         
-There are a lot of URLs in Customization.strings… it's a good place to look if 
+There are a lot of URLs in Customization.strings... it's a good place to look if 
 you want to change something that is set by IT.
 
 Note: Customization.strings is a binary plist. I have confirmed that 
