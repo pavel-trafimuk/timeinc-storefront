@@ -242,7 +242,36 @@ brand code, adding the brand code to the end.
 As an aside, this is why the brand code is always the last argument to all the 
 utility scripts.
 
+The data source for this script is `bin/brands.txt` - only brands named in 
+that file are used.
+
+### bin/generate_stuff_for_IT
+
+Generates everything IT needs from us to build a new app:
+
+ - Builds the storefronts for all brands
+ - Generates the `urls.txt` file for IT
+ - Generates zip files which you need to send to IT
+   
+   Last time we did this it was by copying them to...
+    
+   mac: (in Finder: "Go" > "Connect to Server" - paste afp url into "Server Address")
+     afp://nyctcmmvf1/TCM/HOME/EVERYONE/TABLET ROLLOUT/app submissions/iOS/ZIP files from TCM
+    
+   windows:
+     H:\nyctcmmvf1\TCM\HOME\EVERYONE\TABLET ROLLOUT\app submissions\iOS\ZIP files from TCM
+     
+On Mac, note that you can't connect to the share drive if you're already 
+connected to the Savvis VPN.
+
 ### bin/cleanup
 
 Deletes all the generated files from the working directory (anything
 like `-XX-store-dev`)
+
+### bin/brandcode_to_brandname {BRAND_CODE}
+
+Takes a brand code and returns the brand name. The data source is 
+`bin/brands.txt` - this is mainly used by other scripts.
+
+
