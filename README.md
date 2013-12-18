@@ -58,27 +58,18 @@ savvis server in:
 
     /nas01/apps/subs3/content/cmdev/assets/appstorefronts-jq/{BRAND_CODE}/adobe/apple/ipad/v25
 
-There are a couple helpful scripts in `bin/` that can make deployment relatively
-easy. This is a simple compile and commit of the EW assets:
+However you should always deploy using the `bin/deploy` script. There are a
+couple helpful scripts in `bin/` that can make deployment relatively easy. 
+
+This is a simple compile and commit of the EW assets:
 
     bin/deploy cmdev EW
 
 Which will run `bin/build EW` then checkout the appropriate folder from CVS,
 copy in the newly built files, commit and tag them.
 
-**NOTE**: deploying to qa or prod will switch to the qa or prod branch automatically
-to ensure the correct code is deployed. cmdev will allow you to deploy whichever branch 
-you're currently on.
-
-You may want to add the following to your .bash_profile to ease this process:
-
-    cdv25() {
-      cd /nas01/apps/subs3/content/cmdev/assets/appstorefronts-jq/$1/adobe/apple/ipad/v25
-    }
-    alias gotov25=cdv25
-
-...which allows you to go into the assets folder using just `gotov25 EW` in the 
-shell
+See the detailed description of `bin/build` and `bin/deploy` in the Utility
+Scripts section below.
 
 
 MAKING ZIP FILES FOR IT TO EMBED
@@ -105,8 +96,11 @@ IMPORTANT: Make sure you give them the PROD urls.
 TIPS ON DEVELOPING ON A DEVICE
 ================================================================================
 
-There are a few files you might want to edit in iExplorer when developing with a
-device. Starting in the root directory of the App in iExplorer:
+Note: iOS 5 is the last iOS version that allows this - since we have deprecated
+iOS 5, this isn't all that useful. You should be developing with a proxy.
+
+That said, there are a few files you might want to view in iExplorer when 
+developing with a device. Starting in the root directory of the App in iExplorer:
 
 - Store:
     viewer.app/global/ui-extensions/toolbar-buttons/1/
@@ -122,10 +116,16 @@ device. Starting in the root directory of the App in iExplorer:
         serviceOptions > entitlement > bannerHeight
         
 There are a lot of URLs in Customization.strings... it's a good place to look if 
-you want to change something that is set by IT.
+you want to check something that is set by IT.
 
 Note: Customization.strings is a binary plist. I have confirmed that 
 textwrangler can edit the file, but haven't found any other apps that can.
+
+
+DEVELOPING WITH A PROXY
+================================================================================
+
+
         
 
 CREATING NEW ASSETS FOR FUTURE BRANDS
