@@ -174,3 +174,64 @@ preferred.
 You can log into omniture at https://my.omniture.com but you'll need someone
 from the Omniture team to set up an account for you.
 
+
+UTILITY SCRIPTS (stuff in the `bin` folder)
+================================================================================
+
+Automation saves time and codifies a process so you don't have to remember it.
+Pretty much everything that's been automated lives in the `bin/` folder - each
+of those files are documented below, roughly in order of importance:
+
+### bin/build {BRAND_CODE}
+    
+Generates 2 folders in the project root where {BRAND_CODE} is replaced with
+whichever brand code you passed to the build script (e.g., "SM" for Real Simple)
+
+1. `-{BRAND_CODE}-store-deploy` -- This is what will be used in production and
+  contains the minified/concatenated javascript and CSS
+
+2. `-{BRAND_CODE}-store-dev` -- This is an intermediary version which is useful
+  for debugging. This folder contains a version of the store which you can view
+  in Desktop Safari (`-{BRAND_CODE}-store-dev/index.mockapi.dev.html`) for a pretty
+  good idea of how things are going to work.
+  
+### bin/deploy {ENVIRONMENT} {BRAND_CODE}
+
+Runs `bin/build {BRAND_CODE}` then commits and tags the files in 
+`-{BRAND_CODE}-store-deploy` using the `{ENVIRONMENT}`.
+
+example: deploy Real Simple to our QA environment
+
+    bin/deploy qa SM
+    
+For the `qa` and `prod` environment the corresponding branch in git is checked
+out before running `bin/build`. This is to ensure that what is in our `qa`
+branch in git is what ends up in our `qa` environment, and the same for prod.
+
+The deploy script requires a working CVS setup (see the comments at the top
+of the `bin/deploy` script for more details.
+  
+### bin/watch {BRAND_CODE}
+
+Watches the files in `lib` and `store` and triggers `bin/build` when any of 
+them are changed. Basically just a way to avoid having to manually run 
+`bin/build` every time you save a file.
+
+### bin/allbrands {command} [...arguments]
+
+example:
+
+    bin/allbrands deploy qa
+
+...will run...
+
+    bin/deploy qa {BRAND_CODE}
+
+...replacing `{BRAND_CODE}` with each of the brands in `bin/brands.txt`.
+
+Basically everything you pass to this command will be called once for each 
+brand code, adding the brand code to the end. 
+
+As an aside, this is why the brand code is always the last argument to all the 
+utility scripts.
+
