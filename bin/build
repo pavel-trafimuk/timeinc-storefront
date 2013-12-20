@@ -139,15 +139,14 @@ END
   cp -r $DEVDIR/settings/${TITLE}.js $DEPLOYDIR/settings
   cp -r $DEVDIR/settings/settings_loader.js $DEPLOYDIR/settings
 
-  cp -r $DEVDIR/banners/$TITLE $DEPLOYDIR/banners
+  cp $DEVDIR/lucie-library.html $DEPLOYDIR
   
+  cp -r $DEVDIR/banners/$TITLE $DEPLOYDIR/banners
   cp -r $DEVDIR/inserts/$TITLE $DEPLOYDIR/inserts
   
-  cp $DEVDIR/lucie-library.html $DEPLOYDIR
-
   cp -r $DEVDIR/myaccount $DEPLOYDIR
-  
   cp -r $DEVDIR/autologin $DEPLOYDIR
+  cp -r $DEVDIR/appstore_links $DEPLOYDIR
   
   render_in_place "$DEPLOYDIR/lucie-library.html"
   render_in_place "$DEPLOYDIR/myaccount/index.html"
