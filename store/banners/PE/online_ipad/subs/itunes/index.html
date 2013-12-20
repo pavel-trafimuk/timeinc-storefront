@@ -182,11 +182,7 @@
      <div class="banner carousel">
         <div class="slides">
           
-          <!-- Hunger Games slide -->
-          <div class="slide hungergames">
-            <a href="#"></a>
-          </div>
-          
+                 
           <!-- Holiday slide -->
           <div class="slide holiday">
             <a href="#"></a>
@@ -220,15 +216,7 @@
         libBanner.buy_issue("com.timeinc.people.ipad.inapp.12012013","289468");
       });
       
-      $(".hungergames a").click(function(evt) {
-        evt.preventDefault();
-
-        $(this).parent().addClass("loading");
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buyissue");
-        libBanner.buy_issue("com.timeinc.people.ipad.inapp.11012013","286100");
-      });
+     
       
       $(".lucie a").click(function(evt) {
         evt.preventDefault();
