@@ -86,12 +86,8 @@
           	background-image: url('Subscribe_portrait.png') !important;
           }
           
-          .holiday {
-            background-image: url('Holiday_portrait.jpg') !important;
-          }
-          
-          .hungergames {
-            background-image: url('HG_portrait.png') !important;
+          .ew-xsell {
+            background-image: url('ew-xsell.portrait.jpg') !important;
           }
           
           .banner{                 
@@ -117,12 +113,8 @@
             background-image: url('Subscribe_landscape.png') !important;
           }
           
-          .holiday {
-            background-image: url('Holiday_landscape.jpg') !important;
-          }
-          
-          .hungergames {
-            background-image: url('HG_landscape.png') !important;
+          .ew-xsell {
+            background-image: url('ew-xsell.landscape.jpg') !important;
           }
           
           .banner{                 
@@ -172,12 +164,17 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <div class="slide holiday">
+
+          <!-- Subscribe slide -->
+          <div class="slide subscribe"> 
             <a href="#"></a>
           </div>
-          <div class="slide subscribe"> <!-- Subscribe slide -->
-            <a href="#"></a>
+
+          <!-- Cross-sell slide -->
+          <div class="slide ew-xsell">
+            <a href="../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/entertainment-weekly-magazine/id475466600?mt=8"></a>
           </div>
+
         </div>
      </div>
    </div>
@@ -199,17 +196,9 @@
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
         libBanner.buy_sub("com.timeinc.people.ipad.subs.6");
       });
-      
-      $(".holiday a").click(function(evt) {
-        evt.preventDefault();
-
-        $(this).parent().addClass("loading");
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buyissue");
-        libBanner.buy_issue("com.timeinc.people.ipad.inapp.12012013","289468");
+      $(".ew-xsell").click(function() {
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_xsell");
       });
-      
       
     })();
   </script>
