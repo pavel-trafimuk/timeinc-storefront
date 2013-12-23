@@ -82,8 +82,16 @@
        
        /* iPad Portrait */
        @media only screen and (min-width:768px){           
-          .ew-xsell {
-            background-image: url('ew-xsell.portrait.jpg') !important;
+          .subscribe {
+          	background-image: url('Subscribe_portrait.png') !important;
+          }
+          
+          .holiday {
+            background-image: url('Holiday_portrait.jpg') !important;
+          }
+          
+          .hungergames {
+            background-image: url('HG_portrait.png') !important;
           }
           
           .lucie {
@@ -109,8 +117,16 @@
        
        /* iPad Landscape */
        @media only screen and (min-width:1024px){           
-          .ew-xsell {
-            background-image: url('ew-xsell.landscape.jpg') !important;
+          .subscribe {
+            background-image: url('Subscribe_landscape.png') !important;
+          }
+          
+          .holiday {
+            background-image: url('Holiday_landscape.jpg') !important;
+          }
+          
+          .hungergames {
+            background-image: url('HG_landscape.png') !important;
           }
           
           .lucie {
@@ -152,13 +168,13 @@
        
     </style>
 
-    <script type="text/javascript" src="../../../lib/jquery.js"></script>
-    <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
+    <script type="text/javascript" src="../../../../lib/jquery.js"></script>
+    <script type="text/javascript" src="../../../../lib/AdobeLibraryAPI.js?v2"></script>
 
-    <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
-    <script type="text/javascript" src="../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
+    <script type="text/javascript" src="../../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
+    <script type="text/javascript" src="../../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
 
-    <script type="text/javascript" src="../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script> 
+    <script type="text/javascript" src="../../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script> 
 </head>
 <body>
    
@@ -166,37 +182,47 @@
      <div class="banner carousel">
         <div class="slides">
           
+                 
+          <!-- Holiday slide -->
+          <div class="slide holiday">
+            <a href="#"></a>
+          </div>
+          
           <!-- LUCIE Registration slide -->
           <div class="slide lucie">
             <a href="#"></a>
-          </div>
-
-          <!-- Cross-sell slide -->
-          <div class="slide ew-xsell">
-            <a href="../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/entertainment-weekly-magazine/id475466600?mt=8"></a>
           </div>
           
         </div>
      </div>
    </div>
    
-  <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="../../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
-    (function() {
+    (function() {     
+      libBanner.track_page_view("Library|Banner|Subscriber");
       libBanner.track_page_view("Library|Banner|Subscriber|iTunes");
       
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
       
+      $(".holiday a").click(function(evt) {
+        evt.preventDefault();
+
+        $(this).parent().addClass("loading");
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buyissue");
+        libBanner.buy_issue("com.timeinc.people.ipad.inapp.12012013","289468");
+      });
+      
+     
+      
       $(".lucie a").click(function(evt) {
         evt.preventDefault();
-        libBanner.track_user_action("Library|Banner|Subscriber|iTunes", "banner_taps_register");
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_register");
         libBanner.lucie_register();
       });
-      $(".ew-xsell").click(function() {
-        libBanner.track_user_action("Library|Banner|Subscriber|iTunes", "banner_taps_xsell");
-      });
-
     })();
   </script>
 
