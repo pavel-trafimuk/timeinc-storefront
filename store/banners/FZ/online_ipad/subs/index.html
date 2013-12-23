@@ -80,13 +80,9 @@
         
        
        /* iPad Portrait */
-       @media only screen and (min-width:768px){           
-          .retina {
-            background-image: url('Retina_portrait.png') !important;
-          }
-          
-          .whowillitbe {
-            background-image: url('Whowillitbe_portrait.jpg') !important;
+       @media only screen and (min-width:768px) {
+          .logo {
+            background-image: url('Logo_portrait.png') !important;
           }
           
           .banner{                 
@@ -107,13 +103,9 @@
 
        
        /* iPad Landscape */
-       @media only screen and (min-width:1024px){           
-          .retina {
-            background-image: url('Retina_landscape.png') !important;
-          }
-          
-          .whowillitbe {
-            background-image: url('Whowillitbe_landscape.jpg') !important;
+       @media only screen and (min-width:1024px) {
+          .logo {
+            background-image: url('Logo_landscape.png') !important;
           }
           
           .banner{                 
@@ -164,21 +156,19 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <!-- Retina Instructions slide -->
-          <div class="slide retina"></div>
-          
-          <!-- Who will it be? slide -->
-          <div class="slide whowillitbe"></div>
+          <!-- Logo slide -->
+          <div class="slide logo"></div>
         </div>
      </div>
    </div>
    
   <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
+    
     (function() {
       libBanner.track_page_view("Library|Banner|Subscriber");
-      var gallery = new libBanner.SlideshowGallery();
-      gallery.enableTouch().slideEvery(5000);
+      // var gallery = new libBanner.SlideshowGallery();
+      // gallery.enableTouch().slideEvery(5000);
     })();
   </script>
 
