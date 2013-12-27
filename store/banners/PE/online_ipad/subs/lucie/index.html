@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #eaeaea;
+          background: #000000;
           margin: 0px;
           padding: 0px;
        }
@@ -82,12 +82,8 @@
        
        /* iPad Portrait */
        @media only screen and (min-width:768px){           
-          .holiday {
-            background-image: url('Holiday_portrait.jpg') !important;
-          }
-          
-          .hungergames {
-            background-image: url('HG_portrait.png') !important;
+          .logo {
+            background-image: url('logo.png') !important;
           }
           
           .banner{                 
@@ -109,12 +105,8 @@
        
        /* iPad Landscape */
        @media only screen and (min-width:1024px){                     
-          .holiday {
-            background-image: url('Holiday_landscape.jpg') !important;
-          }
-          
-          .hungergames {
-            background-image: url('HG_landscape.png') !important;
+          .logo {
+            background-image: url('logo.png') !important;
           }
           
           .banner{                 
@@ -167,10 +159,8 @@
         <div class="slides">
           
                   
-          <!-- Holiday slide -->
-          <div class="slide holiday">
-            <a href="#"></a>
-          </div>
+          <!-- Logo slide -->
+          <div class="slide logo"></div>
           
         </div>
      </div>
@@ -183,18 +173,7 @@
       libBanner.track_page_view("Library|Banner|Subscriber|Lucie");
       
       var gallery = new libBanner.SlideshowGallery();
-      gallery.enableTouch().slideEvery(5000);
-      
-      $(".holiday a").click(function(evt) {
-        evt.preventDefault();
-
-        $(this).parent().addClass("loading");
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buyissue");
-        libBanner.buy_issue("com.timeinc.people.ipad.inapp.12012013","289468");
-      });
-      
+      gallery.enableTouch().slideEvery(5000);      
       
     })();
   </script>
