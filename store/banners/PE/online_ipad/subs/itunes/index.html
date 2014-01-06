@@ -81,19 +81,7 @@
         
        
        /* iPad Portrait */
-       @media only screen and (min-width:768px){           
-          .subscribe {
-          	background-image: url('Subscribe_portrait.png') !important;
-          }
-          
-          .holiday {
-            background-image: url('Holiday_portrait.jpg') !important;
-          }
-          
-          .hungergames {
-            background-image: url('HG_portrait.png') !important;
-          }
-          
+       @media only screen and (min-width:768px){                     
           .lucie {
             background-image: url('LUCIE_portrait.jpg') !important;
           }
@@ -116,19 +104,7 @@
 
        
        /* iPad Landscape */
-       @media only screen and (min-width:1024px){           
-          .subscribe {
-            background-image: url('Subscribe_landscape.png') !important;
-          }
-          
-          .holiday {
-            background-image: url('Holiday_landscape.jpg') !important;
-          }
-          
-          .hungergames {
-            background-image: url('HG_landscape.png') !important;
-          }
-          
+       @media only screen and (min-width:1024px){                     
           .lucie {
             background-image: url('LUCIE_landscape.jpg') !important;
           }
@@ -182,12 +158,6 @@
      <div class="banner carousel">
         <div class="slides">
           
-                 
-          <!-- Holiday slide -->
-          <div class="slide holiday">
-            <a href="#"></a>
-          </div>
-          
           <!-- LUCIE Registration slide -->
           <div class="slide lucie">
             <a href="#"></a>
@@ -204,18 +174,7 @@
       libBanner.track_page_view("Library|Banner|Subscriber|iTunes");
       
       var gallery = new libBanner.SlideshowGallery();
-      gallery.enableTouch().slideEvery(5000);
-      
-      $(".holiday a").click(function(evt) {
-        evt.preventDefault();
-
-        $(this).parent().addClass("loading");
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buyissue");
-        libBanner.buy_issue("com.timeinc.people.ipad.inapp.12012013","289468");
-      });
-      
+      gallery.enableTouch().slideEvery(5000);      
      
       
       $(".lucie a").click(function(evt) {
