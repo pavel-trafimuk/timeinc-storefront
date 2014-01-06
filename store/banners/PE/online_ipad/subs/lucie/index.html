@@ -85,6 +85,9 @@
           .logo {
             background-image: url('logo.png') !important;
           }
+          .ew-xsell {
+            background-image: url('ew-xsell.portrait.png') !important;
+          }
           
           .banner{                 
              height: 237px;              
@@ -108,7 +111,10 @@
           .logo {
             background-image: url('logo.png') !important;
           }
-          
+          .ew-xsell {
+            background-image: url('ew-xsell.landscape.png') !important;
+          }
+
           .banner{                 
              height: 177px;                 
           }              
@@ -157,10 +163,13 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          
-                  
+            
           <!-- Logo slide -->
-          <div class="slide logo"></div>
+          <div class="slide logo" data-ios-version="<7"></div>
+
+          <div class="slide ew-xsell" data-ios-version=">=7">
+            <a href="../../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/entertainment-weekly-magazine/id475466600?mt=8"></a>
+          </div>
           
         </div>
      </div>
@@ -173,8 +182,11 @@
       libBanner.track_page_view("Library|Banner|Subscriber|Lucie");
       
       var gallery = new libBanner.SlideshowGallery();
-      gallery.enableTouch().slideEvery(5000);      
+      gallery.enableTouch().slideEvery(5000);
       
+      $(".ew-xsell").click(function() {
+        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_xsell");
+      });
     })();
   </script>
 
