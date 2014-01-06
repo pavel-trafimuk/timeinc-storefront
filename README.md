@@ -275,3 +275,193 @@ Takes a brand code and returns the brand name. The data source is
 `bin/brands.txt` - this is mainly used by other scripts.
 
 
+LIBRARY BANNERS
+================================================================================
+
+All reusable code for banners is in the `lib/libBanner.js` file, which depends
+on `lib/AdobeLibraryAPI.js`, `lib/jquery.js`, and the brands 2 settings files,
+`store/settings/{BRAND_CODE}.js` and `store/settings/settings_loader.js`.
+
+**Important**: `AdobeLibraryAPI.js` must be in the `<head>` of the document or
+it will not work.
+
+`libBanner.js` provides adds one object to the global scope, `window.libBanner`
+which exposes the following:
+
+### libBanner.ios_version
+
+An array that looks like `[7, 0, 1]`, representing the current version of iOS.
+
+Usually you don't need this and it's easier to use `libBanner.is_version()`
+
+### libBanner.is_version(versionExpession) -> boolean
+
+Takes one argument (string) and returns true if the current iOS version 
+matches.
+
+Example (on a device running iOS 6.0.1):
+
+```javascript
+libBanner.is_version("<7") == true
+libBanner.is_version("=6") == true
+libBanner.is_version("6") == libBanner.is_version("=6")
+libBanner.is_version("7") == false
+libBanner.is_version("!6") == false
+libBanner.is_version("!6.1.1") == true
+libBanner.is_version("<=5") == false
+libBanner.is_version(">5") == true
+libBanner.is_version(">6.0.0") == true
+```
+
+### libBanner.api
+
+Provides access to the `adobeDPS` object or the `MockAPI` object depending 
+which is loaded. Hopefully you never need to use this.
+
+### libBanner.buy_issue(product_id, dossier_id)
+
+Purchase a folio.
+
+`product_id` is the product id of the folio to purchase. Looks like
+`com.timeinc.instyle.ipad.inapp.12112013`.
+
+`dossier_id` (optional) is used for deep linking into a folio. If it's 
+provided the user will be sent directly to the page in the folio that 
+corresponds to the dossier id.
+
+### libBanner.buy_sub(product_id)
+
+Purchase a Subscription.
+
+`product_id` is the product id of the subscription to purchase. Looks like
+`com.timeinc.instyle.ipad.subs.9`.
+
+**Note**: when testing in an appfactory app, you can not trigger a subscription
+purchase if you are signed in to a real app store account. You *must* test
+purchasing with a test account which is provided by IT when using appfactory
+builds.
+
+### libBanner.lucie_register()
+
+Opens the overlay dialog that detects subscriptions and then prompts the user
+to register for a lucie account.
+
+### libBanner.track_page_view(page_name)
+
+Track the current banner load in the DPS omniture Suite using Adobe's API
+(same method as `libBanner.track_user_action()`).
+
+`page_name` is custom variable 4 (eVar 49, prop 49). Should look like:
+  - "Library|Banner|Subscriber"
+  - "Library|Banner|Nonsubscriber"
+  - "Library|Banner|Allusers"
+
+### libBanner.track_user_action(event_name, page_name)
+
+Trigger an omniture beacon via Adobe's API for the DPS omniture suite.
+
+`event_name` is custom variable 3 (eVar 48, prop 48) and should look like:
+  - "banner_taps_subscribe"
+  - "banner_taps_buyissue"
+  - "banner_taps_downloadfree"
+  - "banner_taps_register"
+
+`page_name` is custom variable 4 (eVar 49, prop 49). It should match the 
+page_name that was passed to the `libBanner.track_page_view()` function.
+
+### libBanner.SlideshowGallery() -> SlideshowGallery object
+
+Constructor (must be called with `new`). Creates a slider gallery. Expects 
+the HTML like the following to be in  the DOM:
+
+```html
+<div class="carousel">
+  <div class="slides">
+    <div class="slide this-is-slide-1"></div>
+    <div class="slide this-is-slide-2" data-ios-version="<7"></div>
+    <div class="slide this-is-slide-3" data-ios-version=">=7.0.2"></div>
+  </div>
+</div>
+```
+
+Generally you should make a copy of a banner that already has a slideshow 
+gallery if you want to use this as there is a fair amount of required CSS as
+well.
+
+The `data-ios-version` attribute is fully documented in libBanner, but in
+short, `.this-is-slide-2` will only be visible on devices using iOS versions
+lower than 7, and `.this-is-slide-3` will be visible on devices using iOS
+versions 7.0.2 and up. This functionality is implemented in the 
+`SlideshowGallery()` constructor.
+
+Example usage:
+
+```js
+var gallery = new libBanner.SlideshowGallery();
+gallery.enableTouch().slideEvery(5000);
+```
+
+**Note**: the SlideshowGallery does not automatically trigger any 
+functionality. You must call `gallery.slideEvery()` to enable the auto-slide 
+behavior and `gallery.enableTouch()` to enable swiping between slides.
+
+The SlideshowGallery object has a number of methods, documented below...
+
+### libBanner.SlideshowGallery().slideEvery(slide_delay)
+
+Enables the auto-slide functionality. The Gallery will slide to the next
+slide (using `gallery.slideNext()`) every slide_delay milliseconds.
+
+Example:
+
+```js
+var gallery = new libBanner.SlideshowGallery();
+// automatically move to the next slide every 5 seconds
+gallery.slideEvery(5000);
+```
+
+### libBanner.SlideshowGallery().cancelAutoSlide()
+
+Disabled the auto-slide functionality. You generally want to use this when
+the use has taken an action on one of the slides (like tapping a button)
+so that it doesn't automatically move to the next slide while the action is
+happening.
+
+Example:
+
+```js
+var gallery = new libBanner.SlideshowGallery();
+gallery.slideEvery(5000).enableTouch();
+
+...later on...
+gallery.cancelAutoSlide();
+```
+
+### libBanner.SlideshowGallery().slideNext()
+
+Manually trigger the gallery to move to the next slide.
+
+Example:
+
+```js
+var gallery = new libBanner.SlideshowGallery();
+// Immediately go to the second slide
+gallery.slideNext();
+```
+
+### libBanner.SlideshowGallery().slidePrev()
+
+Manually trigger the gallery to move to the previous slide. (Works the same
+as the `gallery.slideNext()` method)
+
+### libBanner.SlideshowGallery().enableTouch()
+
+Allows the user to swipe between slides in the gallery.
+
+Example:
+
+```js
+var gallery = new libBanner.SlideshowGallery();
+gallery.enableTouch();
+```
+
