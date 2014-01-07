@@ -279,7 +279,7 @@ LIBRARY BANNERS
 ================================================================================
 
 All reusable code for banners is in the `lib/libBanner.js` file, which depends
-on `lib/AdobeLibraryAPI.js`, `lib/jquery.js`, and the brands 2 settings files,
+on `lib/AdobeLibraryAPI.js`, `lib/jquery.js`, and the brand's 2 settings files,
 `store/settings/{BRAND_CODE}.js` and `store/settings/settings_loader.js`.
 
 **Important**: `AdobeLibraryAPI.js` must be in the `<head>` of the document or
