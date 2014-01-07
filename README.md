@@ -369,6 +369,64 @@ Trigger an omniture beacon via Adobe's API for the DPS omniture suite.
 `page_name` is custom variable 4 (eVar 49, prop 49). It should match the 
 page_name that was passed to the `libBanner.track_page_view()` function.
 
+### libBanner.auto_download(product_id, opts)
+
+Automatically download `product_id` if this is the first time the use is 
+seeing the library. This was created so that iPhone could have the 
+auto-download functionality we mocked up for the iPad.
+
+`product_id` should be the product ID of the free sample issue, which looks
+like `com.timeinc.realsimple.ipad.inapp.FREESAMPLEIPHONE`.
+
+`opts` supports the following optional callbacks (none are required):
+
+  - `skipped()` - called when the auto-download is not triggered because it is
+    not the first time the user is seeing the Library
+
+  - `viewable(folio)` - called once (never more than once) when the folio is
+    ready to be viewed. Until this is called you should assume the folio is
+    not able to be viewed.
+
+  - `progress(folio, progress)` - called whenever a download progress event 
+    occurs. Use this when you want to display a progress bar. Provides the 
+    folio being downloaded and the download progress (0.0 - 100.0) as 
+    arguments.
+
+  - `failure()` - called if the folio could not be downloaded for any reason
+    except skipping the auto-download functionality due to the user having
+    seen the banner before (which triggers the `skipped()` callback instead).
+  
+Example:
+
+```js
+
+libBanner.auto_download("com.timeinc.realsimple.ipad.inapp.FREESAMPLEIPHONE", {
+  viewable: function(folio) {
+    if (confirm("A Free Sample is ready to view. Opening now...")) {
+      folio.view();
+    }
+  },
+  skipped: function() {
+    // make the preview banner download/open the free sample issue
+    // when tapped on future views. Alternatively you could remove the
+    // slide before instantiating the gallery.
+    $(".preview a").click(function(evt) {
+      evt.preventDefault();
+
+      // avoid having the gallery (created earlier) auto-slide when the user 
+      // is expecting something to happen
+      gallery.cancelAutoSlide();
+
+      libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buyissue");
+      libBanner.buy_issue("com.timeinc.realsimple.ipad.inapp.FREESAMPLEIPHONE");
+    });
+  },
+  failure: function() {
+    alert('A FAILURE OCCURRED');
+  }
+});
+```
+
 ### libBanner.SlideshowGallery() -> SlideshowGallery object
 
 Constructor (must be called with `new`). Creates a slider gallery. Expects 
