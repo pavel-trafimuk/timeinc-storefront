@@ -84,13 +84,25 @@
         background-position: center center;
       }
       
-      .banner{                 
-         height: 237px;              
+      /* iPad Portrait */
+      @media only screen and (min-width:768px){           
+        .th-xsell {
+          background-image: url('th_xsell.portrait.jpg') !important;
+        }
+        .banner{                 
+          height: 237px;              
+        }  
       }
-      
-      .wrapper span.ipad-portrait{
-          display: block;
-      }        
+
+      /* iPad Landscape */
+      @media only screen and (min-width:1024px) {
+        .th-xsell {
+          background-image: url('th_xsell.landscape.jpg') !important;
+        }
+        .banner{                 
+          height: 177px;                 
+        }  
+      }
       
        .slide.loading::before {
          content: 'Loading…';
@@ -126,6 +138,10 @@
           
           <!-- Logo slide -->
           <div class="slide logo"></div>
+
+          <div class="slide th-xsell" data-ios-version=">=7">
+            <a href="../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/this-old-house-magazine/id478315552?mt=8"></a>
+          </div>
           
         </div>
      </div>
@@ -134,11 +150,15 @@
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">    
     (function() {
-      libBanner.track_page_view("Library|Banner|Subscriber");
       libBanner.track_page_view("Library|Banner|Subscriber|iTunes");
       
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
+
+      $(".th-xsell").click(function() {
+        libBanner.track_user_action("Library|Banner|Subscriber|iTunes", "banner_taps_thxsell");
+      });
+
     })();
   </script>
 
