@@ -17,7 +17,7 @@
        }
                                 
        .wrapper{
-          width: 640px;
+          width: 1024px;
           margin: 0 auto; 
           text-align: center;
           width: 100%;
@@ -46,7 +46,7 @@
           position: relative;
           
           background-color: transparent;
-          background-position: top center;
+          background-position: 50% 50%;
           background-repeat: no-repeat;
           width: 100%;
           background-size: contain;
@@ -70,6 +70,18 @@
           margin-top: 1em;
        }
        
+       .btn.pull-left{
+           background-image: url('Retina_LeftButton.png');
+           
+       }
+       
+      .btn.pull-right{
+           background-image: url('Retina_RightButton.png');
+           background-position-x: 100%;
+       }
+       
+       
+       
        .pull-left{
           float: left !important;
        }
@@ -77,19 +89,59 @@
        .pull-right{
           float: right !important;
        }
-         
-      .logo {
-        background-image: url('logo.png') !important;
-      }
-      
-      .banner{                 
-         height: 237px;              
-      }
-      
-      .wrapper span.ipad-portrait{
-          display: block;
-      }        
-      
+        
+       
+       /* iPad Portrait */
+       @media only screen and (min-width:768px){           
+          
+          .logo {
+            background-image: url('logo.png') !important;
+          }
+          .th-xsell {
+            background-image: url('th_xsell.portrait.jpg') !important;
+          }
+          
+          .banner{                 
+             height: 237px;              
+          }
+          
+          .wrapper span.ipad-portrait{
+              display: block;
+          }        
+          
+          
+           .btn{
+             width: 200px;
+             height: 100px;
+             margin-top: 6px;
+          }      
+       }
+
+       
+       /* iPad Landscape */
+       @media only screen and (min-width:1024px){           
+          
+          .logo {
+            background-image: url('logo.png') !important;
+          }
+          .th-xsell {
+            background-image: url('th_xsell.landscape.jpg') !important;
+          }
+          
+          .banner{                 
+             height: 177px;                 
+          }              
+          .wrapper span.ipad-landscape{
+              display: block;
+          }              
+          
+          .btn{
+             width: 200px;
+             height: 75px;
+             margin-top: 6px;
+          }      
+          
+       }
        .slide.loading::before {
          content: 'Loading…';
          display: block;
@@ -102,45 +154,58 @@
          text-align: center;
          position: absolute;
          top: 0; right: 0; bottom: 0; left: 0;
-       } 
+       }
+
+       /* HACK: */
+       .retina { background-color: #000; } 
 
        
        
     </style>
 
-    <script type="text/javascript" src="../../../lib/jquery.js"></script>
-    <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
+    <script type="text/javascript" src="../../../../lib/jquery.js"></script>
+    <script type="text/javascript" src="../../../../lib/AdobeLibraryAPI.js?v2"></script>
 
-    <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
-    <script type="text/javascript" src="../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
+    <script type="text/javascript" src="../../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
+    <script type="text/javascript" src="../../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
 
-    <script type="text/javascript" src="../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script> 
+    <script type="text/javascript" src="../../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script> 
 </head>
 <body>
    
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          
+
           <!-- Ebook slide -->
           <div class="slide logo">
-          	<a href="dps.7ea9178b138a416d899803c578036a49://v1/folio/com.timeinc.realsimple.ipad.inapp.08302013/56036">
+            <a href="dps.7ea9178b138a416d899803c578036a49://v1/folio/com.timeinc.realsimple.ipad.inapp.08302013/56036"></a>
           </div>
           
+          <!-- Cross-sell slide -->
+          <div class="slide th-xsell" data-ios-version=">=7">
+            <a href="../../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/this-old-house-magazine/id478315552?mt=8"></a>
+          </div>
+
         </div>
      </div>
    </div>
    
-  <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript">    
+  <script src="../../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript">
+    
     (function() {
-      libBanner.track_page_view("Library|Banner|Subscriber");
       libBanner.track_page_view("Library|Banner|Subscriber|Lucie");
-      
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
+
+      $(".th-xsell").click(function() {
+        libBanner.track_user_action("Library|Banner|Subscriber|Lucie", "banner_taps_thxsell");
+      });
+
     })();
   </script>
 
 </body>
 </html>
+

@@ -81,7 +81,10 @@
           .logo {
             background-image: url('logo.png') !important;
           }
-          
+          .ck-xsell {
+            background-image: url('ck_xsell.portrait.jpg') !important;
+          }
+
           .banner{                 
              height: 237px;              
           }
@@ -103,6 +106,9 @@
        @media only screen and (min-width:1024px){           
           .logo {
             background-image: url('logo.png') !important;
+          }
+          .ck-xsell {
+            background-image: url('ck_xsell.landscape.jpg') !important;
           }
           
           .banner{                 
@@ -150,8 +156,10 @@
      <div class="banner carousel">
         <div class="slides">
           <!-- Logo slide -->
-          <div class="slide logo"> 
-            <a href="#"></a>
+          <div class="slide logo" data-ios-version="<7"></div>
+          
+          <div class="slide ck-xsell" data-ios-version=">=7">
+            <a href="../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/cooking-light-magazine/id480009749?mt=8"></a>
           </div>
         </div>
      </div>
@@ -164,6 +172,11 @@
 
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
+
+      $(".ck-xsell").click(function() {
+        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_ckxsell");
+      });
+
     })();
   </script>
 </body>

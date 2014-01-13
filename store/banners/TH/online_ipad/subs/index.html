@@ -86,6 +86,10 @@
           	background-image: url('logo.png') !important;
           }
           
+          .sl-xsell {
+            background-image: url('sl_xsell.portrait.jpg') !important;
+          }
+          
           .banner{                 
              height: 237px;              
           }
@@ -107,6 +111,10 @@
        @media only screen and (min-width:1024px){           
           .logo {
             background-image: url('logo.png') !important;
+          }
+          
+          .sl-xsell {
+            background-image: url('sl_xsell.landscape.jpg') !important;
           }
           
           .banner{                 
@@ -159,7 +167,11 @@
         <div class="slides">
           
           <!-- Logo slide -->
-          <div class="slide logo"></div>
+          <div class="slide logo" data-ios-version="<7"></div>
+          
+          <div class="slide sl-xsell" data-ios-version=">=7">
+            <a href="../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/southern-living-magazine/id473964082?mt=8"></a>
+          </div>
           
         </div>
      </div>
@@ -172,6 +184,10 @@
       
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
+      
+      $(".sl-xsell").click(function() {
+        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_slxsell");
+      });
     })();
   </script>
 
