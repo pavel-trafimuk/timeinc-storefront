@@ -15,21 +15,34 @@ html, body {
     background: #000;
   }
   
+  @-webkit-keyframes pop {
+      0%   { -webkit-transform: scale(0); }
+      70%  { -webkit-transform: scale(1.1); }
+      100% { -webkit-transform: scale(1.0); }
+  }
+  
+  .pop {
+      -webkit-transform: scale(1.0), translate3d(0,0,0);
+      -webkit-animation-name: pop;
+      -webkit-animation-duration: 300ms;
+      -webkit-animation-timing-function: ease-in-out;
+  }
+      
+  #logo {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
   #container {
     position: absolute;
     left: 50%;
     top: 50%;
     text-align: center;
-    width:600px;
+    width:400px;
     height: 200px;
-    margin-left: -300px;  /*half width*/
+    margin-left: -200px;  /*half width*/
     margin-top: -100px;  /*half height*/
     padding: 6px;
-    -webkit-border-radius: 0.3em;
-    border-radius: 0.3em;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0.2em 0.6em;
-    background-image: none;
-    background-color: #040b0d;
     overflow: hidden;
   }
   
@@ -90,36 +103,8 @@ html, body {
     max-height: 135px;
     background: #ffffff;
     padding-top: 5px;
-  }
-  
-  
-
-  .lucie-complete-button {
-    display: -webkit-box;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-  }
-  
-
-  .sf-button-grey {
-    margin: 10px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    border: 2px solid #4e5e65;
-    color: #fff;
-    text-align: center;
-    font-size: 1.1em;
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4e5e65), color-stop(100%, #2d383f));
-    background-image: -webkit-linear-gradient(#4e5e65, #2d383f);
-    background-image: linear-gradient(#4e5e65, #2d383f);
-    text-shadow: 0px 1px 1px #0d1012;
-  }
-
-  .sf-button-pressed-grey {
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2d383f), color-stop(100%, #4e5e65));
-    background-image: -webkit-linear-gradient(#2d383f, #4e5e65);
-    background-image: linear-gradient(#2d383f, #4e5e65);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
   }
 
 /* iphone */
