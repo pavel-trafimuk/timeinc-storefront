@@ -18,6 +18,8 @@ window.settings = {
     
     "max_back_issues"            : 20,
 
+    "eMagsAppId": "SI1730",
+
     "omniture_account"           : "timagsimagnk",
     "omniture_server"            : "timeinc.122.2o7.net",
     "omniture_ssl_server"        : "timeinc.122.2o7.net",

@@ -19,6 +19,8 @@ window.settings = {
     
     "max_back_issues"            : 12,
 
+    "eMagsAppId": "COOKLITE9521",
+
     "omniture_account"           : "timagcookingnk",
     "omniture_server"            : "timeinc.122.2o7.net",
     "omniture_ssl_server"        : "timeinc.122.2o7.net",

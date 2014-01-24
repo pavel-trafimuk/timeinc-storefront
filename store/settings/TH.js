@@ -21,6 +21,8 @@ window.settings = {
     "enableHeroCoverTap"         : false,
     "preview_issue_product_id"   : "com.timeinc.thisoldhouse.ipad.inapp.FREESAMPLE",
 
+    "eMagsAppId": "TOH1719",
+
     "omniture_account"           : "timagtohnk",
     "omniture_server"            : "timeinc.122.2o7.net",
     "omniture_ssl_server"        : "timeinc.122.2o7.net",

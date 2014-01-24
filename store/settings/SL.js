@@ -19,6 +19,8 @@ window.settings = {
     "enableHeroCoverTap"         : false,
     "preview_issue_product_id"   : "com.timeinc.southernliving.ipad.inapp.FREESAMPLE",
 
+    "eMagsAppId": "SOLIV8403",
+
     "omniture_account"           : "timagsouthernnk",
     "omniture_server"            : "timeinc.122.2o7.net",
     "omniture_ssl_server"        : "timeinc.122.2o7.net",

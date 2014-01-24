@@ -25,6 +25,8 @@ window.settings = {
     "ipad_entbanner_subs"        : "subs/itunes/index.html?t=",
     "ipad_entbanner_lucie_subs"  : "subs/lucie/index.html?t=",
 
+    "eMagsAppId": "RS03042013",
+
     "omniture_account"           : "timagrealsimplenk",
     "omniture_server"            : "metrics.realsimple.com",
     "omniture_ssl_server"        : "smetrics.realsimple.com",
