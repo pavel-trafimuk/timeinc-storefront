@@ -13,6 +13,11 @@ window.settings = {
     "subscribeOfferText"         : "Discover new weekend destinations, inspiring homes and gardens and seasonal recipes. Plus bonus garden and travel covering all 5 regional editions.",
     
     "heroHeading"                : "Inside This Issue",
+    
+    "hero_preview": "none",
+    "enableHeroCoverTap"         : false,
+    "preview_issue_product_id"   : "com.timeinc.sunset.ipad.inapp.FREESAMPLE",
+    
     "max_back_issues"            : 20,
 
     "omniture_account"           : "timagsunsetnk",

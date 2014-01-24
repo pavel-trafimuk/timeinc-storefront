@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #f47d37;
+          background: #de6444;
           margin: 0px;
           padding: 0px;
        }
@@ -78,8 +78,16 @@
           float: right !important;
        }
          
-      .logo {
-        background-image: url('logo.png') !important;
+      .print {
+        background-image: url('PrintSubscriber.png?v={{BUILD_TIME}}') !important;
+      }
+      
+      .subscribe {
+        background-image: url('Subscribe.png?v={{BUILD_TIME}}') !important;
+      }
+      
+      .preview {
+        background-image: url('FreeSample.png?v={{BUILD_TIME}}') !important;
       }
       
       .banner{                 
@@ -123,20 +131,40 @@
    
    <div class="wrapper">
      <div class="banner carousel">
-        <div class="slides">          
-          <!-- Logo slide -->
-          <div class="slide logo"></div>
+        <div class="slides">
+          <!-- Free preview slide -->
+          <!--<div class="slide preview"></div>-->
+          
+          <div class="slide subscribe">
+          	<!-- Subscribe slide -->
+            <a href="#"></a>
+          </div>
+          <div class="slide print">
+          	<!-- Print Subsriber slide -->
+            <a href="#" id="banner-link"></a>
+          </div>
         </div>
      </div>
    </div>
    
-  <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript">    
+  <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript">
+    
+    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
+    
     (function() {
       libBanner.track_page_view("Library|Banner|Nonsubscriber");
-      
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
+      
+      $(".subscribe a").click(function(evt) {
+        evt.preventDefault();
+
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
+        libBanner.buy_sub("com.timeinc.sunset.ipad.subs.9");
+      });
     })();
   </script>
 

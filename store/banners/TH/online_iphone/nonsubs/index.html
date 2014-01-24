@@ -17,7 +17,7 @@
        }
                                 
        .wrapper{
-          width: 1024px;
+          width: 640px;
           margin: 0 auto; 
           text-align: center;
           width: 100%;
@@ -46,7 +46,7 @@
           position: relative;
           
           background-color: transparent;
-          background-position: 50% 50%;
+          background-position: top center;
           background-repeat: no-repeat;
           width: 100%;
           background-size: contain;
@@ -68,8 +68,7 @@
           background-size: auto 100%;   
           background-repeat: no-repeat;           
           margin-top: 1em;
-       }       
-       
+       }
        
        .pull-left{
           float: left !important;
@@ -79,25 +78,26 @@
           float: right !important;
        }
          
-          .print {
-          	background-image: url('PrintSubscriber.png') !important;
-          }
-          
-          .banner{                 
-             height: 237px;              
-          }
-          
-          .wrapper span.ipad-portrait{
-              display: block;
-          }        
-          
-          
-           .btn{
-             width: 200px;
-             height: 100px;
-             margin-top: 6px;
-          }
-          
+      .print {
+        background-image: url('PrintSubscriber.png?v={{BUILD_TIME}}') !important;
+      }
+      
+      .subscribe {
+        background-image: url('Subscribe.png?v={{BUILD_TIME}}') !important;
+      }
+      
+      .preview {
+        background-image: url('FreeSample.png?v={{BUILD_TIME}}') !important;
+      }
+      
+      .banner{                 
+         height: 237px;              
+      }
+      
+      .wrapper span.ipad-portrait{
+          display: block;
+      }        
+      
        .slide.loading::before {
          content: 'Loading…';
          display: block;
@@ -132,25 +132,39 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
+          <!-- Free preview slide -->
+          <!--<div class="slide preview"></div>-->
           
-          <!-- Print Subscriber slide -->
-          <div class="slide print">
-          	<a href="#" id="banner-link"></a>
+          <div class="slide subscribe">
+          	<!-- Subscribe slide -->
+            <a href="#"></a>
           </div>
-          
+          <div class="slide print">
+          	<!-- Print Subsriber slide -->
+            <a href="#" id="banner-link"></a>
+          </div>
         </div>
      </div>
    </div>
    
   <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
+    
     document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
     
     (function() {
       libBanner.track_page_view("Library|Banner|Nonsubscriber");
-      
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
+      
+      $(".subscribe a").click(function(evt) {
+        evt.preventDefault();
+
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
+        libBanner.buy_sub("com.timeinc.thisoldhouse.ipad.subs.9");
+      });
     })();
   </script>
 

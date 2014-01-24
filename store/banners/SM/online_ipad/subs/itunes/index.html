@@ -89,6 +89,11 @@
         .th-xsell {
           background-image: url('th_xsell.portrait.jpg') !important;
         }
+        
+        .lucie {
+          background-image: url('lucie_portrait.jpg') !important;
+        }
+        
         .banner{                 
           height: 237px;              
         }  
@@ -99,6 +104,11 @@
         .th-xsell {
           background-image: url('th_xsell.landscape.jpg') !important;
         }
+        
+        .lucie {
+          background-image: url('lucie_landscape.jpg') !important;
+        }
+        
         .banner{                 
           height: 177px;                 
         }  
@@ -138,6 +148,11 @@
           
           <!-- Logo slide -->
           <div class="slide logo" data-ios-version="<7"></div>
+          
+          <!-- LUCIE slide -->
+          <div class="slide lucie">
+          	<a href="#"></a>
+          </div>
 
           <!-- Cross-sell slide -->
           <div class="slide th-xsell" data-ios-version=">=7">
@@ -156,6 +171,12 @@
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
 
+      $(".lucie").click(function() {
+        evt.preventDefault();
+        libBanner.track_user_action("Library|Banner|Subscriber|iTunes", "banner_taps_register");
+        libBanner.lucie_register();
+      });
+      
       $(".th-xsell").click(function() {
         libBanner.track_user_action("Library|Banner|Subscriber|iTunes", "banner_taps_thxsell");
       });

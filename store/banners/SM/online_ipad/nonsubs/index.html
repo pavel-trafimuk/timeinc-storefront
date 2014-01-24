@@ -86,6 +86,10 @@
             background-image: url('Subscribe.png') !important;
           }
           
+          .sm-nttc-xsell {
+            background-image: url('x-sell_nttc_portrait.jpg') !important;
+          }
+          
           .banner{                 
              height: 237px;              
           }
@@ -107,6 +111,10 @@
        @media only screen and (min-width:1024px){           
           .subscribe {
             background-image: url('Subscribe.png') !important;
+          }
+          
+          .sm-nttc-xsell {
+            background-image: url('x-sell_nttc_landscape.jpg') !important;
           }
           
           .banner{                 
@@ -163,6 +171,10 @@
           	<a href="#"></a>
           </div>
           
+          <!-- NTTC xsell slide -->
+          <div class="slide sm-nttc-xsell" data-ios-version=">=7">
+            <a href="../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/real-simple-no-time-to-cook/id708536998?mt=8"></a>
+          </div>
         </div>
      </div>
    </div>
@@ -182,6 +194,9 @@
 
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
         libBanner.buy_sub("com.timeinc.realsimple.ipad.subs.9");
+      });
+      $(".sm-nttc-xsell").click(function() {
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_smnttcxsell");
       });
     })();
   </script>
