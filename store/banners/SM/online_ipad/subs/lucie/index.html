@@ -100,6 +100,9 @@
           .th-xsell {
             background-image: url('th_xsell.portrait.jpg?v={{BUILD_TIME}}') !important;
           }
+          .sm-nttc-xsell {
+            background-image: url('x-sell_nttc_portrait.jpg?v={{BUILD_TIME}}') !important;
+          }
           
           .banner{                 
              height: 237px;              
@@ -126,6 +129,9 @@
           }
           .th-xsell {
             background-image: url('th_xsell.landscape.jpg?v={{BUILD_TIME}}') !important;
+          }
+          .sm-nttc-xsell {
+            background-image: url('x-sell_nttc_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
           
           .banner{                 
@@ -187,6 +193,11 @@
           <div class="slide th-xsell" data-ios-version=">=7">
             <a href="../../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/this-old-house-magazine/id478315552?mt=8"></a>
           </div>
+          
+          <!-- NTTC xsell slide -->
+          <div class="slide sm-nttc-xsell" data-ios-version=">=7">
+            <a href="../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/real-simple-no-time-to-cook/id708536998?mt=8"></a>
+          </div>
 
         </div>
      </div>
@@ -202,6 +213,10 @@
 
       $(".th-xsell").click(function() {
         libBanner.track_user_action("Library|Banner|Subscriber|Lucie", "banner_taps_thxsell");
+      });
+      
+      $(".sm-nttc-xsell").click(function() {
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_smnttcxsell");
       });
 
     })();
