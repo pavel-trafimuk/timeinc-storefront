@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #ffffff;
+          background: #009caa;
           margin: 0px;
           padding: 0px;
        }
@@ -95,8 +95,10 @@
        @media only screen and (min-width:768px){           
           
           .logo {
-            background-image: url('logo.png?v={{BUILD_TIME}}') !important;
-          }
+	        background-image: url('sm-logo.png?v={{BUILD_TIME}}') !important;
+	        background-size: 90%;
+	        background-position: center center;
+	      }
           .th-xsell {
             background-image: url('th_xsell.portrait.jpg?v={{BUILD_TIME}}') !important;
           }
@@ -125,7 +127,7 @@
        @media only screen and (min-width:1024px){           
           
           .logo {
-            background-image: url('logo.png?v={{BUILD_TIME}}') !important;
+            background-image: url('sm-logo.png?v={{BUILD_TIME}}') !important;
           }
           .th-xsell {
             background-image: url('th_xsell.landscape.jpg?v={{BUILD_TIME}}') !important;
@@ -185,18 +187,21 @@
         <div class="slides">
 
           <!-- Ebook slide -->
-          <div class="slide logo">
+          <!--<div class="slide logo">
             <a href="dps.7ea9178b138a416d899803c578036a49://v1/folio/com.timeinc.realsimple.ipad.inapp.08302013/56036"></a>
+          </div>-->
+          
+          <!-- Ebook slide -->
+          <div class="slide logo" data-ios-version="<7"></div>
+          
+          <!-- NTTC xsell slide -->
+          <div class="slide sm-nttc-xsell" data-ios-version=">=7">
+            <a href="../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/real-simple-no-time-to-cook/id708536998?mt=8"></a>
           </div>
           
           <!-- Cross-sell slide -->
           <div class="slide th-xsell" data-ios-version=">=7">
             <a href="../../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/this-old-house-magazine/id478315552?mt=8"></a>
-          </div>
-          
-          <!-- NTTC xsell slide -->
-          <div class="slide sm-nttc-xsell" data-ios-version=">=7">
-            <a href="../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/real-simple-no-time-to-cook/id708536998?mt=8"></a>
           </div>
 
         </div>
