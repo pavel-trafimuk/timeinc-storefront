@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> </title>
+<link rel="stylesheet" href="../css/myaccount.css" />
+
+<script type="text/javascript">
+document.addEventListener("touchmove", function(evt) {
+  evt.preventDefault();
+});
+
+function go(URL){
+	window.location.href=URL;
+}
+
+function showArrow(){
+	document.getElementById('arrow').style.display='block';
+}
+
+</script>
+  <script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
+  <script type="text/javascript" src="../lib/jquery.js"></script>
+  <script type="text/javascript" src="../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="../settings/settings_loader.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="../lib/md5.js"></script>
+</head>
+
+<body>
+
+ <div class="wrap" id="panel">
+    <div id="arrow" style="display:none;position:absolute;top:0px"><img src="../images/arrow.png" /></div>
+	<div class="content">
+	<p class="title">WHAT CAN WE HELP YOU WITH?</p>
+    <script>
+	      document.write('<p><a onclick="showArrow();" href="#"  target="_blank" class="print-subs blue-btn">' + settings.myacctSignIn + '</a><span style="font-weight:normal; font-size:16px">Your digital account is your email address and password.</span></p>');
+	         document.write('<p><a onclick="go(settings.popupActivateButtonUrl)" href="#"  target="_blank" class="print-subs blue-btn">' + settings.myacctPrintSubs + '</a></p>');
+	   
+    </script>
+    <p><a href="index.html" class="clear-btn">Go Back</a></p>
+    
+   </div>
+
+	<!-- SiteCatalyst -->
+    <div style="display:none;">
+        <!-- PROD s_code -->
+        <script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/omniture/{{MAG_CODE}}/s_code.js"></script>
+        
+        <script type="text/javascript">
+          
+            function dateFormat(d) {
+                var curr_date = d.getDate(),
+                    curr_month = d.getMonth() + 1,
+                    curr_year = d.getFullYear(),
+                    curr_hour = d.getHours(),
+                    meridiem,
+                    halfHour,
+                    retDate;
+                    
+                    
+                    curr_month = (curr_month < 10) ? "0" + curr_month : curr_month;
+                    curr_date = (curr_date < 10) ? "0" + curr_date : curr_date;
+                    meridiem = (curr_hour > 12) ? "PM" : "AM"; // Must determine meridiem before modifying curr_hour
+                    curr_hour = (curr_hour < 10) ? "0" + curr_hour : curr_hour;
+                    curr_hour = (curr_hour > 12) ? curr_hour - 12 : curr_hour;
+                    halfHour = (d.getMinutes() >= 30) ? "30" : "00";
+                    
+                    
+                    retDate = curr_month + "/" + curr_date + "/" + curr_year + "-" + curr_hour + ":" + halfHour + meridiem;
+        
+                return retDate;
+            }
+
+            function onOmniture(cfg) {
+                try {
+                    console.log('onOmniture', cfg);
+                    
+                
+                    var today = new Date(),
+                        orientation = (window.orientation == 0 || window.orientation == 180) ? 'portrait' : 'landscape',
+                        dayOfWeek = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+                            
+                    s.events = cfg.events;
+                    s.pageName = cfg.pageName;
+                    s.prop8 = cfg.prop8;
+                    s.prop10 = cfg.prop10;
+                    s.eVar28 = cfg.eVar28;
+                    s.eVar33 = cfg.eVar33;
+                            
+                    s.server = window.location.host;
+                    s.timestamp = Math.round(today.getTime() / 1000);
+                    s.visitorID = s.eVar3 = localStorage.visitorId;
+                    s.prop3 = "D=User Agent";
+                    
+                    s.prop16 = s.eVar24 = "store";
+                    s.prop17 = location.protocol + "//" + location.host + location.pathname;
+                    s.prop18 = orientation;
+                    s.prop19 = 'online';
+                    s.prop26 = 'dsc';
+                    s.prop29 = '';
+                    s.prop35 = s.eVar35 = "pageview";
+                    s.prop36 = s.eVar36 = 'storefront';
+                    s.eVar30 = dayOfWeek[today.getDay()].toLowerCase();
+                    s.prop7 = s.eVar31 = dateFormat(today);
+                    s.eVar32 = (today.getDay() == 0 || today.getDay() == 6) ? "weekend" : "weekday";
+                     
+                    s.pageType = "";
+            
+                    var s_code = s.t();
+                    if(s_code){document.write(s_code);}
+                } catch (e) {
+                    console.log('ERROR in lucie-reg-js-omniture.js::onOmniture', e);
+                }
+            }
+            
+            function onOmnitureTL(cfg) {
+                try {
+                    console.log("omni tl2 ", cfg);
+                
+                    var today = new Date(),
+                        orientation = (window.orientation == 0 || window.orientation == 180) ? 'portrait' : 'landscape',
+                        keys = Object.keys(cfg),
+                        keysLength = keys.length,
+                        dayOfWeek = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+                            
+                    s.events = cfg.events;
+                    s.pageName = cfg.pageName;
+                    s.prop8 = cfg.prop8;
+                    s.prop10 = cfg.prop10;
+                    s.eVar28 = cfg.eVar28;
+                    s.eVar33 = cfg.eVar33;
+                            
+                    
+                    s.linkTrackVars = keys.join(',') + ',prop3,prop7,prop16,prop18,prop19,prop26,prop29,prop35,prop36,eVar3,eVar24,eVar26,eVar29,eVar30,eVar31,eVar32,eVar35,eVar36,eVar44,events';
+                    s.linkTrackEvents = cfg.events;
+                    s.server = window.location.host;
+                    s.timestamp = Math.round(today.getTime() / 1000);
+                    s.visitorID = s.eVar3 = localStorage.visitorId;
+                    s.prop3 = "D=User Agent";
+                        
+                    s.prop16 = s.eVar24 = "store";
+                    s.prop17 = location.protocol + "//" + location.host + location.pathname;
+                    s.prop18 = orientation;
+                    s.prop19 = 'online';
+                    s.prop26 = 'dsc';
+                    s.prop29 = '';
+                    s.prop35 = s.eVar35 = "pageview";
+                    s.prop36 = s.eVar36 = 'storefront';
+                    s.eVar30 = dayOfWeek[today.getDay()].toLowerCase();
+                    s.prop7 = s.eVar31 = dateFormat(today);
+                    s.eVar32 = (today.getDay() == 0 || today.getDay() == 6) ? "weekend" : "weekday";
+            
+                    s.pageType = "";
+                    
+                    s.tl(this, 'o', (s.events == 'event44') ? 'splash occurences' : 'user action');
+                } catch (e) {
+                    console.log('ERROR in lucie-reg-js-omniture.js::onOmnitureTL', e);
+                }
+            }
+                      
+            // Track page view
+            var cfg = {
+                events   : "event1",
+                pageName : "store|my account",
+                prop8    : "my account",
+                prop10   : "ipad dps",  // "kf" for kindle fire
+                eVar28   : "my account"
+                //eVar33   : "receipt"
+            };
+        
+            // This function found in lucie-customer-creation-omniture.js
+            var getVisitorID = window.setInterval(function() {
+                if (localStorage.visitorId) {
+                    window.clearInterval(getVisitorID);
+                    onOmniture(cfg);
+                }
+            }, 500);
+        </script>
+   </div>
+  <script type="text/javascript" src="support-links.js"></script>
+   <script>
+     $(function() {
+         if (settings.popupActivateButtonUrl) $(".print-subs").show();
+         adobeDPS.initializationComplete.addOnce(function() {
+            // don't show lucie registration button if the user is signed into lucie
+            if (adobeDPS.authenticationService.isUserAuthenticated) return;
+
+            localStorage.visitorId = md5(adobeDPS.deviceService.deviceId);
+            $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {
+                if (sub.isActive()) {
+                    $("#lucieRegistrationBtn").show();
+                }
+            });
+         });
+     });
+   </script>
+</body>
+</html>
+

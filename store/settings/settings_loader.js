@@ -99,13 +99,15 @@
         "popup_close_text"           : "Close",
 
         // my account
-        "myacctForgotPassword"       : '<span class="singleLine">FORGOT PASSWORD</span>',
-        "myacctPrintSubs"            : '<span class="line1">PRINT SUBSCRIBERS</span><br /><span class="line2">TAP HERE</span>',
-        "myacctAcctSetup"            : '<span class="line1">COMPLETE ACCOUNT SETUP</span><br /><span class="line2">FOR IPAD SUBSCRIBERS</span>',
-        "myacctRestoreIssues"        : '<span class="singleLine">RESTORE ISSUES</span>',
-        "myacctCustService"          : '<span class="singleLine">CUSTOMER SERVICE</span>',
-        "myacctFAQ"                  : '<span class="line1">FREQUENTLY ASKED</span><br /><span class="line2">QUESTIONS</span>',
-
+        "myacctForgotPassword"       : 'Forgot Password',
+        "myacctPrintSubs"            : 'I have a subscription and want to create my '+settings.brandName+' digital account',
+        "myacctSignIn"               : 'I have a '+settings.brandName+' digital account and want to access my issues',
+        "myacctAcctSetup"            : 'I want to create my '+settings.brandName+' digital account',
+        "myacctRestoreIssues"        : 'I want to access my issues',
+        "myacctCustService"          : 'Contact Customer Care',
+        "myacctHelpGuide"            : 'Help Guide',
+        "myacctFAQ"                  : 'FAQs',
+        
         // Sign-in Dialog
         "authSigninHeader"           : "Sign In",
         "authSigninButton"           : "Sign In",
@@ -159,6 +161,10 @@
         "customerServiceUrl_INTL"    : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/pages/home.jsp&MSRSMAG=" + settings.brandCode,
         
         "myacctRestoreIssuesURL"     : "restoreissues.html",
+        "myacctHelpGuideURL"         : '../helpguides/index.html',
+        "myacctFAQURLR27"            : 'http://subscription-assets.timeinc.com/prod/assets/themes/magazines/SUBS/templates/velocity/site/mm-r27ipad-digitaledition-faq/lp.html',
+        "myacctFAQURLR28"            : 'http://subscription-assets.timeinc.com/prod/assets/themes/magazines/SUBS/templates/velocity/site/mm-r28ipad-digitaledition-faq/lp.html',
+        "myacctFAQURLiphone"         : 'http://subscription-assets.timeinc.com/prod/assets/themes/magazines/SUBS/templates/velocity/site/mm-r28iphone-digitaledition-faq/lp.html',
 
 
         // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls

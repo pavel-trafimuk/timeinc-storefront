@@ -1,5 +1,9 @@
-body{font-family:Arial, sans-serif;}
-a {
+*{margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;line-height:inherit;letter-spacing:inherit;list-style:none;text-decoration:none;}
+
+body, html {height:100%;}
+body{background-color:#fff;
+font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold;}
+/*a {
  display:block;
  height: 50px;
  width: 299px;
@@ -17,7 +21,7 @@ background: $MYACCOUNT_STD_BTN_BG;
  -webkit-box-shadow: 0px 4px 4px 0px #bbb;
  box-shadow: 0px 4px 4px 0px #bbb;
 }
-
+*/
 
 .showingLucieRegBtn{
   margin:1.7em auto;
@@ -39,9 +43,116 @@ background: $MYACCOUNT_STD_BTN_BG;
  cursor: hand; cursor: pointer;
 }
 
-#restoreIssues {
- background: $MYACCOUNT_HIGHLIGHTED_BTN_BG;
+
+p { 
+margin: 1em 0;
+ }
+a {
+color:inherit;
+}
+hr {
+border-bottom:1px solid #ccc;
+border-top:1px solid #c1bebe;
+height:3px;
+margin-bottom:30px;
+width:100%;
+}
+.mouseType{
+font-size:10px;
+}
+.clear {
+ clear:both; min-height: 0;
+  }
+.wrap {
+width:100%; 
+min-height: 100%; 
+margin:0px auto; 
+background:url(../images/bg.png) no-repeat top center scroll;
+ background-size: cover;
+ text-align:center;
+ }
+ 
+
+.content{
+	display: inline-block;
+	position: relative;
+	width: 500px;
+	padding: 5% 0px;
+	
+	margin: 0px auto;
 }
 
+.title{
+font-size:30px;
+}
 
+.blue-btn, .clear-btn {
+	display: block;
+	border-radius: 10px;
+	width: 360px;
+	max-width: 360px;
+	padding: 10px 20px;
+	font-size: 22px;
+	margin:40px 40px 0px 40px;
+}
+.blue-btn{
+	background-color: #00a6de;
+	color:#FFF;
+}
+.clear-btn{
+	border: 2px solid #666;
+	color:#00a6de;
+}
 
+.textwrap {
+	font-size: 15px;
+	font-weight: normal;
+	width: 90%;
+	max-width: 450px;
+	margin: 0px auto;
+	padding: 0px 10px;
+}
+
+.care {
+	width: 100%;
+	font-size: 20px;
+	position: fixed; 
+	bottom: 0;
+	/*padding-bottom: 40px;*/
+}
+
+.care-btn {
+	position: relative;
+	display: inline-block;
+	border-radius: 10px;
+	border: 2px solid #b8b6b4;
+	padding: 5px 10px;
+	margin: 10px 10px;
+	font-size: 18px;
+	font-weight: normal;
+	color:#00a6de;
+	background-color:#e1dedb;
+
+}
+
+@media (orientation: landscape ) {
+	.care-btn{margin: 10px 5%;}
+}
+
+@media (max-width: 954px ) {
+	.wrap{width:100%;}
+}
+
+@media (max-width: 768px ) {
+	.content {padding-top: 100px;padding-top:10%;}
+}
+
+@media (max-width: 500px ) {
+	.content {width:100%;}
+	.blue-btn, .clear-btn {width:85%;}
+}
+
+@media (max-width: 380px ) {
+	.blue-btn, .clear-btn {font-size:18px;}
+	.care-btn{display:block;}
+}
