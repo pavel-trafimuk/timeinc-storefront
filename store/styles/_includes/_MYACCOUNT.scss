@@ -1,3 +1,6 @@
+@import "_includes/_dialogs.scss";
+@import "_includes/_signin_dialog.scss"; /* signin dialog for user flow */
+
 *{margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;line-height:inherit;letter-spacing:inherit;list-style:none;text-decoration:none;}
 
 body, html {height:100%;}
@@ -133,6 +136,10 @@ font-size:30px;
 	color:#00a6de;
 	background-color:#e1dedb;
 
+}
+
+#signin-dialog {
+  margin-left: -230px;
 }
 
 @media (orientation: landscape ) {

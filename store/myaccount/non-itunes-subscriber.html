@@ -1,45 +1,133 @@
 <!doctype html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title> </title>
-<link rel="stylesheet" href="../css/myaccount.css" />
-
-<script type="text/javascript">
-document.addEventListener("touchmove", function(evt) {
-  evt.preventDefault();
-});
-
-function go(URL){
-	window.location.href=URL;
-}
-
-function showArrow(){
-	document.getElementById('arrow').style.display='block';
-}
-
-</script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title> </title>
+  <link rel="stylesheet" href="../css/myaccount.css" />
   <script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
   <script type="text/javascript" src="../lib/jquery.js"></script>
   <script type="text/javascript" src="../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript" src="../settings/settings_loader.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript" src="../lib/md5.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+  	  var $that = $(this);
+  	  
+  	  $(this).on('touchmove', function(e) {
+  	    e.preventDefault();
+  	  });
+  	  
+  	  $(".close-dialog").on('click', function(e) {
+        e.preventDefault();
+        $("#signin-modal").hide();
+      });
+      
+  	  $("#showSignin").on('click', function(e) {
+  	  	e.preventDefault();
+  	  	$("#signin-modal").show();
+  	  });
+  	  
+  	  $(".sign-in-btn").on('click', function(e) {
+  	  	e.preventDefault();
+  	  	signIn();
+  	  });
+  	  
+  	  $("#signin-form").on('submit', function(e) {
+        e.preventDefault();
+        signIn();
+      });
+  	});
+  	
+  	function go(URL){
+      window.location.href=URL;
+    }
+    
+  	function signIn() {
+        var $modal = $("#signin-modal"),
+        $err = $(".error-msg"),
+        $user = $(".auth-email"),
+        $pass = $(".auth-pass");
+        
+        $err.hide();
+        
+        if (! $user.val().length) {
+          return $err.show().text(settings.authErrorNoEmail);
+        }
+        
+        if (! $pass.val().length) {
+          return $err.show().text(settings.authErrorNoPass);
+        }
+        
+        try {
+          var t = adobeDPS.authenticationService.login($user.val(), $pass.val());
+        }
+        
+        catch (err) {
+          $err.show().text(settings.authErrorAuthFailed);
+        }
+        
+        t.completedSignal.addOnce(function() {
+          if (t.state < 0) $err.show().text(settings.authErrorAuthFailed);
+          else $modal.remove();
+        });
+      }
+  </script>
 </head>
 
 <body>
 
- <div class="wrap" id="panel">
-    <div id="arrow" style="display:none;position:absolute;top:0px"><img src="../images/arrow.png" /></div>
-	<div class="content">
-	<p class="title">WHAT CAN WE HELP YOU WITH?</p>
-    <script>
-	      document.write('<p><a onclick="showArrow();" href="#"  target="_blank" class="print-subs blue-btn">' + settings.myacctSignIn + '</a><span style="font-weight:normal; font-size:16px">Your digital account is your email address and password.</span></p>');
-	         document.write('<p><a onclick="go(settings.popupActivateButtonUrl)" href="#"  target="_blank" class="print-subs blue-btn">' + settings.myacctPrintSubs + '</a></p>');
-	   
-    </script>
-    <p><a href="index.html" class="clear-btn">Go Back</a></p>
-    
+<!-- START: Signin Dialog -->
+   <div id="signin-modal" class="modal-background" style="display: none;">
+     <div id="signin-dialog" class="dialog pop">
+       <header>Sign In</header>
+       <div class="close-dialog">×</div>
+       
+       <script type="text/javascript">
+         var form_html = '<form id="signin-form" class="contents">'.concat(
+         	'<p>' + settings.authInstructions + '</p>',
+         	'<input type="email" class="auth-email" placeholder="' + settings.authPlacehodlerEmail + '">',
+         	'<input type="password" class="auth-pass" placeholder="' + settings.authPlacehodlerPass + '">',
+         	'<a href="' + settings.signInForgotPasswordUrl + '">' + settings.authForgotPassword + '</a>',
+         	'<button class="sign-in-btn">' + settings.authSigninButton + '</button>',
+         	'<div class="error-msg"></div>',
+         	'<p class="print-subs">' + settings.authPrintSubsPrompt + ' <a href="' + settings.WesPageURL + '">' + settings.authPrintSubsLinkText + '</a></p>',
+         	'</form>'
+         );
+         document.write(form_html);
+       
+         var footer_html = '<footer>'.concat(
+        	'<a href="#" onclick="go(settings.privacyPolicyUrl)">' + settings.authPrivacyLinkText + '</a>',
+        	' | <a href="#" onclick="go(settings.licenceAgreementUrl)">' + settings.authLicenseLinkText + '</a>',
+        	' | <a href="#" onclick="go(settings.termsOfUseUrl)">' + settings.authTermsLinkText + '</a>'
+         );
+         document.write(footer_html);
+       </script>
+       
+     </div>
    </div>
+   <!-- END: Signin Dialog -->
+   
+   <div class="wrap" id="panel">
+     <!--<div id="arrow" style="display:none;position:absolute;top:0px">
+       <img src="../images/arrow.png" />
+     </div>-->
+	 <div class="content">
+	   <p class="title">WHAT CAN WE HELP YOU WITH?</p>
+       <script type="text/javascript">
+	      var button_html = ''.concat(
+	      	'<p>',
+	      	  '<a id="showSignin" href="#" class="print-subs blue-btn">' + settings.myacctSignIn + '</a>',
+	      	  '<span style="font-weight:normal; font-size:16px">Your digital account is your email address and password.</span>',
+	      	'</p>',
+	      	'<p>',
+	      	  '<a href="' + settings.popupActivateButtonUrl + '" class="print-subs blue-btn">' + settings.myacctPrintSubs + '</a>',
+	      	'</p>'
+	      );
+	      document.write(button_html);
+       </script>
+       <p><a href="index.html" class="clear-btn">Go Back</a></p>
+    </div>
 
 	<!-- SiteCatalyst -->
     <div style="display:none;">
