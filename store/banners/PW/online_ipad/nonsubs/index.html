@@ -70,6 +70,7 @@
   <script type="text/javascript">
     (function() {
       libBanner.track_page_view("Library|Banner|Nonsubscriber");
+      libBanner.echo();
       $(function() {
         $(".subscribe a").click(function() {
           libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
