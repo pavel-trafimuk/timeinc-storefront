@@ -18,7 +18,7 @@ if (settings.customerServiceUrl && "{{MAG_CODE}}" != "TK") {
 if (settings.signInForgotPasswordUrl && "{{MAG_CODE}}" != "TK") {
 	 	document.write('<a onclick="go(settings.signInForgotPasswordUrl)" href="#" target="_blank" class="care-btn">' + settings.myacctForgotPassword + '</a>');
 }
-if (!(/SK|AY|HA|CT|PP|MO/).test("{{MAG_CODE}}")) {
+if (!(/SK|AY|HA|CT|PP|MO|FA|FI|FZ/).test("{{MAG_CODE}}")) {
 	 	document.write('<a onclick="go(settings.myacctHelpGuideURL)" href="#" class="care-btn">'+settings.myacctHelpGuide+'</a>');
 }
 document.write('</p></div>');

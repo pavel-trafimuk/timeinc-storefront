@@ -112,6 +112,7 @@
         "myacctAcctSetup"            : 'I want to create my '+settings.brandName+' digital account',
         "myacctLUCIEText"            : 'Your '+settings.brandName+' digital account gives you access to future benefits and other valuable information.',
         "myacctSignInText"           : 'Your digital account is your email address and password',
+        "myacctSignOut"              : 'Sign Out',
         "myacctRestoreIssues"        : 'I want to access my issues',
         "myacctCustService"          : 'Contact Customer Care',
         "myacctGoBack"               : 'Go Back',

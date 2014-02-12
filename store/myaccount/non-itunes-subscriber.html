@@ -11,8 +11,12 @@
   <script type="text/javascript" src="../lib/md5.js"></script>
 
   <script type="text/javascript">
-    $(document).ready(function() {
+ 
+  	
+  
+   $(document).ready(function() {
   	  var $that = $(this);
+  	  
   	  
   	  $(this).on('touchmove', function(e) {
   	    e.preventDefault();
@@ -25,7 +29,12 @@
       
   	  $("#showSignin").on('click', function(e) {
   	  	e.preventDefault();
-  	  	$("#signin-modal").show();
+  	    $("#signin-modal").show();
+  	  });
+  	  
+  	  $("#signOut").on('click', function(e) {
+  	  	e.preventDefault();
+  	  	signOut();
   	  });
   	  
   	  $(".sign-in-btn").on('click', function(e) {
@@ -37,17 +46,22 @@
         e.preventDefault();
         signIn();
       });
+     
+   
   	});
   	
+ 
   	function go(URL){
       window.location.href=URL;
     }
     
   	function signIn() {
-        var $modal = $("#signin-modal"),
+  	   var $modal = $("#signin-modal"),
         $err = $(".error-msg"),
         $user = $(".auth-email"),
-        $pass = $(".auth-pass");
+        $pass = $(".auth-pass"),
+          $signIn=$("#showSignin"), 
+          $signOut=$("#signOut");
         
         $err.hide();
         
@@ -69,8 +83,40 @@
         
         t.completedSignal.addOnce(function() {
           if (t.state < 0) $err.show().text(settings.authErrorAuthFailed);
-          else $modal.remove();
+          else{
+           $modal.remove();
+           $signIn.remove();
+          $("#myAcctText").remove();
+           $signOut.show();
+           
+           
+          }
         });
+      }
+      function signOut() {
+      
+        var  $signIn=$("#showSignin"), $signOut=$("#signOut"),  $err = $(".error-msg");
+        
+        $err.hide();
+              
+        try {
+          var t = adobeDPS.authenticationService.logout();
+        }
+        
+        catch (err) {
+          $err.show().text(settings.authErrorAuthFailed);
+        }
+        
+        t.completedSignal.addOnce(function() {
+          if (t.state < 0) $err.show().text(settings.authErrorAuthFailed);
+          else{
+            $signOut.remove();
+            $("#myAcctText").show();
+            $signIn.show();
+                      
+           }
+        });
+
       }
   </script>
 </head>
@@ -114,18 +160,28 @@
      </div>-->
 	 <div class="content">
 	   	     <script type="text/javascript">
-	      var button_html = ''.concat(
-	        '<p class="title">' + settings.myacctWhatHelp + '</p',
-	     	'<p>',
-	      	  '<a id="showSignin" href="#" class="print-subs blue-btn">' + settings.myacctSignIn + '</a>',
-	      	  '<span style="font-weight:normal; font-size:14px">' +settings.myacctSignInText+'</span>',
-	      	'</p>',
-	      	'<p>',
-	      	  '<a href="' + settings.popupActivateButtonUrl + '" class="print-subs blue-btn">' + settings.myacctPrintSubs + '</a>',
-	      	'</p>'
-	      );
-	      document.write(button_html);
-	      document.write('<p><a href="index.html" class="clear-btn">' + settings.myacctGoBack + '</a></p>');
+	   	   
+	   	     document.write('<p class="title">' + settings.myacctWhatHelp + '</p');
+	   	     var button_html='';
+	   	     
+	   	   if (!adobeDPS.authenticationService.isUserAuthenticated) {
+	   	     button_html=''.concat(
+					
+	     			'<p>',
+	      	 		 '<a id="showSignin" href="#" class="print-subs blue-btn">' + settings.myacctSignIn + '</a>',
+	      	 		 '<span style="font-weight:normal; font-size:14px" id="myAcctText">' +settings.myacctSignInText+'</span>',
+	      			'</p>'	      			
+	      			 );
+	       }
+	       else{
+	           button_html=''.concat('<p>',
+	      			  '<a id="signOut" href="#"  class="print-subs blue-btn">' + settings.myacctSignOut + '</a>',
+	      			 '</p>'
+	      			 );
+	       }
+	      	document.write(button_html);
+	      	document.write('<p><a href="' + settings.popupActivateButtonUrl + '" class="print-subs blue-btn">' + settings.myacctPrintSubs + '</a></p>');
+	        document.write('<p><a href="index.html" class="clear-btn">' + settings.myacctGoBack + '</a></p>');
        </script>
 
     </div>
