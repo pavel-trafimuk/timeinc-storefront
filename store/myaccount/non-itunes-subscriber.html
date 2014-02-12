@@ -99,13 +99,8 @@
         
         $err.hide();
               
-        try {
-          var t = adobeDPS.authenticationService.logout();
-        }
-        
-        catch (err) {
-          $err.show().text(settings.authErrorAuthFailed);
-        }
+        adobeDPS.authenticationService.logout();
+       
         
         t.completedSignal.addOnce(function() {
           if (t.state < 0) $err.show().text(settings.authErrorAuthFailed);
@@ -162,26 +157,22 @@
 	   	     <script type="text/javascript">
 	   	   
 	   	     document.write('<p class="title">' + settings.myacctWhatHelp + '</p');
-	   	     var button_html='';
-	   	     
-	   	   if (!adobeDPS.authenticationService.isUserAuthenticated) {
-	   	     button_html=''.concat(
+	   	     var button_html=''.concat(
 					
 	     			'<p>',
 	      	 		 '<a id="showSignin" href="#" class="print-subs blue-btn">' + settings.myacctSignIn + '</a>',
 	      	 		 '<span style="font-weight:normal; font-size:14px" id="myAcctText">' +settings.myacctSignInText+'</span>',
 	      			'</p>'	      			
 	      			 );
-	       }
-	       else{
-	           button_html=''.concat('<p>',
-	      			  '<a id="signOut" href="#"  class="print-subs blue-btn">' + settings.myacctSignOut + '</a>',
+	      	 document.write(button_html);		 
+	         button_html=''.concat('<p>',
+	      			  '<a id="signOut" href="#"  class="print-subs blue-btn" style="display:none">' + settings.myacctSignOut + '</a>',
 	      			 '</p>'
 	      			 );
-	       }
-	      	document.write(button_html);
-	      	document.write('<p><a href="' + settings.popupActivateButtonUrl + '" class="print-subs blue-btn">' + settings.myacctPrintSubs + '</a></p>');
-	        document.write('<p><a href="index.html" class="clear-btn">' + settings.myacctGoBack + '</a></p>');
+	      
+	      	 document.write(button_html);
+	      	 document.write('<p><a href="' + settings.popupActivateButtonUrl + '" class="print-subs blue-btn">' + settings.myacctPrintSubs + '</a></p>');
+	         document.write('<p><a href="index.html" class="clear-btn">' + settings.myacctGoBack + '</a></p>');
        </script>
 
     </div>
