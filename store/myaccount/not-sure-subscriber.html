@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> </title>
+<link rel="stylesheet" href="../css/myaccount.css" />
+
+<script type="text/javascript">
+document.addEventListener("touchmove", function(evt) {
+  evt.preventDefault();
+});
+
+function go(URL){
+	window.location.href=URL;
+}
+
+</script>
+  <script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
+  <script type="text/javascript" src="../lib/jquery.js"></script>
+  <script type="text/javascript" src="../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="../settings/settings_loader.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="../lib/md5.js"></script>
+</head>
+
+<body >
+
+ <div class="wrap">
+  <div class="content">
+  	 <p class="title">Not Sure How You Subscribed?</p>
+  	 <div style="text-align:left; font-size:18px; font-weight:normal" >
+	 <p><span style="font-weight:bold">To confirm that you are an iTunes subscriber, follow these steps</span>:</p>
+     <ol>
+	  <li>On your iPad’s home screen, tap "Settings".</li>
+	  <li>On the left navigation bar, tap "iTunes & App Store".</li>
+	  <li>Tap on your Apple ID.</li>
+	  <li>Tap “View Apple ID”. You will be prompted to enter your iTunes password.</li>
+	  <li>Tap “Manage” under Subscriptions.</li>
+     </ol>
+	 <p>If it says “Active” next to your magazine, you have subscribed via iTunes.</p>
+	 <p>If it says “Expired” next to your magazine, you have subscribed via iTunes but your subscription is no longer active.</p>
+	 <p>If the magazine is not listed, you did not subscribe via iTunes.</p>
+	 <p><span style="font-weight:bold">If you subscribed via another digital device or platform, you may not have access to this magazine on the iPad.</span></p>
+	 <p>If you subscribed elsewhere, tap the button below to verify your subscription and create your digital account.</p>
+	 </div>
+	 <p><a href="non-itunes-subscriber.html" class="blue-btn">I subscribed elsewhere</a></p>
+  </div>
+  <script type="text/javascript" src="support-links.js"></script>
+ </div>
+</body>
+</html>
+

@@ -14,7 +14,8 @@ window.settings = {
 
     "heroHeading"                : "Inside This Issue",
     "subscribeOfferText"         : "Each issue of REAL SIMPLE is packed with smart, beautiful, and practical solutions to make life easier – every single day.  Plus fast and delicious recipes, easy organizing and decorating ideas, great fashion and beauty finds, money-saving tips, and more. Plus, get 1 month free with an annual subscription.",
-    
+    "myacctLUCIEText"            : 'Your REAL SIMPLE digital account gives you access to: The digital edition on your tablet or smartphone, the No Time To Cook App with over 900 recipes updated monthly, and Solution Seekers on Realsimple.com where you can save checklists, recipes and more.',
+       
     "welcome_preview": "image",
     "hero_itii_preview": "image",
     "max_back_issues"            : 12,

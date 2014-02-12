@@ -27,7 +27,8 @@ window.settings = {
     
     // my account
     "myacctAcctSetup"            : '<span class="line1">ACCOUNT SETUP FOR FREE ACCESS</span><br /><span class="line2">TO ARCHIVES ON TIME.COM</span>',
-        
+    "myacctLUCIEText"            : "Your TIME digital account gives you access to all of the TIME commemorative reissues and unrestricted access on TIME.com, including the archives with nearly every article published since 1923.",
+      
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "47f9ab9c8b924d78867a8eabeb15446e",
     "appId"                      : "com.timeinc.time.ipad.inapp",

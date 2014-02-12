@@ -99,12 +99,22 @@
         "popup_close_text"           : "Close",
 
         // my account
+        
         "myacctForgotPassword"       : 'Forgot Password',
+        "myacctiTunesSubscriber"     : 'I subscribed through iTunes<sup style="font-size:13px;">&reg;</sup>',
+        "myacctNoniTunesSubscriber"  : 'I subscribed elsewhere',
+        "myacctNotSureSubscriber"    : 'I\'m not sure how I subscribed',
+        "myacctTellUsMore"           : 'TELL US A LITTLE MORE<br>SO WE CAN HELP YOU...',
+        "myacctWhatHelp"             : 'WHAT CAN WE HELP YOU WITH?',
+        "myacctCustomerCareSupport"  : 'CUSTOMER CARE SUPPORT',
         "myacctPrintSubs"            : 'I have a subscription and want to create my '+settings.brandName+' digital account',
         "myacctSignIn"               : 'I have a '+settings.brandName+' digital account and want to access my issues',
         "myacctAcctSetup"            : 'I want to create my '+settings.brandName+' digital account',
+        "myacctLUCIEText"            : 'Your '+settings.brandName+' digital account gives you access to future benefits and other valuable information.',
+        "myacctSignInText"           : 'Your digital account is your email address and password',
         "myacctRestoreIssues"        : 'I want to access my issues',
         "myacctCustService"          : 'Contact Customer Care',
+        "myacctGoBack"               : 'Go Back',
         "myacctHelpGuide"            : 'Help Guide',
         "myacctFAQ"                  : 'FAQs',
         

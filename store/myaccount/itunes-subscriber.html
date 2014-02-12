@@ -26,14 +26,14 @@ function go(URL){
 
  <div class="wrap" id="panel">
 	<div class="content">
-	<p class="title">WHAT CAN WE HELP YOU WITH?</p>
+	
     <script>
-	 	
+	 	document.write('<p class="title">' + settings.myacctWhatHelp + '</p');
 	 	if (settings.myacctRestoreIssuesURL && "{{MAG_CODE}}" != "TK") {
 	    	document.write('<p><a onclick="go(settings.myacctRestoreIssuesURL)" href="#" id="restoreIssues" target="_blank" class="blue-btn">' + settings.myacctRestoreIssues + '</a></p>');
 	    }
 	     if ("{{MAG_CODE}}" != "TK") {
-	    	document.write('<p><a onclick="adobeDPS.dialogService.displayCustomDialog()" id="lucieRegistrationBtn" href="#" class="blue-btn">' + settings.myacctAcctSetup + '</a></p>');
+	    	document.write('<p><a onclick="adobeDPS.dialogService.displayCustomDialog()" id="lucieRegistrationBtn" href="#" class="blue-btn" >' + settings.myacctAcctSetup + '</a><span id="lucieText" >'+settings.myacctLUCIEText+'</span></p>');
 	    }
 	 	
 	    if ("{{MAG_CODE}}" == "TK") {
@@ -47,9 +47,9 @@ function go(URL){
             );
             document.write(html);
 	    }
-	   
+	    document.write('<p><a href="index.html" class="clear-btn">' + settings.myacctGoBack + '</a></p>');
     </script>
-    <p><a href="index.html" class="clear-btn">Go Back</a></p>
+   
    </div>
 
 	<!-- SiteCatalyst -->
@@ -204,6 +204,7 @@ function go(URL){
             $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {
                 if (sub.isActive()) {
                     $("#lucieRegistrationBtn").show();
+                    $("#lucieText").show();
                 }
             });
          });

@@ -12,7 +12,8 @@ window.settings = {
     
     "heroHeading"                : "In This Issue",
     "subscribeOfferText"         : "Receive expert analysis of companies, deals, and people making the news, as well as insights on business trends and investment strategies to fuel your personal success. The digital edition also includes bonus video and photo content as well as interactive graphics. Your subscription includes 1 FREE month of FORTUNE Magazine.",
-    
+    "myacctLUCIEText"            : 'Your FORTUNE digital account gives you access to the FORTUNE.com premium content and the FORTUNE 500+ App',
+   
     "welcome_preview": "image",
     "hero_preview": "image",
     "hero_itii_preview": "image",
