@@ -113,20 +113,21 @@
        <img src="../images/arrow.png" />
      </div>-->
 	 <div class="content">
-	   <p class="title">WHAT CAN WE HELP YOU WITH?</p>
-       <script type="text/javascript">
+	   	     <script type="text/javascript">
 	      var button_html = ''.concat(
-	      	'<p>',
+	        '<p class="title">' + settings.myacctWhatHelp + '</p',
+	     	'<p>',
 	      	  '<a id="showSignin" href="#" class="print-subs blue-btn">' + settings.myacctSignIn + '</a>',
-	      	  '<span style="font-weight:normal; font-size:16px">Your digital account is your email address and password.</span>',
+	      	  '<span style="font-weight:normal; font-size:14px">' +settings.myacctSignInText+'</span>',
 	      	'</p>',
 	      	'<p>',
 	      	  '<a href="' + settings.popupActivateButtonUrl + '" class="print-subs blue-btn">' + settings.myacctPrintSubs + '</a>',
 	      	'</p>'
 	      );
 	      document.write(button_html);
+	      document.write('<p><a href="index.html" class="clear-btn">' + settings.myacctGoBack + '</a></p>');
        </script>
-       <p><a href="index.html" class="clear-btn">Go Back</a></p>
+
     </div>
 
 	<!-- SiteCatalyst -->

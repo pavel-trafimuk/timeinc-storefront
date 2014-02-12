@@ -1,7 +1,7 @@
 @import "_includes/_dialogs.scss";
 @import "_includes/_signin_dialog.scss"; /* signin dialog for user flow */
 
-*{margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;line-height:inherit;letter-spacing:inherit;list-style:none;text-decoration:none;}
+*{margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;line-height:inherit;letter-spacing:inherit;text-decoration:none; list-style-position: inside}
 
 body, html {height:100%;}
 body{background-color:#fff;
@@ -87,6 +87,14 @@ background:url(../images/bg.png) no-repeat top center scroll;
 
 .title{
 font-size:30px;
+}
+
+#lucieText{
+  font-weight:normal;
+  font-size:16px; 
+  width:400px;
+  display:none;
+
 }
 
 .blue-btn, .clear-btn {
