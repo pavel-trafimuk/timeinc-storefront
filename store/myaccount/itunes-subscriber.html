@@ -11,8 +11,8 @@ document.addEventListener("touchmove", function(evt) {
 });
 
 function go(URL){
-	window.location.href=URL;
-}
+      window.location.href=URL+ "?v={{BUILD_TIME}}";
+    }
 
 </script>
   <script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
