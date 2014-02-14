@@ -12,8 +12,6 @@
 
   <script type="text/javascript">
  
-  	
-  
    $(document).ready(function() {
   	  var $that = $(this);
   	  
@@ -26,16 +24,22 @@
         e.preventDefault();
         $("#signin-modal").hide();
       });
-      
-  	  $("#showSignin").on('click', function(e) {
-  	  	e.preventDefault();
-  	    $("#signin-modal").show();
-  	  });
+  	    
+  	  $("p#signIn a")
+  	    .html(settings.myacctSignIn)
+  	    .on('click', function(e) {
+  	      e.preventDefault();
+  	      $("#signin-modal").show();
+  	    });
   	  
-  	  $("#signOut").on('click', function(e) {
-  	  	e.preventDefault();
-  	  	signOut();
-  	  });
+  	  $("p#signIn span").html(settings.myacctSignInText);
+  	  
+  	  $("p#signOut a")
+  	    .html(settings.myacctSignOut)
+  	    .on('click', function(e) {
+  	  	  e.preventDefault();
+  	  	  signOut();
+  	    });
   	  
   	  $(".sign-in-btn").on('click', function(e) {
   	  	e.preventDefault();
@@ -46,13 +50,36 @@
         e.preventDefault();
         signIn();
       });
-     
-   
+      
+      $("p#activate a")
+        .attr("href", settings.popupActivateButtonUrl)
+        .html(settings.myacctPrintSubs);
+      
+      $("p#goback a")
+        .on("click", function() {
+          go("index.html");
+        })
+        .html(settings.myacctGoBack);
+      
+      window.setInterval(function() {
+        // Check API for user login or logout
+        var is_authenticated = adobeDPS.authenticationService.isUserAuthenticated,
+        $signIn = $("p#signIn"), 
+        $signOut = $("p#signOut");
+      
+        if (is_authenticated) {
+          $signOut.show();
+          $signIn.hide();
+        } else {
+          $signIn.show();
+          $signOut.hide();
+        }
+      }, 100);
   	});
   	
  
   	function go(URL){
-      window.location.href=URL;
+      window.location.href=URL+ "?v={{BUILD_TIME}}";
     }
     
   	function signIn() {
@@ -60,8 +87,8 @@
         $err = $(".error-msg"),
         $user = $(".auth-email"),
         $pass = $(".auth-pass"),
-          $signIn=$("#showSignin"), 
-          $signOut=$("#signOut");
+        $signIn = $("p#signIn"), 
+        $signOut = $("p#signOut");
         
         $err.hide();
         
@@ -85,96 +112,83 @@
           if (t.state < 0) $err.show().text(settings.authErrorAuthFailed);
           else{
            $modal.remove();
-           $signIn.remove();
-          $("#myAcctText").remove();
            $signOut.show();
-           
-           
+           $signIn.hide();
           }
         });
       }
       function signOut() {
-      
-        var  $signIn=$("#showSignin"), $signOut=$("#signOut"),  $err = $(".error-msg");
-        
-        $err.hide();
-              
-        adobeDPS.authenticationService.logout();
-       
-        
-        t.completedSignal.addOnce(function() {
-          if (t.state < 0) $err.show().text(settings.authErrorAuthFailed);
-          else{
-            $signOut.remove();
-            $("#myAcctText").show();
-            $signIn.show();
-                      
-           }
-        });
+        var $signIn = $("p#signIn"),
+        $signOut = $("p#signOut");
 
+        adobeDPS.authenticationService.logout();
+        
+        $signIn.show();
+        $signOut.hide();
       }
   </script>
 </head>
 
 <body>
 
-<!-- START: Signin Dialog -->
+   <!-- START: Signin Dialog -->
    <div id="signin-modal" class="modal-background" style="display: none;">
      <div id="signin-dialog" class="dialog pop">
        <header>Sign In</header>
        <div class="close-dialog">×</div>
-       
-       <script type="text/javascript">
-         var form_html = '<form id="signin-form" class="contents">'.concat(
-         	'<p>' + settings.authInstructions + '</p>',
-         	'<input type="email" class="auth-email" placeholder="' + settings.authPlacehodlerEmail + '">',
-         	'<input type="password" class="auth-pass" placeholder="' + settings.authPlacehodlerPass + '">',
-         	'<a href="' + settings.signInForgotPasswordUrl + '">' + settings.authForgotPassword + '</a>',
-         	'<button class="sign-in-btn">' + settings.authSigninButton + '</button>',
-         	'<div class="error-msg"></div>',
-         	'<p class="print-subs">' + settings.authPrintSubsPrompt + ' <a href="' + settings.WesPageURL + '">' + settings.authPrintSubsLinkText + '</a></p>',
-         	'</form>'
-         );
-         document.write(form_html);
-       
-         var footer_html = '<footer>'.concat(
-        	'<a href="#" onclick="go(settings.privacyPolicyUrl)">' + settings.authPrivacyLinkText + '</a>',
-        	' | <a href="#" onclick="go(settings.licenceAgreementUrl)">' + settings.authLicenseLinkText + '</a>',
-        	' | <a href="#" onclick="go(settings.termsOfUseUrl)">' + settings.authTermsLinkText + '</a>'
-         );
-         document.write(footer_html);
-       </script>
-       
+       <form id="signin-form" class="contents">
+	       <script type="text/javascript">
+	         var form_html = ''.concat(
+	         	'<p>' + settings.authInstructions + '</p>',
+	         	'<input type="email" class="auth-email" placeholder="' + settings.authPlacehodlerEmail + '">',
+	         	'<input type="password" class="auth-pass" placeholder="' + settings.authPlacehodlerPass + '">',
+	         	'<a href="' + settings.signInForgotPasswordUrl + '">' + settings.authForgotPassword + '</a>',
+	         	'<button class="sign-in-btn">' + settings.authSigninButton + '</button>',
+	         	'<div class="error-msg"></div>',
+	         	'<p class="print-subs">' + settings.authPrintSubsPrompt + ' <a href="' + settings.WesPageURL + '">' + settings.authPrintSubsLinkText + '</a></p>',
+	         	''
+	         );
+	         document.write(form_html);
+	       </script>
+       </form>
+       <footer>
+	       <script type="text/javascript">
+	         var footer_html = ''.concat(
+	            '<a href="#" onclick="go(settings.privacyPolicyUrl)">' + settings.authPrivacyLinkText + '</a>',
+	            ' | <a href="#" onclick="go(settings.licenceAgreementUrl)">' + settings.authLicenseLinkText + '</a>',
+	            ' | <a href="#" onclick="go(settings.termsOfUseUrl)">' + settings.authTermsLinkText + '</a>'
+	         );
+	         document.write(footer_html);
+	       </script>
+       </footer>
      </div>
    </div>
    <!-- END: Signin Dialog -->
    
    <div class="wrap" id="panel">
-     <!--<div id="arrow" style="display:none;position:absolute;top:0px">
-       <img src="../images/arrow.png" />
-     </div>-->
 	 <div class="content">
-	   	     <script type="text/javascript">
-	   	   
-	   	     document.write('<p class="title">' + settings.myacctWhatHelp + '</p');
-	   	     var button_html=''.concat(
-					
-	     			'<p>',
-	      	 		 '<a id="showSignin" href="#" class="print-subs blue-btn">' + settings.myacctSignIn + '</a>',
-	      	 		 '<span style="font-weight:normal; font-size:14px" id="myAcctText">' +settings.myacctSignInText+'</span>',
-	      			'</p>'	      			
-	      			 );
-	      	 document.write(button_html);		 
-	         button_html=''.concat('<p>',
-	      			  '<a id="signOut" href="#"  class="print-subs blue-btn" style="display:none">' + settings.myacctSignOut + '</a>',
-	      			 '</p>'
-	      			 );
-	      
-	      	 document.write(button_html);
-	      	 document.write('<p><a href="' + settings.popupActivateButtonUrl + '" class="print-subs blue-btn">' + settings.myacctPrintSubs + '</a></p>');
-	         document.write('<p><a href="index.html" class="clear-btn">' + settings.myacctGoBack + '</a></p>');
-       </script>
-
+	 	<p class="title">
+	 	  <script type="text/javascript">document.write(settings.myacctWhatHelp);</script>
+	 	</p>
+	 	
+	 	<!--SignIn Button -->
+	 	<p id="signIn" style="display: none;">
+	 	  <a href="#" class="print-subs blue-btn"></a>
+	 	  <span style="font-weight:normal; font-size:14px"></span>
+	   	</p>
+	   	
+	   	<!--Signout Button-->
+	   	<p id="signOut" style="display: none;">
+	   	  <a href="#"  class="print-subs blue-btn"></a>
+        </p>
+	         
+	    <p id="activate">
+	    	<a href="#" class="print-subs blue-btn"></a>
+	    </p>
+	    
+	    <p id="goback">
+	    	<a href="#" class="clear-btn"></a>
+	    </p>
     </div>
 
 	<!-- SiteCatalyst -->
