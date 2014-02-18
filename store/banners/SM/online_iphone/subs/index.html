@@ -77,20 +77,20 @@
        .pull-right{
           float: right !important;
        }
-         
-      .logo {
-        background-image: url('logo.png?v={{BUILD_TIME}}');
+      
+      .logo{                 
+        background-image: url('logo.png?v={{BUILD_TIME}}') !important;
         background-size: 90%;
         background-repeat: no-repeat;
         top: 15%;
       }
       
       .sm-nttc-xsell {
-        background-image: url('sm_xsell_nttc.jpg?v={{BUILD_TIME}}') !important;
+        background-image: url('sm-nttc-xsell.jpg?v={{BUILD_TIME}}') !important;
       }
       
       .banner{                 
-         height: 220px;
+         height: 237px;
       }
       
       .wrapper span.ipad-portrait{
@@ -129,12 +129,12 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <!-- Logo slide -->
+          <!-- Logo -->
           <div class="slide logo" data-ios-version="<7"></div>
           
-          <!-- Cross-sell slide -->
+          <!-- NTTC Cross-sell slide -->
           <div class="slide sm-nttc-xsell" data-ios-version=">=7">
-            <a href="../../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/real-simple-no-time-to-cook/id708536998?mt=8"></a>
+            <a href="../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/real-simple-no-time-to-cook/id708536998?mt=8"></a>
           </div>
         </div>
      </div>
@@ -142,9 +142,6 @@
    
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
-    
-    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
-    
     (function() {
       libBanner.track_page_view("Library|Banner|Subscriber");
       libBanner.echo();
@@ -153,7 +150,7 @@
       gallery.enableTouch().slideEvery(5000);
       
       $(".sm-nttc-xsell").click(function() {
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_smnttcxsell");
+        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_smnttcxsell");
       });
     })();
   </script>
