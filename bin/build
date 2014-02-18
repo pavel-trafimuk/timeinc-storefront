@@ -158,6 +158,7 @@ END
   render_in_place "$DEPLOYDIR/autologin/index.html"
   render_in_place "$DEPLOYDIR/myaccount/itunes-subscriber.html"
   render_in_place "$DEPLOYDIR/myaccount/non-itunes-subscriber.html"
+  render_in_place "$DEPLOYDIR/myaccount/not-sure-subscriber.html"
   render_in_place "$DEPLOYDIR/myaccount/support-links.js"
   render_in_place "$DEPLOYDIR/myaccount/restoreissues.html"
   render_in_place "$DEPLOYDIR/myaccount/restoreissues.es.html"
