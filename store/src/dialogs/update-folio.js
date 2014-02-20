@@ -6,14 +6,19 @@ App.dialogs.UpdateFolio = Backbone.View.extend({
     "click #cancel": "onNotNow",
     "click #ok": "onYes"
   },
-  initialize: function(folio) {
+  initialize: function(opts) {
     console.log("App.dialogs.UpdateFolio.initialize()");
-    this.folio = folio;
+    this.folio = opts.folio;
+    
+    if (opts.show_on_create !== false) {
+      this.render().$el.appendTo("body");
+      this.open();
+    }
   },
   render: function() {
     console.log("App.dialogs.UpdateFolio.render()");
     
-    var cx = { folio: folio };
+    var cx = { folio : this.folio };
     
     this.$el.html(this.template(cx));
     
@@ -27,11 +32,12 @@ App.dialogs.UpdateFolio = Backbone.View.extend({
   },
   onYes: function() {
     //App.omni.event("error_cancel");
+    this.folio.isUpdatable = true;
     this.remove();
   },
   onNotNow: function() {
     //App.omni.event("error_cancel");
-    folio.isUpdatable = false; //force folio to be non-updatable in order to view old sample (there has to be a better way)
+    this.folio.isUpdatable = false; //force folio to be non-updatable in order to view old sample (there has to be a better way)
     this.remove();
   },
   remove: function() {

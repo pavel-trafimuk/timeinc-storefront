@@ -268,6 +268,13 @@
         $sampleBtn.html(settings.progressStarting);
       }
       
+      if (folio.isUpdatable) {
+        new App.dialogs.UpdateFolio({folio : folio});
+      }
+      
+      var folioUpdateInterval = window.setInterval(function() {
+      if ($("#").length > 0) { // Do nothing while update prompt is on the screen
+      } else {
       folio.view_or_preview({
         complete: function() {
           if (folio.is_sample){
@@ -289,6 +296,8 @@
           $(".progress-bar", $progress).css("width", progress+"%");
         }
       });
+      }
+      }, 100);
     },
     subscribe: function() {
       App.omni.event("st_subscribe_taps");

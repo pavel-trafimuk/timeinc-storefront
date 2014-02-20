@@ -28,6 +28,10 @@ App.dialogs.ErrorMsg = Backbone.View.extend({
         message1 = "Error"
         message2 = "There was an error downloading the folio that was not network related.";
         break;
+      case "-520":
+        message1 = "Error During Download"
+        message2 = "Cannot start the download because the file is missing or invalid.";
+        break;
       default:
         message1 = "Error";
         message2 = this.error_code;
