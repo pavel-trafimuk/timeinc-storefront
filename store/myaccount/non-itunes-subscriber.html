@@ -1,0 +1,349 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title> </title>
+  <link rel="stylesheet" href="../css/myaccount.css" />
+  <script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
+  <script type="text/javascript" src="../lib/jquery.js"></script>
+  <script type="text/javascript" src="../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="../settings/settings_loader.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="../lib/md5.js"></script>
+
+  <script type="text/javascript">
+ 
+   $(document).ready(function() {
+  	  var $that = $(this);
+  	  
+  	  
+  	  $(this).on('touchmove', function(e) {
+  	    e.preventDefault();
+  	  });
+  	  
+  	  $(".close-dialog").on('click', function(e) {
+        e.preventDefault();
+        $("#signin-modal").hide();
+      });
+  	    
+  	  $("p#signIn a")
+  	    .html(settings.myacctSignIn)
+  	    .on('click', function(e) {
+  	      e.preventDefault();
+  	      $("#signin-modal").show();
+  	    });
+  	  
+  	  $("p#signIn span").html(settings.myacctSignInText);
+  	  
+  	  $("p#signOut a")
+  	    .html(settings.myacctSignOut)
+  	    .on('click', function(e) {
+  	  	  e.preventDefault();
+  	  	  signOut();
+  	    });
+  	  
+  	  $(".sign-in-btn").on('click', function(e) {
+  	  	e.preventDefault();
+  	  	signIn();
+  	  });
+  	  
+  	  $("#signin-form").on('submit', function(e) {
+        e.preventDefault();
+        signIn();
+      });
+      
+      $("p#activate a")
+        .attr("href", settings.popupActivateButtonUrl)
+        .html(settings.myacctPrintSubs);
+      
+      $("p#goback a")
+        .on("click", function() {
+          go("index.html");
+        })
+        .html(settings.myacctGoBack);
+      
+      window.setInterval(function() {
+        // Check API for user login or logout
+        var is_authenticated = adobeDPS.authenticationService.isUserAuthenticated,
+        $signIn = $("p#signIn"), 
+        $signOut = $("p#signOut");
+      
+        if (is_authenticated) {
+          $signOut.show();
+          $signIn.hide();
+        } else {
+          $signIn.show();
+          $signOut.hide();
+        }
+      }, 100);
+  	});
+  	
+ 
+  	function go(URL){
+      window.location.href=URL+ "?v={{BUILD_TIME}}";
+    }
+    
+  	function signIn() {
+  	   var $modal = $("#signin-modal"),
+        $err = $(".error-msg"),
+        $user = $(".auth-email"),
+        $pass = $(".auth-pass"),
+        $signIn = $("p#signIn"), 
+        $signOut = $("p#signOut");
+        
+        $err.hide();
+        
+        if (! $user.val().length) {
+          return $err.show().text(settings.authErrorNoEmail);
+        }
+        
+        if (! $pass.val().length) {
+          return $err.show().text(settings.authErrorNoPass);
+        }
+        
+        try {
+          var t = adobeDPS.authenticationService.login($user.val(), $pass.val());
+        }
+        
+        catch (err) {
+          $err.show().text(settings.authErrorAuthFailed);
+        }
+        
+        t.completedSignal.addOnce(function() {
+          if (t.state < 0) $err.show().text(settings.authErrorAuthFailed);
+          else{
+           $modal.remove();
+           $signOut.show();
+           $signIn.hide();
+          }
+        });
+      }
+      function signOut() {
+        var $signIn = $("p#signIn"),
+        $signOut = $("p#signOut");
+
+        adobeDPS.authenticationService.logout();
+        
+        $signIn.show();
+        $signOut.hide();
+      }
+  </script>
+</head>
+
+<body>
+
+   <!-- START: Signin Dialog -->
+   <div id="signin-modal" class="modal-background" style="display: none;">
+     <div id="signin-dialog" class="dialog pop">
+       <header>Sign In</header>
+       <div class="close-dialog">×</div>
+       <form id="signin-form" class="contents">
+	       <script type="text/javascript">
+	         var form_html = ''.concat(
+	         	'<p>' + settings.authInstructions + '</p>',
+	         	'<input type="email" class="auth-email" placeholder="' + settings.authPlacehodlerEmail + '">',
+	         	'<input type="password" class="auth-pass" placeholder="' + settings.authPlacehodlerPass + '">',
+	         	'<a href="' + settings.signInForgotPasswordUrl + '">' + settings.authForgotPassword + '</a>',
+	         	'<button class="sign-in-btn">' + settings.authSigninButton + '</button>',
+	         	'<div class="error-msg"></div>',
+	         	'<p class="print-subs">' + settings.authPrintSubsPrompt + ' <a href="' + settings.WesPageURL + '">' + settings.authPrintSubsLinkText + '</a></p>',
+	         	''
+	         );
+	         document.write(form_html);
+	       </script>
+       </form>
+       <footer>
+	       <script type="text/javascript">
+	         var footer_html = ''.concat(
+	            '<a href="#" onclick="go(settings.privacyPolicyUrl)">' + settings.authPrivacyLinkText + '</a>',
+	            ' | <a href="#" onclick="go(settings.licenceAgreementUrl)">' + settings.authLicenseLinkText + '</a>',
+	            ' | <a href="#" onclick="go(settings.termsOfUseUrl)">' + settings.authTermsLinkText + '</a>'
+	         );
+	         document.write(footer_html);
+	       </script>
+       </footer>
+     </div>
+   </div>
+   <!-- END: Signin Dialog -->
+   
+   <div class="wrap" id="panel">
+	 <div class="content">
+	 	<p class="title">
+	 	  <script type="text/javascript">document.write(settings.myacctWhatHelp);</script>
+	 	</p>
+	 	
+	 	<!--SignIn Button -->
+	 	<p id="signIn" style="display: none;">
+	 	  <a href="#" class="print-subs blue-btn"></a>
+	 	  <span style="font-weight:normal; font-size:14px"></span>
+	   	</p>
+	   	
+	   	<!--Signout Button-->
+	   	<p id="signOut" style="display: none;">
+	   	  <a href="#"  class="print-subs blue-btn"></a>
+        </p>
+	         
+	    <p id="activate">
+	    	<a href="#" class="print-subs blue-btn"></a>
+	    </p>
+	    
+	    <p id="goback">
+	    	<a href="#" class="clear-btn"></a>
+	    </p>
+    </div>
+
+	<!-- SiteCatalyst -->
+    <div style="display:none;">
+        <!-- PROD s_code -->
+        <script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/omniture/{{MAG_CODE}}/s_code.js"></script>
+        
+        <script type="text/javascript">
+          
+            function dateFormat(d) {
+                var curr_date = d.getDate(),
+                    curr_month = d.getMonth() + 1,
+                    curr_year = d.getFullYear(),
+                    curr_hour = d.getHours(),
+                    meridiem,
+                    halfHour,
+                    retDate;
+                    
+                    
+                    curr_month = (curr_month < 10) ? "0" + curr_month : curr_month;
+                    curr_date = (curr_date < 10) ? "0" + curr_date : curr_date;
+                    meridiem = (curr_hour > 12) ? "PM" : "AM"; // Must determine meridiem before modifying curr_hour
+                    curr_hour = (curr_hour < 10) ? "0" + curr_hour : curr_hour;
+                    curr_hour = (curr_hour > 12) ? curr_hour - 12 : curr_hour;
+                    halfHour = (d.getMinutes() >= 30) ? "30" : "00";
+                    
+                    
+                    retDate = curr_month + "/" + curr_date + "/" + curr_year + "-" + curr_hour + ":" + halfHour + meridiem;
+        
+                return retDate;
+            }
+
+            function onOmniture(cfg) {
+                try {
+                    console.log('onOmniture', cfg);
+                    
+                
+                    var today = new Date(),
+                        orientation = (window.orientation == 0 || window.orientation == 180) ? 'portrait' : 'landscape',
+                        dayOfWeek = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+                            
+                    s.events = cfg.events;
+                    s.pageName = cfg.pageName;
+                    s.prop8 = cfg.prop8;
+                    s.prop10 = cfg.prop10;
+                    s.eVar28 = cfg.eVar28;
+                    s.eVar33 = cfg.eVar33;
+                            
+                    s.server = window.location.host;
+                    s.timestamp = Math.round(today.getTime() / 1000);
+                    s.visitorID = s.eVar3 = localStorage.visitorId;
+                    s.prop3 = "D=User Agent";
+                    
+                    s.prop16 = s.eVar24 = "store";
+                    s.prop17 = location.protocol + "//" + location.host + location.pathname;
+                    s.prop18 = orientation;
+                    s.prop19 = 'online';
+                    s.prop26 = 'dsc';
+                    s.prop29 = '';
+                    s.prop35 = s.eVar35 = "pageview";
+                    s.prop36 = s.eVar36 = 'storefront';
+                    s.eVar30 = dayOfWeek[today.getDay()].toLowerCase();
+                    s.prop7 = s.eVar31 = dateFormat(today);
+                    s.eVar32 = (today.getDay() == 0 || today.getDay() == 6) ? "weekend" : "weekday";
+                     
+                    s.pageType = "";
+            
+                    var s_code = s.t();
+                    if(s_code){document.write(s_code);}
+                } catch (e) {
+                    console.log('ERROR in lucie-reg-js-omniture.js::onOmniture', e);
+                }
+            }
+            
+            function onOmnitureTL(cfg) {
+                try {
+                    console.log("omni tl2 ", cfg);
+                
+                    var today = new Date(),
+                        orientation = (window.orientation == 0 || window.orientation == 180) ? 'portrait' : 'landscape',
+                        keys = Object.keys(cfg),
+                        keysLength = keys.length,
+                        dayOfWeek = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+                            
+                    s.events = cfg.events;
+                    s.pageName = cfg.pageName;
+                    s.prop8 = cfg.prop8;
+                    s.prop10 = cfg.prop10;
+                    s.eVar28 = cfg.eVar28;
+                    s.eVar33 = cfg.eVar33;
+                            
+                    
+                    s.linkTrackVars = keys.join(',') + ',prop3,prop7,prop16,prop18,prop19,prop26,prop29,prop35,prop36,eVar3,eVar24,eVar26,eVar29,eVar30,eVar31,eVar32,eVar35,eVar36,eVar44,events';
+                    s.linkTrackEvents = cfg.events;
+                    s.server = window.location.host;
+                    s.timestamp = Math.round(today.getTime() / 1000);
+                    s.visitorID = s.eVar3 = localStorage.visitorId;
+                    s.prop3 = "D=User Agent";
+                        
+                    s.prop16 = s.eVar24 = "store";
+                    s.prop17 = location.protocol + "//" + location.host + location.pathname;
+                    s.prop18 = orientation;
+                    s.prop19 = 'online';
+                    s.prop26 = 'dsc';
+                    s.prop29 = '';
+                    s.prop35 = s.eVar35 = "pageview";
+                    s.prop36 = s.eVar36 = 'storefront';
+                    s.eVar30 = dayOfWeek[today.getDay()].toLowerCase();
+                    s.prop7 = s.eVar31 = dateFormat(today);
+                    s.eVar32 = (today.getDay() == 0 || today.getDay() == 6) ? "weekend" : "weekday";
+            
+                    s.pageType = "";
+                    
+                    s.tl(this, 'o', (s.events == 'event44') ? 'splash occurences' : 'user action');
+                } catch (e) {
+                    console.log('ERROR in lucie-reg-js-omniture.js::onOmnitureTL', e);
+                }
+            }
+                      
+            // Track page view
+            var cfg = {
+                events   : "event1",
+                pageName : "store|my account",
+                prop8    : "my account",
+                prop10   : "ipad dps",  // "kf" for kindle fire
+                eVar28   : "my account"
+                //eVar33   : "receipt"
+            };
+        
+            // This function found in lucie-customer-creation-omniture.js
+            var getVisitorID = window.setInterval(function() {
+                if (localStorage.visitorId) {
+                    window.clearInterval(getVisitorID);
+                    onOmniture(cfg);
+                }
+            }, 500);
+        </script>
+   </div>
+  <script type="text/javascript" src="support-links.js"></script>
+   <script>
+     $(function() {
+         if (settings.popupActivateButtonUrl) $(".print-subs").show();
+         adobeDPS.initializationComplete.addOnce(function() {
+            // don't show lucie registration button if the user is signed into lucie
+            if (adobeDPS.authenticationService.isUserAuthenticated) return;
+
+            localStorage.visitorId = md5(adobeDPS.deviceService.deviceId);
+            $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {
+                if (sub.isActive()) {
+                    $("#lucieRegistrationBtn").show();
+                }
+            });
+         });
+     });
+   </script>
+</body>
+</html>
+

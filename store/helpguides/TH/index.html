@@ -6,10 +6,13 @@
 <link rel="stylesheet" href="../css/myaccount.css" />
 
 <script type="text/javascript">
+document.addEventListener("touchmove", function(evt) {
+  evt.preventDefault();
+});
 
 function go(URL){
-      window.location.href=URL+ "?v={{BUILD_TIME}}";
-    }
+	window.location.href=URL;
+}
 
 </script>
   <script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
@@ -27,26 +30,14 @@ function go(URL){
  <script type="text/javascript">
  	var html='<div class="content">';
   	if ("{{MAG_CODE}}" != "TK") {
-  	    if ("{{MAG_CODE}}" != "PP") {
 	    	html = html.concat(
 	    		
-				  '<p class="title">' + settings.myacctTellUsMore + '</p>',
-			      '<p><a href="itunes-subscriber.html" class="blue-btn">' + settings.myacctiTunesSubscriber + '</a></p>',
-				  '<p><a href="non-itunes-subscriber.html" class="blue-btn">' + settings.myacctNoniTunesSubscriber + '</a></p>',
-				  '<p><a href="not-sure-subscriber.html" class="clear-btn">' + settings.myacctNotSureSubscriber + '</a></p>',
+				  '<p class="title">TELL US A LITTLE MORE<br>SO WE CAN HELP YOU...</p>',
+			      '<p><a href="itunes-subscriber.html" class="blue-btn">I subscribed through iTunes<sup style="font-size:13px;">&reg;</sup></a></p>',
+				  '<p><a href="non-itunes-subscriber.html" class="blue-btn">I subscribed elsewhere</a></p>',
+				  '<p><a href="#" class="clear-btn">I\'m not sure how I subscribed</a></p>',
 				'</div>'
 			);
-		}
-		else{
-			html = html.concat(
-	    		
-				  '<p class="title">' + settings.myacctTellUsMore + '</p>',
-			      '<p><a href="itunes-subscriber.html" class="blue-btn">' + settings.myacctiTunesSubscriber + '</a></p>',
-				  '<p><a href="non-itunes-subscriber.html" class="blue-btn">' + settings.myacctNoniTunesSubscriber + '</a></p>',				
-				'</div>'
-			);
-		
-		}
 	}
 	else{
 	        html = html.concat(
