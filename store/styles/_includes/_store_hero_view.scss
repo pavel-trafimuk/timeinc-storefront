@@ -249,6 +249,16 @@
       }
     }
 
+    .cta .btn-depressed {
+        -webkit-box-shadow: 
+            inset 3px 7px 10px rgba(0,0,0,0.8),
+            0 1px rgba(255,255,255,1.0),
+            0 1px 10px rgba(0,0,0,0.35);
+        color: rgba(255,255,255,0.6);
+        padding-top: 4px;
+        padding-bottom: 1px;
+    }
+
     // Hard-coding the cover-img sizes at certain screen sizes is an optimization
     @media screen and (width: 768px) {
         .cover-img {

@@ -194,6 +194,7 @@
 
       App.omni.event("st_"+$this.data("action")+"_taps");
 
+      $this.addClass("btn-depressed");
       $curl.hide();
       $progress.attr("data-label", settings.progressStarting);
       
@@ -210,10 +211,12 @@
             new App.dialogs.ErrorMsg({error_code: error_code});
           }
           $progress.attr('data-label', '').removeClass("progress");
+          $this.removeClass("btn-depressed");
           $curl.show();
         },
         cancelled: function() {
           $progress.attr('data-label', '').removeClass("progress");
+          $this.removeClass("btn-depressed");
           $curl.show();
         }
       });
@@ -290,7 +293,7 @@
         }
       });
     },
-    subscribe: function() {
+    subscribe: function(evt) {
       App.omni.event("st_subscribe_taps");
       new App.dialogs.Subscribe();
     },
