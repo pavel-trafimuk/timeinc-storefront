@@ -101,6 +101,10 @@ compile() {
     render_in_place "$BANNER"
   done
   
+  for HELPGUIDE in $(find "$DEVDIR/helpguides/" -iname "*.html"); do
+    render_in_place "$HELPGUIDE"
+  done
+  
   for DINSERT in $(find "$DEVDIR/inserts/" -iname "*.html"); do
     render_in_place "$DINSERT"
   done
@@ -142,6 +146,7 @@ END
   cp $DEVDIR/lucie-library.html $DEPLOYDIR
   
   cp -r $DEVDIR/banners/$TITLE $DEPLOYDIR/banners
+  cp -r $DEVDIR/helpguides/$TITLE $DEPLOYDIR/helpguides
   cp -r $DEVDIR/inserts/$TITLE $DEPLOYDIR/inserts
   
   cp -r $DEVDIR/myaccount $DEPLOYDIR
@@ -151,6 +156,10 @@ END
   render_in_place "$DEPLOYDIR/lucie-library.html"
   render_in_place "$DEPLOYDIR/myaccount/index.html"
   render_in_place "$DEPLOYDIR/autologin/index.html"
+  render_in_place "$DEPLOYDIR/myaccount/itunes-subscriber.html"
+  render_in_place "$DEPLOYDIR/myaccount/non-itunes-subscriber.html"
+  render_in_place "$DEPLOYDIR/myaccount/not-sure-subscriber.html"
+  render_in_place "$DEPLOYDIR/myaccount/support-links.js"
   render_in_place "$DEPLOYDIR/myaccount/restoreissues.html"
   render_in_place "$DEPLOYDIR/myaccount/restoreissues.es.html"
 }

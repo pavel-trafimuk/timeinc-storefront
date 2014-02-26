@@ -64,11 +64,22 @@ window.settings = {
     "subscribeCancel"            : "Cancela",
 
     // my account
-    "myacctForgotPassword"       : '<span class="singleLine">Olvidé la contraseña</span>',
-    "myacctPrintSubs"            : '<span class="line1">Suscriptor edición</span><br/><span class="line2">impresa, tocar aquí</span>',
-    "myacctAcctSetup"            : '<span class="line1">Configuración de cuenta</span><br/><span class="line2">para suscriptores al iPad</span>',
-    "myacctRestoreIssues"        : '<span class="singleLine">Recuperar números</span>',
-    "myacctCustService"          : '<span class="singleLine">Servicios al cliente</span>',
+    "myacctForgotPassword"       : 'Olvidé la contraseña',
+    "myacctiTunesSubscriber"     : 'Me suscribí en iTunes<sup style="font-size:13px;">&reg;</sup>',
+    "myacctNoniTunesSubscriber"  : 'Me suscribí en otro lugar',
+    "myacctNotSureSubscriber"    : 'No estoy seguro cómo me suscribí',
+    "myacctTellUsMore"           : 'EXPL&Iacute;CANOS ALGO M&Aacute;S PARA PODER AYUDARTE...',
+    "myacctWhatHelp"             : '¿C&Oacute;MO TE PODEMOS AYUDAR?',
+    "myacctCustomerCareSupport"  : 'AYUDA AL CONSUMIDOR',
+    "myacctSignIn"               : 'Tengo una cuenta digital de PEOPLE EN ESPANOL y quiero acceder a mis ediciones',
+    "myacctPrintSubs"            : 'Tengo una suscripción y quiero crear mi cuenta digital de PEOPLE EN ESPANOL',
+    "myacctAcctSetup"            : 'Quiero crear mi cuenta digital de PEOPLE EN ESPANOL',
+    "myacctRestoreIssues"        : 'Quiero acceder a mis ediciones',
+    "myacctLUCIEText"            : 'Crea una cuenta digital de PEOPLE EN ESPANOL para tener acceso a futuras ventajas, incluido contenido extra, y recibir otras informaciones provechosas.',
+    "myacctSignInText"           : 'Su cuenta digital es su correo electrónico y contraseña',
+    "myacctCustService"          : 'Servicios al cliente',
+    "myacctGoBack"               : 'Regresar',
+    "myacctFAQ"                  : 'Preguntas frecuentes',
 
     // Sign-in Dialog
     "authSigninHeader"           : "Iniciar sesión",

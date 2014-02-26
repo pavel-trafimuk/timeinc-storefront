@@ -37,6 +37,7 @@ window.settings = {
 
     "eMagsAppId": "PPL3313",
 
+    "myacctLUCIEText"            : "Your PEOPLE digital account gives you immediate access to: The weekly magazine on people.com or your smartphone; PEOPLE Premium, the subscriber-only section on PEOPLE.com with exclusive stories, giveaways and more; and the CelebFood and CelebWatch smartphone apps.",
     "omniture_account"           : "timagpeoplenk",
     "omniture_server"            : "metrics.people.com",
     "omniture_ssl_server"        : "smetrics.people.com",
@@ -45,7 +46,7 @@ window.settings = {
     "echo_token"                 : "aa42b59482e5836321241326aa2d5320192089e1",
     
     // my account
-    "myacctAcctSetup"            : '<span class="line1">COMPLETE ACCOUNT SETUP</span><br /><span class="line2">FOR APPLE SUBSCRIBERS</span>',
+   // "myacctAcctSetup"            : '<span class="line1">COMPLETE ACCOUNT SETUP</span><br /><span class="line2">FOR APPLE SUBSCRIBERS</span>',
         
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "8632a117e7124ea988555c2dd41aa858",

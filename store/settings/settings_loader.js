@@ -99,13 +99,26 @@
         "popup_close_text"           : "Close",
 
         // my account
-        "myacctForgotPassword"       : '<span class="singleLine">FORGOT PASSWORD</span>',
-        "myacctPrintSubs"            : '<span class="line1">PRINT SUBSCRIBERS</span><br /><span class="line2">TAP HERE</span>',
-        "myacctAcctSetup"            : '<span class="line1">COMPLETE ACCOUNT SETUP</span><br /><span class="line2">FOR IPAD SUBSCRIBERS</span>',
-        "myacctRestoreIssues"        : '<span class="singleLine">RESTORE ISSUES</span>',
-        "myacctCustService"          : '<span class="singleLine">CUSTOMER SERVICE</span>',
-        "myacctFAQ"                  : '<span class="line1">FREQUENTLY ASKED</span><br /><span class="line2">QUESTIONS</span>',
-
+        
+        "myacctForgotPassword"       : 'Forgot Password',
+        "myacctiTunesSubscriber"     : 'I subscribed through iTunes<sup style="font-size:13px;">&reg;</sup>',
+        "myacctNoniTunesSubscriber"  : 'I subscribed elsewhere',
+        "myacctNotSureSubscriber"    : 'I\'m not sure how I subscribed',
+        "myacctTellUsMore"           : 'TELL US A LITTLE MORE<br>SO WE CAN HELP YOU...',
+        "myacctWhatHelp"             : 'WHAT CAN WE HELP YOU WITH?',
+        "myacctCustomerCareSupport"  : 'CUSTOMER CARE SUPPORT',
+        "myacctPrintSubs"            : 'I have a subscription and want to create my '+settings.brandName+' digital account',
+        "myacctSignIn"               : 'I have a '+settings.brandName+' digital account and want to access my issues',
+        "myacctAcctSetup"            : 'I want to create my '+settings.brandName+' digital account',
+        "myacctLUCIEText"            : 'Your '+settings.brandName+' digital account gives you access to future benefits and other valuable information.',
+        "myacctSignInText"           : 'Your digital account is your email address and password',
+        "myacctSignOut"              : 'Sign Out',
+        "myacctRestoreIssues"        : 'I want to access my issues',
+        "myacctCustService"          : 'Contact Customer Care',
+        "myacctGoBack"               : 'Go Back',
+        "myacctHelpGuide"            : 'Help Guide',
+        "myacctFAQ"                  : 'FAQs',
+        
         // Sign-in Dialog
         "authSigninHeader"           : "Sign In",
         "authSigninButton"           : "Sign In",
@@ -144,13 +157,13 @@
         "privacyPolicyUrl"           : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/"+settings.brandCode+"/pp.html",
         "termsOfUseUrl"              : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/"+settings.brandCode+"/tos.html",
         "licenceAgreementUrl"        : "http://subscription-assets.timeinc.com/prod/assets/themes/magazines/default/template-resources/html/legal/ios/"+settings.brandCode+"/la.html",
-        "signInForgotPasswordUrl"    : "https://subscription.timeinc.com/storefront/universalForgotPassword.ep?magcode=" + settings.brandCode,
+        "signInForgotPasswordUrl"    : "https://subscription.timeinc.com/storefront/universalForgotPassword.ep?magcode="+settings.brandCode,
 
         // Domestic URLs
         "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG="+settings.brandCode+"&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
         "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG="+settings.brandCode+"&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT",
         "WesPageURLiphone"           : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG="+settings.brandCode+"&MSDDMOFF=ABTF&MSDTRACK=IPHB&MSDVNDID=TBLT",
-        "customerServiceUrl"         : "https://secure.customersvc.com/servlet/Show?WESPAGE=home.html&MSRSMAG=" + settings.brandCode + "&app_launch_key=08212099",
+        "customerServiceUrl"         : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/Services/wes_email.jsp&MSRSMAG="+settings.brandCode,
         
         // International URLs
         "welcomeScreenWesURL_INTL"   : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/tablet/allaccess_web_country.jsp&MSRSMAG="+settings.brandCode +"&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT",
@@ -159,6 +172,10 @@
         "customerServiceUrl_INTL"    : "https://secure.customersvc.com/wes/servlet/Show?WESPAGE=iam/pages/home.jsp&MSRSMAG=" + settings.brandCode,
         
         "myacctRestoreIssuesURL"     : "restoreissues.html",
+        "myacctHelpGuideURL"         : '../helpguides/index.html',
+        "myacctFAQURLR27"            : 'http://subscription-assets.timeinc.com/prod/assets/themes/magazines/SUBS/templates/velocity/site/mm-r27ipad-digitaledition-faq/lp.html',
+        "myacctFAQURLR28"            : 'http://subscription-assets.timeinc.com/prod/assets/themes/magazines/SUBS/templates/velocity/site/mm-r28ipad-digitaledition-faq/lp.html',
+        "myacctFAQURLiphone"         : 'http://subscription-assets.timeinc.com/prod/assets/themes/magazines/SUBS/templates/velocity/site/mm-r28iphone-digitaledition-faq/lp.html',
 
 
         // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
