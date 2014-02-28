@@ -104,6 +104,7 @@
       box-shadow: none;
     }
     .buy-issue-button {
+      -webkit-transform: translate3d(0px, 155px, 0px);
       &[data-action="buy"] {
         background-image: url("../images/PE/hero_btn_buy.png?v=" + currTime());
       }
@@ -121,6 +122,7 @@
       }
     }
     .subscribe-button {
+      -webkit-transform: translate3d(0px, -155px, 0px);
       background-image: url("../images/PE/hero_btn_subscribe.jpg?v=" + currTime());
     }
     &.subscriber .subscribe-button {
