@@ -78,6 +78,14 @@
         "subscribeYourSubscription"  : "Your Subscription",
         "subscribeCancel"            : "Cancel",
 
+        // Buy Issue dialog
+        "heroBuyIssue_useDialog"     : false,
+        "buyIssueTitle"              : "Buy Issue",
+        "buyIssueText"               : "Subscribe now to get this issue and save up to %discount% off the cover price!",
+        "buyIssueSubscribe"          : "Subscribe Now",
+        "buyIssueContinue"           : "Continue and Buy This Single Issue for %price%",
+        "buyIssueSubscribeDiscount"  : "XX%",
+
         // app-wide interaction text
         "seeInsideCTA"               : "See Inside",
         "progressStarting"           : "Loading…",

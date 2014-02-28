@@ -14,6 +14,13 @@ window.settings = {
     "storeIssuesStartingFilter"  : "!special",
     "storeIssuesTapToView"       : "<button class='bi-filter active' data-filter='!special'>Weekly Issues</button> <button class='bi-filter' data-filter='special'>Special Issues</button>",
 
+    "heroBuyIssue_useDialog"     : true,
+    "buyIssueSubscribeDiscount"  : "XX%",
+    "buyIssueTitle"              : "Get This Issue Free!",
+    "buyIssueText"               : "Get this issue free with an annual subscription. Subscribe now and save up to %discount% off the cover price!",
+    "buyIssueSubscribe"          : "Subscribe Now & Save",
+    "buyIssueContinue"           : "Buy Issue for %price%",
+
 
     "store_show_banners": true,
     "store_banners_type": "subscribe", // buynow OR deeplink OR subscribe

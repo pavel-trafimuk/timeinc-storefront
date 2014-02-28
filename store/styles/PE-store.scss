@@ -196,14 +196,6 @@
   top: 0; right: 0; bottom: 0; left: 0;
   background: rgba(255,255,255,0.7);
 }
-@-webkit-keyframes rotating {
-    from{
-        -webkit-transform: rotate(0deg);
-    }
-    to{
-        -webkit-transform: rotate(360deg);
-    }
-}
 .store-hero-view .cta .btn-depressed::after {
   content: '';
   display: block;

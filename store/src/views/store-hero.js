@@ -186,16 +186,27 @@
       }, 250);
     },
     buy_issue: function(evt) {
-      var $this = $(evt.currentTarget),
-          $progress = this.$(".issue-cover").addClass("progress"),
+      var that = this,
+          $this = $(evt.currentTarget),
+          $progress = this.$(".issue-cover"),
           $curl = this.$(".page-curl");
 
+      App.omni.event("st_"+$this.data("action")+"_taps");
       this.disable_rendering = true;
 
-      App.omni.event("st_"+$this.data("action")+"_taps");
+      if (settings.heroBuyIssue_useDialog) {
+        new App.dialogs.BuyIssue({
+          folio: App.api.libraryService.get_touted_issue(),
+          onExit: function() {
+            that.disable_rendering = false;
+          }
+        });
+        return;
+      }
 
       $this.addClass("btn-depressed");
       $curl.hide();
+      $progress.addClass("progress")
       $progress.attr("data-label", settings.progressStarting);
       
       App.api.libraryService.get_touted_issue().purchase_and_download({
@@ -213,11 +224,13 @@
           $progress.attr('data-label', '').removeClass("progress");
           $this.removeClass("btn-depressed");
           $curl.show();
+          that.disable_rendering = false;
         },
         cancelled: function() {
           $progress.attr('data-label', '').removeClass("progress");
           $this.removeClass("btn-depressed");
           $curl.show();
+          that.disable_rendering = false;
         }
       });
     },
