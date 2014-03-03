@@ -82,6 +82,10 @@
             background-image: url('Subscribe_portrait.png?v={{BUILD_TIME}}') !important;
           }
           
+          .single-buyer {
+            background-image: url('Singlebuyer_portrait.jpg?v={{BUILD_TIME}}') !important;
+          }
+          
           .banner{                 
              height: 237px;              
           }
@@ -103,6 +107,10 @@
        @media only screen and (min-width:1024px){           
           .subscribe {
             background-image: url('Subscribe_landscape.png?v={{BUILD_TIME}}') !important;
+          }
+          
+          .single-buyer {
+            background-image: url('Singlebuyer_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
           
           .banner{                 
@@ -150,6 +158,11 @@
   <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
+          <!-- Single Buyer slide -->
+          <div class="slide single-buyer"> 
+            <a href="#"></a>
+          </div>
+          
           <!-- Subscribe slide -->
           <div class="slide subscribe"> 
             <a href="#"></a>
@@ -167,6 +180,15 @@
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
 
+      $(".single-buyer a").click(function(evt) {
+        evt.preventDefault();
+
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_singlebuyer");
+        libBanner.buy_sub("com.timeinc.allyou.ipad.subs.9");
+      });
+      
       $(".subscribe a").click(function(evt) {
         evt.preventDefault();
 
