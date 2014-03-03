@@ -284,27 +284,38 @@
         $sampleBtn.html(settings.progressStarting);
       }
       
-      folio.view_or_preview({
-        complete: function() {
-          if (folio.is_sample){
-            $sampleBtn.html(settings.progressOpening);
-          }
+      if (folio.isUpdatable) {
+        new App.dialogs.UpdateFolio({folio : folio});
+      }
+      
+      var folioUpdateInterval = window.setInterval(function() {
+      if ($("#updatefolio-dialog").length > 0) {
+        // Do nothing while update prompt is on the screen
+      } else {
+        window.clearInterval(folioUpdateInterval);
+        folio.view_or_preview({
+          complete: function() {
+            if (folio.is_sample){
+              $sampleBtn.html(settings.progressOpening);
+            }
           
-          $progress.attr("data-label", settings.progressOpening);
-          if (link) {
-            setTimeout(function() { folio.goto_dossier(link) }, 150);
-            return false;
-          }
-        },
-        download_progress: function(progress) {
-          if (folio.is_sample){
-            $sampleBtn.html(settings.progressDownloading);
-          }
+            $progress.attr("data-label", settings.progressOpening);
+            if (link) {
+              setTimeout(function() { folio.goto_dossier(link) }, 150);
+              return false;
+            }
+          },
+          download_progress: function(progress) {
+            if (folio.is_sample){
+              $sampleBtn.html(settings.progressDownloading);
+            }
           
-          $progress.attr("data-label", settings.progressDownloading);
-          $(".progress-bar", $progress).css("width", progress+"%");
-        }
-      });
+            $progress.attr("data-label", settings.progressDownloading);
+            $(".progress-bar", $progress).css("width", progress+"%");
+          }
+        });
+      }
+      }, 100);
     },
     subscribe: function(evt) {
       App.omni.event("st_subscribe_taps");

@@ -80,12 +80,29 @@
       }, 550);
     },
     buy_issue: function(evt) {
+      var that = this,
+          $this = $(evt.currentTarget);
+
+      App.omni.event("pr_"+$this.data("action")+"_taps");
+      
+      if (this.folio.isUpdatable) {
+        new App.dialogs.UpdateFolio({folio : that.folio});
+      }
+      
+      var folioUpdateInterval = window.setInterval(function() {
+        if ($("#updatefolio-dialog").length > 0) {
+          // Do nothing while update prompt is on the screen
+        } else {
+          window.clearInterval(folioUpdateInterval);
+          that.complete_buy_issue(evt);
+        }
+      }, 100);
+    },
+    complete_buy_issue: function(evt) {
       var $this = $(evt.currentTarget),
           dialog = new App.dialogs.WelcomeDownloading(),
           $progress = dialog.$(".progress");
-
-      App.omni.event("pr_"+$this.data("action")+"_taps");
-
+      
       this.folio.purchase_and_download({
         complete: function() {
           $progress.attr("data-label", "Opening Issue…");
