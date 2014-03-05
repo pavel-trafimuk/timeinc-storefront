@@ -54,8 +54,9 @@ function go(URL){
   
       $("#subscribedElsewhere").click(function(evt) {
           evt.preventDefault();
+          var goTo = this.getAttribute("href");
           myAccount.track_user_action("My Account|Not Sure Subscriber Page|I Subscribed Elsewhere", "myaccount_taps_subscribedElsewhere");
-          setTimeout(function(){this.getAttribute("href");}, 2500);
+          setTimeout(function(){go(goTo);}, 2500);
        });
               
     })();
