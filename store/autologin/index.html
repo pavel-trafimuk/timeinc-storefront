@@ -4,7 +4,51 @@
 	<title> </title>
 	<script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
 	<script type="text/javascript">
-		window.location="../index.html";
+	    var loginObj=loginObj||{};
+	 	loginObj.each=function(arr,func){
+	    	var l=arr.length,i;
+	    	for(i=0;i<l;i++){
+	    		func(arr[i]);
+	    	}
+	    };
+	 	loginObj.unPack=function(s,p,v){
+	    	var obj={};
+	    	var arr=s.split(p);
+	    	function job(el){
+	    		var ar=el.split(v);
+	    		if(ar.length>1){
+	    			obj[unescape(ar[0])]=unescape(ar[1]);
+	    		}
+	    		else{
+	    		obj[unescape(ar)]=unescape(ar);}
+	    		}
+	    	loginObj.each(arr,job);
+	    	return obj;
+	    };
+	      
+	 	loginObj.getToken=function(){
+	   	 var q=window.location.search.replace(/^\?/,"");
+	   	 if(!q)	{return false;}
+	   	 return loginObj.unPack(q,"&","="); 
+	    };
+	    
+	    loginObj.nvPairs = loginObj.getToken();  
+	    if(loginObj.nvPairs)
+	    {
+	   
+	    	 var authToken=loginObj.nvPairs.token;
+	     	 if(!authToken){
+	    		window.location="../index.html";
+	    	 }
+	   		 else{
+	   		   	adobeDPS.authenticationService.login("", "", authToken);
+	   		   	window.location="../index.html";
+	     	 }
+	    }
+	    else{
+			window.location="../index.html";
+		}
+		
 	</script>
 </head>
 <body></body>
