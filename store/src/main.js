@@ -52,7 +52,9 @@ $(function() {
     APIWrapper(App._raw_api, function(wrapped_api) {
       App.api = wrapped_api;
       Backbone.trigger("ApiReady");
-     
+
+      new App.dialogs.StraightToSample();
+
       // launch the app
       new App.views.Main().render(function() {
         App.loading(false);

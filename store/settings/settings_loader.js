@@ -86,6 +86,13 @@
         "buyIssueContinue"           : "Continue and Buy This Single Issue for %price%",
         "buyIssueSubscribeDiscount"  : "XX%",
 
+        // Straight-to-sample dialog
+        "straightToSampleEnabled"    : false,
+        "straightToSampleTitle"      : "Free Sample",
+        "straightToSampleText"       : "The current issue of " + settings.brandName + " is ready to sample.<br><br>Do you want to start reading it now?",
+        "straightToSampleContinueBtn": "Start reading",
+        "straightToSampleCancelBtn"  : "Not now",
+
         // app-wide interaction text
         "seeInsideCTA"               : "See Inside",
         "progressStarting"           : "Loading…",
