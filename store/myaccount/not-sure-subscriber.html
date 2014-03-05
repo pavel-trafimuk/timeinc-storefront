@@ -44,9 +44,24 @@ function go(URL){
 	 <p><span style="font-weight:bold">If you subscribed via another digital device or platform, you may not have access to this magazine on the iPad.</span></p>
 	 <p>If you subscribed elsewhere, tap the button below to verify your subscription and create your digital account.</p>
 	 </div>
-	 <p><a href="non-itunes-subscriber.html" class="blue-btn">I subscribed elsewhere</a></p>
+	 <p><a id="subscribedElsewhere" href="non-itunes-subscriber.html" class="blue-btn">I subscribed elsewhere</a></p>
    </div>
- <script type="text/javascript" src="support-links.js"></script>
+   <script type="text/javascript" src="myaccountOmni.js"></script>
+   <script type="text/javascript">    
+     (function() {
+      myAccount.track_page_view("My Account | Not Sure Subscriber Page");
+     
+  
+      $("#subscribedElsewhere").click(function(evt) {
+          evt.preventDefault();
+          myAccount.track_user_action("My Account|Not Sure Subscriber Page|I Subscribed Elsewhere", "myaccount_taps_subscribedElsewhere");
+          setTimeout(function(){this.getAttribute("href");}, 2500);
+       });
+              
+    })();
+   </script>
+  <script type="text/javascript" src="support-links.js"></script>
+ 
  </div>
 
  
