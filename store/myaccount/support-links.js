@@ -13,15 +13,38 @@ if ((/TK/).test("{{MAG_CODE}}")) {
 document.write('<div class="care"><hr>'+settings.myacctCustomerCareSupport+'<p>');
 
 if ("{{MAG_CODE}}" != "PP") {
-	document.write('<a onclick="go(FAQUrl)" href="#" target="_blank" class="care-btn">' + settings.myacctFAQ + '</a>');
+	document.write('<a href="#" target="_blank" id="FAQs" class="care-btn">' + settings.myacctFAQ + '</a>');
 }
 if (settings.customerServiceUrl && "{{MAG_CODE}}" != "TK") {
-	    document.write('<a onclick="go(settings.customerServiceUrl)" href="#" target="_blank" class="care-btn">' + settings.myacctCustService + '</a>');
+	    document.write('<a href="#" id="customerService" target="_blank" class="care-btn">' + settings.myacctCustService + '</a>');
 }
 if (settings.signInForgotPasswordUrl && "{{MAG_CODE}}" != "TK") {
-        document.write('<a onclick="go(settings.signInForgotPasswordUrl)" href="#" target="_blank" class="care-btn">' + settings.myacctForgotPassword + '</a>');
+        document.write('<a href="#" id="forgotPassword" target="_blank" class="care-btn">' + settings.myacctForgotPassword + '</a>');
 }
-if (!(/SK|AY|HA|CT|PP|MO|IN|TH|FA|FI|FZ/).test("{{MAG_CODE}}")) {
-	 	document.write('<a onclick="go(settings.myacctHelpGuideURL)" href="#" class="care-btn">'+settings.myacctHelpGuide+'</a>');
+if (!(/SK|AY|HA|CT|PP|MO|TH|FA|FI|FZ/).test("{{MAG_CODE}}")) {
+	 	document.write('<a href="#" id="helpGuide" class="care-btn">'+settings.myacctHelpGuide+'</a>');
 }
 document.write('</p></div>');
+(function() {
+      $("#FAQs").click(function(evt) {
+          evt.preventDefault();
+          myAccount.track_user_action("My Account| FAQs", "myaccount_taps_FAQs");
+          setTimeout(function(){go(FAQUrl)},2000);
+       });
+      $("#customerService").click(function(evt) {
+          evt.preventDefault();
+          myAccount.track_user_action("My Account| Customer Service", "myaccount_taps_customerService");
+          setTimeout(function(){go(settings.customerServiceUrl);}, 2000);
+       });
+      $("#forgotPassword").click(function(evt) {
+          evt.preventDefault();
+          myAccount.track_user_action("My Account| Forgot Password", "myaccount_taps_forgotPassword");
+          setTimeout(function(){go(settings.signInForgotPasswordUrl);}, 2000);
+       });
+      $("#helpGuide").click(function(evt) {
+          evt.preventDefault();
+          myAccount.track_user_action("My Account| Help Guide", "myaccount_taps_helpGuide");
+          setTimeout(function(){go(settings.myacctHelpGuideURL);}, 2000);
+       });
+       
+ })();

@@ -27,50 +27,73 @@ function go(URL){
  <script type="text/javascript">
  	var html='<div class="content">';
   	if ("{{MAG_CODE}}" != "TK") {
-  	    if ("{{MAG_CODE}}" != "PP") {
-	    	html = html.concat(
+  	    html = html.concat(
 	    		
 				  '<p class="title">' + settings.myacctTellUsMore + '</p>',
-			      '<p><a href="itunes-subscriber.html" class="blue-btn">' + settings.myacctiTunesSubscriber + '</a></p>',
-				  '<p><a href="non-itunes-subscriber.html" class="blue-btn">' + settings.myacctNoniTunesSubscriber + '</a></p>',
-				  '<p><a href="not-sure-subscriber.html" class="clear-btn">' + settings.myacctNotSureSubscriber + '</a></p>',
+			      '<p><a id="iTunesSubscriber" href="itunes-subscriber.html" class="blue-btn">' + settings.myacctiTunesSubscriber + '</a></p>',
+				  '<p><a id="noniTunesSubscriber" href="non-itunes-subscriber.html" class="blue-btn">' + settings.myacctNoniTunesSubscriber + '</a></p>',
+				  '<p><a id="notSureSubscriber" href="not-sure-subscriber.html" class="clear-btn">' + settings.myacctNotSureSubscriber + '</a></p>',
 				'</div>'
 			);
-		}
-		else{
-			html = html.concat(
-	    		
-				  '<p class="title">' + settings.myacctTellUsMore + '</p>',
-			      '<p><a href="itunes-subscriber.html" class="blue-btn">' + settings.myacctiTunesSubscriber + '</a></p>',
-				  '<p><a href="non-itunes-subscriber.html" class="blue-btn">' + settings.myacctNoniTunesSubscriber + '</a></p>',				
-				'</div>'
-			);
-		
-		}
+	
 	}
 	else{
 	        html = html.concat(
                 
                   '<div style="text-align: center; margin-bottom: 15px; "><p class="title"><strong>Missing issues?</strong><br/><br/>',
                   '<span style="font-weight:normal">Restore your iTunes subscription by tapping the button below. This will remind the app that you are a subscriber.</span></p></div> ',
-                  '<p><a onclick="restoreIssues()" href="#" id="restoreIssues" target="_blank" class="blue-btn">' + settings.myacctRestoreIssues + '</a></p>',
+                  '<p><a href="#" id="restoreIssues" target="_blank" class="blue-btn">' + settings.myacctRestoreIssues + '</a></p>',
                 '</div>'
             );
     }
+   
+    
+    
     document.write(html);
-	
+	 if ("{{MAG_CODE}}" == "PP") $("#notSureSubscriber").hide();
   </script>
+  <script type="text/javascript" src="myaccountOmni.js"></script>
   <script type="text/javascript" src="support-links.js"></script>
   </div>
 
    
-<script type="text/javascript" >
+  <script type="text/javascript" >
 	function restoreIssues() {
             	adobeDPS.receiptService.restorePurchases();
     }
  
    
-</script>
+  </script>
+  <script type="text/javascript">    
+    (function() {
+      myAccount.track_page_view("My Account | Landing Page");
+     
+  
+      $("#iTunesSubscriber").click(function(evt) {
+          evt.preventDefault();
+          var goTo = this.getAttribute("href");
+          myAccount.track_user_action("My Account|Landing Page|iTunes Subscriber", "myaccount_taps_iTunesSubscriber");
+          setTimeout(function(){window.location = goTo;}, 2500);
+       });
+       $("#noniTunesSubscriber").click(function(evt) {
+          evt.preventDefault();
+          var goTo = this.getAttribute("href");
+      	  myAccount.track_user_action("My Account|Landing Page|Non iTunes Subscriber", "myaccount_taps_noniTunesSubscriber");
+      	  setTimeout(function(){window.location = goTo;}, 2500);
+       });
+       $("#notSureSubscriber").click(function(evt) {
+          evt.preventDefault();
+          var goTo = this.getAttribute("href");
+          myAccount.track_user_action("My Account|Landing Page|Not Sure Subscriber", "myaccount_taps_notSureSubscriber");
+          setTimeout(function(){window.location = goTo;}, 2500);
+       });
+        $("#restoreIssues").click(function(evt) {
+          evt.preventDefault();
+          myAccount.track_user_action("My Account|Landing Page|Restore Issues (TFK)", "myaccount_taps_restoreIssues");
+          setTimeout(function(){restoreIssues()}, 2000);
+       });
+    })();
+  </script>
 </body>
 </html>
 

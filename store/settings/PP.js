@@ -77,6 +77,7 @@ window.settings = {
     "myacctRestoreIssues"        : 'Quiero acceder a mis ediciones',
     "myacctLUCIEText"            : 'Crea una cuenta digital de PEOPLE EN ESPANOL para tener acceso a futuras ventajas, incluido contenido extra, y recibir otras informaciones provechosas.',
     "myacctSignInText"           : 'Su cuenta digital es su correo electrónico y contraseña',
+    "myacctSignOut"              : 'Finalizar sesi&oacute;n',
     "myacctCustService"          : 'Servicios al cliente',
     "myacctGoBack"               : 'Regresar',
     "myacctFAQ"                  : 'Preguntas frecuentes',
