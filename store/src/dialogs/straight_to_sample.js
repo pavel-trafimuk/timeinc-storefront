@@ -18,6 +18,8 @@ App.dialogs.StraightToSample = Backbone.View.extend({
     this.folio = App.api.libraryService.get_by_productId(settings.preview_issue_product_id);
     if (!this.folio) return;
 
+    if (this.folio.isDownloadable) this.folio.download();
+
     this.render().$el.appendTo("html");
     this.open();
   },
