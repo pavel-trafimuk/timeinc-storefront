@@ -18,19 +18,15 @@
     position: fixed;
     width: 240px;
     margin-left: -120px;
-  /*  padding: 10px 10px 10px 10px;*/
     z-index: 999;
     background: rgba(255, 255, 255, .95);
     color: #000000;
     text-align: center;
-    /*border: 2px solid #DEE1E6;*/
     -webkit-border-radius: 8px;
-    /*-webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
-    -webkit-transform: scale(0), translate3d(0,0,0);*/
     left: 50%;
     top: 300px;
-      font-family: "Helvetica Neue", "Arial", "sans-serif";
-      /*font-family: -webkit-system-font;*/
+    font-family: "Helvetica Neue", "Arial", "sans-serif";
+
     &.pop{
         -webkit-transform: scale(1.0), translate3d(0,0,0);
         -webkit-animation-name: pop;
@@ -41,7 +37,6 @@
         margin: 0;
         margin-bottom: 10px;
         font-size: 16px;
-       /* text-align:left;*/
         font-weight: bold;
         text-align: center;
         margin-top:10px;
@@ -54,32 +49,20 @@
         padding: 8px 20px;
     }
     button {
-         color: #007aff;
-        width:100%;
-        
+        width: 100%;
+        padding: 6px 25px;
+        background: none;
+        opacity: 0.85;
+        border: none;
+        border-top: 1px solid #ccc;
+
+        color: #007aff;
+        font-size: 18px;
         white-space: nowrap;
         text-align: center;
         font-family: "Helvetica Neue", "Arial", "sans-serif";
         font-weight: 400;
-        letter-spacing: 0.05em;
-        /*-webkit-border-radius: 6px;
-        border-radius: 6px;
-        border: 1px solid #233854;*/
-        border:none;
-       border-top:1px solid #ccc;
-        background:none;
-        /*background: -webkit-gradient(linear, left top, left bottom, from(#969db0),to(#0A183B));
-        -webkit-box-shadow: 0px 1px 1px rgba(255,255,255, .7);*/
-        padding: 6px 25px;
-        opacity: .85;
-       /* text-shadow: 0px 1px 0px rgb(0, 0, 0);*/
-      
-        font-size: 18px;
-         letter-spacing: 0.05em;
-         background: none;
-       
     }
-    
    
 }
 
