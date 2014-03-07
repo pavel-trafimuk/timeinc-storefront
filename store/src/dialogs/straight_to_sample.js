@@ -51,7 +51,7 @@ App.dialogs.StraightToSample = Backbone.View.extend({
 
     this.folio.purchase_and_download({
       complete: function() {
-        that.remove();
+        //that.remove();
       },
       download_progress: function(progress) {},
       error: function(error_code) {
