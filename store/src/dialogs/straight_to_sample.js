@@ -18,7 +18,10 @@ App.dialogs.StraightToSample = Backbone.View.extend({
     this.folio = App.api.libraryService.get_by_productId(settings.preview_issue_product_id);
     if (!this.folio) return;
 
-    if (this.folio.isDownloadable) this.folio.download();
+    var using_wifi = App.api.deviceService.networkType === App.api.deviceService.networkTypes.WIFI;
+    if (this.folio.isDownloadable && using_wifi) {
+      this.folio.download();
+    }
 
     this.render().$el.appendTo("html");
     this.open();
@@ -28,7 +31,7 @@ App.dialogs.StraightToSample = Backbone.View.extend({
     this.$el.html(this.template({
       title: settings.straightToSampleTitle,
       text: settings.straightToSampleText,
-      coverImg: this.folio.get_cover_img(),
+      coverImg: this.folio.get_cover_img() + (+new Date()),
       continueBtn: settings.straightToSampleContinueBtn,
       cancelBtn: settings.straightToSampleCancelBtn
     }));
