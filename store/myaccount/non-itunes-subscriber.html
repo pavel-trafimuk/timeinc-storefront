@@ -28,7 +28,9 @@
   	  
   	  $(".close-dialog").on('click', function(e) {
         e.preventDefault();
-       $("#signin-modal").hide();
+        $("#signin-modal input[type=email]").attr('value') == '';
+        $("#signin-modal input[type=password]").attr('value') == '';
+        $("#signin-modal").hide();
       });
   	    
   	  $("p#signIn a")
@@ -144,7 +146,7 @@
 <body>
 
    <!-- START: Signin Dialog -->
-   <div id="signin-modal" class="modal-background" style="display: none;">
+   <div id="signin-modal" class="modal-background" style="position: absolute; display: none; top: 0px; left: 0px;">
      <div id="signin-dialog" class="dialog pop">
        <header>Sign In</header>
        <div class="close-dialog">×</div>
