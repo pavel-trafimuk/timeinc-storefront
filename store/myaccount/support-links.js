@@ -15,7 +15,7 @@ document.write('<div class="care"><hr>'+settings.myacctCustomerCareSupport+'<p>'
 if ("{{MAG_CODE}}" != "PP") {
 	document.write('<a href="#" target="_blank" id="FAQs" class="care-btn">' + settings.myacctFAQ + '</a>');
 }
-if (settings.customerServiceUrl && "{{MAG_CODE}}" != "TK") {
+if (settings.customerServiceUrl && !(/FI|FA|FZ|TI|TA|TZ|TK/).test("{{MAG_CODE}}")) {
 	    document.write('<a href="#" id="customerService" target="_blank" class="care-btn">' + settings.myacctCustService + '</a>');
 }
 if (settings.signInForgotPasswordUrl && "{{MAG_CODE}}" != "TK") {
