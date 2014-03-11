@@ -94,12 +94,12 @@ function go(URL){
        $("#restoreIssues").click(function(evt) {
           evt.preventDefault();
           myAccount.track_user_action("My Account|iTunes Subscriber Page|Restore Issues", "myaccount_taps_restoreIssues");
-          setTimeout(function(){restoreIssues()}, 2000);
+          setTimeout(function(){restoreIssues()}, 100);
        });
        $("#lucieRegistrationBtn").click(function(evt) {
           evt.preventDefault();
       	  myAccount.track_user_action("My Account|iTunes Subscriber Page|LUCIE Registration", "myaccount_taps_lucieRegistration");
-      	  setTimeout(function(){adobeDPS.dialogService.displayCustomDialog();}, 2000);
+      	  setTimeout(function(){adobeDPS.dialogService.displayCustomDialog();}, 100);
        });
        
     })();

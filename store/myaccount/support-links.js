@@ -29,22 +29,22 @@ document.write('</p></div>');
       $("#FAQs").click(function(evt) {
           evt.preventDefault();
           myAccount.track_user_action("My Account| FAQs", "myaccount_taps_FAQs");
-          setTimeout(function(){go(FAQUrl)},2000);
+          setTimeout(function(){go(FAQUrl)},100);
        });
       $("#customerService").click(function(evt) {
           evt.preventDefault();
           myAccount.track_user_action("My Account| Customer Service", "myaccount_taps_customerService");
-          setTimeout(function(){go(settings.customerServiceUrl);}, 2000);
+          setTimeout(function(){go(settings.customerServiceUrl);}, 100);
        });
       $("#forgotPassword").click(function(evt) {
           evt.preventDefault();
           myAccount.track_user_action("My Account| Forgot Password", "myaccount_taps_forgotPassword");
-          setTimeout(function(){go(settings.signInForgotPasswordUrl);}, 2000);
+          setTimeout(function(){go(settings.signInForgotPasswordUrl);}, 100);
        });
       $("#helpGuide").click(function(evt) {
           evt.preventDefault();
           myAccount.track_user_action("My Account| Help Guide", "myaccount_taps_helpGuide");
-          setTimeout(function(){go(settings.myacctHelpGuideURL);}, 2000);
+          setTimeout(function(){go(settings.myacctHelpGuideURL);}, 100);
        });
        
  })();

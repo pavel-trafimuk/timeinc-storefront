@@ -56,7 +56,7 @@ function go(URL){
           evt.preventDefault();
           var goTo = this.getAttribute("href");
           myAccount.track_user_action("My Account|Not Sure Subscriber Page|I Subscribed Elsewhere", "myaccount_taps_subscribedElsewhere");
-          setTimeout(function(){go(goTo);}, 2500);
+          setTimeout(function(){go(goTo);}, 100);
        });
               
     })();

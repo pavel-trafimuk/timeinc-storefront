@@ -28,7 +28,7 @@
   	  
   	  $(".close-dialog").on('click', function(e) {
         e.preventDefault();
-        $("#signin-modal").hide();
+       $("#signin-modal").hide();
       });
   	    
   	  $("p#signIn a")
@@ -36,6 +36,8 @@
   	    .on('click', function(e) {
   	      e.preventDefault();
   	      myAccount.track_user_action("My Account|Non iTunes Subscriber Page|Sign In", "myaccount_taps_signIn");
+  	      $(".auth-email").val('');
+          $(".auth-pass").val('');
   	      $("#signin-modal").show();
   	     
   	    });
