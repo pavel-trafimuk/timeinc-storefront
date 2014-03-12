@@ -73,24 +73,24 @@ function go(URL){
           evt.preventDefault();
           var goTo = this.getAttribute("href");
           myAccount.track_user_action("My Account|Landing Page|iTunes Subscriber", "myaccount_taps_iTunesSubscriber");
-          setTimeout(function(){window.location = goTo;}, 2500);
+          setTimeout(function(){go(goTo);}, 100);
        });
        $("#noniTunesSubscriber").click(function(evt) {
           evt.preventDefault();
           var goTo = this.getAttribute("href");
       	  myAccount.track_user_action("My Account|Landing Page|Non iTunes Subscriber", "myaccount_taps_noniTunesSubscriber");
-      	  setTimeout(function(){window.location = goTo;}, 2500);
+      	  setTimeout(function(){go(goTo);}, 100);
        });
        $("#notSureSubscriber").click(function(evt) {
           evt.preventDefault();
           var goTo = this.getAttribute("href");
           myAccount.track_user_action("My Account|Landing Page|Not Sure Subscriber", "myaccount_taps_notSureSubscriber");
-          setTimeout(function(){window.location = goTo;}, 2500);
+          setTimeout(function(){go(goTo);}, 100);
        });
         $("#restoreIssues").click(function(evt) {
           evt.preventDefault();
           myAccount.track_user_action("My Account|Landing Page|Restore Issues (TFK)", "myaccount_taps_restoreIssues");
-          setTimeout(function(){restoreIssues()}, 2000);
+          setTimeout(function(){restoreIssues()}, 100);
        });
     })();
   </script>

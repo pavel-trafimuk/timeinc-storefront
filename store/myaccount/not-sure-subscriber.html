@@ -4,12 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title> </title>
 <link rel="stylesheet" href="../css/myaccount.css" />
-<style type="text/css">
-.care {
-	position:relative;
 
-}
-</style>
 <script type="text/javascript">
 
 function go(URL){
@@ -29,7 +24,7 @@ function go(URL){
  <div class="wrap">
   <div class="content" style="padding: 0% 0px;">
   	 <p class="title">Not Sure How You Subscribed?</p>
-  	 <div style="text-align:left; font-size:18px; font-weight:normal" >
+  	 <div style="text-align:left; font-size:16px; font-weight:normal" >
 	 <p><span style="font-weight:bold">To confirm that you are an iTunes subscriber, follow these steps</span>:</p>
     <ol>
 	  <li>On your iPad's home screen, tap "Settings".</li>
@@ -38,11 +33,8 @@ function go(URL){
 	  <li>Tap “View Apple ID”. You will be prompted to enter your iTunes password.</li>
 	  <li>Tap “Manage” under Subscriptions.</li>
      </ol>
-	 <p>If it says "Active" next to your magazine, you have subscribed via iTunes.</p>
-	 <p>If it says "Expired" next to your magazine, you have subscribed via iTunes but your subscription is no longer active.</p>
-	 <p>If the magazine is not listed, you did not subscribe via iTunes.</p>
-	 <p><span style="font-weight:bold">If you subscribed via another digital device or platform, you may not have access to this magazine on the iPad.</span></p>
-	 <p>If you subscribed elsewhere, tap the button below to verify your subscription and create your digital account.</p>
+	 <p>If it says "Active" next to your magazine, you have subscribed via iTunes.  If it says "Expired" next to your magazine, you have subscribed via iTunes but your subscription is no longer active.</p>
+	 <p>If the magazine is not listed, you did not subscribe via iTunes.  If you subscribed elsewhere, tap the button below to verify your subscription and create your digital account.</p>
 	 </div>
 	 <p><a id="subscribedElsewhere" href="non-itunes-subscriber.html" class="blue-btn">I subscribed elsewhere</a></p>
    </div>
@@ -54,8 +46,9 @@ function go(URL){
   
       $("#subscribedElsewhere").click(function(evt) {
           evt.preventDefault();
+          var goTo = this.getAttribute("href");
           myAccount.track_user_action("My Account|Not Sure Subscriber Page|I Subscribed Elsewhere", "myaccount_taps_subscribedElsewhere");
-          setTimeout(function(){this.getAttribute("href");}, 2500);
+          setTimeout(function(){go(goTo);}, 100);
        });
               
     })();
