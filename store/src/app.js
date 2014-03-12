@@ -42,9 +42,14 @@
         if (page_name !== undefined) page_name = "store|"+page_name;
         else page_name = TcmOmni.get_pagename();
 
+        // get the currently running AB tets if the AB testing
+        // framework is loaded
+        var ab_tests = window.AB ? AB.omnitureString() : '';
+
         App.api.analyticsService.trackCustomEvent("customEvent3", {
           customVariable3: evt_name,
-          customVariable4: page_name
+          customVariable4: page_name,
+          customVariable7: ab_tests
         });
       }
     },
