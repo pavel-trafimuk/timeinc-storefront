@@ -28,8 +28,9 @@
   	  
   	  $(".close-dialog").on('click', function(e) {
         e.preventDefault();
-        $("#signin-modal input[type=email]").attr('value') == '';
-        $("#signin-modal input[type=password]").attr('value') == '';
+        $( "input.auth-email").val(null);
+        $( "input.auth-pass").val(null);
+            
         $("#signin-modal").hide();
       });
   	    
