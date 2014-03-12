@@ -6,8 +6,11 @@
 <link rel="stylesheet" href="../css/myaccount.css" />
 
 <script type="text/javascript">
+	document.addEventListener("touchmove", function(evt) {
+ 	 evt.preventDefault();
+	});
 
-function go(URL){
+    function go(URL){
       window.location.href=URL+ "?v={{BUILD_TIME}}";
     }
 

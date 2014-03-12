@@ -19,6 +19,10 @@
      })();
 
    $(document).ready(function() {
+      document.addEventListener("touchmove", function(evt) {
+ 		 evt.preventDefault();
+	  });
+
   	  var $that = $(this);
   	  
   	  
@@ -179,7 +183,7 @@
    <!-- END: Signin Dialog -->
    
    <div class="wrap" id="panel">
-	 <div class="content">
+	 <div class="content" style="padding: 3% 0px;">
 	 	<p class="title">
 	 	  <script type="text/javascript">document.write(settings.myacctWhatHelp);</script>
 	 	</p>
