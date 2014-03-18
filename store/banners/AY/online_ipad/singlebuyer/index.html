@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <style>
+  <title>Subscription Banner</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi"/>
+  
+  <style>
        body{
-          background: #ffffff;
+          background-color: #ee4d9b;
           margin: 0px;
           padding: 0px;
        }
@@ -82,8 +78,8 @@
        
        /* iPad Portrait */
        @media only screen and (min-width:768px){           
-          .subscribe {
-          	background-image: url('Subscribe_portrait.png?v={{BUILD_TIME}}') !important;
+          .single-buyer {
+            background-image: url('Singlebuyer_portrait.jpg?v={{BUILD_TIME}}') !important;
           }
           
           .banner{                 
@@ -105,8 +101,8 @@
        
        /* iPad Landscape */
        @media only screen and (min-width:1024px){           
-          .subscribe {
-            background-image: url('Subscribe_landscape.png?v={{BUILD_TIME}}') !important;
+          .single-buyer {
+            background-image: url('Singlebuyer_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
           
           .banner{                 
@@ -137,51 +133,50 @@
          top: 0; right: 0; bottom: 0; left: 0;
        }
 
+       /* HACK: */
+       .retina { background-color: #000; } 
+
        
        
     </style>
-
-    <script type="text/javascript" src="../../../lib/jquery.js"></script>
-    <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
-
-    <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
-    <script type="text/javascript" src="../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
-
-    <script type="text/javascript" src="../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script>
-    <script type="text/javascript" src="../../../lib/ema-1.0.2.js"></script>
+ 
+  <script type="text/javascript" src="../../../lib/jquery.js"></script>
+  <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
+  <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
+  <script type="text/javascript" src="../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="../../../lib/ema-1.0.2.js"></script>
 </head>
 <body>
-   
-   <div class="wrapper">
+  <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <!-- Subscribe slide -->
-          <div class="slide subscribe"> 
+          <!-- Single Buyer slide -->
+          <div class="slide single-buyer"> 
             <a href="#"></a>
           </div>
         </div>
      </div>
    </div>
-   
-  <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript">
+  
+  <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript">    
     (function() {
       libBanner.track_page_view("Library|Banner|Nonsubscriber");
       libBanner.echo();
-      
+
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
 
-      $(".subscribe a").click(function(evt) {
+      $(".single-buyer a").click(function(evt) {
         evt.preventDefault();
 
         gallery.cancelAutoSlide();
 
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
-        libBanner.buy_sub("com.timeinc.southernliving.ipad.subs.9");
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_singlebuyer");
+        libBanner.buy_sub("com.timeinc.allyou.ipad.subs.9");
       });
     })();
   </script>
-
 </body>
 </html>
+
