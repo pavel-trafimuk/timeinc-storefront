@@ -20,6 +20,9 @@ window.settings = {
     "max_back_issues"            : 12,
 
     "eMagsAppId": "ALLYOU9614",
+    
+    "ipad_entbanner_alacarte"    : "singlebuyer/index.html?t=",
+    "ipad_entbanner_nonsubs"     : "nonsubs/index.html?t=",
 
     "omniture_account"           : "timagallyounk",
     "omniture_server"            : "timeinc.122.2o7.net",
