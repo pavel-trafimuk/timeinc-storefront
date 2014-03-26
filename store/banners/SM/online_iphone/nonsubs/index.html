@@ -167,6 +167,15 @@
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
         libBanner.buy_sub("com.timeinc.realsimple.ipad.subs.9");
       });
+
+      // use a setting to enable auto_download (setting is A/B tested)
+      if (settings.iphoneNonsubsBannerAutoDownloadEnabled) {
+        libBanner.auto_download("com.timeinc.realsimple.ipad.inapp.FREESAMPLEIPHONE", {
+          started: function() {
+            gallery.cancelAutoSlide();
+          }
+        });
+      }
     })();
   </script>
 

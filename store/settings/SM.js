@@ -64,6 +64,11 @@ window.settings = {
                                         "no": false
                                     }),
 
+    "iphoneNonsubsBannerAutoDownloadEnabled": AB("iPhoneBannerAutoDownloadEnabled", {
+                                        "yes": true,
+                                        "no": false
+                                    }),
+
     "welcome_preview": "image",
     "hero_itii_preview": "image",
     "max_back_issues"            : 12,

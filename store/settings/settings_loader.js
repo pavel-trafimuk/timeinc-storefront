@@ -93,6 +93,17 @@
         "straightToSampleContinueBtn": "Start reading",
         "straightToSampleCancelBtn"  : "Not now",
 
+        // Auto-download banner
+        "bannerAD_header_nowifi"     : "FREE SAMPLE",
+        "bannerAD_body_nowifi"       : "The current issue is ready to sample",
+        "bannerAD_header_downloading": "NOW DOWNLOADING",
+        "bannerAD_body_downloading"  : "A free sample of the current issue is now downloading",
+        "bannerAD_header_ready"      : "FREE SAMPLE",
+        "bannerAD_body_ready"        : "The current issue is ready to sample",
+        
+        "bannerAD_download_button"   : "Download",
+        "bannerAD_read_button"       : "Start Reading",
+
         // app-wide interaction text
         "seeInsideCTA"               : "See Inside",
         "progressStarting"           : "Loading…",
