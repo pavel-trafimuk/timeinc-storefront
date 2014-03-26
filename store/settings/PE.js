@@ -17,7 +17,7 @@ window.settings = {
     "heroBuyIssue_useDialog"     : true,
     "buyIssueSubscribeDiscount"  : "57%",
     "buyIssueTitle"              : "Get This Issue Free!",
-    "buyIssueText"               : "Get this issue free with an annual subscription. Subscribe now and save up to %discount% off the cover price!",
+    "buyIssueText"               : "Get this issue free with an semi-annual subscription. Subscribe now and save up to %discount% off the cover price!",
     "buyIssueSubscribe"          : "Subscribe Now & Save",
     "buyIssueContinue"           : "Buy Issue for %price%",
 
