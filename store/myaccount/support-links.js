@@ -3,7 +3,7 @@ var FAQUrl=settings.myacctFAQURLR28;
 function go(URL){
       window.location.href=URL;
  }
-if (!(/CK|SM|EW/).test("{{MAG_CODE}}")) {
+if (!(/CK|SM|EW|TD|SL|FO|SK/).test("{{MAG_CODE}}")) { 
 	FAQUrl=settings.myacctFAQURLR27;
 }
 if ((/TK/).test("{{MAG_CODE}}")) {
