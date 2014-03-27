@@ -4,14 +4,28 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title> </title>
   <link rel="stylesheet" href="../css/myaccount.css" />
+   <style>
+            span.reseticon {
+                position: relative;
+            }
+            span.reseticon span {
+                position: absolute;
+                display: block;
+                top:-1px;
+                right: 5px;
+                width:20px;
+                height:20px;
+                background: url('../images/close.png') top center no-repeat;
+                cursor: pointer;
+            }
+          
+  </style>
   <script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
   <script type="text/javascript" src="../lib/jquery.js"></script>
   <script type="text/javascript" src="../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript" src="../settings/settings_loader.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript" src="../lib/md5.js"></script>
-
- 
-   <script type="text/javascript" src="myaccountOmni.js"></script>
+  <script type="text/javascript" src="myaccountOmni.js"></script>
    <script type="text/javascript">    
      (function() {
       myAccount.track_page_view("My Account | Non iTunes Subscriber Page");
@@ -22,20 +36,33 @@
       document.addEventListener("touchmove", function(evt) {
  		 evt.preventDefault();
 	  });
-
+     
   	  var $that = $(this);
   	  
-  	  
+  	   
   	  $(this).on('touchmove', function(e) {
   	    e.preventDefault();
   	  });
-  	  
+  	
+  	  $('input.auth-email').wrap('<span class="reseticon" />').after($('<span/>').click(function() {
+                   $('input.auth-email').val(null);
+                   $("#signin-dialog").css({position:'absolute'});
+                   $(window).scrollTop(0);
+                    
+        }));
+      $('input.auth-pass').wrap('<span class="reseticon" />').after($('<span/>').click(function() {
+                   $('input.auth-pass').val(null);
+                   $("#signin-dialog").css({position:'absolute'});
+                   $(window).scrollTop(0);
+       }));  
   	  $(".close-dialog").on('click', function(e) {
         e.preventDefault();
         $( "input.auth-email").val(null);
         $( "input.auth-pass").val(null);
-            
+        $( ".error-msg").val(null);
+        
         $("#signin-modal").hide();
+        $( ".error-msg").hide();
       });
   	    
   	  $("p#signIn a")
