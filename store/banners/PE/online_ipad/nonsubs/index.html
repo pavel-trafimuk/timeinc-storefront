@@ -83,7 +83,11 @@
        /* iPad Portrait */
        @media only screen and (min-width:768px){           
           .subscribe {
-          	background-image: url('Subscribe_portrait.jpg?v={{BUILD_TIME}}') !important;
+          	background-image: url('Subscribe_portrait.png?v={{BUILD_TIME}}') !important;
+          }
+          
+          .getitnow {
+            background-image: url('Getitnow_portrait.jpg?v={{BUILD_TIME}}') !important;
           }
           
           .banner{                 
@@ -106,7 +110,11 @@
        /* iPad Landscape */
        @media only screen and (min-width:1024px){           
           .subscribe {
-            background-image: url('Subscribe_landscape.jpg?v={{BUILD_TIME}}') !important;
+            background-image: url('Subscribe_landscape.png?v={{BUILD_TIME}}') !important;
+          }
+          
+          .getitnow {
+            background-image: url('Getitnow_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
           
           .banner{                 
@@ -156,6 +164,9 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
+          <div class="slide getitnow"> <!-- Get it now slide -->
+            <a href="#"></a>
+          </div>
           <div class="slide subscribe"> <!-- Subscribe slide -->
             <a href="#"></a>
           </div>
@@ -181,6 +192,14 @@
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
         libBanner.buy_sub("com.timeinc.people.ipad.subs.6");
       });      
+      $(".getitnow a").click(function(evt) {
+        evt.preventDefault();
+
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buyissue");
+        libBanner.buy_issue("com.timeinc.people.ipad.inapp.04162014", "304439");
+      });
       
     })();
   </script>
