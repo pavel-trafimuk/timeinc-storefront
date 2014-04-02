@@ -88,6 +88,9 @@
           .ew-xsell {
             background-image: url('ew-xsell.portrait.png?v={{BUILD_TIME}}') !important;
           }
+          .getitnow {
+            background-image: url('Getitnow_portrait.jpg?v={{BUILD_TIME}}') !important;
+          }
           
           .banner{                 
              height: 237px;              
@@ -113,6 +116,9 @@
           }
           .ew-xsell {
             background-image: url('ew-xsell.landscape.png?v={{BUILD_TIME}}') !important;
+          }
+          .getitnow {
+            background-image: url('Getitnow_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
           
           .banner{                 
@@ -164,6 +170,9 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
+          <div class="slide getitnow"> <!-- Get it now slide -->
+            <a href="#"></a>
+          </div>
           
           <!-- LUCIE Registration slide -->
           <div class="slide lucie">
@@ -196,6 +205,14 @@
         evt.preventDefault();
         libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_register");
         libBanner.lucie_register();
+      });
+      $(".getitnow a").click(function(evt) {
+        evt.preventDefault();
+
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buyissue");
+        libBanner.buy_issue("com.timeinc.people.ipad.inapp.04162014", "304439");
       });
     })();
   </script>
