@@ -11,7 +11,8 @@
     },
     initialize: function() {
       var that = this,
-          folio = App.api.libraryService.get_touted_issue();
+          folio = App.api.libraryService.get_touted_issue(),
+          render;
 
       App.api.authenticationService.updatedSignal.add(function() {
         App.api.libraryService.updateLibrary();
@@ -20,6 +21,12 @@
       this.welcome_view = new App.views.Welcome;
       this.store_view = new App.views.Store;
 
+      render = _.bind(this.render, this, $.noop);
+      render = _.partial(_.delay, render, 50);
+      render = _.debounce(render, 200);
+      
+      App.api.authenticationService.userAuthenticationChangedSignal.add(render);
+      
       this.$el.hammer();
       if (typeof localStorage.app_view_count == "undefined") {
         localStorage.app_view_count = 0;
@@ -54,6 +61,8 @@
     render: function(cb) {
       var that = this;
       this.$el.html(this.template({DEBUG:DEBUG}));
+      
+      this.selectBannerType();
 
       this.subview.render(function() {
         that.subview.$el.appendTo(that.el);
@@ -68,8 +77,41 @@
         });
       });
     },
+    selectBannerType: function() {
+      var that = this;
+      
+      this.store_banner = null;
+
+      // APPLE SUBSCRIBERS
+      $.each(App.api.receiptService.availableSubscriptions, function(i, receipt) {
+        if (receipt.isActive()) {
+          that.store_banner = "itunes";
+          that.$(".store-banner").addClass("itunes");
+          return;
+        } else {
+          that.store_banner = "";
+        }
+      });
+  
+      // LUCIE SUBSCRIBERS
+      if (App.api.authenticationService.isUserAuthenticated) {
+        this.store_banner = "lucie";
+        this.$(".store-banner").addClass("lucie");
+      } else {
+        this.store_banner = "";
+        this.$(".store-banner").removeClass("lucie");
+      }
+      return;
+    },
     banner_tap: function() {
       App.omni.event("st_banner_taps");
+      
+      if (this.store_banner == "itunes") {
+        settings.store_banners_type == settings.store_banners_type_itunes;
+      } else if (this.store_banner == "lucie") {
+        settings.store_banners_type == settings.store_banners_type_lucie;
+      }
+      
       if (settings.store_banners_type == "subscribe") {
         new App.dialogs.Subscribe();
       } else {
