@@ -1,4 +1,5 @@
 <!doctype html>
+<html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title> </title>
@@ -17,13 +18,12 @@
 
     var token = getParameterByName("token");
 
-    if (!token) {
-      done();
-    }
-    else {
+    adobeDPS.initializationComplete.add(function() {
+      if (!token) return done();
+        
       var transaction = adobeDPS.authenticationService.login("", "", token);
       transaction.completedSignal.add(done);
-    }
+    });
     
   </script>
 </head>
