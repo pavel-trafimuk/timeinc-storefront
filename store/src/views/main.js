@@ -12,7 +12,7 @@
     initialize: function() {
       var that = this,
           folio = App.api.libraryService.get_touted_issue(),
-          render;
+          setbanner;
 
       App.api.authenticationService.updatedSignal.add(function() {
         App.api.libraryService.updateLibrary();
@@ -21,11 +21,12 @@
       this.welcome_view = new App.views.Welcome;
       this.store_view = new App.views.Store;
 
-      render = _.bind(this.render, this, $.noop);
-      render = _.partial(_.delay, render, 50);
-      render = _.debounce(render, 200);
+      setbanner = _.bind(this.selectBannerType, this, $.noop);
+      setbanner = _.partial(_.delay, setbanner, 50);
+      setbanner = _.debounce(setbanner, 200);
       
-      App.api.authenticationService.userAuthenticationChangedSignal.add(render);
+      App.api.receiptService.newReceiptsAvailableSignal.add(setbanner);
+      App.api.authenticationService.userAuthenticationChangedSignal.add(setbanner);
       
       this.$el.hammer();
       if (typeof localStorage.app_view_count == "undefined") {
@@ -61,9 +62,9 @@
     render: function(cb) {
       var that = this;
       this.$el.html(this.template({DEBUG:DEBUG}));
-      
-      this.selectBannerType();
 
+      this.selectBannerType();
+      
       this.subview.render(function() {
         that.subview.$el.appendTo(that.el);
         that.subview.animate(function() {
@@ -83,23 +84,28 @@
       this.store_banner = null;
 
       // APPLE SUBSCRIBERS
-      $.each(App.api.receiptService.availableSubscriptions, function(i, receipt) {
-        if (receipt.isActive()) {
+      App.api.authenticationService.user_is_subscriber(function(is_subscriber) {
+        if (is_subscriber) {
           that.store_banner = "itunes";
-          that.$(".store-banner").addClass("itunes");
+          that.$(".store-banner.banner-landscape").addClass("itunes");
+          that.$(".store-banner.banner-portrait").addClass("itunes");
           return;
         } else {
-          that.store_banner = "";
+          that.store_banner = null;
+          that.$(".store-banner.banner-landscape").removeClass("itunes");
+          that.$(".store-banner.banner-portrait").removeClass("itunes");
         }
       });
   
       // LUCIE SUBSCRIBERS
       if (App.api.authenticationService.isUserAuthenticated) {
         this.store_banner = "lucie";
-        this.$(".store-banner").addClass("lucie");
+        this.$(".store-banner.banner-landscape").addClass("lucie");
+        this.$(".store-banner.banner-portrait").addClass("lucie");
       } else {
-        this.store_banner = "";
-        this.$(".store-banner").removeClass("lucie");
+        this.store_banner = null;
+        this.$(".store-banner.banner-landscape").removeClass("lucie");
+        this.$(".store-banner.banner-portrait").removeClass("lucie");
       }
       return;
     },

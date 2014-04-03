@@ -33,17 +33,17 @@
 
 /* Store Banner - Lucie Portrait */
 .store-banner.banner-portrait.lucie {
-  //background-image: url("../images/" + $BRAND_CODE + "/stbanner_portrait_lucie.jpg?v=" + currTime());
-  //@media screen and (-webkit-min-device-pixel-ratio: 2) { 
-  //  background-image: url("../images/" + $BRAND_CODE + "/stbanner_portrait_lucie@2x.jpg?v=" + currTime());
-  //}
+  background-image: url("../images/" + $BRAND_CODE + "/stbanner_portrait_lucie.jpg?v=" + currTime()) !important;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) { 
+    background-image: url("../images/" + $BRAND_CODE + "/stbanner_portrait_lucie@2x.jpg?v=" + currTime()) !important;
+  }
 }
 /* Store Banner - Lucie Landscape */
 .store-banner.banner-landscape.lucie {
-  //background-image: url("../images/" + $BRAND_CODE + "/stbanner_landscape_lucie.jpg?v=" + currTime());
-  //@media screen and (-webkit-min-device-pixel-ratio: 2) { 
-  //  background-image: url("../images/" + $BRAND_CODE + "/stbanner_landscape_lucie@2x.jpg?v=" + currTime());
-  //}
+  background-image: url("../images/" + $BRAND_CODE + "/stbanner_landscape_lucie.jpg?v=" + currTime()) !important;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) { 
+    background-image: url("../images/" + $BRAND_CODE + "/stbanner_landscape_lucie@2x.jpg?v=" + currTime()) !important;
+  }
 }
 
 .store-hero-view {
