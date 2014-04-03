@@ -79,6 +79,10 @@
       });
     },
     selectBannerType: function() {
+      if (!settings.store_show_banners) {
+        return;
+      }
+      
       var that = this;
       
       this.store_banner = null;
