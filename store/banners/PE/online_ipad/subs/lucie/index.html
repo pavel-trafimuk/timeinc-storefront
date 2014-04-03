@@ -88,6 +88,9 @@
           .ew-xsell {
             background-image: url('ew-xsell.portrait.png?v={{BUILD_TIME}}') !important;
           }
+          .getitnow {
+            background-image: url('Getitnow_portrait.jpg?v={{BUILD_TIME}}') !important;
+          }
           
           .banner{                 
              height: 237px;              
@@ -113,6 +116,9 @@
           }
           .ew-xsell {
             background-image: url('ew-xsell.landscape.png?v={{BUILD_TIME}}') !important;
+          }
+          .getitnow {
+            background-image: url('Getitnow_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
 
           .banner{                 
@@ -164,9 +170,12 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-            
+          <div class="slide getitnow"> <!-- Get it now slide -->
+            <a href="#"></a>
+          </div>
+           
           <!-- Logo slide -->
-          <div class="slide logo" data-ios-version="<7"></div>
+          <!-- <div class="slide logo" data-ios-version="<7"></div> -->
 
           <div class="slide ew-xsell" data-ios-version=">=7">
             <a href="../../../../appstore_links/goto_appstore.html?link=http%3A%2F%2Fwww.emagazines.com%2Finsight%2Flink%2F%3Fuser%3D4432%26g%3D%7BDF481E4D-825F-411D-A3B1-C59080C4E65D%7D"></a>
@@ -188,6 +197,14 @@
       
       $(".ew-xsell").click(function() {
         libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_xsell");
+      });
+      $(".getitnow a").click(function(evt) {
+        evt.preventDefault();
+
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buyissue");
+        libBanner.buy_issue("com.timeinc.people.ipad.inapp.04162014", "304439");
       });
     })();
   </script>
