@@ -1,7 +1,13 @@
 console.log("----------  STARTING APP  ----------");
 
 if (DEBUG) {
-  settings.asset_root = settings.dev_asset_root;  
+  settings.asset_root = settings.dev_asset_root;
+  window.openDatabase = function() {
+    return {
+      transaction: function(){},
+      readTransaction: function(){}
+    };
+  }
 }
 else {
   settings.asset_root = settings.prod_asset_root;  
