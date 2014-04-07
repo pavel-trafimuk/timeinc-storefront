@@ -173,7 +173,7 @@
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
 
-      $(".lucie").click(function() {
+      $(".lucie").click(function(evt) {
         evt.preventDefault();
         libBanner.track_user_action("Library|Banner|Subscriber|iTunes", "banner_taps_register");
         libBanner.lucie_register();
