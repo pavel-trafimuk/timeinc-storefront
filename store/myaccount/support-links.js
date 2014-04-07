@@ -10,7 +10,7 @@ if ((/TK/).test("{{MAG_CODE}}")) {
 	FAQUrl="http://subscription-assets.timeinc.com/prod/assets/themes/magazines/SUBS/templates/velocity/site/tk-ipad-digitaledition-faq/lp.html";
 }
 
-document.write('<div class="care"><hr>'+settings.myacctCustomerCareSupport+'<p>');
+document.write('<div class="care" id="careButtons"><hr>'+settings.myacctCustomerCareSupport+'<p>');
 
 if ("{{MAG_CODE}}" != "PP") {
 	document.write('<a href="#" target="_blank" id="FAQs" class="care-btn">' + settings.myacctFAQ + '</a>');
