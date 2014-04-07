@@ -32,7 +32,7 @@ function go(URL){
 	 	if ("{{MAG_CODE}}" != "TK") {
 	 	    var html = ''.concat(
 	    	'<p><a id="restoreIssues" href="#" target="_blank" class="blue-btn">' + settings.myacctRestoreIssues + '</a></p>',
-	      	'<p><a id="lucieRegistrationBtn" href="#" class="blue-btn" >' + settings.myacctAcctSetup + '</a></p><p><span id="lucieText" >'+settings.myacctLUCIEText+'</span></p>'
+	      	'<p><a id="lucieRegistrationBtn" href="#" class="blue-btn">' + settings.myacctAcctSetup + '</a></p><p><span id="lucieText">'+settings.myacctLUCIEText+'</span></p>'
 	      	);
 	      	document.write(html);
 	    }
@@ -79,9 +79,9 @@ function go(URL){
             localStorage.visitorId = md5(adobeDPS.deviceService.deviceId);
             $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {
                 if (sub.isActive()) {
-                    $(".care").css({'position':'relative'});
-                    $("#lucieRegistrationBtn").show();
-                    $("#lucieText").show();
+                   /* $(".care").css({'position':'relative'});*/
+                    $("#lucieRegistrationBtn").css({'display':'block'});
+                    $("#lucieText").css({'display':'block'});
                     
                 }
             });
