@@ -15,6 +15,37 @@
     right: 35px;
   }
 }
+
+/* Store Banner - iTunes Portrait */
+.store-banner.banner-portrait.itunes {
+  background-image: url("../images/" + $BRAND_CODE + "/stbanner_portrait_itunes.jpg?v=" + currTime());
+  @media screen and (-webkit-min-device-pixel-ratio: 2) { 
+    background-image: url("../images/" + $BRAND_CODE + "/stbanner_portrait_itunes@2x.jpg?v=" + currTime());
+  }
+}
+/* Store Banner - iTunes Landscape */
+.store-banner.banner-landscape.itunes {
+  background-image: url("../images/" + $BRAND_CODE + "/stbanner_landscape_itunes.jpg?v=" + currTime());
+  @media screen and (-webkit-min-device-pixel-ratio: 2) { 
+    background-image: url("../images/" + $BRAND_CODE + "/stbanner_landscape_itunes@2x.jpg?v=" + currTime());
+  }
+}
+
+/* Store Banner - Lucie Portrait */
+.store-banner.banner-portrait.lucie {
+  background-image: url("../images/" + $BRAND_CODE + "/stbanner_portrait_lucie.jpg?v=" + currTime()) !important;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) { 
+    background-image: url("../images/" + $BRAND_CODE + "/stbanner_portrait_lucie@2x.jpg?v=" + currTime()) !important;
+  }
+}
+/* Store Banner - Lucie Landscape */
+.store-banner.banner-landscape.lucie {
+  background-image: url("../images/" + $BRAND_CODE + "/stbanner_landscape_lucie.jpg?v=" + currTime()) !important;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) { 
+    background-image: url("../images/" + $BRAND_CODE + "/stbanner_landscape_lucie@2x.jpg?v=" + currTime()) !important;
+  }
+}
+
 .store-hero-view {
   background: #fcfcfc;
   min-height: 330px;
