@@ -85,9 +85,7 @@
           .lucie {
             background-image: url('LUCIE_portrait.jpg?v={{BUILD_TIME}}') !important;
           }
-          .ew-xsell {
-            background-image: url('ew-xsell.portrait.png?v={{BUILD_TIME}}') !important;
-          }
+
           .getitnow {
             background-image: url('Getitnow_portrait.jpg?v={{BUILD_TIME}}') !important;
           }
@@ -114,9 +112,7 @@
           .lucie {
             background-image: url('LUCIE_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
-          .ew-xsell {
-            background-image: url('ew-xsell.landscape.png?v={{BUILD_TIME}}') !important;
-          }
+
           .getitnow {
             background-image: url('Getitnow_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
@@ -178,10 +174,6 @@
           <div class="slide lucie">
             <a href="#"></a>
           </div>
-
-          <div class="slide ew-xsell" data-ios-version=">=7">
-            <a href="../../../../appstore_links/goto_appstore.html?link=http%3A%2F%2Fwww.emagazines.com%2Finsight%2Flink%2F%3Fuser%3D4432%26g%3D%7BDF481E4D-825F-411D-A3B1-C59080C4E65D%7D"></a>
-          </div>
           
         </div>
      </div>
@@ -196,10 +188,6 @@
       
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);      
-     
-      $(".ew-xsell").click(function() {
-        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_xsell");
-      });
 
       $(".lucie a").click(function(evt) {
         evt.preventDefault();
