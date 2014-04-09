@@ -1,5 +1,14 @@
 /* global Backbone, async, $, App, console, settings, EMPurchase, EMGetCurrentCampaignID */
 Backbone.on("ApiReady", function() {
+  function emags_receipt_logged(product_id, is_logged) {
+    var receipt_key = "eMagsReceiptLoggedFor:" + product_id;
+
+    if (is_logged !== undefined) {
+      localStorage[receipt_key] = !!is_logged;
+    }
+
+    return localStorage[receipt_key] == "true";
+  }
 
   // tracking for Subscriptions and SingleCopy sales. "FreeSample" not yet implemented
   App.api.receiptService.newReceiptsAvailableSignal.add(function(receipts) {
@@ -11,8 +20,10 @@ Backbone.on("ApiReady", function() {
     console.log("tracking " + receipts.length + " new receipts");
     for (var i=receipts.length; i--;) {
       receipt = receipts[i];
-
       product_id = receipt.productId;
+
+      if (emags_receipt_logged(product_id)) continue;
+
       if (receipt.isSubscription) {
         sub = App.api.receiptService.availableSubscriptions[product_id];
         price = sub.price;
@@ -36,6 +47,8 @@ Backbone.on("ApiReady", function() {
           $.noop, // success cb
           $.noop  // failure cb 
       );
+
+      emags_receipt_logged(product_id, true);
     }
   });
 
