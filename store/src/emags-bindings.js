@@ -1,5 +1,7 @@
 /* global Backbone, async, $, App, console, settings, EMPurchase, EMGetCurrentCampaignID */
 Backbone.on("ApiReady", function() {
+  if (typeof adobeDPS === "undefined") return;
+
   function emags_receipt_logged(product_id, is_logged) {
     var receipt_key = "eMagsReceiptLoggedFor:" + product_id;
 

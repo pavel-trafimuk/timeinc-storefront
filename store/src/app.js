@@ -55,12 +55,13 @@
     },
 
     eMagsInit: function() {
-      if (!settings.eMagsAppId) return;
+      if (!settings.eMagsAppId || typeof adobeDPS === "undefined") return;
+
       EMStart();
       Backbone.trigger("eMagsReady");
     },
     waitForEMags: function(cb) {
-      if (!settings.eMagsAppId) {
+      if (!settings.eMagsAppId || typeof adobeDPS === "undefined") {
         setTimeout(function() { cb(true) });
       }
       else {
