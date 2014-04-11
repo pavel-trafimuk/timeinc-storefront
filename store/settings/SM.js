@@ -58,7 +58,7 @@ window.settings = {
     "heroHeading"                : "Inside This Issue",
     "subscribeOfferText"         : "Each issue of REAL SIMPLE is packed with smart, beautiful, and practical solutions to make life easier – every single day.  Plus fast and delicious recipes, easy organizing and decorating ideas, great fashion and beauty finds, money-saving tips, and more. Plus, get 1 month free with an annual subscription.",
     "myacctLUCIEText"            : 'Your REAL SIMPLE digital account gives you access to: The digital edition on your tablet or smartphone, the No Time To Cook App with over 900 recipes updated monthly, and Solution Seekers on Realsimple.com where you can save checklists, recipes and more.',
-       
+    
     "straightToSampleEnabled"    : AB("straightToSamplePopupEnabled", {
                                         "yes": true,
                                         "no": false
@@ -88,6 +88,10 @@ window.settings = {
     "echo_bundle_id"             : "com_timeinc_realsimple_ipad_inapp",
     "echo_token"                 : "0f433063b92b3ae3a2639d01c20e00bd04756ed0",
     
+    
+    // Auto-download popup
+    "straightToSampleText"       : "Sample the May issue of REAL SIMPLE and get started on your easy, organizing makeover.",
+        
     // found in the adobe URL at http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "7ea9178b138a416d899803c578036a49",
     "appId"                      : "com.timeinc.realsimple.ipad.inapp",
