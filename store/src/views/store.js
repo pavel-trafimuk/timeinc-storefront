@@ -8,10 +8,14 @@
     },
     initialize: function() {
       console.log("App.views.Store.initialize()");
-      this.hero_view = new App.views.StoreHero();
-      this.issues_view = new App.views.StoreIssues();
+      
+      var hero_view = App.views[settings.store_hero_view],
+          issues_view = App.views[settings.store_backissues_view];
 
+      this.hero_view = new hero_view();
+      this.issues_view = new issues_view();
       this.$el.addClass("scrollable");
+
       if (settings.store_show_banners) {
         this.$el.addClass("make-banner-space");
       }

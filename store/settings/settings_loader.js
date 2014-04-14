@@ -4,6 +4,10 @@
     // the reason for this interface is so we can set reasonable defaults
     // when we introduce new settings to the app.
     var default_settings = {
+
+        "store_hero_view"            : "StoreHero",
+        "store_backissues_view"      : "StoreIssues",
+
         "omniture_account": null,
         "omniture_server": null,
         "omniture_ssl_server": null,
