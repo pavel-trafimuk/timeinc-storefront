@@ -1,2 +1,55 @@
 @import "_variables/_LE.scss";
 @import "_includes/_STORE.scss";
+
+/* SLIDESHOW */
+
+
+.store-hero-slideshow-view {
+  position: relative;
+  height: 440px;
+  
+  .carousel {
+    overflow: hidden;
+  }
+  .slides{
+    height: 100%;              
+    -webkit-transition: all 1s;
+  }
+  .slide{
+    height: 100%;
+    float: left;
+    position: relative;
+  
+    background-color: transparent;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: contain;
+  }
+  
+  .banner {
+    position: absolute;
+    width: 100%;
+    height: 340px;
+  }
+  .on-the-right {
+    margin-left: 0px;
+  }
+  .clear { clear: both; }
+  
+  .getitnow {
+    background-size: cover;
+    background-image: url('http://esploded.s3.amazonaws.com/anon_data/2014/yUAb-tzlive.png');
+  }
+  .subscribe {
+    background-size: cover;
+    background-image: url('http://esploded.s3.amazonaws.com/user_data/jim/id1i-DuolingoXpBug.png');
+  }
+  
+  .banner-static {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+  }
+}

@@ -10,6 +10,8 @@ window.settings = {
     "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
     
+    "store_hero_view"            : "StoreHeroSlideshow",
+    
     "heroHeading"                : "Inside This Issue",
     
     "hero_preview": "none",
