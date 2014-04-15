@@ -184,6 +184,7 @@ js_lib 'moment.js'
 js_lib 'underscore.js'
 js_lib 'backbone.js'
 js_lib 'handlebars.runtime.js'
+js_lib 'slideshow.js'
 
 dev_lib 'tcm_devtools.js'
 
