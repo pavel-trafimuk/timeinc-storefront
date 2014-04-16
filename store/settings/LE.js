@@ -11,6 +11,8 @@ window.settings = {
     "enable_first_load_popup"    : false,
     "store_backissues_view"      : "StoreIssuesAmex",
     
+    "store_hero_view"            : "StoreHeroSlideshow",
+    
     "heroHeading"                : "Inside This Issue",
     "storeIssuesTapToView"       : "tap any cover for preview",
     
