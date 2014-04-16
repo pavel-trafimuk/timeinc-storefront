@@ -1,0 +1,56 @@
+<div class="tap-to-preview"><span>{{{settings.storeIssuesTapToView}}}</span></div>
+<div class="issues">
+    {{#each featured_issues}}
+      <div class="featured issue {{#if isFree}}free{{/if}} {{#if is_special_issue}}special{{/if}}" data-product-id="{{productId}}">
+        <div class="issue-inner-container">
+          {{#ifequal this=../this_months_issue}}
+            <div class="this-months-issue">THIS MONTH’S ISSUE</div>
+          {{/ifequal}}
+          <div class="issue-cover">
+            <div class="cover-img-container">
+              <img class="cover-img" src="{{../settings.asset_root}}{{../settings.cover_spacer_img}}" 
+                  data-real-src="{{get_cover_img}}"
+                  width="{{../settings.adbfeed_cover_dimensions.[0]}}" 
+                  height="{{../settings.adbfeed_cover_dimensions.[1]}}">
+            </div>
+            <div class="progress-bar"></div>
+          </div>
+          <div class="issue-info">
+            <div class="issue-number">{{title}}</div>
+            <div class="issue-title">{{folioNumber}}</div>
+            <div class="issue-description">{{folioDescription}}</div>
+            <button class="buy-issue-button"
+              {{> buy-view-btn.partial .. }}
+            </button>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+    {{#each issues}}
+      <div class="issue {{#if isFree}}free{{/if}} {{#if is_special_issue}}special{{/if}}" data-product-id="{{productId}}">
+        {{#if ../settings.storeIssuesBuyBtns}}
+          <div class="issue-title">{{folioNumber}}</div>
+        {{/if}}
+
+        <div class="issue-cover">
+          <div class="cover-img-container">
+            <img class="cover-img" src="{{../settings.asset_root}}{{../settings.cover_spacer_img}}" 
+                data-real-src="{{get_cover_img}}"
+                width="{{../settings.adbfeed_cover_dimensions.[0]}}" 
+                height="{{../settings.adbfeed_cover_dimensions.[1]}}">
+          </div>
+          <div class="progress-bar"></div>
+        </div>
+
+        {{#if ../settings.storeIssuesBuyBtns}}
+          <button class="buy-issue-button"
+            {{> buy-view-btn.partial .. }} 
+          </button>
+        {{else}}
+          <div class="issue-title">{{folioNumber}}</div>
+        {{/if}}
+
+      </div>
+    {{/each}}
+</div>
+<div class="clear"></div>

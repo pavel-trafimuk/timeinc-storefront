@@ -9,8 +9,10 @@ window.settings = {
     "schedule"                   : "monthly",
     "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
+    "store_backissues_view"      : "StoreIssuesAmex",
     
     "heroHeading"                : "Inside This Issue",
+    "storeIssuesTapToView"       : "tap any cover for preview",
     
     "hero_preview": "none",
     "enableHeroCoverTap"         : false,
