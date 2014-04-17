@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Digital Insert Subscribe</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi"/>
+  <style>
+    /* Banner CSS for iOS iPad devices with horz/vert orientations */
+    html, body {
+      height: 100%; width: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: transparent;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+    }
+    .spinner {
+      display: none;
+    }
+    @-webkit-keyframes spin {
+      from { -webkit-transform: rotate(0deg); }
+      to { -webkit-transform: rotate(360deg); }
+    }
+    body.show-spinner .spinner {
+      /* note: spinner is 80x80 */
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -8px;
+      margin-top: -8px;
+      height: 16px;
+      width: 16px;
+      border-radius: 10px;
+      background: transparent;
+      -webkit-animation: spin 0.75s infinite steps(8);
+      box-shadow: 
+        0px -30px 0px #777,
+        21px -21px 8px #f6f6f6,
+        30px 0px 7px #f0f0f0,
+        21px 21px 6px #e8e8e8,
+        0px 30px 5px #e0e0e0,
+        -21px 21px 4px #ccc,
+        -30px 0px 3px #bbb,
+        -21px -21px 2px #aaa;
+    }
+ 
+    #wrapper {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+    /* styles for both orientations */
+    @-webkit-keyframes slide-from-left {
+      from { -webkit-transform: translate3d(-100%,0,0); }
+      to { -webkit-transform: translate3d(0,0,0); }
+    }
+    
+    @-webkit-keyframes slide-from-right {
+      from { -webkit-transform: translate3d(100%,0,0); }
+      to { -webkit-transform: translate3d(0,0,0); }
+    }
+    
+    @-webkit-keyframes slide-from-bottom {
+      from { -webkit-transform: translate3d(0,100%,0); }
+      to { -webkit-transform: translate3d(0,0,0); }
+    }
+    
+    @-webkit-keyframes slide-from-top {
+      from { -webkit-transform: translate3d(0,-100%,0); }
+      to { -webkit-transform: translate3d(0,0,0); }
+    }
+    
+    #banner {
+      position: absolute;
+      display: block;
+      background-image: url('images/14OPEOEH_001.png');
+      background-color: transparent;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      border: none;
+      overflow: hidden;
+      
+      -webkit-transform: translate3d(0,0,0);
+      -webkit-animation: slide-from-right 0.75s forwards;
+    }
+    
+    a {
+      position:absolute;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .close {
+      position: absolute;
+      background-color:#FF0000;
+      opacity: .80;
+      bottom: 385px;
+      right: 55px;
+      width: 40px;
+      height: 40px;
+      z-index: 10000;
+    }
+  </style>
+
+  <script type="text/javascript" src="../lib/jquery.js"></script>
+
+  <!-- Reading API needed for digital inserts inside content -->
+  <!-- script type="text/javascript" src="../../../lib/AdobeReadingAPI.js"></script -->
+  <!-- script type="text/javascript" src="../lib/MockAPI.js"></script -->
+
+  <script type="text/javascript" src="../settings/{{MAG_CODE}}.js"></script> 
+  <script type="text/javascript" src="../settings/settings_loader.js"></script> 
+
+  <script type="text/javascript" src="../lib/lucie_entitlements.js"></script>
+
+  <script type="text/javascript">           
+    (function() {
+      var api = (typeof adobeDPS == "undefined") ? MockAPI : adobeDPS;
+      var buy_sub = function() { setTimeout(buy_sub, 500) };
+      
+      $(function() {        
+        $("#banner .close").click(function() {
+          console.log("close");
+          $(this).remove();
+          return false;
+        });
+        
+        $("#banner a").click(function(e) {
+          e.preventDefault();
+          
+          $("body").addClass("show-spinner");
+          console.log("buy sub");
+          buy_sub();
+          return false;
+        });
+        
+        api.initializationComplete.addOnce(function() {
+          buy_sub = function() {
+            api.subscriptionService.availableSubscriptions["com.timeinc.people.ipad.subs.6"].purchase();
+          };
+        });
+      });
+    })();
+  </script>
+</head>
+ 
+<body>
+  <div id="wrapper">
+    <div id="banner">
+      <div class="close"></div>
+      <a href="#"></a>
+    </div>
+    <div class="spinner"></div>
+  </div>
+</body>
+
+</html>
