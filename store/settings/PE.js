@@ -68,6 +68,9 @@ window.settings = {
     // App specific URLS
     // ************************************************************  
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/pe-lucie-customer-creation-itunes201307.html",
-    
+    //For new autologin functionality, will remove once all titles are live
+     "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=PE&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT&version=2",
+     "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=PE&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT&version=2",
+       
 "ihatethelastcomma": true};
 })();
