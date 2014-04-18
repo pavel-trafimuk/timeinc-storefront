@@ -4,6 +4,7 @@ dir = File.dirname(__FILE__)
 # Compass configurations
 sass_path = dir
 css_path = File.join(dir, "../", "css")
+cache_path = '../../.sass-cache'
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

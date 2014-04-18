@@ -87,25 +87,46 @@ building() {
 render_in_place() {
   MAG_CODE=$TITLE REMOTE_ASSET_PREFIX=$REMOTE_ASSET_PREFIX python bin/render_index.py "$1" "$1"
 }
+banner_render_in_place() {
+  DEV=true MAG_CODE=$TITLE python \
+    bin/render_index.py "$1" "$1" \
+    "../../../lib/jquery.js" \
+    "$2" \
+    "../../../settings/$TITLE.js" "../../../settings/settings_loader.js" \
+    "../../../lib/lucie_entitlements.js"
+}
+
 compile() {
   (cd "$DEVDIR/styles" && compass compile $TITLE\-*.scss)
-  mv "$DEVDIR/css/$TITLE-store.css" "$DEVDIR/css/main.css"
-  mv "$DEVDIR/css/$TITLE-myaccount.css" "$DEVDIR/css/myaccount.css"
-  mv "$DEVDIR/css/$TITLE-lucie-library.css" "$DEVDIR/css/lucie-library.css"
+
+  pushd "$DEVDIR/css"
+  for cssfile in $TITLE-*.css; do
+    mv "$cssfile" "${cssfile:3}"
+  done
+
+  mv store.css main.css
+  popd
   
   # render the index.html.tmpl file
   MAG_CODE=$TITLE python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.mockapi.dev.html" ${DEVJSFILES[@]}
   MAG_CODE=$TITLE python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.dev.html" "lib/AdobeLibraryAPI.js" ${DEVJSFILES[@]}
 
-  for BANNER in $(find "$DEVDIR/banners/" -iname "*.html"); do
-    render_in_place "$BANNER"
+  # dev banners
+  cp -R "$DEVDIR/banners/$TITLE" "$DEVDIR/dev-banners"
+  for BANNER in $(find "$DEVDIR/dev-banners" -iname "*.html"); do
+    banner_render_in_place "$BANNER" "../../../lib/MockAPI.js"
+  done
+
+  # real banners
+  for BANNER in $(find "$DEVDIR/banners/$TITLE" -iname "*.html"); do
+    banner_render_in_place "$BANNER" "../../../lib/AdobeLibraryAPI.js"
   done
   
-  for HELPGUIDE in $(find "$DEVDIR/helpguides/" -iname "*.html"); do
+  for HELPGUIDE in $(find "$DEVDIR/helpguides/$TITLE" -iname "*.html"); do
     render_in_place "$HELPGUIDE"
   done
   
-  for DINSERT in $(find "$DEVDIR/inserts/" -iname "*.html"); do
+  for DINSERT in $(find "$DEVDIR/inserts/$TITLE" -iname "*.html"); do
     render_in_place "$DINSERT"
   done
 
@@ -126,9 +147,7 @@ END
 
   # copy css and assets
   mkdir $DEPLOYDIR/css
-  cp $DEVDIR/css/main.css $DEPLOYDIR/css/main.css
-  cp $DEVDIR/css/myaccount.css $DEPLOYDIR/css/myaccount.css
-  cp $DEVDIR/css/lucie-library.css $DEPLOYDIR/css/lucie-library.css
+  cp -R $DEVDIR/css $DEPLOYDIR
 
   mkdir $DEPLOYDIR/images
   cp $DEVDIR/images/*.* $DEPLOYDIR/images
@@ -138,6 +157,7 @@ END
   cp $DEVDIR/index.prod.html $DEPLOYDIR/index.html
 
   cp -r lib $DEPLOYDIR/lib
+  cp lib/* $DEVDIR/lib
 
   mkdir $DEPLOYDIR/settings
   cp -r $DEVDIR/settings/${TITLE}.js $DEPLOYDIR/settings

@@ -19,7 +19,7 @@ $issue-spacing: 3%;
     text-transform: uppercase;
     font-size: 12px;
     margin-bottom: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     border-bottom: 1px solid $amex-tap-to-preview-color;
 
     &::before, &::after {
@@ -60,6 +60,7 @@ $issue-spacing: 3%;
   .issue-cover {
     position: relative;
     margin-bottom: 10px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.25);
   }
   .issue-title {
     @include constrain-to-one-line;
@@ -83,8 +84,14 @@ $issue-spacing: 3%;
   $feature-vertical-spacing-top: 20px;
   $feature-vertical-spacing-bottom: 15px;
   .featured.issue {
-    position: relative;
     width: 50%;
+    margin-bottom: 15px;
+    .issue-inner-container {
+      background: #ccc url("../images/diag-line-maker-bg.png");
+      background-size: 5px;
+      position: relative;
+      padding: $feature-vertical-spacing-top 0 $feature-vertical-spacing-bottom;
+    }
     .issue-cover {
       width: 39%;
       margin-left: 5%;
@@ -98,7 +105,7 @@ $issue-spacing: 3%;
       top: $feature-vertical-spacing-top;
       bottom: $feature-vertical-spacing-bottom;
       background: #fff;
-      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
       box-sizing: border-box;
       padding: 10px;
       .issue-number {
@@ -114,22 +121,68 @@ $issue-spacing: 3%;
         text-transform: uppercase;
         margin-bottom: 5px;
       }
-      button {
+      .buy-issue-button {
         position: absolute;
         bottom: 8px;
         left: 8px;
         right: 8px;
       }
+
     }
     .issue-description {
       font-size: 12px;
     }
-    .issue-inner-container {
-      background: #ddd;
-      padding: $feature-vertical-spacing-top 0 $feature-vertical-spacing-bottom;
+    .this-months-issue {
+      position: absolute;
+      top: -9px;
+      left: 5%;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 8px;
+      margin-left: -8px;
+      background: fade-out($MAIN_BG_COLOR, 0.25);
+      border-radius: 8px;
     }
   }
   .back.issue {
-    width: 33%;
+    margin-top: 45px;
+    margin-bottom: 30px;
+    width: 33.333%;
+    .issue-cover {
+      width: 60%;
+      margin-left: 20%;
+      margin-bottom: 0;
+    }
+    .issue-title {
+      margin: 10px 0;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .buy-issue-button {
+      width: 60%;
+    }
+  }
+
+  .buy-issue-button {
+    font-size: 12px;
+    line-height: 22px;
+    border: none;
+    background: rgb(145, 145, 145);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: $MAIN_FONT;
+    border-radius: 4px;
+  }
+  .buy-issue-button[data-action=buy] {
+    background: rgb(221, 0 , 48);
+  }
+  .buy-issue-button[data-action=download],
+  .buy-issue-button[data-action=downloadfree] {
+    background: rgb(28, 146, 156);
+  }
+  .buy-issue-button[data-action=unavailable] {
+    background: rgb(180, 180, 180);
   }
 }
