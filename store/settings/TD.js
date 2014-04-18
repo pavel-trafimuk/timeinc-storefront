@@ -18,6 +18,8 @@ window.settings = {
     "hero_itii_preview": "image",
     "max_back_issues"            : 20,
 
+    "eMagsAppId": "TIMEIPAD",
+    
     "omniture_account"           : "timagtimenk",
     "omniture_server"            : "metrics.time.com",
     "omniture_ssl_server"        : "smetrics.time.com",

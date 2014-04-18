@@ -85,8 +85,16 @@
         top: 15%;
       }
       
-      .sm-nttc-xsell {
-        background-image: url('sm-nttc-xsell.png?v={{BUILD_TIME}}') !important;
+      
+      @media only screen and (device-height: 480px) { /*iPhone 4*/
+        .sm-nttc-xsell {
+          background-image: url('sm-nttc-xsell-iphone4.jpg?v={{BUILD_TIME}}') !important;
+        }
+      }
+      @media only screen and (device-height: 568px) { /*iPhone 5*/
+        .sm-nttc-xsell {
+          background-image: url('sm-nttc-xsell-iphone5.jpg?v={{BUILD_TIME}}') !important;
+        }
       }
       
       .banner{                 
@@ -134,7 +142,7 @@
           
           <!-- NTTC Cross-sell slide -->
           <div class="slide sm-nttc-xsell" data-ios-version=">=7">
-            <a href="../../../appstore_links/goto_appstore.html?link=http://www.emagazines.com/insight/link/?user=4432&g=%7b76EEEA24-DF7F-4BF4-8AAF-3A19A9DC2A14%7d"></a>
+            <a href="../../../appstore_links/goto_appstore.html?link=http%3A%2F%2Fwww.emagazines.com%2Finsight%2Flink%2F%3Fuser%3D4432%26g%3D%7B76EEEA24-DF7F-4BF4-8AAF-3A19A9DC2A14%7D"></a>
           </div>
         </div>
      </div>

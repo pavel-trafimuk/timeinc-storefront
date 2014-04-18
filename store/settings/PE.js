@@ -17,7 +17,7 @@ window.settings = {
     "heroBuyIssue_useDialog"     : true,
     "buyIssueSubscribeDiscount"  : "57%",
     "buyIssueTitle"              : "Get This Issue Free!",
-    "buyIssueText"               : "Get this issue free with an semi-annual subscription. Subscribe now and save up to %discount% off the cover price!",
+    "buyIssueText"               : "Get this issue free with a semi-annual subscription. Subscribe now and save up to %discount% off the cover price!",
     "buyIssueSubscribe"          : "Subscribe Now & Save",
     "buyIssueContinue"           : "Buy Issue for %price%",
 
@@ -68,6 +68,9 @@ window.settings = {
     // App specific URLS
     // ************************************************************  
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/pe-lucie-customer-creation-itunes201307.html",
-    
+    //For new autologin functionality, will remove once all titles are live
+     "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=PE&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT&version=2",
+     "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/template/login.jsp&MSRSMAG=PE&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT&version=2",
+       
 "ihatethelastcomma": true};
 })();

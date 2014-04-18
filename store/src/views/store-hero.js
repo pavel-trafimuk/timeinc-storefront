@@ -189,14 +189,19 @@
       var that = this,
           $this = $(evt.currentTarget),
           $progress = this.$(".issue-cover"),
-          $curl = this.$(".page-curl");
+          $curl = this.$(".page-curl"),
+          folio = App.api.libraryService.get_touted_issue();
 
       App.omni.event("st_"+$this.data("action")+"_taps");
       this.disable_rendering = true;
 
-      if (settings.heroBuyIssue_useDialog) {
+      var userOwnsLatestFolio = !(folio.state == App.api.libraryService.folioStates.PURCHASABLE ||
+                                 folio.state == App.api.libraryService.folioStates.UNAVAILABLE ||
+                                 folio.state == App.api.libraryService.folioStates.INVALID);
+                                   
+      if (settings.heroBuyIssue_useDialog && !userOwnsLatestFolio) {
         new App.dialogs.BuyIssue({
-          folio: App.api.libraryService.get_touted_issue(),
+          folio: folio,
           onExit: function() {
             that.disable_rendering = false;
           }
