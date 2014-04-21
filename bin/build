@@ -217,7 +217,7 @@ js_file "settings/$TITLE.js"
 js_file 'settings/settings_loader.js'
 
 # requires settings to be loaded
-js_lib 'ema-1.0.2.js'
+js_lib 'ema-1.0.3.js'
 js_file 'src/emags-bindings.js'
 
 # depends on settings
