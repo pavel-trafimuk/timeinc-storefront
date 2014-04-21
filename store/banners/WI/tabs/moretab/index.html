@@ -1,23 +1,69 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
-    <meta name="description" content="">
+    <title>More</title>
     <meta name="viewport" content="width=device-width">
     
     <link rel="stylesheet" href="../../../css/moretab.css?v={{BUILD_TIME}}" />
 
-    {{JS_FILES}}
+    <script type="text/template" id="hero-template">
+      <img src="badge-new.png" class="hero-burst">
+      <img src="<%= cover %>" class="hero-cover">
+      <div class="hero-detail">
+        <h3 class="hero-title-prefix">This Month’s Feature</h3>
+        <h2 class="hero-title"><%= title %></h2>
+        <p class="hero-description"><%= description %></p>
+        <p class="hero-price"><%= price %></p>
+        <button class="hero-button">Purchase</button>
+      </div>
+      <div class="clear"></div>
+    </script>
 
+    <script type="text/template" id="product-template"><%
+      %><img src="<%= cover %>" class="pv-cover"><%
+    %></script>
+
+    <script type="text/template" id="overlay-template">
+      <div class="dod-dialog-box">
+        <a href="#" class="dod-close-button">&times;</a>
+        <div class="dod-images">
+          <% _.each(images, function(image) { %><%
+            %><div class="dod-cover-container">
+              <img class="dod-cover-img" src="<%= image %>">
+            </div><%
+          %><% }); %>
+        </div>
+        <div class="dod-product-info">
+          <h3 class="dod-title"><%= title %></h3>
+          <p class="dod-description"><%= description %></p>
+        </div>
+        <div class="dod-cta">
+          <button class="dod-button <%= buttonClass %>"><%= buttonText %></button>
+        </div>
+      </div>
+    </script>
+
+    {{JS_FILES}}
+    <script type="text/javascript" src="../../../lib/underscore.js"></script>
+    <script type="text/javascript" src="../../../lib/backbone.js"></script>
+
+    <script type="text/javascript" src="./views/product.js"></script>
 </head>
 <body>
    
+  <h1>
+    More From<br>
+    <img src="logo.png" width=350>
+  </h1>
+
+  <div class="this-months-feature"></div>
+
+  <h2>E-Books And Mobile Apps</h2>
+  <div class="digital-products cover-block"></div>
   
+  <h2>Free Digital Content For Subscribers</h2>
+  <div class="free-content cover-block"></div>
    
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript" src="moretab.js?v={{BUILD_TIME}}"></script>
