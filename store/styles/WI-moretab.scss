@@ -1,5 +1,11 @@
 @import "_variables/_WI.scss";
 
+$fontLight: "AvenirNext-Regular";
+$fontMedium: "AvenirNext-Medium";
+$fontBold: "AvenirNext-DemiBold";
+$fontHeavy: "AvenirNext-Bold";
+
+
 html, body {
 	background: $MAIN_BG_COLOR;
 	height: 100%;
@@ -11,10 +17,12 @@ html, body {
 $buttonRed: rgb(221, 0 , 48);
 $buttonBlue: rgb(28, 146, 156);
 $buttonGrey: rgb(180, 180, 180);
-button {
-	font-family: $MAIN_FONT;
+button, .button {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	font-family: $fontMedium;
 	font-size: 13px;
-	font-weight: 400;
 	text-transform: uppercase;
 	color: #fff;
 	border-radius: 5px;
@@ -22,21 +30,23 @@ button {
 	padding: 0; margin: 0;
 }
 h1 {
+	font-family: $fontMedium;
+	font-weight: normal;
 	margin: 0;
 	padding: 15px 0 10px;
 	color: #111;
 	text-align: center;
 	font-size: 18px;
-	font-weight: 400;
 	line-height: 30px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
 h2 {
+	font-family: $fontMedium;
+	font-weight: normal;
 	color: #111;
 	text-align: center;
 	font-size: 18px;
-	font-weight: 400;
 	line-height: 30px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -46,8 +56,6 @@ h2 {
 	margin: 20px 20px 0;
 }
 .clear { clear: both; }
-
-
 
 /*
  * Specific Element Styles:
@@ -59,6 +67,7 @@ $heroHorzMargin: 20px;
 .this-months-feature {
 	position: relative;
 	padding: 0 $heroHorzMargin;
+	margin: 30px 0;
 }
 .hero-cover {
 	float: left;
@@ -73,18 +82,19 @@ $heroHorzMargin: 20px;
 	z-index: 2;
 }
 .hero-detail {
+	font-family: $fontMedium;
 	margin-left: $heroCoverWidth + $heroHorzMargin;
 }
 .hero-title-prefix {
+	font-family: $fontBold;
 	margin: 0;
 	font-size: 14px;
-	font-weight: 600;
 	text-align: left;
 	text-transform: uppercase;
 }
 .hero-title {
+	font-family: $fontMedium;
 	font-size: 26px;
-	font-weight: 400;
 	letter-spacing: 0;
 	text-align: left;
 	text-transform: uppercase;
@@ -96,13 +106,13 @@ $heroHorzMargin: 20px;
 	font-size: 14px;
 }
 .hero-price {
-	font-size: 14px;
+	font-family: $fontMedium;
+	font-size: 16px;
 	text-transform: uppercase;
 	margin: 0;
 	position: absolute;
 	bottom: 50px;
 	left: $heroCoverWidth + ($heroHorzMargin * 2);
-	font-weight: 500;
 	color: $buttonBlue;
 }
 .hero-button {
@@ -111,6 +121,7 @@ $heroHorzMargin: 20px;
 	left: $heroCoverWidth + ($heroHorzMargin * 2);
 	padding: 0 40px;
 	height: 35px;
+	line-height: 35px;
 	background: $buttonBlue;
 }
 
@@ -143,6 +154,9 @@ $coverBlockHeight: 180px;
 .pv-cover {
 	height: $coverBlockHeight;
 }
+.disabled .pv-cover {
+	opacity: 0.3;
+}
 
 
 .dialog {
@@ -155,10 +169,9 @@ $coverBlockHeight: 180px;
 	position: absolute;
 	top: 30px; bottom: 30px;
 	left: 20px; right: 20px;
-	z-index: 1000;
 	background: #fff;
 }
-$dodCloseBtnSize: 22px;
+$dodCloseBtnSize: 26px;
 .dod-close-button {
 	display: block;
 	height: $dodCloseBtnSize;
@@ -168,19 +181,19 @@ $dodCloseBtnSize: 22px;
 	position: absolute;
 	top: -10px;
 	right: -10px;
-	background: #555;
+	background: #444;
 	font-weight: 400;
 	text-decoration: none;
 	color: #fff;
 	border-radius: 100%;
 	border: 2px solid #fff;
 	box-shadow: 2px 2px 6px rgba(0,0,0,0.75);
-	font-size: 24px;
+	font-size: 30px;
 	z-index: 1;
 }
 $dodImageHeight: 693px;
 .dod-images {
-	height: $dodImageHeight + 20px;
+	height: $dodImageHeight + 30px;
 	overflow-y: hidden;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -208,19 +221,22 @@ $dodImageHeight: 693px;
 	margin: 15px 220px 0 20px;
 }
 .dod-title {
+	font-family: $fontMedium;
+	font-weight: normal;
+	letter-spacing: 1px;
 	margin: 0 0 10px;
-	font-size: 16px;
+	font-size: 20px;
 	text-transform: uppercase;
-	color: #444;
-	font-weight: 600;
+	color: #555;
 }
 .dod-description {
+	font-family: $fontMedium;
 	margin: 0;
-	font-size: 12px;
+	font-size: 14px;
 }
 .dod-cta {
 	position: absolute;
-	bottom: 40px;
+	bottom: 80px;
 	right: 20px;
 	width: 180px;
 }
@@ -234,4 +250,68 @@ $dodImageHeight: 693px;
 	&.subscribe {
 		background: $buttonBlue;
 	}
+	&.download {
+		background: $buttonRed;
+	}
+	&.view {
+		background: $buttonGrey;
+	}
+}
+
+.sd-dialog-box {
+	position: fixed;
+	top: 200px;
+    left: 50%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, .95);
+    color: #000000;
+    text-align: center;
+    -webkit-border-radius: 8px;
+    
+    width: 330px;
+    margin-left: -177px;
+
+    font-family: "Helvetica Neue", "Arial", "sans-serif";
+
+    button {
+        width: 100%;
+        padding: 6px 25px;
+        background: none;
+        opacity: 0.85;
+        border: none;
+        border-top: 1px solid #ccc;
+        
+        color: #007aff;
+        font-family: "Helvetica Neue", "Arial", "sans-serif";
+        font-size: 18px;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        text-transform: capitalize;
+    }
+}
+.sd-title {
+	margin: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top:10px;
+}
+.sd-description {
+    font-size: 16px;
+    margin: 0px 0px 20px;
+    text-align: left;
+    line-height: 120%;
+    padding: 8px 20px;
+}
+.sd-subscribe-button {
+    position: relative;
+    padding: 10px;
+    color:#007aff;
+    font-size:16px;
+    border-top: 1px solid #CCC;
+    opacity: 0.85;
+    display:block;
+    height: 21px;
 }

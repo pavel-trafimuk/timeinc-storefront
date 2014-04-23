@@ -9,13 +9,15 @@
 
     <script type="text/template" id="hero-template">
       <img src="badge-new.png" class="hero-burst">
-      <img src="<%= cover %>" class="hero-cover">
+      <a href="<%= buylink %>" target="_blank"
+        ><img src="<%= cover %>" class="hero-cover"></a>
       <div class="hero-detail">
         <h3 class="hero-title-prefix">This Month’s Feature</h3>
         <h2 class="hero-title"><%= title %></h2>
         <p class="hero-description"><%= description %></p>
         <p class="hero-price"><%= price %></p>
-        <button class="hero-button">Purchase</button>
+        <a class="button hero-button" target="_blank"
+            href="<%= buylink %>">Purchase</a>
       </div>
       <div class="clear"></div>
     </script>
@@ -39,8 +41,24 @@
           <p class="dod-description"><%= description %></p>
         </div>
         <div class="dod-cta">
-          <button class="dod-button <%= buttonClass %>"><%= buttonText %></button>
+          <a href="<%= buttonHref %>"
+              class="dod-button button <%= buttonClass %>"
+              target="_blank"
+              ><%= buttonText %></a>
         </div>
+      </div>
+    </script>
+
+    <script type="text/template" id="subscribe-dialog-template">
+      <div class='sd-dialog-box'>
+          <p class='sd-title'><%= settings.subscribeTo %> <%= settings.brandName %></p>
+          <p class='sd-description'><%= settings.subscribeOfferText %></p>
+          <% _.each(subscriptions, function(sub) { %>
+              <div class='sd-subscribe-button' id='<%= sub.productId %>'>
+                  <%= sub.duration %> - <%= sub.price %>
+              </div>
+          <% }); %>
+          <button class="sd-close-button"><%= settings.subscribeCancel %></button>
       </div>
     </script>
 
@@ -63,10 +81,13 @@
   <div class="digital-products cover-block"></div>
   
   <h2>Free Digital Content For Subscribers</h2>
-  <div class="free-content cover-block"></div>
+  <div class="free-content cover-block disabled"></div>
    
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript" src="moretab.js?v={{BUILD_TIME}}"></script>
-
+  <script>
+    setTimeout(function() {
+      location.reload(true);
+    }, 10000);
 </body>
 </html>
