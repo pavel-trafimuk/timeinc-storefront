@@ -1,7 +1,13 @@
 
 {{#if isPurchasable}}
     data-action="buy">
-    {{#setting}}{{storeBuyIssueBtn}}{{/setting}}
+    {{#setting}}
+      {{#ifequal storeBuyIssueBtn="%price%"}}
+        {{../../price}}
+      {{else}}
+        {{storeBuyIssueBtn}}
+      {{/ifequal}}
+    {{/setting}}
 {{else}}{{#if isViewable}}
     data-action="view">
     {{#setting}}{{storeViewIssueBtn}}{{/setting}}
