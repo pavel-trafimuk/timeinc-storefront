@@ -2,6 +2,8 @@ console.log("----------  STARTING APP  ----------");
 
 if (DEBUG) {
   settings.asset_root = settings.dev_asset_root;
+  settings.PRODUCTION_TCM_FEED = settings.DEV_TCM_FEED;
+  settings.prod_tcmfeed_image_root = settings.dev_tcmfeed_image_root;
   window.openDatabase = function() {
     return {
       transaction: function(){},
@@ -23,7 +25,9 @@ window.onerror = function(err, lineNo, fileName) {
 // outside the document and just generally feels, not-very-appy
 $(document)
   .on("touchmove", function(evt) { evt.preventDefault() })
-  .on("touchmove", ".scrollable", function(evt) { evt.stopPropagation() });
+  .on("touchmove", ".scrollable, .horz-scrollable", function(evt) {
+    evt.stopPropagation()
+  });
 
 App.preload();
 Handlebars.registerHelper('setting', function(options) {

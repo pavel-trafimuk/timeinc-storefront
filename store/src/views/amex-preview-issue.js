@@ -32,7 +32,7 @@
         // don't allow multiple image previews at once
         if ($(".issue-preview-image").length) return;
 
-        that.$el.appendTo("body");
+        that.$el.appendTo("html");
         that.omni_pv = App.omni.pageview("previewimage|"+coverdate, "event1");
         that.animate();
       });
