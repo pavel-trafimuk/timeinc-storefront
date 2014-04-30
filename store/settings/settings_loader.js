@@ -7,6 +7,7 @@
 
         "store_hero_view"            : "StoreHero",
         "store_backissues_view"      : "StoreIssues",
+        "store_folio_detail_view"    : "IssuePreviewImage",
 
         "omniture_account": null,
         "omniture_server": null,

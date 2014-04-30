@@ -9,7 +9,12 @@
  */
 (function() {
   window.App = {
-    views: {},
+    views: {
+      show_folio_detail: function(folio, large_img_url) {
+        var View = App.views[settings.store_folio_detail_view];
+        return new View(folio, large_img_url);
+      }
+    },
     dialogs: {},
 
     debug: {

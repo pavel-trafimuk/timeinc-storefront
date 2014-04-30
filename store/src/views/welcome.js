@@ -135,7 +135,7 @@
       });
     },
     open_preview_image: function() {
-      new App.views.IssuePreviewImage(this.folio);
+      App.views.show_folio_detail(this.folio);
     },
     open_wes: function() {
       App.omni.event("sp_activate_taps");

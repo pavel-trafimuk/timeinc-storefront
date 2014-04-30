@@ -79,7 +79,7 @@
           product_id = $this.data("productId"),
           folio = App.api.libraryService.get_by_productId(product_id);
 
-      new App.views.IssuePreviewImage(folio);
+      App.views.show_folio_detail(folio);
     },
     view_issue_native_preview: function(evt) {
       var $this = $(evt.currentTarget),

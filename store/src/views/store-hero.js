@@ -271,7 +271,7 @@
           scroll_cover_index = this.$(".cover-img.active").data("scrollCoverIndex"),
           large_img_url = folio.get_additional_covers_large()[scroll_cover_index];
 
-      new App.views.IssuePreviewImage(folio, large_img_url);
+      App.views.show_folio_detail(folio, large_img_url);
     },
     goto_native_preview: function(link, folio) {
       var $progress = this.$(".issue-cover").addClass("progress"),
