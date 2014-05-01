@@ -90,6 +90,10 @@
             background-image: url('Getitnow_portrait.jpg?v={{BUILD_TIME}}') !important;
           }
           
+          .sm-xsell {
+            background-image: url('SM-xsell-portrait.jpg?v={{BUILD_TIME}}') !important;
+          }
+          
           .banner{                 
              height: 237px;              
           }
@@ -115,6 +119,10 @@
 
           .getitnow {
             background-image: url('Getitnow_landscape.jpg?v={{BUILD_TIME}}') !important;
+          }
+          
+          .sm-xsell {
+            background-image: url('SM-xsell-landscape.jpg?v={{BUILD_TIME}}') !important;
           }
           
           .banner{                 
@@ -175,6 +183,11 @@
             <a href="#"></a>
           </div>
           
+          <!-- SM xsell slide -->
+          <div class="slide sm-xsell" data-ios-version=">=7">
+            <a href="../../../../appstore_links/goto_appstore.html?link=http%3A%2F%2Fwww.emagazines.com%2Finsight%2Flink%2F%3Fuser%3D4432%26g%3D%7B6652ADA6-1641-489C-8EEA-314CB7686519%7D"></a>
+          </div>
+          
         </div>
      </div>
    </div>
@@ -199,8 +212,12 @@
 
         gallery.cancelAutoSlide();
 
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buyissue");
+        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_buyissue");
         libBanner.buy_issue("com.timeinc.people.ipad.inapp.04162014", "304439");
+      });
+      
+      $(".sm-xsell").click(function() {
+        libBanner.track_user_action("Library|Banner|Subscriber|iTunes", "banner_taps_smxsell");
       });
     })();
   </script>
