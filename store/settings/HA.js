@@ -14,6 +14,8 @@ window.settings = {
     
     "heroHeading"                : "Inside This Issue",
     "max_back_issues"            : 12,
+    
+    "preview_issue_product_id"   : "com.timeinc.health.ipad.inapp.FREESAMPLE",
 
     "omniture_account"           : "timaghealthnk",
     "omniture_server"            : "metrics.health.com",
