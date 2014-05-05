@@ -17,6 +17,8 @@ window.settings = {
     "omniture_server"            : "timeinc.122.2o7.net",
     "omniture_ssl_server"        : "timeinc.122.2o7.net",
 
+    "eMagsAppId"                 : "PPLESPNLIPAD",
+
     "echo_bundle_id"             : "com_timeinc_peopleespanol_ipad_inapp",
     "echo_token"                 : "d0bb021a4e5826a136c23f43f95d277d2b191586",
     
