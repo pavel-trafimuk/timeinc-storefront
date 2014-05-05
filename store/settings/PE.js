@@ -3,6 +3,8 @@
 
 // Inline AB.js since this file can not have dependencies:
 (function() {
+  if (typeof localStorage == "undefined") localStorage = {};
+
   var tests = {},
       assignments = JSON.parse(localStorage.ABTestAssignments || "{}");
 
