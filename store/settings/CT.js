@@ -14,6 +14,8 @@ window.settings = {
     
     "heroHeading"                : "Inside This Issue",
     "max_back_issues"            : 20,
+    
+    "preview_issue_product_id"   : "com.timeinc.coastalliving.ipad.inapp.FREESAMPLE",
 
     "omniture_account"           : "timagcoastalnk",
     "omniture_server"            : "timeinc.122.2o7.net",
