@@ -42,8 +42,6 @@ window.settings = {
     // App specific URLS
     // ************************************************************
     
-    "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/td/tdweb_login.jsp&MSRSMAG=TD&MSDDMOFF=ABTF&MSDTRACK=IPSP&MSDVNDID=TBLT&version=2",
-    "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/td/tdweb_login.jsp&MSRSMAG=TD&MSDDMOFF=ABTF&MSDTRACK=IPAD&MSDVNDID=TBLT&version=2",
     "WesPageURLiphone"           : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/td/tdweb_login.jsp&MSRSMAG=TD&MSDDMOFF=ABTF&MSDTRACK=IPHB&MSDVNDID=TBLT",
         
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/td-lucie-customer-creation-itunes201307.html",
