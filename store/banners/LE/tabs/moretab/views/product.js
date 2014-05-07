@@ -68,6 +68,8 @@ DetailOverlayDialog = Backbone.View.extend({
 			product_id = this.model.get("productID");
 		
 		cx.buttonHref = "#";
+		cx.buttonText = "Unavailable";
+		cx.buttonClass = "unavailable";
 		
 		if (product_id) {
 			cx.buttonText = "Download";
