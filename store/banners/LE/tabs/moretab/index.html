@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>More</title>
+    <meta name="viewport" content="width=device-width">
+    
+    <link rel="stylesheet" href="../../../css/moretab.css?v={{BUILD_TIME}}" />
+
+    <script type="text/template" id="hero-template">
+        <img class="hv-img" src="<%= cover %>">
+    </script>
+
+    <script type="text/template" id="product-template">
+      <div class="pv-product-box">
+        <img class="pv-img" src="<%= cover %>">
+        <h2 class="pv-title"><%= title %></h2>
+        <a class="pv-button" href="#"><%= btn_text %></a>
+      </div>
+    </script>
+
+    <script type="text/template" id="overlay-template">
+      <div class="dod-dialog-box">
+        <a href="#" class="dod-close-button">&times;</a>
+        <div class="dod-images">
+          <% _.each(images, function(image) { %><%
+            %><div class="dod-cover-container">
+              <img class="dod-cover-img" src="<%= image %>">
+            </div><%
+          %><% }); %>
+        </div>
+        <div class="dod-product-info">
+          <h3 class="dod-title"><%= title %></h3>
+          <p class="dod-description"><%= description %></p>
+        </div>
+        <div class="dod-cta">
+          <a href="<%= buttonHref %>"
+              class="dod-button button <%= buttonClass %>"
+              target="_blank"
+              ><%= buttonText %></a>
+        </div>
+      </div>
+    </script>
+
+    {{JS_FILES}}
+    <script type="text/javascript" src="../../../lib/underscore.js"></script>
+    <script type="text/javascript" src="../../../lib/backbone.js"></script>
+
+    <script type="text/javascript" src="./views/product.js"></script>
+</head>
+<body>
+   
+  <div class="hero"></div>
+
+  <h1>Tap Any Image To Preview Digital Specials</h1>
+  <div class="products"></div>
+   
+  <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="moretab.js?v={{BUILD_TIME}}"></script>
+</body>
+</html>
