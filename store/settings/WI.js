@@ -7,7 +7,7 @@ window.settings = {
     "brandName"                  : "FOOD & WINE",
     "brandCode"                  : "WI",
     "schedule"                   : "monthly",
-    "popupInterval"              : 0,
+    "popupInterval"              : 1,
     "enable_first_load_popup"    : false,
     "store_backissues_view"      : "StoreIssuesAmex",
     "store_hero_view"            : "StoreHeroSlideshow",

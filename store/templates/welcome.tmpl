@@ -1,22 +1,16 @@
-<img class='cover-img-only' src="{{img_only_cover_url}}" style="display: none;" width="100%">
-<img class='cover-with-text' src="{{full_cover_url}}" width="100%">
+<img src="images/{{#setting}}{{brandCode}}{{/setting}}/logo.png" class="logo-img" width=350>
 <div class="buttons">
     {{#if settings.welcomeScreenWesURL}}
 	    {{#unless is_subscriber}}
-	        <button class="print-subscriber">{{../settings.welcomePrintSubsBtn}}</button>
+	        <button class="btn print-subscriber">{{../settings.welcomePrintSubsBtn}}</button>
 	    {{/unless}}
     {{/if}}
-    <button class="goto-store">{{settings.welcomeBrowseBtn}}</button>
     {{#unless is_subscriber}}
-        <button class="subscribe">{{../settings.welcomeSubscribeBtn}}</button>
+        <button class="btn subscribe">{{../settings.welcomeSubscribeBtn}}</button>
     {{/unless}}
+    <a class="goto-store">{{settings.welcomeBrowseBtn}}</a>
 </div>
 
 {{#unless is_logged_in}}
   <div class='already-have-account'>{{../settings.welcomeAlreadyHaveAcct}}</div>
 {{/unless}}
-
-<div class="page-curl">
-  <div class="curl-text">{{settings.seeInsideCTA}}</div>
-  <div class="curl-obj"></div>
-</div>
