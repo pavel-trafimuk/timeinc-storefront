@@ -59,13 +59,22 @@
             .map(function(s) { return "<span class='sub-price'>" + s + "</span>"; })
             .join(settings.storeSubscribeNowPriceOr);
         }
+        
+        var slides = "";
+        if (App.api.tcm_feed.slideshows.length > 0) {
+          //slides = App.api.tcm_feed.slideshows[0].slides
+          slides = App.api.libraryService.get_store_hero_slideshow()
+            .map(function(s) { return "<div class='slide' style='background-image: url(" + s + ");'><a href='#'></a></div>" });
+        }
+        
         var cx = {
           settings: settings,
           folio: folio,
           is_subscriber: is_subscriber,
           is_authenticated: is_subscriber || App.api.authenticationService.isUserAuthenticated,
           sub_opts: sub_opts,
-          hero_scroll_covers: folio.get_additional_covers()
+          hero_scroll_covers: folio.get_additional_covers(),
+          hero_slides: slides
         };
         that.$el.html(that.template(cx));
         setTimeout(function() {

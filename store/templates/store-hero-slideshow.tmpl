@@ -1,11 +1,10 @@
 <div id="main-gallery" class="banner carousel">
-  <div class="slides">
-    <div class="slide getitnow"> <!-- Get it now slide -->
-      <a href="#"></a>
+  {{#if hero_slides}}
+    <div class="slides">
+      {{#each hero_slides}}
+        {{{this}}}
+      {{/each}}
     </div>
-    <div class="slide subscribe"> <!-- Subscribe slide -->
-      <a href="#"></a>
-    </div>
-  </div>
+  {{/if}}
 </div>
 <div class="banner-static subscribe"></div>
