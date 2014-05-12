@@ -12,7 +12,7 @@
       "dragleft .page-curl": "open_preview",
       "dragup .page-curl": "open_preview",
 
-      "tap .print-subscriber": "open_wes",
+      "tap .print-subscriber": "goto_help",
       "tap .goto-store": "track_gotostore"
     },
     initialize: function() {
@@ -137,12 +137,12 @@
     open_preview_image: function() {
       App.views.show_folio_detail(this.folio);
     },
-    open_wes: function() {
+    goto_help: function() {
       App.omni.event("sp_activate_taps");
 
       // Give omniture a chance to track
       setTimeout(function() {
-        location.href = settings.welcomeScreenWesURL;
+        App.api.configurationService.gotoState("Help");
       }, 250);
     }
   });
