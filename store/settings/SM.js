@@ -90,7 +90,7 @@ window.settings = {
     
     
     // Auto-download popup
-    "straightToSampleText"       : "Sample the May issue of REAL SIMPLE and get started on your easy, organizing makeover.<br/><br/>Do you want to start reading now?",
+    "straightToSampleText"       : "Sample the June issue of REAL SIMPLE and check out our affordable picks for dads, grads, and more.<br/><br/>Do you want to start reading now?",
         
     // found in the adobe URL at http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "7ea9178b138a416d899803c578036a49",
