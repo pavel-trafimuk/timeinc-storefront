@@ -11,6 +11,11 @@ window.settings = {
     "enable_first_load_popup"    : false,
 
     "heroHeading"                : "En Esta Edición",
+    
+    "hero_preview": "none",
+    "enableHeroCoverTap"         : false,
+    "preview_issue_product_id"   : "com.timeinc.peopleespanol.ipad.inapp.FREESAMPLE",
+    
     "max_back_issues"            : 12,
 
     "omniture_account"           : "timagpespnk",
