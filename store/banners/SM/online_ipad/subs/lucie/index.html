@@ -99,9 +99,9 @@
 	        background-size: 90%;
 	        background-position: center center;
 	      }
-          .th-xsell {
-            background-image: url('th_xsell.portrait.jpg?v={{BUILD_TIME}}') !important;
-          }
+          .pe-xsell {
+          background-image: url('pe_xsell-portrait.png?v={{BUILD_TIME}}') !important;
+        }
           .sm-nttc-xsell {
             background-image: url('x-sell_nttc_portrait.jpg?v={{BUILD_TIME}}') !important;
           }
@@ -129,9 +129,9 @@
           .logo {
             background-image: url('sm-logo.png?v={{BUILD_TIME}}') !important;
           }
-          .th-xsell {
-            background-image: url('th_xsell.landscape.jpg?v={{BUILD_TIME}}') !important;
-          }
+          .pe-xsell {
+          background-image: url('pe_xsell-landscape.png?v={{BUILD_TIME}}') !important;
+        }
           .sm-nttc-xsell {
             background-image: url('x-sell_nttc_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
@@ -200,8 +200,8 @@
           </div>
           
           <!-- Cross-sell slide -->
-          <div class="slide th-xsell" data-ios-version=">=7">
-            <a href="../../../../appstore_links/goto_appstore.html?link=http%3A%2F%2Fwww.emagazines.com%2Finsight%2Flink%2F%3Fuser%3D4432%26g%3D%7B287DC2ED-528D-4096-A250-49F2FF7F26DC%7D"></a>
+          <div class="slide pe-xsell" data-ios-version=">=7">
+            <a href="../../../../appstore_links/goto_appstore.html?link=http%3A%2F%2Fwww.emagazines.com%2Finsight%2Flink%2F%3Fuser%3D4432%26g%3D%7B22F0238E-75D5-420A-8046-DDFB32DB5E5B%7D"></a>
           </div>
 
         </div>
@@ -217,8 +217,8 @@
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
 
-      $(".th-xsell").click(function() {
-        libBanner.track_user_action("Library|Banner|Subscriber|Lucie", "banner_taps_thxsell");
+      $(".pe-xsell").click(function() {
+        libBanner.track_user_action("Library|Banner|Subscriber|Lucie", "banner_taps_pexsell");
       });
       
       $(".sm-nttc-xsell").click(function() {
