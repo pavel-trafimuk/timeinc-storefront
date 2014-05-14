@@ -1,57 +1,39 @@
 {
 	"featured": {
-		"category": "Digial Special",
 		"title": "Coolest New Hotels",
 		"description": "Our editors logged thousands of miles to put together T&L’s 2013 It List: 61 new hotels from Brooklyn to Brazil.",
 		"price": "$0.99",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373557076210.jpg",
-		"images": [
-			"http://aepcustomsolutions.com:8080/store_uploads/2x_1374008259275.jpg"
-		],
-		"productID": ""
+		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1380647170997.jpg",
+		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1378907097376.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1376515020744.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1376515021274.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1376515020135.jpg"],
+		"productID": "TLWG2013"
 	},
 	"products": [{
-		"category": "Digial Special",
 		"title": "50 Affordable Beach Escapes",
 		"price": "$1.99",
 		"description": "Our editors selected 50 getaways: a laid-back outpost in Mexico, a Cape Code classic, a secret European hideaway – all for under $300 a night.",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373566805360.jpg",
-		"images": [
-			"http://aepcustomsolutions.com:8080/store_uploads/2x_1374007927611.jpg"
-		],
-		"productID": ""
+		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1378906961866.jpg",
+		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1380116315002.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1376514958479.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1376514959056.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1376514959556.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1376514960024.jpg"],
+		"productID": "TLSPECIAL012013"
 	}, {
-		"category": "Digial Special",
 		"title": "Easy Weekend Getaways",
 		"price": "$0.99",
 		"description": "From Maine to California, make the most of a quick trip with our insider tips on the best places to eat, stay, and play.",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373568743227.jpg",
-		"images": [
-			"http://aepcustomsolutions.com:8080/store_uploads/2x_1374007986549.jpg"
-		],
-		"productID": ""
+		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1378907097188.jpg",
+		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1378907097376.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1376515020744.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1376515021274.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1376515020135.jpg"],
+		"productID": "TLWG2013"
 	}, {
-		"category": "Free Preview Issue",
 		"title": "Free Preview Issue",
-		"price": "FREE",
+		"price": "free",
 		"description": "A taste of T&L: inspiration for your next trip; insider tips on hotels, restaurants, and activities; and strategies for traveling smarter.",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373566891193.jpg",
-		"images": [
-			"http://aepcustomsolutions.com:8080/store_uploads/2x_1374007960076.jpg"
-		],
-		"productID": ""
+		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1381421300349.jpg",
+		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1378907097376.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1376515020744.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1376515021274.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1376515020135.jpg"],
+		"productID": "TLWG2013"
 	}, {
-		"category": "Digial Special",
 		"title": "World’s Best",
 		"price": "$0.99",
 		"description": "The top hotels, resorts, cruise lines, airlines, destinations, travel companies, and more, as chosen by our readers.",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1374246703727.jpg",
-		"images": [
-			"http://aepcustomsolutions.com:8080/store_uploads/2x_1374502743839.jpg",
-			"http://aepcustomsolutions.com:8080/store_uploads/2x_1374502744510.jpg",
-			"http://aepcustomsolutions.com:8080/store_uploads/2x_1374503337506.jpg",
-			"http://aepcustomsolutions.com:8080/store_uploads/2x_1374502745337.jpg"
-		],
-		"productID": ""
+		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1380727542491.jpg",
+		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1380727542648.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1380727543211.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1380727543743.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1380727544228.jpg"],
+		"productID": "TLWB2013"
 	}]
 }
