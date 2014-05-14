@@ -72,12 +72,16 @@ DetailOverlayDialog = Backbone.View.extend({
 		cx.buttonClass = "unavailable";
 		
 		if (product_id) {
-			cx.buttonText = "Download";
-			cx.buttonClass = "download";
+			cx.buttonText = this.model.get("price");
+			cx.buttonClass = "buy";
 
 			try {
 				var folio = libBanner.api.libraryService.folioMap.getByProductId(product_id);
-				if (folio.isViewable) {
+				if (folio.isDownloadable) {
+					cx.buttonText = "Download";
+					cx.buttonClass = "download";
+				}
+				else if (folio.isViewable) {
 					cx.buttonText = "View";
 					cx.buttonClass = "view";
 				}
