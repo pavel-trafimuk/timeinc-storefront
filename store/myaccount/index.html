@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title> </title>
-<link rel="stylesheet" href="../css/myaccount.css" />
+<link rel="stylesheet" href="../css/myaccount.css?v={{BUILD_TIME}}" />
 
 <script type="text/javascript">
 document.addEventListener("touchmove", function(evt) {
@@ -11,8 +11,8 @@ document.addEventListener("touchmove", function(evt) {
 });
 
 function go(URL){
-      window.location.href=URL+ "?v={{BUILD_TIME}}";
-    }
+  window.location.href = URL + "?v={{BUILD_TIME}}";
+}
 
 </script>
   <script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
