@@ -240,6 +240,18 @@
       });
     },
     goto_preview_issue: function(evt) {
+      if (settings.preview_button == "adobe") {
+        var folio = App.api.libraryService.get_touted_issue();
+
+        if (folio.tcm && folio.tcm.link) {
+          this.goto_native_preview(folio.tcm.link);
+        }
+        else {
+          this.goto_native_preview();
+        }
+        return;
+      }
+      
       App.omni.event("st_hero_sample_issue_taps");
       var $this = $(evt.currentTarget),
           product_id = $this.attr("productId"),

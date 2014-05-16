@@ -1,4 +1,47 @@
 (function() {
+
+// Inlined since this file cannot have dependencies
+(function() {
+  var tests = {},
+      assignments = JSON.parse(localStorage.ABTestAssignments || "{}");
+
+  function randInt(n) {
+    return Math.floor(Math.random()*n);
+  }
+  function randomSelect(arr) {
+    return arr[ randInt(arr.length) ];
+  }
+  function AB(test_name, variations) {
+    if (variations !== undefined) {
+      tests[test_name] = variations;
+    }
+    if (test_name in assignments) {
+      return tests[test_name][assignments[test_name]];
+    }
+
+    assignments[test_name] = randomSelect(Object.keys(variations));
+    AB.save();
+    
+    return AB(test_name);
+  }
+  AB.save = function() {
+    localStorage.ABTestAssignments = JSON.stringify(assignments);
+  }
+  AB.omnitureString = function() {
+    return Object.keys(tests).map(function(test_name) {
+      return test_name + ":" + assignments[test_name];
+    }).join("|");
+  }
+  AB.reset = function() {
+    assignments = {};
+    Object.keys(tests).forEach(function(test_name) {
+      AB(test_name, tests[test_name]);
+    });
+  }
+
+  window.AB = AB;
+})();
+
 // One of the big benefits of using a js file instead of json for settings
 // is the ability to add comments
 window.settings = {
@@ -21,9 +64,12 @@ window.settings = {
     
     "enableHeroCoverTap"         : false,
     
-    "welcome_preview": "adobe",
-    "hero_preview": "none",
-    "hero_itii_preview": "adobe",
+    "hero_preview"               : "none",
+    "hero_preview_button"        : AB("previewButtonAction", {
+                                      "adobepreview": "adobe",
+                                      "sampleissue": "sampleissue"
+                                    }),
+
     "max_back_issues"            : 20,
 
     "eMagsAppId": "EW2332",
