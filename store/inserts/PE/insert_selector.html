@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Digital Insert Subscribe</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <!--meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi"/ -->
+  <script type="text/javascript" src="../lib/jquery.js"></script>
+
+  <!-- Reading API needed for digital inserts inside content -->
+  <script type="text/javascript" src="../lib/AdobeReadingAPI.js"></script>
+
+  <script type="text/javascript">
+    function get_querystring(sVar) {
+      urlStr = window.location.search.substring(1);
+      sv = urlStr.split("&");
+      for (i=0;i< sv.length;i++) {
+        ft = sv [i].split("=");
+        if (ft[0] == sVar) {
+          return ft[1];
+        }
+      }
+    }
+    
+    (function() {
+      var insert = get_query_string('insert'),
+          url = window.location.href.split('?')[0], // remove querystring
+          arr = url.split("/"); // split url into array
+      
+      arr.pop(); // remove last element (*.html) from url
+      url = arr.join("/") + "/" + insert;
+      
+      var goto_url = function() { window.setTimeout(goto_url, 500) };
+      
+      $(function() {
+        adobeDPS.initializationComplete.addOnce(function() {
+          goto_url = function() {
+            adobeDPS.dialogService.displayCustomWebview(url);
+          };
+        });
+      });
+    })();
+  </script>
+</head>
+ 
+<body>
+</body>
+
+</html>

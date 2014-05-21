@@ -49,6 +49,8 @@
         "hero_preview": "image",
         "hero_itii_preview": "image",
         "backissue_preview": "image",
+        
+        "hero_preview_button": "preview_issue",
 
         "enable_first_load_popup": false,
         

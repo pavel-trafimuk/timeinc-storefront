@@ -119,7 +119,7 @@
   <script type="text/javascript" src="../lib/jquery.js"></script>
 
   <!-- Reading API needed for digital inserts inside content -->
-  <!-- script type="text/javascript" src="../../../lib/AdobeReadingAPI.js"></script -->
+  <script type="text/javascript" src="../lib/AdobeReadingAPI.js"></script>
   <!-- script type="text/javascript" src="../lib/MockAPI.js"></script -->
 
   <script type="text/javascript" src="../settings/{{MAG_CODE}}.js"></script> 
@@ -131,11 +131,15 @@
     (function() {
       var api = (typeof adobeDPS == "undefined") ? MockAPI : adobeDPS;
       var buy_sub = function() { setTimeout(buy_sub, 500) };
+      var url = document.URL;
       
       $(function() {
         api.initializationComplete.addOnce(function() {
           buy_sub = function() {
             api.subscriptionService.availableSubscriptions["com.timeinc.people.ipad.subs.6"].purchase();
+          };
+          close = function() {
+            api.dialogService.dismissCustomWebview(url);
           };
         });
       });
@@ -147,6 +151,7 @@
       
         console.log("close");
         $("#wrapper").remove();
+        close();
       });
       
       $("#banner a").click(function(e) {

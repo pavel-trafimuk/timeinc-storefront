@@ -38,8 +38,9 @@ window.settings = {
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
-    "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/sk/siforkids.jsp&MSRSMAG=SK&MSDTRACK=IPSP&MSDDMOFF=ABTF&MSDVNDID=TBLT",
-    "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/sk/siforkids.jsp&MSRSMAG=SK&MSDTRACK=IPAD&MSDDMOFF=ABTF&MSDVNDID=TBLT",
+    "welcomeScreenWesURL"        : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/sk/siforkids.jsp&MSRSMAG=SK&MSDTRACK=IPSP&MSDDMOFF=ABTF&MSDVNDID=TBLT&version=2",
+    "WesPageURL"                 : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/sk/siforkids.jsp&MSRSMAG=SK&MSDTRACK=IPAD&MSDDMOFF=ABTF&MSDVNDID=TBLT&version=2",
+   
     "WesPageURLiphone"           : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/tablet/sk/siforkids.jsp&MSRSMAG=SK&MSDTRACK=IPHB&MSDDMOFF=ABTF&MSDVNDID=TBLT",
     
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/sk-lucie-customer-creation-itunes201307.html",
