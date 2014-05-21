@@ -1,4 +1,4 @@
-
+/* global App, Backbone, _, Handlebars, settings, $, TcmOmni */
 App.dialogs.Subscribe = Backbone.View.extend({
   className: "modal-background",
   template: Handlebars.templates['dialog-subscribe.tmpl'],
@@ -17,7 +17,9 @@ App.dialogs.Subscribe = Backbone.View.extend({
     console.log("App.dialogs.Subscribe.render()");
     this.$el.html(this.template({
       settings: settings,
-      subscriptions: _(App.api.receiptService.availableSubscriptions).values()
+      subscriptions: _(App.api.receiptService.availableSubscriptions).sortBy(function(sub) {
+          return _.last(sub.productId.split("."));
+        }).reverse()
     }));
     return this;
   },
@@ -44,7 +46,7 @@ App.dialogs.Subscribe = Backbone.View.extend({
     );
     
     transaction.completedSignal.addOnce(function(transaction) {
-      if (transaction.state == adobeDPS.transactionManager.transactionStates.FINISHED)
+      if (transaction.state == App.api.transactionManager.transactionStates.FINISHED)
         Backbone.trigger("subscriptionPurchased", subscription);
     });
     
