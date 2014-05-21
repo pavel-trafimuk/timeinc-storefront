@@ -15,6 +15,8 @@ window.settings = {
     "heroHeading"                : "Inside This Issue",
     "max_back_issues"            : 12,
     
+    "hero_preview": "none",
+    "enableHeroCoverTap"         : false,
     "preview_issue_product_id"   : "com.timeinc.health.ipad.inapp.FREESAMPLE",
 
     "omniture_account"           : "timaghealthnk",
