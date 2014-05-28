@@ -9,6 +9,7 @@ $WelcomeBtnHeight: 50px;
     color: #fff;
     overflow: hidden;
     background: url("../images/"+$BRAND_CODE+"/welcomeBackground.jpg");
+    background-size: cover;
     text-align: center;
     
     .logo-img {
