@@ -1,255 +1,336 @@
 {
-	"free": [{
-		"title": "Favorite Cakes & Cupcakes",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373926788356.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "Devil's food cupcakes, lemon-poppy seed cake and more of our most sensational recipes, for memorable parties or inspired everyday snacking.",
-		"link": "",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1373926788497.jpg"],
-		"productID": "SPCFWIOSCAKE"
-	}, {
-		"title": "Favorite Best New Chefs Recipes",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373926944583.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "Dishes from America's best chefs, made easy for the home cook: fast smoked-salmon crisps, savory fig-and-prosciutto flatbreads, luscious bucatini carbonara and more.",
-		"link": "",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1373926944801.jpg"],
-		"productID": "SPCFWIOSNWCHF"
-	}, {
-		"title": "Favorite Chicken Recipes",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373927029028.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "Grilled, curried or Southern-fried, wrapped inside a tortilla or piled high on a platter, chicken is endlessly versatile. Here, find Food & Wine's simplest and most delicious recipes.",
-		"link": "",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1373927029122.jpg"],
-		"productID": "SPCFWIOSCHICK"
-	}, {
-		"title": "Favorite Easy & Elegant Recipes",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373927067654.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "Skirt steak with paprika butter, fast Israeli couscous with arugula pesto and more great recipes for a spectacular dinner party, plus menu suggestions and wine pairings.",
-		"link": "",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1373927067748.jpg"],
-		"productID": "SPCFWIOSEASY"
-	}, {
-		"title": "Favorite Grilling Recipes",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373927112880.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "The recipes here will transform your next barbecue: cheddar BLT burgers, fast porterhouse with summer vegetables, healthy grilled salmon with preserved lemon and more.\r\n",
-		"link": "",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1373927112958.jpg"],
-		"productID": "SPCFWIOSGRILL"
-	}, {
-		"title": "Favorite Healthy Recipes",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373927150570.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "Food & Wine shares incredibly delicious recipes that also happen to be healthy: make-ahead harvest salad, the juiciest turkey burgers, fast quinoa salad and more.",
-		"link": "",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1373927150648.jpg"],
-		"productID": "SPCFWIOSHEALTHY"
-	}, {
-		"title": "Favorite Italian Recipes",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373927176927.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "The recipes here explain why everyone loves Italian food: classic meatballs, vegetarian artichoke-and-fontina pizzas, hearty minestrone soup and more.",
-		"link": "",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1373927176989.jpg"],
-		"productID": "SPCFWIOSITAL"
-	}, {
-		"title": "Favorite Pizza & Pasta Recipes",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373927218280.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "Simple, stellar ideas for the ultimate comfort foods:  hearty butcher's ragu with fusilli, Mexican pizza, melty three-cheese baked pasta and more.",
-		"link": "",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1373927218358.jpg"],
-		"productID": "SPCFWIOSPIZZA"
-	}, {
-		"title": "Favorite Thanksgiving Recipes",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373927251574.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "For an unforgettable holiday: make-ahead twice-baked sweet potatoes with toasted marshmallows, buttery caraway Parker House rolls, best-ever pumpkin pie, cider-glazed turkey and more.",
-		"link": "",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1373927251699.jpg"],
-		"productID": "SPCFWIOSTHANKS"
-	}],
-	"digitalProducts": [{
-		"title": "20 Best Recipes: Dessert",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373568776331.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "From America's leading authority on food and entertaining, here are 20 of Food & Wine's Best Dessert Recipes. These phenomenal recipes are made with easy-to-find ingredients, and all are perfected in the Food & Wine Test Kitchen.",
-		"link": "https://itunes.apple.com/us/book/food-wine-20-best-dessert/id589501088?mt=11",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1374007997485.jpg"],
-		"productID": ""
-	}, {
-		"title": "20 Best Recipes: Fast",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373568815782.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "From America's leading authority on food and entertaining, here are 20 of Food & Wine's Best Fast Recipes. These phenomenal recipes are made with easy-to-find ingredients, and all are perfected in the Food & Wine Test Kitchen.",
-		"link": "https://itunes.apple.com/us/book/food-wine-20-best-fast-recipes/id589503913?mt=11",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1374008009616.jpg"],
-		"productID": ""
-	}, {
-		"title": "20 Best Recipes: Gluten-Free",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373568843772.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "From America's leading authority on food and entertaining, here are 20 of Food & Wine's Best Gluten-Free Recipes. These phenomenal recipes are made with easy-to-find ingredients, and all are perfected in the Food & Wine Test Kitchen.",
-		"link": "https://itunes.apple.com/us/book/food-wine-20-best-gluten-free/id589599984?mt=11",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1374008022292.jpg"],
-		"productID": ""
-	}, {
-		"title": "20 Best Recipes: Breakfast and Brunch",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373568702277.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "From America's leading authority on food and entertaining, here are 20 of Food & Wine's Best Breakfast and Brunch Recipes. These phenomenal recipes are made with easy-to-find ingredients, and all are perfected in the Food & Wine Test Kitchen.",
-		"link": "https://itunes.apple.com/us/book/food-wine-20-best-breakfast/id589477688?mt=11",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1374007975754.jpg"],
-		"productID": ""
-	}, {
-		"title": "Quick from Scratch: Italian Pasta & Rice",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373566843971.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "From Food & Wine magazine, America's leading authority on food and entertaining, here are 22 fast and phenomenal recipes made with a short list of easy-to-find ingredients, all perfected in the Food & Wine Test Kitchen.",
-		"link": "https://itunes.apple.com/us/book/quick-from-scratch-italian/id635065554?mt=11",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1374007942276.jpg"],
-		"productID": ""
-	}, {
-		"title": "20 Best Recipes: Skewers",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373568893479.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "From America's leading authority on food and entertaining, here are 20 of Food & Wine's Best Grilled Skewer Recipes. These phenomenal recipes are made with easy-to-find ingredients, and all are perfected in the Food & Wine Test Kitchen.",
-		"link": "https://itunes.apple.com/us/book/food-wine-20-best-skewers/id589692884?mt=11",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1374008034006.jpg"],
-		"productID": ""
-	}, {
-		"title": "20 Best Recipes: Vegetarian",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1374008105880.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "From America's leading authority on food and entertaining, here are 20 of Food & Wine's best vegetarian recipes. These phenomenal recipes are made with easy-to-find ingredients, and all are perfected in the Food & Wine Test Kitchen.",
-		"link": "https://itunes.apple.com/us/book/food-wine-20-best-vegetarian/id589489598?mt=11",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1374008105974.jpg"],
-		"productID": ""
-	}, {
-		"title": "Chef Recipes Made Easy",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373566612159.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "From Food & Wine magazine, America's leading authority on food and entertaining, here are 50 fantastic recipes for the chef dishes you love, all simplified and perfected in the Food & Wine Test Kitchen.",
-		"link": "https://itunes.apple.com/us/book/chef-recipes-made-easy/id635937427?mt=11",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1374007849688.jpg"],
-		"productID": ""
-	}, {
-		"title": "Quick from Scratch: Chicken Roasted, Baked and Grilled",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373566718519.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "From Food & Wine magazine, America's leading authority on food and entertaining, here are 23 fast and phenomenal recipes made with a short list of easy-to-find ingredients, all perfected in the Food & Wine Test Kitchen.",
-		"link": "https://itunes.apple.com/us/book/quick-from-scratch-chicken/id635061130?mt=11",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1374007899999.jpg"],
-		"productID": ""
-	}, {
-		"title": "Quick From Scratch: Chicken Salads and Sandwiches",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373566766091.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "From Food & Wine magazine, America's leading authority on food and entertaining, here are 14 fast and phenomenal recipes made with a short list of easy-to-find ingredients, all perfected in the Food & Wine Test Kitchen.",
-		"link": "https://itunes.apple.com/us/book/quick-from-scratch-chicken/id635058134?mt=11",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1374007915459.jpg"],
-		"productID": ""
-	}, {
-		"title": "Our Best New Classics",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373566676572.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "From Food & Wine magazine, America's leading authority on food and entertaining, here are dozens of the classic dishes you love, all with a delicious twist. The meticulous cooks in the Food & Wine Test Kitchen perfected each and every recipe.",
-		"link": "https://itunes.apple.com/us/book/our-best-new-classics/id635939717?mt=11",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1374007882838.jpg"],
-		"productID": ""
-	}, {
-		"title": "Quick from Scratch: Italian Grill & Stovetop",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373566805360.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "From Food & Wine magazine, America's leading authority on food and entertaining, here are 21 fast and phenomenal recipes made with a short list of easy-to-find ingredients, all perfected in the Food & Wine Test Kitchen.",
-		"link": "https://itunes.apple.com/us/book/quick-from-scratch-italian/id635061173?mt=11",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1374007927611.jpg"],
-		"productID": ""
-	}, {
-		"title": "20 Best Recipes: Burger",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373568743227.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "From America's leading authority on food and entertaining, here are 20 of Food & Wine's Best Burger Recipes. These phenomenal recipes are made with easy-to-find ingredients, and all are perfected in the Food & Wine Test Kitchen.",
-		"link": "https://itunes.apple.com/us/book/food-wine-20-best-burger-recipes/id589498872?mt=11",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1374007986549.jpg"],
-		"productID": ""
-	}, {
-		"title": "Quick from Scratch: Italian Soups & Starters",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373566891193.jpg",
-		"price": "",
-		"for": "",
-		"isNew": false,
-		"description": "From Food & Wine magazine, America's leading authority on food and entertaining, here are 17 fast and phenomenal recipes made with a short list of easy-to-find ingredients, all perfected in the Food & Wine Test Kitchen.",
-		"link": "https://itunes.apple.com/us/book/quick-from-scratch-italian/id635077269?mt=11",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1374007960076.jpg"],
-		"productID": ""
-	}, {
-		"title": "Food & Wine Cocktails App",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1374246703727.jpg",
-		"price": "",
-		"for": "iPhone",
-		"isNew": false,
-		"description": "Recipes for more than 350 outstanding drinks by America's best mixologists, plus great party food, essential cocktail-making tips, a comprehensive spirits guide and a definitive listing of America's top 100 bars and lounges.",
-		"link": "https://itunes.apple.com/us/app/food-wine-cocktails/id520503449?mt=8",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1374502743839.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1374502744510.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1374503337506.jpg", "http://aepcustomsolutions.com:8080/store_uploads/2x_1374502745337.jpg"],
-		"productID": ""
-	}],
-	"featuredProduct": [{
-		"title": "20 Best Recipes: Burger",
-		"cover": "http://aepcustomsolutions.com:8080/store_uploads/2x_1373557076210.jpg",
-		"price": "$0.99- FOR A LIMITED TIME ONLY",
-		"for": "",
-		"isNew": true,
-		"description": "From America's leading authority on food and entertaining, here are 20 of Food & Wine's Best Burger Recipes. These phenomenal recipes are made with easy-to-find ingredients, and all are perfected in the Food & Wine Test Kitchen.",
-		"link": "https://itunes.apple.com/us/book/food-wine-20-best-burger-recipes/id589498872?mt=11",
-		"images": ["http://aepcustomsolutions.com:8080/store_uploads/2x_1374008259275.jpg"],
-		"productID": ""
-	}]
+  "featuredProduct": [
+    {
+      "description": "From America's leading authority on food and entertaining, here are 20 of Food & Wine's Best Burger Recipes. These phenomenal recipes are made with easy-to-find ingredients, and all are perfected in the Food & Wine Test Kitchen.", 
+      "for": "", 
+      "isNew": true, 
+      "price": "$0.99- FOR A LIMITED TIME ONLY", 
+      "title": "20 Best Recipes: Burger", 
+      "cover": "covers/2x_1373557076210.jpg", 
+      "link": "https://itunes.apple.com/us/book/food-wine-20-best-burger-recipes/id589498872?mt=11", 
+      "images": [
+        "covers/2x_1374008259275.jpg"
+      ], 
+      "productID": ""
+    }
+  ], 
+  "digitalProducts": [
+    {
+      "description": "From America's leading authority on food and entertaining, here are 20 of Food & Wine's Best Dessert Recipes. These phenomenal recipes are made with easy-to-find ingredients, and all are perfected in the Food & Wine Test Kitchen.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "20 Best Recipes: Dessert", 
+      "cover": "covers/2x_1373568776331.jpg", 
+      "link": "https://itunes.apple.com/us/book/food-wine-20-best-dessert/id589501088?mt=11", 
+      "images": [
+        "covers/2x_1374007997485.jpg"
+      ], 
+      "productID": ""
+    }, 
+    {
+      "description": "From America's leading authority on food and entertaining, here are 20 of Food & Wine's Best Fast Recipes. These phenomenal recipes are made with easy-to-find ingredients, and all are perfected in the Food & Wine Test Kitchen.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "20 Best Recipes: Fast", 
+      "cover": "covers/2x_1373568815782.jpg", 
+      "link": "https://itunes.apple.com/us/book/food-wine-20-best-fast-recipes/id589503913?mt=11", 
+      "images": [
+        "covers/2x_1374008009616.jpg"
+      ], 
+      "productID": ""
+    }, 
+    {
+      "description": "From America's leading authority on food and entertaining, here are 20 of Food & Wine's Best Gluten-Free Recipes. These phenomenal recipes are made with easy-to-find ingredients, and all are perfected in the Food & Wine Test Kitchen.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "20 Best Recipes: Gluten-Free", 
+      "cover": "covers/2x_1373568843772.jpg", 
+      "link": "https://itunes.apple.com/us/book/food-wine-20-best-gluten-free/id589599984?mt=11", 
+      "images": [
+        "covers/2x_1374008022292.jpg"
+      ], 
+      "productID": ""
+    }, 
+    {
+      "description": "From America's leading authority on food and entertaining, here are 20 of Food & Wine's Best Breakfast and Brunch Recipes. These phenomenal recipes are made with easy-to-find ingredients, and all are perfected in the Food & Wine Test Kitchen.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "20 Best Recipes: Breakfast and Brunch", 
+      "cover": "covers/2x_1373568702277.jpg", 
+      "link": "https://itunes.apple.com/us/book/food-wine-20-best-breakfast/id589477688?mt=11", 
+      "images": [
+        "covers/2x_1374007975754.jpg"
+      ], 
+      "productID": ""
+    }, 
+    {
+      "description": "From Food & Wine magazine, America's leading authority on food and entertaining, here are 22 fast and phenomenal recipes made with a short list of easy-to-find ingredients, all perfected in the Food & Wine Test Kitchen.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Quick from Scratch: Italian Pasta & Rice", 
+      "cover": "covers/2x_1373566843971.jpg", 
+      "link": "https://itunes.apple.com/us/book/quick-from-scratch-italian/id635065554?mt=11", 
+      "images": [
+        "covers/2x_1374007942276.jpg"
+      ], 
+      "productID": ""
+    }, 
+    {
+      "description": "From America's leading authority on food and entertaining, here are 20 of Food & Wine's Best Grilled Skewer Recipes. These phenomenal recipes are made with easy-to-find ingredients, and all are perfected in the Food & Wine Test Kitchen.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "20 Best Recipes: Skewers", 
+      "cover": "covers/2x_1373568893479.jpg", 
+      "link": "https://itunes.apple.com/us/book/food-wine-20-best-skewers/id589692884?mt=11", 
+      "images": [
+        "covers/2x_1374008034006.jpg"
+      ], 
+      "productID": ""
+    }, 
+    {
+      "description": "From America's leading authority on food and entertaining, here are 20 of Food & Wine's best vegetarian recipes. These phenomenal recipes are made with easy-to-find ingredients, and all are perfected in the Food & Wine Test Kitchen.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "20 Best Recipes: Vegetarian", 
+      "cover": "covers/2x_1374008105880.jpg", 
+      "link": "https://itunes.apple.com/us/book/food-wine-20-best-vegetarian/id589489598?mt=11", 
+      "images": [
+        "covers/2x_1374008105974.jpg"
+      ], 
+      "productID": ""
+    }, 
+    {
+      "description": "From Food & Wine magazine, America's leading authority on food and entertaining, here are 50 fantastic recipes for the chef dishes you love, all simplified and perfected in the Food & Wine Test Kitchen.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Chef Recipes Made Easy", 
+      "cover": "covers/2x_1373566612159.jpg", 
+      "link": "https://itunes.apple.com/us/book/chef-recipes-made-easy/id635937427?mt=11", 
+      "images": [
+        "covers/2x_1374007849688.jpg"
+      ], 
+      "productID": ""
+    }, 
+    {
+      "description": "From Food & Wine magazine, America's leading authority on food and entertaining, here are 23 fast and phenomenal recipes made with a short list of easy-to-find ingredients, all perfected in the Food & Wine Test Kitchen.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Quick from Scratch: Chicken Roasted, Baked and Grilled", 
+      "cover": "covers/2x_1373566718519.jpg", 
+      "link": "https://itunes.apple.com/us/book/quick-from-scratch-chicken/id635061130?mt=11", 
+      "images": [
+        "covers/2x_1374007899999.jpg"
+      ], 
+      "productID": ""
+    }, 
+    {
+      "description": "From Food & Wine magazine, America's leading authority on food and entertaining, here are 14 fast and phenomenal recipes made with a short list of easy-to-find ingredients, all perfected in the Food & Wine Test Kitchen.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Quick From Scratch: Chicken Salads and Sandwiches", 
+      "cover": "covers/2x_1373566766091.jpg", 
+      "link": "https://itunes.apple.com/us/book/quick-from-scratch-chicken/id635058134?mt=11", 
+      "images": [
+        "covers/2x_1374007915459.jpg"
+      ], 
+      "productID": ""
+    }, 
+    {
+      "description": "From Food & Wine magazine, America's leading authority on food and entertaining, here are dozens of the classic dishes you love, all with a delicious twist. The meticulous cooks in the Food & Wine Test Kitchen perfected each and every recipe.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Our Best New Classics", 
+      "cover": "covers/2x_1373566676572.jpg", 
+      "link": "https://itunes.apple.com/us/book/our-best-new-classics/id635939717?mt=11", 
+      "images": [
+        "covers/2x_1374007882838.jpg"
+      ], 
+      "productID": ""
+    }, 
+    {
+      "description": "From Food & Wine magazine, America's leading authority on food and entertaining, here are 21 fast and phenomenal recipes made with a short list of easy-to-find ingredients, all perfected in the Food & Wine Test Kitchen.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Quick from Scratch: Italian Grill & Stovetop", 
+      "cover": "covers/2x_1373566805360.jpg", 
+      "link": "https://itunes.apple.com/us/book/quick-from-scratch-italian/id635061173?mt=11", 
+      "images": [
+        "covers/2x_1374007927611.jpg"
+      ], 
+      "productID": ""
+    }, 
+    {
+      "description": "From America's leading authority on food and entertaining, here are 20 of Food & Wine's Best Burger Recipes. These phenomenal recipes are made with easy-to-find ingredients, and all are perfected in the Food & Wine Test Kitchen.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "20 Best Recipes: Burger", 
+      "cover": "covers/2x_1373568743227.jpg", 
+      "link": "https://itunes.apple.com/us/book/food-wine-20-best-burger-recipes/id589498872?mt=11", 
+      "images": [
+        "covers/2x_1374007986549.jpg"
+      ], 
+      "productID": ""
+    }, 
+    {
+      "description": "From Food & Wine magazine, America's leading authority on food and entertaining, here are 17 fast and phenomenal recipes made with a short list of easy-to-find ingredients, all perfected in the Food & Wine Test Kitchen.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Quick from Scratch: Italian Soups & Starters", 
+      "cover": "covers/2x_1373566891193.jpg", 
+      "link": "https://itunes.apple.com/us/book/quick-from-scratch-italian/id635077269?mt=11", 
+      "images": [
+        "covers/2x_1374007960076.jpg"
+      ], 
+      "productID": ""
+    }, 
+    {
+      "description": "Recipes for more than 350 outstanding drinks by America's best mixologists, plus great party food, essential cocktail-making tips, a comprehensive spirits guide and a definitive listing of America's top 100 bars and lounges.", 
+      "for": "iPhone", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Food & Wine Cocktails App", 
+      "cover": "covers/2x_1374246703727.jpg", 
+      "link": "https://itunes.apple.com/us/app/food-wine-cocktails/id520503449?mt=8", 
+      "images": [
+        "covers/2x_1374502743839.jpg", 
+        "covers/2x_1374502744510.jpg", 
+        "covers/2x_1374503337506.jpg", 
+        "covers/2x_1374502745337.jpg"
+      ], 
+      "productID": ""
+    }
+  ], 
+  "free": [
+    {
+      "description": "Devil's food cupcakes, lemon-poppy seed cake and more of our most sensational recipes, for memorable parties or inspired everyday snacking.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Favorite Cakes & Cupcakes", 
+      "cover": "covers/2x_1373926788356.jpg", 
+      "link": "", 
+      "images": [
+        "covers/2x_1373926788497.jpg"
+      ], 
+      "productID": "SPCFWIOSCAKE"
+    }, 
+    {
+      "description": "Dishes from America's best chefs, made easy for the home cook: fast smoked-salmon crisps, savory fig-and-prosciutto flatbreads, luscious bucatini carbonara and more.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Favorite Best New Chefs Recipes", 
+      "cover": "covers/2x_1373926944583.jpg", 
+      "link": "", 
+      "images": [
+        "covers/2x_1373926944801.jpg"
+      ], 
+      "productID": "SPCFWIOSNWCHF"
+    }, 
+    {
+      "description": "Grilled, curried or Southern-fried, wrapped inside a tortilla or piled high on a platter, chicken is endlessly versatile. Here, find Food & Wine's simplest and most delicious recipes.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Favorite Chicken Recipes", 
+      "cover": "covers/2x_1373927029028.jpg", 
+      "link": "", 
+      "images": [
+        "covers/2x_1373927029122.jpg"
+      ], 
+      "productID": "SPCFWIOSCHICK"
+    }, 
+    {
+      "description": "Skirt steak with paprika butter, fast Israeli couscous with arugula pesto and more great recipes for a spectacular dinner party, plus menu suggestions and wine pairings.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Favorite Easy & Elegant Recipes", 
+      "cover": "covers/2x_1373927067654.jpg", 
+      "link": "", 
+      "images": [
+        "covers/2x_1373927067748.jpg"
+      ], 
+      "productID": "SPCFWIOSEASY"
+    }, 
+    {
+      "description": "The recipes here will transform your next barbecue: cheddar BLT burgers, fast porterhouse with summer vegetables, healthy grilled salmon with preserved lemon and more.\r\n", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Favorite Grilling Recipes", 
+      "cover": "covers/2x_1373927112880.jpg", 
+      "link": "", 
+      "images": [
+        "covers/2x_1373927112958.jpg"
+      ], 
+      "productID": "SPCFWIOSGRILL"
+    }, 
+    {
+      "description": "Food & Wine shares incredibly delicious recipes that also happen to be healthy: make-ahead harvest salad, the juiciest turkey burgers, fast quinoa salad and more.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Favorite Healthy Recipes", 
+      "cover": "covers/2x_1373927150570.jpg", 
+      "link": "", 
+      "images": [
+        "covers/2x_1373927150648.jpg"
+      ], 
+      "productID": "SPCFWIOSHEALTHY"
+    }, 
+    {
+      "description": "The recipes here explain why everyone loves Italian food: classic meatballs, vegetarian artichoke-and-fontina pizzas, hearty minestrone soup and more.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Favorite Italian Recipes", 
+      "cover": "covers/2x_1373927176927.jpg", 
+      "link": "", 
+      "images": [
+        "covers/2x_1373927176989.jpg"
+      ], 
+      "productID": "SPCFWIOSITAL"
+    }, 
+    {
+      "description": "Simple, stellar ideas for the ultimate comfort foods:  hearty butcher's ragu with fusilli, Mexican pizza, melty three-cheese baked pasta and more.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Favorite Pizza & Pasta Recipes", 
+      "cover": "covers/2x_1373927218280.jpg", 
+      "link": "", 
+      "images": [
+        "covers/2x_1373927218358.jpg"
+      ], 
+      "productID": "SPCFWIOSPIZZA"
+    }, 
+    {
+      "description": "For an unforgettable holiday: make-ahead twice-baked sweet potatoes with toasted marshmallows, buttery caraway Parker House rolls, best-ever pumpkin pie, cider-glazed turkey and more.", 
+      "for": "", 
+      "isNew": false, 
+      "price": "", 
+      "title": "Favorite Thanksgiving Recipes", 
+      "cover": "covers/2x_1373927251574.jpg", 
+      "link": "", 
+      "images": [
+        "covers/2x_1373927251699.jpg"
+      ], 
+      "productID": "SPCFWIOSTHANKS"
+    }
+  ]
 }
