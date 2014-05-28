@@ -4,14 +4,13 @@
     className: "welcome-view",
     template: Handlebars.templates["welcome.tmpl"],
     events: {
+      "touchmove": function(evt) { evt.preventDefault() },
       "tap .subscribe": "subscribe",
-
       "tap .page-curl": "open_preview",
       "swipeleft .page-curl": "open_preview",
       "swipeup .page-curl": "open_preview",
       "dragleft .page-curl": "open_preview",
       "dragup .page-curl": "open_preview",
-
       "tap .print-subscriber": "goto_help",
       "tap .goto-store": "track_gotostore"
     },

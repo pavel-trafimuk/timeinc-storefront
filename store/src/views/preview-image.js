@@ -1,9 +1,11 @@
 /* global $, App, _, Backbone, Handlebars, settings, TcmOmni */
 (function() {
   App.views.IssuePreviewImage = Backbone.View.extend({
-    className: "issue-preview-image",
+    className: "issue-preview-image scrollable",
     template: Handlebars.templates["issue-preview-image.tmpl"],
     events: {
+      "touchmove": function(evt) { evt.preventDefault() },
+      "touchmove .scrollable": function(evt) { evt.stopPropagation() },
       "click .buy-issue-button": "buy_issue",
       "click .close-btn": "close",
       "swipedown .controls": "close"

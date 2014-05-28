@@ -1,9 +1,10 @@
 /* global $, App, _, Backbone, Handlebars, settings, TcmOmni */
 (function() {
   App.views.AmexIssuePreview = Backbone.View.extend({
-    className: "amex-issue-preview modal-background",
+    className: "amex-issue-preview modal-background scrollable",
     template: Handlebars.templates["amex-issue-preview.tmpl"],
     events: {
+      "touchmove": function(evt) { evt.preventDefault() },
       "click .buy-issue-button": "buy_issue",
       "click .close-btn": "close",
       "swipedown .controls": "close"
