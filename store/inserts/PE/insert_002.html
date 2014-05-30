@@ -127,6 +127,23 @@
       });
 
       api.initializationComplete.addOnce(function() {
+        var is_Authenticated = app.authenticationService.isUserAuthenticated(),
+            receipts = app.receiptService.availableSubscriptions(),
+            is_Subscribed;
+        
+        is_Subscribed = function() {
+          var is_sub = false;
+          $.each(receipts, function(receipt) {
+            if (receipt.isActive()) is_sub = true;
+          });
+          
+          return is_sub;
+        };
+        
+        if (is_Authenticated || is_Subscribed) {
+          $("#wrapper").css("display","none");
+        }
+        
         buy_sub = function() {
           api.subscriptionService.availableSubscriptions["com.timeinc.people.ipad.subs.6"].purchase();
         }
