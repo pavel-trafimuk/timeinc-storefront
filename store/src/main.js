@@ -2,8 +2,8 @@ console.log("----------  STARTING APP  ----------");
 
 if (DEBUG) {
   settings.asset_root = settings.dev_asset_root;
-  settings.PRODUCTION_TCM_FEED = settings.DEV_TCM_FEED;
-  settings.prod_tcmfeed_image_root = settings.dev_tcmfeed_image_root;
+  //settings.PRODUCTION_TCM_FEED = settings.DEV_TCM_FEED;
+  //settings.prod_tcmfeed_image_root = settings.dev_tcmfeed_image_root;
   window.openDatabase = function() {
     return {
       transaction: function(){},
