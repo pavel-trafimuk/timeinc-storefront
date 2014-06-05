@@ -86,6 +86,10 @@
             background-image: url('logo.png?v={{BUILD_TIME}}') !important;
           }
           
+          .country {
+            background-image: url('Country_portrait.jpg?v={{BUILD_TIME}}') !important;
+          }
+          
           .sm-xsell {
             background-image: url('SM-xsell-portrait.jpg?v={{BUILD_TIME}}') !important;
           }
@@ -111,6 +115,10 @@
        @media only screen and (min-width:1024px){                     
           .logo {
             background-image: url('logo.png?v={{BUILD_TIME}}') !important;
+          }
+          
+          .sm-xsell {
+            background-image: url('Country_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
           
           .sm-xsell {
@@ -166,6 +174,11 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">          
+          <!-- Country issue slide -->
+          <div class="slide country">
+            <a href="#"></a>
+          </div>
+          
           <!-- SM xsell slide -->
           <div class="slide sm-xsell" data-ios-version=">=7">
             <a href="../../../../appstore_links/goto_appstore.html?link=http%3A%2F%2Fwww.emagazines.com%2Finsight%2Flink%2F%3Fuser%3D4432%26g%3D%7B6652ADA6-1641-489C-8EEA-314CB7686519%7D"></a>
@@ -189,6 +202,15 @@
 
       $(".sm-xsell").click(function() {
         libBanner.track_user_action("Library|Banner|Subscriber|Lucie", "banner_taps_smxsell");
+      });
+      
+      $(".country a").click(function(evt) {
+        evt.preventDefault();
+
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Subscriber|Lucie", "banner_taps_buyissue");
+        libBanner.buy_issue("com.timeinc.people.ipad.inapp.04162014", "304439");
       });
     })();
   </script>

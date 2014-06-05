@@ -86,6 +86,10 @@
           	background-image: url('Subscribe_portrait.png?v={{BUILD_TIME}}') !important;
           }
           
+          .country {
+            background-image: url('Country_portrait.jpg?v={{BUILD_TIME}}') !important;
+          }
+          
           .banner{                 
              height: 237px;              
           }
@@ -107,6 +111,10 @@
        @media only screen and (min-width:1024px){           
           .subscribe {
             background-image: url('Subscribe_landscape.png?v={{BUILD_TIME}}') !important;
+          }
+          
+          .country {
+            background-image: url('Country_landscape.png?v={{BUILD_TIME}}') !important;
           }
           
           .banner{                 
@@ -159,6 +167,9 @@
           <div class="slide subscribe"> <!-- Subscribe slide -->
             <a href="#"></a>
           </div>
+          <div class="slide country"> <!-- Country issue slide -->
+            <a href="#"></a>
+          </div>
         </div>
      </div>
    </div>
@@ -181,6 +192,16 @@
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
         libBanner.buy_sub("com.timeinc.people.ipad.subs.6");
       });
+      
+      $(".country a").click(function(evt) {
+        evt.preventDefault();
+
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buyissue");
+        libBanner.buy_issue("com.timeinc.people.ipad.inapp.04162014", "304439");
+      });
+
       
     })();
   </script>
