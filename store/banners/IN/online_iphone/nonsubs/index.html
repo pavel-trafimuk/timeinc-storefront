@@ -82,6 +82,10 @@
         background-image: url('PrintSubscriber.png?v={{BUILD_TIME}}') !important;
       }
       
+      .beautyguide {
+        background-image: url('beauty.png?v={{BUILD_TIME}}') !important;
+      }
+      
       .banner{                 
          height: 237px;              
       }
@@ -128,6 +132,11 @@
           <div class="slide print">
             <a href="#" id="banner-link"></a>
           </div>
+          
+          <!-- Beauty slide -->
+          <div class="slide beautyguide">
+            <a href="#"></a>
+          </div>
         </div>
      </div>
    </div>
@@ -143,6 +152,15 @@
       
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
+      
+      $(".beautyguide a").click(function(evt) {
+        evt.preventDefault();
+
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_beautyguide");
+        libBanner.buy_issue("com.timeinc.instyle.ipad.inapp.05142014", "63438");
+      });
     })();
   </script>
 
