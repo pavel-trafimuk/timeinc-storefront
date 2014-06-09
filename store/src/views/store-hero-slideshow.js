@@ -12,7 +12,8 @@
       "tap .preview": "goto_preview_issue",
       "tap .subscribe": "subscribe",
       "tap .in-this-issue article": "goto_itii",
-      "tap .print-subscribers": "print_subs_getitfree"
+      "tap .print-subscribers": "print_subs_getitfree",
+      "tap .slide": "do_slide_action"
     },
     initialize: function() {
       console.log("App.views.StoreHeroSlideshow initializing");
@@ -64,7 +65,9 @@
         if (App.api.tcm_feed.slideshows.length > 0) {
           //slides = App.api.tcm_feed.slideshows[0].slides
           slides = App.api.libraryService.get_store_hero_slideshow()
-            .map(function(s) { return "<div class='slide' style='background-image: url(" + s + ");'><a href='#'></a></div>" });
+            .map(function(s, i) {
+              return "<div class='slide' data-index='" + i + "' style='background-image: url(" + s + ");'><a href='#'></a></div>";
+            });
         }
         
         var cx = {
@@ -103,6 +106,51 @@
       setTimeout(function() {
         location.href = settings.WesPageURL;
       }, 250);
+    },
+    do_slide_action: function(evt) {
+      var folio, sub,
+          $this = $(evt.currentTarget),
+          slide_index = $this.data("index"),
+          slide_data = App.api.libraryService.get_slideshow_data_for_slide_index(slide_index),
+
+          action = slide_data[1],
+          params = slide_data[2];
+
+      if (action == "none") return;
+      if (action == "open") {
+        folio = App.api.libraryService.get_by_productId(params[0]);
+        folio.purchase_and_download({
+          goto_view: false,
+          complete: function() {
+            if (params[1]) {
+              folio.goto_dossier(params[1]);
+            }
+            else {
+              folio._view();
+            }
+          },
+        });
+      }
+      if (action == "show") {
+        folio = App.api.libraryService.get_by_productId(params[0]);
+        App.views.show_folio_detail(folio);
+      }
+      if (action == "subs") {
+        if (params[0]) {
+          sub = App.api.receiptService.availableSubscriptions[params[0]];
+          var transaction = sub.purchase();
+
+          transaction.completedSignal.addOnce(function(transaction) {
+            if (transaction.state == App.api.transactionManager.transactionStates.FINISHED)
+              Backbone.trigger("subscriptionPurchased", sub);
+          });
+        }
+        else {
+          new App.dialogs.Subscribe();
+        }
+      }
+
+
     },
     buy_issue: function(evt) {
       var that = this,
