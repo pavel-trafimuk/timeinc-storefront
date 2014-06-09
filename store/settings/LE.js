@@ -31,6 +31,10 @@ window.settings = {
     "supportPhoneNumber"         : "1-866-772-8789",
     "supportEmail"               : "digital@allyou.customersvc.com",
 
+    "omniture_account"           : "",
+    "omniture_server"            : "",
+    "omniture_ssl_server"        : "",
+
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
