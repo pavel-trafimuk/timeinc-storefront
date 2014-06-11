@@ -79,8 +79,8 @@
             background-image: url('portrait.png?v={{BUILD_TIME}}') !important;
             background-size: cover !important;
           }
-          .colorslide {
-            background: url('13OINOCK_768x237.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
+          .beautyguide {
+            background: url('beauty_portrait.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
           }
           
           .banner{                 
@@ -106,8 +106,8 @@
             background-image: url('landscape.png?v={{BUILD_TIME}}') !important;
             background-size: auto 185px !important;
           }
-          .colorslide {
-            background: url('13OINOCK_1024x185.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
+          .beautyguide {
+            background: url('beauty_landscape.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
           }
           
           .banner{                 
@@ -160,7 +160,11 @@
           <div class="slide subscribe"> 
             <a href="#"></a>
           </div>
-          <div class="slide colorslide"><a href="#"></a></div>
+          
+          <!-- Beauty slide -->
+          <div class="slide beautyguide">
+            <a href="#"></a>
+          </div>
           
         </div>
      </div>
@@ -183,13 +187,13 @@
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
         libBanner.buy_sub("com.timeinc.instyle.ipad.subs.9");
       });
-      $(".colorslide a").click(function(evt) {
+      $(".beautyguide a").click(function(evt) {
         evt.preventDefault();
 
         gallery.cancelAutoSlide();
 
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_colorguide");
-        libBanner.buy_issue("com.timeinc.instyle.ipad.inapp.12112013", "59726");
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_beautyguide");
+        libBanner.buy_issue("com.timeinc.instyle.ipad.inapp.05142014", "63438");
       });
     })();
   </script>

@@ -85,9 +85,9 @@
           .logo {
             background-image: url('logo.png?v={{BUILD_TIME}}') !important;
           }
-
-          .getitnow {
-            background-image: url('Getitnow_portrait.jpg?v={{BUILD_TIME}}') !important;
+          
+          .country {
+            background-image: url('Country_portrait.jpg?v={{BUILD_TIME}}') !important;
           }
           
           .sm-xsell {
@@ -116,9 +116,9 @@
           .logo {
             background-image: url('logo.png?v={{BUILD_TIME}}') !important;
           }
-
-          .getitnow {
-            background-image: url('Getitnow_landscape.jpg?v={{BUILD_TIME}}') !important;
+          
+          .sm-xsell {
+            background-image: url('Country_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
           
           .sm-xsell {
@@ -173,8 +173,9 @@
    
    <div class="wrapper">
      <div class="banner carousel">
-        <div class="slides">
-          <div class="slide getitnow"> <!-- Get it now slide -->
+        <div class="slides">          
+          <!-- Country issue slide -->
+          <div class="slide country">
             <a href="#"></a>
           </div>
           
@@ -199,17 +200,17 @@
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
 
-      $(".getitnow a").click(function(evt) {
+      $(".sm-xsell").click(function() {
+        libBanner.track_user_action("Library|Banner|Subscriber|Lucie", "banner_taps_smxsell");
+      });
+      
+      $(".country a").click(function(evt) {
         evt.preventDefault();
 
         gallery.cancelAutoSlide();
 
-        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_buyissue");
-        libBanner.buy_issue("com.timeinc.people.ipad.inapp.04162014", "304439");
-      });
-      
-      $(".sm-xsell").click(function() {
-        libBanner.track_user_action("Library|Banner|Subscriber|Lucie", "banner_taps_smxsell");
+        libBanner.track_user_action("Library|Banner|Subscriber|Lucie", "banner_taps_buyissue");
+        libBanner.buy_issue("com.timeinc.people.ipad.inapp.06112014", "311660");
       });
     })();
   </script>

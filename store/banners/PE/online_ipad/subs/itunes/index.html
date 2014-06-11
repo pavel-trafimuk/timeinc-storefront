@@ -85,9 +85,9 @@
           .lucie {
             background-image: url('LUCIE_portrait.jpg?v={{BUILD_TIME}}') !important;
           }
-
-          .getitnow {
-            background-image: url('Getitnow_portrait.jpg?v={{BUILD_TIME}}') !important;
+          
+          .country {
+            background-image: url('Country_portrait.jpg?v={{BUILD_TIME}}') !important;
           }
           
           .sm-xsell {
@@ -116,9 +116,9 @@
           .lucie {
             background-image: url('LUCIE_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
-
-          .getitnow {
-            background-image: url('Getitnow_landscape.jpg?v={{BUILD_TIME}}') !important;
+          
+          .country {
+            background-image: url('Country_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
           
           .sm-xsell {
@@ -173,13 +173,14 @@
    
    <div class="wrapper">
      <div class="banner carousel">
-        <div class="slides">
-          <div class="slide getitnow"> <!-- Get it now slide -->
+        <div class="slides">                    
+          <!-- LUCIE Registration slide -->
+          <div class="slide lucie">
             <a href="#"></a>
           </div>
           
-          <!-- LUCIE Registration slide -->
-          <div class="slide lucie">
+          <!-- Country issue slide -->
+          <div class="slide country">
             <a href="#"></a>
           </div>
           
@@ -207,17 +208,18 @@
         libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_register");
         libBanner.lucie_register();
       });
-      $(".getitnow a").click(function(evt) {
+      
+      $(".sm-xsell").click(function() {
+        libBanner.track_user_action("Library|Banner|Subscriber|iTunes", "banner_taps_smxsell");
+      });
+      
+      $(".country a").click(function(evt) {
         evt.preventDefault();
 
         gallery.cancelAutoSlide();
 
-        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_buyissue");
-        libBanner.buy_issue("com.timeinc.people.ipad.inapp.04162014", "304439");
-      });
-      
-      $(".sm-xsell").click(function() {
-        libBanner.track_user_action("Library|Banner|Subscriber|iTunes", "banner_taps_smxsell");
+        libBanner.track_user_action("Library|Banner|Subscriber|iTunes", "banner_taps_buyissue");
+        libBanner.buy_issue("com.timeinc.people.ipad.inapp.06112014", "311660");
       });
     })();
   </script>
