@@ -90,6 +90,11 @@
         background-image: url('FreeSample.png?v={{BUILD_TIME}}') !important;
       }
       
+      .festival {
+        background-image: url('festival.png?v={{BUILD_TIME}}') !important;
+        background-color: #622966 !important;
+      }
+      
       .banner{                 
          height: 237px;              
       }
@@ -132,6 +137,10 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
+          <div class="slide festival" data-ios-version=">=7">
+            <!-- Festival slide -->
+            <a href="../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/essence-music-festival-2014/id825715524?mt=8"></a>
+          </div>
           <div class="slide preview">
           	<!-- Free preview slide -->
           </div>
@@ -166,6 +175,10 @@
 
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
         libBanner.buy_sub("com.timeinc.essence.ipad.subs.9");
+      });
+      
+      $(".festival a").click(function(evt) {
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_festival");
       });
     })();
   </script>

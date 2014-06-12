@@ -1,53 +1,162 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-  <title>Offlinebanner</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi"/>
-  <style>
-    /* Banner CSS for iOS iPad devices with horz/vert orientations */
-    html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-    background-color: #c86dc5;
-    }
- 
-    /* styles for both orientations */
-    #banner {
-      position: absolute;
-      margin: 0;
-      padding: 0;
-      top: 10%; bottom: 10%;
-      left: 10%; right: 10%;
-      border: none;      
-      background: transparent url('logo.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
-      -webkit-background-size: contain;
-    }
- 
-    a {
-      position:absolute;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
-  <script type="text/javascript" src="../../../lib/jquery.js"></script>
-  <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
-  <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
-  <script type="text/javascript" src="../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
-  <script type="text/javascript" src="../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <style>
+       body{
+          background: #c6c;
+          margin: 0px;
+          padding: 0px;
+       }
+                                
+       .wrapper{
+          width: 640px;
+          margin: 0 auto; 
+          text-align: center;
+          width: 100%;
+       }
+       
+       .wrapper span{
+           display: none;
+           padding-top: 4em;
+           font: 16px/20px sans-serif;
+           color: grey;
+       }
+       
+       .carousel{
+          overflow: hidden;
+       }
+       
+       
+       .slides{
+          height: 100%;              
+          -webkit-transition: all 1s;
+       }
+       
+       .slide{
+          height: 100%;
+          float: left;
+          position: relative;
+          
+          background-color: transparent;
+          background-position: top center;
+          background-repeat: no-repeat;
+          width: 100%;
+          background-size: contain;
+      }
+      .slide a {
+        display: block;
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+      }
 
+       
+       .btn-group{
+          margin: 0 auto;
+          padding-top: 10px;              
+          width: 95%;
+       }
+       
+       .btn{
+          background-size: auto 100%;   
+          background-repeat: no-repeat;           
+          margin-top: 1em;
+       }
+       
+       .pull-left{
+          float: left !important;
+       }
+       
+       .pull-right{
+          float: right !important;
+       }
+         
+      .logo {
+        background-image: url('logo.png?v={{BUILD_TIME}}') !important;
+      }
+      
+      .festival {
+        background-image: url('festival.png?v={{BUILD_TIME}}') !important;
+        background-color: #622966 !important;
+      }
+      
+      .banner{                 
+         height: 237px;              
+      }
+      
+      .wrapper span.ipad-portrait{
+          display: block;
+      }        
+      
+       .slide.loading::before {
+         content: 'Loading…';
+         display: block;
+         color: #fff;
+         line-height: 170px;
+         font-size: 20px;
+         font-weight: bold;
+         font-family: helvetica, sans-serif;
+         background: rgba(0,0,0,0.7);
+         text-align: center;
+         position: absolute;
+         top: 0; right: 0; bottom: 0; left: 0;
+       }
+
+       /* HACK: */
+       .logo { background-color: #fff; } 
+
+       
+       
+    </style>
+
+    <script type="text/javascript" src="../../../lib/jquery.js"></script>
+    <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
+
+    <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
+    <script type="text/javascript" src="../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
+
+    <script type="text/javascript" src="../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script> 
 </head>
 <body>
-  <div id="banner"></div>
-
+   
+   <div class="wrapper">
+     <div class="banner carousel">
+        <div class="slides">
+          <div class="slide logo" data-ios-version="<7">
+            <!-- Logo slide -->
+          </div>
+          
+          <div class="slide festival" data-ios-version=">=7">
+            <!-- Festival slide -->
+            <a href="../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/essence-music-festival-2014/id825715524?mt=8"></a>
+          </div>
+        </div>
+     </div>
+   </div>
+   
   <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
-    libBanner.track_page_view("Library|Banner|Subscriber");
-    libBanner.echo();
+    
+    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
+    
+    (function() {
+      libBanner.track_page_view("Library|Banner|Subscriber");
+      libBanner.echo();
+      
+      var gallery = new libBanner.SlideshowGallery();
+      gallery.enableTouch().slideEvery(5000);
+      
+      $(".festival a").click(function(evt) {
+        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_festival");
+      });
+    })();
   </script>
 
 </body>

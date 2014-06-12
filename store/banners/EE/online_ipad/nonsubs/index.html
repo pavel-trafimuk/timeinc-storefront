@@ -4,7 +4,7 @@
   <title>Non-subscription Banner</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width"/>
-  <style>
+  <style>          
            body{
               background: #eaeaea;
               margin: 0px;
@@ -46,7 +46,7 @@
               width: 100%;
               background-size: auto 100%;
           }
-          .subscribe a {
+          a {
             display: block; position: absolute;
             top: 0; right: 0; bottom: 0; left: 0;
           }
@@ -87,6 +87,14 @@
            
            /* iPad Portrait */
            @media only screen and (min-width:768px){           
+              .subscribe {
+                background: url('subscribe_portrait.png?v={{BUILD_TIME}}') !important;
+              }
+              
+              .festival {
+                background: url('festival_portrait.png?v={{BUILD_TIME}}') !important;
+              }
+          
               .banner{                 
                  height: 237px;                 
               }
@@ -106,6 +114,14 @@
            
            /* iPad Landscape */
            @media only screen and (min-width:1024px){           
+              .subscribe {
+                background: url('subscribe_landscape.png?v={{BUILD_TIME}}') !important;
+              }
+              
+              .festival {
+                background: url('festival_landscape.png?v={{BUILD_TIME}}') !important;
+              }
+              
               .banner{                 
                  height: 185px;                 
               }              
@@ -144,7 +160,15 @@
   <div class="wrapper">
          <div class="banner carousel">
             <div class="slides">
-              <div class="slide hasButtons subscribe" style="background-image: url('logo.jpg?v={{BUILD_TIME}}');"><a href="#"></a></div>
+              <!-- Subscribe slide -->
+              <div class="slide subscribe">
+                <a href="#"></a>
+              </div>
+              
+              <!-- Festival slide -->
+              <div class="slide festival" data-ios-version=">=7">
+                <a href="../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/essence-music-festival-2014/id825715524?mt=8"></a>
+                  
             </div>
          </div>
        </div>
@@ -165,6 +189,10 @@
 
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
         libBanner.buy_sub("com.timeinc.essence.ipad.subs.9");
+      });
+      
+      $(".festival a").click(function(evt) {
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_festival");
       });
       
       

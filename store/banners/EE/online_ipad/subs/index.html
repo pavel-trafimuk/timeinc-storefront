@@ -5,52 +5,143 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width"/>
   <style>
-    /* Banner CSS for iOS iPad devices with horz/vert orientations */
-    html, body {
-	height: 100%;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	-webkit-user-select: none;
-	-webkit-touch-callout: none;
-	background: #eaeaea;
-    }
- 
-    /* styles for both orientations */
-    #banner {
-      position: absolute;
-      margin: 0;
-      padding: 0;
-      top: 0; bottom: 0;
-      left: 0; right: 0;
-      border: none;      
-      background: transparent url('logo.jpg?v={{BUILD_TIME}}') no-repeat 50% 50%;
-      -webkit-background-size: cover;
-    }
-    
-    /* iPad Landscape */
-    @media only screen and (max-width: 1024px) {
-        #banner {
-            height: 185px !important;
-        }
-    }
-    
-    /* iPad Portrait */
-    @media only screen and (max-width: 768px) {
-        #banner {
-            height: 237px !important;
-        }
-    }
- 
-    a {
-      position:absolute;
-      width: 100%;
-      height: 100%;
-    }
-  body {
-	background: #eaeaea;
-}
-  </style>
+           body{
+              background: #eaeaea;
+              margin: 0px;
+              padding: 0px;
+           }
+                                    
+           .wrapper{
+              width: 1024px;
+              margin: 0 auto; 
+              text-align: center;
+              width: 100%;
+           }
+           
+           .wrapper span{
+               display: none;
+               padding-top: 4em;
+               font: 16px/20px sans-serif;
+               color: grey;
+           }
+           
+           .carousel{
+              overflow: hidden;
+           }
+           
+           
+           .slides{
+              height: 100%;              
+              -webkit-transition: all 1s;
+           }
+           
+           .slide{
+              height: 100%;
+              float: left;
+              position: relative;
+              
+              background-color: transparent;
+              background-position: 50% 50%;
+              background-repeat: repeat-x;
+              width: 100%;
+              background-size: auto 100%;
+          }
+          .subscribe a {
+            display: block; position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+          }
+
+           
+           .btn-group{
+              margin: 0 auto;
+              padding-top: 10px;              
+              width: 95%;
+           }
+           
+           .btn{
+              background-size: auto 100%;   
+              background-repeat: no-repeat;           
+              margin-top: 1em;
+           }
+           
+           .btn.pull-left{
+               background-image: url(Template_EW_Retina_LeftButton.png?v={{BUILD_TIME}});
+               
+           }
+           
+          .btn.pull-right{
+               background-image: url(Template_EW_Retina_RightButton.png?v={{BUILD_TIME}});
+               background-position-x: 100%;
+           }
+           
+           
+           
+           .pull-left{
+              float: left !important;
+           }
+           
+           .pull-right{
+              float: right !important;
+           }
+            
+           
+           /* iPad Portrait */
+           @media only screen and (min-width:768px){           
+              .logo {
+                background: url('logo.jpg?v={{BUILD_TIME}}') no-repeat 50% 50%;
+              }
+              
+              .festival {
+                background: url('festival_portrait.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
+              }
+          
+              .banner{                 
+                 height: 237px;                 
+              }
+              
+              .wrapper span.ipad-portrait{
+                  display: block;
+              }        
+              
+              
+               .btn{
+                 width: 200px;
+                 height: 100px;
+                 margin-top: 6px;
+              }      
+           }
+
+           
+           /* iPad Landscape */
+           @media only screen and (min-width:1024px){           
+              .logo {
+                background: url('logo.jpg?v={{BUILD_TIME}}') no-repeat 50% 50%;
+              }
+              
+              .festival {
+                background: url('festival_landscape.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
+              }
+              
+              .banner{                 
+                 height: 185px;                 
+              }              
+              .wrapper span.ipad-landscape{
+                  display: block;
+              }              
+              
+              .btn{
+                 width: 200px;
+                 height: 75px;
+                 margin-top: 6px;
+              }      
+              
+           }
+           
+
+           
+           
+           
+        </style>
   
   <script type="text/javascript" src="../../../lib/jquery.js"></script>
 
@@ -60,15 +151,41 @@
   <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js"></script> 
   <script type="text/javascript" src="../../../settings/settings_loader.js"></script> 
 
-  <script type="text/javascript" src="../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script>  
+
+  
 </head>
  
 <body>
-      <div id="banner"></div>
-      <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <div class="wrapper">
+         <div class="banner carousel">
+            <div class="slides">
+              <!-- Logo slide -->
+              <div class="slide logo" data-ios-version="<7"></div>
+              
+              <!-- Festival slide -->
+              <div class="slide festival" data-ios-version=">=7">
+                <a href="../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/essence-music-festival-2014/id825715524?mt=8"></a>
+              
+            </div>
+         </div>
+       </div>
+          <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
-    libBanner.track_page_view("Library|Banner|Subscriber");
-    libBanner.echo();
+    
+    (function() {
+      libBanner.track_page_view("Library|Banner|Subscriber");
+      libBanner.echo();
+      
+      var gallery = new libBanner.SlideshowGallery();
+      gallery.enableTouch().slideEvery(5000);
+      
+      $(".festival a").click(function(evt) {
+        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_festival");
+      });
+      
+      
+    })();
   </script>
-  </body>
+</body>
 </html>
