@@ -86,6 +86,10 @@
         background-image: url('beauty.png?v={{BUILD_TIME}}') !important;
       }
       
+      .colorbook {
+        background-image: url('colorbook.png?v={{BUILD_TIME}}') !important;
+      }
+      
       .banner{                 
          height: 237px;              
       }
@@ -133,6 +137,11 @@
             <a href="#" id="banner-link"></a>
           </div>
           
+          <!-- Colorbook slide -->
+          <div class="slide colorbook">
+            <a href="#"></a>
+          </div>
+          
           <!-- Beauty slide -->
           <div class="slide beautyguide">
             <a href="#"></a>
@@ -160,6 +169,15 @@
 
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_beautyguide");
         libBanner.buy_issue("com.timeinc.instyle.ipad.inapp.05142014", "63438");
+      });
+      
+      $(".colorbook a").click(function(evt) {
+        evt.preventDefault();
+
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_colorbook");
+        libBanner.buy_issue("com.timeinc.instyle.ipad.inapp.06102014", "59726");
       });
     })();
   </script>
