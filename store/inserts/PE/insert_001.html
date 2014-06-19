@@ -74,7 +74,11 @@
       to { -webkit-transform: translate3d(0,0,0); }
     }
     
-    #banner {
+    div#banner {
+      display: none;
+    }
+    
+    div#banner.animate-me {
       position: absolute;
       display: block;
       background-image: url('images/001.png');
@@ -115,40 +119,58 @@
 
   <script type="text/javascript">           
     (function() {
-      var api = (typeof adobeDPS == "undefined") ? MockAPI : adobeDPS;
-      var buy_sub = function() { setTimeout(buy_sub, 500) };
+      var buy_sub = function() { setTimeout(buy_sub, 500); };
+      var check_sub = function() { setTimeout(check_sub, 500); };
       
-      $(function() {
+      $(function() {        
+        $("<img>")
+          .attr({ src: "images/001.png" })
+          .appendTo("body")
+          .css({ display: "none" });
+          
         $("#banner a").click(function() {
           $("body").addClass("show-spinner");
           buy_sub();
           return false;
         });
+        
+        $(document).on('touchmove', function(e) {
+          e.preventDefault();
+        });
+          
+        check_sub();
       });
 
-      api.initializationComplete.addOnce(function() {
-        var is_Authenticated = app.authenticationService.isUserAuthenticated(),
-            receipts = app.receiptService.availableSubscriptions(),
-            is_Subscribed;
+      adobeDPS.initializationComplete.addOnce(function() {
+        adobeDPS.subscriptionService.updatedSignal.add(function() {
+          check_sub();
+        });
         
-        is_Subscribed = function() {
-          var is_sub = false;
-          $.each(receipts, function(receipt) {
-            if (receipt.isActive()) is_sub = true;
-          });
-          
-          return is_sub;
+        check_sub = function() {
+          var itunes_sub = adobeDPS.subscriptionService.activeSubscription;
+          var token = localStorage.lucieCacheAuthToken; //must use cache since authenticationService does not exist in this API library
+          if (itunes_sub == null) {
+            if (token) {
+              lucieApi._default_api_args.authToken = token;
+              lucieApi.entitlements(function(data) {
+                if ($("subscriberIsActive", data).text() != "Y") {
+                  $("#banner").addClass("animate-me");
+                } else {
+                  $("#wrapper").remove();
+                }
+              });
+            } else {
+              $("#banner").addClass("animate-me");
+            }
+          } else {
+            $("#wrapper").remove();
+          }
         };
         
-        if (is_Authenticated || is_Subscribed) {
-          $("#wrapper").css("display","none");
-        }
-        
         buy_sub = function() {
-          api.subscriptionService.availableSubscriptions["com.timeinc.people.ipad.subs.6"].purchase();
-        }
+          adobeDPS.subscriptionService.availableSubscriptions["com.timeinc.people.ipad.subs.6"].purchase();
+        };
       });
-
     })();
   </script>
 </head>
