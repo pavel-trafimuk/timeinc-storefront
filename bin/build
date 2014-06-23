@@ -178,6 +178,9 @@ END
   for MYACCTPAGE in $(find "$DEPLOYDIR/myaccount/" -iname "*.html"); do
     render_in_place "$MYACCTPAGE"
   done
+  for MYACCTPAGE in $(find "$DEPLOYDIR/myaccount/" -iname "*.js"); do
+    render_in_place "$MYACCTPAGE"
+  done
 
 }
 

@@ -35,10 +35,20 @@ window.settings = {
     "omniture_server"            : "",
     "omniture_ssl_server"        : "",
 
+    "myacctCustomerCareSupport"  : "",
+    "myacctAmexMailingAddress"   : "Mailing Address",
+    "myacctAmexAccountNumber"    : "Account Number",
+
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/ay-lucie-customer-creation-itunes201307.html",
+    
+    // TODO:
+    "WesPageURL"                 : "amex-address-or-acct-number.html",
+
+    "myacctAmexMailingAddressURL": "https://secure.customersvc.com/servlet/Show?WESPAGE=am/ipad/le/le_addrss_login.jsp&MSRSMAG=LE&MSDTRACK=IPAD&MSDDMOFF=ABTF&MSDVNDID=TBLT&VERSION=2&APP_REF_URL=travelandleisure.com/promo/storefront&APP_REF_PAGE=%23%2Fstore&prevPage=http://www.travelandleisure.com/promo/storefront/index.html",
+    "myacctAmexAccountNumberURL" : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/ipad/le/le_accnt_login.jsp&MSRSMAG=LE&MSDTRACK=IPAD&MSDDMOFF=ABTF&MSDVNDID=TBLT&VERSION=2&APP_REF_URL=amexdev.s3-website-us-east-1.amazonaws.com&APP_REF_PAGE=%23%2Fstore&prevPage=http://www.travelandleisure.com/promo/storefront/index.html",
     
 "ihatethelastcomma": true};
 })();

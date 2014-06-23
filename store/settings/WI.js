@@ -31,10 +31,24 @@ window.settings = {
     "supportPhoneNumber"         : "1-866-772-8789",
     "supportEmail"               : "digital@allyou.customersvc.com",
 
+    "omniture_account"           : "",
+    "omniture_server"            : "",
+    "omniture_ssl_server"        : "",
+
+    "myacctCustomerCareSupport"  : "",
+    "myacctAmexMailingAddress"   : "Mailing Address",
+    "myacctAmexAccountNumber"    : "Account Number",
+
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
     "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/ay-lucie-customer-creation-itunes201307.html",
+
+    // TODO:
+    "WesPageURL"                 : "amex-address-or-acct-number.html",
+
+    "myacctAmexMailingAddressURL": "https://secure.customersvc.com/servlet/Show?WESPAGE=am/ipad/wi/wi_addrss_login.jsp&MSRSMAG=WI&MSDTRACK=IPAD&MSDDMOFF=ABTF&MSDVNDID=TBLT&VERSION=2&APP_REF_URL=foodandwine.com/promo/storefront&APP_REF_PAGE=%23%2Fstore&prevPage=http://www.foodandwine.com/promo/storefront/index.html",
+    "myacctAmexAccountNumberURL": "https://secure.customersvc.com/servlet/Show?WESPAGE=am/ipad/wi/wi_accnt_login.jsp&MSRSMAG=WI&MSDTRACK=IPAD&MSDDMOFF=ABTF&MSDVNDID=TBLT&VERSION=2&APP_REF_URL=amexdev.s3-website-us-east-1.amazonaws.com&APP_REF_PAGE=%23%2Fstore&prevPage=http://www.foodandwine.com/promo/storefront/index.html",
     
 "ihatethelastcomma": true};
 })();
