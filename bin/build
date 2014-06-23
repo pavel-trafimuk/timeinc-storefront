@@ -174,14 +174,11 @@ END
   cp -r $DEVDIR/appstore_links $DEPLOYDIR
   
   render_in_place "$DEPLOYDIR/lucie-library.html"
-  render_in_place "$DEPLOYDIR/myaccount/index.html"
-  render_in_place "$DEPLOYDIR/autologin/index.html"
-  render_in_place "$DEPLOYDIR/myaccount/itunes-subscriber.html"
-  render_in_place "$DEPLOYDIR/myaccount/non-itunes-subscriber.html"
-  render_in_place "$DEPLOYDIR/myaccount/not-sure-subscriber.html"
-  render_in_place "$DEPLOYDIR/myaccount/support-links.js"
-  render_in_place "$DEPLOYDIR/myaccount/restoreissues.html"
-  render_in_place "$DEPLOYDIR/myaccount/restoreissues.es.html"
+
+  for MYACCTPAGE in $(find "$DEPLOYDIR/myaccount/" -iname "*.html"); do
+    render_in_place "$MYACCTPAGE"
+  done
+
 }
 
 ################################################################################
