@@ -1,6 +1,16 @@
 @import "_variables/_EE.scss";
 @import "_includes/_STORE.scss";
 
+.first-load-popup {
+  @include first-load-popup(620px, 520px, "../images/" + $BRAND_CODE + "/first-load-popup.png");
+  .subscribe {
+    height: 55px; 
+    width: 394px;
+    top: 409px;
+    right: 113px;
+  }
+}
+
 .store-hero-view {
   .cover {
     @media screen and (max-width: 999px) {

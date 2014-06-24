@@ -2,17 +2,12 @@
 @import "_includes/_STORE.scss";
 
 .first-load-popup {
-  @include first-load-popup(522px, 362px, "../images/FO/first-load-popup.jpg");
-  .restore-btn, .sign-in-btn {
-    height: 39px; 
-    width: 197px;
-    bottom: 21px;
-  }
-  .restore-btn {
-    left: 33px; 
-  }
-  .sign-in-btn {
-    right: 35px;
+  @include first-load-popup(620px, 520px, "../images/" + $BRAND_CODE + "/first-load-popup.png");
+  .subscribe {
+    height: 55px; 
+    width: 394px;
+    top: 409px;
+    right: 113px;
   }
 }
 
