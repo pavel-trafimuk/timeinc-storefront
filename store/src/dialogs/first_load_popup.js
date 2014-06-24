@@ -6,7 +6,8 @@ App.dialogs.FirstLoadPopup = Backbone.View.extend({
     "click a": function(evt) { evt.preventDefault(); },
     "click .close": "remove",
     "click .restore-btn": "restore",
-    "click .sign-in-btn": "signin"
+    "click .sign-in-btn": "signin",
+    "click .subscribe": "subscribe"
   },
   initialize: function() {
     var that = this;
@@ -33,6 +34,11 @@ App.dialogs.FirstLoadPopup = Backbone.View.extend({
   restore: function() {
     App.api.receiptService.restorePurchases();
     this.remove()
+  },
+  subscribe: function() {
+    App.omni.event("welcomepopup_subscribetap");
+    new App.dialogs.Subscribe();
+    this.remove();
   },
   signin: function() {
     new App.dialogs.SignIn()
