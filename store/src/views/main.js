@@ -69,9 +69,13 @@
         that.subview.$el.appendTo(that.el);
         that.subview.animate(function() {
           if (!App.dialogs.FirstLoadPopup.shown 
-                && settings.enable_first_load_popup 
-                && localStorage.app_view_count == 1) {
-            new App.dialogs.FirstLoadPopup;
+                && settings.enable_first_load_popup
+                /*&& localStorage.app_view_count == 1*/) {
+            App.api.authenticationService.user_is_subscriber(function(is_subscriber) {
+              if (!is_subscriber) {
+                new App.dialogs.FirstLoadPopup;
+              }
+            });
           }
           App.dialogs.FirstLoadPopup.shown = true;
           (cb||$.noop)();
