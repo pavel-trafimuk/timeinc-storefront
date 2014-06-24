@@ -8,8 +8,9 @@ window.settings = {
     "brandCode"                  : "CT",
     "schedule"                   : "weekly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : false,
+    "enable_first_load_popup"    : true,
     
+    "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
     "subscribeOfferText"         : "Subscribe now to COASTAL LIVING on your iPad and capture the joy of life by the sea. Discover inspiring coastal home decorating ideas, dream destinations, fresh recipes and more. Plus, get 1 month free with an annual subscription.",
     
     "heroHeading"                : "Inside This Issue",

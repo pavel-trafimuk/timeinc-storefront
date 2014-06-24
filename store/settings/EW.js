@@ -51,7 +51,7 @@ window.settings = {
     "brandCode"                  : "EW",
     "schedule"                   : "weekly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : false,
+    "enable_first_load_popup"    : true,
     
     "popup_paragraph1"           : "<b>We heard you!</b><br>The Result: <b><i>Best Entertainment Weekly ever!</i></b>",
     "popup_paragraph2"           : "You wanted support for Retina display &mdash; <b>we've got it.</b><br>You wanted Pinch &amp; Zoom &mdash; <b>we have it.</b><br>You wanted a better App &mdash; <b>we've done it.</b>",
@@ -60,6 +60,7 @@ window.settings = {
     "popup_close_text"           : "Close",
     
     "heroHeading"                : "Inside This Issue",
+    "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
     "subscribeOfferText"         : "Be the first to know about the best (and worst) in movies, TV, music, books, and more. PLUS: You can watch trailers, sample songs, as well as buy movie tickets, books, and music instantly—without ever leaving your couch.",
     
     "enableHeroCoverTap"         : false,

@@ -8,8 +8,9 @@ window.settings = {
     "brandCode"                  : "SL",
     "schedule"                   : "weekly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : false,
+    "enable_first_load_popup"    : true,
     
+    "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
     "subscribeOfferText"         : "Subscribe to SOUTHERN LIVING and get great home decorating ideas, recipes, travel tips and more -all with Southern charm.",
     
     "heroHeading"                : "Inside This Issue",

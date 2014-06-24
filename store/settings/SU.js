@@ -8,8 +8,9 @@ window.settings = {
     "brandCode"                  : "SU",
     "schedule"                   : "weekly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : false,
+    "enable_first_load_popup"    : true,
     
+    "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
     "subscribeOfferText"         : "Discover new weekend destinations, inspiring homes and gardens and seasonal recipes. Plus bonus garden and travel covering all 5 regional editions.",
     
     "heroHeading"                : "Inside This Issue",

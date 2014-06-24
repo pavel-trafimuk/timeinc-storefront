@@ -51,9 +51,10 @@ window.settings = {
     "brandCode"                  : "AY",
     "schedule"                   : "monthly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : false,
+    "enable_first_load_popup"    : true,
     
     "heroHeading"                : "Inside This Issue",
+    "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
     "subscribeOfferText"         : "Subscribe to ALL YOU and get great tips and valuable advice on how to save everyday!",
     
     "hero_preview"               : "none",

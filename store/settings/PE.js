@@ -55,7 +55,7 @@ window.settings = {
     "brandCode"                  : "PE",
     "schedule"                   : "weekly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : false,
+    "enable_first_load_popup"    : true,
  
         
     "storeIssuesStartingFilter"  : "!special",
@@ -93,6 +93,7 @@ window.settings = {
     "storeBuyIssueBtn"           : "Buy Now",
     "heroHeading"                : "In This Issue",
     "heroPostDescriptionHTML"    : "Already have an account?<br><a href='#' onclick='new App.dialogs.SignIn(); return false;'>SIGN IN</a>",
+    "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
     "subscribeOfferText"         : "Subscribe now to PEOPLE Magazine on your iPad. The Digital Edition gets you extras like bonus photos, exclusive videos, movie trailers, song samples, story updates from PEOPLE.com, click-to-buy features and so much more! Plus, get 1 month free with a semi-annual subscription.",
 
     "eMagsAppId": "PPL3313",

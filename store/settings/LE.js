@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "LE",
     "schedule"                   : "monthly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : false,
+    "enable_first_load_popup"    : true,
     
     "heroHeading"                : "Inside This Issue",
     

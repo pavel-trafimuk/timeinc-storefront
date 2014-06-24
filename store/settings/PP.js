@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "PP",
     "schedule"                   : "monthly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : false,
+    "enable_first_load_popup"    : true,
 
     "heroHeading"                : "En Esta Edición",
     
@@ -66,6 +66,7 @@ window.settings = {
     "seeInsideCTA"               : "Mira Adentro",
 
     "subscribeTo"                : "Suscríbete a",
+    "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
     "subscribeOfferText"         : "¡Suscríbete ahora para ver deslumbrantes fotos y vídeos exclusivos detrás de cámara. Además, entrevistas francas con tus celebridades favoritas!",
     "subscribeYourSubscription"  : "Your Subscription",
     "subscribeCancel"            : "Cancela",

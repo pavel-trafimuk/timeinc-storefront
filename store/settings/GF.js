@@ -8,9 +8,10 @@ window.settings = {
     "brandCode"                  : "GF",
     "schedule"                   : "weekly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : false,
+    "enable_first_load_popup"    : true,
     
     "heroHeading"                : "Inside This Issue",
+    "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
     "subscribeOfferText"         : "Subscribe now to get GOLF Magazine on your iPad, the #1 source for instruction, equipment, and travel.",
     
     "max_back_issues"            : 20,

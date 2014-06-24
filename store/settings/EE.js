@@ -8,9 +8,10 @@ window.settings = {
     "brandCode"                  : "EE",
     "schedule"                   : "monthly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : false,
+    "enable_first_load_popup"    : true,
     
     "heroHeading"                : "Inside This Issue",
+    "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
     "subscribeOfferText"         : "Subscribe now to get ESSENCE on your iPad, featuring FASHION AND BEAUTY secrets so you look and feel your best, plus receive EMPOWERING ADVICE on relationships and money matters!",
 
     "hero_preview": "none",
