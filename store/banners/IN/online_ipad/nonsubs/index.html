@@ -76,8 +76,7 @@
        /* iPad Portrait */
        @media only screen and (min-width:768px){           
           .subscribe {
-            background-image: url('portrait.png?v={{BUILD_TIME}}') !important;
-            background-size: cover !important;
+            background: url('subscribe-half_portrait.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
           }
           .beautyguide {
             background: url('beauty_portrait.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
@@ -106,8 +105,7 @@
        /* iPad Landscape */
        @media only screen and (min-width:1024px){                     
           .subscribe {
-            background-image: url('landscape.png?v={{BUILD_TIME}}') !important;
-            background-size: auto 185px !important;
+            background: url('subscribe-half_landscape.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
           }
           .beautyguide {
             background: url('beauty_landscape.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
@@ -143,170 +141,6 @@
          position: absolute;
          top: 0; right: 0; bottom: 0; left: 0;
        }
-
-       
-       
-    </style>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <style>
-       body{
-          background: #eaeaea;
-          margin: 0px;
-          padding: 0px;
-       }
-                                
-       .wrapper{
-          width: 1024px;
-          margin: 0 auto; 
-          text-align: center;
-          width: 100%;
-       }
-       
-       .wrapper span{
-           display: none;
-           padding-top: 4em;
-           font: 16px/20px sans-serif;
-           color: grey;
-       }
-       
-       .carousel{
-          overflow: hidden;
-       }
-       
-       
-       .slides{
-          height: 100%;              
-          -webkit-transition: all 1s;
-       }
-       
-       .slide{
-          height: 100%;
-          float: left;
-          position: relative;
-          
-          background-color: transparent;
-          background-position: 50% 50%;
-          background-repeat: no-repeat;
-          width: 100%;
-          background-size: contain;
-      }
-      .slide a {
-        display: block;
-        position: absolute;
-        top: 0; right: 0; bottom: 0; left: 0;
-      }
-
-       
-       .btn-group{
-          margin: 0 auto;
-          padding-top: 10px;              
-          width: 95%;
-       }
-       
-       .btn{
-          background-size: auto 100%;   
-          background-repeat: no-repeat;           
-          margin-top: 1em;
-       }       
-       
-       
-       .pull-left{
-          float: left !important;
-       }
-       
-       .pull-right{
-          float: right !important;
-       }
-        
-       
-       /* iPad Portrait */
-       @media only screen and (min-width:768px){           
-          .subscribe {
-            background-image: url('portrait.png?v={{BUILD_TIME}}') !important;
-            background-size: cover !important;
-          }
-          .beautyguide {
-            background: url('beauty_portrait.png?v={{BUILD_TIME}}') !important;
-          }
-          .colorbook {
-            background: url('colorbook_portrait.png?v={{BUILD_TIME}}') !important;
-          }
-          
-          .banner{                 
-             height: 237px;              
-          }
-          
-          .wrapper span.ipad-portrait{
-              display: block;
-          }        
-          
-          
-           .btn{
-             width: 200px;
-             height: 100px;
-             margin-top: 6px;
-          }      
-       }
-
-       
-       /* iPad Landscape */
-       @media only screen and (min-width:1024px){           
-          .subscribe {
-            background-image: url('landscape.png?v={{BUILD_TIME}}') !important;
-            background-size: auto 185px !important;
-          }
-          .beautyguide {
-            background: url('beauty_landscape.png?v={{BUILD_TIME}}') !important;
-          }
-          .colorbook {
-            background: url('colorbook_landscape.png?v={{BUILD_TIME}}') !important;
-          }
-          
-          .banner{                 
-             height: 177px;                 
-          }              
-          .wrapper span.ipad-landscape{
-              display: block;
-          }              
-          
-          .btn{
-             width: 200px;
-             height: 75px;
-             margin-top: 6px;
-          }      
-          
-       }
-       .slide.loading::before {
-         content: 'Loading…';
-         display: block;
-         color: #fff;
-         line-height: 170px;
-         font-size: 20px;
-         font-weight: bold;
-         font-family: helvetica, sans-serif;
-         background: rgba(0,0,0,0.7);
-         text-align: center;
-         position: absolute;
-         top: 0; right: 0; bottom: 0; left: 0;
-       }
-
-       /* HACK: */
-       .retina { background-color: #000; } 
 
        
        

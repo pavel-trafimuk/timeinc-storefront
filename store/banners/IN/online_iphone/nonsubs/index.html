@@ -90,6 +90,10 @@
         background-image: url('colorbook.png?v={{BUILD_TIME}}') !important;
       }
       
+      .subscribe {
+        background-image: url('subscribe-half.png?v={{BUILD_TIME}}') !important;
+      }
+      
       .banner{                 
          height: 237px;              
       }
@@ -132,6 +136,11 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">          
+          <!-- Print Subsriber slide -->
+          <div class="slide subscribe">
+            <a href="#"></a>
+          </div>
+          
           <!-- Print Subsriber slide -->
           <div class="slide print">
             <a href="#" id="banner-link"></a>
@@ -178,6 +187,15 @@
 
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_colorbook");
         libBanner.buy_issue("com.timeinc.instyle.ipad.inapp.06102014", "59726");
+      });
+      
+      $(".subscribe a").click(function(evt) {
+        evt.preventDefault();
+
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
+        libBanner.buy_sub("com.timeinc.instyle.ipad.subs.9");
       });
     })();
   </script>

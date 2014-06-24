@@ -82,6 +82,10 @@
         background-image: url('PrintSubscriber.png?v={{BUILD_TIME}}') !important;
       }
       
+      .subscribe {
+        background-image: url('subscribe-half.png?v={{BUILD_TIME}}') !important;
+      }
+      
       .banner{                 
          height: 237px;              
       }
@@ -128,6 +132,10 @@
           <div class="slide print">
             <a href="#" id="banner-link"></a>
           </div>
+          
+          <div class="slide subscribe">
+            <a href="#"></a>
+          </div>
         </div>
      </div>
    </div>
@@ -143,6 +151,12 @@
       
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
+      
+      $(".subscribe a").click(function() {
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
+        libBanner.buy_sub("com.timeinc.stylewatch.ipad.subs.9");
+        return false;
+      });
     })();
   </script>
 

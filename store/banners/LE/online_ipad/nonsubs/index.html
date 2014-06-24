@@ -83,15 +83,7 @@
        /* iPad Portrait */
        @media only screen and (min-width:768px){           
           .subscribe {
-            background-image: url('Subscribe_portrait.jpg?v={{BUILD_TIME}}') !important;
-          }
-          
-          .bigissues {
-            background-image: url('BigIssues_portrait.png?v={{BUILD_TIME}}') !important;
-          }
-          
-          .mandela {
-            background-image: url('NM_portrait.jpg?v={{BUILD_TIME}}') !important;
+            background-image: url('subscribe-half_portrait.png?v={{BUILD_TIME}}') !important;
           }
           
           .banner{                 
@@ -114,15 +106,7 @@
        /* iPad Landscape */
        @media only screen and (min-width:1024px){           
           .subscribe {
-            background-image: url('Subscribe_landscape.jpg?v={{BUILD_TIME}}') !important;
-          }
-          
-          .bigissues {
-            background-image: url('BigIssues_landscape.png?v={{BUILD_TIME}}') !important;
-          }
-          
-          .mandela {
-            background-image: url('NM_landscape.jpg?v={{BUILD_TIME}}') !important;
+            background-image: url('subscribe-half_landscape.png?v={{BUILD_TIME}}') !important;
           }
           
           .banner{                 
@@ -177,14 +161,6 @@
           <div class="slide subscribe">
             <a href="#"></a>
           </div>
-          
-          <!-- Nelson Mandela slide -->
-          <div class="slide mandela">
-          	<a href="#"></a>
-          </div>
-          
-          <!-- Big Issues slide -->
-          <!-- <div class="slide bigissues"></div>-->
         </div>
      </div>
    </div>
@@ -204,17 +180,7 @@
         gallery.cancelAutoSlide();
 
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
-        libBanner.buy_sub("com.timeinc.tspl.india.ipad.inapp.subs.9.1");
-      });
-      
-      $(".mandela a").click(function(evt) {
-        evt.preventDefault();
-
-        $(this).parent().addClass("loading");
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
-        libBanner.buy_issue("com.timeinc.tspl.india.ipad.inapp.12062013","237435");
+        libBanner.buy_sub("com.aexp.ereader.kiosk.tl.subs.9");
       });
     })();
   </script>

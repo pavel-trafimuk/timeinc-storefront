@@ -78,8 +78,8 @@
           float: right !important;
        }
          
-      .print {
-        background-image: url('PrintSubscriber.png?v={{BUILD_TIME}}') !important;
+      .subscribe {
+        background-image: url('subscribe-half.png?v={{BUILD_TIME}}') !important;
       }
       
       .banner{                 
@@ -124,25 +124,31 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">          
-          <!-- Print Subscriber slide -->
-          <div class="slide print">
-          	<a href="#" id="banner-link"></a>
+          <!-- Subscribe slide -->
+          <div class="slide subscribe">
+            <a href="#"></a>
           </div>
         </div>
      </div>
    </div>
    
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript">    
-    
-    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
-    
+  <script type="text/javascript">        
     (function() {
       libBanner.track_page_view("Library|Banner|Nonsubscriber");
       libBanner.echo();
       
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
+      
+      $(".subscribe a").click(function(evt) {
+        evt.preventDefault();
+
+        gallery.cancelAutoSlide();
+
+        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
+        libBanner.buy_sub("com.aexp.ereader.kiosk.fw.subs.9");
+      });
     })();
   </script>
 
