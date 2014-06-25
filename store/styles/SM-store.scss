@@ -4,9 +4,9 @@
 .first-load-popup {
   @include first-load-popup(620px, 520px, "../images/" + $BRAND_CODE + "/first-load-popup.png");
   .subscribe {
-    height: 53px; 
-    width: 302px;
-    top: 403px;
+    height: 63px;
+    width: 322px;
+    top: 303px;
     right: 31px;
   }
 }
