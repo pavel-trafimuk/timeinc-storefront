@@ -1,6 +1,8 @@
 <div id='subscribe-dialog' class='dialog'>
     <p id='title'>{{settings.subscribeTo}} {{settings.brandName}}</p>
-    <p id='description'>{{{settings.subscribeSpecialOfferText}}}{{{settings.subscribeOfferText}}}</p>
+    <p id='description'>
+        <span class="special-offer-text">{{{settings.subscribeSpecialOfferText}}}</span>{{{settings.subscribeOfferText}}}
+    </p>
     {{#each subscriptions}}
         <div class='subscribe-button' id='{{ productId }}'>
             {{ duration }} - {{ price }}
