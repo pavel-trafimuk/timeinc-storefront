@@ -66,7 +66,7 @@ window.settings = {
     "seeInsideCTA"               : "Mira Adentro",
 
     "subscribeTo"                : "Suscríbete a",
-    "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
+    "subscribeSpecialOfferText"  : "OFERTA POR TIEMPO LIMITADO &ndash; UN DESCUENTO DEL 50% EN LA SUSCRIPCIÓN ANUAL<br/><br/>",
     "subscribeOfferText"         : "¡Suscríbete ahora para ver deslumbrantes fotos y vídeos exclusivos detrás de cámara. Además, entrevistas francas con tus celebridades favoritas!",
     "subscribeYourSubscription"  : "Your Subscription",
     "subscribeCancel"            : "Cancela",
