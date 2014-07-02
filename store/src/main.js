@@ -13,7 +13,7 @@ if (DEBUG) {
 }
 else {
   settings.asset_root = settings.prod_asset_root;  
-  window.console = {log: $.noop}
+  //window.console = {log: $.noop}
 }
 
 window.onerror = function(err, lineNo, fileName) {
@@ -36,8 +36,12 @@ Handlebars.registerHelper('ifequal', function(options) {
   }
   return options.fn(this);
 });
+
+function t() { return +(new Date) }
+
 $(function() {
-  console.log("dom ready");
+  var start_t = t();
+  console.log("dom ready - " + (t() - start_t));
   App.loading(true);
 
   if (DEBUG && typeof adobeDPS == "undefined") {
@@ -50,11 +54,12 @@ $(function() {
   }
 
   App._raw_api.initializationComplete.addOnce(function() {
-    console.log("init complete");
+    console.log("init complete - " + (t() - start_t));
     
     APIWrapper(App._raw_api, function(wrapped_api) {
       App.api = wrapped_api;
       Backbone.trigger("ApiReady");
+      console.log("API Ready - " + (t() - start_t));
 
       new App.dialogs.StraightToSample();
 
@@ -62,6 +67,7 @@ $(function() {
       new App.views.Main().render(function() {
         App.loading(false);
         Backbone.trigger("AppReady");
+        console.log("Main View Rendered - " + (t() - start_t));
       });
       
       // Create echo iframe and form, then submit

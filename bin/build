@@ -136,7 +136,7 @@ compile() {
   
   # minify js
   cd $DEVDIR
-python - ${PRODJSFILES[@]} <<END | uglifyjs > $BUILDROOT/$DEPLOYDIR/main.min.js
+python - ${PRODJSFILES[@]} <<END | uglifyjs --screw-ie8 --compress="sequences=true,properties=false,dead_code=true,drop_debugger=true,conditionals=true,comparisons=true,evaluate=true,booleans=true,loops=true,unused=true,hoist_funs=true,hoist_vars=true,if_return=true,join_vars=true,cascade=true,unsafe=true" --define="DEBUG=false" --mangle="sort=true" > $BUILDROOT/$DEPLOYDIR/main.min.js
 import sys
 for f in sys.argv[1:]:
     sys.stdout.write(open(f).read());
@@ -148,6 +148,10 @@ END
   # copy css and assets
   mkdir $DEPLOYDIR/css
   cp -R $DEVDIR/css $DEPLOYDIR
+
+  for CSSFILE in $(find $DEVDIR/css -iname "*.css"); do
+    cleancss "$CSSFILE" > "$DEPLOYDIR/css/$(basename "$CSSFILE")"
+  done
 
   mkdir $DEPLOYDIR/images
   cp $DEVDIR/images/*.* $DEPLOYDIR/images

@@ -9,3 +9,5 @@
 /store/css/
 /urls.txt
 /.sass-cache/
+
+/node_modules/
