@@ -9,7 +9,6 @@ $issue-spacing: 3%;
   border-top: 1px solid #fff;
   padding: 20px;
   box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.05);
-  -webkit-transform: translate3d(0,0,0);
 
   .tap-to-preview {
     position: relative;
@@ -60,6 +59,7 @@ $issue-spacing: 3%;
   .issue-cover {
     position: relative;
     margin-bottom: 10px;
+    -webkit-transform: translate3d(0,0,0);
   }
   .issue-title {
     @include constrain-to-one-line;
