@@ -70,7 +70,7 @@ window.settings = {
     //                                   "sampleissue": "sampleissue"
     //                                 }),
 
-    "max_back_issues"            : 20,
+    "max_back_issues"            : 100,
 
     "eMagsAppId": "EW2332",
     "preview_issue_product_id": "com.timeinc.ew.ipad.inapp.FREESAMPLE",

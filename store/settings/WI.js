@@ -22,7 +22,7 @@ window.settings = {
     "enableHeroCoverTap"         : false,
     "preview_issue_product_id"   : "FREEFWIOSPREVIEW",
     
-    "max_back_issues"            : 20,
+    "max_back_issues"            : 100,
 
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "c2d8715688a340bfabafa01d90e6ea98",
