@@ -94,7 +94,7 @@ window.settings = {
     "heroHeading"                : "In This Issue",
     "heroPostDescriptionHTML"    : "Already have an account?<br><a href='#' onclick='new App.dialogs.SignIn(); return false;'>SIGN IN</a>",
     "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF A SEMI-ANNUAL SUBSCRIPTION<br/><br/>",
-    "subscribeOfferText"         : "Subscribe now to PEOPLE Magazine on your iPad. The Digital Edition gets you extras like bonus photos, exclusive videos, movie trailers, song samples, story updates from PEOPLE.com, click-to-buy features and so much more! Plus, get 1 month free with a semi-annual subscription.",
+    "subscribeOfferText"         : "Subscribe now to PEOPLE Magazine on your iPad. The Digital Edition gets you extras like bonus photos, exclusive videos, movie trailers, song samples, story updates from PEOPLE.com, click-to-buy features and so much more!",
 
     "eMagsAppId": "PPL3313",
 
