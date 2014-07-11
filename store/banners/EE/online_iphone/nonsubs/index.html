@@ -90,11 +90,6 @@
         background-image: url('FreeSample.png?v={{BUILD_TIME}}') !important;
       }
       
-      .festival {
-        background-image: url('festival.png?v={{BUILD_TIME}}') !important;
-        background-color: #622966 !important;
-      }
-      
       .banner{                 
          height: 237px;              
       }
@@ -173,10 +168,6 @@
 
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
         libBanner.buy_sub("com.timeinc.essence.ipad.subs.9");
-      });
-      
-      $(".festival a").click(function(evt) {
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_festival");
       });
     })();
   </script>

@@ -90,10 +90,6 @@
               .logo {
                 background: url('logo.jpg?v={{BUILD_TIME}}') no-repeat 50% 50%;
               }
-              
-              .festival {
-                background: url('festival_portrait.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
-              }
           
               .banner{                 
                  height: 237px;                 
@@ -116,10 +112,6 @@
            @media only screen and (min-width:1024px){           
               .logo {
                 background: url('logo.jpg?v={{BUILD_TIME}}') no-repeat 50% 50%;
-              }
-              
-              .festival {
-                background: url('festival_landscape.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
               }
               
               .banner{                 
@@ -161,13 +153,7 @@
          <div class="banner carousel">
             <div class="slides">
               <!-- Logo slide -->
-              <div class="slide logo" data-ios-version="<7"></div>
-              
-              <!-- Festival slide -->
-              <div class="slide festival" data-ios-version=">=7">
-                <a href="../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/essence-music-festival-2014/id825715524?mt=8"></a>
-              
-            </div>
+              <div class="slide logo"></div>
          </div>
        </div>
           <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
@@ -179,10 +165,6 @@
       
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
-      
-      $(".festival a").click(function(evt) {
-        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_festival");
-      });
       
       
     })();
