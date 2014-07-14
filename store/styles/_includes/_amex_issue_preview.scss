@@ -57,11 +57,29 @@
     }
     
     .buy-issue-button {
-        @include big-button-primary;
         position: absolute;
         bottom: 0; right: 0;
-        width: 226px;
+        width: 180px;
         margin: 15px;
+        background: rgb(145, 145, 145);
+        color: #fff;
+        font-size: 12px;
+        line-height: 28px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-family: $MAIN_FONT;
+        border-radius: 4px;
+        border-width: 0px;
+        &[data-action=buy] {
+            background: rgb(221, 0 , 48);
+        }
+        &[data-action=download],
+        &[data-action=downloadfree] {
+            background: rgb(28, 146, 156);
+        }
+        &[data-action=unavailable] {
+            background: rgb(180, 180, 180);
+        }
     }
     header {
         margin: 15px;
