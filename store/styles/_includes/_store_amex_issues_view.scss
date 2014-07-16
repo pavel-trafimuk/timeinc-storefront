@@ -79,6 +79,9 @@ $issue-spacing: 3%;
     text-align: center;
     margin-top: 11px;
     width: 25%;
+    &.free .issue-cover::before {
+      display: none;
+    }
   }
 
   $feature-vertical-spacing-top: 20px;
@@ -91,9 +94,6 @@ $issue-spacing: 3%;
       background-size: 5px;
       position: relative;
       padding: $feature-vertical-spacing-top 0 $feature-vertical-spacing-bottom;
-    }
-    &.free .issue-cover::before {
-      display: none;
     }
     .issue-cover {
       width: 39%;
