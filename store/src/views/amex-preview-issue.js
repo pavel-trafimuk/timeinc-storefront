@@ -5,8 +5,8 @@
     template: Handlebars.templates["amex-issue-preview.tmpl"],
     events: {
       "touchmove": function(evt) { evt.preventDefault() },
-      "click .buy-issue-button": "buy_issue",
-      "click .close-btn": "close",
+      "tap .buy-issue-button": "buy_issue",
+      "tap .close-btn": "close",
       "swipedown .controls": "close"
     },
     initialize: function(folio, get_img_fn) {
@@ -29,6 +29,8 @@
       this.get_img = get_img_fn;
 
       this.folio = folio;
+
+      this.$el.hammer();
       this.render(function() {
         // don't allow multiple image previews at once
         if ($(".issue-preview-image").length) return;
@@ -37,10 +39,6 @@
         that.omni_pv = App.omni.pageview("previewimage|"+coverdate, "event1");
         that.animate();
       });
-
-      var render = _.bind(this.render, this, $.noop);
-      render = _.partial(_.delay, render, 50);
-      render = _.debounce(render, 200);
     },
     render: function(cb) {
       cb = cb || $.noop;
