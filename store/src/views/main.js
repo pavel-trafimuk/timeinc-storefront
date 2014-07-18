@@ -1,3 +1,4 @@
+/* global App, Backbone, Handlebars, $, _, settings, DEBUG */
 (function() {
   
   App.views.Main = Backbone.View.extend({
@@ -34,22 +35,39 @@
         // Show welcome screen once per issue (use local storage)
         if (typeof localStorage.welcome_issue_displayed_last == "undefined" || localStorage.welcome_issue_displayed_last != folio.productId) {
           localStorage.welcome_issue_displayed_last = folio.productId;
-          this.subview = new App.views.Welcome;
+          this.subview = new App.views.Welcome();
           App.omni.pageview("splashpage", "event1,event43,event44");
         }
         else {
-          this.subview = new App.views.Store;
+          this.subview = new App.views.Store();
+          App.omni.pageview("main", "event1,event43");
+        }
+      }
+      else if (settings.welcome_time_based_interval) {
+        var lastPopup = parseFloat(localStorage.lastWelcomePopup) || 0,
+            now = +(new Date()),
+
+            // setting defined in minutes
+            interval = settings.popupInterval * 60 * 1000;
+
+        if (now > (lastPopup + interval)) {
+          localStorage.lastWelcomePopup = now;
+          this.subview = new App.views.Welcome();
+          App.omni.pageview("splashpage", "event1,event43,event44");
+        }
+        else {
+          this.subview = new App.views.Store();
           App.omni.pageview("main", "event1,event43");
         }
       }
       else {
         // Show welcome screen using frequency set in settings
         if (localStorage.app_view_count % settings.popupInterval === 0) {
-          this.subview = new App.views.Welcome;
+          this.subview = new App.views.Welcome();
           App.omni.pageview("splashpage", "event1,event43,event44");
         }
         else {
-          this.subview = new App.views.Store;
+          this.subview = new App.views.Store();
           App.omni.pageview("main", "event1,event43");
         }
       }
@@ -138,7 +156,7 @@
       return false;
     },
     goto_store: function() {
-      this.subview = new App.views.Store;
+      this.subview = new App.views.Store();
       this.render();
       App.omni.pageview("main", "event1");
     },
