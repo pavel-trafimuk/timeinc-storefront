@@ -36,8 +36,8 @@ h1 {
 	padding: 15px 0 10px;
 	color: #111;
 	text-align: center;
-	font-size: 14px;
-	line-height: 30px;
+	font-size: 13px;
+	line-height: 20px;
 	text-transform: uppercase;
 }
 h2 {
@@ -45,7 +45,7 @@ h2 {
 	font-weight: normal;
 	color: #111;
 	text-align: center;
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 30px;
 	text-transform: none;
 	letter-spacing: 1px;
@@ -80,7 +80,7 @@ h2 {
  .pv-product-box {
  	background: #fff;
  	padding: 0 0 $productBoxInfoHeight;
- 	margin: 0 10px 20px;
+ 	margin: 0 10px 15px;
  	border-radius: 5px;
  	overflow: hidden;
  	position: relative;
@@ -183,7 +183,7 @@ $dodImageHeight: 693px;
 .dod-description {
 	font-family: $fontMedium;
 	margin: 0;
-	font-size: 14px;
+	font-size: 13px;
 }
 .dod-cta {
 	position: absolute;
