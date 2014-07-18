@@ -100,6 +100,9 @@
           .sm-xsell {
             background-image: url('sm_xsell.portrait.jpg?v={{BUILD_TIME}}') !important;
           }
+          .appstore-xsell {
+            background-image: url('appstore_portrait.png?v={{BUILD_TIME}}') !important;
+          }
           
           .banner{                 
              height: 237px;              
@@ -126,6 +129,9 @@
           }
           .sm-xsell {
             background-image: url('sm_xsell.landscape.jpg') !important;
+          }
+          .appstore-xsell {
+            background-image: url('appstore_landscape.png?v={{BUILD_TIME}}') !important;
           }
           
           .banner{                 
@@ -185,6 +191,10 @@
           <div class="slide sm-xsell" data-ios-version=">=7">
             <a href="../../../appstore_links/goto_appstore.html?link=http%3A%2F%2Fwww.emagazines.com%2Finsight%2Flink%2F%3Fuser%3D4432%26g%3D%7B6C906BE2-F36B-47E1-A3D3-D16086ACD770%7D"></a>
           </div>
+          
+          <div class="slide appstore-xsell" data-ios-version=">=7">
+            <a href="../../../appstore_links/goto_appstore.html?link=http://appstore.com/time"></a>
+          </div>
 
         </div>
      </div>
@@ -202,6 +212,10 @@
 
       $(".sm-xsell").click(function() {
         libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_smxsell");
+      });
+      
+      $(".appstore-xsell").click(function() {
+        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_appstorexsell");
       });
 
     })();

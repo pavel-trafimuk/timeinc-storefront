@@ -85,6 +85,9 @@
           .colorbook {
             background: url('colorbook_portrait.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
           }
+          .appstore-xsell {
+            background: url('appstore_portrait.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
+          }
           
           .banner{                 
              height: 237px !important;
@@ -113,6 +116,9 @@
           }
           .colorbook {
             background: url('colorbook_landscape.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
+          }
+          .appstore-xsell {
+            background: url('appstore_landscape.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
           }
           
           .banner{                 
@@ -171,6 +177,10 @@
             <a href="#"></a>
           </div>
           
+          <div class="slide appstore-xsell" data-ios-version=">=7">
+            <a href="../../../appstore_links/goto_appstore.html?link=http://appstore.com/time"></a>
+          </div>
+          
         </div>
      </div>
    </div>
@@ -200,6 +210,10 @@
 
         libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_colorbook");
         libBanner.buy_issue("com.timeinc.instyle.ipad.inapp.06102014", "59726");
+      });
+      
+      $(".appstore-xsell").click(function() {
+        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_appstorexsell");
       });
     
     })();

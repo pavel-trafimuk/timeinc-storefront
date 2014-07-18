@@ -91,6 +91,10 @@
             background-image: url('si-swim-ipad-portrait.jpg?v={{BUILD_TIME}}') !important;
           }
           
+          .appstore-xsell {
+            background-image: url('appstore_portrait.png?v={{BUILD_TIME}}') !important;
+          }
+          
           .banner{                 
              height: 237px;              
           }
@@ -116,6 +120,10 @@
           
           .si-swim-ipad {
             background-image: url('si-swim-ipad-landscape.jpg?v={{BUILD_TIME}}') !important;
+          }
+          
+          .appstore-xsell {
+            background-image: url('appstore_landscape.png?v={{BUILD_TIME}}') !important;
           }
           
           .banner{                 
@@ -173,6 +181,10 @@
           <div class="slide si-swim-ipad"> <!-- SI Swim iPad slide -->
             <a href="#"></a>
           </div>
+          
+          <div class="slide appstore-xsell" data-ios-version=">=7">
+            <a href="../../../appstore_links/goto_appstore.html?link=http://appstore.com/time"></a>
+          </div>
         </div>
      </div>
    </div>
@@ -196,6 +208,10 @@
 
         libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_buynow");
         libBanner.buy_issue("com.timeinc.si.ipad.inapp.02212014","198935");
+      });
+      
+      $(".appstore-xsell").click(function() {
+        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_appstorexsell");
       });
     })();
   </script>
