@@ -12,7 +12,7 @@
     Backbone.trigger("subscriptionStatusUpdated", status);
 
     var $fc = $(".free-content");
-    $fc[status.is_sub ? "addClass" : "removeClass"]("disabled");
+    $fc[status.is_sub ? "removeClass" : "addClass"]("disabled");
   });
 
   // Setup the store
