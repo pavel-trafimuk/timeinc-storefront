@@ -45,7 +45,7 @@ window.settings = {
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
-    "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/ay-lucie-customer-creation-itunes201307.html",
+    "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/le-lucie-customer-creation-itunes201407.html",
     
     // TODO:
     "WesPageURL"                 : "amex-address-or-acct-number.html",
