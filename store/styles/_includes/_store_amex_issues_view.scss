@@ -6,9 +6,9 @@ $issue-spacing: 3%;
 .store-issues-amex-view {
   position: relative;
   background: $MAIN_BG_COLOR;
-  border-top: 1px solid #fff;
+  border: none;
   padding: 20px;
-  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
   -webkit-transform: translate3d(0,0,0);
 
   .tap-to-preview {
@@ -90,7 +90,7 @@ $issue-spacing: 3%;
     width: 50%;
     margin-bottom: 15px;
     .issue-inner-container {
-      background: #ccc url("../images/diag-line-maker-bg.png");
+      background: #d6d6d6 url("../images/diag-line-maker-bg.png");
       background-size: 5px;
       position: relative;
       padding: $feature-vertical-spacing-top 0 $feature-vertical-spacing-bottom;

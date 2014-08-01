@@ -19,6 +19,11 @@ window.settings = {
     "heroHeading"                : "Inside This Issue",
     "storeIssuesTapToView"       : "tap any cover for preview",
 
+    "amexBannerSubCTAPrimary"    : "GET 30 DAYS FREE",
+    "amexBannerSubCTASecondary"  : "WHEN YOU SUBSCRIBE",
+    "storePreviewBtn"            : "Preview the Current Issue",
+    "storeSubscribeBtn"          : "Subscribe & Save",
+
     "storeBuyIssueBtn"           : "%price%",
     
     "hero_preview": "none",

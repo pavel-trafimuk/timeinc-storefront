@@ -1,60 +1,14 @@
 @import "_variables/_WI.scss";
 @import "_includes/_STORE.scss";
 
-
-
-.store-hero-slideshow-view {
-  position: relative;
-  height: 445px;
-  
-  .carousel {
-    overflow: hidden;
-  }
-  .slides{
-    height: 100%;              
-    -webkit-transition: all 1s;
-  }
-  .slide{
-    height: 100%;
-    float: left;
-    position: relative;
-  
-    background-color: transparent;
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-  
-  .banner {
-    position: absolute;
-    width: 100%;
-    height: 380px;
-  }
-  .on-the-right {
-    margin-left: 0px;
-  }
-  .clear { clear: both; }
-
-  .subscribe {
-    background-position: center center;
-    background-size: 100% 100%;
-    background-color: #ADADAD;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-  }
-  
-  .subscribe:after {
-    content: "Subscribe Now";
-  }
-  
-  .banner-static {
-    position: absolute;
-    background-size: cover;
-    background-repeat: no-repeat;
-    bottom: 0;
-    width: 100%;
-    height: 68px;
-  }
+.banner-static {
+  box-shadow: inset 0 -2px rgba(0,0,0,0.04);
+}
+.sub-cta-primary {
+	font-family: "AvenirNextCondensed-DemiBold";
+	color: $AMEX_BANNER_BTN_BG_COLOR;
+}
+.sub-cta-secondary {
+	font-family: "AvenirNext-DemiBold";
+	color: #000;
 }

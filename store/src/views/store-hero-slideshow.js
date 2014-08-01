@@ -80,6 +80,10 @@
           hero_slides: slides
         };
         that.$el.html(that.template(cx));
+
+        if (is_subscriber) that.$el.addClass("subscriber");
+        else               that.$el.removeClass("subscriber");
+
         setTimeout(function() {
           that.setup_sidescroller("main-gallery");
         });

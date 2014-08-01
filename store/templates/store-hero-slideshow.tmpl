@@ -7,4 +7,30 @@
     </div>
   {{/if}}
 </div>
-<div class="banner-static subscribe"></div>
+<div class="banner-static">
+	{{#if folio.get_preview_button_product_id}}
+		<div class="do-preview float-left">
+			<div class="btn">
+				{{#setting}}{{storePreviewBtn}}{{/setting}}
+			</div>
+		</div>
+	{{/if}}
+	<div class="do-subscribe float-right sub-cta">
+		<div class="sub-cta-primary">
+			{{#setting}}{{amexBannerSubCTAPrimary}}{{/setting}}
+		</div>
+		<div class="sub-cta-secondary">
+			{{#setting}}{{amexBannerSubCTASecondary}}{{/setting}}
+		</div>
+	</div>
+	<div class="do-subscribe float-right">
+		<div class="btn">
+			{{#setting}}{{storeSubscribeBtn}}{{/setting}}
+		</div>
+	</div>
+	<div class="do-buy float-right">
+		<div class="btn">
+			Buy
+		</div>
+	</div>
+</div>

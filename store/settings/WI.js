@@ -19,6 +19,11 @@ window.settings = {
     "heroHeading"                : "Inside This Issue",
     "storeIssuesTapToView"       : "tap any cover for preview",
 
+    "amexBannerSubCTAPrimary"    : "GET 72% OFF",
+    "amexBannerSubCTASecondary"  : "THE SINGLE-ISSUE PRICE",
+    "storePreviewBtn"            : "Preview the Current Issue",
+    "storeSubscribeBtn"          : "Subscribe & Save",
+
     "storeBuyIssueBtn"           : "%price%",
     
     "hero_preview": "none",
