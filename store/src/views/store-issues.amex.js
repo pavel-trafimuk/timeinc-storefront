@@ -108,7 +108,7 @@
           folio = App.api.libraryService.get_by_productId(product_id),
           $cover = $(".issue-cover", $this);
 
-      $btn.fadeTo(600, 0.5);
+      $btn.fadeTo(600, 0.35);
       
       folio.purchase_and_download({
         error: function(error_code) {
