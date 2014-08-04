@@ -109,25 +109,15 @@
           $cover = $(".issue-cover", $this);
 
       $btn.fadeTo(600, 0.5);
-      $cover.addClass("progress").attr("data-label", settings.progressStarting);
       
       folio.purchase_and_download({
-        complete: function() {
-          $cover.attr("data-label", settings.progressOpening);
-        },
-        download_progress: function(progress) {
-          $cover.attr("data-label", settings.progressDownloading);
-          $(".progress-bar", $this).css("width", progress+"%");
-        },
         error: function(error_code) {
           if (error_code < 0) {
             new App.dialogs.ErrorMsg({error_code: error_code});
           }
-          $cover.removeClass("progress").attr("data-label", "");
           $btn.fadeTo(100, 1.0);
         },
         cancelled: function() {
-          $cover.removeClass("progress").removeAttr("data-label");
           $btn.fadeTo(100, 1.0);
         }
       });
