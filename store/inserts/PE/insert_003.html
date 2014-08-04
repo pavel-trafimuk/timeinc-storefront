@@ -164,6 +164,7 @@
         };
         
         buy_sub = function() {
+          adobeDPS.subscriptionService.availableSubscriptions["com.timeinc.people.ipad.subs.6"].isOwned = false; // set this to false to avoid API error (can't figure out why this is 'true' if an active subscription isn't found)
           adobeDPS.subscriptionService.availableSubscriptions["com.timeinc.people.ipad.subs.6"].purchase();
         };
       });

@@ -90,10 +90,6 @@
               .subscribe {
                 background: url('subscribe-half_portrait.png?v={{BUILD_TIME}}') !important;
               }
-              
-              .festival {
-                background: url('festival_portrait.png?v={{BUILD_TIME}}') !important;
-              }
           
               .banner{                 
                  height: 237px;                 
@@ -116,10 +112,6 @@
            @media only screen and (min-width:1024px){           
               .subscribe {
                 background: url('subscribe-half_landscape.png?v={{BUILD_TIME}}') !important;
-              }
-              
-              .festival {
-                background: url('festival_landscape.png?v={{BUILD_TIME}}') !important;
               }
               
               .banner{                 
@@ -164,12 +156,6 @@
               <div class="slide subscribe">
                 <a href="#"></a>
               </div>
-              
-              <!-- Festival slide -->
-              <div class="slide festival" data-ios-version=">=7">
-                <a href="../../../appstore_links/goto_appstore.html?link=https://itunes.apple.com/us/app/essence-music-festival-2014/id825715524?mt=8"></a>
-                  
-            </div>
          </div>
        </div>
           <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
@@ -189,10 +175,6 @@
 
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
         libBanner.buy_sub("com.timeinc.essence.ipad.subs.9");
-      });
-      
-      $(".festival a").click(function(evt) {
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_festival");
       });
       
       

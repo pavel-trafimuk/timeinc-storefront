@@ -11,7 +11,7 @@ window.settings = {
     "enable_first_load_popup"    : true,
 
     "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
-    "subscribeOfferText"         : "Subscribe now to get HEALTH on your iPad. Each issue is packed with smart and fun new ways to stay in great shape, look amazing and discover tasty (and healthy!) things to eat. Plus, get 1 month free with an annual subscription.",
+    "subscribeOfferText"         : "Subscribe now to get HEALTH on your iPad. Each issue is packed with smart and fun new ways to stay in great shape, look amazing and discover tasty (and healthy!) things to eat.",
     
     "heroHeading"                : "Inside This Issue",
     "max_back_issues"            : 12,

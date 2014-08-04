@@ -12,7 +12,7 @@ window.settings = {
     
     "heroHeading"                : "In This Issue",
     "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
-    "subscribeOfferText"         : "The digital edition includes all of the stories from the print edition plus extra photos and videos and additional international content. Your subscription also includes commemorative issues from the TIME archive. Plus, get 1 month free with an annual subscription.",
+    "subscribeOfferText"         : "The digital edition includes all of the stories from the print edition plus extra photos and videos and additional international content. Your subscription also includes commemorative issues from the TIME archive.",
     
     "welcome_preview": "image",
     "hero_preview": "image",

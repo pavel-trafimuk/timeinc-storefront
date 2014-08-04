@@ -106,6 +106,10 @@
             background-image: url('x-sell_nttc_portrait.jpg?v={{BUILD_TIME}}') !important;
           }
           
+          .appstore-xsell {
+          background-image: url('appstore_portrait.png?v={{BUILD_TIME}}') !important;
+        }
+          
           .banner{                 
              height: 237px;              
           }
@@ -135,6 +139,10 @@
           .sm-nttc-xsell {
             background-image: url('x-sell_nttc_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
+          
+          .appstore-xsell {
+          background-image: url('appstore_landscape.png?v={{BUILD_TIME}}') !important;
+        }
           
           .banner{                 
              height: 177px;                 
@@ -203,6 +211,10 @@
           <div class="slide pe-xsell" data-ios-version=">=7">
             <a href="../../../../appstore_links/goto_appstore.html?link=http%3A%2F%2Fwww.emagazines.com%2Finsight%2Flink%2F%3Fuser%3D4432%26g%3D%7B22F0238E-75D5-420A-8046-DDFB32DB5E5B%7D"></a>
           </div>
+          
+          <div class="slide appstore-xsell" data-ios-version=">=7">
+            <a href="../../../../appstore_links/goto_appstore.html?link=https%3A%2F%2Fitunes.apple.com%2Fus%2Fartist%2Ftime-inc.%2Fid321041853%3Fmt%3D8"></a>
+          </div>
 
         </div>
      </div>
@@ -223,6 +235,10 @@
       
       $(".sm-nttc-xsell").click(function() {
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_smnttcxsell");
+      });
+      
+      $(".appstore-xsell").click(function() {
+        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_appstorexsell");
       });
 
     })();

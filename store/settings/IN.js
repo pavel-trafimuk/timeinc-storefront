@@ -12,7 +12,7 @@ window.settings = {
     "max_back_issues"            : 12,
 
     "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
-    "subscribeOfferText"         : "Subscribe now to get INSTYLE Magazine on your iPad. Featuring the hottest fashion trends, beauty tips, celebrity style secrets, best beauty buys and so much more! Plus, get 1 month free with an annual subscription.",
+    "subscribeOfferText"         : "Subscribe now to get INSTYLE Magazine on your iPad. Featuring the hottest fashion trends, beauty tips, celebrity style secrets, best beauty buys and so much more!",
     
     "heroHeading"                : "Inside This Issue",
     "heroPostDescriptionHTML"    : "",
