@@ -26,6 +26,8 @@ window.settings = {
 
     "storeBuyIssueBtn"           : "%price%",
     
+    "subscribeOfferText"         : "Create your TRAVEL + LEISURE digital account to get access to:<ul style='text-align: left; padding-right: 10px;'><li>The latest digital special<li>Future benefits and new digital-only content</ul>",
+
     "hero_preview": "none",
     "enableHeroCoverTap"         : false,
     "preview_issue_product_id"   : "FREEFWIOSPREVIEW",

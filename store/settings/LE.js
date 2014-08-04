@@ -25,6 +25,8 @@ window.settings = {
     "storeSubscribeBtn"          : "Subscribe & Save",
 
     "storeBuyIssueBtn"           : "%price%",
+
+    "subscribeOfferText"         : "Create your FOOD & WINE digital account to get access to:<ul style='text-align: left; padding-right: 10px;'><li>Food & Wine’s Favorite Recipe Guides – for Subscribers only<li>Future benefits and new digital-only content</ul>",
     
     "hero_preview": "none",
     "enableHeroCoverTap"         : false,
