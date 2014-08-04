@@ -4,15 +4,14 @@
     className: "welcome-view",
     template: Handlebars.templates["welcome.tmpl"],
     events: {
+      "touchmove": function(evt) { evt.preventDefault() },
       "tap .subscribe": "subscribe",
-
       "tap .page-curl": "open_preview",
       "swipeleft .page-curl": "open_preview",
       "swipeup .page-curl": "open_preview",
       "dragleft .page-curl": "open_preview",
       "dragup .page-curl": "open_preview",
-
-      "tap .print-subscriber": "open_wes",
+      "tap .print-subscriber": "goto_help",
       "tap .goto-store": "track_gotostore"
     },
     initialize: function() {
@@ -135,14 +134,14 @@
       });
     },
     open_preview_image: function() {
-      new App.views.IssuePreviewImage(this.folio);
+      App.views.show_folio_detail(this.folio);
     },
-    open_wes: function() {
+    goto_help: function() {
       App.omni.event("sp_activate_taps");
 
       // Give omniture a chance to track
       setTimeout(function() {
-        location.href = settings.welcomeScreenWesURL;
+        App.api.configurationService.gotoState("Help");
       }, 250);
     }
   });

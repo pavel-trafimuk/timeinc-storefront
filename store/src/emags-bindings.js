@@ -51,6 +51,7 @@ Backbone.on("ApiReady", function() {
       );
 
       emags_receipt_logged(product_id, true);
+      EMForceFlush();
     }
   });
 

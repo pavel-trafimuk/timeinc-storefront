@@ -7,10 +7,24 @@ window.settings = {
     "brandName"                  : "TRAVEL & LEISURE",
     "brandCode"                  : "LE",
     "schedule"                   : "monthly",
-    "popupInterval"              : 0,
-    "enable_first_load_popup"    : true,
+    
+    "welcome_time_based_interval": true,
+    "popupInterval"              : 24 * 60,
+
+    "enable_first_load_popup"    : false,
+    "store_backissues_view"      : "StoreIssuesAmex",
+    "store_hero_view"            : "StoreHeroSlideshow",
+    "store_folio_detail_view"    : "AmexIssuePreview",
     
     "heroHeading"                : "Inside This Issue",
+    "storeIssuesTapToView"       : "tap any cover for preview",
+
+    "amexBannerSubCTAPrimary"    : "GET 30 DAYS FREE",
+    "amexBannerSubCTASecondary"  : "WHEN YOU SUBSCRIBE",
+    "storePreviewBtn"            : "Preview the Current Issue",
+    "storeSubscribeBtn"          : "Subscribe & Save",
+
+    "storeBuyIssueBtn"           : "%price%",
     
     "hero_preview": "none",
     "enableHeroCoverTap"         : false,
@@ -25,10 +39,24 @@ window.settings = {
     "supportPhoneNumber"         : "1-866-772-8789",
     "supportEmail"               : "digital@allyou.customersvc.com",
 
+    "omniture_account"           : "",
+    "omniture_server"            : "",
+    "omniture_ssl_server"        : "",
+
+    "myacctCustomerCareSupport"  : "",
+    "myacctAmexMailingAddress"   : "Mailing Address",
+    "myacctAmexAccountNumber"    : "Account Number",
+
     // ************************************************************  
     // App specific URLS
     // ************************************************************  
-    "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/ay-lucie-customer-creation-itunes201307.html",
+    "lucieRegistrationURL"       : "https://subscription.timeinc.com/storefront/site/le-lucie-customer-creation-itunes201407.html",
+    
+    // TODO:
+    "WesPageURL"                 : "amex-address-or-acct-number.html",
+
+    "myacctAmexMailingAddressURL": "https://secure.customersvc.com/servlet/Show?WESPAGE=am/ipad/le/le_addrss_login.jsp&MSRSMAG=LE&MSDTRACK=IPAD&MSDDMOFF=ABTF&MSDVNDID=TBLT&VERSION=2&APP_REF_URL=travelandleisure.com/promo/storefront&APP_REF_PAGE=%23%2Fstore&prevPage=http://www.travelandleisure.com/promo/storefront/index.html",
+    "myacctAmexAccountNumberURL" : "https://secure.customersvc.com/servlet/Show?WESPAGE=am/ipad/le/le_accnt_login.jsp&MSRSMAG=LE&MSDTRACK=IPAD&MSDDMOFF=ABTF&MSDVNDID=TBLT&VERSION=2&APP_REF_URL=amexdev.s3-website-us-east-1.amazonaws.com&APP_REF_PAGE=%23%2Fstore&prevPage=http://www.travelandleisure.com/promo/storefront/index.html",
     
 "ihatethelastcomma": true};
 })();

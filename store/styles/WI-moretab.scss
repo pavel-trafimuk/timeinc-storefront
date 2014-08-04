@@ -1,0 +1,318 @@
+@import "_variables/_WI.scss";
+
+$fontLight: "AvenirNext-Regular";
+$fontMedium: "AvenirNext-Medium";
+$fontBold: "AvenirNext-DemiBold";
+$fontHeavy: "AvenirNext-Bold";
+
+
+html, body {
+	background: $MAIN_BG_COLOR;
+	height: 100%;
+	width: 100%;
+	font-family: $MAIN_FONT;
+	margin: 0; padding: 0;
+}
+
+$buttonRed: rgb(221, 0 , 48);
+$buttonBlue: rgb(28, 146, 156);
+$buttonGrey: rgb(180, 180, 180);
+button, .button {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	font-family: $fontMedium;
+	font-size: 13px;
+	text-transform: uppercase;
+	color: #fff;
+	border-radius: 5px;
+	border: none;
+	padding: 0; margin: 0;
+}
+h1 {
+	font-family: $fontMedium;
+	font-weight: normal;
+	margin: 0;
+	padding: 15px 0 10px;
+	color: #111;
+	text-align: center;
+	font-size: 18px;
+	line-height: 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+h2 {
+	font-family: $fontMedium;
+	font-weight: normal;
+	color: #111;
+	text-align: center;
+	font-size: 16px;
+	line-height: 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding-bottom: 12px;
+	background: transparent url("../images/" + $BRAND_CODE + "/hr.png") bottom center no-repeat;
+	background-size: contain;
+	margin: 20px 20px 0;
+}
+.clear { clear: both; }
+
+/*
+ * Specific Element Styles:
+ */
+$pvContainerMargin: 15px;
+$coverImgShadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
+
+$heroCoverWidth: 160px;
+$heroHorzMargin: 35px;
+.this-months-feature {
+	position: relative;
+	padding: 0 $heroHorzMargin;
+	margin: 30px 0;
+}
+.hero-cover {
+	float: left;
+	width: $heroCoverWidth;
+	box-shadow: $coverImgShadow;
+}
+.hero-burst {
+	position: absolute;
+	top: -15px;
+	left: 15px;
+	width: 50px;
+	z-index: 2;
+}
+.hero-detail {
+	font-family: $fontMedium;
+	margin-left: $heroCoverWidth + $heroHorzMargin - 5px;
+}
+.hero-title-prefix {
+	font-family: $fontBold;
+	margin: 0;
+	font-size: 14px;
+	text-align: left;
+	text-transform: uppercase;
+}
+.hero-title {
+	font-family: $fontMedium;
+	font-size: 26px;
+	letter-spacing: 0;
+	text-align: left;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 0;
+	background: none;
+}
+.hero-description {
+	font-size: 14px;
+}
+.hero-price {
+	font-family: $fontMedium;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin: 0;
+	position: absolute;
+	bottom: 50px;
+	left: $heroCoverWidth + ($heroHorzMargin * 2) - 5px;
+	color: $buttonBlue;
+}
+.hero-button {
+	position: absolute;
+	bottom: 0;
+	left: $heroCoverWidth + ($heroHorzMargin * 2) - 5px;
+	padding: 0 40px;
+	height: 35px;
+	line-height: 35px;
+	background: $buttonBlue;
+}
+
+$coverBlockHeight: 180px;
+.cover-block {
+	height: $coverBlockHeight + 30px;
+	margin: 10px 20px;
+	background: #ccc url(../images/diag-line-maker-bg.png);
+	background-size: 5px 5px;
+	overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+}
+.pv-container {
+	-webkit-transform: translate3D(0,15px,0);
+    height: $coverBlockHeight;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+    -webkit-overflow-scrolling: none;
+    white-space: normal;
+    margin: 0 $pvContainerMargin 0 0;
+    box-shadow: $coverImgShadow;
+    &:first-child {
+    	margin-left: $pvContainerMargin;
+    }
+}
+.pv-cover {
+	height: $coverBlockHeight;
+}
+.disabled .pv-cover {
+	opacity: 0.3;
+}
+
+
+.dialog {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 999;
+}
+.dod-dialog-box {
+	position: absolute;
+	top: 30px; bottom: 30px;
+	left: 20px; right: 20px;
+	background: #fff;
+}
+$dodCloseBtnSize: 26px;
+.dod-close-button {
+	display: block;
+	height: $dodCloseBtnSize;
+	width: $dodCloseBtnSize;
+	line-height: $dodCloseBtnSize - 2px;
+	text-align: center;
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	background: #444;
+	font-weight: 400;
+	text-decoration: none;
+	color: #fff;
+	border-radius: 100%;
+	border: 2px solid #fff;
+	box-shadow: 2px 2px 6px rgba(0,0,0,0.75);
+	font-size: 30px;
+	z-index: 1;
+}
+$dodImageHeight: 693px;
+.dod-images {
+	height: $dodImageHeight + 30px;
+	overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    text-align: center;
+}
+.dod-cover-container {
+	-webkit-transform: translate3D(0,10px,0);
+    height: $dodImageHeight;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+    -webkit-overflow-scrolling: none;
+    white-space: normal;
+    margin: 0 15px 0 0;
+    &:first-child {
+    	margin-left: 15px;
+    }
+}
+.dod-cover-img {
+	height: $dodImageHeight;
+}
+.dod-product-info {
+	margin: 15px 220px 0 20px;
+}
+.dod-title {
+	font-family: $fontMedium;
+	font-weight: normal;
+	letter-spacing: 1px;
+	margin: 0 0 10px;
+	font-size: 20px;
+	text-transform: uppercase;
+	color: #555;
+}
+.dod-description {
+	font-family: $fontMedium;
+	margin: 0;
+	font-size: 14px;
+}
+.dod-cta {
+	position: absolute;
+	bottom: 80px;
+	right: 20px;
+	width: 190px;
+}
+.dod-button {
+	width: 190px;
+	height: 35px;
+	line-height: 35px;
+	&.appstore {
+		background: $buttonRed;
+	}
+	&.subscribe {
+		background: $buttonBlue;
+	}
+	&.download {
+		background: $buttonRed;
+	}
+	&.view {
+		background: $buttonGrey;
+	}
+}
+
+.sd-dialog-box {
+	position: fixed;
+	top: 200px;
+    left: 50%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, .95);
+    color: #000000;
+    text-align: center;
+    -webkit-border-radius: 8px;
+    
+    width: 330px;
+    margin-left: -177px;
+
+    font-family: "Helvetica Neue", "Arial", "sans-serif";
+
+    button {
+        width: 100%;
+        padding: 6px 25px;
+        background: none;
+        opacity: 0.85;
+        border: none;
+        border-top: 1px solid #ccc;
+        
+        color: #007aff;
+        font-family: "Helvetica Neue", "Arial", "sans-serif";
+        font-size: 18px;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        text-transform: capitalize;
+    }
+}
+.sd-title {
+	margin: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top:10px;
+}
+.sd-description {
+    font-size: 16px;
+    margin: 0px 0px 20px;
+    text-align: left;
+    line-height: 120%;
+    padding: 8px 20px;
+}
+.sd-subscribe-button {
+    position: relative;
+    padding: 10px;
+    color:#007aff;
+    font-size:16px;
+    border-top: 1px solid #CCC;
+    opacity: 0.85;
+    display:block;
+    height: 21px;
+}

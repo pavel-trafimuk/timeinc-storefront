@@ -6,7 +6,7 @@ tmpl_file = sys.argv[1]
 out_file = sys.argv[2]
 js_files = sys.argv[3:]
 
-DEV_MODE = ".dev." in out_file
+DEV_MODE = ".dev." in out_file or os.environ.get("DEV", 'false').lower() == "true"
 prefix = os.environ.get("REMOTE_ASSET_PREFIX", "")
 mag_code = os.environ.get("MAG_CODE", "")
 css_hash = os.environ.get("CSS_HASH", str(int(time.time())))

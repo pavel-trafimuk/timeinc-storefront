@@ -1,0 +1,94 @@
+.amex-issue-preview {
+    .container {
+        position: absolute;
+        top:30px; bottom: 30px;
+        left: 20px; right: 20px;
+        z-index: 999;
+        background: $HERO_BG_COLOR;
+    }
+    $closeBtnSize: 26px;
+    .close-btn {
+        display: block;
+        height: $closeBtnSize;
+        width: $closeBtnSize;
+        line-height: $closeBtnSize - 2px;
+        text-align: center;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: #444;
+        font-weight: 400;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 100%;
+        border: 2px solid #fff;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.75);
+        font-size: 30px;
+        z-index: 1;
+    }
+    .horz-scrollable {
+        height: 723px;
+        overflow-y: hidden;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        text-align: center;
+    }
+    .img-container {
+        -webkit-transform: translate3D(0, 10px, 0);
+        height: 693px;
+        display: inline-block;
+        box-sizing: border-box;
+        margin: 0;
+        overflow: hidden;
+        -webkit-overflow-scrolling: none;
+        white-space: normal;
+        margin: 0 15px 0 0;
+        &:first-child {
+            margin-left: 15px;
+        }
+        img {
+            height: 693px;
+        }
+    }
+    
+    .controls {
+        
+    }
+    
+    .buy-issue-button {
+        position: absolute;
+        bottom: 0; right: 0;
+        width: 180px;
+        margin: 15px;
+        background: rgb(145, 145, 145);
+        color: #fff;
+        font-size: 12px;
+        line-height: 28px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-family: $MAIN_FONT;
+        border-radius: 4px;
+        border-width: 0px;
+        &[data-action=buy] {
+            background: rgb(221, 0 , 48);
+        }
+        &[data-action=download],
+        &[data-action=downloadfree] {
+            background: rgb(28, 146, 156);
+        }
+        &[data-action=unavailable] {
+            background: rgb(180, 180, 180);
+        }
+    }
+    header {
+        margin: 15px;
+        text-transform: uppercase;
+        font-family: $HEADLINE_FONT;
+    }
+    p {
+        margin: 15px;
+        font-size: 14px;
+    }
+}
+

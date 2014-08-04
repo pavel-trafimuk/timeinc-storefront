@@ -1,0 +1,70 @@
+{
+  "featured": {
+    "description": "Our editors logged thousands of miles to put together T&L\u2019s 2013 It List: 61 new hotels from Brooklyn to Brazil.", 
+    "title": "Coolest New Hotels", 
+    "price": "$0.99", 
+    "cover": "covers/2x_1380647170997.jpg", 
+    "images": [
+      "covers/2x_1378907097376.jpg", 
+      "covers/2x_1376515020744.jpg", 
+      "covers/2x_1376515021274.jpg", 
+      "covers/2x_1376515020135.jpg"
+    ], 
+    "productID": "TLWG2013"
+  }, 
+  "products": [
+    {
+      "description": "Our editors selected 50 getaways: a laid-back outpost in Mexico, a Cape Code classic, a secret European hideaway \u2013 all for under $300 a night.", 
+      "title": "50 Affordable Beach Escapes", 
+      "price": "$1.99", 
+      "cover": "covers/2x_1378906961866.jpg", 
+      "images": [
+        "covers/2x_1380116315002.jpg", 
+        "covers/2x_1376514958479.jpg", 
+        "covers/2x_1376514959056.jpg", 
+        "covers/2x_1376514959556.jpg", 
+        "covers/2x_1376514960024.jpg"
+      ], 
+      "productID": "TLSPECIAL012013"
+    }, 
+    {
+      "description": "From Maine to California, make the most of a quick trip with our insider tips on the best places to eat, stay, and play.", 
+      "title": "Easy Weekend Getaways", 
+      "price": "$0.99", 
+      "cover": "covers/2x_1378907097188.jpg", 
+      "images": [
+        "covers/2x_1378907097376.jpg", 
+        "covers/2x_1376515020744.jpg", 
+        "covers/2x_1376515021274.jpg", 
+        "covers/2x_1376515020135.jpg"
+      ], 
+      "productID": "TLWG2013"
+    }, 
+    {
+      "description": "A taste of T&L: inspiration for your next trip; insider tips on hotels, restaurants, and activities; and strategies for traveling smarter.", 
+      "title": "Free Preview Issue", 
+      "price": "free", 
+      "cover": "covers/2x_1381421300349.jpg", 
+      "images": [
+        "covers/2x_1378907097376.jpg", 
+        "covers/2x_1376515020744.jpg", 
+        "covers/2x_1376515021274.jpg", 
+        "covers/2x_1376515020135.jpg"
+      ], 
+      "productID": "TLWG2013"
+    }, 
+    {
+      "description": "The top hotels, resorts, cruise lines, airlines, destinations, travel companies, and more, as chosen by our readers.", 
+      "title": "World\u2019s Best", 
+      "price": "$0.99", 
+      "cover": "covers/2x_1380727542491.jpg", 
+      "images": [
+        "covers/2x_1380727542648.jpg", 
+        "covers/2x_1380727543211.jpg", 
+        "covers/2x_1380727543743.jpg", 
+        "covers/2x_1380727544228.jpg"
+      ], 
+      "productID": "TLWB2013"
+    }
+  ]
+}

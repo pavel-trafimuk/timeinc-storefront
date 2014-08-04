@@ -26,5 +26,5 @@ TZ Time India
 FZ Fortune India
 FI Fortune Europe
 FA Fortune Asia Pacific
-
-
+WI Food and Wine
+LE Travel and Leisure

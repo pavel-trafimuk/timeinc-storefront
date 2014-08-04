@@ -14,7 +14,7 @@
 
       this.hero_view = new hero_view();
       this.issues_view = new issues_view();
-      this.$el.addClass("scrollable");
+      //this.$el.addClass("scrollable");
 
       if (settings.store_show_banners) {
         this.$el.addClass("make-banner-space");

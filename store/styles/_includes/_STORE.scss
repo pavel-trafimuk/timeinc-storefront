@@ -3,7 +3,9 @@
 
 @import "_includes/_store_view.scss";
 @import "_includes/_store_hero_view.scss";
+@import "_includes/_amex_hero.scss";
 @import "_includes/_store_issues_view.scss";
+@import "_includes/_store_amex_issues_view.scss";
 @import "_includes/_issue_cover.scss";
 
 @import "_includes/_store_banners.scss";
@@ -17,6 +19,7 @@
 @import "_includes/_straight_to_sample_dialog.scss";
 @import "_includes/_loading.scss";
 @import "_includes/_issue_preview_image.scss";
+@import "_includes/_amex_issue_preview.scss";
 @import "_includes/_first_load_popup.scss";
 
 @import "_includes/_repl.scss";
@@ -26,11 +29,9 @@ html, body {
     margin: 0; padding: 0;
     height: 100%;
     width: 100%;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
     font-family: $MAIN_FONT;
     font-size: 16px;
-    background: #F9F9F9;
+    background: $MAIN_BG_COLOR;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: $HEADLINE_FONT;

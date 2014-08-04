@@ -87,25 +87,46 @@ building() {
 render_in_place() {
   MAG_CODE=$TITLE REMOTE_ASSET_PREFIX=$REMOTE_ASSET_PREFIX python bin/render_index.py "$1" "$1"
 }
+banner_render_in_place() {
+  DEV=true MAG_CODE=$TITLE python \
+    bin/render_index.py "$1" "$1" \
+    "../../../lib/jquery.js" \
+    "$2" \
+    "../../../settings/$TITLE.js" "../../../settings/settings_loader.js" \
+    "../../../lib/lucie_entitlements.js"
+}
+
 compile() {
   (cd "$DEVDIR/styles" && compass compile $TITLE\-*.scss)
-  mv "$DEVDIR/css/$TITLE-store.css" "$DEVDIR/css/main.css"
-  mv "$DEVDIR/css/$TITLE-myaccount.css" "$DEVDIR/css/myaccount.css"
-  mv "$DEVDIR/css/$TITLE-lucie-library.css" "$DEVDIR/css/lucie-library.css"
+
+  pushd "$DEVDIR/css"
+  for cssfile in $TITLE-*.css; do
+    mv "$cssfile" "${cssfile:3}"
+  done
+
+  mv store.css main.css
+  popd
   
   # render the index.html.tmpl file
   MAG_CODE=$TITLE python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.mockapi.dev.html" ${DEVJSFILES[@]}
   MAG_CODE=$TITLE python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.dev.html" "lib/AdobeLibraryAPI.js" ${DEVJSFILES[@]}
 
-  for BANNER in $(find "$DEVDIR/banners/" -iname "*.html"); do
-    render_in_place "$BANNER"
+  # dev banners
+  cp -R "$DEVDIR/banners/$TITLE" "$DEVDIR/dev-banners"
+  for BANNER in $(find "$DEVDIR/dev-banners" -iname "*.html"); do
+    banner_render_in_place "$BANNER" "../../../lib/MockAPI.js"
+  done
+
+  # real banners
+  for BANNER in $(find "$DEVDIR/banners/$TITLE" -iname "*.html"); do
+    banner_render_in_place "$BANNER" "../../../lib/AdobeLibraryAPI.js"
   done
   
-  for HELPGUIDE in $(find "$DEVDIR/helpguides/" -iname "*.html"); do
+  for HELPGUIDE in $(find "$DEVDIR/helpguides/$TITLE" -iname "*.html"); do
     render_in_place "$HELPGUIDE"
   done
   
-  for DINSERT in $(find "$DEVDIR/inserts/" -iname "*.html"); do
+  for DINSERT in $(find "$DEVDIR/inserts/$TITLE" -iname "*.html"); do
     render_in_place "$DINSERT"
   done
 
@@ -115,7 +136,7 @@ compile() {
   
   # minify js
   cd $DEVDIR
-python - ${PRODJSFILES[@]} <<END | uglifyjs > $BUILDROOT/$DEPLOYDIR/main.min.js
+python - ${PRODJSFILES[@]} <<END | uglifyjs --screw-ie8 --compress="sequences=true,properties=false,dead_code=true,drop_debugger=true,conditionals=true,comparisons=true,evaluate=true,booleans=true,loops=true,unused=true,hoist_funs=true,hoist_vars=true,if_return=true,join_vars=true,cascade=true,unsafe=true" --define="DEBUG=false" --mangle="sort=true" > $BUILDROOT/$DEPLOYDIR/main.min.js
 import sys
 for f in sys.argv[1:]:
     sys.stdout.write(open(f).read());
@@ -126,9 +147,11 @@ END
 
   # copy css and assets
   mkdir $DEPLOYDIR/css
-  cp $DEVDIR/css/main.css $DEPLOYDIR/css/main.css
-  cp $DEVDIR/css/myaccount.css $DEPLOYDIR/css/myaccount.css
-  cp $DEVDIR/css/lucie-library.css $DEPLOYDIR/css/lucie-library.css
+  cp -R $DEVDIR/css $DEPLOYDIR
+
+  for CSSFILE in $(find $DEVDIR/css -iname "*.css"); do
+    cleancss "$CSSFILE" > "$DEPLOYDIR/css/$(basename "$CSSFILE")"
+  done
 
   mkdir $DEPLOYDIR/images
   cp $DEVDIR/images/*.* $DEPLOYDIR/images
@@ -138,6 +161,7 @@ END
   cp $DEVDIR/index.prod.html $DEPLOYDIR/index.html
 
   cp -r lib $DEPLOYDIR/lib
+  cp lib/* $DEVDIR/lib
 
   mkdir $DEPLOYDIR/settings
   cp -r $DEVDIR/settings/${TITLE}.js $DEPLOYDIR/settings
@@ -154,14 +178,14 @@ END
   cp -r $DEVDIR/appstore_links $DEPLOYDIR
   
   render_in_place "$DEPLOYDIR/lucie-library.html"
-  render_in_place "$DEPLOYDIR/myaccount/index.html"
-  render_in_place "$DEPLOYDIR/autologin/index.html"
-  render_in_place "$DEPLOYDIR/myaccount/itunes-subscriber.html"
-  render_in_place "$DEPLOYDIR/myaccount/non-itunes-subscriber.html"
-  render_in_place "$DEPLOYDIR/myaccount/not-sure-subscriber.html"
-  render_in_place "$DEPLOYDIR/myaccount/support-links.js"
-  render_in_place "$DEPLOYDIR/myaccount/restoreissues.html"
-  render_in_place "$DEPLOYDIR/myaccount/restoreissues.es.html"
+
+  for MYACCTPAGE in $(find "$DEPLOYDIR/myaccount/" -iname "*.html"); do
+    render_in_place "$MYACCTPAGE"
+  done
+  for MYACCTPAGE in $(find "$DEPLOYDIR/myaccount/" -iname "*.js"); do
+    render_in_place "$MYACCTPAGE"
+  done
+
 }
 
 ################################################################################
@@ -184,6 +208,7 @@ js_lib 'moment.js'
 js_lib 'underscore.js'
 js_lib 'backbone.js'
 js_lib 'handlebars.runtime.js'
+js_lib 'slideshow.js'
 
 dev_lib 'tcm_devtools.js'
 

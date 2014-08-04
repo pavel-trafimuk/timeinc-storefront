@@ -1,10 +1,13 @@
 @import "_variables/defaults.scss";
 
-$BRAND_CODE: "TZ";
-$ACCENT_COLOR: #db2817;
+$BRAND_CODE: "LE";
+$HEADLINE_FONT: "Avenir Next";
+$MAIN_FONT: "Avenir Next";
+$MAIN_BG_COLOR: #fcfcfc;
+$MYACCOUNT_BG: "../images/LE/accountBG.jpg";
 
-$MYACCOUNT_STD_BTN_BG: -webkit-linear-gradient(top, #232425 53%,#020202 100%);
-$MYACCOUNT_HIGHLIGHTED_BTN_BG: -webkit-linear-gradient(top, #de1f16 53%,#b6191d 100%);
-$LUCIE_TOOLBAR_BG: -webkit-linear-gradient(top, #e92c23, #c61c14 3%, #97150f);
+$ACCENT_COLOR: rgb(221, 0 , 48);
 
-$BUTTON_SECONDARY_GRADIENT: linear-gradient(rgb(38,83,126), rgb(31,65,99));
+$AMEX_BANNER_BACKGROUND: #000000;
+$AMEX_BANNER_BTN_BG_COLOR: rgb(221, 0 , 48);
+$AMEX_BANNER_BTN_TXT_COLOR: #fff;

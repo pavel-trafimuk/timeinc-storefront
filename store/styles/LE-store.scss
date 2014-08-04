@@ -1,12 +1,29 @@
 @import "_variables/_LE.scss";
 @import "_includes/_STORE.scss";
 
-.first-load-popup {
-  @include first-load-popup(620px, 520px, "../images/" + $BRAND_CODE + "/first-load-popup.png");
-  .subscribe {
-    height: 55px; 
-    width: 394px;
-    top: 409px;
-    right: 113px;
-  }
+.banner-static {
+  box-shadow: inset 0 -2px rgba(0,0,0,0.04);
+}
+.sub-cta-primary {
+	font-family: "AvenirNext-DemiBold";
+	color: #fff;
+	font-size: 22px !important;
+	margin-top: 18px !important;
+}
+.sub-cta-secondary {
+	font-family: "AvenirNext-Regular";
+	color: $AMEX_BANNER_BTN_BG_COLOR;
+	font-size: 16px !important;
+	line-height: 18px !important;
+}
+.store-issues-amex-view .tap-to-preview {
+	font-family: "AvenirNext-Bold";
+}
+.store-issues-amex-view .tap-to-preview::before,
+.store-issues-amex-view .tap-to-preview::after {
+  display: none;
+}
+.store-issues-amex-view .tap-to-preview {
+	border-bottom: none;
+	margin-bottom: 0px;
 }

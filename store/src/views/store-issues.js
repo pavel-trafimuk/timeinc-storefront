@@ -1,3 +1,4 @@
+/* global App, Backbone, Handlebars, settings, _, $ */
 (function() {
   
   App.views.StoreIssues = Backbone.View.extend({
@@ -6,7 +7,8 @@
     events: {
       "tap .issue": "view_issue",
       "tap .bi-filter": "filter_back_issues",
-      "tap .buy-issue-button": "buy_issue"
+      "tap .buy-issue-button": "buy_issue",
+      "scroll": "hide_offscreen_covers"
     },
     initialize: function() {
       console.log("App.views.StoreIssues initializing");
@@ -23,9 +25,9 @@
       var that = this;
       cb = cb || $.noop;
 
-        var cx = { 
+        var cx = {
               issues: that.get_issues(),
-              settings: settings 
+              settings: settings
             };
         that.$el.html(that.template(cx));
         that.$(".cover-img").imgPlaceholder();
@@ -34,14 +36,14 @@
         that.$('[data-filter="' + that.filter_type + '"]').addClass("active");
 
         _.each(cx.issues, function(issue) {
-          if (issue.updatedSignal.has(that._debounce_render)) return; 
+          if (issue.updatedSignal.has(that._debounce_render)) return;
           issue.updatedSignal.add(that._debounce_render);
         });
         cb();
       return this;
     },
     get_issues: function() {
-      var that = this;
+      var that = this,
           back_issues = App.api.libraryService.get_back_issues();
 
       if (that.filter_type) {
@@ -61,9 +63,8 @@
       return _.first(back_issues, settings.max_back_issues);
     },
     animate: function(cb) {
-      var that = this,
-          cb = cb || $.noop;
-      cb(); 
+      cb = cb || $.noop;
+      cb();
     },
     view_issue: function(evt) {
       App.omni.event("st_preview_taps");
@@ -79,7 +80,7 @@
           product_id = $this.data("productId"),
           folio = App.api.libraryService.get_by_productId(product_id);
 
-      new App.views.IssuePreviewImage(folio);
+      App.views.show_folio_detail(folio);
     },
     view_issue_native_preview: function(evt) {
       var $this = $(evt.currentTarget),
@@ -139,6 +140,9 @@
         }
       });
       return false;
+    },
+    hide_offscreen_covers: function() {
+      this.$("")
     }
   });
 

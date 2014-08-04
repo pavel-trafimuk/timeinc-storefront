@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> </title>
+<link rel="stylesheet" href="../css/myaccount.css" />
+
+<script type="text/javascript">
+	document.addEventListener("touchmove", function(evt) {
+ 	 evt.preventDefault();
+	});
+
+    function go(URL){
+      window.location.href=URL+ "?v={{BUILD_TIME}}";
+    }
+
+</script>
+  <script type="text/javascript" src="../lib/jquery.js"></script>
+  <script type="text/javascript" src="../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="../settings/settings_loader.js?v={{BUILD_TIME}}"></script>
+</head>
+
+<body >
+
+  <div class="wrap">
+    <div class="content">
+      <p class="title">I Am A Print Subscriber</p>
+      <p>Confirm your print subscription account by</p>
+      <script type="text/javascript">
+        document.write(
+          '<p><a id="mailingAddress" href="' + settings.myacctAmexMailingAddressURL + '" class="blue-btn">' + settings.myacctAmexMailingAddress + '</a></p>' +
+          '<p><a id="accountNumber" href="' + settings.myacctAmexAccountNumberURL + '" class="blue-btn">' + settings.myacctAmexAccountNumber + '</a></p>'
+        );
+      </script>
+    </div>
+
+    <footer>
+      <script type="text/javascript">
+        var footer_html = ''.concat(
+          '<a href="#" onclick="go(settings.privacyPolicyUrl)">' + settings.authPrivacyLinkText + '</a>',
+          ' | <a href="#" onclick="go(settings.licenceAgreementUrl)">' + settings.authLicenseLinkText + '</a>',
+          ' | <a href="#" onclick="go(settings.termsOfUseUrl)">' + settings.authTermsLinkText + '</a>'
+        );
+        document.write(footer_html);
+      </script>
+    </footer>
+ 
+   <script type="text/javascript" src="myaccountOmni.js"></script>
+   <script type="text/javascript">
+     (function() {
+      //myAccount.track_page_view("My Account | Amex Address or Account Number");
+     
+  
+      $("#subscribedElsewhere").click(function(evt) {
+          evt.preventDefault();
+          var goTo = this.getAttribute("href");
+          //myAccount.track_user_action("My Account|Not Sure Subscriber Page|I Subscribed Elsewhere", "myaccount_taps_subscribedElsewhere");
+          setTimeout(function(){go(goTo);}, 100);
+       });
+              
+    })();
+   </script>
+  <script type="text/javascript" src="support-links.js"></script>
+ 
+ </div>
+
+ 
+</body>
+</html>
+

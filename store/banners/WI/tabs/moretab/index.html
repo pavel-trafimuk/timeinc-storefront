@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>More</title>
+    <meta name="viewport" content="width=device-width">
+    
+    <link rel="stylesheet" href="../../../css/moretab.css?v={{BUILD_TIME}}" />
+
+    <script type="text/template" id="hero-template">
+      <img src="badge-new.png" class="hero-burst">
+      <a href="<%= buylink %>" target="_blank"
+        ><img src="<%= cover %>" class="hero-cover"></a>
+      <div class="hero-detail">
+        <h3 class="hero-title-prefix">This Month’s Feature</h3>
+        <h2 class="hero-title"><%= title %></h2>
+        <p class="hero-description"><%= description %></p>
+        <p class="hero-price"><%= price %></p>
+        <a class="button hero-button" target="_blank"
+            href="<%= buylink %>">Purchase</a>
+      </div>
+      <div class="clear"></div>
+    </script>
+
+    <script type="text/template" id="product-template"><%
+      %><img src="<%= cover %>" class="pv-cover"><%
+    %></script>
+
+    <script type="text/template" id="overlay-template">
+      <div class="dod-dialog-box">
+        <a href="#" class="dod-close-button">&times;</a>
+        <div class="dod-images">
+          <% _.each(images, function(image) { %><%
+            %><div class="dod-cover-container">
+              <img class="dod-cover-img" src="<%= image %>">
+            </div><%
+          %><% }); %>
+        </div>
+        <div class="dod-product-info">
+          <h3 class="dod-title"><%= title %></h3>
+          <p class="dod-description"><%= description %></p>
+        </div>
+        <div class="dod-cta">
+          <a href="<%= buttonHref %>"
+              class="dod-button button <%= buttonClass %>"
+              target="_blank"
+              ><%= buttonText %></a>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/template" id="subscribe-dialog-template">
+      <div class='sd-dialog-box'>
+          <p class='sd-title'><%= settings.subscribeTo %> <%= settings.brandName %></p>
+          <p class='sd-description'><%= settings.subscribeOfferText %></p>
+          <% _.each(subscriptions, function(sub) { %>
+              <div class='sd-subscribe-button' id='<%= sub.productId %>'>
+                  <%= sub.duration %> - <%= sub.price %>
+              </div>
+          <% }); %>
+          <button class="sd-close-button"><%= settings.subscribeCancel %></button>
+      </div>
+    </script>
+
+    {{JS_FILES}}
+    <script type="text/javascript" src="../../../lib/underscore.js"></script>
+    <script type="text/javascript" src="../../../lib/backbone.js"></script>
+
+    <script type="text/javascript" src="./views/product.js"></script>
+</head>
+<body>
+   
+  <h1>
+    More From<br>
+    <img src="logo.png" width=350>
+  </h1>
+
+  <div class="this-months-feature"></div>
+
+  <h2>E-Books And Mobile Apps</h2>
+  <div class="digital-products cover-block"></div>
+  
+  <h2>Free Digital Content For Subscribers</h2>
+  <div class="free-content cover-block disabled"></div>
+   
+  <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="moretab.js?v={{BUILD_TIME}}"></script>
+  <script>
+    setTimeout(function() {
+      location.reload(true);
+    }, 10000);
+</body>
+</html>
