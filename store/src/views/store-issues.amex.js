@@ -37,10 +37,6 @@
       that.$(".bi-filter").removeClass("active");
       that.$('[data-filter="' + that.filter_type + '"]').addClass("active");
 
-      _.each(cx.issues, function(issue) {
-        if (issue.updatedSignal.has(that._debounce_render)) return; 
-        issue.updatedSignal.add(that._debounce_render);
-      });
       cb();
 
       return this;
