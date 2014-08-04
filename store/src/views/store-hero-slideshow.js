@@ -5,10 +5,12 @@
     className: "store-hero-slideshow-view",
     template: Handlebars.templates["store-hero-slideshow.tmpl"],
     events: {
+      "tap .do-buy": "buy_issue",
+      "tap .do-preview": "goto_preview_issue",
+      "tap .do-subscribe": "subscribe",
+      
       "tap .buy-issue-button": "buy_issue",
-
       "tap .issue-cover": "goto_preview",
-
       "tap .preview": "goto_preview_issue",
       "tap .subscribe": "subscribe",
       "tap .in-this-issue article": "goto_itii",
