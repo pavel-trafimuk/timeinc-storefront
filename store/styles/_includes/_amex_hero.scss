@@ -12,6 +12,7 @@ $AMEX_HERO_BASE_HEIGHT: 380px;
       display: none;
     }
   }
+
   
   .carousel {
     overflow: hidden;
@@ -86,5 +87,8 @@ $AMEX_HERO_BASE_HEIGHT: 380px;
     font-size: 13px;
     padding: 0px 20px;
     font-weight: 600;
+  }
+  .btn-depressed .btn {
+    opacity: 0.35;
   }
 }
