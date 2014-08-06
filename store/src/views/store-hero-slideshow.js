@@ -160,9 +160,7 @@
     },
     buy_issue: function(evt) {
       var that = this,
-          $this = $(evt.currentTarget),
-          $progress = this.$(".issue-cover"),
-          $curl = this.$(".page-curl");
+          $this = $(evt.currentTarget);
 
       App.omni.event("st_"+$this.data("action")+"_taps");
       this.disable_rendering = true;
@@ -178,31 +176,20 @@
       }
 
       $this.addClass("btn-depressed");
-      $curl.hide();
-      $progress.addClass("progress")
-      $progress.attr("data-label", settings.progressStarting);
       
       App.api.libraryService.get_touted_issue().purchase_and_download({
-        complete: function() {
-          $progress.attr("data-label", settings.progressOpening);
-        },
-        download_progress: function(progress) {
-          $progress.attr("data-label", settings.progressDownloading);
-          $(".progress-bar", $progress).css("width", progress+"%");
-        },
+        complete: function() {},
+        download_progress: function(progress) {},
         error: function(error_code) {
           if (error_code < 0) {
             new App.dialogs.ErrorMsg({error_code: error_code});
           }
-          $progress.attr('data-label', '').removeClass("progress");
+          
           $this.removeClass("btn-depressed");
-          $curl.show();
           that.disable_rendering = false;
         },
         cancelled: function() {
-          $progress.attr('data-label', '').removeClass("progress");
           $this.removeClass("btn-depressed");
-          $curl.show();
           that.disable_rendering = false;
         }
       });
