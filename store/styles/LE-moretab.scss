@@ -195,6 +195,9 @@ $dodImageHeight: 693px;
 	width: 180px;
 	height: 35px;
 	line-height: 35px;
+	&.buy {
+		background: $buttonRed;
+	}
 	&.appstore {
 		background: $buttonRed;
 	}

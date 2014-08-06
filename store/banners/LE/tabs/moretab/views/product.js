@@ -54,6 +54,7 @@ DetailOverlayDialog = Backbone.View.extend({
 		"click .dod-button.appstore": "open_link",
 		"click .dod-button.subscribe": "subscribe",
 		"click .dod-button.download": "download",
+		"click .dod-button.buy": "download",
 		"click .dod-close-button": "close"
 	},
 	initialize: function() {
