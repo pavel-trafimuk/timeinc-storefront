@@ -2,6 +2,7 @@
 // One of the big benefits of using a js file instead of json for settings
 // is the ability to add comments
 window.settings = {
+    "DPS_VERSION"                : "r30",
 
     // General settings
     "brandName"                  : "TRAVEL & LEISURE",

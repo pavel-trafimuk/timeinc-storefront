@@ -163,6 +163,9 @@ END
   cp -r lib $DEPLOYDIR/lib
   cp lib/* $DEVDIR/lib
 
+  cp "$DEVDIR/lib/AdobeLibraryAPI.$(bin/getsetting DPS_VERSION $TITLE).js" "$DEVDIR/lib/AdobeLibraryAPI.js"
+  cp "$DEPLOYDIR/lib/AdobeLibraryAPI.$(bin/getsetting DPS_VERSION $TITLE).js" "$DEPLOYDIR/lib/AdobeLibraryAPI.js"
+
   mkdir $DEPLOYDIR/settings
   cp -r $DEVDIR/settings/${TITLE}.js $DEPLOYDIR/settings
   cp -r $DEVDIR/settings/settings_loader.js $DEPLOYDIR/settings
@@ -185,7 +188,6 @@ END
   for MYACCTPAGE in $(find "$DEPLOYDIR/myaccount/" -iname "*.js"); do
     render_in_place "$MYACCTPAGE"
   done
-
 }
 
 ################################################################################
@@ -194,7 +196,7 @@ END
 
 building 'store'
 
-prod_lib 'AdobeLibraryAPI.js'
+prod_lib "AdobeLibraryAPI.$(bin/getsetting DPS_VERSION $TITLE).js"
 dev_lib 'MockAPI.js'
 
 js_lib 'jquery.js'
