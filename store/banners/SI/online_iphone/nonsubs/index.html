@@ -79,7 +79,7 @@
        }
       
       .subscribe {
-        background-image: url('subscribe-half.png?v={{BUILD_TIME}}') !important;
+        background-image: url('subscribe-half-bg.png?v={{BUILD_TIME}}') !important;
       }
       
       .preview {
@@ -89,6 +89,12 @@
       .print {
         background-image: url('PrintSubscriber.png?v={{BUILD_TIME}}') !important;
         background-color: #e51a2e;
+      }
+      
+      img {
+        width: 100%;
+        height: auto;
+        margin-top: -10px;
       }
       
       .banner{                 
@@ -136,7 +142,7 @@
           
           <!-- Subscribe slide -->
           <div class="slide subscribe">
-            <a href="#"></a>
+            <a href="#"><img src="subscribe-half.png?v={{BUILD_TIME}}" border="0"/></a>
           </div>
           
           <!-- Print Subsriber slide -->

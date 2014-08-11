@@ -83,11 +83,17 @@
       }
       
       .subscribe {
-        background-image: url('subscribe-half.png?v={{BUILD_TIME}}') !important;
+        background-image: url('subscribe-half-bg.png?v={{BUILD_TIME}}') !important;
       }
       
       .preview {
         background-image: url('FreeSample.png?v={{BUILD_TIME}}') !important;
+      }
+      
+      img {
+        width: 100%;
+        height: auto;
+        margin-top: -10px;
       }
       
       .banner{                 
@@ -134,7 +140,7 @@
         <div class="slides">
           <div class="slide subscribe">
             <!-- Subscribe slide -->
-            <a href="#"></a>
+            <a href="#"><img src="subscribe-half.png?v={{BUILD_TIME}}" border="0"/></a>
           </div>
           
           <div class="slide preview">
@@ -152,7 +158,7 @@
   <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
     
-    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
+    //document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
     
     (function() {
       libBanner.track_page_view("Library|Banner|Nonsubscriber");
@@ -167,7 +173,7 @@
         gallery.cancelAutoSlide();
 
         libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
-        libBanner.buy_sub("com.timeinc.essence.ipad.subs.9");
+        libBanner.buy_sub("com.aexp.ereader.kiosk.fw.subs.9");
       });
     })();
   </script>
