@@ -27,6 +27,8 @@ window.settings = {
     "echo_bundle_id"             : "com_timeinc_tfk_ipad_inapp",
     "echo_token"                 : "0e8bd8a8f5ed2e87a0452bf35cc9956507c62a76",
     
+    "eMagsAppId": "TFKFAMIPAD",
+    
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "72d2d1c5b5aa4f13b195f52723943046",
     "appId"                      : "com.timeinc.tfk.ipad.inapp",
