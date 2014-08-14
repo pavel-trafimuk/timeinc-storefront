@@ -79,7 +79,10 @@
           float: right !important;
        }
         
-       
+       .logo {
+          background-image: url('logo.png?v={{BUILD_TIME}}') !important;
+        }
+        
        /* iPad Portrait */
        @media only screen and (min-width:768px){           
           .subscribe {
@@ -156,9 +159,11 @@
         <div class="slides">
           
           <!-- Subscribe slide -->
-          <div class="slide subscribe"> 
+          <!--<div class="slide subscribe"> 
             <a href="#"></a>
-          </div>
+          </div>-->
+          
+          <div class="slide logo"></div>
           
         </div>
      </div>

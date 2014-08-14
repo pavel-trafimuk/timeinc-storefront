@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
        body{
-          background: #fff;
+          background: #000;
           margin: 0px;
           padding: 0px;
        }
@@ -78,6 +78,10 @@
           float: right !important;
        }
          
+      .logo {
+        background-image: url('logo.png?v={{BUILD_TIME}}') !important;
+      }
+      
       .print {
         background-image: url('PrintSubscriber.png?v={{BUILD_TIME}}') !important;
       }
@@ -119,7 +123,7 @@
        }
 
        /* HACK: */
-       .logo { background-color: #fff; } 
+       .logo { background-color: #000; } 
 
        
        
@@ -139,9 +143,9 @@
      <div class="banner carousel">
         <div class="slides">
           <!-- Subscribe slide -->
-          <div class="slide subscribe">
+          <!--<div class="slide subscribe">
             <a href="#"><img src="subscribe-half.png?v={{BUILD_TIME}}" border="0"/></a>
-          </div>
+          </div>-->
           
           <!--Free preview slide -->
           <!--<div class="slide preview"></div>-->
@@ -150,6 +154,8 @@
           <!--<div class="slide print">
             <a href="#" id="banner-link"></a>
           </div>-->
+          
+          <div class="slide logo"></div>
         </div>
      </div>
    </div>

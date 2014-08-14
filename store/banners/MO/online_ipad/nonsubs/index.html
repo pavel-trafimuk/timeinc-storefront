@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width">
         <style>
            body{
-              background: #eaeaea;
+              background: #000000;
               margin: 0px;
               padding: 0px;
            }
@@ -89,7 +89,7 @@
               float: right !important;
            }
             
-           
+        
            /* iPad Portrait */
            @media only screen and (min-width:768px){           
               .subscribe {
@@ -98,6 +98,10 @@
               
               .retina {
                 background-image: url('Retina_portrait.png?v={{BUILD_TIME}}') !important;
+              }
+              
+              .logo {
+                background-image: url('portrait.png?v={{BUILD_TIME}}') !important;
               }
               
               .banner{                 
@@ -125,6 +129,10 @@
               
               .retina {
                 background-image: url('Retina_landscape.png?v={{BUILD_TIME}}') !important;
+              }
+              
+              .logo {
+                background-image: url('landscape.png?v={{BUILD_TIME}}') !important;
               }
               
               .banner{                 
@@ -162,9 +170,12 @@
        <div class="wrapper">
          <div class="banner carousel">
             <div class="slides">
-              <div class="slide subscribe"> <!-- Subscribe slide -->
+              <!-- Subscribe slide -->
+              <!--<div class="slide subscribe"> 
                 <a href="#"></a>
-              </div>
+              </div>-->
+              
+              <div class="slide logo"></div>
             </div>
          </div>
        </div>

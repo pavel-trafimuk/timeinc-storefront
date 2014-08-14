@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width">
         <style>
            body{
-              background: #eaeaea;
+              background: #064186;
               margin: 0px;
               padding: 0px;
            }
@@ -78,7 +78,10 @@
               float: right !important;
            }
             
-           
+           .logo {
+          background-image: url('logo.png?v={{BUILD_TIME}}') !important;
+        }
+        
            /* iPad Portrait */
            @media only screen and (min-width:768px){           
               .subscribe {
@@ -141,9 +144,12 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <div class="slide hasButtons subscribe"> <!-- Subscribe slide -->
+          <!-- Subscribe slide -->
+          <!--<div class="slide hasButtons subscribe">
             <a href="#"></a>
-          </div>
+          </div>-->
+          
+          <div class="slide logo"></div>
         </div>
      </div>
    </div>
