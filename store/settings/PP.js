@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "PP",
     "schedule"                   : "monthly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : true,
+    "enable_first_load_popup"    : false,
 
     "heroHeading"                : "En Esta Edición",
     

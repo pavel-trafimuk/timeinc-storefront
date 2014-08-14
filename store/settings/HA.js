@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "HA",
     "schedule"                   : "monthly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : true,
+    "enable_first_load_popup"    : false,
 
     "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
     "subscribeOfferText"         : "Subscribe now to get HEALTH on your iPad. Each issue is packed with smart and fun new ways to stay in great shape, look amazing and discover tasty (and healthy!) things to eat.",

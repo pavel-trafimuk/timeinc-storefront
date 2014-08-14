@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "TH",
     "schedule"                   : "monthly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : true,
+    "enable_first_load_popup"    : false,
     
     "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
     "subscribeOfferText"         : "Subscribe to THIS OLD HOUSE and get tips and advice from the experts on how to enhance & beautify your home in big and small ways!",

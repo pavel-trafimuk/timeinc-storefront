@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "TD",
     "schedule"                   : "weekly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : true,
+    "enable_first_load_popup"    : false,
     
     "heroHeading"                : "In This Issue",
     "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",

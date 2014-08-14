@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "TK",
     "schedule"                   : "weekly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : true,
+    "enable_first_load_popup"    : false,
     
     "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
     "subscribeOfferText"         : "Subscribe to TIME FOR KIDS FAMILY EDITION",
