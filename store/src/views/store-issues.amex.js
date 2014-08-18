@@ -4,7 +4,7 @@
     className: "store-issues-amex-view",
     template: Handlebars.templates["store-issues-amex.tmpl"],
     events: {
-      "tap .issue": "view_issue",
+      "tap .issue-cover": "view_issue",
       "tap .bi-filter": "filter_back_issues",
       "tap .buy-issue-button": "buy_issue"
     },
@@ -68,14 +68,14 @@
       }
     },
     view_issue_preview_image: function(evt) {
-      var $this = $(evt.currentTarget),
+      var $this = $(evt.currentTarget).closest(".issue"),
           product_id = $this.data("productId"),
           folio = App.api.libraryService.get_by_productId(product_id);
 
       App.views.show_folio_detail(folio);
     },
     view_issue_native_preview: function(evt) {
-      var $this = $(evt.currentTarget),
+      var $this = $(evt.currentTarget).closest(".issue"),
           product_id = $this.data("productId"),
           folio = App.api.libraryService.get_by_productId(product_id),
           $cover = $(".issue-cover", $this);
