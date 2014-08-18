@@ -42,7 +42,7 @@
     if (settings.signInForgotPasswordUrl && "{{MAG_CODE}}" != "TK") {
       document.write('<a href="#" id="forgotPassword" target="_blank" class="care-btn">' + settings.myacctForgotPassword + '</a>');
     }
-    if (!(/SK|AY|HA|CT|PP|MO|TH|FA|FI|FZ/).test("{{MAG_CODE}}")) {
+    if (!(/SK|AY|HA|CT|PP|MO|TH|FA|FI|FZ|WI|LE/).test("{{MAG_CODE}}")) {
       document.write('<a href="#" id="helpGuide" class="care-btn">'+settings.myacctHelpGuide+'</a>');
     }
   document.write('</p></div>');
