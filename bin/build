@@ -109,7 +109,7 @@ compile() {
   
   # render the index.html.tmpl file
   MAG_CODE=$TITLE python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.mockapi.dev.html" ${DEVJSFILES[@]}
-  MAG_CODE=$TITLE python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.dev.html" "lib/AdobeLibraryAPI.js" ${DEVJSFILES[@]}
+  MAG_CODE=$TITLE python bin/render_index.py "$DEVDIR/index.html.tmpl" "$DEVDIR/index.dev.html" "lib/AdobeLibraryAPI.$(bin/getsetting DPS_VERSION $TITLE).js" ${DEVJSFILES[@]}
 
   # dev banners
   cp -R "$DEVDIR/banners/$TITLE" "$DEVDIR/dev-banners"
@@ -119,7 +119,7 @@ compile() {
 
   # real banners
   for BANNER in $(find "$DEVDIR/banners/$TITLE" -iname "*.html"); do
-    banner_render_in_place "$BANNER" "../../../lib/AdobeLibraryAPI.js"
+    banner_render_in_place "$BANNER" "../../../lib/AdobeLibraryAPI.$(bin/getsetting DPS_VERSION $TITLE).js"
   done
   
   for HELPGUIDE in $(find "$DEVDIR/helpguides/$TITLE" -iname "*.html"); do
