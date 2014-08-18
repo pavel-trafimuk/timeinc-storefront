@@ -56,6 +56,7 @@ DetailOverlayDialog = Backbone.View.extend({
 		"click .dod-button.appstore": "open_link",
 		"click .dod-button.subscribe": "subscribe",
 		"click .dod-button.download": "download",
+		"click .dod-button.view": "view",
 		"click .dod-close-button": "close"
 	},
 	initialize: function() {
@@ -71,23 +72,23 @@ DetailOverlayDialog = Backbone.View.extend({
 			link = this.model.get("link");
 		
 		cx.buttonHref = "#";
+
+		try {
+			var folio = libBanner.api.libraryService.folioMap.getByProductId(product_id);
+		} 
+		catch (err) {}
 		
-		if (product_id && !sub_status.is_sub) {
+		if (product_id && folio && folio.isViewable) {
+			cx.buttonText = "View";
+			cx.buttonClass = "view";
+		}
+		else if (product_id && !sub_status.is_sub) {
 			cx.buttonText = "Subscribe";
 			cx.buttonClass = "subscribe";
 		}
 		else if (product_id) {
 			cx.buttonText = "Download";
 			cx.buttonClass = "download";
-
-			try {
-				var folio = libBanner.api.libraryService.folioMap.getByProductId(product_id);
-				if (folio.isViewable) {
-					cx.buttonText = "View";
-					cx.buttonClass = "view";
-				}
-			} 
-			catch (err) {}
 		}
 		else if (this.model.is_ebook()) {
 			cx.buttonText = "Open In App Store";
@@ -120,6 +121,13 @@ DetailOverlayDialog = Backbone.View.extend({
 		
 		$btn.fadeTo(500, 0.3);
 		setTimeout(function() { $btn.fadeTo(2000, 0.3) }, 3000);
+		
+		libBanner.buy_issue(this.model.get("productID"));
+	},
+	view: function() {
+		var $btn = this.$(".dod-button");
+		
+		$btn.fadeTo(500, 0.3);
 		
 		libBanner.buy_issue(this.model.get("productID"));
 	},
