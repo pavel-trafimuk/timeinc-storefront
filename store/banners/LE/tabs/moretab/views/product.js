@@ -34,10 +34,26 @@ ProductView = Backbone.View.extend({
 	},
 	template: _.template($("#product-template").html()),
 	render: function() {
-		var cx = _.clone(this.model.attributes);
+		var cx = _.clone(this.model.attributes),
+			product_id = this.model.get("productID");
 		
 		cx.title = this.model.get("title");
 		cx.btn_text = this.model.get("price");
+		
+		if (product_id) {
+			try {
+				var folio = libBanner.api.libraryService.folioMap.getByProductId(product_id);
+				if (folio.isDownloadable) {
+					cx.btn_text = "Download";
+				}
+				else if (folio.isViewable) {
+					cx.btn_text = "View";
+				}
+			} 
+			catch (err) {}
+		}
+
+		
 
 		this.$el.html(this.template(cx));
 		return this;
