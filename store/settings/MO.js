@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "MO",
     "schedule"                   : "weekly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : true,
+    "enable_first_load_popup"    : false,
     
     "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
     "subscribeOfferText"         : "Subscribe to MONEY Magazine, the nation's largest personal finance magazine. Take charge of your finances, get trusted advice to successfully earn, plan, invest and spend. The digital edition also includes bonus video, extra photos and audio excerpts.",

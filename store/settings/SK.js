@@ -8,7 +8,7 @@ window.settings = {
     "brandCode"                  : "SK",
     "schedule"                   : "weekly",
     "popupInterval"              : 0,
-    "enable_first_load_popup"    : true,
+    "enable_first_load_popup"    : false,
     
     "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
     "subscribeOfferText"         : "Subscribe to the #1 Sports Magazine for Kids! Each issue is packed with great action photos, easy-to-read stories about star athletes, and instructional tips from the pros. The tablet edition comes with bonus content including extra photos, interactive sports cards, and exciting games!",
