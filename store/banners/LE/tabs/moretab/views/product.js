@@ -29,7 +29,8 @@ HeroView = Backbone.View.extend({
 ProductView = Backbone.View.extend({
 	className: "pv-container",
 	events: {
-		"click": "open_detail_dialog"
+		"click": "open_detail_dialog",
+		"click .pv-button": "buy_folio"
 	},
 	template: _.template($("#product-template").html()),
 	render: function() {
@@ -45,6 +46,15 @@ ProductView = Backbone.View.extend({
 		new DetailOverlayDialog({
 			model: this.model
 		});
+	},
+	buy_folio: function(evt) {
+		evt.stopPropagation();
+
+		var $btn = this.$(".pv-button");
+		$btn.fadeTo(500, 0.3);
+		setTimeout(function() { $btn.fadeTo(2000, 1.0) }, 3000);
+		
+		libBanner.buy_issue(this.model.get("productID"));
 	}
 });
 DetailOverlayDialog = Backbone.View.extend({
@@ -94,6 +104,11 @@ DetailOverlayDialog = Backbone.View.extend({
 		return this;
 	},
 	download: function() {
+		var $btn = this.$(".dod-button");
+
+		$btn.fadeTo(500, 0.3);
+		setTimeout(function() { $btn.fadeTo(2000, 1.0) }, 3000);
+
 		libBanner.buy_issue(this.model.get("productID"));
 	},
 	close: function() {
