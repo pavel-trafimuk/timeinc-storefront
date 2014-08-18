@@ -105,9 +105,22 @@ DetailOverlayDialog = Backbone.View.extend({
 	},
 	subscribe: function(evt) {
 		evt.preventDefault();
-		new SubscribeDialog();
+		var $btn = this.$(".dod-button");
+		
+		$btn.fadeTo(500, 0.3);
+
+		new SubscribeDialog({
+			onclose: function() {
+				$btn.fadeTo(50, 1.0);
+			}
+		});
 	},
 	download: function() {
+		var $btn = this.$(".dod-button");
+		
+		$btn.fadeTo(500, 0.3);
+		setTimeout(function() { $btn.fadeTo(2000, 0.3) }, 3000);
+		
 		libBanner.buy_issue(this.model.get("productID"));
 	},
 	close: function() {
@@ -153,7 +166,9 @@ SubscribeDialog = Backbone.View.extend({
                 Backbone.trigger("subscriptionStatusUpdated", sub_status);
             }
         });
-    
-        this.remove();
+    	
+    	this.remove();
+
+    	if (this.options.onclose) this.options.onclose();
     }
 });
