@@ -11,6 +11,10 @@
   }
 }
 
+.store-banner {
+  top: -73px !important;
+}
+
 /* Store Banner - iTunes Portrait */
 .store-banner.banner-portrait.itunes {
   background-image: url("../images/" + $BRAND_CODE + "/stbanner_portrait_itunes.jpg?v=" + currTime());
