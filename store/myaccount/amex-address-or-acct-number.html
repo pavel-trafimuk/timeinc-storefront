@@ -15,9 +15,10 @@
     }
 
 </script>
-  <script type="text/javascript" src="../lib/jquery.js"></script>
-  <script type="text/javascript" src="../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript" src="../settings/settings_loader.js?v={{BUILD_TIME}}"></script>
+<script type="text/javascript" src="../lib/AdobeLibraryAPI.js?v={{BUILD_TIME}}"></script>
+<script type="text/javascript" src="../lib/jquery.js"></script>
+<script type="text/javascript" src="../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
+<script type="text/javascript" src="../settings/settings_loader.js?v={{BUILD_TIME}}"></script>
 </head>
 
 <body >
@@ -29,7 +30,8 @@
       <script type="text/javascript">
         document.write(
           '<p><a id="mailingAddress" href="' + settings.myacctAmexMailingAddressURL + '" class="blue-btn">' + settings.myacctAmexMailingAddress + '</a></p>' +
-          '<p><a id="accountNumber" href="' + settings.myacctAmexAccountNumberURL + '" class="blue-btn">' + settings.myacctAmexAccountNumber + '</a></p>'
+          '<p><a id="accountNumber" href="' + settings.myacctAmexAccountNumberURL + '" class="blue-btn">' + settings.myacctAmexAccountNumber + '</a></p>' +
+          '<p><a id="goback" href="non-itunes-subscriber.html" class="clear-btn">' + settings.myacctGoBack + '</a></p>'
         );
       </script>
     </div>
