@@ -67,8 +67,8 @@ window.settings = {
                                     }),
                                     
     "buyIssueSubscribeDiscount"  : "57%",
-    "buyIssueTitle"              : "Get This Issue Free!",
-    "buyIssueText"               : "WAIT! Did you know that you could save up to %discount% off the cover price when you subscribe?",
+    "buyIssueTitle"              : "Did you know...?",
+    "buyIssueText"               : "Did you know that you could save up to %discount% off the cover price when you subscribe?",
     "buyIssueSubscribe"          : "Subscribe Now & Save",
     "buyIssueContinue"           : "Not now. I just want to buy the current issue for %price%.",
 
