@@ -5,6 +5,7 @@ App.dialogs.BuyIssue = Backbone.View.extend({
   template: Handlebars.templates['dialog-buy-issue.tmpl'],
   events: {
     "click .cancel": "onCancel",
+    "click .close" : "onCancel",
     "click .continue-btn": "continueAndBuy",
     "click .subscribe-btn": "subscribe"
   },
