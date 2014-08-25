@@ -1,0 +1,116 @@
+@import "_variables/_IN.scss";
+
+$accentColor: rgb(223, 37, 47);
+$coverBorderColor: #ddd;
+
+$gutter: 15px;
+$vertspacing: 20px;
+
+$buttonWidth: 90px;
+$buttonBorderWidth: 1px;
+
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 125%;
+}
+table, tbody, tr, td {
+  border-collapse: collapse;
+  margin: 0; 
+  padding: 0;
+  border: 0;
+}
+
+
+
+/*
+ * Shared Styles
+ */
+
+.btn {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: $accentColor;
+  width: $buttonWidth - (2 * $buttonBorderWidth);
+  border: $buttonBorderWidth solid $accentColor;
+  padding: 5px 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+
+/*
+ * Hero Styles
+ */
+
+.hero-container {
+  padding: $gutter;
+}
+.hero-cover {
+  -webkit-box-sizing: border-box;
+  float: left;
+  width: 60%;
+  border: 1px solid $coverBorderColor;
+}
+.hero-rightbar {
+  -webkit-box-sizing: border-box;
+  width: 33%;
+  padding-left: $gutter / 2;
+  float: right;
+  position: relative;
+}
+.hero-buttons {
+  margin-top: 45px;
+  position: absolute;
+  bottom: -180px;
+}
+.hero-button {
+  margin-top: 5px;
+  &.hero-preview-btn {
+    margin-bottom: 20px;
+  }
+}
+
+
+/*
+ * Backissue Styles
+ */
+
+.backissues-container {
+  clear: both;
+  padding-top: $vertspacing;
+  font-size: 12px;
+}
+.biv-container {
+  margin: 0 $gutter;
+  padding: $vertspacing 0;
+  border-top: 1px solid #ddd;
+}
+.backissues-cover-container {
+  -webkit-box-sizing: border-box;
+  width: 33%;
+  padding-right: 15px;
+}
+.backissue-cover {
+  -webkit-box-sizing: border-box;
+  border: 1px solid $coverBorderColor;
+  width: 100%; 
+}
+.backissues-btn-container {
+  width: $buttonWidth;
+}
+.backissue-name {
+  color: #333;
+}
+.backissue-price {
+  color: $accentColor;
+}

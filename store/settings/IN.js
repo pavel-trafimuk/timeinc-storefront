@@ -20,6 +20,10 @@ window.settings = {
     "hero_preview": "none",
     "enableHeroCoverTap"         : false,
     "preview_issue_product_id"   : "com.timeinc.instyle.ipad.inapp.FREESAMPLE",
+    "preview_issue_product_ids"  : {
+        "iPad"  : "com.timeinc.instyle.ipad.inapp.FREESAMPLE",
+        "iPhone": "com.timeinc.instyle.ipad.inapp.FREESAMPLEIPHONE"
+    },
 
     "eMagsAppId": "INAURR31232",
     

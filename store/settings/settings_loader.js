@@ -35,6 +35,9 @@
         // of putting the latest issue in the hero (which would be the
         // sample issue without this setting).
         "preview_issue_product_id": "",
+
+        // supports iphone/ipad/etc
+        "preview_issue_product_ids"  : {},
         
 
         // ************************************************************  
@@ -213,6 +216,7 @@
 
 
         // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
+        "baseAdobeFeedUrl"               : "http://edge.adobe-dcfs.com/ddp/issueServer/issues?accountId="+settings.adobeAppId,
         "adobeFeedUrl"                   : "http://edge.adobe-dcfs.com/ddp/issueServer/issues?accountId="+settings.adobeAppId+"&targetDimension=2048x1536,1024x768,1024x748,2048x1496,1136x640,960x640,480x320",
         "adobeFeedUrl_dev"               : "http://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/adobe-feeds/"+settings.appId+".xml",
 
