@@ -67,10 +67,10 @@ window.settings = {
                                     }),
                                     
     "buyIssueSubscribeDiscount"  : "57%",
-    "buyIssueTitle"              : "Get This Issue Free!",
-    "buyIssueText"               : "Get this issue free with a semi-annual subscription. Subscribe now and save up to %discount% off the cover price!",
+    "buyIssueTitle"              : "Did you know...?",
+    "buyIssueText"               : "Did you know that you could save up to %discount% off the cover price when you subscribe?",
     "buyIssueSubscribe"          : "Subscribe Now & Save",
-    "buyIssueContinue"           : "Buy Issue for %price%",
+    "buyIssueContinue"           : "Not now. I just want to buy the current issue for %price%.",
 
 
     "store_show_banners": true,

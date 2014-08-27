@@ -38,5 +38,20 @@
 		  border-bottom-color: rgba(180, 255, 255, 0.5);
 		  -webkit-animation: rotating 0.8s linear infinite;
     }
+    
+    .close {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      text-align: left;
+      font-size: 1.35em;
+      font-weight: bold;
+      top: -2px;
+      left: 5px;
+    }
+    
+    .continue-btn {
+      white-space: normal  !important;
+    }
 }
  
