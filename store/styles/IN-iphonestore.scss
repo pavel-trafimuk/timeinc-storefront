@@ -4,7 +4,7 @@ $accentColor: rgb(223, 37, 47);
 $coverBorderColor: #ddd;
 
 $gutter: 15px;
-$vertspacing: 20px;
+$vertspacing: 15px;
 
 $buttonWidth: 90px;
 $buttonBorderWidth: 1px;
@@ -19,6 +19,10 @@ html, body {
   font-family: Arial, sans-serif;
   font-size: 14px;
   line-height: 125%;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 table, tbody, tr, td {
   border-collapse: collapse;
@@ -53,7 +57,7 @@ table, tbody, tr, td {
  */
 
 .hero-container {
-  padding: $gutter;
+  padding: $vertspacing $gutter;
 }
 .hero-cover {
   -webkit-box-sizing: border-box;
@@ -64,12 +68,10 @@ table, tbody, tr, td {
 .hero-rightbar {
   -webkit-box-sizing: border-box;
   width: 33%;
-  padding-left: $gutter / 2;
   float: right;
   position: relative;
 }
 .hero-buttons {
-  margin-top: 45px;
   position: absolute;
   bottom: -180px;
 }
@@ -88,7 +90,6 @@ table, tbody, tr, td {
 .backissues-container {
   clear: both;
   padding-top: $vertspacing;
-  font-size: 12px;
 }
 .biv-container {
   margin: 0 $gutter;
@@ -97,20 +98,23 @@ table, tbody, tr, td {
 }
 .backissues-cover-container {
   -webkit-box-sizing: border-box;
-  width: 33%;
+  width: 34%;
   padding-right: 15px;
+  line-height: 0;
 }
 .backissue-cover {
   -webkit-box-sizing: border-box;
   border: 1px solid $coverBorderColor;
   width: 100%; 
 }
-.backissues-btn-container {
-  width: $buttonWidth;
-}
 .backissue-name {
   color: #333;
 }
 .backissue-price {
   color: $accentColor;
+}
+.backissue-btn {
+  margin-top: 15px;
+  margin-right: 5px;
+  float: right;
 }

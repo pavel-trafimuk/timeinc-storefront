@@ -9,7 +9,7 @@ var Issue = Backbone.Model.extend({
 		viewable: false,
 		purchasable: true,
 		downloadable: false,
-		price: ""
+		price: "$4.99"
 	},
 	initialize: function(fields) {
 		this.issue = fields.issue;
@@ -77,8 +77,8 @@ HeroView = Backbone.View.extend({
 BackIssueView = Backbone.View.extend({
 	className: "biv-container",
 	events: {
-		"click": function(evt) { evt.preventDefault(); },
-		"click .backissue-btn": "buy_or_view"
+		"tap": function(evt) { evt.preventDefault(); },
+		"tap .backissue-btn": "buy_or_view"
 	},
 	template: _.template($("#backissue-template").html()),
 	initialize: function() {

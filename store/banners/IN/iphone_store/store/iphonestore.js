@@ -1,5 +1,7 @@
 /* global $, Backbone, libBanner, Product, ProductList, HeroView, ProductView */
 (function() {
+  $(document).hammer();
+  
   libBanner.track_page_view("iPhone Store");
   libBanner.echo();
   

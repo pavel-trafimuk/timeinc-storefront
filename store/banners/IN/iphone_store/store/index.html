@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>More</title>
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
     <link rel="stylesheet" href="../../../css/iphonestore.css?v={{BUILD_TIME}}" />
 
@@ -27,8 +27,7 @@
         <td>
           <div class="backissue-name"><%= issue.get('name') %></div>
           <div class="backissue-price"><%= issue.get('price') %></div>
-        </td>
-        <td class="backissues-btn-container">
+
           <a href="#" class="btn backissue-btn"><%= issue.get_action_button_text() %></a>
         </td>
       </tr></table>
@@ -37,6 +36,7 @@
     {{JS_FILES}}
     <script type="text/javascript" src="../../../lib/underscore.js"></script>
     <script type="text/javascript" src="../../../lib/backbone.js"></script>
+    <script type="text/javascript" src="../../../lib/jquery.hammer.js"></script>
 
     <script type="text/javascript" src="./views/models.js?v={{BUILD_TIME}}"></script>
 </head>
