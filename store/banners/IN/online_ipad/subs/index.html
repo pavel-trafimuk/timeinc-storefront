@@ -44,7 +44,8 @@
           float: left;
           position: relative;
           width: 100%;
-          -webkit-background-size: contain;
+          background-size: contain;
+          background-repeat: no-repeat;
       }
       .slide a {
         display: block;
@@ -77,16 +78,17 @@
        /* iPad Portrait */
        @media only screen and (min-width:768px){           
           .logoslide {
-            background: #c8112f url('logo.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
+            background-color: #c8112f;
+            background-image: url('logo.png?v={{BUILD_TIME}}');
           }
           .beautyguide {
-            background: url('beauty_portrait.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
+            background-image: url('beauty_portrait.png?v={{BUILD_TIME}}');
           }
           .colorbook {
-            background: url('colorbook_portrait.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
+            background-image: url('colorbook_portrait.png?v={{BUILD_TIME}}');
           }
           .appstore-xsell {
-            background: url('appstore_portrait.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
+            background-image: url('appstore_portrait.png?v={{BUILD_TIME}}');
           }
           
           .banner{                 
@@ -109,16 +111,17 @@
        /* iPad Landscape */
        @media only screen and (min-width:1024px){                     
           .logoslide {
-            background: #c8112f url('logo.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
+            background-color: #c8112f;
+            background-image: url('logo.png?v={{BUILD_TIME}}');
           }
           .beautyguide {
-            background: url('beauty_landscape.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
+            background-image: url('beauty_landscape.png?v={{BUILD_TIME}}');
           }
           .colorbook {
-            background: url('colorbook_landscape.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
+            background-image: url('colorbook_landscape.png?v={{BUILD_TIME}}');
           }
           .appstore-xsell {
-            background: url('appstore_landscape.png?v={{BUILD_TIME}}') no-repeat 50% 50%;
+            background-image: url('appstore_landscape.png?v={{BUILD_TIME}}');
           }
           
           .banner{                 
