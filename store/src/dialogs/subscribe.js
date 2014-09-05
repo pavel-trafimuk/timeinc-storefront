@@ -9,7 +9,7 @@ App.dialogs.Subscribe = Backbone.View.extend({
   initialize: function(show_on_create) {
     console.log("App.dialogs.Subscribe.initialize()");
     if (show_on_create !== false) {
-      this.render().$el.appendTo("body");
+      this.render().$el.appendTo("html");
       this.open();
     }
   },
