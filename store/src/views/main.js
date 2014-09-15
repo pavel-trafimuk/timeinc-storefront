@@ -30,49 +30,19 @@
       if (typeof localStorage.app_view_count == "undefined") {
         localStorage.app_view_count = 0;
       }
-      
-      if (settings.welcome_once_per_issue) {
-        // Show welcome screen once per issue (use local storage)
-        if (typeof localStorage.welcome_issue_displayed_last == "undefined" || localStorage.welcome_issue_displayed_last != folio.productId) {
-          localStorage.welcome_issue_displayed_last = folio.productId;
-          this.subview = new App.views.Welcome();
-          App.omni.pageview("splashpage", "event1,event43,event44");
-        }
-        else {
-          this.subview = new App.views.Store();
-          App.omni.pageview("main", "event1,event43");
-        }
-      }
-      else if (settings.welcome_time_based_interval) {
-        var lastPopup = parseFloat(localStorage.lastWelcomePopup) || 0,
-            now = +(new Date()),
 
-            // setting defined in minutes
-            interval = settings.popupInterval * 60 * 1000;
+      var show_view = this.viewToShow();
 
-        if (now > (lastPopup + interval)) {
-          localStorage.lastWelcomePopup = now;
-          this.subview = new App.views.Welcome();
-          App.omni.pageview("splashpage", "event1,event43,event44");
-        }
-        else {
-          this.subview = new App.views.Store();
-          App.omni.pageview("main", "event1,event43");
-        }
+      if (show_view == "welcome") {
+        this.subview = new App.views.Welcome();
+        App.omni.pageview("splashpage", "event1,event43,event44");
       }
-      else {
-        // Show welcome screen using frequency set in settings
-        if (localStorage.app_view_count % settings.popupInterval === 0) {
-          this.subview = new App.views.Welcome();
-          App.omni.pageview("splashpage", "event1,event43,event44");
-        }
-        else {
-          this.subview = new App.views.Store();
-          App.omni.pageview("main", "event1,event43");
-        }
+      else if (show_view == "store") {
+        this.subview = new App.views.Store();
+        App.omni.pageview("main", "event1,event43");
       }
+
       localStorage.app_view_count = +localStorage.app_view_count + 1;
-      
     },
     render: function(cb) {
       var that = this;
@@ -96,6 +66,55 @@
           (cb||$.noop)();
         });
       });
+    },
+    viewToShow: function() {
+      // short-circuit: always show Store to subscribers. Doesn't use 
+      // App.api.authenticationService.user_is_subscriber() because it takes
+      // a callback. This is a "good enough" hack (but it ignores the
+      // possibility that someone signed in to lucie is not a subscriber)
+      var available_subs = App.api.receiptService.availableSubscriptions;
+
+      for (var i = available_subs.length; i--;) {
+        if (available_subs[i].isActive()) return "store";
+      }
+      if (App.api.authenticationService.isUserAuthenticated) {
+        return "store";
+      }
+
+      if (settings.welcome_once_per_issue) {
+        // Show welcome screen once per issue (use local storage)
+        if (typeof localStorage.welcome_issue_displayed_last == "undefined" || localStorage.welcome_issue_displayed_last != folio.productId) {
+          localStorage.welcome_issue_displayed_last = folio.productId;
+          return "welcome";
+        }
+        else {
+          return "store";
+        }
+      }
+      else if (settings.welcome_time_based_interval) {
+        var lastPopup = parseFloat(localStorage.lastWelcomePopup) || 0,
+            now = +(new Date()),
+
+            // setting defined in minutes
+            interval = settings.popupInterval * 60 * 1000;
+
+        if (now > (lastPopup + interval)) {
+          localStorage.lastWelcomePopup = now;
+          return "welcome";
+        }
+        else {
+          return "store";
+        }
+      }
+      else {
+        // Show welcome screen using frequency set in settings
+        if (localStorage.app_view_count % settings.popupInterval === 0) {
+          return "welcome";
+        }
+        else {
+          return "store"
+        }
+      }
     },
     selectBannerType: function() {
       if (!settings.store_show_banners) {
