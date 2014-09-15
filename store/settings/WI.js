@@ -27,7 +27,7 @@ window.settings = {
 
     "storeBuyIssueBtn"           : "%price%",
     
-    "subscribeOfferText"         : "Create your FOOD & WINE digital account to get access to:<ul style='text-align: left; padding-right: 10px;'><li>Food & Wine’s Favorite Recipe Guides – for Subscribers only<li>Future benefits and new digital-only content</ul>",
+    "subscribeOfferText"         : "Subscribe now to get FOOD & WINE on your iPad.",
 
     "hero_preview": "none",
     "enableHeroCoverTap"         : false,

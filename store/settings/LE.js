@@ -27,7 +27,7 @@ window.settings = {
 
     "storeBuyIssueBtn"           : "%price%",
 
-    "subscribeOfferText"         : "Create your TRAVEL + LEISURE digital account to get access to:<ul style='text-align: left; padding-right: 10px;'><li>The latest digital special<li>Future benefits and new digital-only content</ul>",
+    "subscribeOfferText"         : "Subscribe now to get Travel + Leisure on your iPad.",
     
     "hero_preview": "none",
     "enableHeroCoverTap"         : false,
