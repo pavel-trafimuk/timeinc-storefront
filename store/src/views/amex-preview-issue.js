@@ -4,7 +4,8 @@
     className: "amex-issue-preview modal-background scrollable",
     template: Handlebars.templates["amex-issue-preview.tmpl"],
     events: {
-      "touchmove": function(evt) { evt.preventDefault() },
+      "touchmove": "disallow_bad_scrolling",
+      "touchstart": "disallow_bad_scrolling_touchstart",
       "tap .buy-issue-button": "buy_issue",
       "tap .close-btn": "close",
       "swipedown .controls": "close"
@@ -29,6 +30,10 @@
       this.get_img = get_img_fn;
 
       this.folio = folio;
+
+      // used in the "disallow scrolling" code
+      this.xStart = 0;
+      this.yStart = 0;
 
       this.$el.hammer();
       this.render(function() {
@@ -72,6 +77,33 @@
         .transition({y: h}, 0)
         .transition({y: 0}, 500, "snap");
 
+    },
+    disallow_bad_scrolling_touchstart: function(evt) {
+      var touch = evt.originalEvent.touches[0];
+      this.xStart = touch.screenX;
+      this.yStart = touch.screenY;
+    },
+    disallow_bad_scrolling: function(evt) {
+      var elem_allows_scrolling = $(evt.target).closest(".horz-scrollable").length;
+
+      if (!elem_allows_scrolling) {
+        return evt.preventDefault();
+      }
+
+      var touch = evt.originalEvent.touches[0];
+
+      if (this.whitelisted_touch == touch.identifier) return;
+
+      var xMovement = Math.abs(touch.screenX - this.xStart),
+          yMovement = Math.abs(touch.screenY - this.yStart),
+          scrolling_is_horizontal = (yMovement * 2) < xMovement;
+
+      if (scrolling_is_horizontal) {
+        this.whitelisted_touch = touch.identifier;
+        return
+      };
+
+      evt.preventDefault();
     },
     buy_issue: function(evt) {
       var that = this,
