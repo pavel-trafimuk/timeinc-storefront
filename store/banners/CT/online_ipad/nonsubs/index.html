@@ -1,22 +1,29 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-  <title>Subscription Banner</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi"/>
-  
-  <style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <style>
+      html, body {
+        height: 100%; width: 100%;
+      }
        body{
-          background-color: #009ddc;
+          background: #eaeaea;
           margin: 0px;
           padding: 0px;
        }
                                 
        .wrapper{
-          width: 1024px;
+          width: 100%;
+          height: 100%;
           margin: 0 auto; 
           text-align: center;
-          width: 100%;
        }
        
        .wrapper span{
@@ -74,21 +81,16 @@
        .pull-right{
           float: right !important;
        }
-        
-       .logo {
-          background-image: url('logo.png?v={{BUILD_TIME}}') !important;
-        }
+       .banner{                 
+        height: 100%;
+       }   
         
        /* iPad Portrait */
        @media only screen and (min-width:768px){           
           .subscribe {
-            background-image: url('subscribe-half_portrait.png?v={{BUILD_TIME}}') !important;
+            background-image: url('subscribe_portrait.jpg?v={{BUILD_TIME}}') !important;
           }
-          
-          .banner{                 
-             height: 237px;              
-          }
-          
+                   
           .wrapper span.ipad-portrait{
               display: block;
           }        
@@ -105,12 +107,9 @@
        /* iPad Landscape */
        @media only screen and (min-width:1024px){           
           .subscribe {
-            background-image: url('subscribe-half_landscape.png?v={{BUILD_TIME}}') !important;
+            background-image: url('subscribe_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
-          
-          .banner{                 
-             height: 177px;                 
-          }              
+                     
           .wrapper span.ipad-landscape{
               display: block;
           }              
@@ -122,6 +121,17 @@
           }      
           
        }
+       
+       .slide.logo {
+        background: transparent url(logo.png) 50% 50% no-repeat;
+        background-size: contain;
+       }
+       
+       .slide.ios8 {
+        background: rgb(242, 242, 242) url(ios8_msg.jpg) 50% 50% no-repeat;
+        background-size: contain;
+       }
+
        .slide.loading::before {
          content: 'Loading…';
          display: block;
@@ -142,45 +152,34 @@
        
        
     </style>
- 
-  <script type="text/javascript" src="../../../lib/jquery.js"></script>
-  <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
-  <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
-  <script type="text/javascript" src="../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
+
+    {{JS_FILES}}
+    
 </head>
 <body>
-  <div class="wrapper">
+   
+   <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <!-- Subscribe slide -->
-          <!--<div class="slide subscribe"> 
-            <a href="#"></a>
-          </div>-->
-          
+          <!-- iOS8 slide -->
+          <div class="slide ios8" data-ios-version="8"></div>
+
+          <!-- Logo slide -->
           <div class="slide logo"></div>
         </div>
      </div>
    </div>
-  
+   
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript">    
+  <script type="text/javascript">
     (function() {
       libBanner.track_page_view("Library|Banner|Nonsubscriber");
       libBanner.echo();
-
+      
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
-
-      $(".subscribe a").click(function(evt) {
-        evt.preventDefault();
-
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
-        libBanner.buy_sub("com.timeinc.coastalliving.ipad.subs.9");
-      });
     })();
   </script>
+
 </body>
 </html>
-

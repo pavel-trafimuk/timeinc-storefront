@@ -10,17 +10,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <style>
+      html, body {
+        height: 100%; width: 100%;
+      }
        body{
-          background: #ffffff;
+          background: #eaeaea;
           margin: 0px;
           padding: 0px;
        }
                                 
        .wrapper{
-          width: 1024px;
+          width: 100%;
+          height: 100%;
           margin: 0 auto; 
           text-align: center;
-          width: 100%;
        }
        
        .wrapper span{
@@ -68,18 +71,7 @@
           background-size: auto 100%;   
           background-repeat: no-repeat;           
           margin-top: 1em;
-       }
-       
-       .btn.pull-left{
-           background-image: url('Retina_LeftButton.png?v={{BUILD_TIME}}');
-           
-       }
-       
-      .btn.pull-right{
-           background-image: url('Retina_RightButton.png?v={{BUILD_TIME}}');
-           background-position-x: 100%;
-       }
-       
+       }       
        
        
        .pull-left{
@@ -89,27 +81,16 @@
        .pull-right{
           float: right !important;
        }
+       .banner{                 
+        height: 100%;
+       }   
         
-       
        /* iPad Portrait */
        @media only screen and (min-width:768px){           
           .subscribe {
-          	background-image: url('subscribe-half_portrait.png?v={{BUILD_TIME}}') !important;
+            background-image: url('subscribe_portrait.jpg?v={{BUILD_TIME}}') !important;
           }
-          
-          .ebook {
-            background-image: url('eBook_portrait.jpg?v={{BUILD_TIME}}') !important;
-          }
-          
-          .logo {
-            background-image: url('logo.png?v={{BUILD_TIME}}') !important;
-            background-color: #e51a2e;
-          }
-          
-          .banner{                 
-             height: 237px;              
-          }
-          
+                   
           .wrapper span.ipad-portrait{
               display: block;
           }        
@@ -126,21 +107,9 @@
        /* iPad Landscape */
        @media only screen and (min-width:1024px){           
           .subscribe {
-            background-image: url('subscribe-half_landscape.png') !important;
+            background-image: url('subscribe_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
-          
-          .ebook {
-            background-image: url('eBook_landscape.jpg') !important;
-          }
-          
-          .logo {
-            background-image: url('logo.png?v={{BUILD_TIME}}') !important;
-            background-color: #e51a2e;
-          }
-          
-          .banner{                 
-             height: 177px;                 
-          }              
+                     
           .wrapper span.ipad-landscape{
               display: block;
           }              
@@ -152,6 +121,17 @@
           }      
           
        }
+       
+       .slide.logo {
+        background: transparent url(logo.png) 50% 50% no-repeat;
+        background-size: contain;
+       }
+       
+       .slide.ios8 {
+        background: rgb(242, 242, 242) url(ios8_msg.jpg) 50% 50% no-repeat;
+        background-size: contain;
+       }
+
        .slide.loading::before {
          content: 'Loading…';
          display: block;
@@ -173,53 +153,31 @@
        
     </style>
 
-    <script type="text/javascript" src="../../../lib/jquery.js"></script>
-    <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
-
-    <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
-    <script type="text/javascript" src="../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
-
-    <script type="text/javascript" src="../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script>
-    <script type="text/javascript" src="../../../lib/ema-1.0.2.js"></script>
+    {{JS_FILES}}
+    
 </head>
 <body>
    
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <!-- Subscribe slide -->
-          <!--<div class="slide subscribe"> 
-            <a href="#"></a>
-          </div>-->
+          <!-- iOS8 slide -->
+          <div class="slide ios8" data-ios-version="8"></div>
+
+          <!-- Logo slide -->
           <div class="slide logo"></div>
-          
-          <div class="slide ebook">
-            <a href="dps.7c9aac078985497cbace2f132d68c56e://v1/folio/com.timeinc.cookinglight.ipad.inapp.12022013/7577"></a>
-          </div>
         </div>
      </div>
    </div>
    
-  <script src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
-  
     (function() {
       libBanner.track_page_view("Library|Banner|Nonsubscriber");
       libBanner.echo();
       
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
-
-      $(".subscribe a").click(function(evt) {
-        evt.preventDefault();
-
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
-        libBanner.buy_sub("com.timeinc.cookinglight.ipad.subs.9");
-      });
-      
-      
     })();
   </script>
 

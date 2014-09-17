@@ -10,17 +10,19 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <style>
+      html, body {
+        height: 100%; width: 100%;
+      }
        body{
-          background: #009caa;
+          background: #ed1c24;
           margin: 0px;
           padding: 0px;
        }
                                 
        .wrapper{
-          width: 640px;
+          height: 100%; width: 100%;
           margin: 0 auto; 
           text-align: center;
-          width: 100%;
        }
        
        .wrapper span{
@@ -78,33 +80,24 @@
           float: right !important;
        }
       
-      .logo{                 
-        background-image: url('logo.png?v={{BUILD_TIME}}') !important;
-        background-size: 90%;
-        background-repeat: no-repeat;
-        top: 15%;
-      }
-      
-      
-      @media only screen and (device-height: 480px) { /*iPhone 4*/
-        .sm-nttc-xsell {
-          background-image: url('sm-nttc-xsell-iphone4.jpg?v={{BUILD_TIME}}') !important;
-        }
-      }
-      @media only screen and (device-height: 568px) { /*iPhone 5*/
-        .sm-nttc-xsell {
-          background-image: url('sm-nttc-xsell-iphone5.jpg?v={{BUILD_TIME}}') !important;
-        }
-      }
-      
       .banner{                 
-         height: 237px;
+         height: 100%;
       }
       
       .wrapper span.ipad-portrait{
           display: block;
-      }        
+      }
+            
+      .slide.ios8 {
+        background: rgb(242, 242, 242) url(ios8_msg.jpg) 50% 50% no-repeat;
+        background-size: contain;
+      }
       
+      .slide.logo {
+        background: transparent url(logo.png) 50% 50% no-repeat;
+        background-size: contain;
+      }
+
        .slide.loading::before {
          content: 'Loading…';
          display: block;
@@ -119,47 +112,41 @@
          top: 0; right: 0; bottom: 0; left: 0;
        }
 
+       /* HACK: */
+       .retina { background-color: #000; } 
+
        
        
     </style>
 
-    <script type="text/javascript" src="../../../lib/jquery.js"></script>
-    <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
+    {{JS_FILES}}
 
-    <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
-    <script type="text/javascript" src="../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
-
-    <script type="text/javascript" src="../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script>
-    <script type="text/javascript" src="../../../lib/ema-1.0.2.js"></script>
 </head>
 <body>
    
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <!-- Logo -->
-          <div class="slide logo" data-ios-version="<7"></div>
+          <!-- iOS8 slide -->
+          <div class="slide ios8" data-ios-version="8"></div>
           
-          <!-- NTTC Cross-sell slide -->
-          <div class="slide sm-nttc-xsell" data-ios-version=">=7">
-            <a href="../../../appstore_links/goto_appstore.html?link=http%3A%2F%2Fwww.emagazines.com%2Finsight%2Flink%2F%3Fuser%3D4432%26g%3D%7B76EEEA24-DF7F-4BF4-8AAF-3A19A9DC2A14%7D"></a>
-          </div>
+          <!-- Logo slide -->
+          <div class="slide logo" data-ios-version="<8"></div>
         </div>
      </div>
    </div>
    
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript">
+  <script type="text/javascript">    
+    
+    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
+    
     (function() {
       libBanner.track_page_view("Library|Banner|Subscriber");
       libBanner.echo();
       
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
-      
-      $(".sm-nttc-xsell").click(function() {
-        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_smnttcxsell");
-      });
     })();
   </script>
 

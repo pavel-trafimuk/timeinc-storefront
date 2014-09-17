@@ -10,17 +10,19 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <style>
+      html, body {
+        height: 100%; width: 100%;
+      }
        body{
-          background: #000000;
+          background: #ed1c24;
           margin: 0px;
           padding: 0px;
        }
                                 
        .wrapper{
-          width: 640px;
+          height: 100%; width: 100%;
           margin: 0 auto; 
           text-align: center;
-          width: 100%;
        }
        
        .wrapper span{
@@ -77,19 +79,25 @@
        .pull-right{
           float: right !important;
        }
-         
-      .logo {
-        background-image: url('logo.jpg?v={{BUILD_TIME}}') !important;
-      }
       
       .banner{                 
-         height: 237px;              
+         height: 100%;
       }
       
       .wrapper span.ipad-portrait{
           display: block;
-      }        
+      }
+            
+      .slide.ios8 {
+        background: rgb(242, 242, 242) url(ios8_msg.jpg) 50% 50% no-repeat;
+        background-size: contain;
+      }
       
+      .slide.logo {
+        background: transparent url(logo.png) 50% 50% no-repeat;
+        background-size: contain;
+      }
+
        .slide.loading::before {
          content: 'Loading…';
          display: block;
@@ -102,37 +110,35 @@
          text-align: center;
          position: absolute;
          top: 0; right: 0; bottom: 0; left: 0;
-       } 
+       }
+
+       /* HACK: */
+       .retina { background-color: #000; } 
 
        
        
     </style>
 
-    <script type="text/javascript" src="../../../lib/jquery.js"></script>
-    <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
+    {{JS_FILES}}
 
-    <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
-    <script type="text/javascript" src="../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
-
-    <script type="text/javascript" src="../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script> 
 </head>
 <body>
    
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
+          <!-- iOS8 slide -->
+          <div class="slide ios8" data-ios-version="8"></div>
           
           <!-- Logo slide -->
-          <div class="slide logo">
-          	<a href="#" id="banner-link"></a>
-          </div>
-          
+          <div class="slide logo" data-ios-version="<8"></div>
         </div>
      </div>
    </div>
    
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">    
+    
     document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
     
     (function() {

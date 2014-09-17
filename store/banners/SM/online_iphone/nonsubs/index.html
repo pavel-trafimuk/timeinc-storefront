@@ -10,17 +10,19 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <style>
+      html, body {
+        height: 100%; width: 100%;
+      }
        body{
-          background: #ffffff;
+          background: #ed1c24;
           margin: 0px;
           padding: 0px;
        }
                                 
        .wrapper{
-          width: 640px;
+          height: 100%; width: 100%;
           margin: 0 auto; 
           text-align: center;
-          width: 100%;
        }
        
        .wrapper span{
@@ -77,34 +79,25 @@
        .pull-right{
           float: right !important;
        }
-         
-      .print {
-        background-image: url('PrintSubscriber.png?v={{BUILD_TIME}}') !important;
-        background-color: #009caa;
-      }
-      
-      .subscribe {
-        background-image: url('subscribe-half-bg.png?v={{BUILD_TIME}}') !important;
-      }
-      
-      .preview {
-        background-image: url('FreeSample.png?v={{BUILD_TIME}}') !important;
-      }
-      
-      img {
-        width: 100%;
-        height: auto;
-        margin-top: -10px;
-      }
       
       .banner{                 
-         height: 237px;              
+         height: 100%;
       }
       
       .wrapper span.ipad-portrait{
           display: block;
-      }        
+      }
+            
+      .slide.ios8 {
+        background: rgb(242, 242, 242) url(ios8_msg.jpg) 50% 50% no-repeat;
+        background-size: contain;
+      }
       
+      .slide.logo {
+        background: transparent url(logo.png) 50% 50% no-repeat;
+        background-size: contain;
+      }
+
        .slide.loading::before {
          content: 'Loading…';
          display: block;
@@ -119,44 +112,32 @@
          top: 0; right: 0; bottom: 0; left: 0;
        }
 
+       /* HACK: */
+       .retina { background-color: #000; } 
+
        
        
     </style>
 
-    <script type="text/javascript" src="../../../lib/jquery.js"></script>
-    <script type="text/javascript" src="../../../lib/AdobeLibraryAPI.js?v2"></script>
+    {{JS_FILES}}
 
-    <script type="text/javascript" src="../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
-    <script type="text/javascript" src="../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
-
-    <script type="text/javascript" src="../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script>
-    <script type="text/javascript" src="../../../lib/ema-1.0.2.js"></script>
 </head>
 <body>
    
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
+          <!-- iOS8 slide -->
+          <div class="slide ios8" data-ios-version="8"></div>
           
-          <!-- Subscribe slide -->
-          <!--<div class="slide subscribe">
-            <a href="#"><img src="subscribe-half.png?v={{BUILD_TIME}}" border="0"/></a>
-          </div>-->
-
-          <!-- Free preview slide -->
-          <div class="slide preview"></div>
-          
-          
-          <!-- Print Subsriber slide -->
-          <div class="slide print">
-            <a href="#" id="banner-link"></a>
-          </div>
+          <!-- Logo slide -->
+          <div class="slide logo" data-ios-version="<8"></div>
         </div>
      </div>
    </div>
    
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript">
+  <script type="text/javascript">    
     
     document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
     
@@ -166,24 +147,6 @@
       
       var gallery = new libBanner.SlideshowGallery();
       gallery.enableTouch().slideEvery(5000);
-      
-      $(".subscribe a").click(function(evt) {
-        evt.preventDefault();
-
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
-        libBanner.buy_sub("com.timeinc.realsimple.ipad.subs.9");
-      });
-
-      // use a setting to enable auto_download (setting is A/B tested)
-      if (settings.iphoneNonsubsBannerAutoDownloadEnabled) {
-        libBanner.auto_download("com.timeinc.realsimple.ipad.inapp.FREESAMPLEIPHONE", {
-          started: function() {
-            gallery.cancelAutoSlide();
-          }
-        });
-      }
     })();
   </script>
 

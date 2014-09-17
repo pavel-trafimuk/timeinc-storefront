@@ -79,10 +79,6 @@
        .pull-right{
           float: right !important;
        }
-         
-      .print {
-        background-image: url('PrintSubscriber.png?v={{BUILD_TIME}}') !important;
-      }
       
       .banner{                 
          height: 100%;
@@ -90,9 +86,15 @@
       
       .wrapper span.ipad-portrait{
           display: block;
-      }        
+      }
+            
       .slide.ios8 {
         background: rgb(242, 242, 242) url(ios8_msg.jpg) 50% 50% no-repeat;
+        background-size: contain;
+      }
+      
+      .slide.logo {
+        background: transparent url(logo.png) 50% 50% no-repeat;
         background-size: contain;
       }
 
@@ -125,14 +127,11 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <div class="slide ios8" data-ios-version="8">
-            <a href="#"></a>
-          </div>
+          <!-- iOS8 slide -->
+          <div class="slide ios8" data-ios-version="8"></div>
           
-          <!-- Print Subscriber slide -->
-          <div class="slide print">
-          	<a href="#" id="banner-link"></a>
-          </div>
+          <!-- Logo slide -->
+          <div class="slide logo" data-ios-version="<8"></div>
         </div>
      </div>
    </div>

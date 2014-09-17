@@ -10,6 +10,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <style>
+      html, body {
+        height: 100%; width: 100%;
+      }
        body{
           background: #eaeaea;
           margin: 0px;
@@ -17,10 +20,10 @@
        }
                                 
        .wrapper{
-          width: 1024px;
+          width: 100%;
+          height: 100%;
           margin: 0 auto; 
           text-align: center;
-          width: 100%;
        }
        
        .wrapper span{
@@ -68,7 +71,7 @@
           background-size: auto 100%;   
           background-repeat: no-repeat;           
           margin-top: 1em;
-       }
+       }       
        
        
        .pull-left{
@@ -78,30 +81,16 @@
        .pull-right{
           float: right !important;
        }
+       .banner{                 
+        height: 100%;
+       }   
         
-       
        /* iPad Portrait */
-       @media only screen and (min-width:768px){                     
-          .lucie {
-            background-image: url('LUCIE_portrait.jpg?v={{BUILD_TIME}}') !important;
+       @media only screen and (min-width:768px){           
+          .subscribe {
+            background-image: url('subscribe_portrait.jpg?v={{BUILD_TIME}}') !important;
           }
-          
-          .country {
-            background-image: url('Country_portrait.jpg?v={{BUILD_TIME}}') !important;
-          }
-          
-          .sm-xsell {
-            background-image: url('SM-xsell-portrait.jpg?v={{BUILD_TIME}}') !important;
-          }
-          
-          .appstore-xsell {
-            background-image: url('appstore_portrait.png?v={{BUILD_TIME}}') !important;
-          }
-          
-          .banner{                 
-             height: 237px;              
-          }
-          
+                   
           .wrapper span.ipad-portrait{
               display: block;
           }        
@@ -116,26 +105,11 @@
 
        
        /* iPad Landscape */
-       @media only screen and (min-width:1024px){                     
-          .lucie {
-            background-image: url('LUCIE_landscape.jpg?v={{BUILD_TIME}}') !important;
+       @media only screen and (min-width:1024px){           
+          .subscribe {
+            background-image: url('subscribe_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
-          
-          .country {
-            background-image: url('Country_landscape.jpg?v={{BUILD_TIME}}') !important;
-          }
-          
-          .sm-xsell {
-            background-image: url('SM-xsell-landscape.jpg?v={{BUILD_TIME}}') !important;
-          }
-          
-          .appstore-xsell {
-            background-image: url('appstore_landscape.png?v={{BUILD_TIME}}') !important;
-          }
-          
-          .banner{                 
-             height: 177px;
-          }              
+                     
           .wrapper span.ipad-landscape{
               display: block;
           }              
@@ -147,6 +121,17 @@
           }      
           
        }
+       
+       .slide.logo {
+        background: transparent url(logo.png) 50% 50% no-repeat;
+        background-size: contain;
+       }
+       
+       .slide.ios8 {
+        background: rgb(242, 242, 242) url(ios8_msg.jpg) 50% 50% no-repeat;
+        background-size: contain;
+       }
+
        .slide.loading::before {
          content: 'Loading…';
          display: block;
@@ -168,75 +153,31 @@
        
     </style>
 
-    <script type="text/javascript" src="../../../../lib/jquery.js"></script>
-    <script type="text/javascript" src="../../../../lib/AdobeLibraryAPI.js?v2"></script>
-
-    <script type="text/javascript" src="../../../../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script> 
-    <script type="text/javascript" src="../../../../settings/settings_loader.js?v={{BUILD_TIME}}"></script> 
-
-    <script type="text/javascript" src="../../../../lib/lucie_entitlements.js?v={{BUILD_TIME}}"></script>
-    <script type="text/javascript" src="../../../../lib/ema-1.0.2.js"></script>
+    {{JS_FILES}}
+    
 </head>
 <body>
    
    <div class="wrapper">
      <div class="banner carousel">
-        <div class="slides">                    
-          <!-- LUCIE Registration slide -->
-          <div class="slide lucie">
-            <a href="#"></a>
-          </div>
-          
-          <!-- Country issue slide -->
-          <div class="slide country">
-            <a href="#"></a>
-          </div>
-          
-          <!-- SM xsell slide -->
-          <div class="slide sm-xsell" data-ios-version=">=7">
-            <a href="../../../../appstore_links/goto_appstore.html?link=http%3A%2F%2Fwww.emagazines.com%2Finsight%2Flink%2F%3Fuser%3D4432%26g%3D%7B6652ADA6-1641-489C-8EEA-314CB7686519%7D"></a>
-          </div>
-          
-          <!--<div class="slide appstore-xsell" data-ios-version=">=7">
-            <a href="../../../../appstore_links/goto_appstore.html?link=https%3A%2F%2Fitunes.apple.com%2Fus%2Fartist%2Ftime-inc.%2Fid321041853%3Fmt%3D8"></a>
-          </div>-->
-          
+        <div class="slides">
+          <!-- iOS8 slide -->
+          <div class="slide ios8" data-ios-version="8"></div>
+
+          <!-- Logo slide -->
+          <div class="slide logo"></div>
         </div>
      </div>
    </div>
    
-  <script type="text/javascript" src="../../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
-    (function() {     
-      libBanner.track_page_view("Library|Banner|Subscriber");
+    (function() {
       libBanner.track_page_view("Library|Banner|Subscriber|iTunes");
       libBanner.echo();
       
       var gallery = new libBanner.SlideshowGallery();
-      gallery.enableTouch().slideEvery(5000);      
-
-      $(".lucie a").click(function(evt) {
-        evt.preventDefault();
-        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_register");
-        libBanner.lucie_register();
-      });
-      
-      $(".sm-xsell").click(function() {
-        libBanner.track_user_action("Library|Banner|Subscriber|iTunes", "banner_taps_smxsell");
-      });
-      
-      $(".country a").click(function(evt) {
-        evt.preventDefault();
-
-        gallery.cancelAutoSlide();
-
-        libBanner.track_user_action("Library|Banner|Subscriber|iTunes", "banner_taps_buyissue");
-        libBanner.buy_issue("com.timeinc.people.ipad.inapp.06112014", "311660");
-      });
-      
-      $(".appstore-xsell").click(function() {
-        libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_appstorexsell");
-      });
+      gallery.enableTouch().slideEvery(5000);
     })();
   </script>
 
