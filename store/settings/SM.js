@@ -80,8 +80,8 @@ window.settings = {
     "enableHeroCoverTap"         : false,
     "preview_issue_product_id"   : "com.timeinc.realsimple.ipad.inapp.FREESAMPLE",
 
-    "ipad_entbanner_subs"        : "subs/itunes/index.html?t=",
-    "ipad_entbanner_lucie_subs"  : "subs/lucie/index.html?t=",
+    "ipad_entbanner_subs"        : "subs/itunes.html?t=",
+    "ipad_entbanner_lucie_subs"  : "subs/lucie.html?t=",
 
     "eMagsAppId": "RS03042013",
 

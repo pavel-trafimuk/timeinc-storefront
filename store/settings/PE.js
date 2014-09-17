@@ -87,8 +87,8 @@ window.settings = {
     "hero_itii_preview": "image",
     "max_back_issues"            : 8,
 
-    "ipad_entbanner_subs"        : "subs/itunes/index.html?t=",
-    "ipad_entbanner_lucie_subs"  : "subs/lucie/index.html?t=",
+    "ipad_entbanner_subs"        : "subs/itunes.html?t=",
+    "ipad_entbanner_lucie_subs"  : "subs/lucie.html?t=",
 
     "storeBuyIssueBtn"           : "Buy Now",
     "heroHeading"                : "In This Issue",
