@@ -22,8 +22,8 @@ window.settings = {
 
     "eMagsAppId": "SOLIV8403",
     
-    "ipad_entbanner_alacarte"    : "singlebuyer/index.html?t=",
-    "ipad_entbanner_nonsubs"     : "nonsubs/index.html?t=",
+    // "ipad_entbanner_alacarte"    : "singlebuyer/index.html?t=",
+    // "ipad_entbanner_nonsubs"     : "nonsubs/index.html?t=",
 
     "omniture_account"           : "timagsouthernnk",
     "omniture_server"            : "timeinc.122.2o7.net",
