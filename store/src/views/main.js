@@ -13,8 +13,14 @@
     initialize: function() {
       var that = this,
           folio = App.api.libraryService.get_touted_issue(),
-          setbanner;
-
+          setbanner,
+          v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+          
+      this.ios_version = [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+      this.ios_version.toString = function() {
+        return this.join(".");
+      };
+      
       App.api.authenticationService.updatedSignal.add(function() {
         App.api.libraryService.updateLibrary();
       });
@@ -50,22 +56,97 @@
 
       this.selectBannerType();
       
+      var checkOS = this.is_version("8");
+      
       this.subview.render(function() {
         that.subview.$el.appendTo(that.el);
         that.subview.animate(function() {
-          if (!App.dialogs.FirstLoadPopup.shown 
+          if (settings.enable_ios8_popup && !localStorage.ios8popupshown) {
+            console.log("checkOS", checkOS);
+            if (checkOS) {
+              new App.dialogs.iOS8Popup;
+              localStorage.ios8popupshown = true;
+            }
+          } else {
+            if (!App.dialogs.FirstLoadPopup.shown 
                 && settings.enable_first_load_popup
                 /*&& localStorage.app_view_count == 1*/) {
-            App.api.authenticationService.user_is_subscriber(function(is_subscriber) {
-              if (!is_subscriber) {
-                new App.dialogs.FirstLoadPopup;
-              }
-            });
+              App.api.authenticationService.user_is_subscriber(function(is_subscriber) {
+                if (!is_subscriber) {
+                  new App.dialogs.FirstLoadPopup;
+                }
+              });
+            }
           }
           App.dialogs.FirstLoadPopup.shown = true;
           (cb||$.noop)();
         });
       });
+    },
+    is_version: function(version_expr) {
+      /* version_expr looks like:
+      *     "7"  same as "=7"
+      *     "=7" major version must be 7
+      *     "=7.0" major version must be 7, minor must be 0
+      *     "<7" major version must less than 7
+      *     "<=6" major version must be less than or equal to 6
+      *     "!7" major version must be anyhting other than 7
+      *     "!7.0.4" full version must be anything other than 7.0.4
+      *
+      *  Note: a blank version_expr will always return true.
+      */
+      
+      var that = this;
+      
+      console.log("ios version", this.ios_version);
+      console.log("version expr", version_expr);
+      if (!this.ios_version) return true;
+      if (!version_expr) return true;
+
+      // version looks like [7, 0, 4];
+      var version = version_expr.replace(/^[<>=!]*/g, "").split(".").map(function(i) {
+            return parseInt(i, 10);
+          });
+
+      function eq() {
+        for (var i = 0; i < version.length; i++) {
+          if (that.ios_version[i] != version[i]) return false;
+        }
+        return true;
+      }
+      function lt() {
+        for (var i = 0; i < version.length; i++) {
+          if (that.ios_version[i] > version[i]) return false;
+          if (that.ios_version[i] < version[i]) return true;
+        }
+        return false;
+      }
+      function gt() {
+        for (var i = 0; i < version.length; i++) {
+          if (that.ios_version[i] < version[i]) return false;
+          if (that.ios_version[i] > version[i]) return true;
+        }
+        return false;
+      }
+  
+      if (version_expr.slice(0, 2) == "<=") {
+        return lt() || eq();
+      }
+      else if (version_expr.slice(0, 2) == ">=") {
+        return gt() || eq();
+      }
+      else if (version_expr.slice(0, 1) == "<") {
+        return lt();
+      }
+      else if (version_expr.slice(0, 1) == ">") {
+        return gt();
+      }
+      else if (version_expr.slice(0, 1) == "!") {
+        return !eq();
+      }
+      else {
+        return eq();
+      }
     },
     viewToShow: function() {
       // short-circuit: always show Store to subscribers. Doesn't use 

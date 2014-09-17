@@ -19,6 +19,11 @@
         "popup_restore_text"         : "<i>To restore your back issues follow instructions in the Library</i>",
         "popup_subscribe_text"       : "Download the latest issue now",
         "popup_close_text"           : "Close",
+        
+        "enable_ios8_popup"          : true,
+        "iOS8_Title"                 : "IMPORTANT:<br/>APP UPDATE REQUIRED FOR iOS 8",
+        "iOS8_Text"                  : "In order to continue enjoying your issues, please make sure you’re using the most recent version of this app (you can check by visiting the Updates section of the App Store).",
+        "iOS8_OK"                    : "OK",
     
         "echoENV"    : "prod", // set to 'prod' in brand settngs file when going live
         "echo_stage" : "https://echostage.timeinc.com/devices",
