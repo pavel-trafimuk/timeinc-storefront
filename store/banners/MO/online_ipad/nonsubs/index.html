@@ -87,6 +87,11 @@
         
        /* iPad Portrait */
        @media only screen and (min-width:768px){           
+          .slide.logo {
+            background: transparent url(logo_portrait.png) 50% 50% no-repeat;
+            background-size: contain;
+           }
+       
           .subscribe {
             background-image: url('subscribe_portrait.jpg?v={{BUILD_TIME}}') !important;
           }
@@ -106,6 +111,11 @@
        
        /* iPad Landscape */
        @media only screen and (min-width:1024px){           
+          .slide.logo {
+            background: transparent url(logo_landscape.png) 50% 50% no-repeat;
+            background-size: contain;
+           }
+           
           .subscribe {
             background-image: url('subscribe_landscape.jpg?v={{BUILD_TIME}}') !important;
           }
@@ -120,11 +130,6 @@
              margin-top: 6px;
           }      
           
-       }
-       
-       .slide.logo {
-        background: transparent url(logo.png) 50% 50% no-repeat;
-        background-size: contain;
        }
        
        .slide.ios8 {
