@@ -54,7 +54,7 @@ IssueList = Backbone.Collection.extend({
 
 HeroView = Backbone.View.extend({
 	events: {
-		
+		"click": function() { return false },
 	},
 	template: _.template($("#hero-template").html()),
 	render: function() {
@@ -78,6 +78,7 @@ BackIssueView = Backbone.View.extend({
 	className: "biv-container",
 	events: {
 		"tap": function(evt) { evt.preventDefault(); },
+		"click": function() { return false },
 		"tap .backissue-btn": "buy_or_view"
 	},
 	template: _.template($("#backissue-template").html()),
@@ -94,12 +95,31 @@ BackIssueView = Backbone.View.extend({
 		return this;
 	},
 	buy_or_view: function(evt) {
-		evt.preventDefault();
+		new ProgressView();
 		libBanner.buy_issue(this.model.get("productId"));
 	},
 	open_detail_dialog: function() {
 		new DetailOverlayDialog({
 			model: this.model
 		});
+	}
+});
+
+ProgressView = Backbone.View.extend({
+	className: "progress-overlay",
+	template: _.template("<div class='progress-box'>Opening…<% for (var i=6; i--;) { %><div class='progress-tick progress-tick-<%= i %>'></div><% } %></div>"),
+	initialize: function() {
+		var that = this;
+		this.render();
+		this.$el.appendTo("html");
+
+		setTimeout(function() {
+			that.$el.addClass("show");
+			that.$(".progress-box").addClass("show");
+		});
+	},
+	render: function() {
+		var cx = {};
+		return this.$el.html(this.template(cx))
 	}
 });
