@@ -2,7 +2,10 @@
 // One of the big benefits of using a js file instead of json for settings
 // is the ability to add comments
 window.settings = {
-
+    // Look at CFBundleVersion
+    // http://mageng.it.timeinc.com/twiki/bin/view/Main/AppInformation
+    "cfBundleVersion"            : "4.12",
+    
     // General settings
     "brandName"                  : "Southern Living",
     "brandCode"                  : "SL",

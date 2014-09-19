@@ -2,6 +2,10 @@
 // One of the big benefits of using a js file instead of json for settings
 // is the ability to add comments
 window.settings = {
+    // Look at CFBundleVersion
+    // http://mageng.it.timeinc.com/twiki/bin/view/Main/AppInformation
+    "cfBundleVersion"            : "4.0.13",
+    
     "DPS_VERSION"                : "r30",
 
     // General settings

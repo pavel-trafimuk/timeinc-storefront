@@ -161,11 +161,12 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <!-- iOS8 slide -->
-          <div class="slide ios8" data-ios-version="8"></div>
-
-          <!-- Logo slide -->
-          <div class="slide logo" data-ios-version="<8"></div>
+          <div class="slide ios8" data-ios-version="8" data-hide-on-latest-build="true">
+            <!-- iOS8 slide -->
+          </div>
+          <div class="slide logo">
+            <!-- Logo slide -->
+          </div>
         </div>
      </div>
    </div>
@@ -176,8 +177,10 @@
       libBanner.track_page_view("Library|Banner|Subscriber");
       libBanner.echo();
       
-      var gallery = new libBanner.SlideshowGallery();
-      gallery.enableTouch().slideEvery(5000);
+      libBanner.api_ready(function() {
+        var gallery = new libBanner.SlideshowGallery();
+        gallery.enableTouch().slideEvery(5000);
+      });
     })();
   </script>
 

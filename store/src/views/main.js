@@ -56,14 +56,15 @@
 
       this.selectBannerType();
       
-      var checkOS = this.is_version("8");
+      var checkOS = this.is_version("8"),
+          appVersion = App.api.configurationService.applicationVersion,
+          isOnLatestBuild = (parseFloat(appVersion) >= parseFloat(settings.cfBundleVersion));
       
       this.subview.render(function() {
         that.subview.$el.appendTo(that.el);
         that.subview.animate(function() {
           if (settings.enable_ios8_popup && !localStorage.ios8popupshown) {
-            console.log("checkOS", checkOS);
-            if (checkOS) {
+            if (checkOS && !isOnLatestBuild) {
               new App.dialogs.iOS8Popup;
               localStorage.ios8popupshown = true;
             }
