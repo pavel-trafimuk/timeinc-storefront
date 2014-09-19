@@ -14,10 +14,16 @@
       var that = this,
           folio = App.api.libraryService.get_touted_issue(),
           setbanner,
-          v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+          appVersion = (App.api.configurationService.applicationVersion).split("."),
+          iosVersion = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
           
-      this.ios_version = [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+      this.ios_version = [parseInt(iosVersion[1], 10), parseInt(iosVersion[2], 10), parseInt(iosVersion[3] || 0, 10)];
       this.ios_version.toString = function() {
+        return this.join(".");
+      };
+      
+      this.app_version = [parseInt(appVersion[0], 10), parseInt(appVersion[1] || 0, 10), parseInt(appVersion[2] || 0, 10)];
+      this.app_version.toString = function() {
         return this.join(".");
       };
       
@@ -56,9 +62,8 @@
 
       this.selectBannerType();
       
-      var checkOS = this.is_version("8"),
-          appVersion = App.api.configurationService.applicationVersion,
-          isOnLatestBuild = (parseFloat(appVersion) >= parseFloat(settings.cfBundleVersion));
+      var checkOS = this.is_version("os", "8"),
+          isOnLatestBuild = this.is_version("app", ">=" + settings.cfBundleVersion);
       
       this.subview.render(function() {
         that.subview.$el.appendTo(that.el);
@@ -78,13 +83,13 @@
                 }
               });
             }
+            App.dialogs.FirstLoadPopup.shown = true;
           }
-          App.dialogs.FirstLoadPopup.shown = true;
           (cb||$.noop)();
         });
       });
     },
-    is_version: function(version_expr) {
+    is_version: function(type, version_expr) {
       /* version_expr looks like:
       *     "7"  same as "=7"
       *     "=7" major version must be 7
@@ -99,33 +104,38 @@
       
       var that = this;
       
-      console.log("ios version", this.ios_version);
-      console.log("version expr", version_expr);
-      if (!this.ios_version) return true;
+      if (!type) return true;
       if (!version_expr) return true;
-
+      if (!this.ios_version && !this.app_version) {
+        return true;
+      } else {
+        this.version = (type == "os") ? this.ios_version : this.app_version;
+      }
+      
+      console.log("this.version", this.version);
+  
       // version looks like [7, 0, 4];
       var version = version_expr.replace(/^[<>=!]*/g, "").split(".").map(function(i) {
             return parseInt(i, 10);
           });
-
+  
       function eq() {
         for (var i = 0; i < version.length; i++) {
-          if (that.ios_version[i] != version[i]) return false;
+          if (that.version[i] != version[i]) return false;
         }
         return true;
       }
       function lt() {
         for (var i = 0; i < version.length; i++) {
-          if (that.ios_version[i] > version[i]) return false;
-          if (that.ios_version[i] < version[i]) return true;
+          if (that.version[i] > version[i]) return false;
+          if (that.version[i] < version[i]) return true;
         }
         return false;
       }
       function gt() {
         for (var i = 0; i < version.length; i++) {
-          if (that.ios_version[i] < version[i]) return false;
-          if (that.ios_version[i] > version[i]) return true;
+          if (that.version[i] < version[i]) return false;
+          if (that.version[i] > version[i]) return true;
         }
         return false;
       }
