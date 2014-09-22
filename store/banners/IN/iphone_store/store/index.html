@@ -13,12 +13,15 @@
       <div class="hero-rightbar">
         <div class="hero-issue-name"><%= issue.get('name') %></div>
         <div class="hero-buttons">
-          <a href="#" class="btn hero-button hero-preview-btn">Preview</a>
+          <% if (issue.get("show_preview_button")) { %>
+            <a href="#" class="btn hero-button hero-preview-btn">Preview</a>
+          <% } %>
           <a href="#" class="btn hero-button hero-subscribe-btn">Subscribe</a>
           <a href="#" class="btn hero-button hero-buy-btn"><%= issue.get_action_button_text() %></a>
         </div>
       </div>
     </script>
+
     <script type="text/template" id="backissue-template">
       <table><tr>
         <td class="backissues-cover-container">
@@ -31,6 +34,19 @@
           <a href="#" class="btn backissue-btn"><%= issue.get_action_button_text() %></a>
         </td>
       </tr></table>
+    </script>
+
+    <script type="text/template" id="subscribe-dialog-template">
+      <div class='sd-dialog-box modal-box'>
+          <p class='sd-title'><%= settings.subscribeTo %> <%= settings.brandName %></p>
+          <p class='sd-description'><%= settings.subscribeOfferText %></p>
+          <% _.each(subscriptions, function(sub) { %>
+              <div class='sd-subscribe-button' id='<%= sub.productId %>'>
+                  <%= sub.duration %> - <%= sub.price %>
+              </div>
+          <% }); %>
+          <button class="sd-close-button"><%= settings.subscribeCancel %></button>
+      </div>
     </script>
 
     {{JS_FILES}}
