@@ -99,19 +99,27 @@ HeroView = Backbone.View.extend({
 		return this;
 	},
 	open_preview: function(evt) {
-		new ProgressView();
+		var progview = new ProgressView();
 		libBanner.get_tcm_data_for_product_id(this.model.get("productId"), function(tcm_data) {
 			if (!tcm_data.preview_button_product_id) return;
 
-			libBanner.buy_issue(
-				tcm_data.preview_button_product_id,
-				tcm_data.preview_button_dossier_id
-			);
+			var pid = tcm_data.preview_button_product_id,
+				did = tcm_data.preview_button_dossier_id;
+
+			libBanner.buy_issue(pid, did, {
+				cancelled: function() {
+					progview.remove();
+				}
+			});
 		});
 	},
 	buy_or_view: function(evt) {
-		new ProgressView();
-		libBanner.buy_issue(this.model.get("productId"));
+		var progview = new ProgressView();
+		libBanner.buy_issue(this.model.get("productId"), {
+			cancelled: function() {
+				progview.remove();
+			}
+		});
 	},
 	show_subscribe_dialog: function() {
 		new SubscribeDialog();
@@ -145,8 +153,12 @@ BackIssueView = Backbone.View.extend({
 		return this;
 	},
 	buy_or_view: function(evt) {
-		new ProgressView();
-		libBanner.buy_issue(this.model.get("productId"));
+		var progview = new ProgressView();
+		libBanner.buy_issue(this.model.get("productId"), {
+			cancelled: function() {
+				progview.remove();
+			}
+		});
 	},
 	open_detail_dialog: function() {
 		new DetailOverlayDialog({
