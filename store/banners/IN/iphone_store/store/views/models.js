@@ -77,8 +77,8 @@ IssueList = Backbone.Collection.extend({
 
 HeroView = Backbone.View.extend({
 	events: {
-		"tap": function(evt) { evt.preventDefault(); },
-		"click": function() { return false },
+		"tap": function(evt) { evt.preventDefault() },
+		"click": function(evt) { evt.preventDefault() },
 		"tap .hero-preview-btn": "open_preview",
 		"tap .hero-subscribe-btn": "show_subscribe_dialog",
 		"tap .hero-buy-btn": "buy_or_view"
@@ -134,8 +134,8 @@ HeroView = Backbone.View.extend({
 BackIssueView = Backbone.View.extend({
 	className: "biv-container",
 	events: {
-		"tap": function(evt) { evt.preventDefault(); },
-		"click": function() { return false },
+		"tap": function(evt) { evt.preventDefault() },
+		"click": function(evt) { evt.preventDefault() },
 		"tap .backissue-btn": "buy_or_view"
 	},
 	template: _.template($("#backissue-template").html()),
@@ -170,6 +170,11 @@ BackIssueView = Backbone.View.extend({
 ProgressView = Backbone.View.extend({
 	className: "modal-overlay",
 	template: _.template("<div class='progress-box modal-box'>Opening…<% for (var i=6; i--;) { %><div class='progress-tick progress-tick-<%= i %>'></div><% } %></div>"),
+	events: {
+    	"tap": function(evt) { evt.preventDefault() },
+    	"touchmove": function(evt) { evt.preventDefault() },
+		"click": function(evt) { evt.preventDefault() },
+	}
 	initialize: function() {
 		var that = this;
 		this.render();
@@ -190,8 +195,9 @@ SubscribeDialog = Backbone.View.extend({
     className: "modal-overlay",
     template: _.template($("#subscribe-dialog-template").html()),
     events: {
-    	"tap": function(evt) { evt.preventDefault(); },
-		"click": function() { return false },
+    	"tap": function(evt) { evt.preventDefault() },
+    	"touchmove": function(evt) { evt.preventDefault() },
+		"click": function(evt) { evt.preventDefault() },
         "tap .sd-close-button": "close",
         "tap .sd-subscribe-button": "onSubscribe"
     },
