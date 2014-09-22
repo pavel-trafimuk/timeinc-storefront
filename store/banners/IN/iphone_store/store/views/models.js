@@ -173,7 +173,7 @@ ProgressView = Backbone.View.extend({
 	events: {
     	"tap": function(evt) { evt.preventDefault() },
     	"touchmove": function(evt) { evt.preventDefault() },
-		"click": function(evt) { evt.preventDefault() },
+		"click": function(evt) { evt.preventDefault() }
 	}
 	initialize: function() {
 		var that = this;
