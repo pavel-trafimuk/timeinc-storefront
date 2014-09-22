@@ -19,6 +19,8 @@ window.settings = {
     "heroHeading"                : "Inside This Issue",
     "max_back_issues"            : 12,
     
+    "eMagsAppId": "PSTLWTCHIPAD",
+    
     "hero_preview": "none",
     "enableHeroCoverTap"         : false,
     "preview_issue_product_id"   : "com.timeinc.stylewatch.ipad.inapp.FREESAMPLE",

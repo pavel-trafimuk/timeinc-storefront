@@ -21,6 +21,9 @@ window.settings = {
     "welcome_preview": "image",
     "hero_itii_preview": "image",
     "max_back_issues"            : 20,
+    
+    "eMagsAppId": "SIKDSIPAD",
+    
     "hero_preview": "none",
     "enableHeroCoverTap"         : false,
     "preview_issue_product_id"   : "com.timeinc.sikids.ipad.inapp.FREESAMPLE",

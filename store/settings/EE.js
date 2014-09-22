@@ -22,6 +22,8 @@ window.settings = {
     "preview_issue_product_id"   : "com.timeinc.essence.ipad.inapp.FREESAMPLE",
     
     "max_back_issues"            : 12,
+    
+    "eMagsAppId": "ESSNCIPAD",
 
     "omniture_account"           : "timagessencenk",
     "omniture_server"            : "timeinc.122.2o7.net",
