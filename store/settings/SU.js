@@ -23,6 +23,8 @@ window.settings = {
     "preview_issue_product_id"   : "com.timeinc.sunset.ipad.inapp.FREESAMPLE",
     
     "max_back_issues"            : 20,
+    
+    "eMagsAppId": "SNSTIPAD",
 
     "omniture_account"           : "timagsunsetnk",
     "omniture_server"            : "timeinc.122.2o7.net",

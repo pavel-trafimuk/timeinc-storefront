@@ -22,6 +22,8 @@ window.settings = {
     "hero_preview": "image",
     "hero_itii_preview": "image",
     "max_back_issues"            : 20,
+    
+    "eMagsAppId": "FORTNIPAD",
 
     "omniture_account"           : "timagfortunenk",
     "omniture_server"            : "metrics.cnn.com",

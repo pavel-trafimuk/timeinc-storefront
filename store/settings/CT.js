@@ -19,6 +19,8 @@ window.settings = {
     "heroHeading"                : "Inside This Issue",
     "max_back_issues"            : 20,
     
+    "eMagsAppId": "CSTLVIPAD",
+    
     "hero_preview": "none",
     "enableHeroCoverTap"         : false,
     "preview_issue_product_id"   : "com.timeinc.coastalliving.ipad.inapp.FREESAMPLE",

@@ -18,6 +18,8 @@ window.settings = {
     
     "heroHeading"                : "Inside This Issue",
     "max_back_issues"            : 20,
+    
+    "eMagsAppId": "MONEYIPAD",
 
     "omniture_account"           : "timagmoneynk",
     "omniture_server"            : "timeinc.122.2o7.net",

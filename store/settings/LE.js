@@ -38,6 +38,8 @@ window.settings = {
     "preview_issue_product_id"   : "TLFreePreview_iPad",
     
     "max_back_issues"            : 20,
+    
+    "eMagsAppId": "TRVLSRIPAD",
    
     // http://mageng.it.timeinc.com/twiki/bin/view/Main/DPS-MagazineXML-Urls
     "adobeAppId"                 : "073ce43d9b754f2aa77bcdd6f2dff3a0",
