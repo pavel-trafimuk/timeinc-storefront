@@ -88,10 +88,6 @@
         
        /* iPad Portrait */
        @media only screen and (min-width:768px){           
-          .subscribe {
-            background-image: url('subscribe_portrait.jpg?v={{BUILD_TIME}}') !important;
-          }
-                   
           .wrapper span.ipad-portrait{
               display: block;
           }        
@@ -107,10 +103,6 @@
        
        /* iPad Landscape */
        @media only screen and (min-width:1024px){           
-          .subscribe {
-            background-image: url('subscribe_landscape.jpg?v={{BUILD_TIME}}') !important;
-          }
-                     
           .wrapper span.ipad-landscape{
               display: block;
           }              
@@ -130,6 +122,11 @@
        
        .slide.ios8 {
         background: rgb(242, 242, 242) url(ios8_msg.png) 50% 50% no-repeat;
+        background-size: contain;
+       }
+       
+       .slide.sm-xsell {
+        background: transparent url(sm_xsell.png) 50% 50% no-repeat;
         background-size: contain;
        }
 
@@ -165,7 +162,11 @@
           <div class="slide ios8" data-ios-version="8" data-hide-on-latest-build="true">
             <!-- iOS8 slide -->
           </div>
-          <div class="slide logo">
+          <div class="slide sm-xsell" data-ios-version=">=7">
+            <!-- Real Simple NTTC Cross-sell slide -->
+            <a href="../../../appstore_links/goto_appstore.html?link=http%3A%2F%2Fwww.emagazines.com%2Finsight%2Flink%2F%3Fuser%3D4432%26g%3D%7BA6A25EFA-6BFC-403A-A3BA-7965BC1EA546%7D"></a>
+          </div>
+          <div class="slide logo" data-ios-version="<7">
             <!-- Logo slide -->
           </div>
         </div>
@@ -181,6 +182,10 @@
       libBanner.api_ready(function() {
         var gallery = new libBanner.SlideshowGallery();
         gallery.enableTouch().slideEvery(5000);
+        
+        $(".sm-xsell").click(function() {
+          libBanner.track_user_action("Library|Banner|Subscriber|Lucie", "banner_taps_smxsell");
+        });
       });
     })();
   </script>
