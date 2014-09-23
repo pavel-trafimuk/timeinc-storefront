@@ -88,10 +88,22 @@
         
        /* iPad Portrait */
        @media only screen and (min-width:768px){           
-          .subscribe {
-            background-image: url('subscribe_portrait.jpg?v={{BUILD_TIME}}') !important;
-          }
-                   
+          .slide.subscribe {
+            background: transparent url(subscribe_portrait.png) 50% 50% no-repeat;
+            background-size: contain;
+           }
+           
+          .slide.swimiphone {
+            background: transparent url(swimiphone_portrait.png) 50% 50% no-repeat;
+            background-size: contain;
+           }
+           
+          .slide.swimipad {
+            background: transparent url(swimipad_portrait.png) 50% 50% no-repeat;
+            background-size: contain;
+           }
+           
+       
           .wrapper span.ipad-portrait{
               display: block;
           }        
@@ -107,10 +119,21 @@
        
        /* iPad Landscape */
        @media only screen and (min-width:1024px){           
-          .subscribe {
-            background-image: url('subscribe_landscape.jpg?v={{BUILD_TIME}}') !important;
-          }
-                     
+          .slide.subscribe {
+            background: transparent url(subscribe_landscape.png) 50% 50% no-repeat;
+            background-size: contain;
+           }
+           
+          .slide.swimiphone {
+            background: transparent url(swimiphone_landscape.png) 50% 50% no-repeat;
+            background-size: contain;
+           }
+        
+          .slide.swimipad {
+            background: transparent url(swimipad_landscape.png) 50% 50% no-repeat;
+            background-size: contain;
+           }
+           
           .wrapper span.ipad-landscape{
               display: block;
           }              
@@ -165,8 +188,16 @@
           <div class="slide ios8" data-ios-version="8" data-hide-on-latest-build="true">
             <!-- iOS8 slide -->
           </div>
-          <div class="slide logo">
-            <!-- Logo slide -->
+          <div class="slide subscribe">
+            <!-- Subscribe slide -->
+            <a href="#"></a>
+          </div>
+          <div class="slide swimiphone">
+            <!-- Swim iPhone App slide -->
+          </div>
+          <div class="slide swimipad">
+            <!-- Swim iPad Issue slide -->
+            <a href="#"></a>
           </div>
         </div>
      </div>
@@ -181,6 +212,25 @@
       libBanner.api_ready(function() {
         var gallery = new libBanner.SlideshowGallery();
         gallery.enableTouch().slideEvery(5000);
+        
+        $(".subscribe a").click(function(evt) {
+          evt.preventDefault();
+  
+          gallery.cancelAutoSlide();
+  
+          libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
+          libBanner.buy_sub("com.timeinc.si.ipad.subs.9");
+        });
+        
+        $(".swimipad a").click(function(evt) {
+          evt.preventDefault();
+  
+          $(this).parent().addClass("loading");
+          gallery.cancelAutoSlide();
+  
+          libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
+          libBanner.buy_issue("com.timeinc.si.ipad.inapp.02212014","198935");
+        });
       });
     })();
   </script>
