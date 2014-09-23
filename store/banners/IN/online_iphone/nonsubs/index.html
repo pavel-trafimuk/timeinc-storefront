@@ -14,7 +14,7 @@
         height: 100%; width: 100%;
       }
        body{
-          background: #ed1c24;
+          background: #eaeaea;
           margin: 0px;
           padding: 0px;
        }
@@ -95,9 +95,24 @@
       }
       
       .slide.logo {
-        background: #000000 url(logo.png) 50% 50% no-repeat;
+        background: #ca0929 url(logo.png) 50% 50% no-repeat;
         background-size: contain;
       }
+      
+      .slide.authenticate {
+        background: #ca0929 url(authenticate.png) 50% 50% no-repeat;
+        background-size: contain;
+      }
+      
+      .slide.colorbook {
+        background: transparent url(colorbook.png) 50% 50% no-repeat;
+        background-size: contain;
+       }
+       
+       .slide.beautyguide {
+        background: transparent url(beautyguide.png) 50% 50% no-repeat;
+        background-size: contain;
+       }
 
        .slide.loading::before {
          content: 'Loading…';
@@ -131,8 +146,17 @@
           <div class="slide ios8" data-ios-version="8" data-hide-on-latest-build="true">
             <!-- iOS8 slide -->
           </div>
-          <div class="slide logo">
-            <!-- Logo slide -->
+          <div class="slide authenticate">
+            <!-- Authenticate slide -->
+            <a id="banner-link" href="#"></a>
+          </div>
+          <div class="slide colorbook">
+            <!-- Color Book slide -->
+            <a href="#"></a>
+          </div>
+          <div class="slide beautyguide">
+            <!-- Beauty Guide slide -->
+            <a href="#"></a>
           </div>
         </div>
      </div>
@@ -140,6 +164,8 @@
    
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
+    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
+    
     (function() {
       libBanner.track_page_view("Library|Banner|Nonsubscriber");
       libBanner.echo();
@@ -147,6 +173,24 @@
       libBanner.api_ready(function() {
         var gallery = new libBanner.SlideshowGallery();
         gallery.enableTouch().slideEvery(5000);
+        
+        $(".colorbook a").click(function(evt) {
+          evt.preventDefault();
+  
+          gallery.cancelAutoSlide();
+  
+          libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_colorbook");
+          libBanner.buy_issue("com.timeinc.instyle.ipad.inapp.06102014", "59726");
+        });
+        
+        $(".beautyguide a").click(function(evt) {
+          evt.preventDefault();
+  
+          gallery.cancelAutoSlide();
+  
+          libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_beautyguide");
+          libBanner.buy_issue("com.timeinc.instyle.ipad.inapp.05142014", "63438");
+        });
       });
     })();
   </script>
