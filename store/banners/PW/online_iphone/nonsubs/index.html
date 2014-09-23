@@ -98,6 +98,11 @@
         background: #ff2ea4 url(logo.png) 50% 50% no-repeat;
         background-size: contain;
       }
+      
+      .slide.authenticate {
+        background: #ff2ea4 url(authenticate.png) 50% 50% no-repeat;
+        background-size: contain;
+       }
 
        .slide.loading::before {
          content: 'Loading…';
@@ -128,24 +133,36 @@
    <div class="wrapper">
      <div class="banner carousel">
         <div class="slides">
-          <!-- iOS8 slide -->
-          <div class="slide ios8" data-ios-version="8"></div>
+          <div class="slide ios8" data-ios-version="8">
+            <!-- iOS8 slide -->
+          </div>
           
-          <!-- Logo slide -->
-          <div class="slide logo" data-ios-version="<8"></div>
+          <div class="slide authenticate">
+            <!-- Authenticate slide -->
+            <a id="banner-link" href="#"></a>
+          </div>
         </div>
      </div>
    </div>
    
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">    
+    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
     
     (function() {
       libBanner.track_page_view("Library|Banner|Nonsubscriber");
       libBanner.echo();
       
-      var gallery = new libBanner.SlideshowGallery();
-      gallery.enableTouch().slideEvery(5000);
+      libBanner.api_ready(function() {
+        var gallery = new libBanner.SlideshowGallery();
+        gallery.enableTouch().slideEvery(5000);
+        
+        $(".authenticate a").click(function() {
+          gallery.cancelAutoSlide();
+  
+          libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_authenticate");
+        });
+      });
     })();
   </script>
 
