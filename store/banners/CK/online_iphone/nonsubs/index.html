@@ -14,7 +14,7 @@
         height: 100%; width: 100%;
       }
        body{
-          background: #ed1c24;
+          background: #eaeaea;
           margin: 0px;
           padding: 0px;
        }
@@ -98,6 +98,21 @@
         background: #e51a2e url(logo.png) 50% 50% no-repeat;
         background-size: contain;
       }
+      
+      .slide.preview {
+        background: #ffffff url(preview.png) 50% 50% no-repeat;
+        background-size: contain;
+      }
+      
+      .slide.authenticate {
+        background: #e51a2e url(authenticate.png) 50% 50% no-repeat;
+        background-size: contain;
+      }
+      
+      .slide.subscribe {
+        background: #ffffff url(subscribe.png) 50% 50% no-repeat;
+        background-size: contain;
+      }
 
        .slide.loading::before {
          content: 'Loading…';
@@ -131,8 +146,16 @@
           <div class="slide ios8" data-ios-version="8" data-hide-on-latest-build="true">
             <!-- iOS8 slide -->
           </div>
-          <div class="slide logo">
-            <!-- Logo slide -->
+          <div class="slide preview">
+            <!-- Preview slide -->
+          </div>
+          <div class="slide subscribe">
+            <!-- Subscribe slide -->
+            <a href="#"></a>
+          </div>
+          <div class="slide authenticate">
+            <!-- Authenticate slide -->
+            <a id="banner-link" href="#"></a>
           </div>
         </div>
      </div>
@@ -140,6 +163,8 @@
    
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">
+    document.getElementById("banner-link").href = settings.popupActivateButtonUrlIphone;
+    
     (function() {
       libBanner.track_page_view("Library|Banner|Nonsubscriber");
       libBanner.echo();
@@ -147,6 +172,21 @@
       libBanner.api_ready(function() {
         var gallery = new libBanner.SlideshowGallery();
         gallery.enableTouch().slideEvery(5000);
+        
+        $(".subscribe a").click(function(evt) {
+          evt.preventDefault();
+  
+          gallery.cancelAutoSlide();
+  
+          libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
+          libBanner.buy_sub("com.timeinc.cookinglight.ipad.subs.9");
+        });
+        
+        $(".authenticate a").click(function() {
+          gallery.cancelAutoSlide();
+  
+          libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_authenticate");
+        });
       });
     })();
   </script>

@@ -132,6 +132,11 @@
         background: rgb(242, 242, 242) url(ios8_msg.png) 50% 50% no-repeat;
         background-size: contain;
        }
+       
+       .slide.ebook {
+        background: rgb(242, 242, 242) url(ebook.jpg) 50% 50% no-repeat;
+        background-size: contain;
+       }
 
        .slide.loading::before {
          content: 'Loading…';
@@ -165,8 +170,9 @@
           <div class="slide ios8" data-ios-version="8" data-hide-on-latest-build="true">
             <!-- iOS8 slide -->
           </div>
-          <div class="slide logo">
-            <!-- Logo slide -->
+          <div class="slide ebook">
+            <!-- Subscribe slide -->
+            <a href="dps.7c9aac078985497cbace2f132d68c56e://v1/folio/com.timeinc.cookinglight.ipad.inapp.12022013/7577"></a>
           </div>
         </div>
      </div>
@@ -181,6 +187,12 @@
       libBanner.api_ready(function() {
         var gallery = new libBanner.SlideshowGallery();
         gallery.enableTouch().slideEvery(5000);
+        
+        $(".ebook a").click(function() {
+          gallery.cancelAutoSlide();
+  
+          libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_ebook");
+        });
       });
     })();
   </script>
