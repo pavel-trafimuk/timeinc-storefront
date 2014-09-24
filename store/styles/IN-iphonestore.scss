@@ -210,6 +210,7 @@ $PULSE_OPACITY_INCREMENT: 1.0 / $TICK_COUNT;
 
 .hero-container {
   padding: $vertspacing $gutter;
+  min-height: 200px;
 }
 .hero-cover {
   -webkit-box-sizing: border-box;
