@@ -36,19 +36,6 @@
       </tr></table>
     </script>
 
-    <script type="text/template" id="subscribe-dialog-template">
-      <div class='sd-dialog-box modal-box'>
-          <p class='sd-title'><%= settings.subscribeTo %> <%= settings.brandName %></p>
-          <p class='sd-description'><%= settings.subscribeOfferText %></p>
-          <% _.each(subscriptions, function(sub) { %>
-              <div class='sd-subscribe-button' id='<%= sub.productId %>'>
-                  <%= sub.duration %> - <%= sub.price %>
-              </div>
-          <% }); %>
-          <button class="sd-close-button"><%= settings.subscribeCancel %></button>
-      </div>
-    </script>
-
     {{JS_FILES}}
     <script type="text/javascript" src="../../../lib/underscore.js"></script>
     <script type="text/javascript" src="../../../lib/backbone.js"></script>

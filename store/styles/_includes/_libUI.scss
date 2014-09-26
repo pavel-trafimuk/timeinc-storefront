@@ -96,7 +96,7 @@ $PULSE_OPACITY_INCREMENT: 1.0 / $TICK_COUNT;
 /*
  * Subscribe Dialog
  */
-.sd-dialog-box {
+.sd-dialog-box, .err-dialog-box {
   text-align: center;
   width: 300px;
   margin-left: -150px;
@@ -123,7 +123,7 @@ $PULSE_OPACITY_INCREMENT: 1.0 / $TICK_COUNT;
     text-transform: capitalize;
   }
 }
-.sd-title {
+.sd-title, .err-title {
   margin: 0;
   margin-bottom: 10px;
   font-size: 16px;
@@ -131,7 +131,7 @@ $PULSE_OPACITY_INCREMENT: 1.0 / $TICK_COUNT;
   text-align: center;
   margin-top:10px;
 }
-.sd-description {
+.sd-description, .err-description {
   font-size: 16px;
   margin: 0px 0px 20px;
   text-align: left;
