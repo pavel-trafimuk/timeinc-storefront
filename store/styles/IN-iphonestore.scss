@@ -10,6 +10,9 @@ $buttonWidth: 100px;
 $buttonBorderWidth: 1px;
 
 
+@import "_includes/_libUI.scss";
+
+
 
 html, body {
   margin: 0;
@@ -49,158 +52,6 @@ table, tbody, tr, td {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-}
-
-
-
-/*
- * Shared Modal Styles
- */
-$MODAL_SHOW_DURATION: 0.25s;
-.modal-overlay {
-  position: fixed;
-  top: 0; right: 0; bottom: 0; left: 0;
-  z-index: 1000;
-  background-color: rgba(200, 200, 200, 0.7);
-  
-  transition: opacity $MODAL_SHOW_DURATION;
-  opacity: 0;
-  &.show {
-    opacity: 1;
-  }
-}
-.modal-box {
-  position: fixed;
-  top: 50%; left: 50%;
-  height: 160px; width: 160px;
-  margin-top: -80px; margin-left: -80px;
-  z-index: 1001;
-
-  -webkit-box-sizing: border-box;
-
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0, 0.05);
-
-  color: #333;
-  text-align: center;
-  font-weight: bold;
-  font-size: 16px;
-
-  top: -160px;
-  transition: top $MODAL_SHOW_DURATION;
-  &.show {
-    top: 50%;
-  }
-}
-
-
-
-/*
- * Progress Overlay Styles
- */
-$TICK_COUNT: 6;
-$ROTATE_AMOUNT: 360deg / $TICK_COUNT;
-$PULSE_PERCENT: 100% / $TICK_COUNT;
-$PULSE_OPACITY_INCREMENT: 1.0 / $TICK_COUNT;
-
-.progress-box {
-  padding-top: 120px;
-}
-.progress-tick {
-  position: absolute;
-  top: 40px; left: 50%;
-
-  height: 16px; 
-
-  width: 5px;
-
-  border-radius: 10px;
-  background: #666;
-
-  -webkit-transform-origin: 50% 25px;
-  -webkit-animation-duration: 0.7s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-}
-
-@for $i from 0 through ($TICK_COUNT - 1) {
-  @-webkit-keyframes pulsate-#{$i} {
-    0% {
-      opacity: $PULSE_OPACITY_INCREMENT * $i;
-    }
-    #{$PULSE_PERCENT * $i + 0.1%} {
-      opacity: 0.0;
-    }
-    #{($PULSE_PERCENT * $i) + 1%} {
-      opacity: 1.0;
-    }
-    100% {
-      opacity: $PULSE_OPACITY_INCREMENT * $i;
-    }
-  }
-  .progress-tick-#{$i} {
-    -webkit-transform: rotate($ROTATE_AMOUNT * $i);
-    -webkit-animation-name: pulsate-#{$i};
-  }
-}
-
-
-
-/*
- * Subscribe Dialog
- */
-.sd-dialog-box {
-  text-align: center;
-  width: 300px;
-  margin-left: -150px;
-
-  height: auto;
-  margin-top: -150px;
-
-  font-family: "Helvetica Neue", "Arial", "sans-serif";
-
-  button {
-    width: 100%;
-    padding: 6px 25px;
-    background: none;
-    opacity: 0.85;
-    border: none;
-    border-top: 1px solid #ccc;
-    
-    color: #007aff;
-    font-family: "Helvetica Neue", "Arial", "sans-serif";
-    font-size: 18px;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    text-transform: capitalize;
-  }
-}
-.sd-title {
-  margin: 0;
-  margin-bottom: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  margin-top:10px;
-}
-.sd-description {
-  font-size: 16px;
-  margin: 0px 0px 20px;
-  text-align: left;
-  line-height: 120%;
-  padding: 8px 20px;
-}
-.sd-subscribe-button {
-  position: relative;
-  padding: 10px;
-  color:#007aff;
-  font-size:16px;
-  border-top: 1px solid #CCC;
-  opacity: 0.85;
-  display:block;
-  height: 21px;
 }
 
 

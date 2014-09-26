@@ -99,7 +99,7 @@ HeroView = Backbone.View.extend({
 		return this;
 	},
 	open_preview: function(evt) {
-		var progview = new ProgressView();
+		var progview = new libUI.ProgressView();
 		libBanner.get_tcm_data_for_product_id(this.model.get("productId"), function(tcm_data) {
 			if (!tcm_data.preview_button_product_id) return;
 
@@ -114,7 +114,7 @@ HeroView = Backbone.View.extend({
 		});
 	},
 	buy_or_view: function(evt) {
-		var progview = new ProgressView();
+		var progview = new libUI.ProgressView();
 		libBanner.buy_issue(this.model.get("productId"), {
 			cancelled: function() {
 				progview.remove();
@@ -122,7 +122,7 @@ HeroView = Backbone.View.extend({
 		});
 	},
 	show_subscribe_dialog: function() {
-		new SubscribeDialog();
+		new libUI.SubscribeDialog();
 	},
 	show_detail: function() {
 		new DetailOverlayDialog({
@@ -153,7 +153,7 @@ BackIssueView = Backbone.View.extend({
 		return this;
 	},
 	buy_or_view: function(evt) {
-		var progview = new ProgressView();
+		var progview = new libUI.ProgressView();
 		libBanner.buy_issue(this.model.get("productId"), {
 			cancelled: function() {
 				progview.remove();
@@ -167,80 +167,3 @@ BackIssueView = Backbone.View.extend({
 	}
 });
 
-ProgressView = Backbone.View.extend({
-	className: "modal-overlay",
-	template: _.template("<div class='progress-box modal-box'>Opening…<% for (var i=6; i--;) { %><div class='progress-tick progress-tick-<%= i %>'></div><% } %></div>"),
-	events: {
-    	"tap": function(evt) { evt.preventDefault() },
-    	"touchmove": function(evt) { evt.preventDefault() },
-		"click": function(evt) { evt.preventDefault() }
-	},
-	initialize: function() {
-		var that = this;
-		this.render();
-		this.$el.appendTo("html");
-
-		setTimeout(function() {
-			that.$el.addClass("show");
-			that.$(".modal-box").addClass("show");
-		});
-	},
-	render: function() {
-		var cx = {};
-		return this.$el.html(this.template(cx))
-	}
-});
-
-SubscribeDialog = Backbone.View.extend({
-    className: "modal-overlay",
-    template: _.template($("#subscribe-dialog-template").html()),
-    events: {
-    	"tap": function(evt) { evt.preventDefault() },
-    	"touchmove": function(evt) { evt.preventDefault() },
-		"click": function(evt) { evt.preventDefault() },
-        "tap .sd-close-button": "close",
-        "tap .sd-subscribe-button": "onSubscribe"
-    },
-    initialize: function() {
-    	var that = this;
-
-    	libBanner.api_ready(function() {
-    		that.render()
-    		that.$el.appendTo("html");
-    		setTimeout(function() {
-				that.$el.addClass("show");
-				that.$(".modal-box").addClass("show");
-			});
-    	});
-	},
-	render: function() {
-		var cx = {
-			subscriptions: _(libBanner.api.receiptService.availableSubscriptions).values()
-		}
-		this.$el.html(this.template(cx));
-		return this;
-	},
-    close: function() {
-        this.remove();
-    },
-    onSubscribe: function(evt) {
-        evt.preventDefault();
-    
-        var productId = $(evt.currentTarget).attr("id");
-        var subscription = libBanner.api.receiptService.availableSubscriptions[productId];
-        var transaction = subscription.purchase();
-    
-        transaction.completedSignal.addOnce(function(transaction) {
-            var success = (transaction.state == libBanner.api.transactionManager.transactionStates.FINISHED);
-            if (success) {
-                sub_status.is_sub = true;
-                sub_status.sub_type = "itunes";
-                Backbone.trigger("subscriptionStatusUpdated", sub_status);
-            }
-        });
-    	
-    	this.remove();
-
-    	if (this.options.onclose) this.options.onclose();
-    }
-});
