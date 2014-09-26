@@ -136,8 +136,10 @@
       libBanner.track_page_view("Library|Banner|Nonsubscriber");
       libBanner.echo();
       
-      var gallery = new libBanner.SlideshowGallery();
-      gallery.enableTouch().slideEvery(5000);
+      libBanner.api_ready(function() {
+        var gallery = new libBanner.SlideshowGallery();
+        gallery.enableTouch().slideEvery(5000);
+      });
     })();
   </script>
 
