@@ -1,9 +1,10 @@
 /* global $, _, Backbone, sub_status */
 
 
+
 /*
- * Models
- */
+********************  Models  ********************
+*/
 var Issue = Backbone.Model.extend({
 	defaults: {
 		viewable: false,
@@ -65,6 +66,7 @@ var Issue = Backbone.Model.extend({
 	}
 });
 
+
 IssueList = Backbone.Collection.extend({
 	model: Issue
 });
@@ -72,9 +74,8 @@ IssueList = Backbone.Collection.extend({
 
 
 /*
- * Views
- */
-
+********************  Views  ********************
+*/
 HeroView = Backbone.View.extend({
 	events: {
 		"tap": function(evt) { evt.preventDefault() },
@@ -109,6 +110,9 @@ HeroView = Backbone.View.extend({
 			libBanner.buy_issue(pid, did, {
 				cancelled: function() {
 					progview.remove();
+				},
+				errored: function(transaction) {
+					new libUI.ErrorDialog({transaction: transaction});
 				}
 			});
 		});
@@ -118,6 +122,9 @@ HeroView = Backbone.View.extend({
 		libBanner.buy_issue(this.model.get("productId"), {
 			cancelled: function() {
 				progview.remove();
+			},
+			errored: function(transaction) {
+				new libUI.ErrorDialog({transaction: transaction});
 			}
 		});
 	},
@@ -130,6 +137,7 @@ HeroView = Backbone.View.extend({
 		});
 	}
 });
+
 
 BackIssueView = Backbone.View.extend({
 	className: "biv-container",
@@ -157,6 +165,9 @@ BackIssueView = Backbone.View.extend({
 		libBanner.buy_issue(this.model.get("productId"), {
 			cancelled: function() {
 				progview.remove();
+			},
+			errored: function(transaction) {
+				new libUI.ErrorDialog({transaction: transaction});
 			}
 		});
 	},
