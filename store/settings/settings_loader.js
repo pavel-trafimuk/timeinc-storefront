@@ -9,6 +9,8 @@
         "store_hero_view"            : "StoreHero",
         "store_backissues_view"      : "StoreIssues",
         "store_folio_detail_view"    : "IssuePreviewImage",
+        
+        "store_slideshow_delay"      : 5000, // default is 5 seconds
 
         "omniture_account": null,
         "omniture_server": null,
