@@ -98,7 +98,7 @@
       var $main_gallery = document.getElementById(elementId);
 
       gallery = new libBanner.SlideshowGallery($main_gallery);
-      gallery.enableTouch().slideEvery(5000);
+      gallery.enableTouch().slideEvery(settings.store_slideshow_delay);
     },
     animate: function(cb) {
       cb = cb || $.noop;
