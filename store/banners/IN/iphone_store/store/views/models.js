@@ -13,7 +13,8 @@ var Issue = Backbone.Model.extend({
 		price: "",
 		preview_product_id: "",
 		preview_dossier_id: "",
-		show_preview_button: false
+		show_preview_button: false,
+		filter: ""
 	},
 	initialize: function(fields) {
 		// issue is the entry in the DPS xml feed for this folio
@@ -21,7 +22,8 @@ var Issue = Backbone.Model.extend({
 		this.issue = fields.issue;
 		this.set({
 			productId: $(this.issue).attr("productId"),
-			name: $("issueNumber", this.issue).text()
+			name: $("issueNumber", this.issue).text(),
+			filter: $("filter", this.issue).text()
 		});
 		this.update_from_dps_api();
 		this.update_from_tcm_data();
@@ -175,6 +177,38 @@ BackIssueView = Backbone.View.extend({
 		new DetailOverlayDialog({
 			model: this.model
 		});
+	},
+	apply_filter: function(filter) {
+		if (filter == "[all]") return this.$el.show();
+		
+		if (this.model.get("filter") == filter) {
+			this.$el.show();
+		}
+		else {
+			this.$el.hide();
+		}
 	}
 });
 
+
+FilterView = Backbone.View.extend({
+	events: {
+		"tap": function(evt) { evt.preventDefault() },
+		"click": function(evt) { evt.preventDefault() },
+		"tap a": "change_filter"
+	},
+	change_filter: function(evt) {
+		var $li = $(evt.currentTarget).closest("li"),
+			filter = $li.data("filter");
+
+		this.$(".active").removeClass("active");
+		$li.addClass("active");
+
+		this.apply_filter(filter);
+	},
+	apply_filter: function(filter) {
+		this.options.issues.forEach(function(issueView) {
+			issueView.apply_filter(filter);
+		});
+	}
+});

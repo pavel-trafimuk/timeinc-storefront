@@ -34,11 +34,19 @@
     }).render();
 
     var $backissues = $(".backissues-container");
-    back_issues.each(function(issue) {
-      new BackIssueView({
+
+    var back_issues_views = back_issues.map(function(issue) {
+      var view = new BackIssueView({
         model: issue,
-      }).render().$el.appendTo($backissues);
+      })
+      view.render().$el.appendTo($backissues);
+      return view;
     });
+
+    new FilterView({
+      el: $(".bi-filters"),
+      issues: back_issues_views
+    })
   });
 
 })();
