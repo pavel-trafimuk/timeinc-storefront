@@ -17,7 +17,15 @@
           appVersion = (App.api.configurationService.applicationVersion).split("."),
           iosVersion = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
           
-      this.ios_version = [parseInt(iosVersion[1], 10), parseInt(iosVersion[2], 10), parseInt(iosVersion[3] || 0, 10)];
+      try {
+        this.ios_version = [parseInt(iosVersion[1], 10), parseInt(iosVersion[2], 10), parseInt(iosVersion[3] || 0, 10)];
+      }
+      catch (err) {
+        if (DEBUG) {
+          this.ios_version = [8, 0, 2];
+        }
+      }
+
       this.ios_version.toString = function() {
         return this.join(".");
       };
