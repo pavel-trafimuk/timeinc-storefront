@@ -57,3 +57,14 @@
   }
   
 }
+
+button.bi-filter {
+  font-family: $MAIN_FONT;
+  margin: 0; border: 0;
+  padding: 0 20px;
+  background: transparent;
+  font-size: 13px;
+  &.active {
+    color: $ACCENT_COLOR;
+  }
+}
