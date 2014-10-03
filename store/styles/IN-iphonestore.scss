@@ -153,3 +153,78 @@ table, tbody, tr, td {
 .backissue-btn {
   margin-top: 15px;
 }
+
+
+
+/*
+ * Detail Overlay
+ */
+
+.detail-overlay {
+  position: fixed;
+  left: 0; right: 0;
+  height: 100%;
+  z-index: 9;
+
+  top: 100%;
+  transition: top 0.25s;
+  &.show {
+    top: 0%;
+  }
+
+  background: #f6f6f6;
+}
+.detail-header {
+  position: absolute;
+  top: $vertspacing;
+  left: $gutter;
+  right: ($gutter + $buttonWidth) + $gutter;
+}
+.detail-description {
+  color: #666;
+}
+.detail-buttons {
+  position: absolute;
+  top: $vertspacing + 30px;
+  right: $gutter;
+  width: $buttonWidth;
+  
+  .btn {
+    margin-bottom: 5px;
+  }
+}
+.detail-close-btn {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  color: #666;
+  padding: 10px $gutter;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 20px;
+}
+.detail-covers {
+  position: absolute;
+  left: 0; right: 0;
+  top: 120px;
+  bottom: 10px;
+
+  overflow-y: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  text-align: center;
+}
+.detail-cover-img {
+  height: 100%;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-overflow-scrolling: none;
+  white-space: normal;
+
+  margin-right: $gutter;
+  &:first-child {
+    margin-left: $gutter;
+  }
+}

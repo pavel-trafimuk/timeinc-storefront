@@ -14,7 +14,8 @@ var Issue = Backbone.Model.extend({
 		preview_product_id: "",
 		preview_dossier_id: "",
 		show_preview_button: false,
-		filter: ""
+		filter: "",
+		detail_covers: []
 	},
 	initialize: function(fields) {
 		// issue is the entry in the DPS xml feed for this folio
@@ -23,7 +24,8 @@ var Issue = Backbone.Model.extend({
 		this.set({
 			productId: $(this.issue).attr("productId"),
 			name: $("issueNumber", this.issue).text(),
-			filter: $("filter", this.issue).text()
+			filter: $("filter", this.issue).text(),
+			description: $("description", this.issue).text()
 		});
 		this.update_from_dps_api();
 		this.update_from_tcm_data();
@@ -39,7 +41,8 @@ var Issue = Backbone.Model.extend({
 				viewable: folio.isViewable,
 				purchasable: folio.isPurchasable,
 				downloadable: folio.isDownloadable,
-				price: folio.price
+				price: folio.price,
+
 			});
 		});
 	},
@@ -51,6 +54,7 @@ var Issue = Backbone.Model.extend({
 			var pid = tcm_data.preview_button_product_id;
 
 			self.set({
+				detail_covers: tcm_data.additional_covers_lg || [],
 				preview_product_id: pid,
 				preview_dossier_id: tcm_data.preview_button_dossier_id
 			});
@@ -58,6 +62,17 @@ var Issue = Backbone.Model.extend({
 			libBanner.get_folio_by_product_id(pid, function(folio) {
 				self.set("show_preview_button", folio ? true : false);
 			});
+		});
+	},
+	buy_or_view: function() {
+		var progview = new libUI.ProgressView();
+		libBanner.buy_issue(this.get("productId"), {
+			cancelled: function() {
+				progview.close();
+			},
+			errored: function(transaction) {
+				new libUI.ErrorDialog({transaction: transaction});
+			}
 		});
 	},
 	get_action_button_text: function() {
@@ -111,7 +126,7 @@ HeroView = Backbone.View.extend({
 
 			libBanner.buy_issue(pid, did, {
 				cancelled: function() {
-					progview.remove();
+					progview.close();
 				},
 				errored: function(transaction) {
 					new libUI.ErrorDialog({transaction: transaction});
@@ -123,7 +138,7 @@ HeroView = Backbone.View.extend({
 		var progview = new libUI.ProgressView();
 		libBanner.buy_issue(this.model.get("productId"), {
 			cancelled: function() {
-				progview.remove();
+				progview.close();
 			},
 			errored: function(transaction) {
 				new libUI.ErrorDialog({transaction: transaction});
@@ -146,7 +161,8 @@ BackIssueView = Backbone.View.extend({
 	events: {
 		"tap": function(evt) { evt.preventDefault() },
 		"click": function(evt) { evt.preventDefault() },
-		"tap .backissue-btn": "buy_or_view"
+		"tap .backissue-btn": "buy_or_view",
+		"tap .backissue-cover": "show_detail"
 	},
 	template: _.template($("#backissue-template").html()),
 	initialize: function() {
@@ -163,18 +179,10 @@ BackIssueView = Backbone.View.extend({
 		return this;
 	},
 	buy_or_view: function(evt) {
-		var progview = new libUI.ProgressView();
-		libBanner.buy_issue(this.model.get("productId"), {
-			cancelled: function() {
-				progview.remove();
-			},
-			errored: function(transaction) {
-				new libUI.ErrorDialog({transaction: transaction});
-			}
-		});
+		this.model.buy_or_view();
 	},
-	open_detail_dialog: function() {
-		new DetailOverlayDialog({
+	show_detail: function() {
+		new DetailView({
 			model: this.model
 		});
 	},
@@ -210,5 +218,48 @@ FilterView = Backbone.View.extend({
 		this.options.issues.forEach(function(issueView) {
 			issueView.apply_filter(filter);
 		});
+	}
+});
+
+
+DetailView = Backbone.View.extend({
+	className: "detail-overlay",
+	template: _.template($("#detail-template").html()),
+	events: {
+		"tap .detail-close-btn": "close",
+		"tap .detail-subscribe-btn": "show_subscribe",
+		"tap .detail-buy-btn": "buy_or_view",
+		"swipedown": "close"
+	},
+	initialize: function() {
+		var that = this;
+
+		this.render();
+		this.$el.appendTo("html");
+
+		setTimeout(function() {
+			that.$el.addClass("show");
+		});
+	},
+	render: function() {
+		var cx = {
+			cover_urls: [this.model.cover_url()].concat(this.model.get("detail_covers")),
+			issue: this.model
+		};
+		this.$el.html(this.template(cx));
+	},
+	close: function() {
+		var that = this;
+
+		that.$el.removeClass("show");
+		setTimeout(function() {
+			that.remove();
+		}, 300);
+    },
+    show_subscribe: function() {
+    	new libUI.SubscribeDialog();
+    },
+    buy_or_view: function() {
+	    this.model.buy_or_view();
 	}
 });
