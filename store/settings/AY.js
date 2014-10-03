@@ -61,10 +61,7 @@ window.settings = {
     "subscribeOfferText"         : "Subscribe to ALL YOU and get great tips and valuable advice on how to save everyday!",
     
     "hero_preview"               : "none",
-    "hero_preview_button"        : AB("previewButtonAction", {
-                                      "adobepreview": "adobe",
-                                      "sampleissue": "sampleissue"
-                                    }),
+    "hero_preview_button"        : "sampleissue",
 
     "enableHeroCoverTap"         : false,
     "preview_issue_product_id"   : "com.timeinc.allyou.ipad.inapp.FREESAMPLE",

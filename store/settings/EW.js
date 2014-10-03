@@ -69,10 +69,7 @@ window.settings = {
     "enableHeroCoverTap"         : false,
     
     "hero_preview"               : "none",
-    "hero_preview_button"        : AB("previewButtonAction", {
-                                      "adobepreview": "adobe",
-                                      "sampleissue": "sampleissue"
-                                    }),
+    "hero_preview_button"        : "sampleissue",
 
     "max_back_issues"            : 100,
 
