@@ -97,6 +97,7 @@ HeroView = Backbone.View.extend({
 	events: {
 		"tap": function(evt) { evt.preventDefault() },
 		"click": function(evt) { evt.preventDefault() },
+		"tap .hero-cover": "show_detail",
 		"tap .hero-preview-btn": "open_preview",
 		"tap .hero-subscribe-btn": "show_subscribe_dialog",
 		"tap .hero-buy-btn": "buy_or_view"
@@ -149,10 +150,10 @@ HeroView = Backbone.View.extend({
 		new libUI.SubscribeDialog();
 	},
 	show_detail: function() {
-		new DetailOverlayDialog({
+		new DetailView({
 			model: this.model
 		});
-	}
+	},
 });
 
 
@@ -209,6 +210,8 @@ FilterView = Backbone.View.extend({
 		var $li = $(evt.currentTarget).closest("li"),
 			filter = $li.data("filter");
 
+		if ($li.is(".active")) return;
+
 		this.$(".active").removeClass("active");
 		$li.addClass("active");
 
@@ -216,7 +219,9 @@ FilterView = Backbone.View.extend({
 	},
 	apply_filter: function(filter) {
 		this.options.issues.forEach(function(issueView) {
-			issueView.apply_filter(filter);
+			setTimeout(function() {
+				issueView.apply_filter(filter);
+			});
 		});
 	}
 });
@@ -229,7 +234,8 @@ DetailView = Backbone.View.extend({
 		"tap .detail-close-btn": "close",
 		"tap .detail-subscribe-btn": "show_subscribe",
 		"tap .detail-buy-btn": "buy_or_view",
-		"swipedown": "close"
+		"swipedown": "close",
+		"touchmove": function(evt) { evt.stopPropagation(); evt.preventDefault(); }
 	},
 	initialize: function() {
 		var that = this;
