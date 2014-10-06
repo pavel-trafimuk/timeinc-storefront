@@ -46,6 +46,14 @@
 })();
 
 
+
+
+var storefront = AB("storefront", {
+  "amex": "amex",
+  "time": "time"
+});
+
+
 // One of the big benefits of using a js file instead of json for settings
 // is the ability to add comments
 window.settings = {
@@ -59,6 +67,10 @@ window.settings = {
     "schedule"                   : "monthly",
     "popupInterval"              : 0,
     "enable_first_load_popup"    : false,
+
+    "store_hero_view"            : storefront == "time" ? "StoreHero" : "StoreHeroSlideshow",
+    "store_backissues_view"      : storefront == "time" ? "StoreIssues" : "StoreIssuesAmex",
+    //"store_folio_detail_view"    : storefront == "time" ? "IssuePreviewImage" : "AmexIssuePreview",
 
     "heroHeading"                : "Inside This Issue",
     "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",

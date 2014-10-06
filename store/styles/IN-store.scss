@@ -24,13 +24,6 @@
     }
   }
   
-  .cta button {
-    float: none !important;
-    display: block;
-    width: 80% !important;
-    -webkit-border-radius: 5px;
-  }
-  
   .preview-button {
     @include big-button-primary;
     margin: 0px auto 50px auto;
@@ -58,12 +51,63 @@
   
 }
 
+
+
+
+
+.store-hero-view,
+.store-issues-view,
+.store-hero-view .in-this-issue {
+  border: none;
+  background: #fff;
+  box-shadow: none;
+}
+
+.store-hero-view {
+  h2 {
+    display: none;
+  }
+  .issue-cover {
+    border-width: 1px;
+  }
+  .cta button {
+    float: none !important;
+    display: block;
+    width: 80% !important;
+    background: #fff;
+    color: $ACCENT_COLOR;
+    border-color: $ACCENT_COLOR;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
+  }
+}
+
+.store-issues-view {
+  padding-top: 0;
+
+  .tap-to-preview {
+    border-color: #ddd;
+    border-width: 1px 0;
+    border-style: solid;
+    padding: 10px 0;
+
+    span {
+      border: 0;
+      background: #fff;
+    }
+    &::before, &::after {
+      display: none;
+    }
+  }
+}
+
 button.bi-filter {
   font-family: $MAIN_FONT;
   margin: 0; border: 0;
-  padding: 0 20px;
+  padding: 0 30px;
   background: transparent;
-  font-size: 13px;
+  font-size: 14px;
   &.active {
     color: $ACCENT_COLOR;
   }
