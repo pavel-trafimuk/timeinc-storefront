@@ -99,6 +99,16 @@
         background-size: contain;
       }
       
+      .slide.subscribe {
+        background: transparent url(subscribe-back.png) 50% 50% no-repeat;
+        background-size: cover;
+      }
+      
+        .slide.subscribe a {
+          background: transparent url(subscribe-front.png) 50% 50% no-repeat;
+          background-size: contain;
+        }
+      
       .slide.authenticate {
         background: #e51a2e url(authenticate.png) 50% 50% no-repeat;
         background-size: contain;
@@ -136,6 +146,10 @@
           <div class="slide ios8" data-ios-version="8" data-hide-on-latest-build="true">
             <!-- iOS8 slide -->
           </div>
+          <div class="slide subscribe">
+            <!-- Subscribe slide -->
+            <a href="#"></a>
+          </div>
           <div class="slide authenticate">
             <!-- Authenticate slide -->
             <a id="banner-link" href="#"></a>
@@ -160,6 +174,15 @@
           gallery.cancelAutoSlide();
   
           libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_authenticate");
+        });
+        
+        $(".subscribe a").click(function(evt) {
+          evt.preventDefault();
+  
+          gallery.cancelAutoSlide();
+  
+          libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
+          libBanner.buy_sub("com.timeinc.peopleespanol.ipad.subs.9");
         });
       });
     })();
