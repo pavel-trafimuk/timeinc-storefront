@@ -206,6 +206,15 @@ FilterView = Backbone.View.extend({
 		"click": function(evt) { evt.preventDefault() },
 		"tap a": "change_filter"
 	},
+	initialize: function() {
+	  this.onload_filter();
+	},
+	onload_filter: function() {
+	  var $li = $("li").first(),
+      filter = $li.data("filter");
+      
+    this.apply_filter(filter);
+	},
 	change_filter: function(evt) {
 		var $li = $(evt.currentTarget).closest("li"),
 			filter = $li.data("filter");
