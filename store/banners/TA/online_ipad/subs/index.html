@@ -88,11 +88,6 @@
         
        /* iPad Portrait */
        @media only screen and (min-width:768px){           
-          .slide.mandela {
-            background: transparent url(mandela_portrait.png) 50% 50% no-repeat;
-            background-size: contain;
-           }
-           
            .wrapper span.ipad-portrait{
               display: block;
           }        
@@ -108,11 +103,6 @@
        
        /* iPad Landscape */
        @media only screen and (min-width:1024px){           
-          .slide.mandela {
-            background: transparent url(mandela_landscape.png) 50% 50% no-repeat;
-            background-size: contain;
-           }
-           
            .wrapper span.ipad-landscape{
               display: block;
           }              
@@ -167,9 +157,8 @@
           <div class="slide ios8" data-ios-version="8" data-hide-on-latest-build="true">
             <!-- iOS8 slide -->
           </div>
-          <div class="slide mandela">
-            <!-- Nelson Mandela slide -->
-            <a href="#"></a>
+          <div class="slide logo">
+            <!-- Logo slide -->
           </div>
         </div>
      </div>
@@ -184,16 +173,6 @@
       libBanner.api_ready(function() {
         var gallery = new libBanner.SlideshowGallery();
         gallery.enableTouch().slideEvery(5000);
-        
-        $(".mandela a").click(function(evt) {
-          evt.preventDefault();
-          
-          $(this).parent().addClass("loading");
-          gallery.cancelAutoSlide();
-          
-          libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
-          libBanner.buy_issue("com.timeinc.ipad.emea.12062013","237435");
-        });
       });
     })();
   </script>
