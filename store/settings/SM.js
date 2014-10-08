@@ -47,11 +47,11 @@
 
 
 
-
-var storefront = AB("storefront", {
-  "amex": "amex",
-  "time": "time"
-});
+var storefront = "time";
+// var storefront = AB("storefront", {
+//   "amex": "amex",
+//   "time": "time"
+// });
 
 
 // One of the big benefits of using a js file instead of json for settings
