@@ -17,7 +17,7 @@ window.settings = {
     "subscribeSpecialOfferText"  : "LIMITED TIME OFFER &ndash; 50% OFF AN ANNUAL SUBSCRIPTION<br/><br/>",
     "subscribeOfferText"         : "Subscribe now to get INSTYLE Magazine on your iPad. Featuring the hottest fashion trends, beauty tips, celebrity style secrets, best beauty buys and so much more!",
     
-    "storeIssuesStartingFilter"  : "",
+    "storeIssuesStartingFilter"  : "!special",
     "storeIssuesTapToView"       : "<button class='bi-filter active' data-filter='!special'>Monthly Magazine</button> <button class='bi-filter' data-filter='special'>Style Pro Guide</button>",
 
     "heroHeading"                : "Inside This Issue",
