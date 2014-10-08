@@ -105,9 +105,14 @@
       }
       
       .slide.subscribe {
-        background: #ed1c24 url(subscribe.png) 50% 50% no-repeat;
-        background-size: contain;
+        background: transparent url(subscribe-back.png) 50% 50% no-repeat;
+        background-size: cover;
       }
+      
+        .slide.subscribe a {
+          background: transparent url(subscribe-front.png) 50% 50% no-repeat;
+          background-size: contain;
+        }
 
        .slide.loading::before {
          content: 'Loading…';
