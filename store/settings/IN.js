@@ -18,7 +18,7 @@ window.settings = {
     "subscribeOfferText"         : "Subscribe now to get INSTYLE Magazine on your iPad. Featuring the hottest fashion trends, beauty tips, celebrity style secrets, best beauty buys and so much more!",
     
     "storeIssuesStartingFilter"  : "",
-    "storeIssuesTapToView"       : "<button class='bi-filter active' data-filter=''>All</button> <button class='bi-filter' data-filter='!special'>Monthly Magazine</button> <button class='bi-filter' data-filter='special'>eMinis</button>",
+    "storeIssuesTapToView"       : "<button class='bi-filter active' data-filter='!special'>Monthly Magazine</button> <button class='bi-filter' data-filter='special'>Style Pro Guide</button>",
 
     "heroHeading"                : "Inside This Issue",
     "heroPostDescriptionHTML"    : "",
