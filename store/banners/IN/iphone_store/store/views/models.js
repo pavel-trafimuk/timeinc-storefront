@@ -11,9 +11,6 @@ var Issue = Backbone.Model.extend({
 		purchasable: true,
 		downloadable: false,
 		price: "",
-		preview_product_id: "",
-		preview_dossier_id: "",
-		show_preview_button: false,
 		filter: "",
 		detail_covers: []
 	},
@@ -51,16 +48,8 @@ var Issue = Backbone.Model.extend({
 		libBanner.get_tcm_data_for_product_id(this.get("productId"), function(tcm_data) {
 			if (!tcm_data) return;
 
-			var pid = tcm_data.preview_button_product_id;
-
 			self.set({
-				detail_covers: tcm_data.additional_covers_lg || [],
-				preview_product_id: pid,
-				preview_dossier_id: tcm_data.preview_button_dossier_id
-			});
-
-			libBanner.get_folio_by_product_id(pid, function(folio) {
-				self.set("show_preview_button", folio ? true : false);
+				detail_covers: tcm_data.additional_covers_lg || []
 			});
 		});
 	},
@@ -104,8 +93,20 @@ HeroView = Backbone.View.extend({
 	},
 	template: _.template($("#hero-template").html()),
 	initialize: function() {
+		var self = this,
+			preview_productid = settings.preview_issue_product_ids.iPhone;
+
 		this.listenTo(this.model, "change", this.render);
 		this.listenTo(Backbone, "subscriptionStatusUpdated", this.render);
+
+		libBanner.get_folio_by_product_id(preview_productid, function(folio) {		
+			if (!folio) return;
+
+			libBanner.get_dps_data_for_product_id(preview_productid, function(issue) {
+				self.model.set("show_preview_button", folio ? true : false);
+				self.preview_issue = new Issue({issue: issue});
+			});
+		});
 	},
 	render: function() {
 		var that = this;
@@ -118,22 +119,7 @@ HeroView = Backbone.View.extend({
 		return this;
 	},
 	open_preview: function(evt) {
-		var progview = new libUI.ProgressView();
-		libBanner.get_tcm_data_for_product_id(this.model.get("productId"), function(tcm_data) {
-			if (!tcm_data.preview_button_product_id) return;
-
-			var pid = tcm_data.preview_button_product_id,
-				did = tcm_data.preview_button_dossier_id;
-
-			libBanner.buy_issue(pid, did, {
-				cancelled: function() {
-					progview.close();
-				},
-				errored: function(transaction) {
-					new libUI.ErrorDialog({transaction: transaction});
-				}
-			});
-		});
+		this.preview_issue.buy_or_view();
 	},
 	buy_or_view: function(evt) {
 		var progview = new libUI.ProgressView();
