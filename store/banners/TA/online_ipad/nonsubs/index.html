@@ -93,11 +93,6 @@
             background-size: contain;
            }
            
-           .slide.mandela {
-            background: transparent url(mandela_portrait.png) 50% 50% no-repeat;
-            background-size: contain;
-           }
-           
            .wrapper span.ipad-portrait{
               display: block;
           }        
@@ -115,11 +110,6 @@
        @media only screen and (min-width:1024px){           
           .slide.subscribe {
             background: transparent url(subscribe_landscape.png) 50% 50% no-repeat;
-            background-size: contain;
-           }
-           
-           .slide.mandela {
-            background: transparent url(mandela_landscape.png) 50% 50% no-repeat;
             background-size: contain;
            }
            
@@ -181,10 +171,6 @@
             <!-- Subscribe slide -->
             <a href="#"></a>
           </div>
-          <div class="slide mandela">
-            <!-- Nelson Mandela slide -->
-            <a href="#"></a>
-          </div>
         </div>
      </div>
    </div>
@@ -206,16 +192,6 @@
   
           libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
           libBanner.buy_sub("com.timeinc.ipad.emea.subs.9.1");
-        });
-        
-        $(".mandela a").click(function(evt) {
-          evt.preventDefault();
-          
-          $(this).parent().addClass("loading");
-          gallery.cancelAutoSlide();
-          
-          libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_buynow");
-          libBanner.buy_issue("com.timeinc.ipad.emea.12062013","237435");
         });
       });
     })();
