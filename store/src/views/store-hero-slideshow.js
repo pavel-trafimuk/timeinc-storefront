@@ -197,14 +197,25 @@
     goto_preview_issue: function(evt) {
       App.omni.event("st_hero_sample_issue_taps");
       var $this = $(evt.currentTarget),
-          product_id = $this.attr("productId"),
-          dossier_id = $this.attr("dossierId"),
-          folio = App.api.libraryService.get_by_productId(product_id);
+          $status_elem = $this.find(".btn"),
+          folio = App.api.libraryService.get_touted_issue(),
+          dossier_id = folio.get_preview_button_dossier_id();
+
+      $status_elem.text(settings.progressOpening);
        
-      if (folio) {
-        folio.is_sample = true;
-        this.goto_native_preview(dossier_id, folio);
-      }
+      folio.view_or_preview({
+        complete: function() {
+          $status_elem.text(settings.progressOpening);
+        
+          if (dossier_id) {
+            setTimeout(function() { folio.goto_dossier(dossier_id); }, 150);
+            return false;
+          }
+        },
+        download_progress: function(progress) {
+          $status_elem.text(settings.progressDownloading);
+        }
+      });
     },
     goto_preview: function() {
       App.omni.event("st_preview_featured_taps");
