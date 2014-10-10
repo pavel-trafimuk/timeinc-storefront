@@ -18,7 +18,9 @@
           <div class="issue-info">
             <div class="issue-number">{{title}}</div>
             <div class="issue-title">{{folioNumber}}</div>
-            <div class="issue-description">{{tcm.post_description_HTML}}</div>
+            <div class="issue-description">
+              {{get_html_description}}
+            </div>
             <button class="buy-issue-button"
               {{> buy-view-btn.partial . }}
             </button>
