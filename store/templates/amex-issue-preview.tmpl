@@ -10,6 +10,14 @@
     <header class="issue-date">{{folio.folioNumber}}</header>
     <p>{{folio.get_html_description}}</p>
     
+    
+    <button class="preview-issue-button">
+        Preview this Issue
+    </button>
+    <button class="subscribe-button">
+        {{#setting}}{{storeSubscribeBtn}}{{/setting}}
+    </button>
+    
     <button class="buy-issue-button"
       {{> buy-view-btn.partial folio }} 
     </button>
