@@ -56,12 +56,12 @@
         
     }
     
-    .buy-issue-button {
+    button {
         position: absolute;
         bottom: 0; right: 0;
         width: 180px;
         margin: 15px;
-        background: rgb(145, 145, 145);
+        background: rgb(221, 0 , 48);
         color: #fff;
         font-size: 12px;
         line-height: 28px;
@@ -70,6 +70,10 @@
         font-family: $MAIN_FONT;
         border-radius: 4px;
         border-width: 0px;
+    }
+    .buy-issue-button {
+        background: rgb(145, 145, 145);
+
         &[data-action=buy] {
             background: rgb(221, 0 , 48);
         }
@@ -81,6 +85,13 @@
             background: rgb(180, 180, 180);
         }
     }
+    .preview-issue-button {
+        bottom: 80px;
+    }
+    .subscribe-button {
+        bottom: 40px;
+    }
+
     header {
         margin: 15px;
         text-transform: uppercase;

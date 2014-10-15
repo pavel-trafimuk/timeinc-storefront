@@ -7,6 +7,8 @@
       "touchmove": "disallow_bad_scrolling",
       "touchstart": "disallow_bad_scrolling_touchstart",
       "tap .buy-issue-button": "buy_issue",
+      "tap .preview-issue-button": "preview",
+      "tap .subscribe-button": "subscribe",
       "tap .close-btn": "close",
       "swipedown .controls": "close"
     },
@@ -36,7 +38,21 @@
       this.yStart = 0;
 
       this.$el.hammer();
-      this.render(function() {
+
+
+      var update_ui = _.bind(this.update_UI_with_sub_and_preview_data, this),
+          prv_transaction = folio.verifyContentPreviewSupported();
+
+      prv_transaction.completedSignal.add(update_ui);
+      prv_transaction.stateChangedSignal.add(update_ui);
+
+      this.user_is_subscriber = false;
+      App.api.authenticationService.user_is_subscriber(function(is_sub) {
+        that.user_is_subscriber = is_sub;
+        update_ui();
+      });
+
+      that.render(function() {
         // don't allow multiple image previews at once
         if ($(".issue-preview-image").length) return;
 
@@ -44,6 +60,25 @@
         that.omni_pv = App.omni.pageview("previewimage|"+coverdate, "event1");
         that.animate();
       });
+    },
+    update_UI_with_sub_and_preview_data: function() {
+      var is_touted_issue = this.folio.productId == App.api.libraryService.get_touted_issue().productId;
+
+      if (this.user_is_subscriber || !is_touted_issue) {
+        this.$(".subscribe-button").hide();
+        this.$(".preview-issue-button").hide();
+        return
+      }
+      
+      this.$(".subscribe-button").show();
+
+      if (this.folio.supportsContentPreview) {
+        this.$(".preview-issue-button").show();
+      }
+      else {
+        this.$(".preview-issue-button").hide();
+      }
+      
     },
     render: function(cb) {
       cb = cb || $.noop;
@@ -62,6 +97,9 @@
                 imgs: tcm_imgs.length ? tcm_imgs : [img_url]
               };
           that.$el.html(that.template(cx));
+
+          that.update_UI_with_sub_and_preview_data();
+
           (cb || $.noop)();
       });
       return this;
@@ -123,6 +161,32 @@
           that.complete_buy_issue(evt);
         }
       }, 100);
+    },
+    subscribe: function() {
+      App.omni.event("preview_subscribe_taps");
+      new App.dialogs.Subscribe();
+    },
+    preview: function() {
+      var folio = this.folio,
+          dossier_id = folio.get_preview_button_dossier_id(),
+
+          dialog = new App.dialogs.WelcomeDownloading(),
+          $progress = dialog.$(".progress");
+
+      folio.view_or_preview({
+        complete: function() {
+          $progress.attr("data-label", settings.progressOpening);
+        
+          if (dossier_id) {
+            setTimeout(function() { folio.goto_dossier(dossier_id); }, 150);
+            return false;
+          }
+        },
+        download_progress: function(progress) {
+          $progress.attr("data-label", settings.progressDownloading);
+          $(".progress-bar", $progress).css("width", progress+"%");
+        }
+      });
     },
     complete_buy_issue: function(evt) {
       var $this = $(evt.currentTarget),
