@@ -197,15 +197,16 @@
     goto_preview_issue: function(evt) {
       App.omni.event("st_hero_sample_issue_taps");
       var $this = $(evt.currentTarget),
-          $status_elem = $this.find(".btn"),
+          
+          dialog = new App.dialogs.WelcomeDownloading(),
+          $progress = dialog.$(".progress");
+
           folio = App.api.libraryService.get_touted_issue(),
           dossier_id = folio.get_preview_button_dossier_id();
 
-      $status_elem.text(settings.progressOpening);
-       
       folio.view_or_preview({
         complete: function() {
-          $status_elem.text(settings.progressOpening);
+          $progress.attr("data-label", settings.progressOpening);
         
           if (dossier_id) {
             setTimeout(function() { folio.goto_dossier(dossier_id); }, 150);
@@ -213,7 +214,8 @@
           }
         },
         download_progress: function(progress) {
-          $status_elem.text(settings.progressDownloading);
+          $progress.attr("data-label", settings.progressDownloading);
+          $(".progress-bar", $progress).css("width", progress+"%");
         }
       });
     },
