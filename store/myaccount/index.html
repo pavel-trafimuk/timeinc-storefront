@@ -29,6 +29,8 @@ function go(URL){
  <div class="wrap">
  <script type="text/javascript">
  	var html='<div class="content">';
+ 	html = html + '<p class="important">Having problems downloading current issues? <a href="#" class="help-link">Click here to resolve</a>.</p>';
+ 	
   	if ("{{MAG_CODE}}" != "TK") {
   	    html = html.concat(
 	    		
@@ -94,6 +96,10 @@ function go(URL){
           evt.preventDefault();
           myAccount.track_user_action("My Account|Landing Page|Restore Issues (TFK)", "myaccount_taps_restoreIssues");
           setTimeout(function(){restoreIssues()}, 100);
+       });
+       
+       $(".help-link").click(function(evt) {
+         adobeDPS.configurationService.goToState("Help");
        });
     })();
   </script>
