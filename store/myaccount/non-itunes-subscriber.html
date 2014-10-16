@@ -1,55 +1,58 @@
 <!doctype html>
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title> </title>
-  <link rel="stylesheet" href="../css/myaccount.css" />
-   <style>
-            span.reseticon {
-                position: relative;
-            }
-            span.reseticon span {
-                position: absolute;
-                display: block;
-                top:-1px;
-                right: 5px;
-                width:20px;
-                height:20px;
-                background: url('../images/close.png') top center no-repeat;
-                cursor: pointer;
-            }
-          
-  </style>
-  <script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
-  <script type="text/javascript" src="../lib/jquery.js"></script>
-  <script type="text/javascript" src="../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript" src="../settings/settings_loader.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript" src="../lib/md5.js"></script>
-  <script type="text/javascript" src="myaccountOmni.js"></script>
-   <script type="text/javascript">    
-     (function() {
-      myAccount.track_page_view("My Account | Non iTunes Subscriber Page");
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     
-     })();
-
-   $(document).ready(function() {
+    <title> </title>
+    <link type="text/stylesheet" rel="stylesheet" href="../css/myaccount.css?v={{BUILD_TIME}}" />
+    
+    <style>
+      span.reseticon {
+        position: relative;
+      }
+      
+      span.reseticon span {
+        position: absolute;
+        display: block;
+        top:-1px;
+        right: 5px;
+        width:20px;
+        height:20px;
+        background: url('../images/close.png') top center no-repeat;
+        cursor: pointer;
+      }
+    </style>
+    
+    <script type="text/javascript">
       document.addEventListener("touchmove", function(evt) {
- 		 evt.preventDefault();
-	  });
-     
-  	  var $that = $(this);
-  	  
-  	   
-  	  $(this).on('touchmove', function(e) {
+        evt.preventDefault();
+      });
+    </script>
+    
+    <script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
+    <script type="text/javascript" src="../lib/jquery.js"></script>
+    <script type="text/javascript" src="../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
+    <script type="text/javascript" src="../settings/settings_loader.js?v={{BUILD_TIME}}"></script>
+    <script type="text/javascript" src="../lib/md5.js"></script>
+    
+    <script type="text/javascript">
+      var $that = $(this);
+      
+      $(this).on('touchmove', function(e) {
   	    e.preventDefault();
   	  });
-  	
-  	  $('input.auth-email').wrap('<span class="reseticon" />').after($('<span/>').click(function() {
-                   $('input.auth-email').val(null);
-                   $("#signin-dialog").css({position:'absolute'});
-                   $(window).scrollTop(0);
-                    
-        }));
+  	  
+  	  $('input.auth-email')
+  	    .wrap('<span class="reseticon" />')
+  	    .after(
+  	      $('<span/>').click(function() {
+  	        $('input.auth-email').val(null);
+  	        $("#signin-dialog").css({position:'absolute'});
+  	        $(window).scrollTop(0);
+  	      })
+  	    );
+  	    
       $('input.auth-pass').wrap('<span class="reseticon" />').after($('<span/>').click(function() {
                    $('input.auth-pass').val(null);
                    $("#signin-dialog").css({position:'absolute'});
@@ -173,77 +176,83 @@
   </script>
 </head>
 
-<body>
-
-   <!-- START: Signin Dialog -->
-   <div id="signin-modal" class="modal-background" style="position: absolute; display: none; top: 0px; left: 0px;">
-     <div id="signin-dialog" class="dialog pop">
-       <header>Sign In</header>
-       <div class="close-dialog">×</div>
-       <form id="signin-form" class="contents">
-	       <script type="text/javascript">
-	         var form_html = ''.concat(
-	         	'<p>' + settings.authInstructions + '</p>',
-	         	'<input type="email" class="auth-email" placeholder="' + settings.authPlacehodlerEmail + '">',
-	         	'<input type="password" class="auth-pass" placeholder="' + settings.authPlacehodlerPass + '">',
-	         	'<a href="' + settings.signInForgotPasswordUrl + '">' + settings.authForgotPassword + '</a>',
-	         	'<button class="sign-in-btn">' + settings.authSigninButton + '</button>',
-	         	'<div class="error-msg"></div>',
-	         	'<p class="print-subs">' + settings.authPrintSubsPrompt + ' <a href="' + settings.WesPageURL + '">' + settings.authPrintSubsLinkText + '</a></p>',
-	         	''
-	         );
-	         document.write(form_html);
-	       </script>
-       </form>
-       <footer>
-	       <script type="text/javascript">
-	         var footer_html = ''.concat(
-	            '<a href="#" onclick="go(settings.privacyPolicyUrl)">' + settings.authPrivacyLinkText + '</a>',
+  <body>
+    <!-- START: Signin Dialog -->
+    <div id="signin-modal" class="modal-background" style="position: absolute; display: none; top: 0px; left: 0px;">
+      <div id="signin-dialog" class="dialog pop">
+        <header>Sign In</header>
+        <div class="close-dialog">×</div>
+        <form id="signin-form" class="contents">
+          <script type="text/javascript">
+            var form_html = ''.concat(
+              '<p>' + settings.authInstructions + '</p>',
+              '<input type="email" class="auth-email" placeholder="' + settings.authPlacehodlerEmail + '">',
+              '<input type="password" class="auth-pass" placeholder="' + settings.authPlacehodlerPass + '">',
+              '<a href="' + settings.signInForgotPasswordUrl + '">' + settings.authForgotPassword + '</a>',
+              '<button class="sign-in-btn">' + settings.authSigninButton + '</button>',
+              '<div class="error-msg"></div>',
+              '<p class="print-subs">' + settings.authPrintSubsPrompt + ' <a href="' + settings.WesPageURL + '">' + settings.authPrintSubsLinkText + '</a></p>',
+              ''
+            );
+            document.write(form_html);
+          </script>
+        </form>
+        
+        <footer>
+          <script type="text/javascript">
+            var footer_html = ''.concat(
+              '<a href="#" onclick="go(settings.privacyPolicyUrl)">' + settings.authPrivacyLinkText + '</a>',
 	            ' | <a href="#" onclick="go(settings.licenceAgreementUrl)">' + settings.authLicenseLinkText + '</a>',
 	            ' | <a href="#" onclick="go(settings.termsOfUseUrl)">' + settings.authTermsLinkText + '</a>'
-	         );
-	         document.write(footer_html);
-	       </script>
-       </footer>
-     </div>
-   </div>
-   <!-- END: Signin Dialog -->
-   
-   <div class="wrap" id="panel">
-	 <div class="content" style="padding: 3% 0px;">
-	 	<p class="title">
-	 	  <script type="text/javascript">document.write(settings.myacctWhatHelp);</script>
-	 	</p>
-	 	
-	 	<!--SignIn Button -->
-	 	<p id="signIn" style="display: none;">
-	 	  <a href="#" class="print-subs blue-btn"></a>
-	 	  <span style="font-weight:normal; font-size:14px"></span>
-	   	</p>
-	   	
-	   	<!--Signout Button-->
-	   	<p id="signOut" style="display: none;">
-	   	  <a href="#"  class="print-subs blue-btn"></a>
+	          );
+	          document.write(footer_html);
+	        </script>
+	      </footer>
+	    </div>
+	  </div>
+	  <!-- END: Signin Dialog -->
+	  
+	  <div class="wrap" id="panel">
+	    <div class="content" style="padding: 3% 0px;">
+	      <p class="title">
+	        <script type="text/javascript">document.write(settings.myacctWhatHelp);</script>
+	      </p>
+	      
+	      <!--SignIn Button -->
+	      <p id="signIn" style="display: none;">
+	        <a href="#" class="print-subs blue-btn"></a>
+	        <span style="font-weight:normal; font-size:14px"></span>
+	      </p>
+	      
+	      <!--Signout Button-->
+	      <p id="signOut" style="display: none;">
+	        <a href="#"  class="print-subs blue-btn"></a>
         </p>
-	         
-	    <p id="activate">
-	    	<a href="#" class="print-subs blue-btn"></a>
-	    </p>
-	    
-	    <p id="goback">
-	    	<a href="#" class="clear-btn"></a>
-	    </p>
-    </div>
-
-	<!-- SiteCatalyst -->
-    <div style="display:none;">
-        <!-- PROD s_code -->
-        <script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/omniture/{{MAG_CODE}}/s_code.js"></script>
         
-       
-   </div>
-  
-  <script type="text/javascript" src="support-links.js?v={{BUILD_TIME}}"></script>
+        <p id="activate">
+          <a href="#" class="print-subs blue-btn"></a>
+        </p>
+        
+        <p id="goback">
+          <a href="#" class="clear-btn"></a>
+        </p>
+      </div>
+    
+      <script type="text/javascript" src="../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+      <script type="text/javascript" src="support-links.js?v={{BUILD_TIME}}"></script>
+    </div>
+    
+    <script type="text/javascript">
+      function go(URL) {
+        window.location.href=URL+ "?v={{BUILD_TIME}}";
+      }
+      
+      (function() {
+        libBanner.track_page_view("My Account | Non iTunes Subscriber Page");
+        
+        
+      })();
+    </script>
   
 </body>
 </html>
