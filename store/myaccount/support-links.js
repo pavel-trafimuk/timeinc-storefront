@@ -51,22 +51,26 @@
 
   $("#FAQs").click(function(evt) {
     evt.preventDefault();
-    myAccount.track_user_action("My Account| FAQs", "myaccount_taps_FAQs");
+    
+    libBanner.track_user_action("My Account| FAQs", "myaccount_taps_FAQs");
     go(FAQUrl);
   });
   $("#customerService").click(function(evt) {
     evt.preventDefault();
-    myAccount.track_user_action("My Account| Customer Service", "myaccount_taps_customerService");
+    
+    libBanner.track_user_action("My Account| Customer Service", "myaccount_taps_customerService");
     go(settings.customerServiceUrl);
   });
   $("#forgotPassword").click(function(evt) {
     evt.preventDefault();
-    myAccount.track_user_action("My Account| Forgot Password", "myaccount_taps_forgotPassword");
+    
+    libBanner.track_user_action("My Account| Forgot Password", "myaccount_taps_forgotPassword");
     go(settings.signInForgotPasswordUrl);
   });
   $("#helpGuide").click(function(evt) {
     evt.preventDefault();
-    myAccount.track_user_action("My Account| Help Guide", "myaccount_taps_helpGuide");
+    
+    libBanner.track_user_action("My Account| Help Guide", "myaccount_taps_helpGuide");
     go(settings.myacctHelpGuideURL);
   });
          
