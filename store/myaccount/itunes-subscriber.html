@@ -1,132 +1,117 @@
 <!doctype html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title> </title>
-<link rel="stylesheet" href="../css/myaccount.css" />
-<style>
-
-	@media screen and (orientation:portrait){
-		.careiTunes {
-		width: 100%;
-	    font-size: 20px;
-	    position: fixed; 
-	    bottom: 0;
-	    /*padding-bottom: 40px;*/
-	   }
-	}
-	@media screen and (orientation:landscape){
-		.careiTunes {
-		width: 100%;
-	    font-size: 20px;
-	    position: relative; 
-	    bottom: 0;
-	    /*padding-bottom: 40px;*/
-	   }
-	}
-</style>
-<script type="text/javascript">
-document.addEventListener("touchmove", function(evt) {
-  evt.preventDefault();
-});
-
-function go(URL){
-      window.location.href=URL+ "?v={{BUILD_TIME}}";
-    }
-
-</script>
-  <script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
-  <script type="text/javascript" src="../lib/jquery.js"></script>
-  <script type="text/javascript" src="../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript" src="../settings/settings_loader.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript" src="../lib/md5.js"></script>
-</head>
-
-<body>
-
- <div class="wrap" id="panel">
-	<div class="content">
-	
-    <script>
-	 	document.write('<p class="title">' + settings.myacctWhatHelp + '</p');
-	 	if ("{{MAG_CODE}}" != "TK") {
-	 	    var html = ''.concat(
-	    	'<p><a id="restoreIssues" href="#" target="_blank" class="blue-btn">' + settings.myacctRestoreIssues + '</a></p>',
-	      	'<p><a id="lucieRegistrationBtn" href="#" class="blue-btn">' + settings.myacctAcctSetup + '</a></p><p><span id="lucieText">'+settings.myacctLUCIEText+'</span></p>'
-	      	);
-	      	document.write(html);
-	    }
-	 	else{
-	    	var html = ''.concat(
-                '<div style="margin: 40px;">',
-                  '<div style="text-align: center; margin-bottom: 15px;"><strong>Missing issues?</strong></div>',
-                  'Restore your iTunes subscription by tapping the RESTORE ISSUES button below. This will remind the app that you are a subscriber. Follow the prompts until your subscription or previously purchased issues are restored.',
-                  '<br/>',
-                  '<a onclick="restoreIssues()" href="#" id="restoreIssues" target="_blank">' + settings.myacctRestoreIssues + '</a>',
-                '</div>'
-            );
-            document.write(html);
-	    }
-	    document.write('<p><a href="index.html" class="clear-btn">' + settings.myacctGoBack + '</a></p>');
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title> </title>
+    <link rel="stylesheet" href="../css/myaccount.css" />
+    
+    <style type="text/stylesheet">
+      @media screen and (orientation: portrait) {
+    		.careiTunes {
+    		  width: 100%;
+    	    font-size: 20px;
+    	    position: fixed; 
+    	    bottom: 0;
+    	    /*padding-bottom: 40px;*/
+    	   }
+    	}
+    	@media screen and (orientation: landscape) {
+    		.careiTunes {
+    		  width: 100%;
+    	    font-size: 20px;
+    	    position: relative; 
+    	    bottom: 0;
+    	    /*padding-bottom: 40px;*/
+    	   }
+    	}
+    </style>
+    
+    <script type="text/javascript">
+      document.addEventListener("touchmove", function(evt) {
+        evt.preventDefault();
+      });
+      
+      function go(URL){
+        window.location.href=URL+ "?v={{BUILD_TIME}}";
+      }
     </script>
-   
-   </div>
+    
+    <script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
+    <script type="text/javascript" src="../lib/jquery.js"></script>
+    <script type="text/javascript" src="../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
+    <script type="text/javascript" src="../settings/settings_loader.js?v={{BUILD_TIME}}"></script>
+    <script type="text/javascript" src="../lib/md5.js"></script>
+  </head>
 
-	<!-- SiteCatalyst -->
-    <div style="display:none;">
-        <!-- PROD s_code -->
-        <script type="text/javascript" src="https://subscription-assets.timeinc.com/prod/assets/appstorefronts-jq/omniture/{{MAG_CODE}}/s_code.js"></script>
-        
+  <body>
+    <div class="wrap" id="panel">
+      <div class="content">
         <script type="text/javascript">
-            function restoreIssues() {
-            	adobeDPS.receiptService.restorePurchases();
-            }
-            
-                      
-            
-        </script>
-   </div>
-    <script type="text/javascript" src="myaccountOmni.js"></script>
-	<script type="text/javascript" src="support-links.js?v={{BUILD_TIME}}"></script>
-	
-   <script>
-     $(function() {
-         if (settings.popupActivateButtonUrl) $(".print-subs").show();
-         adobeDPS.initializationComplete.addOnce(function() {
-            // don't show lucie registration button if the user is signed into lucie
-            if (adobeDPS.authenticationService.isUserAuthenticated) return;
+          var html = '<p class="title">' + settings.myacctWhatHelp + '</p';
+          
+          if ("{{MAG_CODE}}" != "TK") {
+            html = html.concat(
+              '<p><a id="restoreIssues" href="#" target="_blank" class="blue-btn">' + settings.myacctRestoreIssues + '</a></p>',
+              '<p><a id="lucieRegistrationBtn" href="#" class="blue-btn">' + settings.myacctAcctSetup + '</a></p><p><span id="lucieText">'+settings.myacctLUCIEText+'</span></p>'
+            );
+  	      } else {
+  	        html = html.concat(
+  	          '<div style="margin: 40px;">',
+  	            '<div style="text-align: center; margin-bottom: 15px;">',
+  	              '<strong>Missing issues?</strong>',
+  	            '</div>',
+  	            'Restore your iTunes subscription by tapping the RESTORE ISSUES button below. This will remind the app that you are a subscriber. Follow the prompts until your subscription or previously purchased issues are restored.',
+  	            '<br/>',
+  	            '<a href="#" id="restoreIssues" target="_blank">' + settings.myacctRestoreIssues + '</a>',
+  	          '</div>'
+  	        );
+  	      }
 
-            localStorage.visitorId = md5(adobeDPS.deviceService.deviceId);
-            $.each(adobeDPS.receiptService.availableSubscriptions, function(productId, sub) {
-                if (sub.isActive()) {
-                    $("#careButtons").attr('class', 'careiTunes');
-                    $("#lucieRegistrationBtn").css({'display':'block'});
-                    $("#lucieText").css({'display':'block'});
-                    
-                }
-            });
+  	      html = html + '<p><a href="index.html" class="clear-btn">' + settings.myacctGoBack + '</a></p>';
+  	      document.write(html);
+        </script>
+      </div>
+
+      <script type="text/javascript" src="../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+      <script type="text/javascript" src="support-links.js?v={{BUILD_TIME}}"></script>
+    </div>
+    
+    <script type="text/javascript">
+      (function() {
+        if (settings.popupActivateButtonUrl) {
+          $(".print-subs").show();
+        }
+        
+        libBanner.track_page_view("My Account | iTunes Subscriber Page");
+        
+        libBanner.api_ready(function() {
+          // don't show lucie registration button if the user is signed into lucie
+          if (libBanner.authenticationService.isUserAuthenticated) return;
+          localStorage.visitorId = md5(libBanner.deviceService.deviceId);
+          $.each(libBanner.receiptService.availableSubscriptions, function(productId, sub) {
+            if (sub.isActive()) {
+              $("#careButtons").attr('class', 'careiTunes');
+              $("#lucieRegistrationBtn").css({'display':'block'});
+              $("#lucieText").css({'display':'block'});
+            }
+          });
+        });
+        
+        $("#restoreIssues").click(function(evt) {
+          evt.preventDefault();
+          
+          libBanner.track_user_action("My Account|iTunes Subscriber Page|Restore Issues", "myaccount_taps_restoreIssues");
+          libBanner.restore_purchases();
+        });
+        
+        $("#lucieRegistrationBtn").click(function(evt) {
+          evt.preventDefault();
+          
+          libBanner.track_user_action("My Account|iTunes Subscriber Page|LUCIE Registration", "myaccount_taps_lucieRegistration");
+          libBanner.lucie_register();
          });
-     });
-   </script>
- 
-  <script type="text/javascript">    
-     (function() {
-      myAccount.track_page_view("My Account | iTunes Subscriber Page");
-     
-  
-       $("#restoreIssues").click(function(evt) {
-          evt.preventDefault();
-          myAccount.track_user_action("My Account|iTunes Subscriber Page|Restore Issues", "myaccount_taps_restoreIssues");
-          setTimeout(function(){restoreIssues()}, 100);
-       });
-       $("#lucieRegistrationBtn").click(function(evt) {
-          evt.preventDefault();
-      	  myAccount.track_user_action("My Account|iTunes Subscriber Page|LUCIE Registration", "myaccount_taps_lucieRegistration");
-      	  setTimeout(function(){adobeDPS.dialogService.displayCustomDialog();}, 100);
-       });
-       
-    })();
-  </script>
-</body>
+      })();
+    </script>
+  </body>
 </html>
 
