@@ -35,146 +35,7 @@
     <script type="text/javascript" src="../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
     <script type="text/javascript" src="../settings/settings_loader.js?v={{BUILD_TIME}}"></script>
     <script type="text/javascript" src="../lib/md5.js"></script>
-    
-    <script type="text/javascript">
-      var $that = $(this);
-      
-      $(this).on('touchmove', function(e) {
-  	    e.preventDefault();
-  	  });
-  	  
-  	  $('input.auth-email')
-  	    .wrap('<span class="reseticon" />')
-  	    .after(
-  	      $('<span/>').click(function() {
-  	        $('input.auth-email').val(null);
-  	        $("#signin-dialog").css({position:'absolute'});
-  	        $(window).scrollTop(0);
-  	      })
-  	    );
-  	    
-      $('input.auth-pass').wrap('<span class="reseticon" />').after($('<span/>').click(function() {
-                   $('input.auth-pass').val(null);
-                   $("#signin-dialog").css({position:'absolute'});
-                   $(window).scrollTop(0);
-       }));  
-  	  $(".close-dialog").on('click', function(e) {
-        e.preventDefault();
-        $( "input.auth-email").val(null);
-        $( "input.auth-pass").val(null);
-        $( ".error-msg").val(null);
-        
-        $("#signin-modal").hide();
-        $( ".error-msg").hide();
-      });
-  	    
-  	  $("p#signIn a")
-  	    .html(settings.myacctSignIn)
-  	    .on('click', function(e) {
-  	      e.preventDefault();
-  	      myAccount.track_user_action("My Account|Non iTunes Subscriber Page|Sign In", "myaccount_taps_signIn");
-  	      $("#signin-modal").show();
-  	     
-  	    });
-  	  
-  	  $("p#signIn span").html(settings.myacctSignInText);
-  	  
-  	  $("p#signOut a")
-  	    .html(settings.myacctSignOut)
-  	    .on('click', function(e) {
-  	  	  e.preventDefault();
-  	  	  myAccount.track_user_action("My Account|Non iTunes Subscriber Page|Sign Out", "myaccount_taps_signOut");
-       	  signOut();
-  	    });
-  	  
-  	  $(".sign-in-btn").on('click', function(e) {
-  	  	e.preventDefault();
-  	  	signIn();
-  	  });
-  	  
-  	  $("#signin-form").on('submit', function(e) {
-        e.preventDefault();
-        signIn();
-      });
-      /**/
-      $("p#activate a")
-        .attr("href", settings.popupActivateButtonUrl)
-        .html(settings.myacctPrintSubs);
-      
-      $("p#goback a")
-        .on("click", function() {
-           go("index.html");
-             
-        })
-        .html(settings.myacctGoBack);
-      
-      window.setInterval(function() {
-        // Check API for user login or logout
-        var is_authenticated = adobeDPS.authenticationService.isUserAuthenticated,
-        $signIn = $("p#signIn"), 
-        $signOut = $("p#signOut");
-      
-        if (is_authenticated) {
-          $signOut.show();
-          $signIn.hide();
-        } else {
-          $signIn.show();
-          $signOut.hide();
-        }
-      }, 100);
-  	});
-  	
- 
-  	function go(URL){
-      window.location.href=URL+ "?v={{BUILD_TIME}}";
-    }
-    
-  	function signIn() {
-  	   var $modal = $("#signin-modal"),
-        $err = $(".error-msg"),
-        $user = $(".auth-email"),
-        $pass = $(".auth-pass"),
-        $signIn = $("p#signIn"), 
-        $signOut = $("p#signOut");
-        
-        $err.hide();
-        
-        if (! $user.val().length) {
-          return $err.show().text(settings.authErrorNoEmail);
-        }
-        
-        if (! $pass.val().length) {
-          return $err.show().text(settings.authErrorNoPass);
-        }
-        
-        try {
-          var t = adobeDPS.authenticationService.login($user.val(), $pass.val());
-        }
-        
-        catch (err) {
-          $err.show().text(settings.authErrorAuthFailed);
-        }
-        
-        t.completedSignal.addOnce(function() {
-          if (t.state < 0) $err.show().text(settings.authErrorAuthFailed);
-          else{
-           $modal.remove();
-           $signOut.show();
-           $signIn.hide();
-          }
-        });
-      }
-      function signOut() {
-        var $signIn = $("p#signIn"),
-        $signOut = $("p#signOut");
-
-        adobeDPS.authenticationService.logout();
-        
-        $signIn.show();
-        $signOut.hide();
-      }
-  </script>
-</head>
+  </head>
 
   <body>
     <!-- START: Signin Dialog -->
@@ -247,10 +108,149 @@
         window.location.href=URL+ "?v={{BUILD_TIME}}";
       }
       
+      function signIn() {
+        var $modal = $("#signin-modal"),
+            $err = $(".error-msg"),
+            $user = $(".auth-email"),
+            $pass = $(".auth-pass"),
+            $signIn = $("p#signIn"), 
+            $signOut = $("p#signOut");
+            
+        $err.hide();
+        
+        if (! $user.val().length) {
+          return $err.show().text(settings.authErrorNoEmail);
+        }
+        
+        if (! $pass.val().length) {
+          return $err.show().text(settings.authErrorNoPass);
+        }
+        
+        try {
+          var t = libBanner.login($user.val(), $pass.val());
+        } catch (err) {
+          $err.show().text(settings.authErrorAuthFailed);
+        }
+        
+        t.completedSignal.addOnce(function() {
+          if (t.state < 0) {
+            $err.show().text(settings.authErrorAuthFailed);
+          } else {
+           $modal.remove();
+           $signOut.show();
+           $signIn.hide();
+          }
+        });
+      }
+      
+      function signOut() {
+        var $signIn = $("p#signIn"),
+        $signOut = $("p#signOut");
+
+        libBanner.logout();
+        
+        $signIn.show();
+        $signOut.hide();
+      }
+      
       (function() {
         libBanner.track_page_view("My Account | Non iTunes Subscriber Page");
         
+        var $that = $(this);
+      
+        $('input.auth-email')
+          .wrap('<span class="reseticon" />')
+          .after(
+            $('<span/>').click(function() {
+              $('input.auth-email').val(null);
+              $("#signin-dialog").css({position:'absolute'});
+              $(window).scrollTop(0);
+            })
+          );
         
+        $('input.auth-pass')
+          .wrap('<span class="reseticon" />')
+          .after(
+            $('<span/>').click(function() {
+              $('input.auth-pass').val(null);
+              $("#signin-dialog").css({position:'absolute'});
+              $(window).scrollTop(0);
+            })
+          );
+        
+        $(".close-dialog").click(function(e) {
+          e.preventDefault();
+          
+          $( "input.auth-email").val(null);
+          $( "input.auth-pass").val(null);
+          $( ".error-msg").val(null);
+          
+          $("#signin-modal").hide();
+          $( ".error-msg").hide();
+        });
+        
+        $("p#signIn a")
+         .html(settings.myacctSignIn)
+         .click(function(e) {
+           e.preventDefault();
+           
+           libBanner.track_user_action("My Account|Non iTunes Subscriber Page|Sign In", "myaccount_taps_signIn");
+           $("#signin-modal").show();
+         });
+      
+        $("p#signIn span").html(settings.myacctSignInText);
+      
+        $("p#signOut a")
+          .html(settings.myacctSignOut)
+          .click(function(e) {
+            e.preventDefault();
+            
+            libBanner.track_user_action("My Account|Non iTunes Subscriber Page|Sign Out", "myaccount_taps_signOut");
+            signOut();
+          });
+      
+        $(".sign-in-btn")
+          .click(function(e) {
+            e.preventDefault();
+            
+            signIn();
+          });
+      
+        $("#signin-form")
+          .submit(function(e) {
+            e.preventDefault();
+            
+            signIn();
+          });
+        
+        $("p#activate a")
+          .attr("href", settings.popupActivateButtonUrl)
+          .html(settings.myacctPrintSubs);
+      
+        $("p#goback a")
+          .html(settings.myacctGoBack)
+          .click(function(e) {
+             e.preventDefault();
+             
+             go("index.html");
+          });
+      
+        libBanner.api_ready(function() {
+          window.setInterval(function() {
+            // Check API for user login or logout
+            var is_authenticated = libBanner.api.authenticationService.isUserAuthenticated,
+                $signIn = $("p#signIn"),
+                $signOut = $("p#signOut");
+          
+            if (is_authenticated) {
+              $signOut.show();
+              $signIn.hide();
+            } else {
+              $signIn.show();
+              $signOut.hide();
+            }
+          }, 100);
+        });
       })();
     </script>
   

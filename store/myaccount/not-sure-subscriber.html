@@ -1,79 +1,85 @@
 <!doctype html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title> </title>
-<link rel="stylesheet" href="../css/myaccount.css" />
-
-<script type="text/javascript">
-	document.addEventListener("touchmove", function(evt) {
- 	 evt.preventDefault();
-	});
-
-    function go(URL){
-      window.location.href=URL+ "?v={{BUILD_TIME}}";
-    }
-
-</script>
-  <script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
-  <script type="text/javascript" src="../lib/jquery.js"></script>
-  <script type="text/javascript" src="../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript" src="../settings/settings_loader.js?v={{BUILD_TIME}}"></script>
-  <script type="text/javascript" src="../lib/md5.js"></script>
-</head>
-
-<body >
-
- <div class="wrap">
-  <div class="content" style="padding: 10px 0px 0px;">
-  	 <p class="title">Not Sure How You Subscribed?</p>
-  	 <div style="text-align:left; font-size:16px; font-weight:normal" >
-	 <p><span style="font-weight:bold">To confirm that you are an iTunes subscriber, follow these steps</span>:</p>
-    <ol>
-	  <li>On your iPad's home screen, tap "Settings".</li>
-	  <li>On the left navigation bar, tap "iTunes &amp; App Store".</li>
-	  <li>Tap on your Apple ID.</li>
-	  <li>Tap “View Apple ID”. You will be prompted to enter your iTunes password.</li>
-	  <li>Tap “Manage” under Subscriptions.</li>
-     </ol>
-	 <p>If it says "Active" next to your magazine, you have subscribed via iTunes.  If it says "Expired" next to your magazine, you have subscribed via iTunes but your subscription is no longer active.</p>
-	 <p>If the magazine is not listed, you did not subscribe via iTunes.  If you subscribed elsewhere, tap the button below to verify your subscription and create your digital account.</p>
-	 </div>
-
-	 
-
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    
+    <title> </title>
+    <link type="text/stylesheet" rel="stylesheet" href="../css/myaccount.css?v={{BUILD_TIME}}" />
+    <style type="text/css">
+      ol {
+        display: block;
+        margin-left: 25px;
+      }
+      li {
+        list-style-position: outside;
+      }
+    </style>
     <script type="text/javascript">
-      document.write("".concat(
-        '<p><a id="iTunesSubscriber" href="itunes-subscriber.html" class="blue-btn">',
-          settings.myacctiTunesSubscriber,
-          '</a></p>',
-        '<p><a id="subscribedElsewhere" href="non-itunes-subscriber.html" class="blue-btn">',
-          settings.myacctNoniTunesSubscriber,
-          '</a></p>'
-      ));
+      document.addEventListener("touchmove", function(evt) {
+        evt.preventDefault();
+      });
     </script>
-
-   </div>
-   <script type="text/javascript" src="myaccountOmni.js"></script>
-   <script type="text/javascript">    
-     (function() {
-      myAccount.track_page_view("My Account | Not Sure Subscriber Page");
-     
+    
+    <script type="text/javascript" src="../lib/AdobeLibraryAPI.js"></script>
+    <script type="text/javascript" src="../lib/jquery.js"></script>
+    <script type="text/javascript" src="../settings/{{MAG_CODE}}.js?v={{BUILD_TIME}}"></script>
+    <script type="text/javascript" src="../settings/settings_loader.js?v={{BUILD_TIME}}"></script>
+    <script type="text/javascript" src="../lib/md5.js"></script>
+  </head>
   
-      $("#subscribedElsewhere").click(function(evt) {
+  <body >
+    <div class="wrap">
+      <div class="content" style="padding: 10px 0px 0px;">
+        <p class="title">Not Sure How You Subscribed?</p>
+        <div style="text-align:left; font-size:16px; font-weight:normal" >
+          <p><span style="font-weight:bold">To confirm that you are an iTunes subscriber, follow these steps</span>:</p>
+          
+          <ol>
+            <li>On your iPad's home screen, tap "Settings".</li>
+            <li>On the left navigation bar, tap "iTunes &amp; App Store".</li>
+            <li>Tap on your Apple ID.</li>
+            <li>Tap “View Apple ID”. You will be prompted to enter your iTunes password.</li>
+            <li>Tap “Manage” under Subscriptions.</li>
+          </ol>
+          
+          <p>If it says "Active" next to your magazine, you have subscribed via iTunes.  If it says "Expired" next to your magazine, you have subscribed via iTunes but your subscription is no longer active.</p>
+          <p>If the magazine is not listed, you did not subscribe via iTunes.  If you subscribed elsewhere, tap the button below to verify your subscription and create your digital account.</p>
+        </div>
+        
+        <script type="text/javascript">
+          var html = ''.concat(
+            '<p>',
+              '<a id="iTunesSubscriber" href="itunes-subscriber.html" class="blue-btn">' + settings.myacctiTunesSubscriber + '</a>',
+            '</p>',
+            '<p>',
+              '<a id="subscribedElsewhere" href="non-itunes-subscriber.html" class="blue-btn">' + settings.myacctNoniTunesSubscriber + '</a>',
+            '</p>'
+          );
+          document.write(html);
+        </script>
+      </div>
+      <script type="text/javascript" src="../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+      <script type="text/javascript" src="support-links.js?v={{BUILD_TIME}}"></script>
+    </div>
+      
+    <script type="text/javascript">
+      function go(URL) {
+        window.location.href=URL+ "?v={{BUILD_TIME}}";
+      }
+      
+      (function() {
+        libBanner.track_page_view("My Account | Not Sure Subscriber Page");
+        
+        $("#subscribedElsewhere").click(function(evt) {
           evt.preventDefault();
+          
           var goTo = this.getAttribute("href");
-          myAccount.track_user_action("My Account|Not Sure Subscriber Page|I Subscribed Elsewhere", "myaccount_taps_subscribedElsewhere");
-          setTimeout(function(){go(goTo);}, 100);
-       });
-              
-    })();
-   </script>
-  <script type="text/javascript" src="support-links.js?v={{BUILD_TIME}}"></script>
- 
- </div>
-
- 
-</body>
+          libBanner.track_user_action("My Account|Not Sure Subscriber Page|I Subscribed Elsewhere", "myaccount_taps_subscribedElsewhere");
+          setTimeout(function(){ go(goTo); }, 100);
+        });
+      })();
+    </script>
+  </body>
 </html>
 

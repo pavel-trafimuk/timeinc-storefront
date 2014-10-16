@@ -7,7 +7,7 @@
     <title> </title>
     <link type="text/stylesheet" rel="stylesheet" href="../css/myaccount.css?v={{BUILD_TIME}}" />
     
-    <style type="text/stylesheet">
+    <style type="text/stylesheet">     
       @media screen and (orientation: portrait) {
     		.careiTunes {
     		  width: 100%;
@@ -74,12 +74,26 @@
       <script type="text/javascript" src="support-links.js?v={{BUILD_TIME}}"></script>
     </div>
     
+    <!-- START: Restore Issues Dialog -->
+    <div id="restore-modal" class="modal-background" style="position: absolute; display: none; top: 0px; left: 0px;">
+      <div id="restore-dialog" class="dialog pop" style="width: 280px;">
+        <header style="font-size: 16px; padding: 20px;">Do you want to restore your previous purchases?</header>
+        <div class="buttons" style="display: inline-block;">
+          <button class="btn nothanks">No Thanks</button>
+          <button class="btn restore" style="font-weight: bold;">Restore</button>
+        </div>
+      </div>
+    </div>
+    <!-- END: Restore Issues Dialog -->
+    
     <script type="text/javascript">
       function go(URL) {
         window.location.href=URL+ "?v={{BUILD_TIME}}";
       }
       
       (function() {
+        var $restoreDialog = $("#restore-modal");
+        
         if (settings.popupActivateButtonUrl) {
           $(".print-subs").show();
         }
@@ -88,9 +102,9 @@
         
         libBanner.api_ready(function() {
           // don't show lucie registration button if the user is signed into lucie
-          if (libBanner.authenticationService.isUserAuthenticated) return;
-          localStorage.visitorId = md5(libBanner.deviceService.deviceId);
-          $.each(libBanner.receiptService.availableSubscriptions, function(productId, sub) {
+          if (libBanner.api.authenticationService.isUserAuthenticated) return;
+          localStorage.visitorId = md5(libBanner.api.deviceService.deviceId);
+          $.each(libBanner.api.receiptService.availableSubscriptions, function(productId, sub) {
             if (sub.isActive()) {
               $("#careButtons").attr('class', 'careiTunes');
               $("#lucieRegistrationBtn").css({'display':'block'});
@@ -103,7 +117,18 @@
           evt.preventDefault();
           
           libBanner.track_user_action("My Account|iTunes Subscriber Page|Restore Issues", "myaccount_taps_restoreIssues");
+          $restoreDialog.show();
+        });
+        
+        $(".btn.nothanks").click(function(evt) {
+          libBanner.track_user_action("My Account|iTunes Subscriber Page|Restore Issues", "myaccount_taps_restoreIssues_no");
+          $restoreDialog.hide();
+        });
+        
+        $(".btn.restore").click(function(evt) {
+          libBanner.track_user_action("My Account|iTunes Subscriber Page|Restore Issues", "myaccount_taps_restoreIssues_yes");
           libBanner.restore_purchases();
+          $restoreDialog.hide();
         });
         
         $("#lucieRegistrationBtn").click(function(evt) {
