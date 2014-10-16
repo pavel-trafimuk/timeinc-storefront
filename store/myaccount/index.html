@@ -2,6 +2,8 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    
     <title> </title>
     <link type="text/stylesheet" rel="stylesheet" href="../css/myaccount.css?v={{BUILD_TIME}}" />
   
@@ -64,7 +66,7 @@
       }
       
       (function() {
-        myAccount.track_page_view("My Account | Landing Page");
+        libBanner.track_page_view("My Account | Landing Page");
         
         $("#iTunesSubscriber").click(function(evt) {
           evt.preventDefault();
@@ -95,10 +97,6 @@
           
           libBanner.track_user_action("My Account|Landing Page|Restore Issues (TFK)", "myaccount_taps_restoreIssues");
           libBanner.restore_purchases();
-        });
-        
-        $(".help-link").click(function(evt) {
-          libBanner.go_to_tab("Help");
         });
       })();
     </script>
