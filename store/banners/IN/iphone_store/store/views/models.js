@@ -89,7 +89,8 @@ HeroView = Backbone.View.extend({
 		"tap .hero-cover": "show_detail",
 		"tap .hero-preview-btn": "open_preview",
 		"tap .hero-subscribe-btn": "show_subscribe_dialog",
-		"tap .hero-buy-btn": "buy_or_view"
+		"tap .hero-buy-btn": "buy_or_view",
+		"tap .hero-privacy": "show_legal"
 	},
 	template: _.template($("#hero-template").html()),
 	initialize: function() {
@@ -140,6 +141,9 @@ HeroView = Backbone.View.extend({
 			model: this.model
 		});
 	},
+	show_legal: function() {
+	  libBanner.open(settings.privacyPolicyUrl);
+	}
 });
 
 
