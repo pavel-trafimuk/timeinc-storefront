@@ -148,7 +148,7 @@
         "myacctiTunesSubscriber"     : 'I subscribed through iTunes<sup style="font-size:13px;">&reg;</sup>',
         "myacctNoniTunesSubscriber"  : 'I subscribed elsewhere',
         "myacctNotSureSubscriber"    : 'I\'m not sure how I subscribed',
-        "myacctTellUsMore"           : 'TELL US A LITTLE MORE<br>SO WE CAN HELP YOU...',
+        "myacctTellUsMore"           : 'NEED HELP ACCESSING YOUR ISSUES?',
         "myacctWhatHelp"             : 'WHAT CAN WE HELP YOU WITH?',
         "myacctCustomerCareSupport"  : 'CUSTOMER CARE SUPPORT',
         "myacctPrintSubs"            : 'I have a subscription and want to create my '+settings.brandName+' digital account',

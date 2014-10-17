@@ -32,6 +32,19 @@
            color: grey;
        }
        
+       .wrapper a#privacy {
+          position: absolute;
+          top: 0;
+          right: 22px;
+          background: rgba(255,255,255,.8) url(i_icon.png) 50% 50% no-repeat;
+          background-size: contain;
+          border: 1px rgba(255,255,255,.8) solid;
+          border-radius: 17px;
+          width: 22px;
+          height: 22px;
+          z-index: 1001;
+       }
+       
        .carousel{
           overflow: hidden;
        }
@@ -91,7 +104,7 @@
             
       .slide.logo {
         background: #000000 url(logo.png) 50% 50% no-repeat;
-        background-size: contain;
+        background-size: 85%;
       }
 
        .slide.loading::before {
@@ -121,6 +134,8 @@
 <body>
    
    <div class="wrapper">
+     <a id="privacy" href="#"></a>
+     
      <div class="banner carousel">
         <div class="slides">
           <!-- Logo slide -->
@@ -131,6 +146,7 @@
    
   <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
   <script type="text/javascript">    
+    document.getElementById("privacy").href = settings.privacyPolicyUrl;
     
     (function() {
       libBanner.track_page_view("Library|Banner|Nonsubscriber");
@@ -139,6 +155,10 @@
       libBanner.api_ready(function() {
         var gallery = new libBanner.SlideshowGallery();
         gallery.enableTouch().slideEvery(5000);
+        
+        $("a#privacy").click(function(evt) {  
+          libBanner.track_user_action("Library|Banner|Nonsubscriber", "library_taps_privacy");
+        });
       });
     })();
   </script>

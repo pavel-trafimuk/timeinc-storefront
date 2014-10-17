@@ -1,0 +1,231 @@
+@import "_variables/_IN.scss";
+
+$accentColor: rgb(223, 37, 47);
+$coverBorderColor: #ddd;
+$ruleColor: #ddd;
+
+$gutter: 15px;
+$vertspacing: 15px;
+
+$buttonWidth: 100px;
+$buttonBorderWidth: 1px;
+
+
+@import "_includes/_libUI.scss";
+
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 125%;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+table, tbody, tr, td {
+  border-collapse: collapse;
+  margin: 0; 
+  padding: 0;
+  border: 0;
+}
+
+
+
+/*
+ * Shared Styles
+ */
+
+.btn {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: $accentColor;
+  width: $buttonWidth - (2 * $buttonBorderWidth);
+  border: $buttonBorderWidth solid $accentColor;
+  padding: 5px 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+
+/*
+ * Hero Styles
+ */
+
+.hero-container {
+  padding: $vertspacing $gutter;
+  min-height: 200px;
+}
+.hero-cover {
+  -webkit-box-sizing: border-box;
+  float: left;
+  width: 60%;
+  border: 1px solid $coverBorderColor;
+}
+.hero-rightbar {
+  -webkit-box-sizing: border-box;
+  width: 33%;
+  float: right;
+  position: relative;
+}
+.hero-buttons {
+  position: absolute;
+  bottom: -180px;
+}
+.hero-button {
+  margin-top: 5px;
+  &.hero-preview-btn {
+    margin-bottom: 20px;
+  }
+}
+
+
+
+/*
+ * Backissue list filtering
+ */
+.bi-filters {
+  clear: both;
+  display: -webkit-flex;
+  display: flex;
+  list-style: none;
+  margin: $vertspacing $gutter 0;
+  padding: 0;
+  border-top: 1px solid $ruleColor;
+}
+.bi-filters li {
+  line-height: 40px;
+  padding: 0; margin: 0;
+  display: block;
+  list-style: none;
+  text-align: center;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  a {
+    display: block;
+    color: #888;
+    text-decoration: none;
+  }
+  &.active a {
+    color: $accentColor;
+  }
+}
+
+
+
+/*
+ * Backissue Styles
+ */
+
+.backissues-container {
+  clear: both;
+}
+.biv-container {
+  margin: 0 $gutter;
+  padding: $vertspacing 0;
+  border-top: 1px solid $ruleColor;
+}
+.backissues-cover-container {
+  -webkit-box-sizing: border-box;
+  width: 34%;
+  padding-right: 15px;
+  line-height: 0;
+}
+.backissue-cover {
+  -webkit-box-sizing: border-box;
+  border: 1px solid $coverBorderColor;
+  width: 100%; 
+}
+.backissue-name {
+  color: #333;
+}
+.backissue-price {
+  color: $accentColor;
+}
+.backissue-btn {
+  margin-top: 15px;
+}
+
+
+
+/*
+ * Detail Overlay
+ */
+
+.detail-overlay {
+  position: fixed;
+  left: 0; right: 0;
+  height: 100%;
+  z-index: 9;
+
+  top: 100%;
+  transition: top 0.25s;
+  &.show {
+    top: 0%;
+  }
+
+  background: #f6f6f6;
+}
+.detail-header {
+  position: absolute;
+  top: $vertspacing;
+  left: $gutter;
+  right: ($gutter + $buttonWidth) + $gutter;
+}
+.detail-description {
+  color: #666;
+}
+.detail-buttons {
+  position: absolute;
+  top: $vertspacing + 30px;
+  right: $gutter;
+  width: $buttonWidth;
+  
+  .btn {
+    margin-bottom: 5px;
+  }
+}
+.detail-close-btn {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  color: #666;
+  padding: 10px $gutter;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 20px;
+}
+.detail-covers {
+  position: absolute;
+  left: 0; right: 0;
+  top: 120px;
+  bottom: 10px;
+
+  overflow-y: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  text-align: center;
+}
+.detail-cover-img {
+  height: 100%;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-overflow-scrolling: none;
+  white-space: normal;
+
+  margin-right: $gutter;
+  &:first-child {
+    margin-left: $gutter;
+  }
+}

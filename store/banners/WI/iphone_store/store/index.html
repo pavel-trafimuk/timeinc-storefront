@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>More</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <link rel="stylesheet" href="../../../css/iphonestore.css?v={{BUILD_TIME}}" />
+
+
+    <script type="text/template" id="hero-template">
+      <img src="<%= issue.cover_url() %>" class="hero-cover">
+      <div class="hero-rightbar">
+        <div class="hero-issue-name"><%= issue.get('name') %></div>
+        <div class="hero-buttons">
+          <% if (issue.get("show_preview_button")) { %>
+            <a href="#" class="btn hero-button hero-preview-btn">Preview</a>
+          <% } %>
+          <a href="#" class="btn hero-button hero-subscribe-btn">Subscribe</a>
+          <a href="#" class="btn hero-button hero-buy-btn"><%= issue.get_action_button_text() %></a>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/template" id="backissue-template">
+      <table><tr>
+        <td class="backissues-cover-container">
+          <img src="<%= issue.cover_url() %>" class="backissue-cover">
+        </td>
+        <td>
+          <div class="backissue-name"><%= issue.get('name') %></div>
+          <div class="backissue-price"><%= issue.get('price') %></div>
+
+          <a href="#" class="btn backissue-btn"><%= issue.get_action_button_text() %></a>
+        </td>
+      </tr></table>
+    </script>
+
+    <script type="text/template" id="detail-template">
+      <div class="detail-header">
+        <div class="detail-title"><%= issue.get('name') %></div>
+        <div class="detail-description"><%= issue.get('description') %></div>
+      </div>
+      <div class="detail-buttons">
+        <a href="#" class="btn detail-subscribe-btn">SUBSCRIBE</a>
+        <a href="#" class="btn detail-buy-btn"><%= issue.get_action_button_text() %></a>
+      </div>
+      <a href="#" class="detail-close-btn">&times;</a>
+      <div class="detail-covers">
+        <% for (var i=0; i < cover_urls.length; i++) { %>
+          <img src="<%= cover_urls[i] %>" class="detail-cover-img">
+        <% } %>
+      </div>
+    </script>
+
+    {{JS_FILES}}
+    <script type="text/javascript" src="../../../lib/underscore.js"></script>
+    <script type="text/javascript" src="../../../lib/backbone.js"></script>
+    <script type="text/javascript" src="../../../lib/jquery.hammer.js"></script>
+
+    <script type="text/javascript" src="../../../lib/libBanner.js?v={{BUILD_TIME}}"></script>
+    <script type="text/javascript" src="../../../lib/libUI.js?v={{BUILD_TIME}}"></script>
+</head>
+<body>
+
+  <div class="hero-container"></div>
+  <div style="clear: both;"></div>
+
+  <ul class="bi-filters">
+    <li data-filter="" class="active"><a href="#">Monthly Magazine</a>
+    <li data-filter="Special"><a href="#">Style Pro Guides</a>
+  </ul>
+  <div class="backissues-container"></div>
+
+  <script type="text/javascript" src="./views/models.js?v={{BUILD_TIME}}"></script>
+  <script type="text/javascript" src="iphonestore.js?v={{BUILD_TIME}}"></script>
+  
+</body>
+</html>
