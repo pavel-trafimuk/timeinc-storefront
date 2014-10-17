@@ -172,12 +172,13 @@
       // App.api.authenticationService.user_is_subscriber() because it takes
       // a callback. This is a "good enough" hack (but it ignores the
       // possibility that someone signed in to lucie is not a subscriber)
-      var available_subs = App.api.receiptService.availableSubscriptions;
+      var is_itunes_sub = false;
 
-      for (var i = available_subs.length; i--;) {
-        if (available_subs[i].isActive()) return "store";
-      }
-      if (App.api.authenticationService.isUserAuthenticated) {
+      _(App.api.receiptService.availableSubscriptions).each(function(sub) {
+        if (sub.isActive()) is_itunes_sub = true;
+      })
+      
+      if (is_itunes_sub || App.api.authenticationService.isUserAuthenticated) {
         return "store";
       }
 
