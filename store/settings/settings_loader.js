@@ -4,7 +4,7 @@
     // the reason for this interface is so we can set reasonable defaults
     // when we introduce new settings to the app.
     var default_settings = {
-        "DPS_VERSION"                : "r24",
+        "DPS_VERSION"                : "r26",
 
         "store_hero_view"            : "StoreHero",
         "store_backissues_view"      : "StoreIssues",
