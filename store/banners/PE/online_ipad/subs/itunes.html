@@ -134,6 +134,11 @@
         background: rgb(242, 242, 242) url(ios8_msg.png) 50% 50% no-repeat;
         background-size: contain;
        }
+       
+       .slide.helptab {
+        background: rgb(245, 245, 245) url(help_tab.png) 50% 50% no-repeat;
+        background-size: contain;
+       }
 
        .slide.loading::before {
          content: 'Loading…';
@@ -167,6 +172,10 @@
           <div class="slide ios8" data-ios-version="8" data-hide-on-latest-build="true">
             <!-- iOS8 slide -->
           </div>
+          <div class="slide helptab" data-ios-version="8" data-hide-on-latest-build="false">
+            <!-- Help Tab slide -->
+            <a href="#"></a>
+          </div>
           <div class="slide register">
             <!-- LUCIE Register slide -->
             <a href="#"></a>
@@ -190,6 +199,15 @@
           
           libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_register");
           libBanner.lucie_register();
+        });
+        
+        $(".helptab a").click(function(evt) {
+          evt.preventDefault();
+  
+          gallery.cancelAutoSlide();
+  
+          libBanner.track_user_action("Library|Banner|Subscriber", "banner_taps_helptab");
+          libBanner.go_to_tab("Help");
         });
       });
     })();

@@ -134,6 +134,11 @@
         background: rgb(242, 242, 242) url(ios8_msg.png) 50% 50% no-repeat;
         background-size: contain;
        }
+       
+       .slide.helptab {
+        background: rgb(245, 245, 245) url(help_tab.png) 50% 50% no-repeat;
+        background-size: contain;
+       }
 
        .slide.loading::before {
          content: 'Loading…';
@@ -167,6 +172,10 @@
           <div class="slide ios8" data-ios-version="8" data-hide-on-latest-build="true">
             <!-- iOS8 slide -->
           </div>
+          <div class="slide helptab" data-ios-version="8" data-hide-on-latest-build="false">
+            <!-- Help Tab slide -->
+            <a href="#"></a>
+          </div>
           <div class="slide subscribe">
             <!-- Subscribe slide -->
             <a href="#"></a>
@@ -192,6 +201,15 @@
   
           libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_subscribe");
           libBanner.buy_sub("com.timeinc.people.ipad.subs.6");
+        });
+        
+        $(".helptab a").click(function(evt) {
+          evt.preventDefault();
+  
+          gallery.cancelAutoSlide();
+  
+          libBanner.track_user_action("Library|Banner|Nonsubscriber", "banner_taps_helptab");
+          libBanner.go_to_tab("Help");
         });
       });
     })();
