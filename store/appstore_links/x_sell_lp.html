@@ -34,14 +34,20 @@
       padding: 20px;
       box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.05);
     }
+    .featured-view .view-title {
+      font-size: 24px;
+    }
+    .brands-view .view-title {
+      font-size: 20px;
+    }
     .brands {
       text-align: center;
       width: calc(100% + 3%);
       width: -webkit-calc(100% + 3%);
       width: -moz-calc(100% + 3%);
       margin-left: calc(-1 * 3%);
-      width: -webkit-calc(100% + 3%);
-      width: -moz-calc(100% + 3%);
+      margin-left: -webkit-calc(-1 * 3%);
+      margin-left: -moz-calc(-1 * 3%);
     }
     .cover-img-container {
       position: relative;
@@ -87,14 +93,39 @@
       font-weight: bold;
       text-transform: uppercase;
     }
-    @media screen and (max-width: 999px) {
+    
+    /* iPhone 4S, 5, 5S */
+    @media only screen and (min-width: 320px) {
+      .featured-view .view-title { font-size: 20px; }
+      .brands-view .view-title { font-size: 18px; }
+      .brand { width: 50%; }
+      .brand a { font-size: 12px; }
+    }
+    
+    /* iPhone 6 */
+    @media only screen and (min-width: 375px) {
+      .featured-view .view-title { font-size: 20px; }
+      .brands-view .view-title { font-size: 18px; }
+      .brand { width: 50%; }
+      .brand a { font-size: 14px; }
+    }
+    
+    /* iPhone 6+ */
+    @media only screen and (min-width: 414px) {
+      .featured-view .view-title { font-size: 22px; }
+      .brands-view .view-title { font-size: 20px; }
+      .brand { width: 33%; }
+      .brand a { font-size: 16px; }
+    }
+    
+    /* iPad 2, iPad Mini, iPad Retina, Retina iPad Mini PORTRAIT */
+    @media only screen and (min-width: 768px) {
       .brand { width: 25%; }
     }
-    @media screen and (min-width: 1000px) {
+    
+    /* iPad 2, iPad Mini, iPad Retina, Retina iPad Mini LANDSCAPE */
+    @media only screen and (min-width: 1024px) {
       .brand { width: 20%; }
-      .brand .make-banner-space {
-        width: 25%;
-      }
     }
   </style>
   
@@ -102,51 +133,51 @@
     var cover_size = 388;
         brands = {
           "AY" : { "name" : "All You", "image_x_id" : "9614",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={DDA71792-8BF2-4F01-9C24-08D16FDF599A}" },
           "CT" : { "name" : "Coastal Living", "image_x_id" : "5232",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={B01F1995-261D-496A-810F-E160C0272323}" },
           "CK" : { "name" : "Cooking Light", "image_x_id" : "9521",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={24F9572F-0537-42A9-9AAA-115C6D4EC0B6}" },
           "EW" : { "name" : "Entertainment Weekly", "image_x_id" : "0001",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={FBF489D0-E206-493A-BA04-66C9632A9A5D}" },
           "EE" : { "name" : "Essence", "image_x_id" : "402",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={C9847BA7-68A0-41A7-9332-1D9C0CAD9B8A}" },
           "WI" : { "name" : "Food & Wine", "image_x_id" : "8422",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={54D98DF0-2B9A-47A7-B456-FE5A4D13F143}" },
           "FO" : { "name" : "Fortune", "image_x_id" : "510",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={B6BB8549-9742-49F4-9F16-87707396F8A7}" },
           "GF" : { "name" : "Golf", "image_x_id" : "550",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={9C977EC0-3FC8-4B34-91B4-2C4D949EDD67}" },
           "HA" : { "name" : "Health", "image_x_id" : "4478",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={390BC7B8-058C-4767-ADA1-C2FBFF17E6B9}" },
           "IN" : { "name" : "InStyle", "image_x_id" : "1232",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={E029B813-ACF8-463D-B194-1E4CEA7AFF3E}" },
           "MO" : { "name" : "Money", "image_x_id" : "1012",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={DF7DDF52-D490-4AFF-A7C9-72FD86F58D0F}" },
           "PE" : { "name" : "People", "image_x_id" : "3313",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={E875E063-1B04-4686-9332-7904D54EC082}" },
           "PP" : { "name" : "People en Espanol", "image_x_id" : "5387",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={2539AD71-8EA1-4E58-8C76-430A9F08BE65}" },
           "PW" : { "name" : "People Stylewatch", "image_x_id" : "10WB",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={B87C2FBD-150D-4ACF-A635-92620DD03517}" },
           "SM" : { "name" : "Real Simple", "image_x_id" : "6468",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={8B48865B-BD65-42AA-9C18-F7A53BF821E2}" },
           "SL" : { "name" : "Southern Living", "image_x_id" : "8403",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={D1C2AA81-1302-4E79-8FBC-43B10F2C53F8}" },
           "SI" : { "name" : "Sports Illustrated", "image_x_id" : "1730",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={FCAE4731-AD2F-43A0-8109-0C0D95FDB349}" },
           "SK" : { "name" : "Sports Illustrated Kids", "image_x_id" : "2110",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={E71A960C-F1A9-4450-BEF0-B4C8B6B27BA7}" },
           "SU" : { "name" : "Sunset", "image_x_id" : "1760",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={373D448F-A528-43E6-ABE0-E7A19E6C1F65}" },
           "TH" : { "name" : "This Old House", "image_x_id" : "1719",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={D9CA4733-AF45-41C0-9193-5086BA8B0CAC}" },
           "TD" : { "name" : "TIME", "image_x_id" : "1850",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={8B24B144-A0B2-49D4-BF1B-9A89D28DF89F}" },
           "TK" : { "name" : "TIME for Kids", "image_x_id" : "TI1271013",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={11437339-C618-4B32-8034-353705695BD0}" },
           "LE" : { "name" : "Travel + Leisure", "image_x_id" : "8423",
-                   "emags_url" : "" },
+                   "emags_url" : "http://www.oplytic.com/link/?user=4432&g={F3F204FE-C794-4C78-B0EE-975403F81978}" },
         };
         
     Object.size = function(obj) {
@@ -168,7 +199,7 @@
     </div>
     
     <div class="brands-view">
-      <div class="view-title helvetica">You may also enjoy reading...</div>
+      <div class="view-title avenir">You may also enjoy reading...</div>
       <div id="bottom-list" class="brands"></div>
       <div class="clear"></div>
     </div>
@@ -196,12 +227,38 @@
     drawCovers(topList, "top-list");
     drawCovers(bottomList, "bottom-list");
     
+    var Anchors = document.getElementsByTagName("a");
+
+    for (var i = 0; i < Anchors.length ; i++) {
+      Anchors[i].addEventListener("click", 
+        function (event) {
+          event.preventDefault();
+          setTimeout("window.history.back()", 1000);
+          setTimeout("window.close()", 1000);
+          //window.location = this.href;
+          
+          if (this.href) {
+            var ifr = document.createElement("iframe");
+            ifr.style.display = "none";
+            ifr.src = this.href;
+            document.body.appendChild(ifr);
+            //location.href = destination;
+          }
+        }, 
+      false);
+    }
+    
     function drawCovers(obj, divId) {
       var numCovers = Object.size(obj),
           containerDiv = document.getElementById(divId);
       
       if (numCovers <= 0) {
+        var bottomListTitle = document.getElementById("bottom-list").parentNode.querySelector('.view-title');
+        bottomListTitle.innerHTML = "RECOMMENDED FOR YOU";
+        bottomListTitle.className = "view-title avenir";
+                
         containerDiv.parentNode.style.display = "none";
+        
         return;
       }
       
